@@ -3298,6 +3298,9 @@
     }
     return a;
   }
+  // Returns pin coordinates, or null when the anchored element exists in the
+  // document but is currently hidden (e.g. a single-file site showing a
+  // different "page"/view) — in that case the pin should not be rendered.
   function resolveAnchor(a) {
     if (a.sel) {
       try {
@@ -3307,6 +3310,7 @@
           if (r.width > 0 && r.height > 0) {
             return { x: r.left + window.scrollX + a.xp * r.width, y: r.top + window.scrollY + a.yp * r.height };
           }
+          return null; // element is on a hidden view right now
         }
       } catch (e) {}
     }
@@ -3315,6 +3319,16 @@
       y: a.dyp * document.documentElement.scrollHeight
     };
   }
+  function currentView() { return location.hash || ''; }
+  // Should this thread be shown on the current view?
+  function threadVisiblePos(t) {
+    var a = t.anchor || {};
+    if (a.sel) return resolveAnchor(a); // visibility of the anchor decides
+    // No element anchor: fall back to the view recorded at creation
+    if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) return null;
+    return resolveAnchor(a);
+  }
+  function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
 
   /* ------------------- STATE ------------------- */
   var threads = {};           // latest data
@@ -3446,7 +3460,8 @@
     ids.forEach(function (tid) {
       var t = threads[tid];
       if (t.resolved && !showResolved) return;
-      var p = resolveAnchor(t.anchor || {});
+      var p = threadVisiblePos(t);
+      if (!p) return; // comment belongs to a view that isn't on screen
       var fc = firstComment(t);
       var pin = document.createElement('div');
       pin.className = 'pin' + (t.resolved ? ' resolved' : '');
@@ -3560,16 +3575,25 @@
       num.textContent = threadNumber(tid);
       var body = document.createElement('div');
       body.className = 'pbody';
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
       body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
-        + (n > 1 ? ' · ' + n + ' replies' : '') + '</div>'
+        + (n > 1 ? ' · ' + n + ' replies' : '')
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
         + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
       item.appendChild(num);
       item.appendChild(body);
       item.addEventListener('click', function () {
-        var p = resolveAnchor(t.anchor || {});
-        window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
-        openThreadId = tid; draft = null; panelOpen = false;
-        setTimeout(render, 350);
+        var go = function () {
+          var p = threadVisiblePos(t) || resolveAnchor(t.anchor || {});
+          if (p) window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
+          openThreadId = tid; draft = null; panelOpen = false;
+          setTimeout(render, 350);
+        };
+        if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
+          // Comment lives on another view of this site — switch to it first
+          location.hash = t.view || '#';
+          setTimeout(go, 450);
+        } else go();
       });
       list.appendChild(item);
     });
@@ -3638,7 +3662,7 @@
       post.disabled = true;
       var t = {
         anchor: draft.anchor, resolved: false, created: Date.now(),
-        comments: {}
+        view: currentView(), comments: {}
       };
       t.comments[uid()] = { name: name, text: text, ts: Date.now() };
       store.createThread(t).then(function (tid) {
@@ -3661,7 +3685,8 @@
 
   function buildThreadPopup(tid) {
     var t = threads[tid];
-    var p = resolveAnchor(t.anchor || {});
+    var p = threadVisiblePos(t)
+      || { x: window.scrollX + window.innerWidth / 2, y: window.scrollY + window.innerHeight / 2 };
     var pos = popupPos(p.x, p.y);
     var pop = document.createElement('div');
     pop.className = 'popup';
@@ -3826,6 +3851,12 @@
   }, pollMs);
 
   window.addEventListener('resize', function () { render(); });
+  // Single-file sites that switch views via the URL hash: re-render so each
+  // view only shows its own pins, and close any popup from the previous view.
+  window.addEventListener('hashchange', function () {
+    openThreadId = null; draft = null;
+    render();
+  });
 
   /* ------------------- BOOT ------------------- */
   function boot() {
