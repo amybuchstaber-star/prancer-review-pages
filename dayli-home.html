@@ -161,10 +161,25 @@
 
   /* ---------- hero ---------- */
   .hero{
+    background:var(--linen);
+    padding:44px clamp(36px,5.5vw,84px) 56px;
+  }
+  .hero__frame{
+    max-width:1460px;
+    margin:0 auto;
+    padding:10px;
+    border-radius:22px;
+    background-color:var(--linen);
+    background-image:var(--gingred-url);
+    background-size:100px;
+    box-shadow:0 30px 60px -36px rgba(94,26,31,.45);
+  }
+  .hero__inner{
     position:relative;
-    height:min(92vh, 940px);
-    min-height:620px;
+    height:min(62vh, 660px);
+    min-height:430px;
     overflow:hidden;
+    border-radius:14px;
     background:var(--warm-ink);
   }
   .hero__media{
@@ -205,7 +220,7 @@
     left:0;right:0;bottom:0;
     max-width:1440px;
     margin:0 auto;
-    padding:0 44px 72px;
+    padding:0 48px 52px;
     color:var(--linen);
   }
   .hero__eyebrow{
@@ -220,7 +235,7 @@
   .hero__title{
     font-family:var(--serif);
     font-weight:500;
-    font-size:clamp(30px, 5.5vw, 82px);
+    font-size:clamp(28px, 4.9vw, 72px);
     line-height:1.05;
     letter-spacing:.005em;
     margin:22px 0 20px;
@@ -286,8 +301,8 @@
   /* video placeholder chip */
   .hero__film{
     position:absolute;
-    top:28px;
-    right:44px;
+    top:24px;
+    right:28px;
     display:flex;
     align-items:center;
     gap:12px;
@@ -324,8 +339,8 @@
   }
   .hero__breathe{
     position:absolute;
-    bottom:26px;
-    right:44px;
+    bottom:22px;
+    right:30px;
     color:rgba(244,236,221,.85);
     font-family:var(--serif);
     font-style:italic;
@@ -1243,14 +1258,16 @@
     .nav__burger{display:block;justify-self:start}
     .nav__links--right a:not(.nav__bag){display:none}
     .wordmark__dayli{font-size:28px}
-    .hero{height:96svh;min-height:560px}
+    .hero{padding:18px 16px 26px}
+    .hero__frame{padding:8px;background-size:80px;border-radius:16px}
+    .hero__inner{height:62svh;min-height:430px;border-radius:10px}
     .hero__media img{object-position:20% 50%}
     .hero__media video{object-position:center 50%}
     .hero__scrim{
       background:
         linear-gradient(to top, rgba(43,29,20,.94) 0%, rgba(43,29,20,.80) 38%, rgba(43,29,20,.42) 66%, rgba(43,29,20,.06) 88%);
     }
-    .hero__content{padding:0 22px 74px}
+    .hero__content{padding:0 20px 44px}
     .hero__title{font-size:clamp(26px,7.6vw,40px);text-shadow:0 2px 24px rgba(20,10,5,.45)}
     .hero__sub{font-size:15px;max-width:36ch;text-shadow:0 1px 14px rgba(20,10,5,.5)}
     .hero__film{top:18px;right:20px;padding:8px 14px 8px 9px}
@@ -2128,6 +2145,8 @@
 <main class="page page--on" id="page-home">
 <!-- ═══════════ SECTION 1 · HERO ═══════════ -->
 <section class="hero">
+  <div class="hero__frame">
+  <div class="hero__inner">
   <div class="hero__media">
     <video data-vid="herovid" autoplay muted loop playsinline></video>
   </div>
@@ -2151,29 +2170,9 @@
   </div>
 
   <div class="hero__breathe">take a breath <span>↓</span></div>
-</section>
-
-<!-- ═══════════ SECTION 1 · TICKER ═══════════ -->
-<div class="ticker" aria-label="brand notes">
-  <div class="ticker__track">
-    <div class="ticker__item">
-      <span class="ticker__caps">11g fiber per serving</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__word">becomes real, spreadable jam</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__caps">100% wholefood based</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__word">no isolates, ever</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__caps">Steady, faithful, daily</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__word">feed what feeds you</span><span class="ticker__sprig">❁</span>
-    </div>
-    <div class="ticker__item" aria-hidden="true">
-      <span class="ticker__caps">11g fiber per serving</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__word">becomes real, spreadable jam</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__caps">100% wholefood based</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__word">no isolates, ever</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__caps">Steady, faithful, daily</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__word">feed what feeds you</span><span class="ticker__sprig">❁</span>
-    </div>
   </div>
-</div>
+  </div>
+</section>
 
 <!-- ═══════════ SECTION 2 · THE PANTRY ═══════════ -->
 <section class="pantry" id="pantry">
@@ -2242,6 +2241,28 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════ SECTION 1 · TICKER ═══════════ -->
+<div class="ticker" aria-label="brand notes">
+  <div class="ticker__track">
+    <div class="ticker__item">
+      <span class="ticker__caps">11g fiber per serving</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__word">becomes real, spreadable jam</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__caps">100% wholefood based</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__word">no isolates, ever</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__caps">Steady, faithful, daily</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__word">feed what feeds you</span><span class="ticker__sprig">❁</span>
+    </div>
+    <div class="ticker__item" aria-hidden="true">
+      <span class="ticker__caps">11g fiber per serving</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__word">becomes real, spreadable jam</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__caps">100% wholefood based</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__word">no isolates, ever</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__caps">Steady, faithful, daily</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__word">feed what feeds you</span><span class="ticker__sprig">❁</span>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════ SECTION 3 · THE LORE ═══════════ -->
 <section class="lore" id="lore">
@@ -3141,7 +3162,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v5';
+  var PAGE_ID = 'dayli-home-v7';
 
   /* ---------------------------------------------- */
 
