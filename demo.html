@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Tallow — Demo Landing Page</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Georgia,'Times New Roman',serif;color:#2d2a26;background:#faf7f2}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 6vw;background:#faf7f2;border-bottom:1px solid #e8e2d8}
+  .logo{font-size:22px;font-weight:700;letter-spacing:1px}
+  .nav a{color:#2d2a26;text-decoration:none;margin-left:28px;font-family:Helvetica,Arial,sans-serif;font-size:14px}
+  .hero{display:flex;align-items:center;gap:5vw;padding:70px 6vw;background:linear-gradient(160deg,#f3ead9,#e9dcc3)}
+  .hero-text{flex:1}
+  .hero h1{font-size:44px;line-height:1.15;margin-bottom:18px}
+  .hero p{font-size:18px;line-height:1.6;color:#5a544b;margin-bottom:28px;font-family:Helvetica,Arial,sans-serif}
+  .cta{display:inline-block;background:#8a5a2b;color:#fff;padding:15px 34px;border-radius:6px;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:700}
+  .hero-img{flex:1;min-height:320px;background:radial-gradient(circle at 40% 35%,#f7edd8,#caa268);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#6d4a1e;font-family:Helvetica,Arial,sans-serif}
+  .strip{display:flex;justify-content:space-around;padding:26px 6vw;background:#2d2a26;color:#f3ead9;font-family:Helvetica,Arial,sans-serif;font-size:14px;flex-wrap:wrap;gap:10px}
+  .benefits{padding:70px 6vw}
+  .benefits h2{text-align:center;font-size:32px;margin-bottom:44px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+  .card{background:#fff;border:1px solid #e8e2d8;border-radius:12px;padding:30px}
+  .card h3{font-size:19px;margin-bottom:10px}
+  .card p{font-family:Helvetica,Arial,sans-serif;font-size:14.5px;line-height:1.6;color:#5a544b}
+  .quote{padding:70px 6vw;background:#f3ead9;text-align:center}
+  .quote blockquote{font-size:24px;font-style:italic;max-width:720px;margin:0 auto 16px;line-height:1.5}
+  .quote cite{font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#8a5a2b;font-style:normal}
+  .footer-cta{padding:80px 6vw;text-align:center}
+  .footer-cta h2{font-size:34px;margin-bottom:14px}
+  .footer-cta p{font-family:Helvetica,Arial,sans-serif;color:#5a544b;margin-bottom:28px}
+  footer{padding:26px 6vw;background:#2d2a26;color:#a89f92;font-family:Helvetica,Arial,sans-serif;font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo">GLOW TALLOW</div>
+    <div><a href="#">Shop</a><a href="#">About</a><a href="#">Reviews</a></div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Skincare the way your great-grandmother made it</h1>
+      <p>Whipped grass-fed tallow balm with zero seed oils, zero fillers, and one ingredient your skin actually recognizes.</p>
+      <a class="cta" href="#">Shop the Balm — $38</a>
+    </div>
+    <div class="hero-img">[ product photo ]</div>
+  </section>
+
+  <div class="strip">
+    <span>✦ 40,000+ jars sold</span>
+    <span>✦ Grass-fed &amp; finished</span>
+    <span>✦ 60-day money-back promise</span>
+    <span>✦ Made in small batches in Texas</span>
+  </div>
+
+  <section class="benefits">
+    <h2>Why tallow?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Bioidentical to your skin</h3>
+        <p>Tallow's fatty acid profile closely mirrors human sebum, so it absorbs without clogging or sitting greasy on the surface.</p>
+      </div>
+      <div class="card">
+        <h3>Vitamins A, D, E &amp; K</h3>
+        <p>Naturally occurring fat-soluble vitamins — not sprayed on in a lab, just left intact from pasture-raised cattle.</p>
+      </div>
+      <div class="card">
+        <h3>One-ingredient honesty</h3>
+        <p>If you can't pronounce your moisturizer, your skin can't recognize it either. Ours has one ingredient. Maybe two if you count the whipping.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <blockquote>"I've spent $400 on serums that did less than this $38 jar. My cheeks have never been this calm."</blockquote>
+    <cite>— Dana R., verified buyer</cite>
+  </section>
+
+  <section class="footer-cta">
+    <h2>Your skin knows the difference.</h2>
+    <p>Try it for 60 days. If your skin doesn't agree, it's on us.</p>
+    <a class="cta" href="#">Get Glow Tallow</a>
+  </section>
+
+  <footer>© 2026 Glow Tallow Co. — Demo page for testing the comment layer.</footer>
+
+<script>
+/* ============================================================
+   CLAUDE COMMENTS — Figma-style comment layer for any HTML page
+   ------------------------------------------------------------
+   HOW TO USE:
+   1. Set FIREBASE_URL below to your Firebase Realtime Database
+      URL (looks like https://something-default-rtdb.firebaseio.com)
+      Leave it as-is to run in OFFLINE mode (comments only saved
+      in this browser — good for trying it out).
+   2. Optionally set PAGE_ID to a short name for this page.
+      If left blank, it's derived from the file name / title.
+   3. Paste this whole <script> block right before </body>.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ------------------- CONFIG ------------------- */
+  var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
+  var PAGE_ID = 'demo-glow-tallow'; // e.g. 'paleo-landing-v2' (optional)
+
+  /* ---------------------------------------------- */
+
+  if (window.__claudeCommentsLoaded) return;
+  window.__claudeCommentsLoaded = true;
+
+  var ONLINE = /^https:\/\/.+firebase/.test(FIREBASE_URL);
+  if (ONLINE) FIREBASE_URL = FIREBASE_URL.replace(/\/+$/, '');
+
+  function slug(s) {
+    return String(s).toLowerCase().replace(/\.[a-z0-9]+$/, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'page';
+  }
+  if (!PAGE_ID) {
+    var fn = (location.pathname.split('/').pop() || '');
+    PAGE_ID = slug(fn && fn !== 'index.html' ? fn : (document.title || fn || 'page'));
+  }
+
+  var COLORS = ['#7C5CFF', '#FF5C8A', '#00A896', '#F4A100', '#2E86DE', '#B8578C'];
+  function colorFor(name) {
+    var h = 0; name = name || '?';
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return COLORS[h % COLORS.length];
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function timeAgo(ts) {
+    var d = Date.now() - ts;
+    if (d < 60e3) return 'just now';
+    if (d < 3600e3) return Math.floor(d / 60e3) + 'm ago';
+    if (d < 86400e3) return Math.floor(d / 3600e3) + 'h ago';
+    if (d < 7 * 86400e3) return Math.floor(d / 86400e3) + 'd ago';
+    var dt = new Date(ts);
+    return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + String(dt.getFullYear()).slice(2);
+  }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+  /* ------------------- STORAGE ------------------- */
+  // Data shape: { threadId: { anchor:{sel,xp,yp,dxp,dyp}, resolved, created,
+  //               comments: { commentId: { name, text, ts } } } }
+  var store;
+
+  function LocalStore() {
+    var KEY = 'claude-comments::' + PAGE_ID;
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+    }
+    function write(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+    return {
+      offline: true,
+      fetchAll: function () { return Promise.resolve(read()); },
+      createThread: function (t) {
+        var d = read(); var id = uid(); d[id] = t; write(d); return Promise.resolve(id);
+      },
+      addComment: function (tid, c) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        d[tid].comments = d[tid].comments || {};
+        d[tid].comments[uid()] = c; write(d); return Promise.resolve();
+      },
+      patchThread: function (tid, patch) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        for (var k in patch) d[tid][k] = patch[k];
+        write(d); return Promise.resolve();
+      },
+      deleteThread: function (tid) {
+        var d = read(); delete d[tid]; write(d); return Promise.resolve();
+      }
+    };
+  }
+
+  function FirebaseStore() {
+    var base = FIREBASE_URL + '/pages/' + encodeURIComponent(PAGE_ID) + '/threads';
+    function req(method, path, body) {
+      return fetch(base + path + '.json', {
+        method: method,
+        body: body === undefined ? undefined : JSON.stringify(body)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Sync error ' + r.status);
+        return r.json();
+      });
+    }
+    return {
+      offline: false,
+      fetchAll: function () { return req('GET', '').then(function (d) { return d || {}; }); },
+      createThread: function (t) {
+        return req('POST', '', t).then(function (res) { return res.name; });
+      },
+      addComment: function (tid, c) { return req('POST', '/' + tid + '/comments', c); },
+      patchThread: function (tid, patch) { return req('PATCH', '/' + tid, patch); },
+      deleteThread: function (tid) { return req('DELETE', '/' + tid); }
+    };
+  }
+
+  store = ONLINE ? FirebaseStore() : LocalStore();
+
+  /* ------------------- ANCHORING ------------------- */
+  function cssPath(el) {
+    if (!(el instanceof Element)) return '';
+    var path = [];
+    while (el && el.nodeType === 1 && el !== document.body && path.length < 8) {
+      var seg = el.tagName.toLowerCase();
+      if (el.id && !/\d{4,}/.test(el.id)) { path.unshift('#' + CSS.escape(el.id)); break; }
+      var sibs = el.parentNode ? Array.prototype.filter.call(el.parentNode.children, function (s) {
+        return s.tagName === el.tagName;
+      }) : [];
+      if (sibs.length > 1) seg += ':nth-of-type(' + (sibs.indexOf(el) + 1) + ')';
+      path.unshift(seg);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+  function makeAnchor(clientX, clientY, target) {
+    var docX = clientX + window.scrollX, docY = clientY + window.scrollY;
+    var a = {
+      dxp: docX / Math.max(1, document.documentElement.scrollWidth),
+      dyp: docY / Math.max(1, document.documentElement.scrollHeight)
+    };
+    if (target && target !== document.body && target !== document.documentElement) {
+      var sel = cssPath(target);
+      try {
+        if (sel && document.querySelector(sel) === target) {
+          var r = target.getBoundingClientRect();
+          if (r.width > 4 && r.height > 4) {
+            a.sel = sel;
+            a.xp = (clientX - r.left) / r.width;
+            a.yp = (clientY - r.top) / r.height;
+          }
+        }
+      } catch (e) {}
+    }
+    return a;
+  }
+  function resolveAnchor(a) {
+    if (a.sel) {
+      try {
+        var el = document.querySelector(a.sel);
+        if (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width > 0 && r.height > 0) {
+            return { x: r.left + window.scrollX + a.xp * r.width, y: r.top + window.scrollY + a.yp * r.height };
+          }
+        }
+      } catch (e) {}
+    }
+    return {
+      x: a.dxp * document.documentElement.scrollWidth,
+      y: a.dyp * document.documentElement.scrollHeight
+    };
+  }
+
+  /* ------------------- STATE ------------------- */
+  var threads = {};           // latest data
+  var lastJSON = '';
+  var commentMode = false;
+  var openThreadId = null;    // thread popup currently open
+  var draft = null;           // {anchor, x, y} while composing a new thread
+  var showResolved = false;
+  var panelOpen = false;
+  var myName = '';
+  try { myName = localStorage.getItem('claude-comments-name') || ''; } catch (e) {}
+
+  function sortedIds() {
+    return Object.keys(threads).sort(function (a, b) {
+      return (threads[a].created || 0) - (threads[b].created || 0);
+    });
+  }
+  function threadNumber(tid) { return sortedIds().indexOf(tid) + 1; }
+  function firstComment(t) {
+    var ids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    return ids.length ? t.comments[ids[0]] : null;
+  }
+  function openCount() {
+    return sortedIds().filter(function (id) { return !threads[id].resolved; }).length;
+  }
+
+  /* ------------------- UI SHELL ------------------- */
+  var host = document.createElement('div');
+  host.id = 'claude-comments-host';
+  var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host;
+
+  var css = ''
+    + ':host{all:initial}'
+    + '*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
+    + '.layer{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:2147483000}'
+    + '.pin{position:absolute;pointer-events:auto;width:32px;height:32px;margin:-32px 0 0 0;'
+    + 'border-radius:16px 16px 16px 3px;display:flex;align-items:center;justify-content:center;'
+    + 'color:#fff;font-size:13px;font-weight:700;cursor:pointer;border:2px solid #fff;'
+    + 'box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .12s;user-select:none}'
+    + '.pin:hover{transform:scale(1.15)}'
+    + '.pin.resolved{background:#9aa3ad !important;opacity:.75}'
+    + '.pin.draft{background:#111}'
+    + '.popup{position:fixed;pointer-events:auto;width:min(320px,calc(100vw - 20px));max-height:70vh;display:flex;flex-direction:column;'
+    + 'background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483001;overflow:hidden}'
+    + '.popup-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #eee}'
+    + '.popup-head .title{font-size:13px;font-weight:700;color:#333;flex:1}'
+    + '.iconbtn{border:none;background:none;cursor:pointer;font-size:13px;color:#666;padding:4px 8px;border-radius:6px}'
+    + '.iconbtn:hover{background:#f2f2f4;color:#111}'
+    + '.iconbtn.danger:hover{background:#ffe8ec;color:#c0264b}'
+    + '.comments{overflow-y:auto;padding:6px 0;flex:1}'
+    + '.comment{padding:8px 14px;display:flex;gap:9px}'
+    + '.avatar{width:26px;height:26px;border-radius:50%;color:#fff;display:flex;align-items:center;'
+    + 'justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}'
+    + '.cbody{flex:1;min-width:0}'
+    + '.cmeta{font-size:12px;color:#888;margin-bottom:2px}'
+    + '.cmeta b{color:#222;font-size:12.5px;margin-right:6px}'
+    + '.ctext{font-size:13.5px;color:#222;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}'
+    + '.composer{border-top:1px solid #eee;padding:10px 12px;background:#fafafa}'
+    + '.composer textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13.5px;'
+    + 'resize:none;min-height:38px;max-height:120px;background:#fff;color:#111;outline:none;line-height:1.4}'
+    + '.composer textarea:focus{border-color:#7C5CFF}'
+    + '.composer input{width:100%;border:1px solid #ddd;border-radius:8px;padding:7px 10px;font-size:13px;'
+    + 'margin-bottom:6px;background:#fff;color:#111;outline:none}'
+    + '.composer input:focus{border-color:#7C5CFF}'
+    + '.crow{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}'
+    + '.btn{border:none;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}'
+    + '.btn.primary{background:#7C5CFF;color:#fff}.btn.primary:hover{background:#6a4ae6}'
+    + '.btn.primary:disabled{background:#c9bdfa;cursor:default}'
+    + '.btn.ghost{background:none;color:#666}.btn.ghost:hover{background:#eee}'
+    + '.bar{position:fixed;right:20px;bottom:20px;display:flex;gap:8px;pointer-events:auto;z-index:2147483002}'
+    + '.fab{display:flex;align-items:center;gap:7px;background:#111;color:#fff;border:none;border-radius:24px;'
+    + 'padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.fab:hover{background:#2b2b2e}.fab.active{background:#7C5CFF}'
+    + '.fab .badge{background:#7C5CFF;border-radius:10px;font-size:11.5px;padding:1px 7px;font-weight:700}'
+    + '.fab.active .badge{background:rgba(255,255,255,.25)}'
+    + '.hint{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111;color:#fff;'
+    + 'padding:9px 16px;border-radius:10px;font-size:13px;z-index:2147483002;pointer-events:none;'
+    + 'box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.panel{position:fixed;right:20px;bottom:76px;width:min(300px,calc(100vw - 40px));max-height:60vh;background:#fff;border-radius:12px;'
+    + 'box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483002;pointer-events:auto;display:flex;flex-direction:column;overflow:hidden}'
+    + '.panel-head{padding:11px 14px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}'
+    + '.panel-head .t{font-size:13.5px;font-weight:700;color:#222}'
+    + '.panel-list{overflow-y:auto;flex:1}'
+    + '.pitem{padding:10px 14px;border-bottom:1px solid #f4f4f5;cursor:pointer;display:flex;gap:10px;align-items:flex-start}'
+    + '.pitem:hover{background:#f8f7ff}'
+    + '.pnum{width:22px;height:22px;border-radius:11px 11px 11px 2px;color:#fff;font-size:11px;font-weight:700;'
+    + 'display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}'
+    + '.pbody{flex:1;min-width:0}'
+    + '.pmeta{font-size:11.5px;color:#999;margin-bottom:1px}'
+    + '.ptext{font-size:12.5px;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;'
+    + '-webkit-line-clamp:2;-webkit-box-orient:vertical}'
+    + '.pitem.resolved .ptext,.pitem.resolved .pmeta{color:#aaa;text-decoration:line-through}'
+    + '.panel-foot{padding:9px 14px;border-top:1px solid #eee;font-size:12px;color:#777;display:flex;'
+    + 'align-items:center;justify-content:space-between}'
+    + '.empty{padding:26px 14px;text-align:center;color:#999;font-size:13px}'
+    + '.offline{background:#fff7e0;color:#8a6400;font-size:11.5px;padding:6px 14px;text-align:center}'
+    + 'label.tog{display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:#777}'
+    + '@media (max-width:600px){.composer textarea,.composer input{font-size:16px}'
+    + '.bar{right:12px;bottom:12px}.panel{right:12px;bottom:66px}}';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  root.appendChild(styleEl);
+
+  var layer = document.createElement('div');   // pins (document coords)
+  layer.className = 'layer';
+  var ui = document.createElement('div');      // fixed UI: bar, panel, popup, hint
+  root.appendChild(layer);
+  root.appendChild(ui);
+
+  var cursorStyle = document.createElement('style');
+  cursorStyle.textContent = 'html.claude-commenting, html.claude-commenting *{cursor:crosshair !important}';
+  document.head.appendChild(cursorStyle);
+
+  function mount() { document.body.appendChild(host); render(); }
+
+  /* ------------------- RENDER ------------------- */
+  function render() {
+    layer.style.height = document.documentElement.scrollHeight + 'px';
+    renderPins();
+    renderUI();
+  }
+
+  function renderPins() {
+    layer.innerHTML = '';
+    var ids = sortedIds();
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      if (t.resolved && !showResolved) return;
+      var p = resolveAnchor(t.anchor || {});
+      var fc = firstComment(t);
+      var pin = document.createElement('div');
+      pin.className = 'pin' + (t.resolved ? ' resolved' : '');
+      pin.style.left = p.x + 'px';
+      pin.style.top = p.y + 'px';
+      pin.style.background = colorFor(fc ? fc.name : '?');
+      pin.textContent = threadNumber(tid);
+      pin.title = fc ? fc.name + ': ' + fc.text.slice(0, 80) : '';
+      pin.addEventListener('click', function (e) {
+        e.stopPropagation();
+        draft = null;
+        openThreadId = (openThreadId === tid) ? null : tid;
+        render();
+      });
+      layer.appendChild(pin);
+    });
+    if (draft) {
+      var dp = document.createElement('div');
+      dp.className = 'pin draft';
+      dp.style.left = draft.x + 'px';
+      dp.style.top = draft.y + 'px';
+      dp.textContent = '+';
+      layer.appendChild(dp);
+    }
+  }
+
+  function popupPos(docX, docY) {
+    var vx = docX - window.scrollX, vy = docY - window.scrollY;
+    var pw = Math.min(320, window.innerWidth - 20);
+    var left = Math.max(10, Math.min(vx + 18, window.innerWidth - pw - 10));
+    var top = Math.min(Math.max(10, vy - 20), Math.max(10, window.innerHeight - 260));
+    return { left: left, top: top };
+  }
+
+  function renderUI() {
+    ui.innerHTML = '';
+
+    // --- floating bar ---
+    var bar = document.createElement('div');
+    bar.className = 'bar';
+    var listBtn = document.createElement('button');
+    listBtn.className = 'fab' + (panelOpen ? ' active' : '');
+    listBtn.innerHTML = '&#9776; <span class="badge">' + openCount() + '</span>';
+    listBtn.title = 'All comments';
+    listBtn.addEventListener('click', function () { panelOpen = !panelOpen; renderUI(); });
+    var addBtn = document.createElement('button');
+    addBtn.className = 'fab' + (commentMode ? ' active' : '');
+    addBtn.innerHTML = commentMode ? '&#10005; Done' : '&#128172; Comment';
+    addBtn.addEventListener('click', toggleMode);
+    bar.appendChild(listBtn);
+    bar.appendChild(addBtn);
+    ui.appendChild(bar);
+
+    // --- hint while in comment mode ---
+    if (commentMode && !draft) {
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.textContent = 'Click anywhere on the page to leave a comment';
+      ui.appendChild(hint);
+    }
+
+    // --- panel (thread list) ---
+    if (panelOpen) ui.appendChild(buildPanel());
+
+    // --- popup: draft composer or open thread ---
+    if (draft) ui.appendChild(buildComposerPopup());
+    else if (openThreadId && threads[openThreadId]) ui.appendChild(buildThreadPopup(openThreadId));
+  }
+
+  function buildPanel() {
+    var panel = document.createElement('div');
+    panel.className = 'panel';
+    var head = document.createElement('div');
+    head.className = 'panel-head';
+    head.innerHTML = '<span class="t">Comments</span>';
+    var tog = document.createElement('label');
+    tog.className = 'tog';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = showResolved;
+    cb.addEventListener('change', function () { showResolved = cb.checked; render(); });
+    tog.appendChild(cb);
+    tog.appendChild(document.createTextNode('show resolved'));
+    head.appendChild(tog);
+    panel.appendChild(head);
+
+    if (store.offline) {
+      var off = document.createElement('div');
+      off.className = 'offline';
+      off.textContent = 'Offline mode — comments only saved in this browser';
+      panel.appendChild(off);
+    }
+
+    var list = document.createElement('div');
+    list.className = 'panel-list';
+    var ids = sortedIds().filter(function (id) { return showResolved || !threads[id].resolved; });
+    if (!ids.length) {
+      var em = document.createElement('div');
+      em.className = 'empty';
+      em.textContent = 'No comments yet. Hit “Comment”, then click anywhere on the page.';
+      list.appendChild(em);
+    }
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      var fc = firstComment(t);
+      var n = Object.keys(t.comments || {}).length;
+      var item = document.createElement('div');
+      item.className = 'pitem' + (t.resolved ? ' resolved' : '');
+      var num = document.createElement('div');
+      num.className = 'pnum';
+      num.style.background = t.resolved ? '#9aa3ad' : colorFor(fc ? fc.name : '?');
+      num.textContent = threadNumber(tid);
+      var body = document.createElement('div');
+      body.className = 'pbody';
+      body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
+        + (n > 1 ? ' · ' + n + ' replies' : '') + '</div>'
+        + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
+      item.appendChild(num);
+      item.appendChild(body);
+      item.addEventListener('click', function () {
+        var p = resolveAnchor(t.anchor || {});
+        window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
+        openThreadId = tid; draft = null; panelOpen = false;
+        setTimeout(render, 350);
+      });
+      list.appendChild(item);
+    });
+    panel.appendChild(list);
+
+    var foot = document.createElement('div');
+    foot.className = 'panel-foot';
+    foot.innerHTML = '<span>' + (myName ? 'Commenting as <b>' + esc(myName) + '</b>' : '') + '</span>';
+    if (myName) {
+      var chg = document.createElement('button');
+      chg.className = 'iconbtn';
+      chg.textContent = 'change name';
+      chg.addEventListener('click', function () {
+        myName = '';
+        try { localStorage.removeItem('claude-comments-name'); } catch (e) {}
+        renderUI();
+      });
+      foot.appendChild(chg);
+    }
+    panel.appendChild(foot);
+    return panel;
+  }
+
+  function nameField() {
+    var input = document.createElement('input');
+    input.placeholder = 'Your name';
+    input.maxLength = 40;
+    input.value = myName;
+    return input;
+  }
+
+  function buildComposerPopup() {
+    var pos = popupPos(draft.x, draft.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">New comment</span>';
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { draft = null; render(); });
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Write a comment…';
+    comp.appendChild(ta);
+    var row = document.createElement('div');
+    row.className = 'crow';
+    var cancel = document.createElement('button');
+    cancel.className = 'btn ghost'; cancel.textContent = 'Cancel';
+    cancel.addEventListener('click', function () { draft = null; render(); });
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Post';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      var t = {
+        anchor: draft.anchor, resolved: false, created: Date.now(),
+        comments: {}
+      };
+      t.comments[uid()] = { name: name, text: text, ts: Date.now() };
+      store.createThread(t).then(function (tid) {
+        draft = null; commentMode = false; setMode(false);
+        if (tid) openThreadId = tid;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { draft = null; render(); }
+    });
+    row.appendChild(cancel);
+    row.appendChild(post);
+    comp.appendChild(row);
+    pop.appendChild(comp);
+    setTimeout(function () { (nameIn && !nameIn.value ? nameIn : ta).focus(); }, 30);
+    return pop;
+  }
+
+  function buildThreadPopup(tid) {
+    var t = threads[tid];
+    var p = resolveAnchor(t.anchor || {});
+    var pos = popupPos(p.x, p.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">Comment #' + threadNumber(tid) + '</span>';
+    var resolveBtn = document.createElement('button');
+    resolveBtn.className = 'iconbtn';
+    resolveBtn.innerHTML = t.resolved ? '&#8634; Reopen' : '&#10003; Resolve';
+    resolveBtn.addEventListener('click', function () {
+      store.patchThread(tid, { resolved: !t.resolved }).then(function () {
+        if (!t.resolved === true && !showResolved) openThreadId = null;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    var del = document.createElement('button');
+    del.className = 'iconbtn danger';
+    del.innerHTML = '&#128465;';
+    del.title = 'Delete thread';
+    del.addEventListener('click', function () {
+      if (del.dataset.armed) {
+        store.deleteThread(tid).then(function () { openThreadId = null; return refresh(true); }).catch(syncFail);
+      } else {
+        del.dataset.armed = '1';
+        del.textContent = 'Delete?';
+        setTimeout(function () { delete del.dataset.armed; del.innerHTML = '&#128465;'; }, 2500);
+      }
+    });
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { openThreadId = null; render(); });
+    head.appendChild(resolveBtn);
+    head.appendChild(del);
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var box = document.createElement('div');
+    box.className = 'comments';
+    var cids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    cids.forEach(function (cid) {
+      var c = t.comments[cid];
+      var row = document.createElement('div');
+      row.className = 'comment';
+      row.innerHTML = '<div class="avatar" style="background:' + colorFor(c.name) + '">'
+        + esc((c.name || '?').trim().charAt(0).toUpperCase()) + '</div>'
+        + '<div class="cbody"><div class="cmeta"><b>' + esc(c.name) + '</b>' + timeAgo(c.ts) + '</div>'
+        + '<div class="ctext">' + esc(c.text) + '</div></div>';
+      box.appendChild(row);
+    });
+    pop.appendChild(box);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Reply…';
+    comp.appendChild(ta);
+    var row2 = document.createElement('div');
+    row2.className = 'crow';
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Reply';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      store.addComment(tid, { name: name, text: text, ts: Date.now() })
+        .then(function () { return refresh(true); }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { openThreadId = null; render(); }
+    });
+    row2.appendChild(post);
+    comp.appendChild(row2);
+    pop.appendChild(comp);
+    setTimeout(function () { box.scrollTop = box.scrollHeight; }, 30);
+    return pop;
+  }
+
+  function saveName(name) {
+    if (name && name !== 'Anonymous') {
+      myName = name;
+      try { localStorage.setItem('claude-comments-name', name); } catch (e) {}
+    }
+  }
+  function syncFail(err) {
+    alertBar('Couldn’t save — check your internet connection and try again.');
+    render();
+  }
+  var alertTimer = null;
+  function alertBar(msg) {
+    var el = document.createElement('div');
+    el.className = 'hint';
+    el.style.background = '#c0264b';
+    el.textContent = msg;
+    ui.appendChild(el);
+    clearTimeout(alertTimer);
+    alertTimer = setTimeout(function () { el.remove(); }, 4000);
+  }
+
+  /* ------------------- COMMENT MODE ------------------- */
+  function setMode(on) {
+    commentMode = on;
+    document.documentElement.classList.toggle('claude-commenting', on);
+  }
+  function toggleMode() {
+    setMode(!commentMode);
+    if (!commentMode) draft = null;
+    openThreadId = null;
+    render();
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!commentMode) return;
+    if (e.composedPath && e.composedPath().indexOf(host) !== -1) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var target = null;
+    var els = document.elementsFromPoint(e.clientX, e.clientY) || [];
+    for (var i = 0; i < els.length; i++) {
+      if (els[i] !== host && !host.contains(els[i])) { target = els[i]; break; }
+    }
+    draft = {
+      anchor: makeAnchor(e.clientX, e.clientY, target),
+      x: e.clientX + window.scrollX,
+      y: e.clientY + window.scrollY
+    };
+    openThreadId = null;
+    render();
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && commentMode && !draft) { setMode(false); render(); }
+  });
+
+  /* ------------------- SYNC LOOP ------------------- */
+  function refresh(force) {
+    return store.fetchAll().then(function (d) {
+      d = d || {};
+      var j = JSON.stringify(d);
+      if (force || j !== lastJSON) {
+        lastJSON = j;
+        threads = d;
+        render();
+      }
+    }).catch(function () { /* transient network error: keep current view */ });
+  }
+
+  var pollMs = ONLINE ? 4000 : 2500;
+  setInterval(function () {
+    // Don't re-render out from under someone mid-typing
+    var typing = root.activeElement && /TEXTAREA|INPUT/.test(root.activeElement.tagName || '');
+    if (!typing) refresh(false);
+  }, pollMs);
+
+  window.addEventListener('resize', function () { render(); });
+
+  /* ------------------- BOOT ------------------- */
+  function boot() {
+    mount();
+    refresh(true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+</body>
+</html>
