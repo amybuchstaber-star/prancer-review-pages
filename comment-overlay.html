@@ -1,0 +1,106 @@
+<!-- ══════════════════════════════════════════════════════════════════
+  PREVIEW COMMENT OVERLAY — inject just before </body> of every preview.
+  Fill the CONFIG block at publish time. Reviewers: click 💬, click any
+  element, type a note → a pre-filled GitHub issue opens (label:
+  preview-comment). No token needed; reviewer must be logged into GitHub.
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var CONFIG = {
+    repo: "OWNER/REPO",                       // e.g. "amybuchstaber/paleopro-theme"
+    source: "sections/lp-HANDLE.liquid",      // source file this preview was generated from
+    branch: "FEATURE-BRANCH",
+    commit: "COMMIT-SHA",
+    preview: location.href
+  };
+
+  var active = false, hoverEl = null;
+
+  // --- UI ---
+  var btn = document.createElement("button");
+  btn.textContent = "💬 Comment";
+  btn.style.cssText = "position:fixed;bottom:18px;right:18px;z-index:2147483647;padding:12px 18px;border-radius:100px;border:none;background:#1F3A28;color:#fff;font:600 14px/1 -apple-system,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer;";
+  document.body.appendChild(btn);
+
+  var tip = document.createElement("div");
+  tip.textContent = "Comment mode: click the thing you want changed (Esc to cancel)";
+  tip.style.cssText = "position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:2147483647;padding:10px 16px;border-radius:8px;background:#B84A26;color:#fff;font:600 13px/1.3 -apple-system,sans-serif;display:none;box-shadow:0 4px 16px rgba(0,0,0,.25);";
+  document.body.appendChild(tip);
+
+  btn.addEventListener("click", function () { setActive(!active); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setActive(false); });
+
+  function setActive(v) {
+    active = v;
+    tip.style.display = v ? "block" : "none";
+    btn.textContent = v ? "✕ Cancel" : "💬 Comment";
+    document.body.style.cursor = v ? "crosshair" : "";
+    clearHover();
+  }
+  function clearHover() { if (hoverEl) { hoverEl.style.outline = hoverEl.__oldOutline || ""; hoverEl = null; } }
+
+  document.addEventListener("mouseover", function (e) {
+    if (!active || e.target === btn || e.target === tip) return;
+    clearHover();
+    hoverEl = e.target;
+    hoverEl.__oldOutline = hoverEl.style.outline;
+    hoverEl.style.outline = "3px solid #D9A84E";
+  }, true);
+
+  document.addEventListener("click", function (e) {
+    if (!active || e.target === btn || e.target === tip) return;
+    e.preventDefault(); e.stopPropagation();
+    var el = e.target;
+    var note = prompt("What should change here?");
+    setActive(false);
+    if (!note) return;
+
+    var sel = cssPath(el);
+    var text = (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80);
+    var section = nearestSection(el);
+    var title = "[preview-comment] " + (text ? '"' + text.slice(0, 40) + '"' : sel.slice(0, 40)) + " — " + note.slice(0, 50);
+    var body = [
+      "### Preview comment", "",
+      "**Comment:** " + note, "",
+      "```",
+      "Preview: " + CONFIG.preview,
+      "Source: " + CONFIG.source,
+      "Branch: " + CONFIG.branch,
+      "Commit: " + CONFIG.commit,
+      "Section: " + section,
+      "Selector: " + sel,
+      "Element text: " + text,
+      "```"
+    ].join("\n");
+
+    window.open("https://github.com/" + CONFIG.repo + "/issues/new?labels=preview-comment&title="
+      + encodeURIComponent(title) + "&body=" + encodeURIComponent(body), "_blank");
+  }, true);
+
+  // Robust-ish CSS path: ids and classes where stable, nth-of-type otherwise.
+  function cssPath(el) {
+    var path = [];
+    while (el && el.nodeType === 1 && el !== document.body) {
+      var part = el.tagName.toLowerCase();
+      if (el.id) { path.unshift("#" + el.id); break; }
+      var cls = (el.className && typeof el.className === "string")
+        ? el.className.trim().split(/\s+/).slice(0, 2).join(".") : "";
+      if (cls) part += "." + cls;
+      var sib = el, n = 1;
+      while ((sib = sib.previousElementSibling)) if (sib.tagName === el.tagName) n++;
+      part += ":nth-of-type(" + n + ")";
+      path.unshift(part);
+      el = el.parentElement;
+    }
+    return path.join(" > ");
+  }
+  function nearestSection(el) {
+    while (el && el !== document.body) {
+      var c = el.getAttribute && el.getAttribute("class");
+      if (c && /(^|\s)(sec|hero|section|buy|faq|founder|cta)/i.test(c)) return c.split(/\s+/)[0];
+      el = el.parentElement;
+    }
+    return "(page level)";
+  }
+})();
+</script>
