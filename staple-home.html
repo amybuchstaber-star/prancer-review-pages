@@ -79,22 +79,22 @@ button{font-family:inherit;cursor:pointer;border:none;}
 /* ---------- ticker ---------- */
 .ticker-wrap{
   overflow:hidden;white-space:nowrap;
-  background:var(--sunshine);
+  background:var(--aqua);
   position:relative;z-index:110;
 }
 .ticker{
   display:inline-block;
-  animation:tick 52s linear infinite;
+  animation:tick 85s linear infinite;
   padding:9px 0;
 }
 .ticker span{
   font-family:var(--mono);
   font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
-  color:rgba(27,27,29,.75);
+  color:rgba(27,27,29,.8);
   margin:0 1.4rem;
 }
 .ticker span b{color:var(--ink);font-weight:700;}
-.ticker span em{color:var(--clay);font-style:normal;font-weight:700;}
+.ticker span em{color:var(--bone);font-style:normal;font-weight:700;}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- nav ---------- */
@@ -117,8 +117,8 @@ nav .logo img{height:29px;width:auto;transition:height .35s;}
 nav.scrolled .logo img{height:24px;}
 nav ul{display:flex;gap:2.2rem;list-style:none;align-items:center;}
 nav ul a{
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--ink-dim);transition:color .2s;
+  font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--espresso);transition:color .2s;
 }
 nav ul a:hover{color:var(--clay);}
 .nav-cta{
@@ -223,6 +223,10 @@ header.hero{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,transparent 40%,rgba(18,18,20,.62) 100%);
 }
+.hero-frame .btn-sun{
+  position:absolute;right:18px;bottom:18px;z-index:7;
+  box-shadow:0 10px 30px rgba(18,18,20,.4);
+}
 .hero-frame h1{
   position:absolute;left:2rem;bottom:1.4rem;z-index:5;
   color:var(--bone);
@@ -237,7 +241,7 @@ header.hero{
 }
 @keyframes heropan{from{transform:scale(1.02) translateX(-1.5%)}to{transform:scale(1.08) translateX(1.5%)}}
 .hero-slot-tag{
-  position:absolute;bottom:14px;right:14px;z-index:6;
+  position:absolute;top:14px;right:14px;z-index:6;
   display:flex;align-items:center;gap:.6rem;
   font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
   color:var(--bone);
@@ -291,11 +295,11 @@ header.hero{
 }
 @keyframes riseup{to{transform:translateY(0)}}
 .hero-sub{
-  margin-top:1.6rem;
-  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.6rem;
+  margin-top:1.1rem;
 }
 .hero-sub p{
-  max-width:430px;font-size:1.02rem;line-height:1.55;color:var(--ink-dim);
+  max-width:640px;font-size:1.12rem;line-height:1.5;
+  color:var(--espresso);font-weight:600;
 }
 .hero-sub p b{color:var(--espresso);font-weight:700;}
 .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;}
@@ -421,6 +425,7 @@ section{position:relative;}
 .intro p.lead{color:var(--ink-dim);font-size:1.05rem;line-height:1.65;max-width:480px;}
 .intro p.lead b{color:var(--espresso);font-weight:700;}
 .chip-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.2rem;}
+.intro .btn{margin-top:2.2rem;}
 .chip{
   font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
   padding:.6rem 1rem;
@@ -565,6 +570,22 @@ section{position:relative;}
   transform:skewX(-14deg);
   pointer-events:none;
 }
+.flav-shapes span{position:absolute;pointer-events:none;}
+.flav-shapes .fs1{
+  top:16%;right:-3%;width:20%;height:16%;
+  background:var(--sunshine);
+  transform:skewX(-14deg);
+}
+.flav-shapes .fs2{
+  top:38%;right:6%;width:7%;height:13%;
+  border:4px solid var(--espresso);
+  transform:skewX(-14deg);
+}
+.flav-shapes .fs3{
+  top:8%;right:34%;width:4%;height:8%;
+  background:var(--sunshine);
+  transform:skewX(-14deg);
+}
 .flavors .wrap{position:relative;z-index:2;}
 .flavors h2{font-size:clamp(2.8rem,7vw,6rem);}
 .flavors h2 em{font-style:normal;color:var(--clay);}
@@ -666,11 +687,22 @@ section{position:relative;}
   pointer-events:none;
 }
 .story::after{
-  content:'';position:absolute;top:-4%;left:-6%;width:26%;height:38%;
+  content:'';position:absolute;bottom:-6%;left:-7%;width:22%;height:34%;
   background:var(--aqua);
-  clip-path:polygon(0 0,100% 0,72% 100%,0 82%);
+  clip-path:polygon(0 12%,100% 28%,74% 100%,0 100%);
   opacity:.9;
   pointer-events:none;
+}
+.story-pop{position:absolute;pointer-events:none;z-index:1;}
+.story-pop.sp1{
+  top:-5%;right:-4%;width:15%;height:26%;
+  background:var(--clay);
+  clip-path:polygon(26% 0,100% 0,100% 100%,0 100%);
+}
+.story-pop.sp2{
+  top:24%;right:2%;width:5%;height:9%;
+  background:var(--sunshine);
+  transform:skewX(-14deg);
 }
 .story .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:center;}
 @media(max-width:900px){.story .grid{grid-template-columns:1fr;}}
@@ -721,7 +753,7 @@ section{position:relative;}
 /* ---------- athlete ---------- */
 .athlete{
   background:var(--aqua);
-  padding:8rem 0 6rem;overflow:hidden;
+  padding:8rem 0 5rem;overflow:hidden;
   position:relative;
 }
 .athlete::before{
@@ -773,16 +805,16 @@ section{position:relative;}
 }
 .stat .k{margin-top:.5rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(27,27,29,.7);}
 .quote-marq{
-  margin-top:5rem;overflow:hidden;white-space:nowrap;
-  border-top:1.5px solid rgba(27,27,29,.4);border-bottom:1.5px solid rgba(27,27,29,.4);
+  overflow:hidden;white-space:nowrap;
+  background:var(--espresso);
 }
-.quote-marq .inner{display:inline-block;animation:tick 46s linear infinite;padding:1.1rem 0;}
+.quote-marq .inner{display:inline-block;animation:tick 46s linear infinite;padding:1.15rem 0;}
 .quote-marq span{
   font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 118;
   text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em;
-  margin:0 1.8rem;color:var(--espresso);
+  margin:0 1.8rem;color:var(--bone);
 }
-.quote-marq span.alt{color:transparent;-webkit-text-stroke:1.5px var(--bone);}
+.quote-marq span.alt{color:transparent;-webkit-text-stroke:1.5px var(--aqua);}
 .quote-marq span.alt2{color:var(--clay);}
 
 /* ---------- numbers ---------- */
@@ -1106,14 +1138,12 @@ footer{
   header.hero{padding-top:7.5rem;}
   .hero-inner{padding:0 1.25rem 3rem;}
   .hero-frame{aspect-ratio:4/5;margin-top:1.6rem;box-shadow:8px 8px 0 var(--espresso);}
-  .hero-frame h1{left:1rem;bottom:3.2rem;font-size:2.1rem;}
+  .hero-frame h1{left:1rem;bottom:4.6rem;font-size:2.1rem;}
+  .hero-frame .btn-sun{right:10px;bottom:10px;padding:.85rem 1.1rem;font-size:.62rem;}
+  .hero-slot-tag{top:8px;right:8px;bottom:auto;left:auto;font-size:.48rem;letter-spacing:.14em;line-height:1.5;}
   .hero-stats{gap:.8rem 1.2rem;margin-top:2rem;}
   .hero-stats span{font-size:1.15rem;border-bottom-width:4px;}
   .hero-shapes .hs3,.hero-shapes .hs4{display:none;}
-  .hero-slot-tag{
-    bottom:8px;right:8px;left:auto;top:auto;
-    font-size:.48rem;letter-spacing:.14em;line-height:1.5;
-  }
   .divider-band{height:70px;}
   .divider-band::after{width:36px;height:36px;}
   .hero-kicker span{font-size:.6rem;letter-spacing:.18em;}
@@ -1230,6 +1260,7 @@ footer{
         <span class="row"><i>Negotiable.</i></span>
       </h1>
       <div class="hero-slot-tag"><i></i> DROP-IN &#9656; MARCUS HERO FILM — 16:9 LOOP · MUTED AUTOPLAY</div>
+      <a class="btn btn-sun" href="#buy">Shop The Fiber &#9656;</a>
     </div>
     <div class="hero-stats rev">
       <span style="--stat:var(--aqua)">7g Fiber</span>
@@ -1239,10 +1270,6 @@ footer{
     </div>
     <div class="hero-sub">
       <p>Built by Marcus Filly for athletes who treat the basics like they matter — because they do.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-sun" href="#buy">Shop The Fiber &#9656;</a>
-        <a class="btn btn-ghost" href="#athlete">Watch The Film</a>
-      </div>
     </div>
   </div>
 </header>
@@ -1266,6 +1293,7 @@ footer{
           <span class="chip">Single-serve sachets — coming soon</span>
           <span class="chip">Third-party tested [placeholder]</span>
         </div>
+        <a class="btn btn-sun rev rev-d3" href="#buy">Shop Now &#9656;</a>
       </div>
       <div class="sachet-stage rev rev-d1">
         <div class="burst"></div>
@@ -1294,6 +1322,7 @@ footer{
 </section>
 
 <section class="flavors" id="flavors">
+  <div class="flav-shapes"><span class="fs1"></span><span class="fs2"></span><span class="fs3"></span></div>
   <div class="wrap">
     <div class="sec-head rev">
       <span class="num">02</span><div class="line"></div><span class="mono-label">Four flavors. One job.</span>
@@ -1335,6 +1364,7 @@ footer{
 </section>
 
 <section class="story" id="story">
+  <span class="story-pop sp1"></span><span class="story-pop sp2"></span>
   <div class="wrap">
     <div class="sec-head rev">
       <span class="num">03</span><div class="line"></div><span class="mono-label">The story</span>
@@ -1344,20 +1374,6 @@ footer{
         <h2 class="display rev">Chalk up.<br><em>Show up.</em></h2>
         <p class="rev rev-d1">Marcus Filly has spent two decades in the gym learning one truth the hard way: <b>the flashy stuff breaks you, the boring stuff builds you.</b> Six trips to the CrossFit Games regionals. A career reinventing how athletes train. And the same lesson every time — mastery is just the fundamentals, repeated.</p>
       <p class="rev rev-d2">Staple is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. <b>Just the nutrient almost every athlete under-eats,</b> made effortless enough to never skip.</p>
-        <svg class="stamp-svg rev rev-d3" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" aria-label="Staple Performance Nutrition stamp">
-          <circle cx="130" cy="130" r="122" fill="none" stroke="#1B1B1D" stroke-width="5"/>
-          <circle cx="130" cy="130" r="86" fill="none" stroke="#1B1B1D" stroke-width="3"/>
-          <defs>
-            <path id="arcT" d="M 130,130 m -104,0 a 104,104 0 1 1 208,0"/>
-            <path id="arcB" d="M 130,130 m -104,0 a 104,104 0 1 0 208,0"/>
-          </defs>
-          <text font-family="Archivo Variable, Inter, sans-serif" font-weight="700" font-size="26" letter-spacing="9" fill="#1B1B1D">
-            <textPath href="#arcT" startOffset="50%" text-anchor="middle">STAPLE</textPath></text>
-          <text font-family="Archivo Variable, Inter, sans-serif" font-weight="700" font-size="15" letter-spacing="5" fill="#FF6B37">
-            <textPath href="#arcB" startOffset="50%" text-anchor="middle">PERFORMANCE NUTRITION</textPath></text>
-          <polygon points="164.0,130.0 147.0,159.4 113.0,159.4 96.0,130.0 113.0,100.6 147.0,100.6" fill="none" stroke="#FF6B37" stroke-width="5"/>
-          <circle cx="35" cy="130" r="5" fill="#FF6B37"/><circle cx="225" cy="130" r="5" fill="#FF6B37"/>
-        </svg>
       </div>
       <div class="portrait rev rev-d2">
         <div class="tape tp1"></div>
@@ -1427,12 +1443,13 @@ footer{
       <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Non-Negotiable</div></div>
     </div>
   </div>
-  <div class="quote-marq rev">
-    <div class="inner">
-      <span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span>
-    </div>
-  </div>
 </section>
+
+<div class="quote-marq">
+  <div class="inner">
+    <span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span><span>Look Good.</span><span class="alt">Move Well.</span><span class="alt2">Eat Right.</span>
+  </div>
+</div>
 
 <section class="numbers">
   <div class="wrap">
@@ -1662,7 +1679,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v6 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v7 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -1762,7 +1779,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v6';
+  var PAGE_ID = 'staple-home-v7';
 
   /* ---------------------------------------------- */
 
