@@ -540,10 +540,16 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   margin-top: clamp(3rem, 6vw, 5rem);
 }
 .person:nth-of-type(even) .person-photos { order: 2; }
-.person-photos { position: relative; min-height: 380px; }
-.person-photos .polaroid { width: min(72%, 300px); position: absolute; }
-.person-photos .polaroid:nth-child(1) { top: 0; left: 0; transform: rotate(-5deg); z-index: 2; }
-.person-photos .polaroid:nth-child(2) { bottom: 0; right: 0; transform: rotate(4deg); z-index: 1; }
+/* side-by-side polaroids — tilted & staggered, but never overlapping */
+.person-photos {
+  display: flex; gap: clamp(.9rem, 2.5vw, 1.6rem);
+  align-items: flex-start; justify-content: center;
+  padding: 1rem 0 3rem;
+}
+.person-photos .polaroid { width: min(46%, 260px); position: relative; flex-shrink: 1; }
+.person-photos .polaroid:nth-child(1) { transform: rotate(-3.5deg); }
+.person-photos .polaroid:nth-child(2) { transform: rotate(3deg) translateY(2rem); }
+.person-photos .polaroid:nth-child(2):hover { transform: rotate(0) translateY(2rem) scale(1.05); }
 .person h3 { font-family: var(--script); font-size: clamp(2.4rem, 5vw, 3.6rem); }
 .person .equals { font-family: var(--script-slant); color: var(--dusty); font-size: 1.5rem; letter-spacing: 0; }
 .person p { margin: 1rem 0 1.2rem; }
@@ -1581,7 +1587,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'coco-and-kal-v3';
+  var PAGE_ID = 'coco-and-kal-v4';
 
   /* ---------------------------------------------- */
 
