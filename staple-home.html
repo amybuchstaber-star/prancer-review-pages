@@ -1147,7 +1147,20 @@ section{position:relative;}
 .ritual .sec-head .num{color:var(--clay);}
 .ritual .sec-head .line{background:var(--clay);}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-@media(max-width:900px){.steps{grid-template-columns:1fr;}}
+@media(max-width:900px){
+  .steps{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:.9rem;
+    margin:0 -1.25rem;
+    padding:.4rem 1.25rem 1rem;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .steps::-webkit-scrollbar{display:none;}
+  .step{flex:0 0 80%;scroll-snap-align:center;}
+}
 .step{
   border:2px solid rgba(27,27,29,.85);
   padding:2rem 1.8rem 2.4rem;
@@ -1363,7 +1376,17 @@ footer{
   .spec-note{position:static;max-width:none;text-align:left!important;}
   .spec-note i{margin-left:0!important;}
   .spec-note::after{display:none;}
-  .hero-grid{grid-template-columns:1fr;gap:1.4rem;}
+  .hero-shapes .hs1{display:none;}
+  .flavors::before{display:none;}
+  .numcard.m-hide{display:none;}
+  .hero-grid{display:flex;flex-direction:column;gap:1.4rem;}
+  .hero-left{display:contents;}
+  .hero-kicker{order:1;}
+  .hero-left h1{order:2;}
+  .hero-lead{order:3;}
+  .hero-can-stage{order:4;}
+  .cta-row{order:5;margin-top:.4rem;}
+  .rating{order:6;margin-top:.2rem;}
   .hero h1{font-size:2.6rem;margin-top:1rem;}
   .hero-lead{font-size:1rem;}
   .cta-row{gap:1rem;}
@@ -1789,20 +1812,20 @@ footer{
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFBA6A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 48,16 L 76,26 L 76,50 C 76,66 64,76 48,82 C 32,76 20,66 20,50 L 20,26 Z"/><path d="M 48,28 L 66,34 L 66,50 C 66,60 58,67 48,72 C 38,67 30,60 30,50 L 30,34 Z" opacity=".55"/></g></svg></span>
         <div class="big"><span data-count="30">0</span></div><div class="k">Servings per canister. One month of showing up.</div>
       </div>
-      <div class="numcard c1 rev">
-        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#27D4C4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><path d="M 48,26 C 56,38 62,46 62,54 A 14,14 0 0 1 34,54 C 34,46 40,38 48,26 Z"/><path d="M 42,54 A 6,6 0 0 0 46,60"/></g></svg></span>
+      <div class="numcard c4 rev">
+        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFBA6A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><path d="M 48,26 C 56,38 62,46 62,54 A 14,14 0 0 1 34,54 C 34,46 40,38 48,26 Z"/><path d="M 42,54 A 6,6 0 0 0 46,60"/></g></svg></span>
         <div class="big"><span data-count="4">0</span></div><div class="k">Real-fruit flavors — nothing artificial</div>
       </div>
-      <div class="numcard c2 rev rev-d1">
-        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFC72C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 85.0,48.0 L 66.5,80.0 L 29.5,80.0 L 11.0,48.0 L 29.5,16.0 L 66.5,16.0 Z"/><path d="M 52,24 L 38,52 L 47,52 L 44,72 L 58,44 L 49,44 Z"/></g></svg></span>
+      <div class="numcard c3 rev rev-d1">
+        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FF6B37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 85.0,48.0 L 66.5,80.0 L 29.5,80.0 L 11.0,48.0 L 29.5,16.0 L 66.5,16.0 Z"/><path d="M 52,24 L 38,52 L 47,52 L 44,72 L 58,44 L 49,44 Z"/></g></svg></span>
         <div class="big"><span data-count="10">0</span><small>s</small></div><div class="k">From scoop to shaker to done</div>
       </div>
-      <div class="numcard c3 rev rev-d2">
-        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FF6B37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><line x1="32" y1="35" x2="64" y2="35"/><line x1="32" y1="44" x2="52" y2="44"/><line x1="32" y1="53" x2="64" y2="53"/><line x1="32" y1="62" x2="46" y2="62"/></g></svg></span>
+      <div class="numcard c1 m-hide rev rev-d2">
+        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#27D4C4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><line x1="32" y1="35" x2="64" y2="35"/><line x1="32" y1="44" x2="52" y2="44"/><line x1="32" y1="53" x2="64" y2="53"/><line x1="32" y1="62" x2="46" y2="62"/></g></svg></span>
         <div class="big"><span data-count="0">0</span></div><div class="k">Proprietary blends — full label transparency</div>
       </div>
-      <div class="numcard c4 rev rev-d3">
-        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFBA6A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34"/><line x1="40" y1="48" x2="56" y2="48"/><line x1="34" y1="38" x2="34" y2="58"/><line x1="27" y1="42" x2="27" y2="54"/><line x1="62" y1="38" x2="62" y2="58"/><line x1="69" y1="42" x2="69" y2="54"/></g></svg></span>
+      <div class="numcard c2 m-hide rev rev-d3">
+        <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFC72C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34"/><line x1="40" y1="48" x2="56" y2="48"/><line x1="34" y1="38" x2="34" y2="58"/><line x1="27" y1="42" x2="27" y2="54"/><line x1="62" y1="38" x2="62" y2="58"/><line x1="69" y1="42" x2="69" y2="54"/></g></svg></span>
         <div class="big"><span data-count="6" data-suffix="&#215;">0</span></div><div class="k">Games athlete behind the formula</div>
       </div>
     </div>
@@ -2037,7 +2060,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v15 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v16 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2136,7 +2159,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v15';
+  var PAGE_ID = 'staple-home-v16';
 
   /* ---------------------------------------------- */
 
