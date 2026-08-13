@@ -317,7 +317,7 @@ header.hero{
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .hero-inner{
   position:relative;z-index:5;
-  padding:0 2rem 4.5rem;
+  padding:0 2rem 2rem;
   max-width:1500px;margin:0 auto;width:100%;
 }
 .hero-kicker{
@@ -357,7 +357,7 @@ header.hero{
 @keyframes riseup{to{transform:translateY(0)}}
 .hero-band{
   background:var(--espresso);
-  margin-top:3.2rem;
+  margin-top:2.2rem;
 }
 .hero-band .wrap{
   display:flex;align-items:center;justify-content:space-between;gap:2.5rem;
@@ -624,6 +624,53 @@ section{position:relative;}
 .float-tag.t1{top:16%;right:8%;transform:rotate(3deg);}
 .float-tag.t2{bottom:12%;left:6%;transform:rotate(-2deg);}
 .float-tag b{color:var(--clay);}
+
+/* ---------- product spec card (intro) ---------- */
+.spec-card{
+  position:relative;
+  background:#fff;
+  border:2px solid var(--espresso);
+  box-shadow:12px 12px 0 var(--aqua);
+  padding:3.2rem 2rem;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:540px;
+  overflow:hidden;
+}
+.spec-card::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(39,212,196,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(39,212,196,.16) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.spec-card .canister{
+  position:relative;z-index:2;width:225px;transform:none;
+  filter:drop-shadow(0 18px 30px rgba(27,27,29,.25));
+}
+.spec-tag{
+  position:absolute;top:14px;left:16px;z-index:3;
+  font-family:var(--mono);font-weight:700;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.spec-notes{display:contents;}
+.spec-note{
+  position:absolute;z-index:3;
+  font-family:var(--mono);font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--espresso);max-width:160px;line-height:1.7;
+}
+.spec-note i{display:block;width:10px;height:10px;margin-bottom:.45rem;background:var(--dot,var(--aqua));}
+.spec-note::after{
+  content:'';position:absolute;top:26px;width:54px;
+  border-top:2px dashed rgba(27,27,29,.45);
+}
+.spec-note.sn1{top:15%;left:6%;}
+.spec-note.sn1::after{right:-60px;}
+.spec-note.sn2{top:17%;right:6%;text-align:right;}
+.spec-note.sn2 i{margin-left:auto;}
+.spec-note.sn2::after{left:-60px;}
+.spec-note.sn3{bottom:15%;left:6%;}
+.spec-note.sn3::after{right:-60px;}
+.spec-note.sn4{bottom:13%;right:6%;text-align:right;}
+.spec-note.sn4 i{margin-left:auto;}
+.spec-note.sn4::after{left:-60px;}
 
 /* ---------- flavors ---------- */
 .flavors{
@@ -1079,19 +1126,25 @@ section{position:relative;}
 <style>
 /* ---------- ritual ---------- */
 .ritual{
-  background:var(--sunshine);padding:8rem 0;
+  background:var(--bone);padding:8rem 0;
+  position:relative;overflow:hidden;
 }
+.ritual::before{
+  content:'';position:absolute;top:-5%;right:-4%;width:18%;height:30%;
+  background:var(--sunshine);
+  transform:skewX(-12deg);
+}
+.ritual .wrap{position:relative;z-index:2;}
 .ritual h2{font-size:clamp(2.6rem,6.5vw,5.6rem);margin-bottom:3rem;color:var(--espresso);}
 .ritual h2 em{font-style:normal;color:transparent;-webkit-text-stroke:2.5px var(--espresso);}
-.ritual .sec-head .num{color:var(--espresso);}
-.ritual .sec-head .line{background:var(--espresso);}
-.ritual .sec-head span{color:rgba(27,27,29,.7);}
+.ritual .sec-head .num{color:var(--clay);}
+.ritual .sec-head .line{background:var(--clay);}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
 @media(max-width:900px){.steps{grid-template-columns:1fr;}}
 .step{
   border:2px solid rgba(27,27,29,.85);
   padding:2rem 1.8rem 2.4rem;
-  background:var(--bone);
+  background:#fff;
   position:relative;
   transition:transform .25s,box-shadow .25s;
   box-shadow:8px 8px 0 rgba(27,27,29,.18);
@@ -1147,28 +1200,35 @@ section{position:relative;}
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
 .pull cite{
-  display:block;margin-top:2rem;font-style:normal;
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim);
+  display:block;margin-top:2.2rem;font-style:normal;
+  font-family:var(--mono);font-weight:700;font-size:.92rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--bone);
+  text-shadow:0 2px 16px rgba(18,18,20,.7);
 }
-.pull cite b{color:var(--aqua);font-weight:400;}
+.pull cite b{color:var(--aqua);font-weight:700;}
+.pull cite .ph{
+  display:block;margin-top:.6rem;
+  font-size:.6rem;font-weight:400;letter-spacing:.2em;color:rgba(243,241,234,.6);
+}
 
 /* ---------- faq ---------- */
-.faq{background:#FFF1E8;padding:7rem 0;position:relative;overflow:hidden;}
+.faq{background:#EAF6F3;padding:7rem 0;position:relative;overflow:hidden;}
 .faq::before{
   content:'';position:absolute;top:-7%;right:-6%;width:24%;height:40%;
-  background:var(--clay);
+  background:var(--aqua);
   clip-path:polygon(24% 0,100% 0,100% 100%,0 100%);
   transform:skewX(-10deg);
 }
 .faq::after{
   content:'';position:absolute;bottom:9%;left:-4%;width:11%;height:15%;
-  background:var(--sunshine);
+  background:var(--espresso);
   transform:skewX(-14deg);
+  opacity:.85;
 }
 .faq .grid{position:relative;z-index:2;display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;}
 @media(max-width:900px){.faq .grid{grid-template-columns:1fr;}}
 .faq h2{font-size:clamp(2.4rem,5vw,4.4rem);}
-.faq h2 em{font-style:normal;color:var(--clay);-webkit-text-stroke:0;}
+.faq h2 em{font-style:normal;color:var(--aqua);-webkit-text-stroke:0;}
 .faq details{
   background:#fff;
   border:2px solid var(--espresso);
@@ -1177,7 +1237,7 @@ section{position:relative;}
   padding:0 1.3rem;
   transition:box-shadow .2s,transform .2s;
 }
-.faq details[open]{box-shadow:6px 6px 0 var(--clay);}
+.faq details[open]{box-shadow:6px 6px 0 var(--aqua);}
 .faq details:hover{transform:translate(-1px,-2px);}
 .faq summary{
   cursor:pointer;list-style:none;
@@ -1187,7 +1247,7 @@ section{position:relative;}
 }
 .faq summary::-webkit-details-marker{display:none;}
 .faq summary .pm{
-  flex:0 0 auto;font-family:var(--mono);color:var(--clay);font-size:1.1rem;font-weight:700;
+  flex:0 0 auto;font-family:var(--mono);color:var(--espresso);font-size:1.1rem;font-weight:700;
   transition:transform .25s;
 }
 .faq details[open] summary .pm{transform:rotate(45deg);}
@@ -1290,7 +1350,12 @@ footer{
   nav{padding:.9rem 1.25rem;}
   nav.scrolled{padding:.65rem 1.25rem;}
   header.hero{padding-top:7.5rem;}
-  .hero-inner{padding:0 1.25rem 3rem;}
+  .hero-inner{padding:0 1.25rem 1.4rem;}
+  .spec-card{min-height:0;padding:2.2rem 1.2rem;}
+  .spec-notes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.6rem;width:100%;}
+  .spec-note{position:static;max-width:none;text-align:left!important;}
+  .spec-note i{margin-left:0!important;}
+  .spec-note::after{display:none;}
   .hero-grid{grid-template-columns:1fr;gap:1.4rem;}
   .hero h1{font-size:2.6rem;margin-top:1rem;}
   .hero-lead{font-size:1rem;}
@@ -1496,10 +1561,9 @@ footer{
         </div>
         <a class="btn btn-sun rev rev-d3" href="#buy">Shop Now &#9656;</a>
       </div>
-      <div class="sachet-stage rev rev-d1">
-        <div class="burst"></div>
-        <div class="burst2"></div>
-        <div class="canister" id="canister">
+      <div class="spec-card rev rev-d1">
+        <span class="spec-tag">Daily &#9656; Spec 001</span>
+        <div class="canister">
           <div class="can-lid"></div>
           <div class="can-body">
             <div class="can-label">
@@ -1510,13 +1574,17 @@ footer{
                 <div class="can-sub">Daily</div>
                 <div class="can-dose">7G FIBER · 30 SERVINGS</div>
               </div>
-              <div class="can-flav-wrap"><span class="can-flav" id="canFlav">RASPBERRY</span></div>
+              <div class="can-flav-wrap"><span class="can-flav">RASPBERRY</span></div>
             </div>
             <div class="can-foot">DIETARY SUPPLEMENT<small>NET WT. 16 OZ (454G) · 30 SERVINGS</small></div>
           </div>
         </div>
-        <span class="float-tag t1"><b>&#9656;</b> Scoop · Shake · Done</span>
-        <span class="float-tag t2">Zero sugar. <b>All function.</b></span>
+        <div class="spec-notes">
+          <span class="spec-note sn1" style="--dot:var(--aqua)"><i></i>7g fiber blend — soluble + insoluble</span>
+          <span class="spec-note sn2" style="--dot:var(--clay)"><i></i>Real fruit flavor — four options</span>
+          <span class="spec-note sn3" style="--dot:var(--sunshine)"><i></i>0g sugar — nothing artificial</span>
+          <span class="spec-note sn4" style="--dot:var(--coral)"><i></i>30 servings — scoop inside</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1851,7 +1919,7 @@ footer{
 <section class="pull">
   <div class="wrap">
     <blockquote class="rev">"Fiber isn't sexy. Neither is showing up at 5AM. <em>Do it anyway.</em>"</blockquote>
-    <cite class="rev rev-d1">— Marcus Filly <b>[placeholder quote — replace with approved copy]</b></cite>
+    <cite class="rev rev-d1">— <b>Marcus Filly</b><span class="ph">[placeholder quote — replace with approved copy]</span></cite>
   </div>
 </section>
 
@@ -1875,6 +1943,13 @@ footer{
   </div>
 </section>
 
+<section class="trail rev-parent">
+  <div class="wrap">
+    <span class="mono-label rev">Trail &#9656; Gym &#9656; Kitchen &#9656; Repeat</span>
+    <h2 class="display rev">Built for<br><em>the long run.</em></h2>
+  </div>
+</section>
+
 <section class="fbb">
   <div class="wrap">
     <div class="fbb-card rev">
@@ -1891,12 +1966,7 @@ footer{
   </div>
 </section>
 
-<section class="trail rev-parent">
-  <div class="wrap">
-    <span class="mono-label rev">Trail &#9656; Gym &#9656; Kitchen &#9656; Repeat</span>
-    <h2 class="display rev">Built for<br><em>the long run.</em></h2>
-  </div>
-</section>
+
 
 <div class="divider-band"><i class="d1"></i><i class="d2"></i><i class="d3"></i><i class="d4"></i><i class="d5"></i></div>
 
@@ -1938,7 +2008,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v12 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v13 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2037,7 +2107,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v12';
+  var PAGE_ID = 'staple-home-v13';
 
   /* ---------------------------------------------- */
 
