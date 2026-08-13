@@ -1020,7 +1020,7 @@ section{position:relative;}
 .buy{
   background:var(--bone);
   color:var(--espresso);
-  padding:4rem 0 8rem;
+  padding:4rem 0 4.5rem;
   position:relative;overflow:hidden;
 }
 .buy::before{
@@ -1133,7 +1133,7 @@ section{position:relative;}
 <style>
 /* ---------- ritual ---------- */
 .ritual{
-  background:var(--bone);padding:8rem 0;
+  background:var(--bone);padding:4.5rem 0 7rem;
   position:relative;overflow:hidden;
 }
 .ritual::before{
@@ -1219,7 +1219,7 @@ section{position:relative;}
 }
 
 /* ---------- faq ---------- */
-.faq{background:#EAF6F3;padding:7rem 0;position:relative;overflow:hidden;}
+.faq{background:#EAF6F3;padding:4.5rem 0;position:relative;overflow:hidden;}
 .faq::before{
   content:'';position:absolute;top:-7%;right:-6%;width:24%;height:40%;
   background:var(--aqua);
@@ -1297,13 +1297,13 @@ footer{
   display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;
   padding-bottom:3.5rem;
 }
-.foot-grid .col span{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:1.1rem;}
+.foot-grid .col span{display:block;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--aqua);margin-bottom:1.1rem;}
 .foot-grid .col a{
-  display:block;font-size:.86rem;color:var(--bone-dim);margin-bottom:.65rem;transition:color .2s;
+  display:block;font-size:.98rem;font-weight:600;color:var(--bone);margin-bottom:.75rem;transition:color .2s;
 }
-.foot-grid .col a:hover{color:var(--aqua);}
-.foot-logo{padding:0 2rem;}
-.foot-logo img{width:100%;opacity:.95;}
+.foot-grid .col a:hover{color:var(--sunshine);}
+.foot-logo{padding:0 2rem;display:flex;justify-content:center;}
+.foot-logo img{width:min(520px,62%);opacity:.95;}
 .foot-base{
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
   padding:1.6rem 0 2rem;
@@ -1321,7 +1321,7 @@ footer{
 .preview-pill b{color:var(--sunshine);font-weight:400;}
 
 /* ---------- functional bodybuilding blurb ---------- */
-.fbb{background:var(--bone);padding:0 0 5rem;}
+.fbb{background:var(--bone);padding:5rem 0;}
 .fbb-card{
   display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center;
   background:#fff;
@@ -2037,7 +2037,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v14 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v15 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2136,7 +2136,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v14';
+  var PAGE_ID = 'staple-home-v15';
 
   /* ---------------------------------------------- */
 
