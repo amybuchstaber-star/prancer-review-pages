@@ -213,29 +213,88 @@ header.hero{
   transform:skewX(-14deg);
   z-index:2;
 }
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;
+}
+.hero h1{
+  color:var(--espresso);
+  margin-top:1.4rem;
+}
+.hero h1 .fr{color:var(--clay);}
+.hero-lead{
+  margin-top:1.5rem;max-width:540px;
+  font-size:1.12rem;line-height:1.6;color:var(--ink-dim);
+}
+.hero-lead b{color:var(--espresso);font-weight:700;}
+.cta-row{
+  margin-top:1.9rem;
+  display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;
+}
+.cta-sub{
+  font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--espresso);
+  border-bottom:3px solid var(--aqua);
+  padding-bottom:.2rem;
+}
+.cta-sub:hover{border-color:var(--clay);}
+.rating{
+  display:block;margin-top:1.2rem;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.rating b{color:var(--sunshine);-webkit-text-stroke:.5px var(--espresso);letter-spacing:.1em;font-weight:400;}
+.hero-can-stage{
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  min-height:460px;
+}
+.hero-can-stage::before{
+  content:'';position:absolute;inset:4% 6%;
+  background:var(--img-pathalfclay) center/cover;
+  clip-path:polygon(0 14%,100% 0,90% 100%,4% 90%);
+  transform:rotate(-2deg);
+}
+.hero-can-stage::after{
+  content:'';position:absolute;top:8%;left:4%;width:15%;height:24%;
+  background:var(--aqua);
+  transform:skewX(-14deg);
+}
+.canister.mini{width:255px;transform:rotate(3deg);}
+.canister.mini .can-lid{height:40px;}
+.canister.mini .can-blob{padding:1.1rem .8rem 1rem;margin:1rem auto .8rem;}
+.canister.mini .can-sub{font-size:.82rem;}
 .hero-frame{
   position:relative;
-  margin-top:2rem;
-  aspect-ratio:16/7;
+  margin-top:2.2rem;
+  aspect-ratio:16/6.5;
   overflow:hidden;
   border:3px solid var(--espresso);
   box-shadow:14px 14px 0 var(--espresso);
 }
 .hero-frame::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 40%,rgba(18,18,20,.62) 100%);
+  background:linear-gradient(180deg,rgba(18,18,20,.08) 0%,rgba(18,18,20,.42) 100%);
 }
-.hero-frame .btn-sun{
-  position:absolute;right:18px;bottom:18px;z-index:7;
-  box-shadow:0 10px 30px rgba(18,18,20,.4);
+.hf-center{
+  position:absolute;inset:0;z-index:6;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
 }
-.hero-frame h1{
-  position:absolute;left:2rem;bottom:1.4rem;z-index:5;
+.hf-center .play{
+  width:74px;height:74px;border-radius:50%;
+  border:2px solid var(--bone);
+  background:rgba(18,18,20,.45);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .2s,background .2s;
+}
+.hero-frame:hover .hf-center .play{transform:scale(1.1);background:var(--sunshine);}
+.hf-center .play svg{width:24px;height:24px;fill:var(--bone);margin-left:4px;}
+.hero-frame:hover .hf-center .play svg{fill:var(--ink);}
+.hf-center .hf-label{
+  font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
   color:var(--bone);
-  text-shadow:0 4px 34px rgba(18,18,20,.65);
+  background:rgba(18,18,20,.55);
+  padding:.55rem 1rem;
 }
-.hero-frame h1 .row i{color:var(--bone);}
-.hero-frame h1 .row:nth-child(2) i{color:var(--aqua);-webkit-text-stroke:0;}
 .hero-frame .hf-bg{
   position:absolute;inset:0;
   background:var(--img-herochalk) center 30%/cover;
@@ -1232,9 +1291,16 @@ footer{
   nav.scrolled{padding:.65rem 1.25rem;}
   header.hero{padding-top:7.5rem;}
   .hero-inner{padding:0 1.25rem 3rem;}
-  .hero-frame{aspect-ratio:4/5;margin-top:1.6rem;box-shadow:8px 8px 0 var(--espresso);}
-  .hero-frame h1{left:1rem;bottom:4.6rem;font-size:2.1rem;}
-  .hero-frame .btn-sun{right:10px;bottom:10px;padding:.85rem 1.1rem;font-size:.62rem;}
+  .hero-grid{grid-template-columns:1fr;gap:1.4rem;}
+  .hero h1{font-size:2.6rem;margin-top:1rem;}
+  .hero-lead{font-size:1rem;}
+  .cta-row{gap:1rem;}
+  .cta-row .btn{width:100%;justify-content:center;}
+  .hero-can-stage{min-height:380px;}
+  .canister.mini{width:210px;}
+  .hero-frame{aspect-ratio:16/10;margin-top:1.6rem;box-shadow:8px 8px 0 var(--espresso);}
+  .hf-center .play{width:56px;height:56px;}
+  .hf-center .hf-label{font-size:.55rem;letter-spacing:.18em;padding:.45rem .7rem;}
   .hero-slot-tag{top:8px;right:8px;bottom:auto;left:auto;font-size:.48rem;letter-spacing:.14em;line-height:1.5;}
   .hero-stats{gap:.8rem 1.2rem;margin-top:1.4rem;}
   .hero-band{margin-top:2.2rem;}
@@ -1332,7 +1398,7 @@ footer{
     <li><a href="#athlete">The Athlete</a></li>
     <li><a href="#ritual">The Ritual</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li class="keep"><a class="nav-cta" href="#buy">Shop Fiber</a></li>
+    <li class="keep"><a class="nav-cta" href="#buy">Shop Daily</a></li>
   </ul>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -1343,15 +1409,48 @@ footer{
   <a href="#athlete"><em>03</em>The Athlete</a>
   <a href="#ritual"><em>04</em>The Ritual</a>
   <a href="#faq"><em>05</em>FAQ</a>
-  <a class="mcta" href="#buy"><em>&#9656;</em>Shop Fiber</a>
+  <a class="mcta" href="#buy"><em>&#9656;</em>Shop Daily</a>
 </div>
 
 <header class="hero" id="top">
   <div class="hero-shapes"><span class="hs1"></span><span class="hs2"></span><span class="hs3"></span><span class="hs4"></span></div>
   <div class="hero-inner">
-    <div class="hero-kicker">
-      <div class="line"></div>
-      <span class="mono-label">Staple × Marcus Filly — Performance Digestion</span>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-kicker">
+          <div class="line"></div>
+          <span class="mono-label">Meet Daily &#9656; The First Staple</span>
+        </div>
+        <h1 class="display">
+          <span class="row"><i>Fiber that</i></span>
+          <span class="row"><i>tastes like</i></span>
+          <span class="row"><i class="fr">fruit.</i></span>
+        </h1>
+        <p class="hero-lead"><b>Daily</b> is a 7g-fiber supplement from 6× CrossFit Games athlete <b>Marcus Filly</b>. One scoop in water, once a day — for your gut, your energy, and your training. <b>Zero sugar. Nothing artificial.</b></p>
+        <div class="cta-row">
+          <a class="btn btn-sun" href="#buy">Shop Daily — $39 &#9656;</a>
+          <a class="cta-sub" href="#buy">or subscribe &amp; save 20%</a>
+        </div>
+        <span class="rating"><b>★★★★★</b>&nbsp; 4.9 · 300+ athlete reviews [placeholder]</span>
+      </div>
+      <div class="hero-can-stage rev">
+        <div class="canister mini">
+          <div class="can-lid"></div>
+          <div class="can-body">
+            <div class="can-label">
+              <span class="can-stripes"></span>
+              <span class="can-dots"></span>
+              <div class="can-blob">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABK8AAAD1CAMAAAChgCZUAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJeUExURRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHf7+/seA/z4AAADIdFJOUwADOy80KJLU09ZsKyAYbevVXwGcEnQfTBMp6gklaP6GJvPth/Lx+vmEdpeBp01hZkpRw1bPfQcdG3j96c3kerRnY3JvJL/FxMe25jxLV5lTDlTgWCGCaagjZTLAYC4nrDARg3BBjclcFtH7fFXue7xSGrXbuUSjT878fvaAyK8tsPB/y4m3M5bB2nPZnUNC2GLcdQUXMeiOqVu7i+/1vVnd5+PiNz89RvcexrpJpYxFDF2k7JUN17gEnj6+HHerspQICnGI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" alt="STAPLE">
+                <div class="can-sub">Daily</div>
+                <div class="can-dose">7G FIBER · 30 SERVINGS</div>
+              </div>
+              <div class="can-flav-wrap"><span class="can-flav">RASPBERRY</span></div>
+            </div>
+            <div class="can-foot">DIETARY SUPPLEMENT<small>NET WT. 16 OZ (454G) · 30 SERVINGS</small></div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="hero-stats rev">
       <span style="--stat:var(--aqua)">7g Fiber</span>
@@ -1361,18 +1460,16 @@ footer{
     </div>
     <div class="hero-frame">
       <div class="hf-bg"></div>
-      <h1 class="display">
-        <span class="row"><i>The Daily</i></span>
-        <span class="row"><i>Non&#8209;</i></span>
-        <span class="row"><i>Negotiable.</i></span>
-      </h1>
-      <div class="hero-slot-tag"><i></i> DROP-IN &#9656; MARCUS HERO FILM — 16:9 LOOP · MUTED AUTOPLAY</div>
-      <a class="btn btn-sun" href="#buy">Shop The Fiber &#9656;</a>
+      <div class="hero-slot-tag"><i></i> DROP-IN &#9656; MARCUS HERO FILM — 16:9 LOOP</div>
+      <div class="hf-center">
+        <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <span class="hf-label">Watch &#9656; Why Marcus Built Daily · 90s</span>
+      </div>
     </div>
   </div>
   <div class="hero-band">
     <div class="wrap">
-      <p><b>Daily</b> is 7g of clean, functional fiber in four real-fruit flavors — <b class="aq">zero sugar, nothing artificial.</b> Built by 6× CrossFit Games athlete <b>Marcus Filly</b> for people who treat the basics like they matter — because they do.</p>
+      <p>From <b>Marcus Filly</b> — 6× CrossFit Games athlete and founder of <b>Functional Bodybuilding</b>. <b class="aq">Look good. Move well. Eat right.</b> Daily is the nutrition side of the same promise.</p>
       <span class="callout">One Scoop A Day &#9656; Non&#8209;Negotiable</span>
     </div>
   </div>
@@ -1841,7 +1938,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v11 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v12 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -1906,16 +2003,15 @@ document.querySelectorAll('.opt label').forEach(l=>{
 });
 
 /* ---------- flavor picker ---------- */
-const canFlav=document.getElementById('canFlav');
 document.querySelectorAll('.flav-pill').forEach(p=>{
   p.addEventListener('click',e=>{
     e.preventDefault();
     document.querySelectorAll('.flav-pill').forEach(x=>x.classList.remove('active'));
     p.classList.add('active');
-    if(canFlav){
-      canFlav.textContent=p.textContent.trim().toUpperCase();
-      canFlav.style.background=getComputedStyle(p).getPropertyValue('--flav')||'';
-    }
+    document.querySelectorAll('.can-flav').forEach(cf=>{
+      cf.textContent=p.textContent.trim().toUpperCase();
+      cf.style.background=getComputedStyle(p).getPropertyValue('--flav')||'';
+    });
   });
 });
 
@@ -1941,7 +2037,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v11';
+  var PAGE_ID = 'staple-home-v12';
 
   /* ---------------------------------------------- */
 
