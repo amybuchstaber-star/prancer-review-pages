@@ -746,6 +746,14 @@ section{position:relative;}
 }
 .story .portrait .media-slot .bg{opacity:.65;}
 .story .portrait .media-slot .tick{border-color:var(--clay)!important;}
+.sig{margin-top:2.4rem;}
+.sig-scribble{width:230px;height:64px;display:block;}
+.sig-cap{
+  display:block;margin-top:.4rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.sig-cap b{color:var(--clay);font-weight:700;}
 .tape{
   position:absolute;width:120px;height:34px;
   background:rgba(243,241,234,.8);
@@ -915,9 +923,10 @@ section{position:relative;}
 .benefit-list{margin-top:2.2rem;display:flex;flex-direction:column;gap:.9rem;max-width:460px;}
 .benefit{
   display:flex;gap:1rem;align-items:flex-start;
-  padding:1rem 1.1rem;
-  background:rgba(255,255,255,.55);
-  border:1px solid rgba(27,27,29,.12);
+  padding:1.1rem 1.2rem;
+  background:#fff;
+  border:2px solid var(--espresso);
+  box-shadow:6px 6px 0 rgba(27,27,29,.18);
 }
 .benefit .dot{flex:0 0 10px;width:10px;height:10px;margin-top:5px;background:var(--aqua);}
 .benefit:nth-child(2) .dot{background:var(--sunshine);}
@@ -1422,39 +1431,16 @@ footer{
   </div>
 </section>
 
-<section class="story" id="story">
-  <span class="story-pop sp1"></span><span class="story-pop sp2"></span>
-  <div class="wrap">
-    <div class="sec-head rev">
-      <span class="num">03</span><div class="line"></div><span class="mono-label">The story</span>
-    </div>
-    <div class="grid">
-      <div>
-        <h2 class="display rev">Chalk up.<br><em>Show up.</em></h2>
-        <p class="rev rev-d1">Marcus Filly has spent two decades in the gym learning one truth the hard way: <b>the flashy stuff breaks you, the boring stuff builds you.</b> Six trips to the CrossFit Games regionals. A career reinventing how athletes train. And the same lesson every time — mastery is just the fundamentals, repeated.</p>
-      <p class="rev rev-d2">Staple is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. <b>Just the nutrient almost every athlete under-eats,</b> made effortless enough to never skip.</p>
-      </div>
-      <div class="portrait rev rev-d2">
-        <div class="tape tp1"></div>
-        <div class="tape tp2"></div>
-        <div class="media-slot ratio-45">
-          <div class="bg bg-chalk"></div>
-          <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
-          <div class="center">
-            <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-            <span class="label">Marcus — Chalk Portrait</span>
-            <span class="spec">4:5 Still · B&amp;W · Chalk Dust Backlit</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
+
+
+
 
 <section class="athlete" id="athlete">
   <div class="wrap">
     <div class="sec-head rev">
-      <span class="num">04</span><div class="line"></div><span class="mono-label">The athlete</span>
+      <span class="num">03</span><div class="line"></div><span class="mono-label">The athlete</span>
     </div>
     <h2 class="display rev">
       <span class="l1">Marcus</span>
@@ -1535,6 +1521,42 @@ footer{
   </div>
 </div>
 
+<section class="story" id="story">
+  <span class="story-pop sp1"></span><span class="story-pop sp2"></span>
+  <div class="wrap">
+    <div class="sec-head rev">
+      <span class="num">04</span><div class="line"></div><span class="mono-label">The story</span>
+    </div>
+    <div class="grid">
+      <div>
+        <h2 class="display rev">Chalk up.<br><em>Show up.</em></h2>
+        <p class="rev rev-d1">Marcus Filly has spent two decades in the gym learning one truth the hard way: <b>the flashy stuff breaks you, the boring stuff builds you.</b> Six trips to the CrossFit Games regionals. A career reinventing how athletes train. And the same lesson every time — mastery is just the fundamentals, repeated.</p>
+      <p class="rev rev-d2">Staple is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. <b>Just the nutrient almost every athlete under-eats,</b> made effortless enough to never skip.</p>
+        <div class="sig rev rev-d3">
+          <svg class="sig-scribble" viewBox="0 0 300 84" xmlns="http://www.w3.org/2000/svg" aria-label="Signature placeholder">
+            <path d="M 14 58 C 28 14, 44 66, 62 30 S 88 60, 108 34 C 122 18, 128 56, 148 46 S 186 24, 202 44 C 216 58, 238 28, 262 38" fill="none" stroke="#1B1B1D" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M 18 68 C 90 62, 200 62, 282 66" fill="none" stroke="#FF6B37" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="sig-cap">Marcus Filly — Founder <b>[signature drop-in]</b></span>
+        </div>
+      </div>
+      <div class="portrait rev rev-d2">
+        <div class="tape tp1"></div>
+        <div class="tape tp2"></div>
+        <div class="media-slot ratio-45">
+          <div class="bg bg-chalk"></div>
+          <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+          <div class="center">
+            <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="label">Marcus — Chalk Portrait</span>
+            <span class="spec">4:5 Still · B&amp;W · Chalk Dust Backlit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="numbers">
   <div class="wrap">
     <div class="sec-head rev">
@@ -1612,10 +1634,53 @@ footer{
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="sec-head rev">
+          <span class="num">07</span><div class="line"></div><span class="mono-label">Questions</span>
+        </div>
+        <h2 class="display rev">Straight<br><em>answers.</em></h2>
+      </div>
+      <div class="rev rev-d1">
+        <details open>
+          <summary>What kind of fiber is it? <span class="pm">+</span></summary>
+          <p>[Placeholder — final formulation copy.] A blend of soluble and insoluble fibers chosen for gut tolerance and clean taste. Full ingredient panel and sourcing to drop in here.</p>
+        </details>
+        <details>
+          <summary>What are the flavors? <span class="pm">+</span></summary>
+          <p>Raspberry, Watermelon, Blood Orange, and Fruit Punch — real fruit, zero sugar, nothing artificial. [Placeholder — confirm final flavor names + sweetener system.]</p>
+        </details>
+        <details>
+          <summary>Canister or sachets? <span class="pm">+</span></summary>
+          <p>We're launching with a 30-serving canister (16 oz). Single-serve sachets for travel and the gym bag are on the roadmap — join the list below and you'll hear first.</p>
+        </details>
+        <details>
+          <summary>Will it make my stomach weird? <span class="pm">+</span></summary>
+          <p>[Placeholder.] Soluble fiber at a 7g dose is generally well-tolerated. Recommended ramp-in copy and any advisory language to be reviewed for compliance.</p>
+        </details>
+        <details>
+          <summary>When should I take it? <span class="pm">+</span></summary>
+          <p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move — ten seconds, tastes like fruit, done.</p>
+        </details>
+        <details>
+          <summary>Why only one product? <span class="pm">+</span></summary>
+          <p>Because that's the brand. Staple starts with the single most neglected nutrient and does it perfectly. More staples are coming — after this one earns its place in your routine.</p>
+        </details>
+        <details>
+          <summary>How does the subscription work? <span class="pm">+</span></summary>
+          <p>A fresh canister lands every 30 days at 20% off. Pause, skip, or cancel anytime. [Placeholder — final subscription terms.]</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="ritual" id="ritual">
   <div class="wrap">
     <div class="sec-head rev">
-      <span class="num">07</span><div class="line"></div><span class="mono-label">The ritual</span>
+      <span class="num">08</span><div class="line"></div><span class="mono-label">The ritual</span>
     </div>
     <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
     <div class="steps">
@@ -1664,48 +1729,7 @@ footer{
   </div>
 </section>
 
-<section class="faq" id="faq">
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <div class="sec-head rev">
-          <span class="num">08</span><div class="line"></div><span class="mono-label">Questions</span>
-        </div>
-        <h2 class="display rev">Straight<br><em>answers.</em></h2>
-      </div>
-      <div class="rev rev-d1">
-        <details open>
-          <summary>What kind of fiber is it? <span class="pm">+</span></summary>
-          <p>[Placeholder — final formulation copy.] A blend of soluble and insoluble fibers chosen for gut tolerance and clean taste. Full ingredient panel and sourcing to drop in here.</p>
-        </details>
-        <details>
-          <summary>What are the flavors? <span class="pm">+</span></summary>
-          <p>Raspberry, Watermelon, Blood Orange, and Fruit Punch — real fruit, zero sugar, nothing artificial. [Placeholder — confirm final flavor names + sweetener system.]</p>
-        </details>
-        <details>
-          <summary>Canister or sachets? <span class="pm">+</span></summary>
-          <p>We're launching with a 30-serving canister (16 oz). Single-serve sachets for travel and the gym bag are on the roadmap — join the list below and you'll hear first.</p>
-        </details>
-        <details>
-          <summary>Will it make my stomach weird? <span class="pm">+</span></summary>
-          <p>[Placeholder.] Soluble fiber at a 7g dose is generally well-tolerated. Recommended ramp-in copy and any advisory language to be reviewed for compliance.</p>
-        </details>
-        <details>
-          <summary>When should I take it? <span class="pm">+</span></summary>
-          <p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move — ten seconds, tastes like fruit, done.</p>
-        </details>
-        <details>
-          <summary>Why only one product? <span class="pm">+</span></summary>
-          <p>Because that's the brand. Staple starts with the single most neglected nutrient and does it perfectly. More staples are coming — after this one earns its place in your routine.</p>
-        </details>
-        <details>
-          <summary>How does the subscription work? <span class="pm">+</span></summary>
-          <p>A fresh canister lands every 30 days at 20% off. Pause, skip, or cancel anytime. [Placeholder — final subscription terms.]</p>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="signup">
   <div class="wrap">
@@ -1779,7 +1803,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v9 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v10 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -1879,7 +1903,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v9';
+  var PAGE_ID = 'staple-home-v10';
 
   /* ---------------------------------------------- */
 
