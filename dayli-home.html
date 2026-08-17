@@ -1671,10 +1671,14 @@
     background-color:var(--buttermilk);
     transition:transform .5s cubic-bezier(.22,1,.36,1);
   }
-  .ings .ing:nth-child(4n+1){background-image:var(--gingred-url)}
-  .ings .ing:nth-child(4n+2){background-image:var(--gingbutter-url)}
-  .ings .ing:nth-child(4n+3){background-image:var(--gingsage-url)}
-  .ings .ing:nth-child(4n){background-image:var(--gingblue-url)}
+  .ings .ing:nth-child(1){background-image:var(--gingred-url)}
+  .ings .ing:nth-child(2){background-image:var(--gingsage-url)}
+  .ings .ing:nth-child(3){background-image:var(--gingblue-url)}
+  .ings .ing:nth-child(4){background-image:var(--gingbutter-url)}
+  .ings .ing:nth-child(5){background-image:var(--gingblue-url)}
+  .ings .ing:nth-child(6){background-image:var(--gingred-url)}
+  .ings .ing:nth-child(7){background-image:var(--gingbutter-url)}
+  .ings .ing:nth-child(8){background-image:var(--gingsage-url)}
   .ing__inner{
     background:var(--linen);
     border:1px solid rgba(94,26,31,.16);
@@ -2114,6 +2118,39 @@
     margin-right:2px;
     letter-spacing:0;
   }
+  .filmslot{
+    max-width:780px;
+    margin:64px auto 0;
+    aspect-ratio:16/9;
+    border:2px dashed rgba(142,42,43,.5);
+    border-radius:6px;
+    background:
+      repeating-linear-gradient(45deg, rgba(142,42,43,.05) 0 14px, transparent 14px 28px),
+      var(--linen);
+    display:grid;
+    place-items:center;
+    text-align:center;
+    padding:30px;
+  }
+  .filmslot__play{
+    width:64px;height:64px;
+    border-radius:50%;
+    border:2px solid var(--preserve-red);
+    display:grid;place-items:center;
+    color:var(--preserve-red);
+    font-size:20px;
+    margin:0 auto 18px;
+    animation:pulse2 2.6s ease-in-out infinite;
+  }
+  .filmslot__label{
+    font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;
+    color:var(--preserve-red);
+  }
+  .filmslot__desc{
+    font-family:var(--serif);font-style:italic;
+    font-size:16px;color:rgba(43,38,34,.72);
+    margin-top:10px;max-width:44ch;
+  }
 </style>
 </head>
 <body>
@@ -2245,7 +2282,7 @@
           <p class="jar-card__desc">Hydration, minerals, fiber — daily balance for body &amp; mind, poured tall over ice. Raspberry lemonade, naturally.</p>
           <div class="jar-card__chips">
             <span class="chip">Electrolytes + minerals</span>
-            <span class="chip">3g fiber</span>
+            <span class="chip">5g fiber</span>
             <span class="chip">Raspberry lemonade</span>
           </div>
           <div class="jar-card__buy">
@@ -2267,7 +2304,7 @@
       <span class="ticker__word">becomes real, spreadable jam</span><span class="ticker__sprig">❁</span>
       <span class="ticker__caps">100% wholefood based</span><span class="ticker__sprig">❁</span>
       <span class="ticker__word">no isolates, ever</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__caps">Steady, faithful, daily</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__caps">Steady, faithful, dayli</span><span class="ticker__sprig">❁</span>
       <span class="ticker__word">feed what feeds you</span><span class="ticker__sprig">❁</span>
     </div>
     <div class="ticker__item" aria-hidden="true">
@@ -2275,7 +2312,7 @@
       <span class="ticker__word">becomes real, spreadable jam</span><span class="ticker__sprig">❁</span>
       <span class="ticker__caps">100% wholefood based</span><span class="ticker__sprig">❁</span>
       <span class="ticker__word">no isolates, ever</span><span class="ticker__sprig">❁</span>
-      <span class="ticker__caps">Steady, faithful, daily</span><span class="ticker__sprig">❁</span>
+      <span class="ticker__caps">Steady, faithful, dayli</span><span class="ticker__sprig">❁</span>
       <span class="ticker__word">feed what feeds you</span><span class="ticker__sprig">❁</span>
     </div>
   </div>
@@ -2439,7 +2476,7 @@
     <p class="news__note">Recipes, small rituals, and the occasional garden note. No urgency, ever.</p>
     <form class="news__form" onsubmit="return false">
       <input class="news__input" type="email" placeholder="your loveliest email">
-      <button class="btn btn--red" type="submit">Sign me up</button>
+      <button class="btn btn--red" type="submit">Join the pact</button>
     </form>
     <p class="news__small">We write like a friend, not a brand.</p>
   </div>
@@ -2536,13 +2573,13 @@
       <h2 class="pdpband__title">Ingredients your grandmother <em>could name.</em></h2>
       <img class="head-flourish" data-img="flourish" alt="">
     </div>
-    <div class="ings ings--red"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Psyllium Husk</p><p class="ing__line">the gel-maker — she is why the jam sets in two minutes flat.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Chia Seed</p><p class="ing__line">omega-rich and gently thickening — an old friend of good breakfasts.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Baobab</p><p class="ing__line">the African “tree of life” — tart, bright, beloved by the microbiome.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Apple Fiber</p><p class="ing__line">orchard-grown pectin — the gentle, everyday kind.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Ground Flax</p><p class="ing__line">the omega-rich seed your great-grandmother already trusted.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Green Banana</p><p class="ing__line">resistant starch that feeds the good bacteria first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Turkey Tail</p><p class="ing__line">the gentle mushroom that gut wisdom has trusted for centuries.</p></div></div></div>
+    <div class="ings ings--red"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Psyllium Husk</p><p class="ing__line">the gel-maker — she is why the jam sets in two minutes flat.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Chia Seed</p><p class="ing__line">omega-rich and gently thickening — an old friend of good breakfasts.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Baobab</p><p class="ing__line">the African “tree of life” — tart, bright, beloved by the microbiome.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Apple Fiber</p><p class="ing__line">orchard-grown pectin — the gentle, everyday kind.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Ground Flax</p><p class="ing__line">the omega-rich seed your great-grandmother already trusted.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Green Banana</p><p class="ing__line">resistant starch that feeds the good bacteria first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Turkey Tail</p><p class="ing__line">the gentle mushroom that gut wisdom has trusted for centuries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❃</span><p class="ing__name">Better, <em>Together</em></p><p class="ing__line">seven plants, one blend — different fibers feed different good bacteria. Variety is the whole point.</p></div></div></div>
   </section>
   <section class="pdpband pdpband--butter">
     <div class="scallop"></div>
     <div class="pdpband__head reveal">
       <p class="eyebrow">A kind comparison</p>
-      <h2 class="pdpband__title">The usual way, <em>and hers.</em></h2>
+      <h2 class="pdpband__title">The usual way, <em>and the Dayli way.</em></h2>
     </div>
     <div class="compare reveal">
       <div class="compare__row compare__row--head">
@@ -2558,8 +2595,12 @@
       <h2 class="pdpband__title">Three small movements.</h2>
     </div>
     <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop plus 4 oz of dark red juice, in a small jar.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Stir well; two minutes later, she is jam.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Spread</p><p class="mini-step__desc">Toast, yogurt, or a spoon at the counter.</p></div></div>
-    <div class="mini-ritual__film reveal">
-      <div class="ritual__film"><span class="ritual__film-play">▶</span> Ritual film <em>· placeholder — macro, jam folding off a spoon</em></div>
+    <div class="filmslot reveal">
+      <div>
+        <div class="filmslot__play">▶</div>
+        <p class="filmslot__label">Ritual film lives here</p>
+        <p class="filmslot__desc">macro footage — the deep red pour, the stir, jam folding off a spoon</p>
+      </div>
     </div>
   </section>
   <section class="pair">
@@ -2608,8 +2649,8 @@
         <p class="pdp__poem">Hydration, minerals, fiber — poured tall, raspberry lemonade.</p>
         <p class="pdp__rating">✿ ✿ ✿ ✿ ✿ <em>first letters arriving with launch</em></p>
         <p class="pdp__price"><span class="cur">$</span>29</p>
-        <p class="pdp__desc">Daily balance for body and mind. Unrefined sea salt and coconut water for the minerals you sweat away, magnesium glycinate for calm, and 3g of gentle fiber no other electrolyte carries — because hydration without absorption is just a pretty glass. Tastes like raspberry lemonade on a porch, naturally.</p>
-        <div class="pdp__chips"><span class="chip">Electrolytes + minerals</span><span class="chip">3g fiber</span><span class="chip">Magnesium glycinate</span><span class="chip">Raspberry lemonade</span></div>
+        <p class="pdp__desc">Daily balance for body and mind. Pink Himalayan salt and potassium for the minerals you sweat away, magnesium glycinate and calcium for calm and steadiness, and gentle tapioca fiber no other electrolyte carries — because hydration without absorption is just a pretty glass. Sweetened with monk fruit, blushed with beet root. Tastes like raspberry lemonade on a porch, naturally.</p>
+        <div class="pdp__chips"><span class="chip">Electrolytes + minerals</span><span class="chip">5g fiber</span><span class="chip">Sweetened with monk fruit</span><span class="chip">Raspberry lemonade</span></div>
         <div class="buyopts">
           <div class="buyopt buyopt--on" data-price="$29">
             <span class="buyopt__dot"></span>
@@ -2635,13 +2676,13 @@
           <div class="acc acc--open">
             <button class="acc__head">The recipe</button>
             <div class="acc__body"><div class="acc__body-inner">
-              <p class="recipe">unrefined sea salt <span class="rdot">·</span> coconut water <span class="rdot">·</span> magnesium glycinate <span class="rdot">·</span> jerusalem artichoke <span class="rdot">·</span> baobab fruit <span class="rdot">·</span> citrus fiber <span class="rdot">·</span> acerola cherry</p>
+              <p class="recipe">pink himalayan salt <span class="rdot">·</span> potassium <span class="rdot">·</span> magnesium glycinate <span class="rdot">·</span> calcium citrate <span class="rdot">·</span> soluble tapioca fiber <span class="rdot">·</span> organic raspberry &amp; lemonade <span class="rdot">·</span> beet root <span class="rdot">·</span> a squeeze of citric &amp; malic <span class="rdot">·</span> monk fruit</p>
               <p class="pdp__notice">Working recipe — final formulation in progress with our manufacturing partner</p>
             </div></div>
           </div>
           <div class="acc">
             <button class="acc__head">How she works</button>
-            <div class="acc__body"><div class="acc__body-inner"><p>Electrolytes carry water into the cell; fiber slows the journey so more of it arrives. Acerola brings vitamin C the wholefood way. She is lovely first thing in the morning, after a walk in the sun, or any afternoon that needs rescuing — <em>steady, not spiked.</em></p></div></div>
+            <div class="acc__body"><div class="acc__body-inner"><p>Electrolytes carry water into the cell; tapioca fiber slows the journey so more of it arrives. Four minerals — salt, potassium, magnesium, calcium — cover what a day sweats out, and monk fruit keeps her sweet without a gram of sugar. Lovely first thing in the morning, after a walk in the sun, or any afternoon that needs rescuing — <em>steady, not spiked.</em></p></div></div>
           </div>
           <div class="acc">
             <button class="acc__head">Shipping &amp; care</button>
@@ -2662,7 +2703,7 @@
 
   <section class="pdpband pdpband--butter">
     <div class="scallop"></div>
-    <div class="stats"><div class="reveal"><p class="stat__big">3g</p><p class="stat__label">fiber in every glass</p></div><div class="reveal"><p class="stat__big">7</p><p class="stat__label">wholefood ingredients, in full</p></div><div class="reveal"><p class="stat__big">0</p><p class="stat__label">dyes · sweeteners · anything artificial</p></div><div class="reveal"><p class="stat__big">30</p><p class="stat__label">tall glasses per jar</p></div></div>
+    <div class="stats"><div class="reveal"><p class="stat__big">5g</p><p class="stat__label">fiber in every glass</p></div><div class="reveal"><p class="stat__big">0g</p><p class="stat__label">sugar — sweetened with monk fruit</p></div><div class="reveal"><p class="stat__big">4</p><p class="stat__label">minerals — salt · potassium · magnesium · calcium</p></div><div class="reveal"><p class="stat__big">30</p><p class="stat__label">tall glasses per jar</p></div></div>
   </section>
   <section class="pdpband">
     <div class="pdpband__head reveal">
@@ -2670,20 +2711,20 @@
       <h2 class="pdpband__title">Ingredients your grandmother <em>would pour.</em></h2>
       <img class="head-flourish" data-img="flourish" alt="">
     </div>
-    <div class="ings ings--sage"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Coconut Water</p><p class="ing__line">nature’s own electrolyte, dried gently to a powder.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Unrefined Sea Salt</p><p class="ing__line">minerals left exactly the way the sea made them.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Magnesium Glycinate</p><p class="ing__line">the calm mineral, in its gentlest, kindest form.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Jerusalem Artichoke</p><p class="ing__line">deep-rooted prebiotic inulin, the classic kind.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Baobab</p><p class="ing__line">tart, bright, and beloved by the microbiome.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Citrus Fiber</p><p class="ing__line">whole-fruit fiber with the sunshine left in.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Acerola Cherry</p><p class="ing__line">wholefood vitamin C, grown in the sun — not a lab.</p></div></div></div>
+    <div class="ings ings--sage"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Pink Himalayan Salt</p><p class="ing__line">rosy, mineral-rich, mined the old way — the backbone of hydration.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Potassium</p><p class="ing__line">the other half of the hydration equation — the one sweat takes first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Magnesium Glycinate</p><p class="ing__line">the calm mineral, in its gentlest, kindest form.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Calcium Citrate</p><p class="ing__line">the steady mineral, in the form your body actually absorbs.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Tapioca Fiber</p><p class="ing__line">soft, soluble, and gentle — the fiber no other ’lyte carries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Beet Root</p><p class="ing__line">her blush — color from the garden, never from a lab.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Monk Fruit</p><p class="ing__line">sweetness from a small, storied fruit — and not a gram of sugar.</p></div></div></div>
   </section>
   <section class="pdpband pdpband--butter">
     <div class="scallop"></div>
     <div class="pdpband__head reveal">
       <p class="eyebrow">A kind comparison</p>
-      <h2 class="pdpband__title">The usual way, <em>and hers.</em></h2>
+      <h2 class="pdpband__title">The usual way, <em>and the Dayli way.</em></h2>
     </div>
     <div class="compare reveal">
       <div class="compare__row compare__row--head">
         <div class="compare__cell">The usual electrolyte</div>
         <div class="compare__cell">The Dayli way</div>
       </div>
-      <div class="compare__row"><div class="compare__cell compare__cell--usual">neon dyes and sucralose</div><div class="compare__cell compare__cell--dayli">fruit, salt, and nothing artificial</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">a spike, then a crash</div><div class="compare__cell compare__cell--dayli">steady, all-afternoon hydration</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">0g fiber, every time</div><div class="compare__cell compare__cell--dayli">3g — the only ’lyte that carries fiber</div></div>
+      <div class="compare__row"><div class="compare__cell compare__cell--usual">neon dyes and sucralose</div><div class="compare__cell compare__cell--dayli">fruit, salt, and nothing artificial</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">a spike, then a crash</div><div class="compare__cell compare__cell--dayli">steady, all-afternoon hydration</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">0g fiber, every time</div><div class="compare__cell compare__cell--dayli">5g — the only ’lyte that carries fiber</div></div>
     </div>
   </section>
   <section class="pdpband">
@@ -2692,8 +2733,12 @@
       <h2 class="pdpband__title">Three small movements.</h2>
     </div>
     <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop over cold water or a glass of ice.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Thirty seconds, until she blushes rosy.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Sip</p><p class="mini-step__desc">Porch optional, but warmly recommended.</p></div></div>
-    <div class="mini-ritual__film reveal">
-      <div class="ritual__film"><span class="ritual__film-play">▶</span> Ritual film <em>· placeholder — poured over ice on the porch, golden hour</em></div>
+    <div class="filmslot reveal">
+      <div>
+        <div class="filmslot__play">▶</div>
+        <p class="filmslot__label">Ritual film lives here</p>
+        <p class="filmslot__desc">poured over ice on the porch at golden hour — the rosy swirl, the first sip</p>
+      </div>
     </div>
   </section>
   <section class="pair">
@@ -3126,7 +3171,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v10';
+  var PAGE_ID = 'dayli-home-v11';
 
   /* ---------------------------------------------- */
 
