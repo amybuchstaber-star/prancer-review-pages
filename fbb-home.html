@@ -55,7 +55,7 @@ button,input{font-family:inherit;}
   transform:scaleX(0);transform-origin:left center;
   transition:transform .7s cubic-bezier(.2,.7,.2,1) .4s,opacity .3s .4s;
 }
-.on .chalk-under::after{opacity:.8;transform:scaleX(1);}
+.on .chalk-under::after,.now-under::after{opacity:.8;transform:scaleX(1);}
 
 /* water */
 .waveline{display:block;width:100%;height:24px;overflow:hidden;position:relative;}
@@ -79,7 +79,21 @@ nav.scrolled{background:rgba(243,241,234,.93);backdrop-filter:blur(12px);border-
 .brand{display:flex;align-items:baseline;gap:.8rem;}
 .brand b{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:1.25rem;letter-spacing:.02em;}
 .brand span{font-family:var(--mono);font-weight:700;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);}
-nav ul{display:flex;gap:2rem;list-style:none;align-items:center;}
+nav ul{display:flex;gap:1.8rem;list-style:none;align-items:center;}
+nav ul li.has-sub{position:relative;}
+nav ul li.has-sub>a::after{content:' \25BE';font-size:.8em;}
+.sub{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+  background:var(--paper);border:1px solid var(--hair);box-shadow:0 18px 40px rgba(18,18,18,.14);
+  min-width:220px;padding:.6rem 0;list-style:none;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+}
+nav ul li.has-sub:hover .sub,nav ul li.has-sub:focus-within .sub{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.sub li{display:block;}
+.sub a{display:block;padding:.6rem 1.2rem;font-size:.6rem;white-space:nowrap;}
+.sub a:hover{background:rgba(115,201,207,.15);color:var(--ink);}
+.sub a em{font-style:normal;color:var(--flame);margin-left:.5rem;font-size:.9em;}
+
 nav ul a{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .2s;}
 nav ul a:hover{color:var(--teal-deep);}
 .btn-teal{
@@ -109,13 +123,13 @@ nav .btn-teal{padding:.7rem 1.3rem;font-size:.62rem;}
 .mnav.open{opacity:1;pointer-events:auto;}
 .mnav a{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;text-transform:uppercase;font-size:clamp(1.8rem,8vw,3rem);line-height:1.2;padding:.4rem 0;border-bottom:1px solid var(--hair);transform:translateY(16px);opacity:0;transition:transform .4s,opacity .4s;}
 .mnav.open a{transform:none;opacity:1;}
-.mnav a em{font-style:normal;font-family:var(--mono);font-weight:400;font-size:.8rem;letter-spacing:.2em;color:var(--teal-deep);margin-right:1rem;vertical-align:middle;}
+.mnav a em{font-style:normal;font-family:var(--mono);font-weight:400;font-size:.72rem;letter-spacing:.2em;color:var(--flame);margin-right:1rem;vertical-align:middle;}
 
 /* hero */
 header.hero{position:relative;padding:9rem 0 0;background:var(--paper);}
 .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:3.6rem;align-items:center;padding-bottom:3.4rem;}
 @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
-.hero-kicker{display:inline-block;font-family:var(--mono);font-weight:700;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-deep);border:1px solid rgba(62,154,163,.45);padding:.55rem .85rem;margin-bottom:1.8rem;}
+.hero-kicker{display:inline-block;font-family:var(--mono);font-weight:700;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(255,69,0,.5);border-left:4px solid var(--flame);padding:.55rem .85rem;margin-bottom:1.8rem;background:var(--card);}
 .hero h1{font-size:clamp(2.9rem,6.8vw,6rem);}
 .hero h1 .row{display:block;overflow:hidden;}
 .hero h1 .row i{display:block;font-style:normal;transform:translateY(110%);animation:riseup .9s cubic-bezier(.2,.7,.2,1) forwards;}
@@ -135,9 +149,9 @@ header.hero{position:relative;padding:9rem 0 0;background:var(--paper);}
   aspect-ratio:4/4.5;
   box-shadow:0 26px 60px rgba(18,18,18,.18);
 }
-.hero-film .frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.85);animation:slowpan 24s ease-in-out infinite alternate;}
+.hero-film .frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.02) brightness(.96) saturate(.9);animation:slowpan 24s ease-in-out infinite alternate;}
 @keyframes slowpan{from{transform:scale(1.03) translateX(-1%)}to{transform:scale(1.1) translateX(1%)}}
-.hero-film .frame::before{content:'';position:absolute;inset:0;z-index:1;background:var(--teal);mix-blend-mode:color;opacity:.26;}
+.hero-film .frame::before{content:'';position:absolute;inset:0;z-index:1;background:var(--teal);mix-blend-mode:color;opacity:.1;}
 .hero-film .frame::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(18,18,18,0) 55%,rgba(18,18,18,.55) 100%);pointer-events:none;}
 .hero-film iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:6;}
 .playcue{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;pointer-events:none;}
@@ -152,20 +166,32 @@ header.hero{position:relative;padding:9rem 0 0;background:var(--paper);}
 /* chapters (dark beats) */
 .chapter{position:relative;background:var(--ink);color:var(--paper);overflow:hidden;}
 .chapter .bg{position:absolute;inset:0;}
-.chapter .bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.62);animation:slowpan 28s ease-in-out infinite alternate;}
-.chapter .bg::before{content:'';position:absolute;inset:0;z-index:1;background:var(--teal);mix-blend-mode:color;opacity:.3;}
+.chapter .bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.03) brightness(.72) saturate(.85);animation:slowpan 28s ease-in-out infinite alternate;}
+.chapter .bg::before{content:'';position:absolute;inset:0;z-index:1;background:var(--teal);mix-blend-mode:color;opacity:.18;}
 .chapter .bg::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(18,18,18,.55) 0%,rgba(18,18,18,.2) 45%,rgba(18,18,18,.9) 100%);}
 .chapter .chnum{
   position:absolute;top:1.6rem;right:2rem;z-index:3;
   font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;
   font-size:clamp(4.5rem,12vw,9rem);line-height:1;
-  color:transparent;-webkit-text-stroke:2px rgba(243,241,234,.4);
+  color:transparent;-webkit-text-stroke:2px var(--chstroke,rgba(243,241,234,.4));
 }
 .chapter .chin{position:relative;z-index:3;padding:7.5rem 0;}
 .chapter .mono-label{color:var(--teal);display:block;margin-bottom:1.2rem;}
 .chapter blockquote{font-family:var(--arch);font-style:italic;font-weight:500;font-variation-settings:'wdth' 88;font-stretch:88%;font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.22;max-width:780px;}
-.chapter .attr{margin-top:1.3rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,241,234,.6);}
+.chapter .attr{margin-top:1.4rem;font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);}
+.chapter .attr small{display:block;margin-top:.35rem;font-weight:400;font-size:.62rem;color:rgba(243,241,234,.6);}
 .chapter .chbody{position:relative;z-index:3;padding:0 0 5rem;}
+
+
+.chapter.light{background:var(--paper);color:var(--ink);}
+.chapter.light .bg img{filter:none;object-position:72% center;animation:slowpan 30s ease-in-out infinite alternate;}
+.chapter.light .bg::before{display:none;}
+.chapter.light .bg::after{background:linear-gradient(90deg,rgba(243,241,234,.97) 0%,rgba(243,241,234,.88) 34%,rgba(243,241,234,.25) 62%,rgba(243,241,234,0) 100%);}
+@media(max-width:900px){.chapter.light .bg::after{background:linear-gradient(180deg,rgba(243,241,234,.97) 0%,rgba(243,241,234,.75) 55%,rgba(243,241,234,.2) 100%);}}
+.chapter.light .mono-label{color:var(--teal-deep);}
+.chapter.light .chnum{-webkit-text-stroke:2px rgba(18,18,18,.28);}
+.chapter.light .attr{color:var(--ink);}
+.chapter.light .attr small{color:var(--dim);}
 
 /* sections */
 section.beat{padding:6.5rem 0;}
@@ -181,12 +207,13 @@ section.beat{padding:6.5rem 0;}
 .m-col{padding:2.4rem 2rem 2.6rem;position:relative;}
 .m-col + .m-col{border-left:1px solid var(--hair);}
 @media(max-width:860px){.m-col + .m-col{border-left:none;border-top:1px solid var(--hair);}}
-.m-col .session{position:absolute;top:1.4rem;right:1.4rem;font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--dim);border:1px solid var(--hair);padding:.35rem .5rem;background:var(--card);}
-.m-col .num{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:clamp(3.6rem,7vw,5.6rem);line-height:1;}
-.m-col .num small{font-size:.4em;vertical-align:baseline;}
+.m-col .session{position:absolute;top:1.4rem;right:1.4rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;color:var(--paper);background:var(--flame);padding:.4rem .55rem;}
+.m-col .num{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:clamp(3.6rem,7vw,5.6rem);line-height:1;color:var(--flame);}
+
 .m-col h3{font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;margin:.9rem 0 .9rem;color:var(--teal-deep);}
 .m-col p{font-size:.96rem;line-height:1.65;color:var(--dim);}
-.method-note{margin-top:2rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+.method-note{margin-top:2.4rem;font-family:var(--mono);font-weight:700;font-size:.84rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+.method-note b{color:var(--flame);font-weight:700;}
 
 /* proof */
 .proof-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;position:relative;z-index:3;}
@@ -211,7 +238,7 @@ section.beat{padding:6.5rem 0;}
 .o-col + .o-col{border-left:1px solid var(--hair);}
 @media(max-width:960px){.o-col + .o-col{border-left:none;border-top:1px solid var(--hair);}}
 .o-col.feat{background:var(--ink);color:var(--paper);}
-.o-col .flag{position:absolute;top:-12px;left:2rem;font-family:var(--mono);font-weight:700;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;background:var(--teal);color:var(--ink);padding:.4rem .7rem;}
+.o-col .flag{position:absolute;top:-12px;left:2rem;font-family:var(--mono);font-weight:700;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;background:var(--flame);color:var(--paper);padding:.45rem .75rem;}
 .o-col .okick{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:1rem;}
 .o-col.feat .okick{color:var(--teal);}
 .o-col h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:1rem;}
@@ -220,8 +247,8 @@ section.beat{padding:6.5rem 0;}
 .o-col ul{list-style:none;display:grid;gap:.55rem;margin-bottom:1.8rem;}
 .o-col li{font-size:.9rem;line-height:1.5;color:var(--dim);padding-left:1.2rem;position:relative;}
 .o-col.feat li{color:rgba(243,241,234,.82);}
-.o-col li::before{content:'';position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--teal);}
-.o-col .price{margin-top:auto;margin-bottom:1.4rem;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;text-transform:uppercase;font-size:1.45rem;}
+.o-col li::before{content:'';position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--flame);}
+.o-col .price{margin-top:auto;margin-bottom:1.4rem;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;text-transform:uppercase;font-size:1.55rem;color:var(--flame);}
 .o-col .price small{display:block;font-family:var(--mono);font-weight:400;font-size:.58rem;letter-spacing:.16em;margin-top:.5rem;color:var(--dim);text-transform:uppercase;}
 .o-col.feat .price small{color:rgba(243,241,234,.55);}
 .o-col.feat .btn-ink{color:var(--paper);border-color:rgba(243,241,234,.5);}
@@ -230,11 +257,11 @@ section.beat{padding:6.5rem 0;}
 
 /* coach / watch */
 .coach-stats{display:flex;gap:2.6rem;flex-wrap:wrap;margin:2.4rem 0 3rem;position:relative;z-index:3;}
-.coach-stats div b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:clamp(1.9rem,3.4vw,2.9rem);line-height:1;color:var(--paper);}
-.coach-stats div span{display:block;margin-top:.5rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,241,234,.55);}
+.coach-stats div b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:clamp(1.9rem,3.4vw,2.9rem);line-height:1;color:var(--flame);}
+.coach-stats div span{display:block;margin-top:.5rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
 .watch-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:1.4rem;position:relative;z-index:3;}
 @media(max-width:900px){.watch-grid{grid-template-columns:1fr;}}
-.yt{position:relative;overflow:hidden;cursor:pointer;background:#000;border:1px solid rgba(243,241,234,.18);}
+.yt{position:relative;overflow:hidden;cursor:pointer;background:#000;border:1px solid var(--hair);}
 .yt img.thumb{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .35s,opacity .3s;}
 .yt:hover img.thumb{transform:scale(1.05);opacity:1;}
 .yt .lab{position:absolute;z-index:3;left:14px;bottom:12px;right:14px;pointer-events:none;font-family:var(--mono);font-weight:700;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#F3F1EA;text-shadow:0 1px 8px rgba(0,0,0,.7);}
@@ -310,21 +337,44 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
 <nav id="nav">
   <a class="brand" href="#top"><b>FBB</b><span>Functional Bodybuilding</span></a>
   <ul>
+    <li class="has-sub"><a href="https://functional-bodybuilding.com/pages/persist">Train</a>
+      <ul class="sub">
+        <li><a href="https://functional-bodybuilding.com/pages/persist">Persist App <em>&#9656; free trial</em></a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/e-books">E-Book Programs</a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/coaching">Platinum Coaching</a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/workout-quiz">Workout Quiz</a></li>
+      </ul>
+    </li>
     <li><a href="#method">Method</a></li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#marcus">Marcus</a></li>
+    <li><a href="https://functional-bodybuilding.com/pages/customer-stories">Results</a></li>
+    <li class="has-sub"><a href="https://functional-bodybuilding.com/pages/learn">Learn</a>
+      <ul class="sub">
+        <li><a href="https://functional-bodybuilding.com/pages/free-workouts-newsletter">Free Workouts</a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/podcast">Podcast</a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/articles">Articles</a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/macro-calculator">Macro Calculator</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="https://functional-bodybuilding.com/pages/my-story">About</a>
+      <ul class="sub">
+        <li><a href="https://functional-bodybuilding.com/pages/my-story">Marcus's Story</a></li>
+        <li><a href="https://functional-bodybuilding.com/pages/about">The Team</a></li>
+        <li><a href="https://www.youtube.com/@MarcusFilly" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </li>
     <li><a href="#staple">Staple</a></li>
     <li class="keep"><a class="btn-teal" href="https://functional-bodybuilding.com/pages/persist">Start Free for 14 Days</a></li>
     <li class="keep"><button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button></li>
   </ul>
 </nav>
 <div class="mnav" id="mnav">
-  <a href="#method"><em>01</em>Method</a>
-  <a href="#results"><em>02</em>Results</a>
-  <a href="#programs"><em>03</em>Programs</a>
-  <a href="#marcus"><em>04</em>Marcus</a>
-  <a href="#staple"><em>05</em>Staple</a>
+  <a href="https://functional-bodybuilding.com/pages/persist"><em>Train</em>Persist App</a>
+  <a href="https://functional-bodybuilding.com/pages/e-books"><em>Train</em>E-Books</a>
+  <a href="https://functional-bodybuilding.com/pages/coaching"><em>Train</em>Coaching</a>
+  <a href="https://functional-bodybuilding.com/pages/customer-stories"><em>Proof</em>Results</a>
+  <a href="https://functional-bodybuilding.com/pages/learn"><em>Learn</em>Podcast &amp; Articles</a>
+  <a href="https://functional-bodybuilding.com/pages/my-story"><em>About</em>Marcus</a>
+  <a href="#staple"><em>Fuel</em>Staple</a>
   <a href="https://functional-bodybuilding.com/pages/persist" style="color:var(--teal-deep);border-bottom:none">Start Free &#9656;</a>
 </div>
 
@@ -334,8 +384,8 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
       <div>
         <span class="hero-kicker rev on">Training by Marcus Filly &middot; 6&times; CrossFit Games athlete</span>
         <h1 class="display">
-          <span class="row"><i>Look strong.</i></span>
-          <span class="row"><i class="hm">move <span class="chalk now"><i>like it.</i></span></i></span>
+          <span class="row"><i>Look Good.</i></span>
+          <span class="row"><i style="color:var(--flame)">Move <span class="chalk-under now-under"><i style="font-style:normal">Well.</i></span></i></span>
         </h1>
         <p class="hero-pitch rev on">Training that builds a body that looks strong &mdash; and moves like it. Three hours a week, without the burnout.</p>
         <div class="proof-chips rev on">
@@ -365,8 +415,8 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
   <div class="chin">
     <div class="wrap">
       <span class="mono-label rev">Chapter 02 &middot; The problem</span>
-      <blockquote class="rev d1">&ldquo;Six years at the CrossFit Games taught me how to win. It also broke my body. If you're training hard and still breaking down, you're not lazy. Your program is.&rdquo;</blockquote>
-      <span class="attr rev d2">Marcus Filly &middot; founder</span>
+      <blockquote class="rev d1">&ldquo;Six years at the CrossFit Games taught me how to win. It also broke my body. <span style="color:var(--teal)">If you're training hard and still breaking down, you're not lazy.</span> <span style="color:var(--flame);font-weight:700">Your program is.</span>&rdquo;</blockquote>
+      <span class="attr rev d2">Marcus Filly<small>Founder &middot; 6&times; CrossFit Games athlete</small></span>
     </div>
   </div>
 </section>
@@ -375,7 +425,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
   <div class="wrap">
     <div class="beat-head">
       <span class="mono-label kicker rev">03 &middot; The method</span>
-      <h2 class="display rev">Three numbers. <span class="hm">the whole system.</span></h2>
+      <h2 class="display rev">Three numbers. <span class="hm">The Whole System.</span></h2>
       <p class="lead rev d1">The structure Marcus used to compete for six straight years, scaled for real adults with real schedules: <span class="chalk-under">every body area, twice a week</span>.</p>
     </div>
     <div class="method-grid rev">
@@ -393,22 +443,25 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
       </div>
       <div class="m-col">
         <span class="session">C1</span>
-        <span class="num" data-count="10">10<small>K</small></span>
+        <span class="num" data-count="10" data-suffix="K">10K</span>
         <h3>Steps a day</h3>
         <p>The most underrated longevity habit there is. Free, automatic, and the glue that holds the system together.</p>
       </div>
     </div>
-    <p class="method-note rev d1">Built for adults 35+ &middot; designed by a coach, not an algorithm</p>
+    <p class="method-note rev d1">Built for adults 35+ &middot; designed by <b>a coach, not an algorithm</b></p>
   </div>
 </section>
 
-<section class="chapter" id="results">
+<section class="chapter" id="results" style="--chstroke:rgba(255,69,0,.55)">
   <div class="bg"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/persist-mfbeach_2.webp" alt="Training beside the water" loading="lazy" style="object-position:center 20%"></div>
   <span class="chnum">04</span>
   <div class="chin" style="padding-bottom:3rem">
-    <div class="wrap">
-      <span class="mono-label rev">Chapter 04 &middot; The proof</span>
-      <blockquote class="rev d1">&ldquo;10,000 athletes rebuilt. Here are a few of them.&rdquo;</blockquote>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
+      <div>
+        <span class="mono-label rev">Chapter 04 &middot; The proof</span>
+        <blockquote class="rev d1">&ldquo;<span style="color:var(--flame);font-style:normal;font-weight:900">10,000</span> athletes rebuilt. Here are a few of them.&rdquo;</blockquote>
+      </div>
+      <span class="stars rev d1" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,241,234,.8);padding-bottom:.4rem"><b style="color:var(--flame);font-weight:400">&#9733; 4.9/5</b> &middot; 2,400+ verified reviews</span>
     </div>
   </div>
   <div class="chbody">
@@ -420,8 +473,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
         <div class="p-card"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/taylor.webp" alt="Tyler's transformation" loading="lazy"></div><blockquote>&ldquo;First ever marathon in the books. Let's go!&rdquo;</blockquote><span class="who">Tyler &middot; Persist member</span></div>
       </div>
       <div class="proof-foot rev d1">
-        <span class="stars"><b>&#9733; 4.9/5</b> &middot; 2,400+ verified reviews</span>
-        <a class="link-quiet" href="https://functional-bodybuilding.com/pages/customer-stories">Read member stories</a>
+        <a class="btn-ink" style="color:var(--paper);border-color:var(--paper);font-size:.72rem;padding:1.1rem 2rem" href="https://functional-bodybuilding.com/pages/customer-stories">Read Member Stories &#9656;</a>
       </div>
     </div>
   </div>
@@ -431,7 +483,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
   <div class="wrap">
     <div class="beat-head">
       <span class="mono-label kicker rev">05 &middot; The offer</span>
-      <h2 class="display rev">Three ways in. <span class="hm">one method.</span></h2>
+      <h2 class="display rev">Three ways in. <span class="hm" style="color:var(--flame)">One Method.</span></h2>
       <p class="lead rev d1">Most people start with the free Persist trial. If you'd rather own a program outright, or want a coach on you daily, those doors are here too.</p>
     </div>
     <div class="offer-grid rev">
@@ -482,14 +534,15 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
 
 <div class="waveline" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0 13 C 50 4, 100 22, 150 13 S 250 4, 300 13 S 400 22, 450 13 S 550 4, 600 13 S 700 22, 750 13 S 850 4, 900 13 S 1000 22, 1050 13 S 1150 4, 1200 13"/></svg></div>
 
-<section class="chapter" id="marcus">
-  <div class="bg"><img src="https://functional-bodybuilding.com/cdn/shop/files/gempages_510471488415990586-ae0b1f5f-dcbd-4372-b057-629b50503e97.jpg" alt="Marcus Filly competing at the CrossFit Games" loading="lazy"></div>
+<section class="chapter light" id="marcus">
+  <div class="bg"><img src="https://functional-bodybuilding.com/cdn/shop/files/gempages_510471488415990586-4289ca76-57b4-4a2a-ba84-25499d1ec339.jpg" alt="Marcus Filly with a kettlebell beside the bay" loading="lazy"></div>
   <span class="chnum">06</span>
   <div class="chin" style="padding-bottom:2.6rem">
     <div class="wrap">
       <span class="mono-label rev">Chapter 06 &middot; The coach</span>
-      <blockquote class="rev d1">&ldquo;I built this so you never have to choose between looking strong and feeling good. In my 40s I train three days a week, leg press 900 pounds, and carry zero lingering injuries. The method is the message.&rdquo;</blockquote>
-      <span class="attr rev d2">Marcus Filly &middot; 6&times; CrossFit Games athlete &middot; founder, 2017</span>
+      <h2 class="display rev" style="font-size:clamp(2.2rem,5vw,4.2rem);color:var(--ink);max-width:820px">From the Games <span style="color:var(--flame)">&#9656;</span> to your gym</h2>
+      <blockquote class="rev d1" style="font-size:clamp(1.15rem,2.2vw,1.6rem);margin-top:1.4rem;background:rgba(250,248,243,.92);padding:1.3rem 1.6rem;border-left:4px solid var(--flame);max-width:620px;box-shadow:0 14px 34px rgba(18,18,18,.08)">&ldquo;I built this so you never have to choose between <span style="color:var(--teal-deep);font-weight:700">looking strong</span> and <span style="color:var(--flame);font-weight:700">feeling good</span>.&rdquo;</blockquote>
+      <span class="attr rev d2">Marcus Filly<small>Founder, 2017 &middot; in his 40s: three sessions a week, 900 lb leg press, zero lingering injuries</small></span>
     </div>
   </div>
   <div class="chbody">
@@ -500,30 +553,19 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
         <div><b data-count="1.1" data-suffix="M">1.1M</b><span>Community followers</span></div>
         <div><b data-count="80" data-suffix="+">80+</b><span>Countries training</span></div>
       </div>
-      <div class="watch-grid rev d1">
+      <div class="watch-grid rev d1" style="grid-template-columns:1fr;max-width:760px">
         <div class="watch-feat">
+          <span class="mono-label" style="display:block;margin-bottom:.8rem;color:var(--teal-deep)">Every Persist session includes coaching film like this</span>
           <div class="yt" data-id="O5lYe17ise4">
-            <img class="thumb" src="https://i.ytimg.com/vi/O5lYe17ise4/hqdefault.jpg" alt="Backyard gym tour" loading="lazy">
+            <img class="thumb" src="https://i.ytimg.com/vi/O5lYe17ise4/hqdefault.jpg" alt="Inside Marcus's gym" loading="lazy" style="aspect-ratio:16/9">
             <div class="playcue"><span class="pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <span class="lab">Inside Marcus's gym &middot; watch the film</span>
-          </div>
-        </div>
-        <div class="watch-side">
-          <div class="yt" data-id="lFqmUvZBsYY">
-            <img class="thumb" src="https://i.ytimg.com/vi/lFqmUvZBsYY/hqdefault.jpg" alt="Mixed KB rack overhead hold demo" loading="lazy">
-            <div class="playcue"><span class="pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <span class="lab">Demo &middot; Mixed KB Rack Overhead Hold</span>
-          </div>
-          <div class="yt" data-id="v2DbiAqKAAc">
-            <img class="thumb" src="https://i.ytimg.com/vi/v2DbiAqKAAc/hqdefault.jpg" alt="Bradford Z press demo" loading="lazy">
-            <div class="playcue"><span class="pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <span class="lab">Demo &middot; Bradford Z Press</span>
+            <span class="lab">Watch &middot; inside Marcus's gym &amp; how he coaches</span>
           </div>
         </div>
       </div>
       <div class="coach-foot rev d2">
-        <a class="link-quiet" href="https://functional-bodybuilding.com/pages/my-story">Read Marcus's story</a>
-        <a class="link-quiet" style="border-color:rgba(243,241,234,.4)" href="https://www.youtube.com/@MarcusFilly" target="_blank" rel="noopener">More on YouTube</a>
+        <a class="btn-teal" href="https://functional-bodybuilding.com/pages/my-story">Read Marcus's Story &#9656;</a>
+        <a class="btn-ink" href="https://www.youtube.com/@MarcusFilly" target="_blank" rel="noopener">More on YouTube &#9656;</a>
       </div>
     </div>
   </div>
@@ -533,7 +575,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
   <div class="wrap">
     <div class="beat-head">
       <span class="mono-label kicker rev">07 &middot; The family</span>
-      <h2 class="display rev">Train here. <span class="hm">fuel with Staple.</span></h2>
+      <h2 class="display rev">Train here. <span class="hm">Fuel With Staple.</span></h2>
     </div>
     <div class="staple-card rev">
       <div class="st-shapes"><span class="s1"></span><span class="s2"></span></div>
@@ -552,8 +594,8 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
 <section class="capture" id="newsletter">
   <div class="wrap">
     <div>
-      <h2 class="display rev">Join 125,000+ <span class="hm">thinking athletes</span></h2>
-      <p class="rev d1">Free workouts, nutrition advice and training education from Marcus, every week, straight to your inbox.</p>
+      <h2 class="display rev">Join 125,000+ <span class="hm">Getting Free Weekly Workouts</span></h2>
+      <p class="rev d1">Workouts, nutrition advice and training education from Marcus, straight to your inbox.</p>
     </div>
     <div class="rev d2">
       <form class="cap-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed ▸';">
@@ -568,7 +610,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
 <footer>
   <div class="wrap">
     <div class="foot-cta">
-      <h3 class="display">Ready when you are. <span class="hm">no burnout required.</span></h3>
+      <h3 class="display">Ready when you are. <span class="hm">No Burnout Required.</span></h3>
       <a class="btn-teal" href="https://functional-bodybuilding.com/pages/persist">Start Free for 14 Days &#9656;</a>
     </div>
     <div class="foot-grid">
@@ -604,7 +646,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview &middot; built from FBB Brand Book v3</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v5 &middot; flame pass + full-site menu</div>
 
 <script>
 const nav=document.getElementById('nav');
@@ -665,7 +707,7 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'fbb-home-v2';
+  var PAGE_ID = 'fbb-home-v3';
 
   /* ---------------------------------------------- */
 
