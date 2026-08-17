@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FBB Brand Sheet — Functional Bodybuilding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espresso:#1B1B1D; --ink:#121214;
+  --bone:#F3F1EA; --paper:#FBFAF6;
+  --aqua:#27D4C4; --clay:#FF6B37; --sunshine:#FFC72C; --coral:#FFBA6A;
+  --ink-dim:rgba(27,27,29,.62);
+  --mono:'Space Mono',monospace; --arch:'Archivo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--espresso);font-family:var(--arch);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem;}
+.display{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 74;font-stretch:74%;text-transform:uppercase;line-height:.92;letter-spacing:.012em;}
+.display em{font-style:italic;}
+.mono-label{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;}
+.gym-grid{background-image:linear-gradient(rgba(27,27,29,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(27,27,29,.05) 1px,transparent 1px);background-size:34px 34px;}
+
+/* cover */
+.cover{padding:5rem 0 4rem;border-bottom:3px solid var(--espresso);position:relative;overflow:hidden;}
+.cover .mono-label{color:var(--ink-dim);display:block;margin-bottom:1.6rem;}
+.cover h1{font-size:clamp(3rem,8vw,6.4rem);}
+.cover h1 em{color:var(--clay);}
+.cover .marker{display:block;width:min(430px,70%);height:16px;margin-top:.6rem;}
+.cover .marker path{fill:none;stroke:var(--aqua);stroke-width:6;stroke-linecap:round;stroke-dasharray:460;stroke-dashoffset:460;animation:draw 1.2s ease-out .4s forwards;}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cover p.sub{margin-top:1.6rem;max-width:640px;font-size:1.06rem;line-height:1.65;color:var(--ink-dim);}
+.cover .meta{margin-top:2rem;display:flex;gap:2rem;flex-wrap:wrap;font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);}
+
+/* section scaffolding */
+section{padding:4.5rem 0;border-bottom:1px solid rgba(27,27,29,.14);}
+.sec-num{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:2.4rem;}
+.sec-num .n{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.24em;color:var(--clay);}
+.sec-num h2{font-size:clamp(1.8rem,3.6vw,2.8rem);}
+.lead{max-width:720px;font-size:1.02rem;line-height:1.65;color:var(--ink-dim);margin-bottom:2.2rem;}
+.lead b{color:var(--espresso);}
+.rule-card{background:var(--paper);border:2px solid var(--espresso);padding:1.6rem 1.7rem;}
+.rule-card h4{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.8rem;color:var(--espresso);}
+.rule-card p{font-size:.94rem;line-height:1.6;color:var(--ink-dim);}
+.rule-card p b{color:var(--espresso);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+/* positioning */
+.pitch-stack{display:grid;gap:1.4rem;}
+.pitch{background:var(--espresso);color:var(--bone);padding:2.6rem 2.4rem;position:relative;}
+.pitch .mono-label{color:var(--aqua);display:block;margin-bottom:1.1rem;}
+.pitch h3{font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.05;}
+.pitch h3 em{color:var(--clay);}
+.pitch p{margin-top:1.2rem;color:rgba(243,241,234,.78);line-height:1.6;max-width:760px;}
+.pitch p b{color:var(--bone);}
+.voice-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem;}
+@media(max-width:860px){.voice-cols{grid-template-columns:1fr;}}
+.voice-cols .rule-card ul{list-style:none;display:grid;gap:.5rem;}
+.voice-cols .rule-card li{font-size:.92rem;line-height:1.5;color:var(--ink-dim);padding-left:1.3rem;position:relative;}
+.voice-cols .rule-card li::before{content:'+';position:absolute;left:0;font-family:var(--mono);font-weight:700;color:var(--aqua);}
+.voice-cols .no li::before{content:'\2013';color:var(--clay);}
+
+/* color */
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;margin-bottom:1.6rem;}
+@media(max-width:860px){.swatches{grid-template-columns:repeat(2,1fr);}}
+.sw{border:2px solid var(--espresso);background:var(--paper);}
+.sw .chipbox{height:96px;border-bottom:2px solid var(--espresso);position:relative;}
+.sw .chipbox span{position:absolute;bottom:8px;left:10px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;}
+.sw .info{padding: .9rem 1rem 1rem;}
+.sw .info b{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;}
+.sw .info span{display:block;margin-top:.45rem;font-size:.82rem;line-height:1.5;color:var(--ink-dim);}
+.ratio-bar{display:flex;height:56px;border:2px solid var(--espresso);overflow:hidden;margin-bottom:.8rem;}
+.ratio-bar div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:.62rem;letter-spacing:.12em;}
+.color-rules{margin-top:1.6rem;}
+
+/* type */
+.type-spec{display:grid;grid-template-columns:1fr;gap:1.2rem;}
+.tspec{background:var(--paper);border:2px solid var(--espresso);padding:1.8rem 1.8rem 1.6rem;display:grid;grid-template-columns:1fr 250px;gap:2rem;align-items:center;}
+@media(max-width:860px){.tspec{grid-template-columns:1fr;}}
+.tspec .sample{overflow:hidden;}
+.tspec .use{font-size:.88rem;line-height:1.6;color:var(--ink-dim);border-left:3px solid var(--aqua);padding-left:1.1rem;}
+.tspec .use b{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--espresso);margin-bottom:.5rem;}
+
+/* motifs */
+.motif-demo{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+@media(max-width:860px){.motif-demo{grid-template-columns:1fr;}}
+.motif{background:var(--paper);border:2px solid var(--espresso);padding:1.6rem;min-height:170px;display:flex;flex-direction:column;gap:1rem;}
+.motif .demo{flex:1;display:flex;align-items:center;justify-content:center;position:relative;}
+.motif h4{font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
+.motif p{font-size:.85rem;line-height:1.55;color:var(--ink-dim);}
+.session-tag{font-family:var(--mono);font-weight:700;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;border:2px solid var(--espresso);padding:.5rem .7rem;background:var(--bone);transform:rotate(2deg);}
+.session-tag b{color:var(--clay);}
+
+/* eye path */
+.fold{background:var(--paper);border:3px solid var(--espresso);padding:2rem;position:relative;}
+.fold .mono-label{color:var(--ink-dim);}
+.wire{margin-top:1.4rem;border:2px solid var(--espresso);background:var(--bone);position:relative;overflow:hidden;}
+.wire .row{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;padding:1.6rem;position:relative;}
+.wire .blk{border:2px dashed rgba(27,27,29,.4);padding:.8rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);}
+.wire .blk.solid{border:2px solid var(--espresso);background:var(--paper);color:var(--espresso);}
+.wire .blk.cta{background:var(--clay);color:var(--bone);border:none;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);text-align:center;font-weight:700;}
+.eyenum{
+  position:absolute;z-index:5;width:26px;height:26px;border-radius:50%;
+  background:var(--aqua);color:var(--ink);font-family:var(--mono);font-weight:700;font-size:.7rem;
+  display:flex;align-items:center;justify-content:center;border:2px solid var(--espresso);
+}
+.story-arc{margin-top:2rem;display:grid;gap:.7rem;}
+.arc-row{display:grid;grid-template-columns:44px 190px 1fr;gap:1.2rem;align-items:center;background:var(--paper);border:2px solid var(--espresso);padding:.9rem 1.1rem;}
+@media(max-width:700px){.arc-row{grid-template-columns:36px 1fr;} .arc-row p{grid-column:1/-1;}}
+.arc-row .num{font-family:var(--mono);font-weight:700;color:var(--clay);font-size:.8rem;}
+.arc-row h5{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;}
+.arc-row p{font-size:.88rem;line-height:1.5;color:var(--ink-dim);}
+.arc-row p b{color:var(--espresso);}
+
+/* cta */
+.cta-demo{display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1.4rem;}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:1rem 1.8rem;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);}
+.btn-primary{background:var(--clay);color:var(--bone);}
+.cta-sub{font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--espresso);border-bottom:3px solid var(--aqua);padding-bottom:.2rem;}
+
+/* footer */
+footer{padding:3rem 0 4rem;text-align:left;}
+footer .mono-label{color:var(--ink-dim);}
+</style>
+</head>
+<body>
+
+<header class="cover gym-grid">
+  <div class="wrap">
+    <span class="mono-label">Functional Bodybuilding &middot; Brand Foundation &middot; v1 &middot; For review</span>
+    <h1 class="display">The FBB<br><em>Brand Sheet</em></h1>
+    <svg class="marker" viewBox="0 0 420 16" preserveAspectRatio="none" aria-hidden="true"><path d="M4 11 C 70 4, 180 14, 280 8 S 400 6, 416 9"/></svg>
+    <p class="sub">One source of truth for how Functional Bodybuilding looks, sounds, and guides the eye &mdash; a brother brand to Staple: same family, its own voice. Every page we build gets checked against this sheet.</p>
+    <div class="meta"><span>10 sections</span><span>Comment on anything</span><span>Homepage rebuilds from this</span></div>
+  </div>
+</header>
+
+<section id="s01">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">01</span><h2 class="display">Positioning &mdash; <em>the elevator pitch</em></h2></div>
+    <p class="lead">This is the sentence that must be understood <b>above the fold, in under 5 seconds</b>. Everything else on the homepage exists to prove it.</p>
+    <div class="pitch-stack">
+      <div class="pitch">
+        <span class="mono-label">The pitch (above the fold, verbatim)</span>
+        <h3 class="display">Online training that builds a body that <em>looks strong &mdash; and moves like it.</em></h3>
+        <p>In <b>3 hours a week</b>, coached by <b>6&times; CrossFit Games athlete Marcus Filly</b>. No burnout, no beat-up joints, no 2-hour sessions.</p>
+      </div>
+      <div class="grid3">
+        <div class="rule-card"><h4>Who it's for</h4><p>Busy adults, mostly 35+, who've been burned by hype programs. They want <b>visible muscle</b> and a body that <b>works pain-free</b> &mdash; on a real schedule.</p></div>
+        <div class="rule-card"><h4>Why believe it</h4><p>Marcus lived both ends: 6 straight CrossFit Games, then burnout &mdash; and rebuilt himself with this method. <b>10,000+ members, 4.9/5 from 2,400+ reviews.</b></p></div>
+        <div class="rule-card"><h4>The tagline</h4><p><b>"Look Good. Move Well."</b> is the promise. The pitch explains it; the method (3/60/10K) proves it; the reviews close it. Tagline never stands alone above the fold.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s02">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">02</span><h2 class="display">Voice &mdash; <em>the coach, not the hype man</em></h2></div>
+    <p class="lead">FBB sounds like a coach who has nothing to prove: <b>direct, prescriptive, calm confidence</b>. Short sentences. Specific numbers. Training vocabulary used naturally.</p>
+    <div class="voice-cols">
+      <div class="rule-card"><h4>We say</h4>
+        <ul><li>"Three lifting days. Every body area twice." &mdash; prescriptive, specific</li><li>"Get built, not burnt." &mdash; the promise in five words</li><li>Tempo, sets, tracks, quality reps &mdash; real training language</li><li>"Costs less than one massage." &mdash; plain-spoken value</li></ul>
+      </div>
+      <div class="rule-card no"><h4>We never say</h4>
+        <ul><li>Crush / grind / beast mode / no excuses &mdash; hype-bro energy</li><li>"Get shredded in 30 days" &mdash; overclaiming</li><li>Exclamation points doing the work of evidence</li><li>More than one idea per sentence</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s03">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">03</span><h2 class="display">Color &mdash; <em>roles, not decoration</em></h2></div>
+    <p class="lead">FBB shares the elemental family with Staple &mdash; that's the shared DNA. What makes it FBB is <b>discipline about roles</b>: every color has one job, and the orange only ever means "act here."</p>
+    <div class="swatches">
+      <div class="sw"><div class="chipbox" style="background:#F3F1EA"><span style="color:#1B1B1D">#F3F1EA</span></div><div class="info"><b>Bone</b><span>The canvas. Default background; keeps the page calm.</span></div></div>
+      <div class="sw"><div class="chipbox" style="background:#1B1B1D"><span style="color:#F3F1EA">#1B1B1D</span></div><div class="info"><b>Espresso</b><span>The ink. Type, borders, structure, dark proof sections.</span></div></div>
+      <div class="sw"><div class="chipbox" style="background:#FF6B37"><span style="color:#F3F1EA">#FF6B37</span></div><div class="info"><b>Clay</b><span>The action. CTAs and the single accent word in a headline. Nothing else.</span></div></div>
+      <div class="sw"><div class="chipbox" style="background:#27D4C4"><span style="color:#12203f00; color:#1B1B1D">#27D4C4</span></div><div class="info"><b>Aqua</b><span>The coach's marker. Underlines, annotations, small accents. Never a CTA.</span></div></div>
+      <div class="sw"><div class="chipbox" style="background:#FFC72C"><span style="color:#1B1B1D">#FFC72C</span></div><div class="info"><b>Sunshine</b><span>Reserved: appears only in Staple cross-brand moments and the star rating.</span></div></div>
+    </div>
+    <div class="ratio-bar">
+      <div style="flex:60;background:#F3F1EA;color:#1B1B1D">60 Bone</div>
+      <div style="flex:25;background:#1B1B1D;color:#F3F1EA">25 Espresso</div>
+      <div style="flex:8;background:#27D4C4;color:#1B1B1D">8 Aqua</div>
+      <div style="flex:5;background:#FF6B37;color:#F3F1EA">5 Clay</div>
+      <div style="flex:2;background:#FFC72C;color:#1B1B1D">2</div>
+    </div>
+    <div class="grid3 color-rules">
+      <div class="rule-card"><h4>Rule 1 &mdash; one orange per screen</h4><p>At any scroll position, <b>clay appears on exactly one element</b> &mdash; the thing we want clicked or read. If two things are orange, neither is the CTA.</p></div>
+      <div class="rule-card"><h4>Rule 2 &mdash; aqua annotates</h4><p>Aqua is Marcus's whiteboard marker: underlines, tags, small accents that <b>point at things</b>. It never fills large areas or buttons on FBB pages.</p></div>
+      <div class="rule-card"><h4>Rule 3 &mdash; dark = proof</h4><p>Espresso sections are for <b>evidence</b>: results, the coach, video. Light sections are for pitch and offer. Alternating creates the page rhythm.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s04">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">04</span><h2 class="display">Typography &mdash; <em>the poster and the program</em></h2></div>
+    <p class="lead">Two typefaces, three jobs. Headlines are <b>tall, condensed, loud</b> (the poster). Labels and data are <b>mono, small, precise</b> (the program sheet). Body copy stays quiet so the other two can work.</p>
+    <div class="type-spec">
+      <div class="tspec">
+        <div class="sample"><span class="display" style="font-size:clamp(2.4rem,6vw,4.6rem)">Look Good.<br><em style="color:var(--clay)">Move Well.</em></span></div>
+        <div class="use"><b>Display &mdash; Archivo Black, condensed 74</b>Uppercase, tight leading. Max two lines, one italic or clay accent per headline &mdash; never both on more than one word.</div>
+      </div>
+      <div class="tspec">
+        <div class="sample"><span style="font-size:1.05rem;line-height:1.65;color:var(--ink-dim)">Training programs that build <b style="color:var(--espresso)">visible muscle</b> and <b style="color:var(--espresso)">pain-free movement</b> in about 3 hours a week &mdash; without the burnout.</span></div>
+        <div class="use"><b>Body &mdash; Archivo Regular</b>Max 60 characters per line. Bold picks out the 2&ndash;3 words a skimmer must catch; everything else stays dim.</div>
+      </div>
+      <div class="tspec">
+        <div class="sample"><span class="mono-label" style="display:block;margin-bottom:.8rem">02 &mdash; The Method</span><span class="session-tag" style="display:inline-block">A1 &middot; Tempo <b>30X1</b></span></div>
+        <div class="use"><b>Labels &amp; data &mdash; Space Mono</b>Section numbers, tags, stats, nav. Wide letterspacing, always uppercase. This is the "program sheet" texture that makes FBB feel coached.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s05">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">05</span><h2 class="display">Graphic language &mdash; <em>the coach's notebook</em></h2></div>
+    <p class="lead">FBB's motifs come from how Marcus actually works: <b>the whiteboard, the program sheet, the gym floor</b>. Staple keeps the geometric blocks and halftones; FBB gets notation. <b>Maximum one motif layer per section.</b></p>
+    <div class="motif-demo">
+      <div class="motif"><div class="demo"><svg width="180" height="18" viewBox="0 0 180 18"><path d="M4 12 C 40 4, 90 16, 176 8" fill="none" stroke="#27D4C4" stroke-width="6" stroke-linecap="round"/></svg></div><h4>Marker stroke</h4><p>The teal whiteboard underline. One per viewport, under the word that matters. Draws itself on scroll.</p></div>
+      <div class="motif"><div class="demo"><span class="session-tag">A1 &middot; Tempo <b>30X1</b></span></div><h4>Session tags</h4><p>Real programming notation (A1/B1, tempo codes, Wk/Day) as annotation chips on photos and cards.</p></div>
+      <div class="motif"><div class="demo gym-grid" style="border:1px solid rgba(27,27,29,.2);min-height:80px;width:100%"></div><h4>Grid paper</h4><p>Faint programming-sheet grid behind light sections only. Never on dark sections, never with another motif.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s06">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">06</span><h2 class="display">Photography &mdash; <em>real coach, real light</em></h2></div>
+    <div class="grid3">
+      <div class="rule-card"><h4>What we show</h4><p>Marcus training, coaching, writing programming; members' honest transformations. <b>Natural light, real gyms, the beach, the whiteboard.</b> No stock, no studio muscle shots.</p></div>
+      <div class="rule-card"><h4>How photos sit</h4><p>Framed like printouts pinned to the program: thin espresso border, slight rotation (&plusmn;2&deg;), soft shadow. <b>Annotated with one session tag.</b> No color-block backdrops &mdash; that's Staple's move.</p></div>
+      <div class="rule-card"><h4>Hierarchy</h4><p><b>One hero image per section.</b> Everything else supports at half scale or smaller. If a photo and a headline compete, the photo loses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s07">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">07</span><h2 class="display">The fold &mdash; <em>5 seconds, 4 landings</em></h2></div>
+    <p class="lead">Above the fold there are exactly <b>four things for the eye to land on, in order</b> &mdash; and nothing else. Every extra element we add competes with the pitch.</p>
+    <div class="fold">
+      <span class="mono-label">Above-the-fold blueprint &mdash; numbered = eye path</span>
+      <div class="wire">
+        <div class="row">
+          <div style="position:relative;display:grid;gap:.8rem;align-content:center;">
+            <span class="eyenum" style="top:-4px;left:-8px;position:relative;display:inline-flex;">1</span>
+            <div class="blk solid" style="font-size:.9rem;font-weight:900;font-family:var(--arch);font-variation-settings:'wdth' 74;font-stretch:74%;text-transform:uppercase;letter-spacing:.01em;">Pitch headline &mdash; what this is, who it's by<br><span style="color:var(--clay)">one accent word in clay</span></div>
+            <div class="blk">2 &mdash; one-line proof sub ("3 hrs/week &middot; 6&times; Games athlete &middot; 10,000+ members")</div>
+            <div class="blk cta">3 &mdash; single clay CTA: try persist free</div>
+            <div class="blk" style="border-style:dotted">4 &mdash; trust line: &#9733; 4.9/5 &middot; 2,400+ reviews</div>
+          </div>
+          <div style="position:relative">
+            <div class="blk solid" style="height:100%;min-height:230px;display:flex;align-items:center;justify-content:center;">One hero image / video of Marcus<br>&mdash; supports, never competes</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid3" style="margin-top:1.4rem">
+        <div class="rule-card"><h4>What got cut</h4><p>Ticker bar, floating tags, coach's-note scribbles, marquee rows &mdash; all of it moves <b>below</b> the fold or dies. The fold is the pitch, full stop.</p></div>
+        <div class="rule-card"><h4>The 5-second test</h4><p>A stranger must answer: <b>what is it, who's it by, what do I do next.</b> If any answer takes scrolling, the fold has failed.</p></div>
+        <div class="rule-card"><h4>One focal per section</h4><p>This rule extends down the whole page: each section gets <b>one</b> headline, <b>one</b> visual, <b>one</b> action. Motion may only decorate the focal &mdash; never a side element.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s08">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">08</span><h2 class="display">The story arc &mdash; <em>below the fold</em></h2></div>
+    <p class="lead">The scroll is a pitch meeting: <b>hook &rarr; problem &rarr; method &rarr; proof &rarr; offer &rarr; coach &rarr; family &rarr; capture</b>. Light/dark alternation carries the rhythm; each beat earns the next.</p>
+    <div class="story-arc">
+      <div class="arc-row"><span class="num">1</span><h5>Hook (fold)</h5><p>The pitch, one CTA, one image. <b>Light.</b></p></div>
+      <div class="arc-row"><span class="num">2</span><h5>The problem</h5><p>"Training hard but breaking down?" &mdash; Marcus's burnout in two sentences. The reader recognizes themselves. <b>Dark.</b></p></div>
+      <div class="arc-row"><span class="num">3</span><h5>The method</h5><p>3 / 60 / 10K &mdash; the whole system in three numbers. Simple enough to retell a friend. <b>Light, grid paper.</b></p></div>
+      <div class="arc-row"><span class="num">4</span><h5>The proof</h5><p>Transformations + video testimonials + 4.9/5. Real people, real numbers. <b>Dark.</b></p></div>
+      <div class="arc-row"><span class="num">5</span><h5>The offer</h5><p>Three doors &mdash; Persist (featured), E-books, Coaching &mdash; with prices. Second CTA moment. <b>Light.</b></p></div>
+      <div class="arc-row"><span class="num">6</span><h5>The coach</h5><p>Marcus: Games &rarr; burnout &rarr; method. Watch section lives here &mdash; videos are proof of coaching, not decoration. <b>Dark.</b></p></div>
+      <div class="arc-row"><span class="num">7</span><h5>The family</h5><p>Staple cross-brand card &mdash; the one place Staple's look (sunshine, blocks) appears. "Train here. Fuel with Staple." <b>Light.</b></p></div>
+      <div class="arc-row"><span class="num">8</span><h5>The capture</h5><p>Newsletter for the not-ready-yet: "Join 125,000+." Final CTA echo in the footer. <b>Aqua band.</b></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s09">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">09</span><h2 class="display">Motion &mdash; <em>earned, not ambient</em></h2></div>
+    <div class="grid3">
+      <div class="rule-card"><h4>Motion means coaching</h4><p>Things move when they <b>demonstrate or point</b>: the marker stroke drawing under a word, numbers counting up, video playing. Decorative drift is capped at one element per section.</p></div>
+      <div class="rule-card"><h4>Video is proof</h4><p>Click-to-play everywhere (never autoplay with sound). Hero video, member testimonials, movement demos &mdash; each appears at its beat in the story, not scattered.</p></div>
+      <div class="rule-card"><h4>Reveals stay subtle</h4><p>Sections fade up once, 500ms, small distance. Respect reduced-motion. If a reveal makes the reader wait for the pitch, cut it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s10">
+  <div class="wrap">
+    <div class="sec-num"><span class="n">10</span><h2 class="display">CTA system &mdash; <em>one path, three echoes</em></h2></div>
+    <p class="lead">The whole site funnels to one action: <b>start the free 14-day Persist trial</b>. It appears at beats 1, 5 and 8 &mdash; always clay, always the same words. Everything else is a quiet underline link.</p>
+    <div class="cta-demo">
+      <span class="btn btn-primary">Try Persist Free for 14 Days &#9656;</span>
+      <span class="cta-sub">Find your program &mdash; 60-sec quiz</span>
+      <span class="mono-label" style="color:var(--ink-dim)">&larr; primary / secondary &mdash; never two primaries in view</span>
+    </div>
+    <div class="grid3">
+      <div class="rule-card"><h4>Primary</h4><p>Clay parallelogram, mono type, identical wording everywhere: <b>"Try Persist Free for 14 Days."</b> Repetition builds the path.</p></div>
+      <div class="rule-card"><h4>Secondary</h4><p>Aqua-underlined text link. For the unsure: the quiz, member stories, Marcus's story. Never a filled button.</p></div>
+      <div class="rule-card"><h4>Tertiary</h4><p>E-books and Coaching get their own buttons <b>only inside the offer section</b>, in aqua/espresso &mdash; they never compete with clay elsewhere.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono-label">FBB Brand Sheet v1 &middot; comment on anything &middot; homepage rebuild follows sign-off &middot; brother brand to Staple Performance Nutrition</span>
+  </div>
+</footer>
+
+
+<!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
+<script>
+/* ============================================================
+   CLAUDE COMMENTS — Figma-style comment layer for any HTML page
+   ------------------------------------------------------------
+   HOW TO USE:
+   1. Set FIREBASE_URL below to your Firebase Realtime Database
+      URL (looks like https://something-default-rtdb.firebaseio.com)
+      Leave it as-is to run in OFFLINE mode (comments only saved
+      in this browser — good for trying it out).
+   2. Optionally set PAGE_ID to a short name for this page.
+      If left blank, it's derived from the file name / title.
+   3. Paste this whole <script> block right before </body>.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ------------------- CONFIG ------------------- */
+  var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
+  var PAGE_ID = 'fbb-brand-v1';
+
+  /* ---------------------------------------------- */
+
+  if (window.__claudeCommentsLoaded) return;
+  window.__claudeCommentsLoaded = true;
+
+  var ONLINE = /^https:\/\/.+firebase/.test(FIREBASE_URL);
+  if (ONLINE) FIREBASE_URL = FIREBASE_URL.replace(/\/+$/, '');
+
+  function slug(s) {
+    return String(s).toLowerCase().replace(/\.[a-z0-9]+$/, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'page';
+  }
+  if (!PAGE_ID) {
+    var fn = (location.pathname.split('/').pop() || '');
+    PAGE_ID = slug(fn && fn !== 'index.html' ? fn : (document.title || fn || 'page'));
+  }
+
+  var COLORS = ['#7C5CFF', '#FF5C8A', '#00A896', '#F4A100', '#2E86DE', '#B8578C'];
+  function colorFor(name) {
+    var h = 0; name = name || '?';
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return COLORS[h % COLORS.length];
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function timeAgo(ts) {
+    var d = Date.now() - ts;
+    if (d < 60e3) return 'just now';
+    if (d < 3600e3) return Math.floor(d / 60e3) + 'm ago';
+    if (d < 86400e3) return Math.floor(d / 3600e3) + 'h ago';
+    if (d < 7 * 86400e3) return Math.floor(d / 86400e3) + 'd ago';
+    var dt = new Date(ts);
+    return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + String(dt.getFullYear()).slice(2);
+  }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+  /* ------------------- STORAGE ------------------- */
+  // Data shape: { threadId: { anchor:{sel,xp,yp,dxp,dyp}, resolved, created,
+  //               comments: { commentId: { name, text, ts } } } }
+  var store;
+
+  function LocalStore() {
+    var KEY = 'claude-comments::' + PAGE_ID;
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+    }
+    function write(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+    return {
+      offline: true,
+      fetchAll: function () { return Promise.resolve(read()); },
+      createThread: function (t) {
+        var d = read(); var id = uid(); d[id] = t; write(d); return Promise.resolve(id);
+      },
+      addComment: function (tid, c) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        d[tid].comments = d[tid].comments || {};
+        d[tid].comments[uid()] = c; write(d); return Promise.resolve();
+      },
+      patchThread: function (tid, patch) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        for (var k in patch) d[tid][k] = patch[k];
+        write(d); return Promise.resolve();
+      },
+      deleteThread: function (tid) {
+        var d = read(); delete d[tid]; write(d); return Promise.resolve();
+      }
+    };
+  }
+
+  function FirebaseStore() {
+    var base = FIREBASE_URL + '/pages/' + encodeURIComponent(PAGE_ID) + '/threads';
+    function req(method, path, body) {
+      return fetch(base + path + '.json', {
+        method: method,
+        body: body === undefined ? undefined : JSON.stringify(body)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Sync error ' + r.status);
+        return r.json();
+      });
+    }
+    return {
+      offline: false,
+      fetchAll: function () { return req('GET', '').then(function (d) { return d || {}; }); },
+      createThread: function (t) {
+        return req('POST', '', t).then(function (res) { return res.name; });
+      },
+      addComment: function (tid, c) { return req('POST', '/' + tid + '/comments', c); },
+      patchThread: function (tid, patch) { return req('PATCH', '/' + tid, patch); },
+      deleteThread: function (tid) { return req('DELETE', '/' + tid); }
+    };
+  }
+
+  store = ONLINE ? FirebaseStore() : LocalStore();
+
+  /* ------------------- ANCHORING ------------------- */
+  function cssPath(el) {
+    if (!(el instanceof Element)) return '';
+    var path = [];
+    while (el && el.nodeType === 1 && el !== document.body && path.length < 8) {
+      var seg = el.tagName.toLowerCase();
+      if (el.id && !/\d{4,}/.test(el.id)) { path.unshift('#' + CSS.escape(el.id)); break; }
+      var sibs = el.parentNode ? Array.prototype.filter.call(el.parentNode.children, function (s) {
+        return s.tagName === el.tagName;
+      }) : [];
+      if (sibs.length > 1) seg += ':nth-of-type(' + (sibs.indexOf(el) + 1) + ')';
+      path.unshift(seg);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+  function makeAnchor(clientX, clientY, target) {
+    var docX = clientX + window.scrollX, docY = clientY + window.scrollY;
+    var a = {
+      dxp: docX / Math.max(1, document.documentElement.scrollWidth),
+      dyp: docY / Math.max(1, document.documentElement.scrollHeight)
+    };
+    if (target && target !== document.body && target !== document.documentElement) {
+      var sel = cssPath(target);
+      try {
+        if (sel && document.querySelector(sel) === target) {
+          var r = target.getBoundingClientRect();
+          if (r.width > 4 && r.height > 4) {
+            a.sel = sel;
+            a.xp = (clientX - r.left) / r.width;
+            a.yp = (clientY - r.top) / r.height;
+          }
+        }
+      } catch (e) {}
+    }
+    return a;
+  }
+  // Returns pin coordinates, or null when the anchored element exists in the
+  // document but is currently hidden (e.g. a single-file site showing a
+  // different "page"/view) — in that case the pin should not be rendered.
+  function resolveAnchor(a) {
+    if (a.sel) {
+      try {
+        var el = document.querySelector(a.sel);
+        if (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width > 0 && r.height > 0) {
+            return { x: r.left + window.scrollX + a.xp * r.width, y: r.top + window.scrollY + a.yp * r.height };
+          }
+          return null; // element is on a hidden view right now
+        }
+      } catch (e) {}
+    }
+    return {
+      x: a.dxp * document.documentElement.scrollWidth,
+      y: a.dyp * document.documentElement.scrollHeight
+    };
+  }
+  function currentView() { return location.hash || ''; }
+  // Should this thread be shown on the current view?
+  function threadVisiblePos(t) {
+    var a = t.anchor || {};
+    if (a.sel) return resolveAnchor(a); // visibility of the anchor decides
+    // No element anchor: fall back to the view recorded at creation
+    if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) return null;
+    return resolveAnchor(a);
+  }
+  function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
+
+  /* ------------------- STATE ------------------- */
+  var threads = {};           // latest data
+  var lastJSON = '';
+  var commentMode = false;
+  var openThreadId = null;    // thread popup currently open
+  var draft = null;           // {anchor, x, y} while composing a new thread
+  var showResolved = false;
+  var panelOpen = false;
+  var myName = '';
+  try { myName = localStorage.getItem('claude-comments-name') || ''; } catch (e) {}
+
+  function sortedIds() {
+    return Object.keys(threads).sort(function (a, b) {
+      return (threads[a].created || 0) - (threads[b].created || 0);
+    });
+  }
+  function threadNumber(tid) { return sortedIds().indexOf(tid) + 1; }
+  function firstComment(t) {
+    var ids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    return ids.length ? t.comments[ids[0]] : null;
+  }
+  function openCount() {
+    return sortedIds().filter(function (id) { return !threads[id].resolved; }).length;
+  }
+
+  /* ------------------- UI SHELL ------------------- */
+  var host = document.createElement('div');
+  host.id = 'claude-comments-host';
+  var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host;
+
+  var css = ''
+    + ':host{all:initial}'
+    + '*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
+    + '.layer{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:2147483000}'
+    + '.pin{position:absolute;pointer-events:auto;width:32px;height:32px;margin:-32px 0 0 0;'
+    + 'border-radius:16px 16px 16px 3px;display:flex;align-items:center;justify-content:center;'
+    + 'color:#fff;font-size:13px;font-weight:700;cursor:pointer;border:2px solid #fff;'
+    + 'box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .12s;user-select:none}'
+    + '.pin:hover{transform:scale(1.15)}'
+    + '.pin.resolved{background:#9aa3ad !important;opacity:.75}'
+    + '.pin.draft{background:#111}'
+    + '.popup{position:fixed;pointer-events:auto;width:min(320px,calc(100vw - 20px));max-height:70vh;display:flex;flex-direction:column;'
+    + 'background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483001;overflow:hidden}'
+    + '.popup-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #eee}'
+    + '.popup-head .title{font-size:13px;font-weight:700;color:#333;flex:1}'
+    + '.iconbtn{border:none;background:none;cursor:pointer;font-size:13px;color:#666;padding:4px 8px;border-radius:6px}'
+    + '.iconbtn:hover{background:#f2f2f4;color:#111}'
+    + '.iconbtn.danger:hover{background:#ffe8ec;color:#c0264b}'
+    + '.comments{overflow-y:auto;padding:6px 0;flex:1}'
+    + '.comment{padding:8px 14px;display:flex;gap:9px}'
+    + '.avatar{width:26px;height:26px;border-radius:50%;color:#fff;display:flex;align-items:center;'
+    + 'justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}'
+    + '.cbody{flex:1;min-width:0}'
+    + '.cmeta{font-size:12px;color:#888;margin-bottom:2px}'
+    + '.cmeta b{color:#222;font-size:12.5px;margin-right:6px}'
+    + '.ctext{font-size:13.5px;color:#222;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}'
+    + '.composer{border-top:1px solid #eee;padding:10px 12px;background:#fafafa}'
+    + '.composer textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13.5px;'
+    + 'resize:none;min-height:38px;max-height:120px;background:#fff;color:#111;outline:none;line-height:1.4}'
+    + '.composer textarea:focus{border-color:#7C5CFF}'
+    + '.composer input{width:100%;border:1px solid #ddd;border-radius:8px;padding:7px 10px;font-size:13px;'
+    + 'margin-bottom:6px;background:#fff;color:#111;outline:none}'
+    + '.composer input:focus{border-color:#7C5CFF}'
+    + '.crow{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}'
+    + '.btn{border:none;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}'
+    + '.btn.primary{background:#7C5CFF;color:#fff}.btn.primary:hover{background:#6a4ae6}'
+    + '.btn.primary:disabled{background:#c9bdfa;cursor:default}'
+    + '.btn.ghost{background:none;color:#666}.btn.ghost:hover{background:#eee}'
+    + '.bar{position:fixed;right:20px;bottom:20px;display:flex;gap:8px;pointer-events:auto;z-index:2147483002}'
+    + '.fab{display:flex;align-items:center;gap:7px;background:#111;color:#fff;border:none;border-radius:24px;'
+    + 'padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.fab:hover{background:#2b2b2e}.fab.active{background:#7C5CFF}'
+    + '.fab .badge{background:#7C5CFF;border-radius:10px;font-size:11.5px;padding:1px 7px;font-weight:700}'
+    + '.fab.active .badge{background:rgba(255,255,255,.25)}'
+    + '.hint{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111;color:#fff;'
+    + 'padding:9px 16px;border-radius:10px;font-size:13px;z-index:2147483002;pointer-events:none;'
+    + 'box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.panel{position:fixed;right:20px;bottom:76px;width:min(300px,calc(100vw - 40px));max-height:60vh;background:#fff;border-radius:12px;'
+    + 'box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483002;pointer-events:auto;display:flex;flex-direction:column;overflow:hidden}'
+    + '.panel-head{padding:11px 14px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}'
+    + '.panel-head .t{font-size:13.5px;font-weight:700;color:#222}'
+    + '.panel-list{overflow-y:auto;flex:1}'
+    + '.pitem{padding:10px 14px;border-bottom:1px solid #f4f4f5;cursor:pointer;display:flex;gap:10px;align-items:flex-start}'
+    + '.pitem:hover{background:#f8f7ff}'
+    + '.pnum{width:22px;height:22px;border-radius:11px 11px 11px 2px;color:#fff;font-size:11px;font-weight:700;'
+    + 'display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}'
+    + '.pbody{flex:1;min-width:0}'
+    + '.pmeta{font-size:11.5px;color:#999;margin-bottom:1px}'
+    + '.ptext{font-size:12.5px;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;'
+    + '-webkit-line-clamp:2;-webkit-box-orient:vertical}'
+    + '.pitem.resolved .ptext,.pitem.resolved .pmeta{color:#aaa;text-decoration:line-through}'
+    + '.panel-foot{padding:9px 14px;border-top:1px solid #eee;font-size:12px;color:#777;display:flex;'
+    + 'align-items:center;justify-content:space-between}'
+    + '.empty{padding:26px 14px;text-align:center;color:#999;font-size:13px}'
+    + '.offline{background:#fff7e0;color:#8a6400;font-size:11.5px;padding:6px 14px;text-align:center}'
+    + 'label.tog{display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:#777}'
+    + '@media (max-width:600px){.composer textarea,.composer input{font-size:16px}'
+    + '.bar{right:12px;bottom:12px}.panel{right:12px;bottom:66px}}';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  root.appendChild(styleEl);
+
+  var layer = document.createElement('div');   // pins (document coords)
+  layer.className = 'layer';
+  var ui = document.createElement('div');      // fixed UI: bar, panel, popup, hint
+  root.appendChild(layer);
+  root.appendChild(ui);
+
+  var cursorStyle = document.createElement('style');
+  cursorStyle.textContent = 'html.claude-commenting, html.claude-commenting *{cursor:crosshair !important}';
+  document.head.appendChild(cursorStyle);
+
+  function mount() { document.body.appendChild(host); render(); }
+
+  /* ------------------- RENDER ------------------- */
+  function render() {
+    layer.style.height = document.documentElement.scrollHeight + 'px';
+    renderPins();
+    renderUI();
+  }
+
+  function renderPins() {
+    layer.innerHTML = '';
+    var ids = sortedIds();
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      if (t.resolved && !showResolved) return;
+      var p = threadVisiblePos(t);
+      if (!p) return; // comment belongs to a view that isn't on screen
+      var fc = firstComment(t);
+      var pin = document.createElement('div');
+      pin.className = 'pin' + (t.resolved ? ' resolved' : '');
+      pin.style.left = p.x + 'px';
+      pin.style.top = p.y + 'px';
+      pin.style.background = colorFor(fc ? fc.name : '?');
+      pin.textContent = threadNumber(tid);
+      pin.title = fc ? fc.name + ': ' + fc.text.slice(0, 80) : '';
+      pin.addEventListener('click', function (e) {
+        e.stopPropagation();
+        draft = null;
+        openThreadId = (openThreadId === tid) ? null : tid;
+        render();
+      });
+      layer.appendChild(pin);
+    });
+    if (draft) {
+      var dp = document.createElement('div');
+      dp.className = 'pin draft';
+      dp.style.left = draft.x + 'px';
+      dp.style.top = draft.y + 'px';
+      dp.textContent = '+';
+      layer.appendChild(dp);
+    }
+  }
+
+  function popupPos(docX, docY) {
+    var vx = docX - window.scrollX, vy = docY - window.scrollY;
+    var pw = Math.min(320, window.innerWidth - 20);
+    var left = Math.max(10, Math.min(vx + 18, window.innerWidth - pw - 10));
+    var top = Math.min(Math.max(10, vy - 20), Math.max(10, window.innerHeight - 260));
+    return { left: left, top: top };
+  }
+
+  function renderUI() {
+    ui.innerHTML = '';
+
+    // --- floating bar ---
+    var bar = document.createElement('div');
+    bar.className = 'bar';
+    var listBtn = document.createElement('button');
+    listBtn.className = 'fab' + (panelOpen ? ' active' : '');
+    listBtn.innerHTML = '&#9776; <span class="badge">' + openCount() + '</span>';
+    listBtn.title = 'All comments';
+    listBtn.addEventListener('click', function () { panelOpen = !panelOpen; renderUI(); });
+    var addBtn = document.createElement('button');
+    addBtn.className = 'fab' + (commentMode ? ' active' : '');
+    addBtn.innerHTML = commentMode ? '&#10005; Done' : '&#128172; Comment';
+    addBtn.addEventListener('click', toggleMode);
+    bar.appendChild(listBtn);
+    bar.appendChild(addBtn);
+    ui.appendChild(bar);
+
+    // --- hint while in comment mode ---
+    if (commentMode && !draft) {
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.textContent = 'Click anywhere on the page to leave a comment';
+      ui.appendChild(hint);
+    }
+
+    // --- panel (thread list) ---
+    if (panelOpen) ui.appendChild(buildPanel());
+
+    // --- popup: draft composer or open thread ---
+    if (draft) ui.appendChild(buildComposerPopup());
+    else if (openThreadId && threads[openThreadId]) ui.appendChild(buildThreadPopup(openThreadId));
+  }
+
+  function buildPanel() {
+    var panel = document.createElement('div');
+    panel.className = 'panel';
+    var head = document.createElement('div');
+    head.className = 'panel-head';
+    head.innerHTML = '<span class="t">Comments</span>';
+    var tog = document.createElement('label');
+    tog.className = 'tog';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = showResolved;
+    cb.addEventListener('change', function () { showResolved = cb.checked; render(); });
+    tog.appendChild(cb);
+    tog.appendChild(document.createTextNode('show resolved'));
+    head.appendChild(tog);
+    panel.appendChild(head);
+
+    if (store.offline) {
+      var off = document.createElement('div');
+      off.className = 'offline';
+      off.textContent = 'Offline mode — comments only saved in this browser';
+      panel.appendChild(off);
+    }
+
+    var list = document.createElement('div');
+    list.className = 'panel-list';
+    var ids = sortedIds().filter(function (id) { return showResolved || !threads[id].resolved; });
+    if (!ids.length) {
+      var em = document.createElement('div');
+      em.className = 'empty';
+      em.textContent = 'No comments yet. Hit “Comment”, then click anywhere on the page.';
+      list.appendChild(em);
+    }
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      var fc = firstComment(t);
+      var n = Object.keys(t.comments || {}).length;
+      var item = document.createElement('div');
+      item.className = 'pitem' + (t.resolved ? ' resolved' : '');
+      var num = document.createElement('div');
+      num.className = 'pnum';
+      num.style.background = t.resolved ? '#9aa3ad' : colorFor(fc ? fc.name : '?');
+      num.textContent = threadNumber(tid);
+      var body = document.createElement('div');
+      body.className = 'pbody';
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
+      body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
+        + (n > 1 ? ' · ' + n + ' replies' : '')
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
+        + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
+      item.appendChild(num);
+      item.appendChild(body);
+      item.addEventListener('click', function () {
+        var go = function () {
+          var p = threadVisiblePos(t) || resolveAnchor(t.anchor || {});
+          if (p) window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
+          openThreadId = tid; draft = null; panelOpen = false;
+          setTimeout(render, 350);
+        };
+        if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
+          // Comment lives on another view of this site — switch to it first
+          location.hash = t.view || '#';
+          setTimeout(go, 450);
+        } else go();
+      });
+      list.appendChild(item);
+    });
+    panel.appendChild(list);
+
+    var foot = document.createElement('div');
+    foot.className = 'panel-foot';
+    foot.innerHTML = '<span>' + (myName ? 'Commenting as <b>' + esc(myName) + '</b>' : '') + '</span>';
+    if (myName) {
+      var chg = document.createElement('button');
+      chg.className = 'iconbtn';
+      chg.textContent = 'change name';
+      chg.addEventListener('click', function () {
+        myName = '';
+        try { localStorage.removeItem('claude-comments-name'); } catch (e) {}
+        renderUI();
+      });
+      foot.appendChild(chg);
+    }
+    panel.appendChild(foot);
+    return panel;
+  }
+
+  function nameField() {
+    var input = document.createElement('input');
+    input.placeholder = 'Your name';
+    input.maxLength = 40;
+    input.value = myName;
+    return input;
+  }
+
+  function buildComposerPopup() {
+    var pos = popupPos(draft.x, draft.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">New comment</span>';
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { draft = null; render(); });
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Write a comment…';
+    comp.appendChild(ta);
+    var row = document.createElement('div');
+    row.className = 'crow';
+    var cancel = document.createElement('button');
+    cancel.className = 'btn ghost'; cancel.textContent = 'Cancel';
+    cancel.addEventListener('click', function () { draft = null; render(); });
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Post';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      var t = {
+        anchor: draft.anchor, resolved: false, created: Date.now(),
+        view: currentView(), comments: {}
+      };
+      t.comments[uid()] = { name: name, text: text, ts: Date.now() };
+      store.createThread(t).then(function (tid) {
+        draft = null; commentMode = false; setMode(false);
+        if (tid) openThreadId = tid;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { draft = null; render(); }
+    });
+    row.appendChild(cancel);
+    row.appendChild(post);
+    comp.appendChild(row);
+    pop.appendChild(comp);
+    setTimeout(function () { (nameIn && !nameIn.value ? nameIn : ta).focus(); }, 30);
+    return pop;
+  }
+
+  function buildThreadPopup(tid) {
+    var t = threads[tid];
+    var p = threadVisiblePos(t)
+      || { x: window.scrollX + window.innerWidth / 2, y: window.scrollY + window.innerHeight / 2 };
+    var pos = popupPos(p.x, p.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">Comment #' + threadNumber(tid) + '</span>';
+    var resolveBtn = document.createElement('button');
+    resolveBtn.className = 'iconbtn';
+    resolveBtn.innerHTML = t.resolved ? '&#8634; Reopen' : '&#10003; Resolve';
+    resolveBtn.addEventListener('click', function () {
+      store.patchThread(tid, { resolved: !t.resolved }).then(function () {
+        if (!t.resolved === true && !showResolved) openThreadId = null;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    var del = document.createElement('button');
+    del.className = 'iconbtn danger';
+    del.innerHTML = '&#128465;';
+    del.title = 'Delete thread';
+    del.addEventListener('click', function () {
+      if (del.dataset.armed) {
+        store.deleteThread(tid).then(function () { openThreadId = null; return refresh(true); }).catch(syncFail);
+      } else {
+        del.dataset.armed = '1';
+        del.textContent = 'Delete?';
+        setTimeout(function () { delete del.dataset.armed; del.innerHTML = '&#128465;'; }, 2500);
+      }
+    });
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { openThreadId = null; render(); });
+    head.appendChild(resolveBtn);
+    head.appendChild(del);
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var box = document.createElement('div');
+    box.className = 'comments';
+    var cids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    cids.forEach(function (cid) {
+      var c = t.comments[cid];
+      var row = document.createElement('div');
+      row.className = 'comment';
+      row.innerHTML = '<div class="avatar" style="background:' + colorFor(c.name) + '">'
+        + esc((c.name || '?').trim().charAt(0).toUpperCase()) + '</div>'
+        + '<div class="cbody"><div class="cmeta"><b>' + esc(c.name) + '</b>' + timeAgo(c.ts) + '</div>'
+        + '<div class="ctext">' + esc(c.text) + '</div></div>';
+      box.appendChild(row);
+    });
+    pop.appendChild(box);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Reply…';
+    comp.appendChild(ta);
+    var row2 = document.createElement('div');
+    row2.className = 'crow';
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Reply';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      store.addComment(tid, { name: name, text: text, ts: Date.now() })
+        .then(function () { return refresh(true); }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { openThreadId = null; render(); }
+    });
+    row2.appendChild(post);
+    comp.appendChild(row2);
+    pop.appendChild(comp);
+    setTimeout(function () { box.scrollTop = box.scrollHeight; }, 30);
+    return pop;
+  }
+
+  function saveName(name) {
+    if (name && name !== 'Anonymous') {
+      myName = name;
+      try { localStorage.setItem('claude-comments-name', name); } catch (e) {}
+    }
+  }
+  function syncFail(err) {
+    alertBar('Couldn’t save — check your internet connection and try again.');
+    render();
+  }
+  var alertTimer = null;
+  function alertBar(msg) {
+    var el = document.createElement('div');
+    el.className = 'hint';
+    el.style.background = '#c0264b';
+    el.textContent = msg;
+    ui.appendChild(el);
+    clearTimeout(alertTimer);
+    alertTimer = setTimeout(function () { el.remove(); }, 4000);
+  }
+
+  /* ------------------- COMMENT MODE ------------------- */
+  function setMode(on) {
+    commentMode = on;
+    document.documentElement.classList.toggle('claude-commenting', on);
+  }
+  function toggleMode() {
+    setMode(!commentMode);
+    if (!commentMode) draft = null;
+    openThreadId = null;
+    render();
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!commentMode) return;
+    if (e.composedPath && e.composedPath().indexOf(host) !== -1) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var target = null;
+    var els = document.elementsFromPoint(e.clientX, e.clientY) || [];
+    for (var i = 0; i < els.length; i++) {
+      if (els[i] !== host && !host.contains(els[i])) { target = els[i]; break; }
+    }
+    draft = {
+      anchor: makeAnchor(e.clientX, e.clientY, target),
+      x: e.clientX + window.scrollX,
+      y: e.clientY + window.scrollY
+    };
+    openThreadId = null;
+    render();
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && commentMode && !draft) { setMode(false); render(); }
+  });
+
+  /* ------------------- SYNC LOOP ------------------- */
+  function refresh(force) {
+    return store.fetchAll().then(function (d) {
+      d = d || {};
+      var j = JSON.stringify(d);
+      if (force || j !== lastJSON) {
+        lastJSON = j;
+        threads = d;
+        render();
+      }
+    }).catch(function () { /* transient network error: keep current view */ });
+  }
+
+  var pollMs = ONLINE ? 4000 : 2500;
+  setInterval(function () {
+    // Don't re-render out from under someone mid-typing
+    var typing = root.activeElement && /TEXTAREA|INPUT/.test(root.activeElement.tagName || '');
+    if (!typing) refresh(false);
+  }, pollMs);
+
+  window.addEventListener('resize', function () { render(); });
+  // Single-file sites that switch views via the URL hash: re-render so each
+  // view only shows its own pins, and close any popup from the previous view.
+  window.addEventListener('hashchange', function () {
+    openThreadId = null; draft = null;
+    render();
+  });
+
+  /* ------------------- BOOT ------------------- */
+  function boot() {
+    mount();
+    refresh(true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+</body>
+</html>
