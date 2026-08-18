@@ -455,7 +455,7 @@
     position:relative;
     text-align:center;
   }
-  .jar-card__wrap{position:relative}
+  .jar-card__wrap{position:relative;display:block;cursor:pointer}
   .jar-card__media{
     position:relative;
     z-index:1;
@@ -657,6 +657,18 @@
   .lore__polaroid--b{--tilt:3deg;width:52%;top:8%;right:0;z-index:2}
   .lore__polaroid--b img{aspect-ratio:3/3.6}
   .lore__polaroid--c{--tilt:-1.5deg;width:50%;bottom:0;left:22%;z-index:3}
+  .lore__swipe{
+    display:none;
+    text-align:center;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--preserve-red);
+    margin-top:4px;
+    flex:0 0 auto;
+    align-self:center;
+    min-width:130px;
+  }
   .lore__polaroid--c img{aspect-ratio:3/2.6}
   .lore__body .eyebrow{display:block}
   .lore__quote{
@@ -1171,7 +1183,25 @@
   }
 
   @media (max-width: 980px){
-    .lore__inner{grid-template-columns:1fr;gap:70px}
+    .lore__inner{grid-template-columns:1fr;gap:56px}
+    .lore__stack{
+      aspect-ratio:auto;
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      padding:10px 4px 18px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+    .lore__polaroid{
+      position:static;
+      flex:0 0 68%;
+      width:auto !important;
+      scroll-snap-align:center;
+      --tilt:0deg;
+    }
+    .lore__polaroid img{aspect-ratio:3/3.2 !important}
+    .lore__swipe{display:block}
     .ritual__steps{grid-template-columns:1fr;gap:46px}
     .ritual__steps::before{display:none}
     .values__grid{grid-template-columns:repeat(2,1fr);gap:44px 20px}
@@ -1673,8 +1703,8 @@
   }
   .ings .ing:nth-child(1){background-image:var(--gingred-url)}
   .ings .ing:nth-child(2){background-image:var(--gingsage-url)}
-  .ings .ing:nth-child(3){background-image:var(--gingblue-url)}
-  .ings .ing:nth-child(4){background-image:var(--gingbutter-url)}
+  .ings .ing:nth-child(3){background-image:var(--gingbutter-url)}
+  .ings .ing:nth-child(4){background-image:var(--gingblue-url)}
   .ings .ing:nth-child(5){background-image:var(--gingblue-url)}
   .ings .ing:nth-child(6){background-image:var(--gingred-url)}
   .ings .ing:nth-child(7){background-image:var(--gingbutter-url)}
@@ -1998,9 +2028,8 @@
 
   .sclose{
     text-align:center;
-    padding:130px 44px 140px;
-    background:var(--buttermilk);
-    border-top:1px solid rgba(94,26,31,.14);
+    padding:100px 44px 120px;
+    background:var(--linen);
   }
   .sclose__title{
     font-family:var(--serif);font-weight:600;
@@ -2020,7 +2049,8 @@
   .sclose__cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
   @media (max-width: 980px){
-    .shero{padding:100px 22px}
+    .shero{padding:80px 22px}
+    .shero__quote{font-size:clamp(24px,6.8vw,32px)}
     .schapter{padding:80px 20px}
     .schapter__grid,.schapter--flip .schapter__grid{grid-template-columns:1fr;gap:66px}
     .schapter--flip .schapter__fig{order:0}
@@ -2151,6 +2181,31 @@
     font-size:16px;color:rgba(43,38,34,.72);
     margin-top:10px;max-width:44ch;
   }
+  .mobilemenu{
+    display:none;
+    background:var(--linen);
+    border-top:1px solid rgba(94,26,31,.14);
+    padding:6px 24px 18px;
+  }
+  .mobilemenu a{
+    display:block;
+    padding:14px 2px;
+    color:var(--warm-ink);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    border-bottom:1px solid rgba(94,26,31,.12);
+  }
+  .mobilemenu a:last-child{border-bottom:none}
+  @media (min-width:901px){ .mobilemenu{display:none !important} }
+  @media (max-width:900px){
+    .mobilemenu--open{display:block}
+    .nav__burger--open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .nav__burger--open span:nth-child(2){opacity:0}
+    .nav__burger--open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  }
 </style>
 </head>
 <body>
@@ -2177,7 +2232,7 @@
 <!-- ═══════════ SECTION 1 · NAVIGATION ═══════════ -->
 <header id="header">
   <nav class="nav">
-    <button class="nav__burger" aria-label="menu"><span></span><span></span><span></span></button>
+    <button class="nav__burger" id="burger" aria-label="menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav__links nav__links--left">
       <a href="#home">Home</a>
       <a href="#home/pantry">Shop</a>
@@ -2194,6 +2249,14 @@
       <a href="#" class="nav__bag">Basket<sup id="bagCount">0</sup></a>
     </div>
   </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#home/pantry">Shop</a>
+    <a href="#jam-pact">Jam Pact</a>
+    <a href="#dayli-lyte">Dayli-Lyte</a>
+    <a href="#our-story">Our Story</a>
+    <a href="#journal">Journal</a>
+  </div>
 </header>
 
 <main class="page page--on" id="page-home">
@@ -2236,20 +2299,20 @@
     <div class="pantry__head reveal">
       <p class="eyebrow">The Pantry</p>
       <h2 class="pantry__title">Two small rituals, <em>made to be kept.</em></h2>
-      <p class="pantry__note">Stocked the way a good shelf always was — a few honest jars, chosen with care.</p>
+      <p class="pantry__note">Jam on toast at eight, a tall glass over ice at noon.</p>
       <img class="pantry__divider" data-img="divider" alt="">
     </div>
 
     <div class="pantry__grid">
       <!-- Jam Pact — the hero -->
       <article class="jar-card reveal reveal--d1">
-        <div class="jar-card__wrap">
+        <a class="jar-card__wrap" href="#jam-pact" aria-label="Jam Pact product page">
           <span class="jar-card__mat"></span>
           <span class="jar-card__no">Nº 01</span>
           <div class="jar-card__media">
             <img data-img="jampact" alt="Jam Pact — wholefood fiber blend in a glass preserve jar with gold lid">
           </div>
-        </div>
+        </a>
         <div class="jar-card__body">
           <p class="jar-card__type">Fiber Blend</p>
           <h3 class="jar-card__name">Jam <em>Pact</em></h3>
@@ -2269,13 +2332,13 @@
 
       <!-- Dayli-Lyte -->
       <article class="jar-card jar-card--lyte reveal reveal--d2">
-        <div class="jar-card__wrap">
+        <a class="jar-card__wrap" href="#dayli-lyte" aria-label="Dayli-Lyte product page">
           <span class="jar-card__mat"></span>
           <span class="jar-card__no">Nº 02</span>
           <div class="jar-card__media">
             <img data-img="daylilyte" alt="Dayli-Lyte — raspberry lemonade electrolyte blend in a glass preserve jar">
           </div>
-        </div>
+        </a>
         <div class="jar-card__body">
           <p class="jar-card__type">Electrolyte Blend</p>
           <h3 class="jar-card__name">Dayli-<em>Lyte</em></h3>
@@ -2334,6 +2397,7 @@
         <img data-img="oakpicnic" alt="Friends at a long picnic under the oak">
         <figcaption>the long lunch</figcaption>
       </figure>
+      <p class="lore__swipe">swipe through the album →</p>
     </div>
     <div class="lore__body reveal reveal--d1">
       <p class="eyebrow">The Lore</p>
@@ -2355,7 +2419,7 @@
     <div class="ritual__frame">
     <div class="ritual__card">
     <p class="eyebrow reveal">The Ritual</p>
-    <h2 class="ritual__title reveal">Three small movements, <em>then toast.</em></h2>
+    <h2 class="ritual__title reveal">Three steps, <em>then toast.</em></h2>
     <p class="ritual__note reveal">How Jam Pact becomes jam — one scoop, one small jar, two minutes.</p>
     <div class="ritual__steps">
       <div class="step reveal">
@@ -2592,9 +2656,9 @@
   <section class="pdpband">
     <div class="pdpband__head reveal">
       <p class="eyebrow">The ritual</p>
-      <h2 class="pdpband__title">Three small movements.</h2>
+      <h2 class="pdpband__title">Three <em>steps.</em></h2>
     </div>
-    <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop plus 4 oz of dark red juice, in a small jar.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Stir well; two minutes later, she is jam.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Spread</p><p class="mini-step__desc">Toast, yogurt, or a spoon at the counter.</p></div></div>
+    <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop, 4 oz of dark red juice, and the sweetener of your choice — in a small jar.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Stir well; two minutes later, she is jam.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Spread</p><p class="mini-step__desc">Toast, yogurt, or a spoon at the counter.</p></div></div>
     <div class="filmslot reveal">
       <div>
         <div class="filmslot__play">▶</div>
@@ -2610,7 +2674,7 @@
       <div>
         <p class="pair__eyebrow">She pairs well with</p>
         <p class="pair__name">Dayli-<em>Lyte</em></p>
-        <p class="pair__line">Jam on toast at eight, a tall glass over ice at noon.</p>
+        <p class="pair__line">Minerals, gentle fiber, zero sugar — raspberry lemonade, poured tall.</p>
         <span class="lore__alt">meet her →</span>
       </div>
     </a>
@@ -2711,7 +2775,7 @@
       <h2 class="pdpband__title">Ingredients your grandmother <em>would pour.</em></h2>
       <img class="head-flourish" data-img="flourish" alt="">
     </div>
-    <div class="ings ings--sage"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Pink Himalayan Salt</p><p class="ing__line">rosy, mineral-rich, mined the old way — the backbone of hydration.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Potassium</p><p class="ing__line">the other half of the hydration equation — the one sweat takes first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Magnesium Glycinate</p><p class="ing__line">the calm mineral, in its gentlest, kindest form.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Calcium Citrate</p><p class="ing__line">the steady mineral, in the form your body actually absorbs.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Tapioca Fiber</p><p class="ing__line">soft, soluble, and gentle — the fiber no other ’lyte carries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Beet Root</p><p class="ing__line">her blush — color from the garden, never from a lab.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Monk Fruit</p><p class="ing__line">sweetness from a small, storied fruit — and not a gram of sugar.</p></div></div></div>
+    <div class="ings ings--sage"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Pink Himalayan Salt</p><p class="ing__line">rosy, mineral-rich, mined the old way — the backbone of hydration.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Potassium</p><p class="ing__line">the other half of the hydration equation — the one sweat takes first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Magnesium Glycinate</p><p class="ing__line">the calm mineral, in its gentlest, kindest form.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Calcium Citrate</p><p class="ing__line">the steady mineral, in the form your body actually absorbs.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Tapioca Fiber</p><p class="ing__line">soft, soluble, and gentle — the fiber no other ’lyte carries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Beet Root</p><p class="ing__line">her blush — color from the garden, never from a lab.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Monk Fruit</p><p class="ing__line">sweetness from a small, storied fruit — and not a gram of sugar.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❃</span><p class="ing__name">Balanced, <em>Together</em></p><p class="ing__line">four minerals and one gentle fiber, tuned to work as a team — the way hydration actually lands.</p></div></div></div>
   </section>
   <section class="pdpband pdpband--butter">
     <div class="scallop"></div>
@@ -2730,7 +2794,7 @@
   <section class="pdpband">
     <div class="pdpband__head reveal">
       <p class="eyebrow">The ritual</p>
-      <h2 class="pdpband__title">Three small movements.</h2>
+      <h2 class="pdpband__title">Three <em>steps.</em></h2>
     </div>
     <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop over cold water or a glass of ice.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Thirty seconds, until she blushes rosy.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Sip</p><p class="mini-step__desc">Porch optional, but warmly recommended.</p></div></div>
     <div class="filmslot reveal">
@@ -3090,6 +3154,22 @@
   }
   addEventListener('hashchange', route);
   route();
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (burger && mobileMenu){
+    burger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('mobilemenu--open');
+      burger.classList.toggle('nav__burger--open', open);
+      burger.setAttribute('aria-expanded', open);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('mobilemenu--open');
+      burger.classList.remove('nav__burger--open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
+  }
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (a && a.getAttribute('href') === location.hash) { e.preventDefault(); route(); }
@@ -3171,7 +3251,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v11';
+  var PAGE_ID = 'dayli-home-v12';
 
   /* ---------------------------------------------- */
 
