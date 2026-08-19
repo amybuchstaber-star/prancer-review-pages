@@ -495,7 +495,16 @@ section{position:relative;}
 .intro .grid{
   display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center;
 }
-@media(max-width:900px){.intro .grid{grid-template-columns:1fr;}}
+@media(max-width:900px){
+  .intro .grid{grid-template-columns:1fr;gap:1.2rem;}
+  /* stacked order: heading, text, canister diagram, chips, CTA */
+  .intro .grid>div:first-child{display:contents;}
+  .intro h2{order:1;}
+  .intro p.lead{order:2;}
+  .intro .spec-card{order:3;margin-top:1.6rem;}
+  .intro .chip-row{order:4;margin-top:1.8rem;}
+  .intro .grid .btn{order:5;margin-top:1.8rem;justify-self:start;}
+}
 .intro h2{font-size:clamp(2.6rem,6vw,5.4rem);margin-bottom:1.6rem;}
 .intro h2 em{font-style:normal;color:var(--aqua);}
 .intro p.lead{color:var(--ink-dim);font-size:1.05rem;line-height:1.65;max-width:480px;}
@@ -925,7 +934,11 @@ section{position:relative;}
   filter:drop-shadow(0 26px 44px rgba(27,27,29,.35));
 }
 @media(max-width:900px){
-  .marcus-pow{min-height:440px;margin:3rem 0 2.4rem;}
+  /* order: name, photo, role chips */
+  .athlete-left{display:contents;}
+  .athlete-left h2{order:1;}
+  .marcus-pow{order:2;min-height:440px;margin:1.4rem 0 1rem;}
+  .athlete .roles{order:3;margin-top:.4rem;}
   .marcus-pow img{height:370px;}
   .marcus-pow .pow{width:min(440px,100%);}
 }
@@ -955,16 +968,29 @@ section{position:relative;}
 .media-grid .t5{grid-area:t5;}
 .media-grid .t6{grid-area:t6;}
 .athlete .media-slot{height:100%;border:2px solid var(--espresso);background:var(--espresso);}
+.media-hint{
+  display:none;
+  font-family:var(--mono);font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-dim);margin-top:.9rem;text-align:center;
+}
 @media(max-width:900px){
+  /* single-row swipe gallery — all 6 slots, matched heights */
   .athlete .media-grid{
-    grid-template-columns:1fr;
-    grid-auto-rows:auto;
-    grid-template-areas:"t2" "t3" "t1";
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:.9rem;
+    margin:0 -1.25rem;
+    padding:0 1.25rem .8rem;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
   }
-  .media-grid .t4,.media-grid .t5,.media-grid .t6{display:none;}
+  .athlete .media-grid::-webkit-scrollbar{display:none;}
+  .athlete .media-slot{flex:0 0 auto;height:300px;scroll-snap-align:center;}
   .media-grid .t2{aspect-ratio:16/9;}
-  .media-grid .t3{aspect-ratio:9/16;max-height:68vh;width:auto;max-width:100%;margin:0 auto;}
-  .media-grid .t1{aspect-ratio:1/1;}
+  .media-grid .t3{aspect-ratio:9/16;}
+  .media-grid .t1,.media-grid .t4,.media-grid .t5,.media-grid .t6{aspect-ratio:1/1;}
+  .media-hint{display:block;}
 }
 .stat-bar{
   margin-top:4rem;
@@ -1062,7 +1088,11 @@ section{position:relative;}
   position:relative;z-index:2;
   display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;
 }
-@media(max-width:940px){.buy .grid{grid-template-columns:1fr;}}
+@media(max-width:940px){
+  .buy .grid{grid-template-columns:1fr;}
+  /* stacked: clay wedge sits behind full-width text — pull it out so copy stays readable */
+  .buy::before{display:none;}
+}
 .buy .sec-head .num{color:var(--clay);}
 .buy .sec-head span{color:rgba(27,27,29,.55);}
 .buy h2{font-size:clamp(2.6rem,6vw,5.2rem);color:var(--espresso);}
@@ -1399,33 +1429,31 @@ footer{
   .spec-note{position:static;max-width:none;text-align:left!important;}
   .spec-note i{margin-left:0!important;}
   .spec-note::after{display:none;}
-  .hero-shapes .hs1{display:none;}
+  .hero-shapes{display:none;}
   .flavors::before{display:none;}
   .numcard.m-hide{display:none;}
-  .hero-grid{display:flex;flex-direction:column;gap:1.4rem;}
+  .hero-grid{display:flex;flex-direction:column;gap:1rem;}
   .hero-left{display:contents;}
   .hero-kicker{order:1;}
   .hero-left h1{order:2;}
   .hero-lead{order:3;}
   .hero-can-stage{order:4;}
-  .cta-row{order:5;margin-top:.4rem;}
-  .rating{order:6;margin-top:.2rem;}
-  .hero h1{font-size:2.6rem;margin-top:1rem;}
-  .hero-lead{font-size:1rem;}
+  .cta-row{order:5;margin-top:.2rem;}
+  .rating{order:6;margin-top:0;}
+  .hero h1{font-size:2.6rem;margin-top:.4rem;}
+  .hero-lead{font-size:1rem;margin-top:.5rem;}
   .cta-row{gap:1rem;}
   .cta-row .btn{width:100%;justify-content:center;}
-  .hero-can-stage{min-height:380px;}
-  .canister.mini{width:210px;}
-  .hero-frame{aspect-ratio:16/10;margin-top:1.6rem;box-shadow:8px 8px 0 var(--espresso);}
+  .hero-can-stage{width:100%;min-height:340px;margin:.8rem 0 .4rem;}
+  .hero-can-stage::before{inset:6% 10%;}
+  .canister.mini{width:200px;}
+  .hero-frame{aspect-ratio:16/10;margin-top:1.8rem;box-shadow:8px 8px 0 var(--espresso);}
   .hf-center .play{width:56px;height:56px;}
   .hf-center .hf-label{font-size:.55rem;letter-spacing:.18em;padding:.45rem .7rem;}
   .hero-slot-tag{top:8px;right:8px;bottom:auto;left:auto;font-size:.48rem;letter-spacing:.14em;line-height:1.5;}
-  .hero-stats{gap:.8rem 1.2rem;margin-top:1.4rem;}
   .hero-band{margin-top:2.2rem;}
   .hero-band .wrap{flex-direction:column;align-items:flex-start;gap:1.1rem;padding-top:1.3rem;padding-bottom:1.4rem;}
   .hero-band .callout{width:100%;text-align:center;padding:.9rem 1rem;}
-  .hero-stats span{font-size:1.15rem;border-bottom-width:4px;}
-  .hero-shapes .hs3,.hero-shapes .hs4{display:none;}
   .divider-band{height:70px;}
   .divider-band::after{width:36px;height:36px;}
   .hero-kicker span{font-size:.6rem;letter-spacing:.18em;}
@@ -1544,7 +1572,7 @@ footer{
           <span class="row"><i>tastes like</i></span>
           <span class="row"><i class="fr">fruit.</i></span>
         </h1>
-        <p class="hero-lead"><b>Daily</b> is a 7g-fiber supplement from 6× CrossFit Games athlete <b>Marcus Filly</b>. One scoop in water, once a day — for your gut, your energy, and your training. <b>Zero sugar. Nothing artificial.</b></p>
+        <p class="hero-lead"><b>7g of real-fruit fiber</b> from 6× CrossFit Games athlete <b>Marcus Filly</b>. One scoop in water, once a day. <b>Zero sugar. Nothing artificial.</b></p>
         <div class="cta-row">
           <a class="btn btn-sun" href="#buy">Shop Daily — $39 &#9656;</a>
           <a class="cta-sub" href="#buy">or subscribe &amp; save 20%</a>
@@ -1569,12 +1597,6 @@ footer{
           </div>
         </div>
       </div>
-    </div>
-    <div class="hero-stats rev">
-      <span style="--stat:var(--aqua)">7g Fiber</span>
-      <span style="--stat:var(--clay)">Real Fruit</span>
-      <span style="--stat:var(--sunshine)">0g Sugar</span>
-      <span style="--stat:var(--coral)">30 Servings</span>
     </div>
     <div class="hero-frame">
       <div class="hf-bg"></div>
@@ -1770,6 +1792,7 @@ footer{
         </div>
       </div>
     </div>
+    <p class="media-hint">Swipe &#9656; six media slots</p>
     <div class="stat-bar rev">
       <div class="stat"><div class="v" data-count="6" data-suffix="×">0</div><div class="k">CrossFit Games Athlete</div></div>
       <div class="stat"><div class="v" data-count="12" data-suffix="th">0</div><div class="k">Fittest Man On Earth, 2016 [placeholder]</div></div>
@@ -2091,7 +2114,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v18 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v19 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2190,7 +2213,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v18';
+  var PAGE_ID = 'staple-home-v19';
 
   /* ---------------------------------------------- */
 
