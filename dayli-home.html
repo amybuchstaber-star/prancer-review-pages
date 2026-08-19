@@ -1793,11 +1793,25 @@
 
   /* ---------- our story v2 ---------- */
   .shero{
-    position:relative;
-    height:min(74vh,760px);
-    min-height:480px;
-    padding:0;
+    background:var(--linen);
+    padding:26px clamp(20px,3vw,44px) 40px;
     text-align:center;
+  }
+  .shero__frame{
+    max-width:1460px;
+    margin:0 auto;
+    padding:10px;
+    border-radius:22px;
+    background-color:var(--linen);
+    background-image:var(--gingred-url);
+    background-size:100px;
+    box-shadow:0 30px 60px -36px rgba(94,26,31,.45);
+  }
+  .shero__innerbox{
+    position:relative;
+    height:min(64vh,680px);
+    min-height:440px;
+    border-radius:14px;
     overflow:hidden;
     background:var(--warm-ink);
   }
@@ -1857,7 +1871,7 @@
     font-size:12.5px;font-weight:400;opacity:.8;
   }
 
-  .schapter{padding:78px 44px}
+  .schapter{padding:58px 44px}
   .schapter__grid{
     max-width:1200px;margin:0 auto;
     display:grid;grid-template-columns:1.05fr 1fr;gap:90px;
@@ -1952,7 +1966,7 @@
 
   .stimeline{
     background:var(--buttermilk);
-    padding:84px 44px 96px;
+    padding:58px 44px 70px;
   }
   .stimeline__head{text-align:center;margin-bottom:56px}
   .stimeline__title{
@@ -2096,9 +2110,17 @@
     margin-bottom:44px;
   }
   .sclose__cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .sclose__contact{
+    margin-top:22px;
+    font-family:var(--serif);font-style:italic;
+    font-size:15px;color:rgba(43,38,34,.7);
+  }
+  .sclose__contact a{color:var(--preserve-red)}
 
   @media (max-width: 980px){
-    .shero{height:62svh;min-height:400px}
+    .shero{padding:12px 12px 20px}
+    .shero__frame{padding:8px;background-size:80px;border-radius:16px}
+    .shero__innerbox{height:60svh;min-height:400px;border-radius:10px}
     .shero__quote{font-size:clamp(24px,6.8vw,32px)}
     .schapter{padding:56px 20px}
     .schapter__grid,.schapter--flip .schapter__grid{grid-template-columns:1fr;gap:66px}
@@ -2548,7 +2570,7 @@
     <div class="lore__body reveal reveal--d1">
       <p class="eyebrow">The Lore</p>
       <h2 class="lore__quote">“This is not a project you are about to start. <em>It is a returning.</em>”</h2>
-      <p class="lore__text">Dayli began with an almost old-fashioned idea — that wellness isn't a transformation you purchase, but a practice you return to. Real food, real fiber, and rituals gentle enough to keep.</p>
+      <p class="lore__text">Dayli began with an almost old-fashioned idea — that wellness isn't a transformation you purchase, but a practice you return to. Real food, real fiber, and rituals that don't feel like extra work.</p>
       <div class="lore__cta">
         <a class="btn btn--red" href="#our-story">Read our story</a>
         <a class="lore__alt" href="#home/pantry">or meet the jars →</a>
@@ -2660,7 +2682,7 @@
 <section class="world">
   <div class="world__head reveal">
     <p class="eyebrow">The World of Dayli</p>
-    <h2 class="world__title">Warm, sunlit, <em>unhurried.</em></h2>
+    <h2 class="world__title">Warm, sunlit, <em>well-loved.</em></h2>
     <p class="world__note">Women, food, and friendship in the countryside — the world she comes from.</p>
     <img class="head-flourish" data-img="flourish" alt="">
   </div>
@@ -2739,7 +2761,7 @@
           <img data-img="seal" alt="">
           <div>
             <strong>A gift, sealed in wax.</strong>
-            <span>Your first order arrives with <a href="#inner-garden">The Inner Garden</a> — our little handbook for returning. Vol. i, free, always.</span>
+            <span>Your first order arrives with <a href="#inner-garden">The Inner Garden</a> — our 42-page digital handbook on fiber and the rituals that carry it. Free, always.</span>
           </div>
         </div>
         <div class="accs">
@@ -2752,7 +2774,7 @@
           </div>
           <div class="acc">
             <button class="acc__head">How she works</button>
-            <div class="acc__body"><div class="acc__body-inner"><p>Psyllium and chia meet 4 ounces of dark red juice and set into a soft, spoonable gel — jam, by honest means, in about two minutes. Around them, baobab, apple fiber, green banana, and flax feed the microbiome and steady blood sugar between meals, while turkey tail lends its gentle, time-honored support. She works best as a daily rhythm, not a rescue.</p></div></div>
+            <div class="acc__body"><div class="acc__body-inner"><p>Psyllium and chia meet 4 ounces of dark red juice and set into a soft, spoonable gel — jam, by honest means, in about two minutes. Around them, baobab, apple fiber, green banana, and flax feed the microbiome and steady blood sugar between meals, while turkey tail lends its time-honored support. She works best as a daily rhythm, not a rescue.</p></div></div>
           </div>
           <div class="acc">
             <button class="acc__head">Shipping &amp; care</button>
@@ -2761,8 +2783,8 @@
           <div class="acc">
             <button class="acc__head">Three quick answers</button>
             <div class="acc__body"><div class="acc__body-inner">
-              <p><em>Will it upset my stomach?</em> — Gentle fibers, introduced gently. Start with half a scoop for the first week and let the garden adjust.</p>
-              <p><em>When will I feel it?</em> — Gently, within a week or two. She works in rhythms, not rescues.</p>
+              <p><em>Will it upset my stomach?</em> — Real fibers, introduced slowly. Start with half a scoop for the first week and let the garden adjust.</p>
+              <p><em>When will I feel it?</em> — Within a week or two. She works in rhythms, not rescues.</p>
               <p><em>Every day, really?</em> — That's the whole idea. Daily is the dose.</p>
             </div></div>
           </div>
@@ -2781,7 +2803,7 @@
       <h2 class="pdpband__title">Ingredients your grandmother <em>could name.</em></h2>
       <img class="head-flourish" data-img="flourish" alt="">
     </div>
-    <div class="ings ings--red"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Psyllium Husk</p><p class="ing__line">the gel-maker — she is why the jam sets in two minutes flat.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Chia Seed</p><p class="ing__line">omega-rich and gently thickening — an old friend of good breakfasts.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Baobab</p><p class="ing__line">the African “tree of life” — tart, bright, beloved by the microbiome.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Apple Fiber</p><p class="ing__line">orchard-grown pectin — the gentle, everyday kind.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Ground Flax</p><p class="ing__line">the omega-rich seed your great-grandmother already trusted.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Green Banana</p><p class="ing__line">resistant starch that feeds the good bacteria first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Turkey Tail</p><p class="ing__line">the gentle mushroom that gut wisdom has trusted for centuries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❃</span><p class="ing__name">Better, <em>Together</em></p><p class="ing__line">seven plants, one blend — different fibers feed different good bacteria. Variety is the whole point.</p></div></div></div>
+    <div class="ings ings--red"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Psyllium Husk</p><p class="ing__line">the gel-maker — she is why the jam sets in two minutes flat.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Chia Seed</p><p class="ing__line">omega-rich and quick to thicken — an old friend of good breakfasts.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Baobab</p><p class="ing__line">the African “tree of life” — tart, bright, beloved by the microbiome.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Apple Fiber</p><p class="ing__line">orchard-grown pectin — the everyday kind.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Ground Flax</p><p class="ing__line">the omega-rich seed your great-grandmother already trusted.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Green Banana</p><p class="ing__line">resistant starch that feeds the good bacteria first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Turkey Tail</p><p class="ing__line">the mushroom gut wisdom has trusted for centuries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❃</span><p class="ing__name">Better, <em>Together</em></p><p class="ing__line">seven plants, one blend — different fibers feed different good bacteria. Variety is the whole point.</p></div></div></div>
   </section>
   <section class="pdpband pdpband--butter">
     <div class="scallop"></div>
@@ -2846,7 +2868,7 @@
       <div>
         <p class="pair__eyebrow">She pairs well with</p>
         <p class="pair__name">Dayli-<em>Lyte</em></p>
-        <p class="pair__line">Minerals, gentle fiber, zero sugar — raspberry lemonade, poured tall.</p>
+        <p class="pair__line">Minerals, real fiber, zero sugar — raspberry lemonade, poured tall.</p>
         <span class="lore__alt">meet her →</span>
       </div>
     </a>
@@ -2884,7 +2906,7 @@
         <h1 class="pdp__name">Dayli-<em>Lyte</em></h1>
         <p class="pdp__rating">✿ ✿ ✿ ✿ ✿ <em>first letters arriving with launch</em></p>
         <p class="pdp__price"><span class="cur">$</span>29</p>
-        <p class="pdp__desc">Daily balance for body and mind. Pink Himalayan salt and potassium for the minerals you sweat away, magnesium glycinate and calcium for calm and steadiness, and gentle tapioca fiber no other electrolyte carries — because hydration without absorption is just a pretty glass. Sweetened with monk fruit, blushed with beet root. Tastes like raspberry lemonade on a porch, naturally.</p>
+        <p class="pdp__desc">Daily balance for body and mind. Pink Himalayan salt and potassium for the minerals you sweat away, magnesium glycinate and calcium for calm and steadiness, and tapioca fiber no other electrolyte carries — because hydration without absorption is just a pretty glass. Sweetened with monk fruit, blushed with beet root. Tastes like raspberry lemonade on a porch, naturally.</p>
         <div class="pdp__chips"><span class="chip">Electrolytes + minerals</span><span class="chip">5g fiber</span><span class="chip">Sweetened with monk fruit</span><span class="chip">Raspberry lemonade</span></div>
         <div class="buyopts">
           <div class="buyopt buyopt--on" data-price="$29">
@@ -2904,7 +2926,7 @@
           <img data-img="seal" alt="">
           <div>
             <strong>A gift, sealed in wax.</strong>
-            <span>Your first order arrives with <a href="#inner-garden">The Inner Garden</a> — our little handbook for returning. Vol. i, free, always.</span>
+            <span>Your first order arrives with <a href="#inner-garden">The Inner Garden</a> — our 42-page digital handbook on fiber and the rituals that carry it. Free, always.</span>
           </div>
         </div>
         <div class="accs">
@@ -2926,8 +2948,8 @@
           <div class="acc">
             <button class="acc__head">Three quick answers</button>
             <div class="acc__body"><div class="acc__body-inner">
-              <p><em>Will it upset my stomach?</em> — Gentle fibers, introduced gently. Start with half a scoop for the first week and let the garden adjust.</p>
-              <p><em>When will I feel it?</em> — Gently, within a week or two. She works in rhythms, not rescues.</p>
+              <p><em>Will it upset my stomach?</em> — Real fibers, introduced slowly. Start with half a scoop for the first week and let the garden adjust.</p>
+              <p><em>When will I feel it?</em> — Within a week or two. She works in rhythms, not rescues.</p>
               <p><em>Every day, really?</em> — That's the whole idea. Daily is the dose.</p>
             </div></div>
           </div>
@@ -2946,7 +2968,7 @@
       <h2 class="pdpband__title">Ingredients your grandmother <em>would pour.</em></h2>
       <img class="head-flourish" data-img="flourish" alt="">
     </div>
-    <div class="ings ings--sage"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Pink Himalayan Salt</p><p class="ing__line">rosy, mineral-rich, mined the old way — the backbone of hydration.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Potassium</p><p class="ing__line">the other half of the hydration equation — the one sweat takes first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Magnesium Glycinate</p><p class="ing__line">the calm mineral, in its gentlest, kindest form.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Calcium Citrate</p><p class="ing__line">the steady mineral, in the form your body actually absorbs.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Tapioca Fiber</p><p class="ing__line">soft, soluble, and gentle — the fiber no other ’lyte carries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Beet Root</p><p class="ing__line">her blush — color from the garden, never from a lab.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Monk Fruit</p><p class="ing__line">sweetness from a small, storied fruit — and not a gram of sugar.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❃</span><p class="ing__name">Balanced, <em>Together</em></p><p class="ing__line">four minerals and one gentle fiber, tuned to work as a team — the way hydration actually lands.</p></div></div></div>
+    <div class="ings ings--sage"><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Pink Himalayan Salt</p><p class="ing__line">rosy, mineral-rich, mined the old way — the backbone of hydration.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Potassium</p><p class="ing__line">the other half of the hydration equation — the one sweat takes first.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Magnesium Glycinate</p><p class="ing__line">the calm mineral, in the form your body actually uses.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✾</span><p class="ing__name">Calcium Citrate</p><p class="ing__line">the steady mineral, in the form your body actually absorbs.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✿</span><p class="ing__name">Tapioca Fiber</p><p class="ing__line">soft, soluble — the fiber no other ’lyte carries.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❁</span><p class="ing__name">Beet Root</p><p class="ing__line">her blush — color from the garden, never from a lab.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">✽</span><p class="ing__name">Monk Fruit</p><p class="ing__line">sweetness from a small, storied fruit — and not a gram of sugar.</p></div></div><div class="ing reveal"><div class="ing__inner"><span class="ing__mark">❃</span><p class="ing__name">Balanced, <em>Together</em></p><p class="ing__line">four minerals and one fiber, tuned to work as a team — the way hydration actually lands.</p></div></div></div>
   </section>
   <section class="pdpband pdpband--butter">
     <div class="scallop"></div>
@@ -3027,6 +3049,8 @@
 <main class="page" id="page-our-story">
   <!-- hero -->
   <section class="shero">
+    <div class="shero__frame">
+    <div class="shero__innerbox">
     <div class="shero__vid"><video data-vid="herovid" autoplay muted loop playsinline></video></div>
     <div class="shero__scrim"></div>
     <div class="shero__contentwrap">
@@ -3036,11 +3060,12 @@
       </div>
     </div>
     <p class="shero__standin">stock stand-in — the real film stars Amy &amp; batch nº 1</p>
+    </div>
+    </div>
   </section>
 
   <!-- chapter I -->
   <section class="schapter">
-    <img class="pantry__divider" data-img="divider" alt="" style="margin:0 auto 60px">
     <div class="schapter__grid">
       <div class="schapter__body reveal">
         <p class="schapter__no">Chapter I</p>
@@ -3126,7 +3151,6 @@
         <p class="pcard__desc">Jars leave the pantry and land in kitchens — on countertops, in picnic baskets, passed hand to hand. Nourishing you, your babies, your friends. This part is almost here.</p>
       </div>
     </div>
-    <p class="letters__disclaimer" style="margin-top:44px">Draft milestones — the real timeline is Amy's to tell</p>
   </section>
 
   <!-- founder letter -->
@@ -3164,9 +3188,10 @@
         <p class="sclose__copy">This isn't about building a certain body. It's about supporting the one you live in. We keep things simple, seasonal, and thoughtfully made — without dairy, without gluten, without fillers, and without the idea that more (or less) is better. Just real nourishment, designed for real life.</p>
         <p class="sclose__bell">Steady, faithful, soft — <em>Dayli.</em></p>
         <div class="sclose__cta">
-          <a class="btn btn--red" href="#home/pantry">Meet the jars</a>
-          <a class="btn btn--ghost" style="border-color:rgba(142,42,43,.5);color:var(--preserve-red)" href="#journal">Read the journal</a>
+          <a class="btn btn--red" href="#" data-add="Dayli">Join the Waitlist</a>
+          <a class="btn btn--ghost" style="border-color:rgba(142,42,43,.5);color:var(--preserve-red)" href="#home/pantry">Meet the jars</a>
         </div>
+        <p class="sclose__contact">or write to us — <a href="mailto:hello@dayli.co">hello@dayli.co</a></p>
       </div>
     </div>
   </section>
@@ -3188,7 +3213,7 @@
       <div class="reveal reveal--d1">
         <p class="eyebrow">A gift with your first order</p>
         <h1 class="garden__title">The body is a garden, <em>not a machine.</em></h1>
-        <p class="garden__lead">Our first handbook is the heart of the brand — a small, beautiful book about the daily work of well-being. It is written the way a wise friend writes: intimate, unhurried, and entirely without judgment. It ships free, tucked beside your first order.</p>
+        <p class="garden__lead">Our first handbook is the heart of the brand — 42 beautiful pages on the daily work of well-being. She guides you through the fiber gap and how to close it: which foods carry it, how to build a ritual you will actually keep, and how to tend the garden inside you. Free with your first order.</p>
         <div class="toc">
           <a class="toc__row" href="#our-story">
             <span class="toc__no">i.</span><span class="toc__name">A Returning</span>
@@ -3207,7 +3232,7 @@
             <span class="toc__leader"></span><span class="toc__hint">there is nothing to rush</span>
           </a>
         </div>
-        <p class="garden__note">Not for sale, ever — she arrives free, tucked beside your first order</p>
+        <p class="garden__note">A digital handbook (PDF) — free with your first order, yours to keep</p>
       </div>
     </div>
   </section>
@@ -3266,12 +3291,11 @@
     <button class="wlmodal__close" id="wlClose" aria-label="close">×</button>
     <img class="wlmodal__seal" data-img="seal" alt="">
     <h3 class="wlmodal__title">Be first <em>in line.</em></h3>
-    <p class="wlmodal__note">The first jars are almost ready. Leave your email and we'll write the moment <span id="wlProduct">they're</span> ready to ship — waitlist friends get the first pour.</p>
+    <p class="wlmodal__note">The first jars are almost ready. Leave your email and we'll write the moment <span id="wlProduct">they're</span> ready to ship — waitlist friends get the first jars.</p>
     <form class="wlmodal__form" id="wlForm">
       <input class="news__input" type="email" required placeholder="your loveliest email">
       <button class="btn btn--red" type="submit">Join the Waitlist</button>
     </form>
-    <p class="news__small">No urgency, ever. We only write when it matters.</p>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -3407,9 +3431,9 @@
 
   const PHASE_COPY = {
     waitlist: {
-      ribbon: ['Sweet friend, welcome in', 'Coming soon — join the waitlist to be first in line', 'Rooted in Rhythm', 'First jars ship soon · the waitlist gets the first pour'],
+      ribbon: ['Sweet friend, welcome in', 'Coming soon — join the waitlist to be first in line', 'Rooted in Rhythm', 'First jars ship soon · the waitlist gets the first jars'],
       cta: () => 'Join the Waitlist',
-      ship: 'Coming soon — the waitlist gets the first pour',
+      ship: 'Coming soon — the waitlist gets the first jars',
       toast: name => `You're on the list for ${name}, sweet friend.`,
     },
     preorder: {
@@ -3538,7 +3562,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v15';
+  var PAGE_ID = 'dayli-home-v16';
 
   /* ---------------------------------------------- */
 
