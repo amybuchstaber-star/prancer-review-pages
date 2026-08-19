@@ -489,7 +489,7 @@ section{position:relative;}
 /* ---------- product intro ---------- */
 .intro{
   background:var(--bone);
-  padding:8rem 0 7rem;
+  padding:5.5rem 0 5rem;
   overflow:hidden;
 }
 .intro .grid{
@@ -958,6 +958,10 @@ section{position:relative;}
   background:var(--bone);
   box-shadow:4px 4px 0 var(--espresso);
 }
+.roles .role:nth-child(4n+1){background:var(--sunshine);}
+.roles .role:nth-child(4n+2){background:var(--aqua);}
+.roles .role:nth-child(4n+3){background:var(--coral);}
+.roles .role:nth-child(4n){background:#7FE8DC;}
 .athlete .media-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -1427,6 +1431,10 @@ footer{
   .wrap{padding:0 1.25rem;}
   .sec-head{margin-bottom:1.8rem;}
   .intro,.flavors,.athlete,.numbers,.ritual,.faq{padding:4.5rem 0;}
+  .intro{padding:3rem 0 3.8rem;}
+  /* headline breaks after "done" on mobile */
+  .intro h2 br{display:none;}
+  .intro h2 em{display:block;}
   .buy{padding:5rem 0;}
   .story{padding:5rem 0;}
   .pull{padding:6.5rem 0;}
@@ -1630,7 +1638,7 @@ footer{
     </div>
     <div class="grid">
       <div>
-        <h2 class="display rev">Fiber,<br>done <em>right.</em></h2>
+        <h2 class="display rev">Fiber,<br> done <em>right.</em></h2>
         <p class="lead rev rev-d1">Most people get about half the fiber they need — and most fiber products taste like punishment. <b>Daily is 7g of clean, functional fiber that drinks like actual fruit</b> — one scoop in water, shake it, and the boring-but-critical stuff is done before your coffee's brewed.</p>
         <div class="chip-row rev rev-d2">
           <span class="chip hot">7g fiber per scoop</span>
@@ -2120,7 +2128,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v22 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v23 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2219,7 +2227,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v22';
+  var PAGE_ID = 'staple-home-v23';
 
   /* ---------------------------------------------- */
 
