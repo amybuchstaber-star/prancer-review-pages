@@ -127,10 +127,14 @@ nav .btn-teal{padding:.7rem 1.3rem;font-size:.62rem;}
 
 /* hero */
 header.hero{position:relative;padding:9rem 0 0;background:var(--paper);}
-.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:3.6rem;align-items:center;padding-bottom:3.4rem;}
-@media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:1rem 3.6rem;align-items:center;padding-bottom:3.4rem;grid-template-areas:'top film' 'rest film';}
+.hero-top{grid-area:top;align-self:end;}
+.hero-rest{grid-area:rest;align-self:start;}
+.hero-film{grid-area:film;}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;grid-template-areas:'top' 'film' 'rest';gap:1.8rem;}}
+.coach-cred{display:block;margin-top:1rem;font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);}
 .hero-kicker{display:inline-block;font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(255,69,0,.5);border-left:4px solid var(--flame);padding:.8rem 1rem;margin-bottom:1.8rem;background:var(--card);line-height:1.5;}
-.hero-kicker em{display:block;font-style:normal;font-size:.66rem;color:var(--dim);letter-spacing:.24em;margin-top:.3rem;}
+
 .hero h1{font-size:clamp(2.9rem,6.8vw,6rem);}
 .hero h1 .row{display:block;overflow:hidden;}
 .hero h1 .row i{display:block;font-style:normal;transform:translateY(110%);animation:riseup .9s cubic-bezier(.2,.7,.2,1) forwards;}
@@ -169,7 +173,7 @@ header.hero{position:relative;padding:9rem 0 0;background:var(--paper);}
 .chapter .bg{position:absolute;inset:0;}
 .chapter .bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.03) brightness(.72) saturate(.85);animation:slowpan 28s ease-in-out infinite alternate;}
 .chapter .bg::before{content:'';position:absolute;inset:0;z-index:1;background:var(--teal);mix-blend-mode:color;opacity:.18;}
-.chapter .bg::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(18,18,18,.55) 0%,rgba(18,18,18,.2) 45%,rgba(18,18,18,.9) 100%);}
+.chapter .bg::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(18,18,18,.85) 0%,rgba(18,18,18,.55) 45%,rgba(18,18,18,.25) 100%),linear-gradient(180deg,rgba(18,18,18,.3) 0%,rgba(18,18,18,.2) 45%,rgba(18,18,18,.75) 100%);}
 .chapter .chnum{
   position:absolute;top:1.6rem;right:2rem;z-index:3;
   font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;
@@ -203,15 +207,15 @@ section.beat{padding:6.5rem 0;}
 .beat-head p.lead{margin-top:1.3rem;font-size:1.04rem;line-height:1.68;color:var(--dim);max-width:640px;}
 
 /* method */
-.method-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--ink);}
 @media(max-width:860px){.method-grid{grid-template-columns:1fr;}}
 .m-col{padding:2.4rem 2rem 2.6rem;position:relative;}
-.m-col + .m-col{border-left:1px solid var(--hair);}
-@media(max-width:860px){.m-col + .m-col{border-left:none;border-top:1px solid var(--hair);}}
-.m-col .session{position:absolute;top:1.4rem;right:1.4rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;color:var(--paper);background:var(--flame);padding:.4rem .55rem;}
+.m-col + .m-col{border-left:2px solid var(--ink);}
+@media(max-width:860px){.m-col + .m-col{border-left:none;border-top:2px solid var(--ink);}}
+.m-col .session{position:absolute;top:1.4rem;right:1.4rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;color:var(--dim);background:var(--card);border:1px solid rgba(18,18,18,.3);padding:.4rem .55rem;}
 .m-col .num{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:clamp(3.6rem,7vw,5.6rem);line-height:1;color:var(--flame);}
 
-.m-col h3{font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;margin:.9rem 0 .9rem;color:var(--teal-deep);}
+.m-col h3{font-family:var(--mono);font-weight:700;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;margin:.9rem 0 .9rem;color:var(--ink);}
 .m-col p{font-size:.96rem;line-height:1.65;color:var(--dim);}
 .method-note{margin-top:2.4rem;font-family:var(--mono);font-weight:700;font-size:.84rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
 .method-note b{color:var(--flame);font-weight:700;}
@@ -275,6 +279,17 @@ section.beat{padding:6.5rem 0;}
 .coach-foot{margin-top:2.2rem;display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap;position:relative;z-index:3;}
 .coach-foot .link-quiet{color:var(--paper);}
 
+
+.marcus-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;}
+@media(max-width:900px){.marcus-grid{grid-template-columns:1fr;}}
+.coach-inline{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2rem;border-top:2px solid var(--ink);border-bottom:1px solid var(--hair);padding:1.3rem 0;}
+.coach-inline div b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 72;font-stretch:72%;font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1;color:var(--flame);}
+.coach-inline div span{display:block;margin-top:.4rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+.printout{border:1px solid var(--hair);background:#fff;padding:.7rem .7rem 1rem;box-shadow:0 16px 36px rgba(18,18,18,.12);}
+.printout img{width:100%;}
+.printout.r1{transform:rotate(1.2deg);}
+.printout .capn{display:block;margin-top:.7rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+
 /* staple */
 .staple-card{
   position:relative;overflow:hidden;
@@ -334,7 +349,9 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
 @media(max-width:960px){.track-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.track-grid{grid-template-columns:1fr;}}
 .track{background:var(--card);border:1px solid var(--hair);border-top:4px solid var(--teal);padding:1.6rem 1.5rem;transition:transform .2s,box-shadow .2s;}
+.track{cursor:pointer;}
 .track:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(18,18,18,.1);}
+.track.hot h3{color:var(--flame);}
 .track.hot{border-top-color:var(--flame);}
 .track h3{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem;}
 .track p{font-size:.9rem;line-height:1.55;color:var(--dim);}
@@ -432,7 +449,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
         <li><a href="fbb-persist.html">Persist App <em>&#9656; free trial</em></a></li>
         <li><a href="fbb-ebooks.html">E-Book Programs</a></li>
         <li><a href="fbb-coaching.html">Platinum Coaching</a></li>
-        <li><a href="https://functional-bodybuilding.com/pages/workout-quiz">Workout Quiz</a></li>
+        <li><a href="fbb-quiz.html">Workout Quiz <em>&#9656; new</em></a></li>
       </ul>
     </li>
     <li><a href="fbb-method.html">Method</a></li>
@@ -588,7 +605,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
         <a href="https://functional-bodybuilding.com/pages/persist">Persist Subscription</a>
         <a href="https://functional-bodybuilding.com/pages/e-books">E-Books</a>
         <a href="https://functional-bodybuilding.com/pages/coaching">Platinum Coaching</a>
-        <a href="https://functional-bodybuilding.com/pages/workout-quiz">Workout Quiz</a>
+        <a href="fbb-quiz.html">Workout Quiz</a>
       </div>
       <div class="col"><span>Learn</span>
         <a href="https://functional-bodybuilding.com/pages/free-workouts-newsletter">Free Workouts</a>
@@ -655,6 +672,10 @@ const cio=new IntersectionObserver(es=>{es.forEach(e=>{
 });},{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 </script>
+<script>
+const tracks=document.querySelectorAll('.track-grid .track');
+tracks.forEach(t=>t.addEventListener('click',()=>{tracks.forEach(x=>x.classList.remove('hot'));t.classList.add('hot');}));
+</script>
 
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
 <script>
@@ -675,7 +696,7 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'fbb-persist-v1';
+  var PAGE_ID = 'fbb-persist-v2';
 
   /* ---------------------------------------------- */
 

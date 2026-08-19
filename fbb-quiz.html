@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Results — Functional Bodybuilding</title>
+<title>Workout Quiz — Functional Bodybuilding</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -484,48 +484,119 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
 </div>
 
 
-<header class="page-hero wash">
+<header class="page-hero wash gym-grid" style="padding-bottom:3rem">
   <div class="wrap">
-    <span class="mono-label kicker rev on">Results &middot; real members</span>
-    <h1 class="display rev on"><span style="color:var(--flame)">10,000</span> athletes <span class="hm">Rebuilt.</span></h1>
-    <p class="lead rev on">From first-timers to former competitors, on real schedules, with real bodies. Here's what the method does when people persist.</p>
-    <span class="trust rev on"><b>&#9733; 4.9/5</b> &middot; 2,400+ verified member reviews</span>
+    <span class="mono-label kicker rev on">The Workout Quiz &middot; 60 seconds</span>
+    <h1 class="display rev on">Four questions. <span class="hm">Your Program.</span></h1>
+    <p class="lead rev on">Answer honestly and we'll match you to the right track or program. No email required.</p>
   </div>
-  <div class="waveline" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0 13 C 50 4, 100 22, 150 13 S 250 4, 300 13 S 400 22, 450 13 S 550 4, 600 13 S 700 22, 750 13 S 850 4, 900 13 S 1000 22, 1050 13 S 1150 4, 1200 13"/></svg></div>
 </header>
-<section class="chapter" style="--chstroke:rgba(255,69,0,.55)">
-  <div class="bg"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/persist-mfbeach_2.webp" alt="Training beside the water" loading="lazy" style="object-position:center 20%"></div>
-  <div class="chin" style="padding-bottom:2.6rem">
-    <div class="wrap"><span class="mono-label rev">Transformations</span>
-    <blockquote class="rev d1">&ldquo;The look changed. The knees stopped hurting. <span style="color:var(--teal)">Both matter.</span>&rdquo;</blockquote></div>
-  </div>
-  <div class="chbody">
-    <div class="wrap">
-      <div class="proof-cards rev">
-        <div class="p-card"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/jeff.webp" alt="Jeff's transformation" loading="lazy"></div><blockquote>&ldquo;With proper nutrition and your workouts I've accomplished a look I didn't think possible.&rdquo;</blockquote><span class="who">Jeff &middot; Persist member</span></div>
-        <div class="p-card"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/alison.webp" alt="Alison's transformation" loading="lazy"></div><blockquote>&ldquo;I have never been so functional: strong, aerobic, mobile, gritty and resilient.&rdquo;</blockquote><span class="who">Alison &middot; Persist member</span></div>
-        <div class="p-card"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/sergio.webp" alt="Sergio's transformation" loading="lazy"></div><blockquote>&ldquo;Never been this fit and healthier.&rdquo;</blockquote><span class="who">Sergio &middot; Persist member</span></div>
-        <div class="p-card"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0864/4041/1457/files/taylor.webp" alt="Tyler's transformation" loading="lazy"></div><blockquote>&ldquo;First ever marathon in the books. Let's go!&rdquo;</blockquote><span class="who">Tyler &middot; Persist member</span></div>
+<section class="beat" style="padding-top:2.5rem">
+  <div class="wrap" style="max-width:880px">
+    <div id="quiz">
+      <div class="q" data-q="goal">
+        <h3 class="qt"><b>01</b> What matters most right now?</h3>
+        <div class="opts">
+          <button data-v="muscle">Visible muscle</button>
+          <button data-v="engine">A bigger engine</button>
+          <button data-v="pain">Training without pain</button>
+          <button data-v="all">All of it, sustainably</button>
+        </div>
+      </div>
+      <div class="q" data-q="equip">
+        <h3 class="qt"><b>02</b> What's your setup?</h3>
+        <div class="opts">
+          <button data-v="gym">Full gym</button>
+          <button data-v="home">Dumbbells / home gym</button>
+          <button data-v="kb">Kettlebells</button>
+        </div>
+      </div>
+      <div class="q" data-q="time">
+        <h3 class="qt"><b>03</b> How much time per session?</h3>
+        <div class="opts">
+          <button data-v="40">About 40 minutes</button>
+          <button data-v="60">45 to 60 minutes</button>
+          <button data-v="var">It varies week to week</button>
+        </div>
+      </div>
+      <div class="q" data-q="style">
+        <h3 class="qt"><b>04</b> How do you like to be coached?</h3>
+        <div class="opts">
+          <button data-v="app">Fresh programming weekly, in an app</button>
+          <button data-v="block">A defined block I own and repeat</button>
+          <button data-v="coach">A human coach on me daily</button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="beat gym-grid">
-  <div class="wrap">
-    <div class="beat-head"><span class="mono-label kicker rev">In their words</span><h2 class="display rev">The quote wall</h2></div>
-    <div class="quote-wall rev">
-      <div class="qw"><blockquote>&ldquo;Honestly I have never been so excited to work out. As someone who has been athletic all my life until injury, I just found the right balance of challenging workouts, sustainable training and purposeful movement.&rdquo;</blockquote><span class="who">S.M. Hanna</span></div>
-      <div class="qw"><blockquote>&ldquo;Marcus goes over and above what I would expect. Weekly emails packed with valuable information.&rdquo;</blockquote><span class="who">Tom</span></div>
-      <div class="qw"><blockquote>&ldquo;From 'do you even lift?' to 'whoa.' The 2&times;2 rule fits my week and the results showed up anyway.&rdquo;</blockquote><span class="who">Persist member</span></div>
-      <div class="qw"><blockquote>&ldquo;I stopped choosing between feeling athletic and looking like I train. FBB does both.&rdquo;</blockquote><span class="who">Persist member</span></div>
+    <div id="result" style="display:none">
+      <span class="mono-label" style="display:block;color:var(--teal-deep);margin-bottom:1rem">Your match</span>
+      <h2 class="display" id="r-title" style="font-size:clamp(2rem,4.4vw,3.4rem)"></h2>
+      <p id="r-desc" style="margin-top:1.2rem;font-size:1.05rem;line-height:1.7;color:var(--dim);max-width:640px"></p>
+      <div class="cta-row" style="margin-top:2rem">
+        <a class="btn-teal" id="r-cta" href="#">See Your Match &#9656;</a>
+        <button class="link-quiet" id="r-again" style="background:none;border-bottom:2px solid var(--flame);cursor:pointer">Retake the quiz</button>
+      </div>
+      <p style="margin-top:2rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)">Every path starts with 14 free days &middot; cancel anytime</p>
     </div>
-    <div class="cta-row rev d1" style="margin-top:2.4rem"><a class="link-quiet" href="https://functional-bodybuilding.com/pages/customer-stories">Full member stories on the current site</a></div>
   </div>
 </section>
-<section class="cta-band"><div class="wrap">
-  <h2 class="display rev">Ready when you are. <span class="hm">No Burnout Required.</span></h2>
-  <a class="btn-teal" href="https://functional-bodybuilding.com/pages/persist">Start Free for 14 Days &#9656;</a>
-</div></section>
+<style>
+.q{border:1px solid var(--hair);background:var(--card);padding:2rem 2.2rem;margin-bottom:1.2rem;transition:opacity .3s;}
+.q.done{opacity:.55;}
+.qt{font-family:var(--mono);font-weight:700;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.2rem;}
+.qt b{color:var(--flame);margin-right:.7rem;}
+.opts{display:flex;gap:.8rem;flex-wrap:wrap;}
+.opts button{
+  font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  background:#fff;border:1px solid rgba(18,18,18,.35);color:var(--ink);
+  padding:.9rem 1.2rem;cursor:pointer;transition:background .15s,color .15s,border-color .15s;
+}
+.opts button:hover{border-color:var(--teal-deep);color:var(--teal-deep);}
+.opts button.sel{background:var(--teal);border-color:var(--teal);color:var(--ink);}
+</style>
+<script>
+(function(){
+  const ans={};
+  const RESULTS={
+    coach:{t:'Platinum Coaching',d:'You want a human on you daily, and that changes everything about adherence. Book a free strategy call and see if the roster has room.',u:'fbb-coaching.html',c:'Explore Coaching \u25B8'},
+    kb:{t:'The Kettlebell Solution',d:'Sixty kettlebell workouts covering strength, skill and conditioning. One implement, full method, anywhere.',u:'fbb-ebooks.html',c:'See the Program \u25B8'},
+    block40:{t:'Pump 40',d:'Mega muscle in 40-minute lifting-only sessions, eight weeks, one-time purchase. The tightest block in the library.',u:'fbb-ebooks.html',c:'See the Program \u25B8'},
+    blockEngine:{t:'Aerobic 40',d:'Forty-minute engine sessions you own forever, built to pair with any lifting you love.',u:'fbb-ebooks.html',c:'See the Program \u25B8'},
+    minimalist:{t:'Persist \u00B7 Minimalist Track',d:'Full FBB training on dumbbells and a bench, fresh every week in the app. Start with 14 free days.',u:'fbb-persist.html',c:'Start Free Trial \u25B8'},
+    pumpcon:{t:'Persist \u00B7 Pump Condition',d:'Muscle plus engine: pump work paired with short, smart conditioning. Fresh every week, 14 free days to try it.',u:'fbb-persist.html',c:'Start Free Trial \u25B8'},
+    pumplift:{t:'Persist \u00B7 Pump Lift',d:'The flagship track: lifting-focused muscle building with the classic FBB structure. Most members start here, and the first 14 days are free.',u:'fbb-persist.html',c:'Start Free Trial \u25B8'}
+  };
+  function decide(){
+    if(ans.style==='coach') return RESULTS.coach;
+    if(ans.equip==='kb') return RESULTS.kb;
+    if(ans.style==='block') return ans.goal==='engine'?RESULTS.blockEngine:RESULTS.block40;
+    if(ans.equip==='home') return RESULTS.minimalist;
+    if(ans.goal==='engine'||ans.goal==='pain') return RESULTS.pumpcon;
+    return RESULTS.pumplift;
+  }
+  document.querySelectorAll('.q').forEach(q=>{
+    q.querySelectorAll('.opts button').forEach(b=>b.addEventListener('click',()=>{
+      q.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel');q.classList.add('done');
+      ans[q.dataset.q]=b.dataset.v;
+      if(Object.keys(ans).length===4){
+        const r=decide();
+        document.getElementById('r-title').textContent=r.t;
+        document.getElementById('r-desc').textContent=r.d;
+        const cta=document.getElementById('r-cta');cta.textContent=r.c;cta.href=r.u;
+        document.getElementById('result').style.display='block';
+        document.getElementById('result').scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }));
+  });
+  document.getElementById('r-again').addEventListener('click',()=>{
+    for(const k in ans)delete ans[k];
+    document.querySelectorAll('.q').forEach(q=>{q.classList.remove('done');q.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));});
+    document.getElementById('result').style.display='none';
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
 
 <footer>
   <div class="wrap">
@@ -565,7 +636,7 @@ footer{background:var(--ink);color:var(--paper);padding:4.5rem 0 2.4rem;}
     </div>
   </div>
 </footer>
-<div class="preview-pill"><b>&#9656;</b> Results page &middot; design preview v1</div>
+<div class="preview-pill"><b>&#9656;</b> Quiz page &middot; design preview v1</div>
 <script>
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);},{passive:true});
@@ -625,7 +696,7 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'fbb-results-v1';
+  var PAGE_ID = 'fbb-quiz-v1';
 
   /* ---------------------------------------------- */
 
