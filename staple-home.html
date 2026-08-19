@@ -512,12 +512,17 @@ section{position:relative;}
 .chip-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.2rem;}
 .intro .btn{margin-top:2.2rem;}
 .chip{
-  font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
   padding:.6rem 1rem;
-  border:1.5px solid rgba(27,27,29,.3);color:var(--ink-dim);
-  background:rgba(255,255,255,.5);
+  border:2px solid var(--espresso);color:var(--espresso);
+  box-shadow:3px 3px 0 var(--espresso);
 }
-.chip.hot{border-color:var(--clay);color:var(--clay);font-weight:700;}
+.chip-row .chip:nth-child(6n+1){background:var(--sunshine);}
+.chip-row .chip:nth-child(6n+2){background:var(--aqua);}
+.chip-row .chip:nth-child(6n+3){background:var(--coral);}
+.chip-row .chip:nth-child(6n+4){background:var(--sunshine);}
+.chip-row .chip:nth-child(6n+5){background:#7FE8DC;}
+.chip-row .chip:nth-child(6n){background:var(--coral);}
 .sachet-stage{
   position:relative;display:flex;align-items:center;justify-content:center;
   min-height:540px;
@@ -936,11 +941,12 @@ section{position:relative;}
 @media(max-width:900px){
   /* order: name, photo, role chips */
   .athlete-left{display:contents;}
+  .athlete-top{margin-bottom:1.8rem;}
   .athlete-left h2{order:1;}
-  .marcus-pow{order:2;min-height:440px;margin:1.4rem 0 1rem;}
-  .athlete .roles{order:3;margin-top:.4rem;}
-  .marcus-pow img{height:370px;}
-  .marcus-pow .pow{width:min(440px,100%);}
+  .marcus-pow{order:2;min-height:390px;margin:.6rem 0 .4rem;}
+  .athlete .roles{order:3;margin-top:.2rem;}
+  .marcus-pow img{height:360px;}
+  .marcus-pow .pow{width:min(380px,100%);}
 }
 .athlete .roles{
   display:flex;flex-wrap:wrap;gap:1rem;margin:1.8rem 0 0;
@@ -970,8 +976,14 @@ section{position:relative;}
 .athlete .media-slot{height:100%;border:2px solid var(--espresso);background:var(--espresso);}
 .media-hint{
   display:none;
-  font-family:var(--mono);font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--ink-dim);margin-top:.9rem;text-align:center;
+  font-family:var(--mono);font-weight:700;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--espresso);margin-top:.7rem;text-align:right;
+  align-items:center;justify-content:flex-end;gap:.55rem;
+}
+.media-hint i{
+  width:0;height:0;display:inline-block;
+  border-top:7px solid transparent;border-bottom:7px solid transparent;
+  border-left:11px solid var(--clay);
 }
 @media(max-width:900px){
   /* single-row swipe gallery — all 6 slots, matched heights */
@@ -990,7 +1002,7 @@ section{position:relative;}
   .media-grid .t2{aspect-ratio:16/9;}
   .media-grid .t3{aspect-ratio:9/16;}
   .media-grid .t1,.media-grid .t4,.media-grid .t5,.media-grid .t6{aspect-ratio:1/1;}
-  .media-hint{display:block;}
+  .media-hint{display:flex;}
 }
 .stat-bar{
   margin-top:4rem;
@@ -1439,7 +1451,7 @@ footer{
   .hero-can-stage{order:3;}
   .cta-row{order:4;margin-top:.2rem;width:100%;}
   .rating{order:5;margin-top:0;}
-  .hero h1{font-size:2.6rem;margin-top:.2rem;}
+  .hero h1{font-size:clamp(2.9rem,12.6vw,3.7rem);font-variation-settings:'wdth' 102;margin-top:.2rem;}
   .hero-lead{font-size:1rem;margin-top:.5rem;}
   .cta-row{gap:1rem;}
   .cta-row .btn{width:100%;justify-content:center;}
@@ -1786,7 +1798,7 @@ footer{
         </div>
       </div>
     </div>
-    <p class="media-hint">Swipe &#9656; six media slots</p>
+    <p class="media-hint"><i></i>Swipe to see more</p>
     <div class="stat-bar rev">
       <div class="stat"><div class="v" data-count="6" data-suffix="×">0</div><div class="k">CrossFit Games Athlete</div></div>
       <div class="stat"><div class="v" data-count="12" data-suffix="th">0</div><div class="k">Fittest Man On Earth, 2016 [placeholder]</div></div>
@@ -2108,7 +2120,7 @@ footer{
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v21 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v22 — Marcus media slots &amp; claims are placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2207,7 +2219,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v21';
+  var PAGE_ID = 'staple-home-v22';
 
   /* ---------------------------------------------- */
 
