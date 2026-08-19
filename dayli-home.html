@@ -151,10 +151,13 @@
     color:var(--preserve-red);
     font-weight:600;
   }
+  .nav__bag{display:inline-flex;align-items:flex-start;gap:1px}
+  .nav__bag svg{width:21px;height:21px}
+  .nav__bag::after{display:none !important}
   .nav__bag sup{
-    font-size:9px;
+    font-size:10px;
+    font-weight:700;
     color:var(--preserve-red);
-    margin-left:2px;
   }
   .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
   .nav__burger span{display:block;width:22px;height:1.5px;background:var(--warm-ink);margin:5px 0;transition:.3s}
@@ -405,14 +408,6 @@
     padding:62px 44px 96px;
     overflow:hidden;
   }
-  .pantry::before{
-    /* faint pin-stripe linen texture */
-    content:'';
-    position:absolute;
-    inset:0;
-    background:repeating-linear-gradient(90deg, rgba(142,42,43,.028) 0 1px, transparent 1px 9px);
-    pointer-events:none;
-  }
   .pantry__inner{max-width:1280px;margin:0 auto;position:relative}
   .pantry__head{text-align:center;margin-bottom:40px}
   .eyebrow{
@@ -422,6 +417,7 @@
     color:var(--preserve-red);
     font-weight:700;
   }
+  .pantry__title em{display:inline-block}
   .pantry__title{
     font-family:var(--serif);
     font-weight:600;
@@ -892,7 +888,7 @@
   /* ---------- section 6 · the world wall ---------- */
   .world{
     background:var(--linen);
-    padding:64px 0 70px;
+    padding:38px 0 44px;
     overflow:hidden;
   }
   .world__head{text-align:center;margin-bottom:44px;padding:0 44px}
@@ -1200,8 +1196,10 @@
       scroll-snap-align:center;
       --tilt:0deg;
     }
-    .lore__polaroid img{aspect-ratio:3/3.2 !important}
-    .lore__swipe{display:block}
+    .lore__polaroid img{aspect-ratio:3/3 !important}
+    .lore__polaroid{padding-bottom:32px}
+    .lore__polaroid figcaption{font-size:12.5px;line-height:1.45;white-space:normal}
+    .lore__swipe{display:block;min-width:150px}
     .ritual__steps{grid-template-columns:1fr;gap:46px}
     .ritual__steps::before{display:none}
     .values__grid{grid-template-columns:repeat(2,1fr);gap:44px 20px}
@@ -1215,7 +1213,7 @@
     .ritual{padding:70px 16px 80px}
     .ritual__card{padding:56px 22px 48px}
     .values{padding:60px 20px}
-    .world{padding:80px 0 90px}
+    .world{padding:26px 0 34px}
     .letters{padding:80px 20px 90px}
     footer{padding:70px 20px 0}
   }
@@ -1297,7 +1295,7 @@
   .page--on{display:block}
 
   /* ---------- PDP ---------- */
-  .pdp{background:var(--linen);padding:74px 44px 120px}
+  .pdp{background:var(--linen);padding:74px 44px 64px}
   .pdp__crumb{
     max-width:1240px;margin:0 auto 44px;
     font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;
@@ -1577,10 +1575,8 @@
 
   /* ---------- journal ---------- */
   .journal{
-    background-color:var(--linen);
-    background-image:var(--wildflower-url);
-    background-size:540px;
-    padding:100px 44px 130px;
+    background:var(--linen);
+    padding:90px 44px 110px;
   }
   .journal__head{text-align:center;margin-bottom:70px}
   .journal__title{font-family:var(--serif);font-weight:600;font-size:clamp(36px,4.6vw,58px);margin:18px 0 10px}
@@ -1840,7 +1836,7 @@
     font-size:12.5px;font-weight:400;opacity:.8;
   }
 
-  .schapter{padding:120px 44px}
+  .schapter{padding:78px 44px}
   .schapter__grid{
     max-width:1200px;margin:0 auto;
     display:grid;grid-template-columns:1.05fr 1fr;gap:90px;
@@ -1892,9 +1888,11 @@
   }
   .schapter__cap{
     position:relative;
-    margin-top:24px;text-align:center;
-    font-family:var(--serif);font-style:italic;
-    font-size:16px;font-weight:500;color:rgba(43,38,34,.82);
+    margin-top:22px;text-align:center;
+    font-family:var(--sans);font-style:normal;
+    font-size:11.5px;font-weight:700;
+    letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(43,38,34,.72);
   }
   .spull{
     border-left:2px solid var(--preserve-red);
@@ -2019,6 +2017,13 @@
     font-family:var(--serif);font-style:italic;
     font-size:19px;color:var(--warm-ink);
   }
+  .founder__ps{
+    margin-top:24px;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:15.5px;
+    color:var(--preserve-red);
+  }
   .founder__sig-name small{
     display:block;
     font-family:var(--sans);font-style:normal;
@@ -2041,6 +2046,7 @@
     font-size:15.5px;line-height:1.85;color:rgba(43,38,34,.75);
     max-width:56ch;margin:0 auto 26px;
   }
+  .sclose__bell em{font-style:italic;font-weight:700}
   .sclose__bell{
     font-family:var(--serif);font-style:italic;
     font-size:20px;color:var(--preserve-red);
@@ -2051,7 +2057,7 @@
   @media (max-width: 980px){
     .shero{padding:80px 22px}
     .shero__quote{font-size:clamp(24px,6.8vw,32px)}
-    .schapter{padding:80px 20px}
+    .schapter{padding:56px 20px}
     .schapter__grid,.schapter--flip .schapter__grid{grid-template-columns:1fr;gap:66px}
     .schapter--flip .schapter__fig{order:0}
     .stimeline{padding:80px 24px}
@@ -2206,6 +2212,61 @@
     .nav__burger--open span:nth-child(2){opacity:0}
     .nav__burger--open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
   }
+  .ritual--pdp{border-top:none;padding:64px 44px 84px}
+  .ritual--pdp .ritual__card{padding:64px 44px 56px}
+  .ritual--pdp .mini-ritual{margin-top:44px}
+  .ritual--pdp .filmslot{margin-top:52px;max-width:680px}
+  @media (max-width:900px){
+    .ritual--pdp{padding:40px 16px 56px}
+    .ritual--pdp .ritual__card{padding:46px 20px 40px}
+  }
+  .letters--pdp{padding:60px 44px 70px}
+  .world--pdp{padding:34px 0 48px}
+  .world--pdp .world__head{margin-bottom:30px}
+  .postage--icon{
+    width:56px;height:64px;
+    background:var(--linen);
+    border:1.5px dashed rgba(142,42,43,.55);
+    border-radius:4px;
+    display:grid;place-items:center;
+    color:var(--preserve-red);
+    position:absolute;
+  }
+  .postage--icon svg{width:34px;height:34px}
+  .shero__filmframe{
+    max-width:640px;
+    margin:44px auto 0;
+    padding:8px;
+    border-radius:16px;
+    background-image:var(--gingred-url);
+    background-size:90px;
+    box-shadow:0 24px 48px -28px rgba(94,26,31,.5);
+    opacity:0;
+    animation:rise 1.1s .8s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  .shero__filmframe video{
+    display:block;width:100%;
+    border-radius:10px;
+    aspect-ratio:16/9;
+    object-fit:cover;
+  }
+  .inlinefilm{
+    max-width:680px;
+    margin:52px auto 0;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 22px 44px -26px rgba(94,26,31,.45);
+  }
+  .inlinefilm video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .inlinefilm__cap{
+    margin-top:14px;
+    text-align:center;
+    font-size:10.5px;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:rgba(142,42,43,.55);
+  }
 </style>
 </head>
 <body>
@@ -2246,7 +2307,7 @@
     <div class="nav__links nav__links--right">
       <a href="#">Search</a>
       <a href="#">Account</a>
-      <a href="#" class="nav__bag">Basket<sup id="bagCount">0</sup></a>
+      <a href="#" class="nav__bag" aria-label="Basket"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20h32l-3.5 17a3 3 0 0 1-3 2.4h-19a3 3 0 0 1-3-2.4L8 20z"/><path d="M16 20l8-11 8 11"/><path d="M14 26c6 3 14 3 20 0M15.5 33c5.5 2.6 11.5 2.6 17 0"/></svg><sup id="bagCount">0</sup></a>
     </div>
   </nav>
   <div class="mobilemenu" id="mobileMenu">
@@ -2403,7 +2464,6 @@
       <p class="eyebrow">The Lore</p>
       <h2 class="lore__quote">“This is not a project you are about to start. <em>It is a returning.</em>”</h2>
       <p class="lore__text">Dayli began with an almost old-fashioned idea — that wellness isn't a transformation you purchase, but a practice you return to. Real food, real fiber, and rituals gentle enough to keep.</p>
-      <p class="lore__sig">— The Inner Garden, chapter one</p>
       <div class="lore__cta">
         <a class="btn btn--red" href="#our-story">Read our story</a>
         <a class="lore__alt" href="#home/pantry">or meet the jars →</a>
@@ -2438,11 +2498,10 @@
         <p class="step__desc">Straight onto toast, yogurt, or a spoon at the counter. 11g of fiber, disguised as devotion.</p>
       </div>
     </div>
-    <div class="ritual__film reveal">
-      <span class="ritual__film-play">▶</span>
-      Ritual film
-      <em>· placeholder — macro, jam folding off a spoon</em>
+    <div class="inlinefilm reveal">
+      <video data-vid="herovid" autoplay muted loop playsinline></video>
     </div>
+    <p class="inlinefilm__cap">ritual film — stock stand-in, final macro film to come</p>
     </div>
     </div>
   </div>
@@ -2484,24 +2543,6 @@
   <img class="pantry__divider" data-img="divider" alt="" style="margin-top:54px">
 </section>
 
-<!-- ═══════════ SECTION 6 · THE WORLD ═══════════ -->
-<section class="world">
-  <div class="world__head reveal">
-    <p class="eyebrow">The World of Dayli</p>
-    <h2 class="world__title">Warm, sunlit, <em>unhurried.</em></h2>
-    <p class="world__note">Women, food, and friendship in the countryside — the world she comes from.</p>
-    <img class="head-flourish" data-img="flourish" alt="">
-  </div>
-  <div class="world__track">
-    <figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure><figure class="pframe"><img data-img="oakpicnic" alt=""><figcaption>the long lunch, under the oak</figcaption></figure><figure class="pframe"><img data-img="gardenbreakfast" alt=""><figcaption>breakfast in the rose garden</figcaption></figure><figure class="pframe"><img data-img="strawpick" alt=""><figcaption>picked by hand, in season</figcaption></figure><figure class="pframe"><img data-img="wateringcan" alt=""><figcaption>the evening rounds</figcaption></figure><figure class="pframe"><img data-img="meadowwide" alt=""><figcaption>the meadow, wide open</figcaption></figure>
-    <figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure><figure class="pframe"><img data-img="oakpicnic" alt=""><figcaption>the long lunch, under the oak</figcaption></figure><figure class="pframe"><img data-img="gardenbreakfast" alt=""><figcaption>breakfast in the rose garden</figcaption></figure><figure class="pframe"><img data-img="strawpick" alt=""><figcaption>picked by hand, in season</figcaption></figure><figure class="pframe"><img data-img="wateringcan" alt=""><figcaption>the evening rounds</figcaption></figure><figure class="pframe"><img data-img="meadowwide" alt=""><figcaption>the meadow, wide open</figcaption></figure>
-  </div>
-  <div class="world__track world__track--b">
-    <figure class="pframe"><img data-img="motherdaughter" alt=""><figcaption>shared with the smallest hands</figcaption></figure><figure class="pframe"><img data-img="toastjam" alt=""><figcaption>warm bread, jam, company</figcaption></figure><figure class="pframe"><img data-img="greenhouse" alt=""><figcaption>the greenhouse, mid-morning</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>gingham, bread, and jam</figcaption></figure><figure class="pframe"><img data-img="gardenharvest" alt=""><figcaption>the morning haul</figcaption></figure><figure class="pframe"><img data-img="raspberries" alt=""><figcaption>red-berry punctuation</figcaption></figure>
-    <figure class="pframe"><img data-img="motherdaughter" alt=""><figcaption>shared with the smallest hands</figcaption></figure><figure class="pframe"><img data-img="toastjam" alt=""><figcaption>warm bread, jam, company</figcaption></figure><figure class="pframe"><img data-img="greenhouse" alt=""><figcaption>the greenhouse, mid-morning</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>gingham, bread, and jam</figcaption></figure><figure class="pframe"><img data-img="gardenharvest" alt=""><figcaption>the morning haul</figcaption></figure><figure class="pframe"><img data-img="raspberries" alt=""><figcaption>red-berry punctuation</figcaption></figure>
-  </div>
-</section>
-
 <!-- ═══════════ SECTION 7 · LETTERS ═══════════ -->
 <section class="letters">
   <div class="scallop"></div>
@@ -2528,6 +2569,24 @@
     </div>
   </div>
   <p class="letters__disclaimer">Placeholder letters — the real ones arrive with launch</p>
+</section>
+
+<!-- ═══════════ SECTION 6 · THE WORLD ═══════════ -->
+<section class="world">
+  <div class="world__head reveal">
+    <p class="eyebrow">The World of Dayli</p>
+    <h2 class="world__title">Warm, sunlit, <em>unhurried.</em></h2>
+    <p class="world__note">Women, food, and friendship in the countryside — the world she comes from.</p>
+    <img class="head-flourish" data-img="flourish" alt="">
+  </div>
+  <div class="world__track">
+    <figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure><figure class="pframe"><img data-img="oakpicnic" alt=""><figcaption>the long lunch, under the oak</figcaption></figure><figure class="pframe"><img data-img="gardenbreakfast" alt=""><figcaption>breakfast in the rose garden</figcaption></figure><figure class="pframe"><img data-img="strawpick" alt=""><figcaption>picked by hand, in season</figcaption></figure><figure class="pframe"><img data-img="wateringcan" alt=""><figcaption>the evening rounds</figcaption></figure><figure class="pframe"><img data-img="meadowwide" alt=""><figcaption>the meadow, wide open</figcaption></figure>
+    <figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure><figure class="pframe"><img data-img="oakpicnic" alt=""><figcaption>the long lunch, under the oak</figcaption></figure><figure class="pframe"><img data-img="gardenbreakfast" alt=""><figcaption>breakfast in the rose garden</figcaption></figure><figure class="pframe"><img data-img="strawpick" alt=""><figcaption>picked by hand, in season</figcaption></figure><figure class="pframe"><img data-img="wateringcan" alt=""><figcaption>the evening rounds</figcaption></figure><figure class="pframe"><img data-img="meadowwide" alt=""><figcaption>the meadow, wide open</figcaption></figure>
+  </div>
+  <div class="world__track world__track--b">
+    <figure class="pframe"><img data-img="motherdaughter" alt=""><figcaption>shared with the smallest hands</figcaption></figure><figure class="pframe"><img data-img="toastjam" alt=""><figcaption>warm bread, jam, company</figcaption></figure><figure class="pframe"><img data-img="greenhouse" alt=""><figcaption>the greenhouse, mid-morning</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>gingham, bread, and jam</figcaption></figure><figure class="pframe"><img data-img="gardenharvest" alt=""><figcaption>the morning haul</figcaption></figure><figure class="pframe"><img data-img="raspberries" alt=""><figcaption>red-berry punctuation</figcaption></figure>
+    <figure class="pframe"><img data-img="motherdaughter" alt=""><figcaption>shared with the smallest hands</figcaption></figure><figure class="pframe"><img data-img="toastjam" alt=""><figcaption>warm bread, jam, company</figcaption></figure><figure class="pframe"><img data-img="greenhouse" alt=""><figcaption>the greenhouse, mid-morning</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>gingham, bread, and jam</figcaption></figure><figure class="pframe"><img data-img="gardenharvest" alt=""><figcaption>the morning haul</figcaption></figure><figure class="pframe"><img data-img="raspberries" alt=""><figcaption>red-berry punctuation</figcaption></figure>
+  </div>
 </section>
 
 <!-- ═══════════ SECTION 8 · NEWSLETTER ═══════════ -->
@@ -2653,11 +2712,12 @@
       <div class="compare__row"><div class="compare__cell compare__cell--usual">a gritty shake, choked down</div><div class="compare__cell compare__cell--dayli">real, spreadable jam on warm toast</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">isolated powders and gums</div><div class="compare__cell compare__cell--dayli">wholefoods you can read aloud</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">forgotten by Thursday</div><div class="compare__cell compare__cell--dayli">a breakfast you look forward to</div></div>
     </div>
   </section>
-  <section class="pdpband">
-    <div class="pdpband__head reveal">
-      <p class="eyebrow">The ritual</p>
-      <h2 class="pdpband__title">Three <em>steps.</em></h2>
-    </div>
+  <section class="ritual ritual--pdp">
+    <div class="ritual__inner">
+    <div class="ritual__frame">
+    <div class="ritual__card">
+    <p class="eyebrow reveal">The Ritual</p>
+    <h2 class="ritual__title reveal">Three <em>steps.</em></h2>
     <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop, 4 oz of dark red juice, and the sweetener of your choice — in a small jar.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Stir well; two minutes later, she is jam.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Spread</p><p class="mini-step__desc">Toast, yogurt, or a spoon at the counter.</p></div></div>
     <div class="filmslot reveal">
       <div>
@@ -2665,6 +2725,33 @@
         <p class="filmslot__label">Ritual film lives here</p>
         <p class="filmslot__desc">macro footage — the deep red pour, the stir, jam folding off a spoon</p>
       </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="letters letters--pdp">
+    <div class="scallop"></div>
+    <div class="letters__head reveal">
+      <p class="eyebrow">From the postbox</p>
+      <h2 class="letters__title">Letters about <em>Jam Pact.</em></h2>
+    </div>
+    <div class="letters__grid">
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">It sets while the kettle boils. By the time the toast pops, she is jam.</p><p class="letter__name">— June · Portland</p></div>
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">My kids fight over the last spoonful. They have no idea it is fiber.</p><p class="letter__name">— Renee · Asheville</p></div>
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">The tart cherry version tastes like my grandmother’s cellar — I mean that as the highest compliment.</p><p class="letter__name">— Clare · Vermont</p></div>
+    </div>
+    <p class="letters__disclaimer">Placeholder letters — the real ones arrive with launch</p>
+  </section>
+  <section class="world world--pdp">
+    <div class="world__head reveal">
+      <p class="eyebrow">In the wild</p>
+      <h2 class="world__title">Her natural <em>habitat.</em></h2>
+    </div>
+    <div class="world__track">
+      <figure class="pframe"><img data-img="toastjam" alt=""><figcaption>warm bread, jam, company</figcaption></figure><figure class="pframe"><img data-img="jampot" alt=""><figcaption>the jam pot, mid-simmer</figcaption></figure><figure class="pframe"><img data-img="ladling" alt=""><figcaption>into jars, by hand</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>gingham, bread, and jam</figcaption></figure><figure class="pframe"><img data-img="strawpick" alt=""><figcaption>picked by hand, in season</figcaption></figure><figure class="pframe"><img data-img="raspberries" alt=""><figcaption>red-berry punctuation</figcaption></figure>
+      <figure class="pframe"><img data-img="toastjam" alt=""><figcaption>warm bread, jam, company</figcaption></figure><figure class="pframe"><img data-img="jampot" alt=""><figcaption>the jam pot, mid-simmer</figcaption></figure><figure class="pframe"><img data-img="ladling" alt=""><figcaption>into jars, by hand</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>gingham, bread, and jam</figcaption></figure><figure class="pframe"><img data-img="strawpick" alt=""><figcaption>picked by hand, in season</figcaption></figure><figure class="pframe"><img data-img="raspberries" alt=""><figcaption>red-berry punctuation</figcaption></figure>
     </div>
   </section>
   <section class="pair">
@@ -2710,7 +2797,6 @@
       <div class="pdp__buybox reveal reveal--d1">
         <p class="pdp__no">Nº 02 · Electrolyte Blend</p>
         <h1 class="pdp__name">Dayli-<em>Lyte</em></h1>
-        <p class="pdp__poem">Hydration, minerals, fiber — poured tall, raspberry lemonade.</p>
         <p class="pdp__rating">✿ ✿ ✿ ✿ ✿ <em>first letters arriving with launch</em></p>
         <p class="pdp__price"><span class="cur">$</span>29</p>
         <p class="pdp__desc">Daily balance for body and mind. Pink Himalayan salt and potassium for the minerals you sweat away, magnesium glycinate and calcium for calm and steadiness, and gentle tapioca fiber no other electrolyte carries — because hydration without absorption is just a pretty glass. Sweetened with monk fruit, blushed with beet root. Tastes like raspberry lemonade on a porch, naturally.</p>
@@ -2791,11 +2877,12 @@
       <div class="compare__row"><div class="compare__cell compare__cell--usual">neon dyes and sucralose</div><div class="compare__cell compare__cell--dayli">fruit, salt, and nothing artificial</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">a spike, then a crash</div><div class="compare__cell compare__cell--dayli">steady, all-afternoon hydration</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">0g fiber, every time</div><div class="compare__cell compare__cell--dayli">5g — the only ’lyte that carries fiber</div></div>
     </div>
   </section>
-  <section class="pdpband">
-    <div class="pdpband__head reveal">
-      <p class="eyebrow">The ritual</p>
-      <h2 class="pdpband__title">Three <em>steps.</em></h2>
-    </div>
+  <section class="ritual ritual--pdp">
+    <div class="ritual__inner">
+    <div class="ritual__frame">
+    <div class="ritual__card">
+    <p class="eyebrow reveal">The Ritual</p>
+    <h2 class="ritual__title reveal">Three <em>steps.</em></h2>
     <div class="mini-ritual"><div class="mini-step reveal"><p class="mini-step__no">01</p><p class="mini-step__name">Pour</p><p class="mini-step__desc">A scoop over cold water or a glass of ice.</p></div><div class="mini-step reveal"><p class="mini-step__no">02</p><p class="mini-step__name">Stir</p><p class="mini-step__desc">Thirty seconds, until she blushes rosy.</p></div><div class="mini-step reveal"><p class="mini-step__no">03</p><p class="mini-step__name">Sip</p><p class="mini-step__desc">Porch optional, but warmly recommended.</p></div></div>
     <div class="filmslot reveal">
       <div>
@@ -2803,6 +2890,33 @@
         <p class="filmslot__label">Ritual film lives here</p>
         <p class="filmslot__desc">poured over ice on the porch at golden hour — the rosy swirl, the first sip</p>
       </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="letters letters--pdp">
+    <div class="scallop"></div>
+    <div class="letters__head reveal">
+      <p class="eyebrow">From the postbox</p>
+      <h2 class="letters__title">Letters about <em>Dayli-Lyte.</em></h2>
+    </div>
+    <div class="letters__grid">
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">It lives on my counter like a little vase of flowers. I actually remember to drink it.</p><p class="letter__name">— Sofia · Austin</p></div>
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">Steady is the right word. No fizz, no crash — just an afternoon that holds.</p><p class="letter__name">— May · Boise</p></div>
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">Raspberry lemonade that does not taste like candy. My whole book club is converted.</p><p class="letter__name">— Dana · Sacramento</p></div>
+    </div>
+    <p class="letters__disclaimer">Placeholder letters — the real ones arrive with launch</p>
+  </section>
+  <section class="world world--pdp">
+    <div class="world__head reveal">
+      <p class="eyebrow">In the wild</p>
+      <h2 class="world__title">Her natural <em>habitat.</em></h2>
+    </div>
+    <div class="world__track">
+      <figure class="pframe"><img data-img="jarsonice" alt=""><figcaption>jars on ice, picnic-bound</figcaption></figure><figure class="pframe"><img data-img="dpitcher" alt=""><figcaption>poured tall, over ice</figcaption></figure><figure class="pframe"><img data-img="meadowwide" alt=""><figcaption>the meadow, wide open</figcaption></figure><figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure><figure class="pframe"><img data-img="gardenbreakfast" alt=""><figcaption>breakfast in the rose garden</figcaption></figure><figure class="pframe"><img data-img="wateringcan" alt=""><figcaption>the evening rounds</figcaption></figure>
+      <figure class="pframe"><img data-img="jarsonice" alt=""><figcaption>jars on ice, picnic-bound</figcaption></figure><figure class="pframe"><img data-img="dpitcher" alt=""><figcaption>poured tall, over ice</figcaption></figure><figure class="pframe"><img data-img="meadowwide" alt=""><figcaption>the meadow, wide open</figcaption></figure><figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure><figure class="pframe"><img data-img="gardenbreakfast" alt=""><figcaption>breakfast in the rose garden</figcaption></figure><figure class="pframe"><img data-img="wateringcan" alt=""><figcaption>the evening rounds</figcaption></figure>
     </div>
   </section>
   <section class="pair">
@@ -2831,7 +2945,10 @@
     <p class="eyebrow shero__eyebrow">Our Story</p>
     <h1 class="shero__quote">Wellness is not a transformation you purchase. <em>It is a returning you practice.</em></h1>
     <div class="shero__sprig"><img data-img="divider" alt=""></div>
-    <div><span class="shero__film"><span class="ritual__film-play">▶</span> Founder film <em>· placeholder — Amy, the kitchen, batch nº 14</em></span></div>
+    <div class="shero__filmframe">
+      <video data-vid="herovid" autoplay muted loop playsinline></video>
+    </div>
+    <p class="inlinefilm__cap">founder film — stock stand-in, the real one stars Amy &amp; batch nº 1</p>
   </section>
 
   <!-- chapter I -->
@@ -2848,7 +2965,7 @@
         <div class="schapter__media">
           <img data-img="jampot" data-parallax="26" alt="A copper pot of jam on the stove, berries alongside">
         </div>
-        <figcaption class="schapter__cap">where it started · a borrowed kitchen</figcaption>
+        <figcaption class="schapter__cap">where it started · Amy’s own kitchen</figcaption>
       </figure>
     </div>
   </section>
@@ -2897,28 +3014,28 @@
     </div>
     <div class="pcards reveal">
       <div class="pcard">
-        <img class="postage" data-img="stamp" alt="">
+        <span class="postage postage--icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20h26M13.5 20c-.5 9 2.5 15 10.5 15s11-6 10.5-15"/><path d="M18 20v-2.5M30 20v-2.5"/><path d="M20 8.5c0 2.2-2 3-2 5.5M28 8.5c0 2.2-2 3-2 5.5"/></svg></span>
         <p class="pcard__season">Winter · the question</p>
         <p class="pcard__name">Why does "healthy" feel like <em>homework?</em></p>
         <p class="pcard__desc">Amy starts asking why every wellness product feels like a protocol — another powder hidden in a cabinet, another thing to fail at by Thursday.</p>
       </div>
       <div class="pcard">
-        <img class="postage" data-img="stamp" alt="">
+        <span class="postage postage--icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14h14M18 14v-3.5h12V14M15.5 14c-1.6 8-1.6 14.5.8 20a4.5 4.5 0 0 0 4.2 3h7a4.5 4.5 0 0 0 4.2-3c2.4-5.5 2.4-12 .8-20"/><path d="M19 24h10M19 28h10"/></svg></span>
         <p class="pcard__season">Spring · batch nº 1</p>
         <p class="pcard__name">The first jam <em>sets.</em></p>
-        <p class="pcard__desc">A wholefood fiber blend that becomes actual jam, made in a borrowed kitchen. Batch nº 1 is not good. Batch nº 14 is worth writing home about.</p>
+        <p class="pcard__desc">Made in Amy’s own kitchen one sunny afternoon — and batch nº 1 was already delicious. She has only grown since, gathering more fibers along the way.</p>
       </div>
       <div class="pcard">
-        <img class="postage" data-img="stamp" alt="">
-        <p class="pcard__season">Summer · the handbook</p>
-        <p class="pcard__name">The Inner Garden is <em>written.</em></p>
-        <p class="pcard__desc">The brand finds her voice — intimate, unhurried, without judgment. The handbook becomes the gift tucked into every first order.</p>
+        <span class="postage postage--icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10l3.7 7.6 8.3 1.2-6 5.9 1.4 8.3-7.4-3.9-7.4 3.9 1.4-8.3-6-5.9 8.3-1.2z"/></svg></span>
+        <p class="pcard__season">Summer · the look</p>
+        <p class="pcard__name">The brand takes <em>shape.</em></p>
+        <p class="pcard__desc">Gingham, linen, and wax seals — designed around a hope: summer picnics with ripe berries, jam on warm bread, and friends who stay late.</p>
       </div>
       <div class="pcard">
-        <img class="postage" data-img="stamp" alt="">
+        <span class="postage postage--icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="17" width="26" height="20" rx="2"/><path d="M11 24h26M24 17v20M18.5 17l2.8-5h5.4l2.8 5"/></svg></span>
         <p class="pcard__season">Autumn · the pantry opens</p>
         <p class="pcard__name">First jars <em>ship.</em></p>
-        <p class="pcard__desc">Jam Pact and Dayli-Lyte leave the pantry — wax-sealed, tissue-wrapped, with the handbook beside them. This part is almost here.</p>
+        <p class="pcard__desc">Jars leave the pantry and land in kitchens — on countertops, in picnic baskets, passed hand to hand. Nourishing you, your babies, your friends. This part is almost here.</p>
       </div>
     </div>
     <p class="letters__disclaimer" style="margin-top:44px">Draft milestones — the real timeline is Amy's to tell</p>
@@ -2926,7 +3043,6 @@
 
   <!-- founder letter -->
   <section class="founder">
-  <img class="corner corner--tr" data-img="corner" alt="">
     <div class="founder__grid">
       <figure class="schapter__fig reveal">
         <div class="schapter__media">
@@ -2944,7 +3060,7 @@
           <img data-img="seal" alt="">
           <p class="founder__sig-name">— Amy<small>Founder &amp; first taste-tester</small></p>
         </div>
-        <p class="letters__disclaimer" style="text-align:left;margin-top:22px">Draft letter — story &amp; direction to be decided together</p>
+        <p class="founder__ps">P.S. — the kettle is always on. Write me back: hello@dayli.co</p>
       </div>
     </div>
   </section>
@@ -2955,7 +3071,7 @@
     <p class="eyebrow reveal">Chapter III</p>
     <h2 class="sclose__title reveal">The Dayli <em>way.</em></h2>
     <p class="sclose__copy reveal">This isn't about building a certain body. It's about supporting the one you live in. We keep things simple, seasonal, and thoughtfully made — without dairy, without gluten, without fillers, and without the idea that more (or less) is better. Just real nourishment, designed for real life.</p>
-    <p class="sclose__bell reveal">Steady, faithful, daily, soft.</p>
+    <p class="sclose__bell reveal">Steady, faithful, soft — <em>Dayli.</em></p>
     <div class="sclose__cta reveal">
       <a class="btn btn--red" href="#home/pantry">Meet the jars</a>
       <a class="btn btn--ghost" style="border-color:rgba(142,42,43,.5);color:var(--preserve-red)" href="#journal">Read the journal</a>
@@ -3251,7 +3367,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v12';
+  var PAGE_ID = 'dayli-home-v13';
 
   /* ---------------------------------------------- */
 
