@@ -2087,7 +2087,9 @@
   .sclose__panel{
     position:relative;
     max-width:660px;
-    background:rgba(244,236,221,.96);
+    background:rgba(244,236,221,.84);
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
     border:1px solid rgba(94,26,31,.3);
     outline:1px solid rgba(94,26,31,.3);
     outline-offset:5px;
@@ -2111,9 +2113,10 @@
   }
   .sclose__cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   .sclose__contact{
-    margin-top:22px;
+    margin-top:24px;
     font-family:var(--serif);font-style:italic;
-    font-size:15px;color:rgba(43,38,34,.7);
+    font-weight:700;
+    font-size:18px;color:var(--warm-ink);
   }
   .sclose__contact a{color:var(--preserve-red)}
 
@@ -2374,6 +2377,82 @@
   }
   .wlmodal__form{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
   .wlmodal__form .btn{cursor:pointer;border:none;font-family:var(--sans)}
+  .family{background:var(--linen);padding-top:24px}
+  .family .schapter__fig::before{background:repeating-linear-gradient(0deg, rgba(233,201,122,.4) 0 11px, transparent 11px 22px),repeating-linear-gradient(90deg, rgba(233,201,122,.4) 0 11px, transparent 11px 22px),var(--linen)}
+  /* ---------- shop / bundles / faq / contact / shipping / post ---------- */
+  .pghead{text-align:center;padding:64px 24px 10px}
+  .pghead__title{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.4vw,56px);margin:16px 0 10px}
+  .pghead__title em{font-style:italic}
+  .pghead__note{font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(43,38,34,.72)}
+  .shoppg{background:var(--linen);padding:0 44px 110px}
+  .shoppg__grid{max-width:1180px;margin:54px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:44px;align-items:start}
+  .shoppg .jar-card__name{font-size:clamp(24px,2.4vw,30px)}
+  .shoppg .jar-card__media img{aspect-ratio:3/2.4}
+  .faqpg{background:var(--linen);padding:0 24px 110px}
+  .faqpg__inner{max-width:760px;margin:40px auto 0}
+  .faqpg .acc__head{font-size:20px;text-align:left}
+  .policy{max-width:720px;margin:44px auto 0;text-align:left}
+  .policy h3{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--preserve-red);margin:38px 0 14px}
+  .policy p{font-size:15.5px;line-height:1.85;color:rgba(43,38,34,.8);margin-bottom:14px}
+  .contactpg{background:var(--linen);padding:0 24px 110px}
+  .contactpg__panel{
+    position:relative;max-width:640px;margin:48px auto 0;
+    background:var(--buttermilk);
+    border:1px solid rgba(94,26,31,.25);
+    padding:56px 48px 44px;
+    box-shadow:0 30px 60px -40px rgba(94,26,31,.4);
+    transform:rotate(.4deg);
+  }
+  .contactpg__panel::before{content:'';position:absolute;inset:10px;border:1px solid rgba(142,42,43,.22);pointer-events:none}
+  .contactpg__form{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+  .contactpg__form textarea{
+    border:1px solid rgba(94,26,31,.4);background:rgba(255,255,255,.5);
+    padding:15px 18px;font-family:var(--sans);font-size:13.5px;color:var(--warm-ink);
+    min-height:140px;resize:vertical;outline:none;
+  }
+  .contactpg__form textarea::placeholder{color:rgba(43,38,34,.45);font-style:italic;font-family:var(--serif)}
+  .contactpg__form .btn{cursor:pointer;border:none;font-family:var(--sans)}
+  .post{background:var(--linen);padding:56px 24px 100px}
+  .post__inner{max-width:720px;margin:0 auto}
+  .post__hero{border-radius:14px;overflow:hidden;box-shadow:0 26px 50px -30px rgba(94,26,31,.45);margin:30px 0 36px}
+  .post__hero img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  .post__title{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.2vw,48px);line-height:1.15;margin:14px 0 10px}
+  .post__title em{font-style:italic}
+  .post__meta{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(43,38,34,.65);margin-bottom:8px}
+  .post p{font-size:16px;line-height:1.9;color:rgba(43,38,34,.82);margin-bottom:20px}
+  .post h3{font-family:var(--serif);font-size:24px;font-weight:600;margin:34px 0 12px}
+  .post h3 em{font-style:italic;color:var(--preserve-red)}
+  .postcta{
+    display:flex;gap:24px;align-items:center;
+    background:var(--buttermilk);
+    border:1px solid rgba(94,26,31,.28);
+    padding:26px 28px;margin:44px 0;
+  }
+  .postcta img{width:110px;flex:none;border:1px solid rgba(94,26,31,.25)}
+  .postcta__name{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:6px}
+  .postcta__line{font-size:13.5px;color:rgba(43,38,34,.7);margin-bottom:14px !important;line-height:1.6 !important}
+  .post__signup{
+    text-align:center;
+    border:1px dashed rgba(142,42,43,.5);
+    padding:38px 30px;margin-top:50px;
+    background:rgba(239,230,211,.5);
+  }
+  .post__signup h3{margin-top:0}
+  .post__signup form{display:flex;gap:10px;max-width:420px;margin:18px auto 0}
+  .post__signup .btn{cursor:pointer;border:none;font-family:var(--sans)}
+  .post__back{
+    display:inline-block;margin-top:44px;
+    font-family:var(--serif);font-style:italic;font-size:15.5px;
+    color:var(--preserve-red);text-decoration:none;
+    border-bottom:1px solid rgba(142,42,43,.35);
+  }
+  @media (max-width:900px){
+    .shoppg{padding:0 20px 80px}
+    .shoppg__grid{grid-template-columns:1fr;gap:56px;max-width:440px}
+    .postcta{flex-direction:column;text-align:center}
+    .post__signup form{flex-direction:column}
+    .contactpg__panel{padding:40px 22px 36px}
+  }
 </style>
 </head>
 <body>
@@ -2403,7 +2482,7 @@
     <button class="nav__burger" id="burger" aria-label="menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav__links nav__links--left">
       <a href="#home">Home</a>
-      <a href="#home/pantry">Shop</a>
+      <a href="#shop">Shop</a>
       <a href="#our-story">Our Story</a>
       <a href="#journal">Journal</a>
     </div>
@@ -2419,7 +2498,7 @@
   </nav>
   <div class="mobilemenu" id="mobileMenu">
     <a href="#home">Home</a>
-    <a href="#home/pantry">Shop</a>
+    <a href="#shop">Shop</a>
     <a href="#jam-pact">Jam Pact</a>
     <a href="#dayli-lyte">Dayli-Lyte</a>
     <a href="#our-story">Our Story</a>
@@ -2609,6 +2688,7 @@
       <video data-vid="herovid" autoplay muted loop playsinline></video>
     </div>
     <p class="inlinefilm__cap">ritual film — stock stand-in, final macro film to come</p>
+    <div style="margin-top:34px"><a class="btn btn--red" href="#jam-pact">Shop Jam Pact</a></div>
     </div>
     </div>
   </div>
@@ -2838,6 +2918,27 @@
     </div>
   </section>
 
+  <section class="schapter family">
+    <div class="schapter__grid">
+      <figure class="schapter__fig reveal">
+        <div class="schapter__media">
+          <img data-img="motherdaughter" data-parallax="24" alt="Mother and daughter sharing berries in the meadow">
+        </div>
+        <figcaption class="schapter__cap">crafted for the whole table</figcaption>
+      </figure>
+      <div class="schapter__body reveal reveal--d1">
+        <p class="schapter__no">For the whole table</p>
+        <h2 class="schapter__title">Made for little hands, <em>too.</em></h2>
+        <p>Jam Pact was crafted to be enjoyed by the whole family. To little hands it is simply jam — bright, spreadable, made for warm toast and sticky fingers. The seven-plant fiber blend working underneath? That part can stay our secret.</p>
+        <p>No artificial anything, no sugar bombs, nothing you would have to explain. Just jam, to them — and 11g of fiber, to you.</p>
+        <div class="jar-card__chips" style="justify-content:flex-start;margin-top:22px">
+          <span class="chip">Kid-approved</span>
+          <span class="chip">Just jam, to them</span>
+          <span class="chip">Nothing artificial</span>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="letters letters--pdp">
     <div class="scallop"></div>
     <div class="letters__head reveal">
@@ -3185,8 +3286,8 @@
       <div class="sclose__panel">
         <p class="eyebrow">Chapter III</p>
         <h2 class="sclose__title">The Dayli <em>way.</em></h2>
-        <p class="sclose__copy">This isn't about building a certain body. It's about supporting the one you live in. We keep things simple, seasonal, and thoughtfully made — without dairy, without gluten, without fillers, and without the idea that more (or less) is better. Just real nourishment, designed for real life.</p>
-        <p class="sclose__bell">Steady, faithful, soft — <em>Dayli.</em></p>
+        <p class="sclose__copy">This isn't about building a certain body. It's about supporting the one you live in. We keep things simple, seasonal, and thoughtfully made: without dairy, without gluten, without fillers, and without the idea that more (or less) is better. Just real nourishment, designed for real life.</p>
+        <p class="sclose__bell">Steady, faithful, true — <em>Dayli.</em></p>
         <div class="sclose__cta">
           <a class="btn btn--red" href="#" data-add="Dayli">Join the Waitlist</a>
           <a class="btn btn--ghost" style="border-color:rgba(142,42,43,.5);color:var(--preserve-red)" href="#home/pantry">Meet the jars</a>
@@ -3247,11 +3348,11 @@
       <img class="head-flourish" data-img="flourish" alt="">
     </div>
     <div class="journal__grid">
-      <a class="jcard reveal" href="#journal">
+      <a class="jcard reveal" href="#journal-post">
         <div class="jcard__media"><img data-img="jambowl" alt=""></div>
         <p class="jcard__tag">Recipes</p>
         <p class="jcard__name">Three toasts for the first warm Saturday</p>
-        <p class="jcard__soon">coming soon</p>
+        <p class="jcard__soon">read the letter →</p>
       </a>
       <a class="jcard reveal reveal--d1" href="#journal">
         <div class="jcard__media"><img data-img="dstraw" alt=""></div>
@@ -3300,6 +3401,259 @@
 </div>
 <div class="toast" id="toast"></div>
 
+<main class="page" id="page-shop">
+  <section class="shoppg">
+    <div class="pghead reveal">
+      <p class="eyebrow">The Pantry</p>
+      <h1 class="pghead__title">Everything on the <em>shelf.</em></h1>
+      <p class="pghead__note">Two jars, one pair — the whole family, for now.</p>
+    </div>
+    <div class="shoppg__grid">
+      <article class="jar-card jar-card-- reveal">
+        <a class="jar-card__wrap" href="#jam-pact">
+          <span class="jar-card__mat"></span>
+          <span class="jar-card__no">Nº 01</span>
+          <div class="jar-card__media"><img data-img="jampact" alt=""></div>
+        </a>
+        <div class="jar-card__body">
+          <p class="jar-card__type">Fiber Blend</p>
+          <h3 class="jar-card__name">Jam <em>Pact</em></h3>
+          <p class="jar-card__desc">A wholefood fiber blend that becomes real, spreadable jam. 11g fiber per serving.</p>
+          <div class="jar-card__buy">
+            <p class="jar-card__price">$34<small>30 servings</small></p>
+            <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Add to Basket</a>
+          </div>
+          <a class="jar-card__story" href="#jam-pact">see the full story →</a>
+        </div>
+      </article>
+      <article class="jar-card jar-card--lyte reveal">
+        <a class="jar-card__wrap" href="#dayli-lyte">
+          <span class="jar-card__mat"></span>
+          <span class="jar-card__no">Nº 02</span>
+          <div class="jar-card__media"><img data-img="daylilyte" alt=""></div>
+        </a>
+        <div class="jar-card__body">
+          <p class="jar-card__type">Electrolyte Blend</p>
+          <h3 class="jar-card__name">Dayli-<em>Lyte</em></h3>
+          <p class="jar-card__desc">Minerals, real fiber, zero sugar — raspberry lemonade, poured tall.</p>
+          <div class="jar-card__buy">
+            <p class="jar-card__price">$29<small>30 servings</small></p>
+            <a class="btn btn--red" href="#dayli-lyte" data-add="Dayli-Lyte">Add to Basket</a>
+          </div>
+          <a class="jar-card__story" href="#dayli-lyte">see the full story →</a>
+        </div>
+      </article>
+      <article class="jar-card jar-card--butter reveal">
+        <a class="jar-card__wrap" href="#bundles">
+          <span class="jar-card__mat"></span>
+          <span class="jar-card__no">Nº 03</span>
+          <div class="jar-card__media"><img data-img="jarsonice" alt=""></div>
+        </a>
+        <div class="jar-card__body">
+          <p class="jar-card__type">Bundle</p>
+          <h3 class="jar-card__name">The Pantry <em>Pair</em></h3>
+          <p class="jar-card__desc">Both jars, one parcel — mornings and afternoons, covered. Handbook included.</p>
+          <div class="jar-card__buy">
+            <p class="jar-card__price">$56<small>$63 value</small></p>
+            <a class="btn btn--red" href="#bundles" data-add="The Pantry Pair">Add to Basket</a>
+          </div>
+          <a class="jar-card__story" href="#bundles">see the full story →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<main class="page" id="page-bundles">
+  <section class="pdp">
+    <p class="pdp__crumb"><a href="#home">Home</a> &nbsp;·&nbsp; <a href="#shop">The Pantry</a> &nbsp;·&nbsp; Nº 03 · Bundle</p>
+    <div class="pdp__grid">
+      <div class="pdp__gallery reveal">
+        <div class="pdp__main">
+          <img data-img="jarsonice" alt="">
+          <div class="pdp__todo"><div><span class="frame__todo-eyebrow">To be shot</span><p class="frame__todo-desc">Both jars together on the counter, morning light.</p></div></div>
+        </div>
+        <div class="pdp__thumbs">
+          <button data-thumb="jarsonice" class="on"><img data-img="jarsonice" alt=""></button>
+          <button data-thumb="jampact" ><img data-img="jampact" alt=""></button>
+          <button data-thumb="daylilyte" ><img data-img="daylilyte" alt=""></button>
+          <button data-thumb="picnicoverhead" ><img data-img="picnicoverhead" alt=""></button>
+        </div>
+      </div>
+      <div class="pdp__buybox reveal reveal--d1">
+        <p class="pdp__no">Nº 03 · The Bundle</p>
+        <h1 class="pdp__name">The Pantry <em>Pair</em></h1>
+        <p class="pdp__poem">Jam on toast at eight, a tall glass over ice at noon.</p>
+        <p class="pdp__price"><span class="cur">$</span>56</p>
+        <p class="pdp__desc">Both jars, one parcel. Jam Pact for the mornings — 11g of fiber that becomes real jam — and Dayli-Lyte for the afternoons — four minerals, real fiber, zero sugar. The full Dayli rhythm, wax-sealed and tissue-wrapped, with The Inner Garden handbook alongside.</p>
+        <div class="pdp__chips">
+          <span class="chip">Jam Pact + Dayli-Lyte</span>
+          <span class="chip">Handbook included</span>
+          <span class="chip">Save $7</span>
+        </div>
+        <button class="btn btn--red pdp__add" data-add="The Pantry Pair">Add to Basket — the pair</button>
+        <p class="pdp__ship">Free shipping over $50 · ships in 2–4 days</p>
+        <div class="giftbox">
+          <img data-img="seal" alt="">
+          <div>
+            <strong>A gift, sealed in wax.</strong>
+            <span>Every first order arrives with <a href="#inner-garden">The Inner Garden</a> — our 42-page digital handbook on fiber and the rituals that carry it. Free, always.</span>
+          </div>
+        </div>
+        <div class="accs">
+          <div class="acc acc--open">
+            <button class="acc__head">What's in the parcel</button>
+            <div class="acc__body"><div class="acc__body-inner">
+              <p class="recipe">one jar of Jam Pact <span class="rdot">·</span> one jar of Dayli-Lyte <span class="rdot">·</span> The Inner Garden (digital) <span class="rdot">·</span> a wax-sealed note</p>
+              <p class="pdp__notice">Bundle pricing is placeholder — final numbers with launch</p>
+            </div></div>
+          </div>
+          <div class="acc">
+            <button class="acc__head">Shipping &amp; care</button>
+            <div class="acc__body"><div class="acc__body-inner"><p>Ships in 2–4 days in recyclable, plastic-free packaging. Keep them cool and dry. <em>Questions? Write to us — a person answers.</em></p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pair">
+    <div class="scallop"></div>
+    <a class="pair__inner" href="#shop" style="text-decoration:none;color:inherit">
+      <div class="pair__media"><img data-img="toastjam" alt=""></div>
+      <div>
+        <p class="pair__eyebrow">Prefer to choose?</p>
+        <p class="pair__name">Shop the <em>shelf</em></p>
+        <p class="pair__line">Each jar also stands beautifully on her own.</p>
+        <span class="lore__alt">back to the pantry →</span>
+      </div>
+    </a>
+  </section>
+</main>
+
+<main class="page" id="page-faq">
+  <section class="faqpg">
+    <div class="pghead reveal">
+      <p class="eyebrow">FAQ</p>
+      <h1 class="pghead__title">Asked, <em>answered.</em></h1>
+      <p class="pghead__note">And if it isn't here — write to us. A person answers.</p>
+    </div>
+    <div class="faqpg__inner">
+      <div class="accs">
+        <div class="acc acc--open">
+          <button class="acc__head">How does Jam Pact become jam?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>One scoop into a small jar with 4 ounces of dark red juice — tart cherry and pomegranate are the house favorites — plus the sweetener of your choice. Stir well, wait two minutes, and psyllium and chia set it into real, spreadable preserves. No cooking, no pectin, no tricks.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">What does it taste like?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>Like the juice you build her with — bright, fruit-forward, a proper jam texture. Tart cherry tastes like a cellar shelf in August; pomegranate runs a little deeper.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">Can my kids have it?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>Jam Pact was crafted to be enjoyed by the whole family. To little hands it is simply jam. As with anything new, start small — and for very young children, ask your pediatrician first.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">How much fiber is in each jar?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>Jam Pact carries 11g of fiber per serving from seven whole plants. Dayli-Lyte carries 5g alongside four minerals — the only electrolyte we know of that brings fiber at all.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">Will it upset my stomach?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>Real fibers, introduced slowly. Start with half a scoop for the first week and let the garden adjust. She works in rhythms, not rescues.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">When do products ship?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>The first jars are almost ready. Join the waitlist and we'll write the moment they ship — waitlist friends get the first jars, in order of joining.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">Do you offer subscriptions?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>Yes — subscribe and save 15%, delivered on your rhythm. Pause or cancel anytime, like a library book.</p></div></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head">What is The Inner Garden?</button>
+          <div class="acc__body"><div class="acc__body-inner"><p>Our 42-page digital handbook on fiber — which foods carry it, how to close the fiber gap, and how to build a ritual you will actually keep. It comes free with your first order.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="page" id="page-contact">
+  <section class="contactpg">
+    <div class="pghead reveal">
+      <p class="eyebrow">Contact</p>
+      <h1 class="pghead__title">Write <em>to us.</em></h1>
+      <p class="pghead__note">A person answers — usually within two business days.</p>
+    </div>
+    <div class="contactpg__panel reveal">
+      <img class="postage postage--letter" data-img="stamp" alt="">
+      <p class="founder__salut">Sweet friend,</p>
+      <p style="font-family:var(--serif);font-size:15.5px;line-height:1.8;color:rgba(43,38,34,.8)">Questions about an order, the jars, or anything at all — leave a note below, or write us directly at <a href="mailto:hello@dayli.co" style="color:var(--preserve-red)">hello@dayli.co</a>.</p>
+      <form class="contactpg__form wl-inline">
+        <input class="news__input" type="text" required placeholder="your name">
+        <input class="news__input" type="email" required placeholder="your loveliest email">
+        <textarea required placeholder="your note…"></textarea>
+        <button class="btn btn--red" type="submit">Send the letter</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<main class="page" id="page-shipping">
+  <section class="faqpg">
+    <div class="pghead reveal">
+      <p class="eyebrow">The fine print, kindly</p>
+      <h1 class="pghead__title">Shipping &amp; <em>returns.</em></h1>
+    </div>
+    <div class="policy reveal">
+      <h3>Shipping</h3>
+      <p>Orders are packed within 2–4 business days and shipped across the United States. Shipping is free on orders over $50; below that, rates are calculated at checkout. You'll receive tracking by email the moment your parcel leaves the pantry.</p>
+      <h3>Returns</h3>
+      <p>Unopened jars may be returned within 30 days of delivery for a full refund. Opened but unloved? Write to us anyway — we would rather make it right than have a jar sit unhappily on your counter.</p>
+      <h3>Damaged or lost parcels</h3>
+      <p>If something arrives broken or goes missing along the way, send a note (a photo helps) to <a href="mailto:hello@dayli.co" style="color:var(--preserve-red)">hello@dayli.co</a> and we'll send a replacement on the house.</p>
+      <h3>Subscriptions</h3>
+      <p>Pause, skip, or cancel anytime from your account — like a library book, no questions asked.</p>
+      <p class="letters__disclaimer" style="text-align:left;margin-top:34px">Standard policy draft — details to be confirmed before launch</p>
+    </div>
+  </section>
+</main>
+
+<main class="page" id="page-journal-post">
+  <section class="post">
+    <div class="post__inner">
+      <p class="eyebrow reveal">Recipes · from the Journal</p>
+      <h1 class="post__title reveal">Three toasts for the first <em>warm Saturday.</em></h1>
+      <p class="post__meta reveal">by Amy · four minute read</p>
+      <div class="post__hero reveal"><img data-img="toastjam" alt="Jam on warm toast beside wildflowers"></div>
+      <p>There is a particular Saturday, somewhere in late spring, when the morning is finally warm enough to open the kitchen window while the kettle works. This is a menu for that Saturday. Three toasts, one jar of Jam Pact, and no reason to hurry back inside.</p>
+      <h3>01 · The <em>Classic</em></h3>
+      <p>Thick-cut sourdough, toasted darker than feels polite. Salted butter while it's hot, then tart-cherry Jam Pact spread to the edges — always to the edges. Eat it standing at the counter; that's part of the recipe.</p>
+      <h3>02 · The <em>Breakfast Proper</em></h3>
+      <p>A swirl of pomegranate Jam Pact through plain yogurt, spooned over rye toast. It looks like something from a café that misspells "toast" on purpose, and it carries 11g of fiber without mentioning it.</p>
+      <h3>03 · The <em>Company Toast</em></h3>
+      <p>Ricotta, a generous layer of jam, lemon zest, flaky salt. This is the one you make when someone stays for breakfast — it takes ninety seconds and looks like devotion.</p>
+      <div class="spull">Set the jam the night before, or let it thicken while the kettle boils — two minutes is all she asks.</div>
+      <div class="postcta reveal">
+        <img data-img="jampact" alt="">
+        <div>
+          <p class="postcta__name">Bring the jam</p>
+          <p class="postcta__line">Jam Pact — a wholefood fiber blend that becomes real, spreadable jam. 11g of fiber, disguised as devotion.</p>
+          <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Add to Basket</a>
+        </div>
+      </div>
+      <div class="post__signup reveal">
+        <h3>First in <em>line?</em></h3>
+        <p style="font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(43,38,34,.72);margin:0">The first jars ship soon — leave your email and we'll write the moment they're ready.</p>
+        <form class="wl-inline">
+          <input class="news__input" type="email" required placeholder="your loveliest email">
+          <button class="btn btn--red" type="submit">Join the Waitlist</button>
+        </form>
+      </div>
+      <a class="post__back" href="#journal">← back to the Journal</a>
+    </div>
+  </section>
+</main>
+
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer style="position:relative">
   <div class="scallop"></div>
@@ -3313,7 +3667,7 @@
         <h4>The Pantry</h4>
         <a href="#jam-pact">Jam Pact</a>
         <a href="#dayli-lyte">Dayli-Lyte</a>
-        <a href="#home/pantry">Bundles</a>
+        <a href="#bundles">Bundles</a>
         <a href="#home/pantry">Gift a jar</a>
       </div>
       <div class="footer__col">
@@ -3321,12 +3675,12 @@
         <a href="#our-story">Our Story</a>
         <a href="#inner-garden">The Inner Garden · our gift</a>
         <a href="#journal">Journal</a>
-        <a href="#jam-pact">FAQ</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="footer__col">
         <h4>Care</h4>
-        <a href="#">Contact us</a>
-        <a href="#">Shipping &amp; returns</a>
+        <a href="#contact">Contact us</a>
+        <a href="#shipping">Shipping &amp; returns</a>
         <a href="#">Account</a>
         <a href="#">Instagram ↗</a>
         <a href="#">TikTok ↗</a>
@@ -3527,6 +3881,13 @@
     });
   });
 
+  // ---- inline letter/waitlist forms ----
+  document.querySelectorAll('.wl-inline').forEach(f => f.addEventListener('submit', e => {
+    e.preventDefault();
+    f.reset();
+    showToast(f.closest('.contactpg__panel') ? 'Your letter is on its way, sweet friend.' : "You're on the list, sweet friend.");
+  }));
+
   // ---- sticky add bars ----
   document.querySelectorAll('.page').forEach(pg => {
     const bar = pg.querySelector('.stickybar');
@@ -3562,7 +3923,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v16';
+  var PAGE_ID = 'dayli-home-v17';
 
   /* ---------------------------------------------- */
 
