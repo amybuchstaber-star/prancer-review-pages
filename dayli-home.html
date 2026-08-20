@@ -6,7 +6,7 @@
 <title>Dayli Wellness Co. — Feed what feeds you</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,400&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,400;1,6..96,600;1,6..96,700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --preserve-red:#8E2A2B;
@@ -152,7 +152,7 @@
     font-weight:600;
   }
   .nav__bag{display:inline-flex;align-items:flex-start;gap:1px}
-  .nav__bag svg{width:21px;height:21px}
+  .nav__bag svg{width:27px;height:27px}
   .nav__bag::after{display:none !important}
   .nav__bag sup{
     font-size:10px;
@@ -165,7 +165,7 @@
   /* ---------- hero ---------- */
   .hero{
     background:var(--linen);
-    padding:44px clamp(36px,5.5vw,84px) 38px;
+    padding:44px clamp(36px,5.5vw,84px) 68px;
   }
   .hero__frame{
     max-width:1460px;
@@ -660,10 +660,7 @@
     font-style:italic;
     font-size:13.5px;
     color:var(--preserve-red);
-    margin-top:4px;
-    flex:0 0 auto;
-    align-self:center;
-    min-width:130px;
+    margin-bottom:12px;
   }
   .lore__polaroid--c img{aspect-ratio:3/2.6}
   .lore__body .eyebrow{display:block}
@@ -1263,6 +1260,7 @@
 
   /* ---------- responsive ---------- */
   @media (max-width: 900px){
+    .ribbon{font-size:10.5px;letter-spacing:.18em;padding:8px 0}
     .nav{padding:14px 20px;grid-template-columns:auto 1fr auto}
     .nav__links--left{display:none}
     .nav__burger{display:block;justify-self:start}
@@ -1783,8 +1781,10 @@
   @media (max-width: 980px){
     .pdpband{padding:64px 20px}
     .stats{grid-template-columns:repeat(2,1fr);gap:34px 16px}
-    .ings{grid-template-columns:repeat(2,1fr);gap:16px}
-    .ing{padding:28px 16px}
+    .ings{display:flex;overflow-x:auto;gap:14px;padding:4px 4px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .ings::-webkit-scrollbar{display:none}
+    .ings .ing{flex:0 0 64%;scroll-snap-align:center}
+    .ing{padding:8px}
     .mini-ritual{grid-template-columns:1fr;gap:34px}
     .compare__cell{padding:16px 18px;font-size:13.5px}
     .stickybar__name small{display:none}
@@ -2453,6 +2453,63 @@
     .post__signup form{flex-direction:column}
     .contactpg__panel{padding:40px 22px 36px}
   }
+  .pantry__title em,.jar-card__name em,.pdp__name em,.letters__title em,.world__title em,
+  .ritual__title em,.pdpband__title em,.lore__quote em,.shero__quote em,.sclose__title em,
+  .pghead__title em,.post__title em,.stimeline__title em,.garden__title em,.journal__title em,
+  .pcard__name em,.pair__name em,.wlmodal__title em,.hero__title em,.schapter__title em,
+  .news__title em,.value__name em,.ing__name em,.step__name em{
+    font-family:'Bodoni Moda',Didot,serif;
+  }
+  .vs{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.06fr;gap:28px;
+    align-items:center;
+  }
+  .vs__card{
+    position:relative;
+    background:var(--linen);
+    border:1px solid rgba(94,26,31,.25);
+    padding:40px 30px 32px;
+    box-shadow:0 22px 42px -28px rgba(94,26,31,.4);
+    transform:rotate(-1.4deg);
+    transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s;
+    overflow:hidden;
+  }
+  .vs__card--dayli{transform:rotate(1.2deg) scale(1.03)}
+  .vs__card:hover{transform:rotate(0) translateY(-5px)}
+  .vs__card--dayli:hover{transform:rotate(0) scale(1.04) translateY(-5px);box-shadow:0 30px 56px -28px rgba(94,26,31,.55)}
+  .vs__card--dayli::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:10px;
+    background-image:var(--gingred-url);background-size:90px;
+  }
+  .vs__card--usual{background:var(--buttermilk);opacity:.92}
+  .vs__head{
+    font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
+    color:rgba(43,38,34,.55);
+    margin-bottom:20px;text-align:center;
+  }
+  .vs__head--dayli{color:var(--preserve-red)}
+  .vs__list{list-style:none;margin:0;padding:0}
+  .vs__list li{
+    display:flex;gap:12px;align-items:baseline;
+    padding:12px 2px;
+    border-top:1px dashed rgba(94,26,31,.2);
+  }
+  .vs__list--usual li{
+    font-family:var(--serif);font-style:italic;
+    font-size:15px;color:rgba(43,38,34,.6);
+  }
+  .vs__list--usual li::before{content:'✕';flex:0 0 16px;font-family:var(--sans);font-style:normal;font-size:12px;color:rgba(43,38,34,.4)}
+  .vs__list--dayli li{font-size:15px;font-weight:600;color:var(--warm-ink)}
+  .vs__list--dayli li::before{content:'✿';flex:0 0 16px;color:var(--preserve-red)}
+  @media (max-width:820px){
+    .vs{grid-template-columns:1fr;gap:22px;max-width:460px}
+    .vs__card--dayli{transform:rotate(1.2deg)}
+  }
+  .world__lane{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+  .world__lane::-webkit-scrollbar{display:none}
+  .world__lane:active{cursor:grabbing}
+  .world--manual .world__track{animation-play-state:paused}
 </style>
 </head>
 <body>
@@ -2526,7 +2583,7 @@
   <div class="hero__content">
     <p class="hero__eyebrow">Rooted in Rhythm</p>
     <h1 class="hero__title">Feed what <em>feeds you.</em></h1>
-    <p class="hero__sub">A wholefood fiber blend that becomes a delicious, spreadable jam. Steady, faithful, daily, soft — the kind of care you keep.</p>
+    <p class="hero__sub">A wholefood fiber blend that becomes a delicious, spreadable jam. Steady, faithful, Dayli — the kind of care you keep.</p>
     <div class="hero__cta">
       <a class="btn btn--solid" href="#jam-pact">Shop Jam Pact</a>
       <a class="btn btn--ghost" href="#our-story">Our Story</a>
@@ -2631,6 +2688,7 @@
 <!-- ═══════════ SECTION 3 · THE LORE ═══════════ -->
 <section class="lore" id="lore">
   <div class="lore__inner">
+    <p class="lore__swipe">swipe through the album →</p>
     <div class="lore__stack reveal">
       <figure class="lore__polaroid lore__polaroid--a">
         <img data-img="twirl" alt="Best friends twirling in the meadow at golden hour">
@@ -2644,7 +2702,6 @@
         <img data-img="oakpicnic" alt="Friends at a long picnic under the oak">
         <figcaption>the long lunch</figcaption>
       </figure>
-      <p class="lore__swipe">swipe through the album →</p>
     </div>
     <div class="lore__body reveal reveal--d1">
       <p class="eyebrow">The Lore</p>
@@ -2702,7 +2759,7 @@
       <div class="value__inner">
       <svg viewBox="0 0 48 48"><path d="M24 42V16M24 16c0-7 5-11 11-12-1 7-4 11-11 12zM24 16c0-7-5-11-11-12 1 7 4 11 11 12zM24 27c0-6 4-9 9-10-1 6-3 9-9 10zM24 27c0-6-4-9-9-10 1 6 3 9 9 10z"/></svg>
       <h3 class="value__name">Fiber-<em>first</em></h3>
-      <p class="value__line">Every jar starts with the nutrient almost no one gets enough of.</p>
+      <p class="value__line">At the heart of every jar is the nutrient your diet is probably missing.</p>
       </div>
     </div>
     <div class="value value--butter reveal reveal--d1">
@@ -2723,7 +2780,7 @@
       <div class="value__inner">
       <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l7 5M24 4v4M24 40v4M4 24h4M40 24h4"/></svg>
       <h3 class="value__name">Made for <em>rhythm</em></h3>
-      <p class="value__line">Steady, faithful, daily, soft. A practice you can keep.</p>
+      <p class="value__line">Steady, faithful, Dayli. A practice you can keep.</p>
       </div>
     </div>
   </div>
@@ -2891,12 +2948,15 @@
       <p class="eyebrow">A kind comparison</p>
       <h2 class="pdpband__title">The usual way, <em>and the Dayli way.</em></h2>
     </div>
-    <div class="compare reveal">
-      <div class="compare__row compare__row--head">
-        <div class="compare__cell">The usual fiber powder</div>
-        <div class="compare__cell">The Dayli way</div>
+    <div class="vs reveal">
+      <div class="vs__card vs__card--usual">
+        <h3 class="vs__head">The usual fiber powder</h3>
+        <ul class="vs__list vs__list--usual"><li>a gritty shake, choked down</li><li>isolated powders and gums</li><li>forgotten by Thursday</li></ul>
       </div>
-      <div class="compare__row"><div class="compare__cell compare__cell--usual">a gritty shake, choked down</div><div class="compare__cell compare__cell--dayli">real, spreadable jam on warm toast</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">isolated powders and gums</div><div class="compare__cell compare__cell--dayli">wholefoods you can read aloud</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">forgotten by Thursday</div><div class="compare__cell compare__cell--dayli">a breakfast you look forward to</div></div>
+      <div class="vs__card vs__card--dayli">
+        <h3 class="vs__head vs__head--dayli">The Dayli way</h3>
+        <ul class="vs__list vs__list--dayli"><li>real, spreadable jam on warm toast</li><li>wholefoods you can read aloud</li><li>a breakfast you look forward to</li></ul>
+      </div>
     </div>
   </section>
   <section class="ritual ritual--pdp">
@@ -2924,7 +2984,7 @@
         <div class="schapter__media">
           <img data-img="motherdaughter" data-parallax="24" alt="Mother and daughter sharing berries in the meadow">
         </div>
-        <figcaption class="schapter__cap">crafted for the whole table</figcaption>
+        <figcaption class="schapter__cap">little hands, welcome</figcaption>
       </figure>
       <div class="schapter__body reveal reveal--d1">
         <p class="schapter__no">For the whole table</p>
@@ -3077,12 +3137,15 @@
       <p class="eyebrow">A kind comparison</p>
       <h2 class="pdpband__title">The usual way, <em>and the Dayli way.</em></h2>
     </div>
-    <div class="compare reveal">
-      <div class="compare__row compare__row--head">
-        <div class="compare__cell">The usual electrolyte</div>
-        <div class="compare__cell">The Dayli way</div>
+    <div class="vs reveal">
+      <div class="vs__card vs__card--usual">
+        <h3 class="vs__head">The usual electrolyte</h3>
+        <ul class="vs__list vs__list--usual"><li>neon dyes and sucralose</li><li>a spike, then a crash</li><li>0g fiber, every time</li></ul>
       </div>
-      <div class="compare__row"><div class="compare__cell compare__cell--usual">neon dyes and sucralose</div><div class="compare__cell compare__cell--dayli">fruit, salt, and nothing artificial</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">a spike, then a crash</div><div class="compare__cell compare__cell--dayli">steady, all-afternoon hydration</div></div><div class="compare__row"><div class="compare__cell compare__cell--usual">0g fiber, every time</div><div class="compare__cell compare__cell--dayli">5g — the only ’lyte that carries fiber</div></div>
+      <div class="vs__card vs__card--dayli">
+        <h3 class="vs__head vs__head--dayli">The Dayli way</h3>
+        <ul class="vs__list vs__list--dayli"><li>fruit, salt, and nothing artificial</li><li>steady, all-afternoon hydration</li><li>5g — the only ’lyte that carries fiber</li></ul>
+      </div>
     </div>
   </section>
   <section class="ritual ritual--pdp">
@@ -3516,6 +3579,34 @@
       </div>
     </div>
   </section>
+
+  <section class="pdpband pdpband--butter">
+    <div class="scallop"></div>
+    <div class="stats"><div class="reveal"><p class="stat__big">2</p><p class="stat__label">jars, one parcel</p></div><div class="reveal"><p class="stat__big">16g</p><p class="stat__label">fiber across the day — jam + glass</p></div><div class="reveal reveal--d1"><p class="stat__big">$7</p><p class="stat__label">saved vs. buying apart</p></div><div class="reveal reveal--d1"><p class="stat__big">60</p><p class="stat__label">servings between them</p></div></div>
+  </section>
+  <section class="letters letters--pdp">
+    <div class="scallop"></div>
+    <div class="letters__head reveal">
+      <p class="eyebrow">From the postbox</p>
+      <h2 class="letters__title">Letters about <em>the Pair.</em></h2>
+    </div>
+    <div class="letters__grid">
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">The jam handles breakfast, the lemonade handles three o’clock. Between them, my whole day is looked after.</p><p class="letter__name">— Priya · Denver</p></div>
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">We keep both on the counter like salt and pepper. My husband thinks he chose this.</p><p class="letter__name">— Renee · Asheville</p></div>
+      <div class="letter reveal"><span class="letter__tape"></span><p class="letter__quote">Bought the pair as a gift for my sister. Ordered a second parcel before hers arrived.</p><p class="letter__name">— Clare · Vermont</p></div>
+    </div>
+    <p class="letters__disclaimer">Placeholder letters — the real ones arrive with launch</p>
+  </section>
+  <section class="world world--pdp">
+    <div class="world__head reveal">
+      <p class="eyebrow">In the wild</p>
+      <h2 class="world__title">Morning and <em>afternoon.</em></h2>
+    </div>
+    <div class="world__track">
+      <figure class="pframe"><img data-img="toastjam" alt=""><figcaption>morning: jam on warm bread</figcaption></figure><figure class="pframe"><img data-img="jarsonice" alt=""><figcaption>afternoon: jars on ice</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>the pair, picnic-bound</figcaption></figure><figure class="pframe"><img data-img="dpitcher" alt=""><figcaption>poured tall, over ice</figcaption></figure><figure class="pframe"><img data-img="jampot" alt=""><figcaption>the jam pot, mid-simmer</figcaption></figure><figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure>
+      <figure class="pframe"><img data-img="toastjam" alt=""><figcaption>morning: jam on warm bread</figcaption></figure><figure class="pframe"><img data-img="jarsonice" alt=""><figcaption>afternoon: jars on ice</figcaption></figure><figure class="pframe"><img data-img="picnicoverhead" alt=""><figcaption>the pair, picnic-bound</figcaption></figure><figure class="pframe"><img data-img="dpitcher" alt=""><figcaption>poured tall, over ice</figcaption></figure><figure class="pframe"><img data-img="jampot" alt=""><figcaption>the jam pot, mid-simmer</figcaption></figure><figure class="pframe"><img data-img="twirl" alt=""><figcaption>golden hour, best friends</figcaption></figure>
+    </div>
+  </section>
   <section class="pair">
     <div class="scallop"></div>
     <a class="pair__inner" href="#shop" style="text-decoration:none;color:inherit">
@@ -3528,6 +3619,12 @@
       </div>
     </a>
   </section>
+  <div class="stickybar">
+    <div class="stickybar__inner">
+      <p class="stickybar__name">The Pantry <em>Pair</em> — $56 <small>Both jars + the handbook</small></p>
+      <button class="btn btn--red" data-add="The Pantry Pair">Add to Basket</button>
+    </div>
+  </div>
 </main>
 
 <main class="page" id="page-faq">
@@ -3589,7 +3686,7 @@
       <p style="font-family:var(--serif);font-size:15.5px;line-height:1.8;color:rgba(43,38,34,.8)">Questions about an order, the jars, or anything at all — leave a note below, or write us directly at <a href="mailto:hello@dayli.co" style="color:var(--preserve-red)">hello@dayli.co</a>.</p>
       <form class="contactpg__form wl-inline">
         <input class="news__input" type="text" required placeholder="your name">
-        <input class="news__input" type="email" required placeholder="your loveliest email">
+        <input class="news__input" type="email" required placeholder="your email">
         <textarea required placeholder="your note…"></textarea>
         <button class="btn btn--red" type="submit">Send the letter</button>
       </form>
@@ -3722,6 +3819,29 @@
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }, {threshold:.15});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // gallery lanes: marquee until the visitor takes the wheel
+  document.querySelectorAll('.world__track').forEach(t => {
+    const lane = document.createElement('div');
+    lane.className = 'world__lane';
+    t.parentNode.insertBefore(lane, t);
+    lane.appendChild(t);
+  });
+  document.querySelectorAll('.world').forEach(w => {
+    const manual = () => w.classList.add('world--manual');
+    w.addEventListener('wheel', e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) manual(); }, {passive:true});
+    w.addEventListener('touchstart', manual, {passive:true});
+    w.querySelectorAll('.world__lane').forEach(l => {
+      let down = false, sx = 0, sl = 0, moved = false;
+      l.addEventListener('pointerdown', e => { down = true; moved = false; sx = e.clientX; sl = l.scrollLeft; });
+      addEventListener('pointermove', e => {
+        if (!down) return;
+        if (Math.abs(e.clientX - sx) > 6){ manual(); moved = true; }
+        if (moved) l.scrollLeft = sl - (e.clientX - sx);
+      });
+      addEventListener('pointerup', () => down = false);
+    });
+  });
 
   // gentle parallax on any [data-parallax] image
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -3923,7 +4043,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v17';
+  var PAGE_ID = 'dayli-home-v18';
 
   /* ---------------------------------------------- */
 
