@@ -2958,35 +2958,6 @@
     color:rgba(43,38,34,.78);max-width:52ch;
   }
 
-  /* practical proof — butter gingham, content on a linen paper card */
-  .proof--butter{
-    background-color:var(--buttermilk);
-    background-image:var(--gingbutter-url);
-    background-size:130px;
-    padding:0 44px 84px;
-    border-top:1px solid rgba(94,26,31,.14);
-  }
-  .proof--butter .scallop--butter{
-    background:radial-gradient(circle at 22px -7px, var(--buttermilk) 21px, transparent 22px);
-    background-size:44px 30px;
-  }
-  .proof__paper{
-    position:relative;max-width:1340px;margin:70px auto 0;
-    background:var(--linen);
-    background-image:repeating-linear-gradient(90deg, rgba(94,26,31,.03) 0 1px, transparent 1px 8px);
-    border:1px solid rgba(94,26,31,.3);
-    outline:1px solid rgba(94,26,31,.3);outline-offset:5px;
-    box-shadow:0 36px 64px -34px rgba(94,26,31,.5), 0 4px 14px rgba(94,26,31,.1);
-    padding:60px 40px 36px;
-  }
-  .proof--butter .proof__row{padding:30px 0}
-  .proof--butter .value{background-color:var(--linen)}
-  .proof--butter .value__inner{background:#FFFDF6}
-  @media (max-width:760px){
-    .proof--butter{padding:0 14px 60px}
-    .proof__paper{margin-top:50px;padding:44px 18px 26px}
-  }
-
   /* the pantry pair — paper card in a red gingham frame */
   .pairtray{max-width:1240px;margin:60px auto 0;position:relative}
   .pairtray__frame{
@@ -3341,9 +3312,7 @@
 </section>
 
 <!-- ═══════════ SECTION 4 · PRACTICAL PROOF ═══════════ -->
-<section class="proof proof--butter" id="proof">
-  <div class="scallop scallop--butter"></div>
-  <div class="proof__paper">
+<section class="proof" id="proof">
   <div class="proof__head reveal">
     <p class="eyebrow">Practical proof</p>
     <h2 class="proof__title">The honest <em>particulars.</em></h2>
@@ -3363,7 +3332,7 @@
         <h4 class="value__name">11g fiber, <em>per serving</em></h4>
         <p class="value__line">From seven whole plants — most of what a day is missing, in one spread.</p>
       </div></div>
-      <div class="value value--red"><div class="value__inner">
+      <div class="value value--butter"><div class="value__inner">
         <svg viewBox="0 0 48 48"><path d="M14 12h20M16 12v-3h16v3M13 12c-2 8-2 20 0 26 0 2 2 3 4 3h14c2 0 4-1 4-3 2-6 2-18 0-26M18 24c2-2 4-2 6 0s4 2 6 0"/></svg>
         <h4 class="value__name">Wholefood, <em>only</em></h4>
         <p class="value__line">Psyllium, chia, baobab, apple, flax, green banana, turkey tail.</p>
@@ -3373,7 +3342,7 @@
         <h4 class="value__name">No isolates, <em>ever</em></h4>
         <p class="value__line">No gums, no fillers, no added sugar — nothing you would have to explain.</p>
       </div></div>
-      <div class="value value--red"><div class="value__inner">
+      <div class="value value--butter"><div class="value__inner">
         <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l7 5M24 4v4M24 40v4M4 24h4M40 24h4"/></svg>
         <h4 class="value__name">Real jam, <em>in two minutes</em></h4>
         <p class="value__line">One scoop, 4 oz of dark red juice, a stir — she sets into spreadable preserves.</p>
@@ -3411,8 +3380,7 @@
       </div></div>
     </div>
   </div>
-  <img class="pantry__divider" data-img="divider" alt="" style="margin-top:44px">
-  </div>
+  <img class="pantry__divider" data-img="divider" alt="" style="margin-top:54px">
 </section>
 
 <!-- ═══════════ SECTION 5 · THE LORE ═══════════ -->
@@ -4858,7 +4826,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v22';
+  var PAGE_ID = 'dayli-home-v23';
 
   /* ---------------------------------------------- */
 
