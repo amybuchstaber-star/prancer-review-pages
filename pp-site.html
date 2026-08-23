@@ -2748,6 +2748,8 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelecto
 // one-open-at-a-time FAQ
 document.querySelectorAll('.faq details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.faq details').forEach(o=>{if(o!==d)o.open=false})}));
 
+// reveal anything already on screen (deep links, hash jumps) so sections never sit blank
+function revealVisible(){[300,900,1600].forEach(t=>setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight+200&&r.bottom>-200)el.classList.add('in')}),t))}
 // ---------- hash router ----------
 const allViews=document.querySelectorAll('.view');
 function showView(id){
@@ -2755,7 +2757,7 @@ function showView(id){
   allViews.forEach(v=>{const on=(v.id==='view-'+id);v.classList.toggle('active',on);if(on)hit=true;});
   if(!hit){allViews.forEach(v=>v.classList.toggle('active',v.id==='view-home'));id='home';}
   document.querySelectorAll('nav.links a[data-nav],.drawer a[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===id||(id.startsWith('pdp-')&&a.dataset.nav==='shop')));
-  closeDrawer();
+  closeDrawer();revealVisible();
   return id;
 }
 function route(){
