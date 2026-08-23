@@ -2902,6 +2902,194 @@
     .faq__head{position:static}
     .faq .acc__head{font-size:17px}
   }
+
+  /* ===== v22 patch: dropdown menu, readable ritual note, butter-gingham proof, pair tray, framed FAQ, no pricing ===== */
+
+  /* desktop dropdown menu */
+  .navmenu{position:relative}
+  .navmenu__btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:none;border:none;cursor:pointer;padding:6px 0;
+    font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--warm-ink);transition:color .25s;
+  }
+  .navmenu__btn:hover,.navmenu--open .navmenu__btn{color:var(--preserve-red)}
+  .navmenu__lines{display:inline-block;width:20px}
+  .navmenu__lines span{display:block;height:1.5px;background:currentColor;margin:4px 0;transition:transform .3s, opacity .3s}
+  .navmenu--open .navmenu__lines span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+  .navmenu--open .navmenu__lines span:nth-child(2){opacity:0}
+  .navmenu--open .navmenu__lines span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+  .navmenu__panel{
+    position:absolute;top:calc(100% + 16px);left:-18px;min-width:230px;
+    background:var(--linen);
+    border:1px solid rgba(94,26,31,.3);
+    box-shadow:0 26px 50px -24px rgba(94,26,31,.45), 0 4px 12px rgba(94,26,31,.1);
+    padding:12px 0 10px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .28s ease, transform .28s cubic-bezier(.22,1,.36,1), visibility 0s linear .28s;
+    z-index:60;
+  }
+  .navmenu__panel::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:7px;
+    background-image:var(--gingred-url);background-size:56px;
+    border-bottom:1px solid rgba(94,26,31,.2);
+  }
+  .navmenu__panel::after{
+    content:'';position:absolute;top:-7px;left:22px;width:12px;height:12px;
+    background:var(--linen);border-left:1px solid rgba(94,26,31,.3);border-top:1px solid rgba(94,26,31,.3);
+    transform:rotate(45deg);
+  }
+  .navmenu--open .navmenu__panel{opacity:1;visibility:visible;transform:none;transition-delay:0s,0s,0s}
+  .nav .navmenu__panel a{
+    display:block;padding:11px 24px 11px 26px;margin-top:2px;
+    font-size:12px;letter-spacing:.2em;
+    border-left:2px solid transparent;
+    transition:color .25s, background .25s, border-color .25s, padding-left .25s;
+  }
+  .nav .navmenu__panel a:first-child{margin-top:8px}
+  .nav .navmenu__panel a::after{display:none}
+  .nav .navmenu__panel a:hover{color:var(--preserve-red);background:rgba(142,42,43,.06);border-left-color:var(--preserve-red);padding-left:30px}
+  @media (max-width:900px){ .navmenu{display:none} }
+
+  /* ritual note — secondary sub-text, easier to read on the paper */
+  .ritual__note{
+    font-family:var(--sans);font-style:normal;font-weight:500;
+    font-size:15.5px;line-height:1.75;letter-spacing:.01em;
+    color:rgba(43,38,34,.78);max-width:52ch;
+  }
+
+  /* practical proof — butter gingham, content on a linen paper card */
+  .proof--butter{
+    background-color:var(--buttermilk);
+    background-image:var(--gingbutter-url);
+    background-size:130px;
+    padding:0 44px 84px;
+    border-top:1px solid rgba(94,26,31,.14);
+  }
+  .proof--butter .scallop--butter{
+    background:radial-gradient(circle at 22px -7px, var(--buttermilk) 21px, transparent 22px);
+    background-size:44px 30px;
+  }
+  .proof__paper{
+    position:relative;max-width:1340px;margin:70px auto 0;
+    background:var(--linen);
+    background-image:repeating-linear-gradient(90deg, rgba(94,26,31,.03) 0 1px, transparent 1px 8px);
+    border:1px solid rgba(94,26,31,.3);
+    outline:1px solid rgba(94,26,31,.3);outline-offset:5px;
+    box-shadow:0 36px 64px -34px rgba(94,26,31,.5), 0 4px 14px rgba(94,26,31,.1);
+    padding:60px 40px 36px;
+  }
+  .proof--butter .proof__row{padding:30px 0}
+  .proof--butter .value{background-color:var(--linen)}
+  .proof--butter .value__inner{background:#FFFDF6}
+  @media (max-width:760px){
+    .proof--butter{padding:0 14px 60px}
+    .proof__paper{margin-top:50px;padding:44px 18px 26px}
+  }
+
+  /* the pantry pair — paper card in a red gingham frame */
+  .pairtray{max-width:1240px;margin:60px auto 0;position:relative}
+  .pairtray__frame{
+    padding:14px;border-radius:10px;
+    background-image:var(--gingred-url);background-size:110px;
+    box-shadow:0 34px 60px -34px rgba(94,26,31,.55);
+  }
+  .pairtray__card{
+    position:relative;
+    background:#FFFDF6;
+    background-image:repeating-linear-gradient(90deg, rgba(94,26,31,.03) 0 1px, transparent 1px 8px);
+    border:1px solid rgba(94,26,31,.32);
+    box-shadow:inset 0 14px 36px -24px rgba(94,26,31,.3), inset 0 -14px 36px -24px rgba(94,26,31,.25);
+    display:grid;grid-template-columns:220px 1fr 300px;gap:40px;align-items:center;
+    padding:40px 44px 40px 40px;
+    color:var(--warm-ink);
+  }
+  .pairtray__stamp{
+    position:absolute;top:-22px;right:26px;width:92px;transform:rotate(7deg);z-index:3;
+    box-shadow:0 12px 30px -14px rgba(43,29,20,.45);
+  }
+  .pairtray__jars{position:relative;height:184px;width:220px}
+  .pairtray__jar{
+    position:absolute;width:126px;display:block;
+    background:#FFFDF6;padding:6px 6px 16px;
+    border:1px solid rgba(94,26,31,.14);
+    box-shadow:0 18px 34px -16px rgba(94,26,31,.5);
+  }
+  .pairtray__jar img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+  .pairtray__jar--a{left:0;top:12px;transform:rotate(-7deg);z-index:1}
+  .pairtray__jar--b{left:84px;top:0;transform:rotate(5deg);z-index:2}
+  .pairtray__copy .eyebrow{font-size:10.5px;letter-spacing:.42em}
+  .pairtray__title{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.1;margin:12px 0 10px;color:var(--warm-ink)}
+  .pairtray__title em{font-style:italic;font-weight:500;color:var(--preserve-red)}
+  .pairtray__line{font-family:var(--serif);font-style:italic;font-size:17px;color:rgba(43,38,34,.78)}
+  .pairtray__incl{margin-top:16px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--garden-green)}
+  .pairtray__cta{
+    text-align:center;
+    border:1px dashed rgba(142,42,43,.45);
+    background:rgba(244,236,221,.7);
+    padding:24px 22px 22px;
+  }
+  .pairtray__soon{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;color:var(--warm-ink)}
+  .pairtray__soon em{font-style:italic;font-weight:500;color:var(--preserve-red)}
+  .pairtray__note{margin-top:8px;font-size:13px;line-height:1.6;color:rgba(43,38,34,.7)}
+  .pairtray__btn{width:100%;justify-content:center;margin-top:16px;padding:15px 20px;cursor:pointer}
+  .pairtray__more{
+    display:inline-block;margin-top:12px;
+    font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--preserve-red);
+    text-decoration:none;border-bottom:1px solid rgba(142,42,43,.4);padding-bottom:1px;
+  }
+  .pairtray__more:hover{border-bottom-color:var(--preserve-red)}
+  @media (max-width:1080px){
+    .pairtray__card{grid-template-columns:190px 1fr;gap:26px 30px}
+    .pairtray__cta{grid-column:1/-1}
+  }
+  @media (max-width:640px){
+    .pairtray{margin-top:44px}
+    .pairtray__frame{padding:10px;background-size:80px}
+    .pairtray__card{grid-template-columns:1fr;text-align:center;padding:36px 20px 30px}
+    .pairtray__jars{margin:0 auto}
+    .pairtray__jar--a{left:8px}.pairtray__jar--b{left:92px}
+    .pairtray__stamp{width:70px;top:-16px;right:12px}
+  }
+
+  /* homepage FAQ — framed paper card */
+  .faq__flourish{margin:26px 0 0;width:130px}
+  .faq__frame{
+    padding:14px;border-radius:10px;
+    background-image:var(--gingred-url);background-size:110px;
+    box-shadow:0 34px 60px -34px rgba(94,26,31,.5);
+  }
+  .faq__card{
+    --card-paper:#EADFC6;
+    background-color:var(--card-paper);
+    background-image:repeating-linear-gradient(90deg, rgba(94,26,31,.035) 0 1px, transparent 1px 8px);
+    border:1px solid rgba(94,26,31,.32);
+    box-shadow:inset 0 18px 44px -24px rgba(94,26,31,.34), inset 0 -18px 44px -24px rgba(94,26,31,.28);
+    padding:14px 34px 26px;
+  }
+  .faq__card .faq__accs{border-top:none;margin-top:0}
+  .faq__card .acc{border-bottom:1px solid rgba(94,26,31,.22)}
+  .faq__card .acc:last-child{border-bottom:none}
+  .faq__card .acc__head{justify-content:flex-start;gap:14px;padding:20px 2px;font-weight:500}
+  .faq__card .acc__head::before{content:'✿';font-size:13px;color:var(--preserve-red);opacity:.8;flex:none;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .faq__card .acc--open .acc__head::before{transform:rotate(90deg)}
+  .faq__card .acc__head::after{margin-left:auto}
+  .faq__card .acc__body-inner{padding:0 2px 24px 27px}
+  .faq__write{
+    margin-top:18px;padding-top:18px;border-top:1px dashed rgba(142,42,43,.4);
+    font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(43,38,34,.72);text-align:center;
+  }
+  .faq__write a{color:var(--preserve-red);text-decoration:none;border-bottom:1px solid rgba(142,42,43,.4);padding-bottom:1px}
+  .faq__write a:hover{border-bottom-color:var(--preserve-red)}
+  @media (max-width:900px){
+    .faq__frame{padding:10px;background-size:80px}
+    .faq__card{padding:8px 16px 18px}
+    .faq__card .acc__body-inner{padding-left:25px}
+  }
+
+  /* no pricing in this phase — buttons stand alone in the card */
+  .jar-card__buy{gap:0}
+  .stickybar__name small{margin-left:8px}
 </style>
 </head>
 <body>
@@ -2912,15 +3100,15 @@
     <!-- track duplicated for seamless loop -->
     <div class="ribbon__item">
       <span>Sweet friend, welcome in</span><span class="ribbon__dot">···</span>
-      <span>Free shipping on orders over $50</span><span class="ribbon__dot">···</span>
+      <span>Coming soon — join the waitlist to be first in line</span><span class="ribbon__dot">···</span>
       <span>Rooted in Rhythm</span><span class="ribbon__dot">···</span>
-      <span>Jam Pact &amp; Dayli-Lyte — now taking their first orders</span><span class="ribbon__dot">···</span>
+      <span>First jars ship soon · the waitlist gets the first jars</span><span class="ribbon__dot">···</span>
     </div>
     <div class="ribbon__item" aria-hidden="true">
       <span>Sweet friend, welcome in</span><span class="ribbon__dot">···</span>
-      <span>Free shipping on orders over $50</span><span class="ribbon__dot">···</span>
+      <span>Coming soon — join the waitlist to be first in line</span><span class="ribbon__dot">···</span>
       <span>Rooted in Rhythm</span><span class="ribbon__dot">···</span>
-      <span>Jam Pact &amp; Dayli-Lyte — now taking their first orders</span><span class="ribbon__dot">···</span>
+      <span>First jars ship soon · the waitlist gets the first jars</span><span class="ribbon__dot">···</span>
     </div>
   </div>
 </div>
@@ -2930,9 +3118,20 @@
   <nav class="nav">
     <button class="nav__burger" id="burger" aria-label="menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav__links nav__links--left">
-      <a href="#shop">Shop</a>
-      <a href="#our-story">Our Story</a>
-      <a href="#journal">Journal</a>
+      <div class="navmenu" id="navMenu">
+        <button class="navmenu__btn" id="navMenuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navMenuPanel">
+          <span class="navmenu__lines" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="navmenu__label">Menu</span>
+        </button>
+        <div class="navmenu__panel" id="navMenuPanel">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#jam-pact">Jam Pact</a>
+          <a href="#dayli-lyte">Dayli-Lyte</a>
+          <a href="#our-story">Our Story</a>
+          <a href="#journal">Journal</a>
+        </div>
+      </div>
     </div>
     <a class="wordmark" href="#home" aria-label="Dayli Wellness Co. — Home" title="Home">
       <span class="wordmark__dayli">Dayli</span>
@@ -3019,8 +3218,7 @@
             <span class="chip">Becomes real jam</span>
           </div>
           <div class="jar-card__buy">
-            <p class="jar-card__price">$34<small>30 servings</small></p>
-            <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Add to Basket</a>
+            <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Join the Waitlist</a>
           </div>
           <a class="jar-card__story" href="#jam-pact">or read her story →</a>
         </div>
@@ -3045,8 +3243,7 @@
             <span class="chip">Raspberry lemonade</span>
           </div>
           <div class="jar-card__buy">
-            <p class="jar-card__price">$29<small>30 servings</small></p>
-            <a class="btn btn--red" href="#dayli-lyte" data-add="Dayli-Lyte">Add to Basket</a>
+            <a class="btn btn--red" href="#dayli-lyte" data-add="Dayli-Lyte">Join the Waitlist</a>
           </div>
           <a class="jar-card__story" href="#dayli-lyte">or read her story →</a>
         </div>
@@ -3054,28 +3251,26 @@
     </div>
 
     <!-- ═══ THE PANTRY PAIR · compact purchase tray ═══ -->
-    <div class="ptray reveal reveal--d2" id="pair">
-      <div class="ptray__inner">
-        <div class="ptray__jars" aria-hidden="true">
-          <span class="ptray__jar ptray__jar--a"><img data-img="jampact" alt=""></span>
-          <span class="ptray__jar ptray__jar--b"><img data-img="daylilyte" alt=""></span>
+    <div class="pairtray reveal reveal--d2" id="pair">
+      <div class="pairtray__frame">
+      <div class="pairtray__card">
+        <div class="pairtray__jars" aria-hidden="true">
+          <span class="pairtray__jar pairtray__jar--a"><img data-img="jampact" alt=""></span>
+          <span class="pairtray__jar pairtray__jar--b"><img data-img="daylilyte" alt=""></span>
         </div>
-        <div class="ptray__copy">
-          <p class="ptray__eyebrow">The Pantry Pair</p>
-          <p class="ptray__title">Both jars, <em>one parcel.</em></p>
-          <p class="ptray__line">Jam on toast at eight, a tall glass over ice at noon.</p>
-          <p class="ptray__incl">Jam Pact + Dayli-Lyte &nbsp;·&nbsp; The Inner Garden handbook &nbsp;·&nbsp; wax-sealed</p>
+        <div class="pairtray__copy">
+          <p class="eyebrow">Nº 03 · The Pantry Pair</p>
+          <p class="pairtray__title">Both jars, <em>one parcel.</em></p>
+          <p class="pairtray__line">Jam on toast at eight, a tall glass over ice at noon.</p>
+          <p class="pairtray__incl">Jam Pact + Dayli-Lyte &nbsp;·&nbsp; The Inner Garden handbook &nbsp;·&nbsp; wax-sealed</p>
         </div>
-        <div class="ptray__offer">
-          <span class="ptray__tag">Preferred offer</span>
-          <p class="ptray__price"><span class="cur">$</span>47.60<small>per parcel, subscribed</small></p>
-          <p class="ptray__save">Save 15% &nbsp;·&nbsp; <s>$63</s> bought apart</p>
-          <p class="ptray__freq">Delivered every 30 days</p>
-          <a class="btn btn--solid ptray__btn" href="#bundles" data-add="The Pantry Pair" data-cta-keep>Subscribe to the Pair</a>
-          <a class="ptray__once" href="#bundles">or buy the Pair once — $56 →</a>
-          <p class="ptray__fine">Pause, skip, or cancel anytime — like a library book</p>
-          <p class="ptray__ship"></p>
+        <div class="pairtray__cta">
+          <p class="pairtray__soon">First parcels <em>ship soon.</em></p>
+          <p class="pairtray__note">Waitlist friends get the first jars, in order of joining.</p>
+          <a class="btn btn--red pairtray__btn" href="#bundles" data-add="The Pantry Pair">Join the Waitlist</a>
+          <a class="pairtray__more" href="#bundles">or read about the Pair →</a>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -3146,7 +3341,9 @@
 </section>
 
 <!-- ═══════════ SECTION 4 · PRACTICAL PROOF ═══════════ -->
-<section class="proof" id="proof">
+<section class="proof proof--butter" id="proof">
+  <div class="scallop scallop--butter"></div>
+  <div class="proof__paper">
   <div class="proof__head reveal">
     <p class="eyebrow">Practical proof</p>
     <h2 class="proof__title">The honest <em>particulars.</em></h2>
@@ -3214,7 +3411,8 @@
       </div></div>
     </div>
   </div>
-  <img class="pantry__divider" data-img="divider" alt="" style="margin-top:54px">
+  <img class="pantry__divider" data-img="divider" alt="" style="margin-top:44px">
+  </div>
 </section>
 
 <!-- ═══════════ SECTION 5 · THE LORE ═══════════ -->
@@ -3302,8 +3500,11 @@
       <h2 class="faq__title">The last little <em>questions.</em></h2>
       <p class="faq__note">Everything that might still be standing between you and the jar.</p>
       <a class="lore__alt" href="#faq">see every question →</a>
+      <img class="head-flourish faq__flourish" data-img="flourish" alt="">
     </div>
-    <div class="accs faq__accs reveal reveal--d1">
+    <div class="faq__frame reveal reveal--d1">
+    <div class="faq__card">
+    <div class="accs faq__accs">
       <div class="acc acc--open">
         <button class="acc__head">How does Jam Pact become jam?</button>
         <div class="acc__body"><div class="acc__body-inner"><p>One scoop into a small jar with 4 ounces of dark red juice — tart cherry and pomegranate are the house favorites — plus the sweetener of your choice. Stir well, wait two minutes, and psyllium and chia set it into real, spreadable preserves. No cooking, no pectin, no tricks.</p></div></div>
@@ -3330,12 +3531,15 @@
       </div>
       <div class="acc">
         <button class="acc__head">How does Dayli-Lyte fit in?</button>
-        <div class="acc__body"><div class="acc__body-inner"><p>Jam Pact is the morning; Dayli-Lyte is the afternoon glass — four minerals, 5g of fiber, zero sugar, tasting of raspberry lemonade. Together they are <a href="#home/pair" style="color:var(--preserve-red)">the Pantry Pair</a>, and the subscription saves 15% on both.</p></div></div>
+        <div class="acc__body"><div class="acc__body-inner"><p>Jam Pact is the morning; Dayli-Lyte is the afternoon glass — four minerals, 5g of fiber, zero sugar, tasting of raspberry lemonade. Together they are <a href="#home/pair" style="color:var(--preserve-red)">the Pantry Pair</a> — both jars in one parcel, the handbook tucked alongside.</p></div></div>
       </div>
       <div class="acc">
-        <button class="acc__head">Shipping, returns, and pausing?</button>
-        <div class="acc__body"><div class="acc__body-inner"><p>Parcels ship in 2–4 days, free over $50, in plastic-free packaging. Unopened jars may be returned within 30 days for a full refund. Subscriptions pause, skip, or cancel anytime from your account — like a library book. <a href="#shipping" style="color:var(--preserve-red)">The fine print, kindly →</a></p></div></div>
+        <button class="acc__head">Shipping and returns?</button>
+        <div class="acc__body"><div class="acc__body-inner"><p>Parcels ship in 2–4 days in plastic-free packaging — tissue, a note, and a wax seal. Unopened jars may be returned within 30 days for a full refund. <a href="#shipping" style="color:var(--preserve-red)">The fine print, kindly →</a></p></div></div>
       </div>
+    </div>
+    <p class="faq__write">Still wondering? <a href="#contact">Write to us — a person answers.</a></p>
+    </div>
     </div>
   </div>
 </section>
@@ -3384,23 +3588,10 @@
         <h1 class="pdp__name">Jam <em>Pact</em></h1>
         <p class="pdp__poem">A pact, kept in fruit: 11g of fiber, disguised as breakfast.</p>
         <p class="pdp__rating">✿ ✿ ✿ ✿ ✿ <em>first letters arriving with launch</em></p>
-        <p class="pdp__price"><span class="cur">$</span>34</p>
         <p class="pdp__desc">A wholefood fiber blend that becomes a delicious, spreadable jam. One scoop into a small jar with 4 ounces of dark red juice — tart cherry and pomegranate are the house favorites — a stir, and two minutes later she has set into real preserves, carrying the fiber almost no one gets enough of. Toast, yogurt, a spoon standing at the counter. No capsules, no chalky shake, no chore.</p>
         <div class="pdp__chips"><span class="chip">11g fiber per serving</span><span class="chip">100% wholefood</span><span class="chip">No isolates, ever</span><span class="chip">Becomes real jam</span></div>
-        <div class="buyopts">
-          <div class="buyopt buyopt--on" data-price="$34">
-            <span class="buyopt__dot"></span>
-            <span class="buyopt__label"><strong>One-time</strong><span>a single jar, no strings</span></span>
-            <span class="buyopt__price">$34</span>
-          </div>
-          <div class="buyopt" data-price="$28.90">
-            <span class="buyopt__dot"></span>
-            <span class="buyopt__label"><strong>Subscribe &amp; save 15%</strong><span>every 30 days · pause like a library book</span></span>
-            <span class="buyopt__price">$28.90</span>
-          </div>
-        </div>
-        <button class="btn btn--red pdp__add" data-add="Jam Pact">Add to Basket — 30 servings</button>
-        <p class="pdp__ship">Free shipping over $50 · ships in 2–4 days</p>
+        <button class="btn btn--red pdp__add" data-add="Jam Pact">Join the Waitlist</button>
+        <p class="pdp__ship">Coming soon — the waitlist gets the first jars</p>
         <div class="giftbox">
           <img data-img="seal" alt="">
           <div>
@@ -3544,8 +3735,8 @@
   </section>
   <div class="stickybar">
     <div class="stickybar__inner">
-      <p class="stickybar__name">Jam <em>Pact</em> — $34 <small>Fiber Blend · 30 servings</small></p>
-      <button class="btn btn--red" data-add="Jam Pact">Add to Basket</button>
+      <p class="stickybar__name">Jam <em>Pact</em> <small>Fiber Blend · 30 servings</small></p>
+      <button class="btn btn--red" data-add="Jam Pact">Join the Waitlist</button>
     </div>
   </div>
 </main>
@@ -3574,23 +3765,10 @@
         <p class="pdp__no">Nº 02 · Electrolyte Blend</p>
         <h1 class="pdp__name">Dayli-<em>Lyte</em></h1>
         <p class="pdp__rating">✿ ✿ ✿ ✿ ✿ <em>first letters arriving with launch</em></p>
-        <p class="pdp__price"><span class="cur">$</span>29</p>
         <p class="pdp__desc">Daily balance for body and mind. Pink Himalayan salt and potassium for the minerals you sweat away, magnesium glycinate and calcium for calm and steadiness, and tapioca fiber no other electrolyte carries — because hydration without absorption is just a pretty glass. Sweetened with monk fruit, blushed with beet root. Tastes like raspberry lemonade on a porch, naturally.</p>
         <div class="pdp__chips"><span class="chip">Electrolytes + minerals</span><span class="chip">5g fiber</span><span class="chip">Sweetened with monk fruit</span><span class="chip">Raspberry lemonade</span></div>
-        <div class="buyopts">
-          <div class="buyopt buyopt--on" data-price="$29">
-            <span class="buyopt__dot"></span>
-            <span class="buyopt__label"><strong>One-time</strong><span>a single jar, no strings</span></span>
-            <span class="buyopt__price">$29</span>
-          </div>
-          <div class="buyopt" data-price="$24.65">
-            <span class="buyopt__dot"></span>
-            <span class="buyopt__label"><strong>Subscribe &amp; save 15%</strong><span>every 30 days · pause like a library book</span></span>
-            <span class="buyopt__price">$24.65</span>
-          </div>
-        </div>
-        <button class="btn btn--red pdp__add" data-add="Dayli-Lyte">Add to Basket — 30 servings</button>
-        <p class="pdp__ship">Free shipping over $50 · ships in 2–4 days</p>
+        <button class="btn btn--red pdp__add" data-add="Dayli-Lyte">Join the Waitlist</button>
+        <p class="pdp__ship">Coming soon — the waitlist gets the first jars</p>
         <div class="giftbox">
           <img data-img="seal" alt="">
           <div>
@@ -3713,8 +3891,8 @@
   </section>
   <div class="stickybar">
     <div class="stickybar__inner">
-      <p class="stickybar__name">Dayli-<em>Lyte</em> — $29 <small>Electrolyte Blend · 30 servings</small></p>
-      <button class="btn btn--red" data-add="Dayli-Lyte">Add to Basket</button>
+      <p class="stickybar__name">Dayli-<em>Lyte</em> <small>Electrolyte Blend · 30 servings</small></p>
+      <button class="btn btn--red" data-add="Dayli-Lyte">Join the Waitlist</button>
     </div>
   </div>
 </main>
@@ -3747,26 +3925,10 @@
         <p>But the body doesn't thrive on shortcuts. She thrives on balance. Health doesn't come from isolating nutrients — it comes from how they work together. Protein without context is incomplete, and nourishment without digestion doesn't deliver.</p>
         <div class="spull">So we don't obsess over a single number on a label. We look at the whole picture.</div>
       </div>
-      <figure class="schapter__fig scrapbook reveal reveal--d1">
-        <div class="scrapbook__page">
-          <img class="scrapbook__stamp" data-img="stamp" alt="" aria-hidden="true">
-          <div class="scrapbook__photo scrapbook__photo--a">
-            <span class="scrapbook__tape"></span>
-            <div class="scrapbook__frame scrapbook__frame--land"><img data-img="jampot" alt="A copper pot of jam on the stove, berries alongside"></div>
-            <p class="scrapbook__note">the copper pot · batch nº 1</p>
-          </div>
-          <div class="scrapbook__photo scrapbook__photo--b">
-            <span class="scrapbook__tape scrapbook__tape--r"></span>
-            <div class="scrapbook__frame scrapbook__frame--port"><img data-img="ladling" alt="Ladling the first batch into jars, sticky counter and all"></div>
-            <p class="scrapbook__note">a rolling boil!</p>
-          </div>
-          <div class="scrapbook__photo scrapbook__photo--c">
-            <span class="scrapbook__tape scrapbook__tape--c"></span>
-            <div class="scrapbook__frame scrapbook__frame--wide"><img data-img="toastjam" alt="Toast with jam — the taste test"></div>
-            <p class="scrapbook__note">the taste test ♥</p>
-          </div>
-          <p class="scrapbook__scribble">the kitchen smelled like<br>berries all summer →</p>
-          <img class="scrapbook__seal" data-img="seal" alt="" aria-hidden="true">
+      <figure class="schapter__fig scrap reveal reveal--d1">
+        <span class="scrap__tape scrap__tape--tl"></span><span class="scrap__tape scrap__tape--tr"></span>
+        <div class="schapter__media">
+          <img data-img="jampot" data-parallax="26" alt="A copper pot of jam on the stove, berries alongside">
         </div>
         <figcaption class="schapter__cap">where it started · Amy’s own kitchen</figcaption>
       </figure>
@@ -3798,26 +3960,10 @@
         </div>
         <p>They are not at odds. They are old friends, finally having coffee. And about fiber, they emphatically agree.</p>
       </div>
-      <figure class="schapter__fig scrapbook scrapbook--r reveal reveal--d1">
-        <div class="scrapbook__page">
-          <img class="scrapbook__stamp" data-img="stamp" alt="" aria-hidden="true">
-          <div class="scrapbook__photo scrapbook__photo--a">
-            <span class="scrapbook__tape"></span>
-            <div class="scrapbook__frame scrapbook__frame--land"><img data-img="jambowl" alt="A bowl of jam, glossy and set"></div>
-            <p class="scrapbook__note">the one that finally set</p>
-          </div>
-          <div class="scrapbook__photo scrapbook__photo--b">
-            <span class="scrapbook__tape scrapbook__tape--r"></span>
-            <div class="scrapbook__frame scrapbook__frame--port"><img data-img="raspberries" alt="Fresh raspberries in hand"></div>
-            <p class="scrapbook__note">august berries</p>
-          </div>
-          <div class="scrapbook__photo scrapbook__photo--c">
-            <span class="scrapbook__tape scrapbook__tape--c"></span>
-            <div class="scrapbook__frame scrapbook__frame--wide"><img data-img="jarsonice" alt="Jars cooling on ice"></div>
-            <p class="scrapbook__note">cooling on ice</p>
-          </div>
-          <p class="scrapbook__scribble">two voices,<br>one table →</p>
-          <img class="scrapbook__seal" data-img="seal" alt="" aria-hidden="true">
+      <figure class="schapter__fig scrap scrap--r reveal reveal--d1">
+        <span class="scrap__tape scrap__tape--tl"></span><span class="scrap__tape scrap__tape--tr"></span>
+        <div class="schapter__media">
+          <img data-img="jarsonice" data-parallax="26" alt="The first jars, cooling on ice">
         </div>
         <figcaption class="schapter__cap">the first jam that set properly · august</figcaption>
       </figure>
@@ -3868,7 +4014,6 @@
         <div class="schapter__media">
           <img data-img="ginghamdress" data-parallax="26" alt="At the garden gate in a red gingham dress, basket in hand">
         </div>
-        <figcaption class="schapter__cap">the founder · at the garden gate</figcaption>
       </figure>
       <div class="founder__letter reveal reveal--d1">
         <img class="postage postage--letter" data-img="stamp" alt="">
@@ -4037,8 +4182,7 @@
           <h3 class="jar-card__name">Jam <em>Pact</em></h3>
           <p class="jar-card__desc">A wholefood fiber blend that becomes real, spreadable jam. 11g fiber per serving.</p>
           <div class="jar-card__buy">
-            <p class="jar-card__price">$34<small>30 servings</small></p>
-            <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Add to Basket</a>
+            <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Join the Waitlist</a>
           </div>
           <a class="jar-card__story" href="#jam-pact">see the full story →</a>
         </div>
@@ -4054,8 +4198,7 @@
           <h3 class="jar-card__name">Dayli-<em>Lyte</em></h3>
           <p class="jar-card__desc">Minerals, real fiber, zero sugar — raspberry lemonade, poured tall.</p>
           <div class="jar-card__buy">
-            <p class="jar-card__price">$29<small>30 servings</small></p>
-            <a class="btn btn--red" href="#dayli-lyte" data-add="Dayli-Lyte">Add to Basket</a>
+            <a class="btn btn--red" href="#dayli-lyte" data-add="Dayli-Lyte">Join the Waitlist</a>
           </div>
           <a class="jar-card__story" href="#dayli-lyte">see the full story →</a>
         </div>
@@ -4071,8 +4214,7 @@
           <h3 class="jar-card__name">The Pantry <em>Pair</em></h3>
           <p class="jar-card__desc">Both jars, one parcel — mornings and afternoons, covered. Handbook included.</p>
           <div class="jar-card__buy">
-            <p class="jar-card__price">$56<small>$63 value</small></p>
-            <a class="btn btn--red" href="#bundles" data-add="The Pantry Pair">Add to Basket</a>
+            <a class="btn btn--red" href="#bundles" data-add="The Pantry Pair">Join the Waitlist</a>
           </div>
           <a class="jar-card__story" href="#bundles">see the full story →</a>
         </div>
@@ -4101,15 +4243,13 @@
         <p class="pdp__no">Nº 03 · The Bundle</p>
         <h1 class="pdp__name">The Pantry <em>Pair</em></h1>
         <p class="pdp__poem">Jam on toast at eight, a tall glass over ice at noon.</p>
-        <p class="pdp__price"><span class="cur">$</span>56</p>
         <p class="pdp__desc">Both jars, one parcel. Jam Pact for the mornings — 11g of fiber that becomes real jam — and Dayli-Lyte for the afternoons — four minerals, real fiber, zero sugar. The full Dayli rhythm, wax-sealed and tissue-wrapped, with The Inner Garden handbook alongside.</p>
         <div class="pdp__chips">
           <span class="chip">Jam Pact + Dayli-Lyte</span>
           <span class="chip">Handbook included</span>
-          <span class="chip">Save $7</span>
         </div>
-        <button class="btn btn--red pdp__add" data-add="The Pantry Pair">Add to Basket — the pair</button>
-        <p class="pdp__ship">Free shipping over $50 · ships in 2–4 days</p>
+        <button class="btn btn--red pdp__add" data-add="The Pantry Pair">Join the Waitlist</button>
+        <p class="pdp__ship">Coming soon — the waitlist gets the first jars</p>
         <div class="giftbox">
           <img data-img="seal" alt="">
           <div>
@@ -4122,7 +4262,6 @@
             <button class="acc__head">What's in the parcel</button>
             <div class="acc__body"><div class="acc__body-inner">
               <p class="recipe">one jar of Jam Pact <span class="rdot">·</span> one jar of Dayli-Lyte <span class="rdot">·</span> The Inner Garden (digital) <span class="rdot">·</span> a wax-sealed note</p>
-              <p class="pdp__notice">Bundle pricing is placeholder — final numbers with launch</p>
             </div></div>
           </div>
           <div class="acc">
@@ -4136,7 +4275,7 @@
 
   <section class="pdpband pdpband--butter">
     <img class="pantry__divider" data-img="divider" alt="" style="margin:0 auto 46px">
-    <div class="stats"><div class="reveal"><p class="stat__big">2</p><p class="stat__label">jars, one parcel</p></div><div class="reveal"><p class="stat__big">16g</p><p class="stat__label">fiber across the day — jam + glass</p></div><div class="reveal reveal--d1"><p class="stat__big">$7</p><p class="stat__label">saved vs. buying apart</p></div><div class="reveal reveal--d1"><p class="stat__big">60</p><p class="stat__label">servings between them</p></div></div>
+    <div class="stats"><div class="reveal"><p class="stat__big">2</p><p class="stat__label">jars, one parcel</p></div><div class="reveal"><p class="stat__big">16g</p><p class="stat__label">fiber across the day — jam + glass</p></div><div class="reveal reveal--d1"><p class="stat__big">1</p><p class="stat__label">handbook, tucked inside</p></div><div class="reveal reveal--d1"><p class="stat__big">60</p><p class="stat__label">servings between them</p></div></div>
   </section>
   <section class="bduo">
     <div class="bduo__head reveal">
@@ -4247,8 +4386,8 @@
   </section>
   <div class="stickybar">
     <div class="stickybar__inner">
-      <p class="stickybar__name">The Pantry <em>Pair</em> — $56 <small>Both jars + the handbook</small></p>
-      <button class="btn btn--red" data-add="The Pantry Pair">Add to Basket</button>
+      <p class="stickybar__name">The Pantry <em>Pair</em> <small>Both jars + the handbook</small></p>
+      <button class="btn btn--red" data-add="The Pantry Pair">Join the Waitlist</button>
     </div>
   </div>
 </main>
@@ -4285,10 +4424,6 @@
         <div class="acc">
           <button class="acc__head">When do products ship?</button>
           <div class="acc__body"><div class="acc__body-inner"><p>The first jars are almost ready. Join the waitlist and we'll write the moment they ship — waitlist friends get the first jars, in order of joining.</p></div></div>
-        </div>
-        <div class="acc">
-          <button class="acc__head">Do you offer subscriptions?</button>
-          <div class="acc__body"><div class="acc__body-inner"><p>Yes — subscribe and save 15%, delivered on your rhythm. Pause or cancel anytime, like a library book.</p></div></div>
         </div>
         <div class="acc">
           <button class="acc__head">What is The Inner Garden?</button>
@@ -4328,13 +4463,11 @@
     </div>
     <div class="policy reveal">
       <h3>Shipping</h3>
-      <p>Orders are packed within 2–4 business days and shipped across the United States. Shipping is free on orders over $50; below that, rates are calculated at checkout. You'll receive tracking by email the moment your parcel leaves the pantry.</p>
+      <p>Orders are packed within 2–4 business days and shipped across the United States. Shipping rates will be confirmed with launch. You'll receive tracking by email the moment your parcel leaves the pantry.</p>
       <h3>Returns</h3>
       <p>Unopened jars may be returned within 30 days of delivery for a full refund. Opened but unloved? Write to us anyway — we would rather make it right than have a jar sit unhappily on your counter.</p>
       <h3>Damaged or lost parcels</h3>
       <p>If something arrives broken or goes missing along the way, send a note (a photo helps) to <a href="mailto:hello@dayli.co" style="color:var(--preserve-red)">hello@dayli.co</a> and we'll send a replacement on the house.</p>
-      <h3>Subscriptions</h3>
-      <p>Pause, skip, or cancel anytime from your account — like a library book, no questions asked.</p>
       <p class="letters__disclaimer" style="text-align:left;margin-top:34px">Standard policy draft — details to be confirmed before launch</p>
     </div>
   </section>
@@ -4360,7 +4493,7 @@
         <div>
           <p class="postcta__name">Bring the jam</p>
           <p class="postcta__line">Jam Pact — a wholefood fiber blend that becomes real, spreadable jam. 11g of fiber, disguised as breakfast.</p>
-          <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Add to Basket</a>
+          <a class="btn btn--red" href="#jam-pact" data-add="Jam Pact">Join the Waitlist</a>
         </div>
       </div>
       <div class="post__signup reveal">
@@ -4525,6 +4658,21 @@
     const a = e.target.closest('a[href^="#"]');
     if (a && a.getAttribute('href') === location.hash) { e.preventDefault(); route(); }
   });
+
+  // ---- desktop dropdown menu ----
+  const navMenu = document.getElementById('navMenu');
+  const navMenuBtn = document.getElementById('navMenuBtn');
+  if (navMenu && navMenuBtn){
+    const setMenu = open => {
+      navMenu.classList.toggle('navmenu--open', open);
+      navMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    navMenuBtn.addEventListener('click', e => { e.stopPropagation(); setMenu(!navMenu.classList.contains('navmenu--open')); });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('click', e => { if (!navMenu.contains(e.target)) setMenu(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    window.addEventListener('hashchange', () => setMenu(false));
+  }
 
   // ═══════════════════════════════════════════════════
   // LAUNCH PHASE — change this one word to flip the site:
@@ -4710,7 +4858,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'dayli-home-v21';
+  var PAGE_ID = 'dayli-home-v22';
 
   /* ---------------------------------------------- */
 
