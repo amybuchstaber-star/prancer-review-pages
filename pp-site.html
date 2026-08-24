@@ -180,9 +180,17 @@ nav.links a:hover{border-color:var(--gold)}
 .chip .num small{font-size:18px}
 .chip .lab{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-top:3px}
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;padding-bottom:80px;text-align:left}
-  .hero-fig{order:-1;margin-bottom:8px}
-  .hero-fig img.pouch{width:min(400px,86%)}
+  .hero-grid{grid-template-columns:1fr;row-gap:0;padding-bottom:80px;text-align:left}
+  /* flatten the copy column so the bag can sit between the sub-header and the stat chips */
+  .hero-grid>div:first-child{display:contents}
+  .hero h1{order:1;margin-top:8px}
+  .hero .sub{order:2;margin-top:0}
+  .hero-fig{order:3;margin:4px 0 8px}
+  .chipline{order:4;margin-top:6px}
+  .hero-ctas{order:5}
+  .hero-trust{order:6}
+  .hero-fig::before,.hero-fig::after{display:none}
+  .hero-fig img.pouch{width:min(320px,78%);transform:none}
 }
 
 /* ---------- marquee ---------- */
@@ -376,6 +384,9 @@ table.cmp{width:100%;border-collapse:collapse;border:2.5px solid var(--forest);b
   padding:4px 11px;border-radius:99px;display:inline-flex;align-items:center;gap:7px;
 }
 .flavors i{width:11px;height:11px;border-radius:50%;display:inline-block;border:1px solid var(--forest-25)}
+.benefits{list-style:none;margin:2px 0 6px;padding:0;display:flex;flex-direction:column;gap:7px}
+.benefits li{font-size:15.5px;font-weight:500;color:var(--forest);line-height:1.35;padding-left:24px;position:relative}
+.benefits li::before{content:"✓";position:absolute;left:0;top:0;color:var(--brick);font-weight:900;font-size:15px}
 .prod-card .btn{margin-top:auto;padding:15px 20px;font-size:15.5px;box-shadow:3px 3px 0 var(--forest-25)}
 .line-more{text-align:center;margin-top:40px;font-size:18px;color:var(--ink)}
 .line-more a{font-weight:700;color:var(--brick);text-decoration:underline;text-underline-offset:4px}
@@ -582,7 +593,7 @@ nav.links a.on{border-color:var(--brick)}
 .histo .hf{position:absolute;inset:0 auto 0 0;background:var(--gold)}
 .histo .hv{font-size:14.5px;color:var(--olive);text-align:right}
 .rev-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.rev-wall .rev-card{padding:26px 28px}
+.rev-wall .rev-card{padding:26px 28px;width:auto;flex:none;min-width:0}
 .rev-card .ptag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
 .ugc-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
 .ugc{
@@ -861,7 +872,7 @@ nav.links{display:none}
 
 /* ---------- compare v7: label showdown, one line per fact ---------- */
 .sd-table{max-width:1080px;margin:0 auto;border:2.5px solid var(--forest);background:var(--parchment);box-shadow:8px 8px 0 var(--forest-12)}
-.sd-r{display:grid;grid-template-columns:1.15fr 1fr 1.25fr 1fr;align-items:stretch;border-bottom:1.5px solid var(--forest-25)}
+.sd-r{display:grid;grid-template-columns:1.15fr 1.25fr 1fr 1fr;align-items:stretch;border-bottom:1.5px solid var(--forest-25)}
 .sd-r:last-child{border-bottom:0}
 .sd-c{display:flex;align-items:center;justify-content:center;text-align:center;padding:16px 14px;font-size:20px;font-weight:700;color:var(--forest);gap:6px}
 .sd-c.sd-lbl{justify-content:flex-start;text-align:left;font-family:'Fraunces';font-weight:700;font-size:19px;letter-spacing:.01em;padding-left:22px;background:rgba(201,155,63,.10);border-right:1.5px solid var(--forest-25)}
@@ -886,7 +897,8 @@ nav.links{display:none}
 .sd-key .k{display:inline-flex;align-items:center;gap:8px}
 .sd-key b{font-size:18px}.sd-key .y{color:var(--forest)}.sd-key .n{color:var(--brick)}.sd-key .m{color:var(--olive)}
 @media(max-width:820px){
-  .sd-r{grid-template-columns:1.1fr 1fr 1.2fr 1fr}
+  .sd-r{grid-template-columns:26% 28% 23% 23%}
+  .sd-c{min-width:0}
   .sd-c{padding:12px 6px;font-size:16px}
   .sd-c.sd-lbl{font-size:15px;padding-left:12px}
   .sd-c.pp .v{font-size:20px}
@@ -897,6 +909,17 @@ nav.links{display:none}
   .sd-hd .st{display:none}
   .sd-win{font-size:10px;padding:5px 10px}
   .sd-ft .sd-c.pp .btn{padding:14px 10px;font-size:13px}
+}
+@media(max-width:480px){
+  .sd-c{font-size:13.5px;padding:10px 4px;gap:3px}
+  .sd-c.sd-lbl{font-size:13.5px;padding-left:8px}
+  .sd-c.pp .v{font-size:17px}
+  .sd-c.pp small{font-size:10.5px}
+  .sd-hd .tt{font-size:11.5px;letter-spacing:0}.sd-hd .pp .tt{font-size:13px}
+  .sd-hd .pp img{width:64px}
+  .sd-win{font-size:9px;padding:4px 8px;letter-spacing:.12em}
+  .sd-ft .sd-c{padding:14px 4px}
+  .sd-ft .sd-c.pp .btn{padding:11px 4px;font-size:10.5px;letter-spacing:.06em}
 }
 
 /* ---------- reviews v6: carousel ---------- */
@@ -921,6 +944,7 @@ nav.links{display:none}
 .founder-band .btn.ghost{color:var(--parchment);border-color:var(--parchment)}
 .founder-band .btn.ghost:hover{background:var(--parchment);color:var(--forest)}
 .founder-band .pull{font-family:'Fraunces';font-style:italic;font-weight:600;font-size:clamp(22px,2.4vw,28px);line-height:1.35;color:var(--gold);border-left:4px solid var(--gold);padding-left:20px;margin:0 0 22px}
+@media(max-width:900px){.founder-band .founder{grid-template-columns:1fr;gap:36px}.founder-band .art{max-width:none;width:100%;aspect-ratio:4/5;transform:none}.founder .art{order:-1}}
 
 /* ---------- shop v6: carousel of 5 ---------- */
 .shop-grid{display:flex;gap:26px}
@@ -1375,18 +1399,18 @@ body{overflow-x:clip}
     <div class="sd-table reveal" role="table" aria-label="Paleo Pro compared with typical whey and plant proteins">
       <div class="sd-r sd-hd" role="row">
         <div class="sd-c sd-lbl" role="columnheader"><span class="sd-lbl-t">What's in the bag</span></div>
-        <div class="sd-c dim" role="columnheader"><div class="ghostbag">?</div><div class="tt">Typical Whey</div><div class="st">Dairy protein</div></div>
         <div class="sd-c pp" role="columnheader"><span class="sd-win">Our pick — obviously</span><img src="" data-i="pp-vanilla" alt="Paleo Pro Paleo Protein Powder"><div class="tt">Paleo Pro</div><div class="st">Beef <span class="amp">&amp;</span> egg protein</div></div>
+        <div class="sd-c dim" role="columnheader"><div class="ghostbag">?</div><div class="tt">Typical Whey</div><div class="st">Dairy protein</div></div>
         <div class="sd-c dim" role="columnheader"><div class="ghostbag">?</div><div class="tt">Typical Plant</div><div class="st">Pea, rice, hemp blends</div></div>
       </div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Protein per scoop</div><div class="sd-c dim"><span class="v">20–25g</span></div><div class="sd-c pp"><span class="v">26g</span></div><div class="sd-c dim"><span class="v">15–20g</span></div></div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Ingredients</div><div class="sd-c dim"><span class="v">15–25</span></div><div class="sd-c pp"><span class="v">5</span> <small>(3 in Naked)</small></div><div class="sd-c dim"><span class="v">10–20</span></div></div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Dairy-free</div><div class="sd-c dim"><span class="no">✗ No</span></div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="v">✓ Yes</span></div></div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Artificial sweeteners</div><div class="sd-c dim"><span class="no">Common</span></div><div class="sd-c pp"><span class="v">None</span></div><div class="sd-c dim"><span class="meh">Sometimes</span></div></div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Easy on your gut</div><div class="sd-c dim"><span class="meh">Varies</span></div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="meh">Varies</span></div></div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Complete aminos</div><div class="sd-c dim"><span class="v">✓ Yes</span></div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="no">Often no</span></div></div>
-      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Whole30</div><div class="sd-c dim"><span class="no">✗ No</span></div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="no">✗ No</span></div></div>
-      <div class="sd-r sd-ft" role="row"><div class="sd-c sd-lbl"></div><div class="sd-c dim"></div><div class="sd-c pp"><a class="btn" href="#shop">Try It Risk-Free</a></div><div class="sd-c dim"></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Protein per scoop</div><div class="sd-c pp"><span class="v">26g</span></div><div class="sd-c dim"><span class="v">20–25g</span></div><div class="sd-c dim"><span class="v">15–20g</span></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Ingredients</div><div class="sd-c pp"><span class="v">5</span> <small>(3 in Naked)</small></div><div class="sd-c dim"><span class="v">15–25</span></div><div class="sd-c dim"><span class="v">10–20</span></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Dairy-free</div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="no">✗ No</span></div><div class="sd-c dim"><span class="v">✓ Yes</span></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Artificial sweeteners</div><div class="sd-c pp"><span class="v">None</span></div><div class="sd-c dim"><span class="no">Common</span></div><div class="sd-c dim"><span class="meh">Sometimes</span></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Easy on your gut</div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="meh">Varies</span></div><div class="sd-c dim"><span class="meh">Varies</span></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Complete aminos</div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="no">Often no</span></div></div>
+      <div class="sd-r" role="row"><div class="sd-c sd-lbl" role="rowheader">Whole30</div><div class="sd-c pp"><span class="v">✓ Yes</span></div><div class="sd-c dim"><span class="no">✗ No</span></div><div class="sd-c dim"><span class="no">✗ No</span></div></div>
+      <div class="sd-r sd-ft" role="row"><div class="sd-c sd-lbl"></div><div class="sd-c pp"><a class="btn" href="#shop">Try It Risk-Free</a></div><div class="sd-c dim"></div><div class="sd-c dim"></div></div>
     </div>
     <p class="sd-key reveal"><span class="k"><b class="y">✓</b> Yes / included</span><span class="k"><b class="n">✗</b> No / missing</span><span class="k"><b class="m">—</b> Depends on the brand</span></p>
   </div>
@@ -1497,12 +1521,12 @@ body{overflow-x:clip}
             <h3>Beef <span class="amp">&amp;</span> Egg Protein</h3>
             <div class="facts">26g protein · 120 calories</div>
             <p class="tag">Two clean proteins, one complete scoop. Our flagship — and the reason most people find us.</p>
-            <div class="flavors">
-              <span><i style="background:#C99B3F"></i>Aztec Vanilla</span>
-              <span><i style="background:#3B241C"></i>Ancient Cacao</span>
-              <span><i style="background:#61394B"></i>Mayan Mocha</span>
-              <span><i style="background:#525938"></i>Plain Naked</span>
-            </div>
+            <ul class="benefits">
+              <li>26g complete protein per scoop</li>
+              <li>Easy on your gut — no whey, no dairy</li>
+              <li>Five ingredients you can name</li>
+              <li>Paleo · Keto · Whole30</li>
+            </ul>
             <a class="btn" href="#/product/beef-egg-protein">Shop Beef <span class="amp">&amp;</span> Egg</a>
           </div>
         </div>
@@ -1512,11 +1536,12 @@ body{overflow-x:clip}
             <h3>Carnivore Complete</h3>
             <div class="facts">Whole-animal protein + 5 organs</div>
             <p class="tag">Beef protein enriched with organs — nose-to-tail nutrition in one scoop, no capsules required.</p>
-            <div class="flavors">
-              <span><i style="background:#C99B3F"></i>Aztec Vanilla</span>
-              <span><i style="background:#3B241C"></i>Ancient Cacao</span>
-              <span><i style="background:#525938"></i>Plain Naked</span>
-            </div>
+            <ul class="benefits">
+              <li>Liver, heart, kidney, spleen &amp; pancreas in every scoop</li>
+              <li>Replaces a handful of organ capsules</li>
+              <li>Zero plants, zero dairy, zero fillers</li>
+              <li>Steady energy &amp; recovery</li>
+            </ul>
             <a class="btn" href="#/product/carnivore-complete">Shop Carnivore</a>
           </div>
         </div>
@@ -1526,10 +1551,12 @@ body{overflow-x:clip}
             <h3>Protein + Multi Collagen</h3>
             <div class="facts">20g protein · 90 calories</div>
             <p class="tag">The same beef and egg scoop, plus grass-fed multi collagen for skin, joints, and connective tissue.</p>
-            <div class="flavors">
-              <span><i style="background:#C99B3F"></i>Aztec Vanilla</span>
-              <span><i style="background:#3B241C"></i>Ancient Cacao</span>
-            </div>
+            <ul class="benefits">
+              <li>20g protein + grass-fed multi collagen</li>
+              <li>Skin, joints &amp; connective tissue support</li>
+              <li>Only 90 calories per scoop</li>
+              <li>No whey, dairy, soy, or gluten</li>
+            </ul>
             <a class="btn" href="#/product/protein-multi-collagen">Shop Protein + Collagen</a>
           </div>
         </div>
@@ -1539,10 +1566,12 @@ body{overflow-x:clip}
             <h3>Bone Broth Collagen</h3>
             <div class="facts">Grass-fed broth · Collagen · Glycine</div>
             <p class="tag">Slow-simmered grass-fed bone broth protein with the collagen and glycine your joints and gut ask for.</p>
-            <div class="flavors">
-              <span><i style="background:#C99B3F"></i>Aztec Vanilla</span>
-              <span><i style="background:#3B241C"></i>Ancient Cacao</span>
-            </div>
+            <ul class="benefits">
+              <li>Slow-simmered grass-fed bone broth</li>
+              <li>Collagen &amp; glycine for joints and gut</li>
+              <li>Sip it warm or blend it cold</li>
+              <li>Paleo · Keto · Whole30</li>
+            </ul>
             <a class="btn" href="#/product/bone-broth-collagen">Shop Bone Broth</a>
           </div>
         </div>
@@ -1552,9 +1581,12 @@ body{overflow-x:clip}
             <h3>Multi Collagen</h3>
             <div class="facts">Types I · II · III · V · X</div>
             <p class="tag">Five collagen types from grass-fed, pastured, cage-free, and wild-caught sources. Dissolves in anything.</p>
-            <div class="flavors">
-              <span><i style="background:#525938"></i>Plain Naked</span>
-            </div>
+            <ul class="benefits">
+              <li>Five collagen types (I · II · III · V · X)</li>
+              <li>Hair, skin, nails &amp; joint support</li>
+              <li>Unflavored — dissolves in anything</li>
+              <li>Grass-fed, pastured &amp; wild-caught sources</li>
+            </ul>
             <a class="btn" href="#/product/multi-collagen">Shop Collagen</a>
           </div>
         </div>
@@ -2876,7 +2908,11 @@ document.querySelectorAll('[data-car]').forEach(car=>{
     let t;const tick=()=>{const i=idx();const end=track.scrollLeft+track.clientWidth>=track.scrollWidth-4;go(end?0:i+1)};
     const start=()=>{stop();t=setInterval(tick,auto)},stop=()=>clearInterval(t);
     car.addEventListener('mouseenter',stop);car.addEventListener('mouseleave',start);
-    car.addEventListener('touchstart',stop,{passive:true});start();
+    car.addEventListener('touchstart',stop,{passive:true});
+    // start on slide 1 and only begin auto-advancing once the carousel is actually on screen
+    track.scrollLeft=0;
+    const vis=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){if(!vis.started){vis.started=true;track.scrollTo({left:0,behavior:'auto'});}start()}else stop()})},{threshold:.35});
+    vis.observe(car);
   }
 });
 
@@ -2995,7 +3031,7 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'pp-site-v7';
+  var PAGE_ID = 'pp-site-v8';
 
   /* ---------------------------------------------- */
 
