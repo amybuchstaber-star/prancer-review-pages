@@ -878,6 +878,48 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
     return resolveAnchor(a);
   }
   function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
+  // Human-readable name of the view an element lives on. Works for sites that
+  // toggle sections via data-view containers (no hash) as well as hash routers.
+  function detectViewName(sel) {
+    try {
+      var el = sel ? document.querySelector(sel) : null;
+      while (el && el !== document.body) {
+        if (el.dataset && el.dataset.view) return el.dataset.view;
+        if (el.id && /^page-/.test(el.id)) return el.id.replace(/^page-/, '');
+        el = el.parentElement;
+      }
+    } catch (e) {}
+    return location.hash ? viewLabel(location.hash) : undefined;
+  }
+  // For sites that hide views with the `hidden` attribute (no URL change):
+  // reveal the view containing the anchor by flipping `hidden` the same way
+  // the site's own router does. Returns true if the anchor became visible.
+  function tryReveal(a) {
+    try {
+      if (!a.sel) return false;
+      var el = document.querySelector(a.sel);
+      if (!el) return false;
+      if (el.getBoundingClientRect().height > 0) return true;
+      // highest hidden ancestor = the view container that's switched off
+      var hid = null, n = el;
+      while (n && n !== document.body) {
+        if (n.hidden || getComputedStyle(n).display === 'none') hid = n;
+        n = n.parentElement;
+      }
+      if (!hid || !hid.parentElement || !hid.hasAttribute('hidden')) return false;
+      Array.prototype.forEach.call(hid.parentElement.children, function (s) {
+        if (s !== hid && s.tagName === hid.tagName && !s.hasAttribute('hidden')) {
+          var share = Array.prototype.some.call(hid.classList, function (c) {
+            return s.classList.contains(c);
+          });
+          if (share || hid.classList.length === 0) s.setAttribute('hidden', '');
+        }
+      });
+      hid.removeAttribute('hidden');
+      window.scrollTo(0, 0);
+      return el.getBoundingClientRect().height > 0;
+    } catch (e) { return false; }
+  }
 
   /* ------------------- STATE ------------------- */
   var threads = {};           // latest data
@@ -1124,10 +1166,11 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
       num.textContent = threadNumber(tid);
       var body = document.createElement('div');
       body.className = 'pbody';
-      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
+      var hashElsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
+      var elsewhere = hashElsewhere || !threadVisiblePos(t);
       body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
         + (n > 1 ? ' · ' + n + ' replies' : '')
-        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
+        + (elsewhere ? ' · on <b>' + esc(t.viewName || viewLabel(t.view) || 'another page') + '</b>' : '') + '</div>'
         + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
       item.appendChild(num);
       item.appendChild(body);
@@ -1139,9 +1182,13 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
           setTimeout(render, 350);
         };
         if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
-          // Comment lives on another view of this site — switch to it first
+          // Hash-routed site: switch views via the URL first
           location.hash = t.view || '#';
           setTimeout(go, 450);
+        } else if (!threadVisiblePos(t)) {
+          // Hidden-attribute site (no URL change): flip the view directly
+          tryReveal(t.anchor || {});
+          setTimeout(go, 300);
         } else go();
       });
       list.appendChild(item);
@@ -1213,6 +1260,8 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
         anchor: draft.anchor, resolved: false, created: Date.now(),
         view: currentView(), comments: {}
       };
+      var vn = detectViewName(draft.anchor.sel);
+      if (vn) t.viewName = vn;
       t.comments[uid()] = { name: name, text: text, ts: Date.now() };
       store.createThread(t).then(function (tid) {
         draft = null; commentMode = false; setMode(false);
@@ -1406,6 +1455,20 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
     openThreadId = null; draft = null;
     render();
   });
+  // Sites that switch views by toggling hidden/class/style (no hash change):
+  // watch for those DOM flips and refresh pin visibility. Only pins are
+  // re-rendered (never the UI) so nobody loses a half-typed comment.
+  if (window.MutationObserver) {
+    var pinTimer = null;
+    new MutationObserver(function () {
+      if (pinTimer) return;
+      pinTimer = setTimeout(function () {
+        pinTimer = null;
+        layer.style.height = document.documentElement.scrollHeight + 'px';
+        renderPins();
+      }, 250);
+    }).observe(document.body, { attributes: true, subtree: true, attributeFilter: ['hidden', 'class', 'style'] });
+  }
 
   /* ------------------- BOOT ------------------- */
   function boot() {
