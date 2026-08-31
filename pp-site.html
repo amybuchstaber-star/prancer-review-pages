@@ -1089,6 +1089,78 @@ body{overflow-x:clip}
 @media(max-width:900px){.about-story{grid-template-columns:1fr}.about-story .art{position:static}.about-vals{grid-template-columns:1fr}.about-facts{grid-template-columns:1fr 1fr}}
 @media(max-width:820px){.about-tl{grid-template-columns:1fr 1fr}.about-tl::before{display:none}}
 </style>
+<style id="v9-edits">
+/* ---- v9: dark nav ---- */
+header.nav{background:var(--forest);border-bottom-color:var(--gold)}
+header.nav .wordmark{color:var(--parchment)}
+header.nav nav.links a{color:var(--parchment)}
+header.nav nav.links a:hover{border-color:var(--gold)}
+header.nav .nav-ic{color:var(--parchment)}
+header.nav .nav-ic:hover{border-color:var(--gold)}
+header.nav .cart-n{background:var(--gold);color:var(--forest)}
+header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
+/* ---- v9: mobile hero — bigger headline, tighter gap to sub ---- */
+@media(max-width:900px){
+  .hero h1{font-size:clamp(46px,11.5vw,58px);margin:6px 0 2px}
+  .hero .sub{margin-top:0;font-size:18.5px}
+}
+/* ---- v9: bag section ---- */
+#bag .sec-head h2 .hl{color:var(--brick)}
+.notlist .no{font-size:22px;font-weight:900}
+.bag-card.naked .notlist .no{color:var(--gold)}
+/* ---- v9: USA chip ---- */
+.chip.usa .num{color:var(--gold)}
+.chipline .chip{min-width:104px;padding:10px 13px 12px}
+/* ---- v9: scrollable PDP galleries ---- */
+.pdp-gal{display:flex;overflow-x:auto;gap:10px;margin-top:14px;padding-bottom:8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.pdp-gal button{flex:0 0 88px;scroll-snap-align:start}
+/* ---- v9: scrolling reviews ---- */
+.rev-scroll{display:flex;overflow-x:auto;gap:22px;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
+.rev-scroll .rev-card{flex:0 0 min(320px,82%);scroll-snap-align:start;width:auto}
+/* ---- v9: carnivore organ band ---- */
+.organ-band{background:var(--forest);border:2px solid var(--gold);padding:44px 40px 40px;margin:14px 0 10px}
+.organ-band .sec-head h2{color:var(--parchment)}
+.organ-band .kicker{color:var(--gold)}
+.organ-band .lede{color:rgba(248,222,185,.85)}
+.organ-band .amino{box-shadow:4px 4px 0 rgba(0,0,0,.3)}
+@media(max-width:820px){.organ-band{padding:30px 20px}}
+/* ---- v9: science hero — no topo lines, sun ornament ---- */
+.sci-hero{background:linear-gradient(rgba(201,155,63,.18),rgba(201,155,63,0) 62%)}
+.sun-orn{display:flex;justify-content:center;margin-bottom:10px}
+/* ---- v9: about founder letter ---- */
+.letter-band{background:rgba(201,155,63,.14)}
+.letter-band .about-story>div:last-child{background:var(--parchment);border:2px solid var(--forest);box-shadow:10px 10px 0 var(--forest-12);padding:44px 46px;transform:rotate(-.4deg)}
+.letter-band .about-story h2+p::first-letter{font-family:'Fraunces';font-weight:900;font-size:52px;float:left;line-height:.85;padding:5px 10px 0 0;color:var(--brick)}
+.letter-band .art{transform:rotate(2deg)}
+@media(max-width:900px){.letter-band .about-story>div:last-child{padding:28px 22px;transform:none}}
+/* ---- v9: cart drawer ---- */
+.cart-bg{position:fixed;inset:0;background:rgba(30,51,37,.55);z-index:950;opacity:0;pointer-events:none;transition:opacity .25s}
+.cart-bg.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,94vw);z-index:960;background:var(--parchment);border-left:3px solid var(--forest);box-shadow:-16px 0 40px rgba(30,51,37,.35);transform:translateX(104%);transition:transform .3s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.cart-drawer.open{transform:none}
+.cd-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:2px solid var(--forest)}
+.cd-head h3{font-size:24px}
+.cd-close{background:none;border:2px solid var(--forest);width:40px;height:40px;font-size:22px;cursor:pointer;color:var(--forest);font-family:'Fraunces'}
+.cd-progress{padding:16px 24px 14px;border-bottom:2px solid var(--forest);background:rgba(201,155,63,.14)}
+.cd-progress .msg{font-size:14.5px;font-weight:700;margin-bottom:10px}
+.cd-track{position:relative;height:14px;border:2px solid var(--forest);background:var(--parchment)}
+.cd-fill{position:absolute;top:0;left:0;bottom:0;width:0%;background:var(--gold);transition:width .35s}
+.cd-mark{position:absolute;top:-6px;bottom:-6px;width:2.5px;background:var(--forest)}
+.cd-tiers{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive);margin-top:7px}
+.cd-body{flex:1;overflow-y:auto;padding:6px 24px}
+.cd-empty{text-align:center;padding:44px 8px}
+.cd-empty p{margin:0 auto 8px;font-size:18px}
+.cd-empty .btn{margin-top:14px}
+.cd-empty .cd-note{font-size:14px;color:var(--olive);margin-top:14px}
+.cd-item{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--forest-12)}
+.cd-item img{width:60px;flex:none}
+.cd-item .nm{font-weight:700;font-size:16.5px;line-height:1.3}
+.cd-item .pr{font-family:'Fraunces';font-weight:900;margin-left:auto;white-space:nowrap}
+.cd-item .cd-qty{display:inline-flex;align-items:center;gap:8px;margin-top:4px}
+.cd-item .cd-qty button{width:26px;height:26px;border:2px solid var(--forest);background:none;cursor:pointer;font-weight:700;color:var(--forest);line-height:1}
+.cd-item .rm{background:none;border:0;color:var(--brick);cursor:pointer;font-size:18px;padding:4px}
+.cd-foot{border-top:2px solid var(--forest);padding:16px 24px;background:var(--forest)}
+</style>
 </head>
 <body>
 
@@ -1144,6 +1216,17 @@ body{overflow-x:clip}
   </div>
 </aside>
 
+<div class="cart-bg" id="cart-bg"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+  <div class="cd-head"><h3 class="serif">Your Cart</h3><button class="cd-close" id="cd-close" aria-label="Close cart">×</button></div>
+  <div class="cd-progress">
+    <div class="msg" id="cd-msg">Free shipping at $70 · Free bag of protein + collagen at $120</div>
+    <div class="cd-track"><div class="cd-fill" id="cd-fill"></div><div class="cd-mark" style="left:58.33%"></div></div>
+    <div class="cd-tiers"><span></span><span class="t1">$70 · Free shipping</span><span class="t2">$120 · Free bag</span></div>
+  </div>
+  <div class="cd-body" id="cd-body"></div>
+  <div class="cd-foot" id="cd-foot" hidden><a class="btn" href="#" id="cd-checkout" style="width:100%;text-align:center">Checkout — <span id="cd-total">$0.00</span></a></div>
+</aside>
 <main class="view active" id="view-home">
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero" id="top">
@@ -1157,6 +1240,7 @@ body{overflow-x:clip}
         <div class="chip"><div class="num">120</div><div class="lab">Calories</div></div>
         <div class="chip"><div class="num">5</div><div class="lab">Ingredients</div></div>
         <div class="chip"><div class="num">0<small>g</small></div><div class="lab">Added Sugar</div></div>
+        <div class="chip usa"><div class="num">★</div><div class="lab">Made in USA</div></div>
       </div>
       <div class="hero-ctas">
         <a class="btn" href="#shop">Try It Risk-Free</a>
@@ -1187,8 +1271,7 @@ body{overflow-x:clip}
 <section class="sec-pad ground-cream edge-bot" id="bag">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker center">Read the back of the bag</div>
-      <h2>Five ingredients.<br>Nothing to hide.</h2>
+      <h2>Five ingredients.<br><span class="hl">Nothing to hide.</span></h2>
       <p class="lede">Most protein powders need 15–25 ingredients. Our flavored scoop needs five. Plain Naked needs three. You can name every one.</p>
     </div>
     <div class="bag-tabs reveal" role="tablist">
@@ -1197,7 +1280,7 @@ body{overflow-x:clip}
     </div>
     <div class="bag-pane on" data-pane="flav">
     <div class="bag-grid">
-      <div class="bag-card reveal">
+      <div class="bag-card naked reveal">
         <h3>What's in this bag</h3>
         <div class="rule"></div>
         <ul class="ingr">
@@ -1251,14 +1334,7 @@ body{overflow-x:clip}
   </div>
 </section>
 
-<div class="mtn-divider" aria-hidden="true">
-<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
-  <g fill="#1E3325">
-    <path d="M 210 118 L 262 56 L 314 118 Z"/><path d="M 286 118 L 338 60 L 390 118 Z"/><path d="M 244 118 L 300 34 L 356 118 Z"/>
-  </g>
-  <circle cx="352" cy="44" r="11" fill="#C99B3F"/>
-</svg>
-</div>
+<div class="mtn-divider cow-divider" aria-hidden="true"><img src="data:image/png;base64,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" alt="" style="width:150px;margin:0 auto"></div>
 
 <!-- ═══════════════ PILLARS ═══════════════ -->
 <section class="sec-pad" style="padding-top:40px">
@@ -1292,7 +1368,7 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="kicker center">Why animal protein</div>
-      <h2>The science is on<br>the side of the scoop.</h2>
+      <h2>The proof behind<br>every scoop.</h2>
       <p class="lede">Four short chapters. Every claim carries its source.</p>
     </div>
     <div class="car reveal" data-car>
@@ -1807,8 +1883,8 @@ body{overflow-x:clip}
         <div class="cat-k">Protein Powders</div>
         <h1>Beef <span class="amp"><span class="amp">&amp;</span></span> Egg Protein</h1>
         <div class="pdp-stars"><span class="stars">★★★★★</span> <span class="ct"><b>4.7</b> · 250+ verified reviews</span></div>
-        <div class="pdp-facts">26g protein · 120 calories · 5 ingredients · 0g added sugar</div>
-        <p class="pdp-desc">Two clean proteins, one complete scoop. Grass-fed beef protein isolate and egg white protein deliver all nine essential amino acids, with monk fruit for sweetness and nothing else on the label.</p>
+        <div class="pdp-facts">26g protein · 120 calories · 5 ingredients · 0g added sugar · Made in the USA</div>
+        <p class="pdp-desc"><b>Two clean proteins, one complete scoop.</b> Grass-fed beef protein isolate and egg white protein deliver all nine essential amino acids, with monk fruit for sweetness and nothing else on the label.</p>
         <div class="opt-label">Flavor</div><div class="flav-row"><button class="flav on" data-img="pp-vanilla"><i style="background:#C99B3F"></i>Aztec Vanilla</button><button class="flav" data-img="pp-cacao"><i style="background:#3B241C"></i>Ancient Cacao</button><button class="flav" data-img="pp-mayan"><i style="background:#61394B"></i>Mayan Mocha</button><button class="flav" data-img="pp-naked"><i style="background:#525938"></i>Plain Naked</button></div>
         <div class="opt-label">Purchase options</div>
         <div class="buyopts">
@@ -1848,8 +1924,9 @@ body{overflow-x:clip}
         <div class="chip"><div class="num">120</div><div class="lab">Calories</div></div>
         <div class="chip"><div class="num">5</div><div class="lab">Ingredients</div></div>
         <div class="chip"><div class="num">0<small>g</small></div><div class="lab">Added Sugar</div></div>
+        <div class="chip usa"><div class="num">★</div><div class="lab">Made in USA</div></div>
       </div><div class="marquee bleed" aria-hidden="true" style="margin-top:26px;margin-bottom:40px"><div class="track"><span>No Whey</span><span>No Dairy</span><span>No Soy</span><span>No Gluten</span><span>Paleo</span><span>Keto</span><span>Whole30</span><span class="usa">Made in USA</span><span>No Whey</span><span>No Dairy</span><span>No Soy</span><span>No Gluten</span><span>Paleo</span><span>Keto</span><span>Whole30</span><span class="usa">Made in USA</span></div></div>
-      <div class="sec-head" style="margin-bottom:30px"><div class="kicker center">Four ways to take it</div><h2 style="font-size:34px">Pick your flavor</h2></div>
+      <div class="sec-head" style="margin-bottom:30px"><h2 style="font-size:34px">Pick your flavor</h2></div>
       <div class="fshow">
         <div class="ftile"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="pp-vanilla" alt="Aztec Vanilla pouch"><b>Aztec Vanilla</b><span>The bestseller. Warm, round, coffee-proof.</span></div>
         <div class="ftile"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="pp-cacao" alt="Ancient Cacao pouch"><b>Ancient Cacao</b><span>Deep chocolate without the sugar.</span></div>
@@ -1901,7 +1978,7 @@ body{overflow-x:clip}
 
       <div class="forest-band" style="margin:56px 0;padding:48px 44px;border:2px solid var(--gold)">
         <div class="kicker" style="color:var(--gold)">Why animal protein</div>
-        <h3 style="font-size:clamp(24px,2.6vw,34px);color:var(--parchment);margin:10px 0 12px">The science is on the side of the scoop.</h3>
+        <h3 style="font-size:clamp(24px,2.6vw,34px);color:var(--parchment);margin:10px 0 12px">The proof behind every scoop.</h3>
         <p style="color:rgba(248,222,185,.88);font-size:18.5px;max-width:64ch">By DIAAS, the score nutrition scientists use to grade protein quality, egg white and beef sit at the top of the table — above whey, far above plants. Every claim carries its source.</p>
         <p style="margin-top:18px"><a class="btn on-forest" href="#/science" style="box-shadow:none">Read the Science</a></p>
       </div>
@@ -1950,7 +2027,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Protein Powders</a><span class="sep">◆</span>Protein + Multi Collagen</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="ppp-vanilla" alt="Protein + Multi Collagen"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="ppp-vanilla" alt="Protein + Multi Collagen"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="ppp-vanilla" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="ppp-vanilla" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Protein Powders</div>
         <h1>Protein + Multi Collagen</h1>
@@ -2013,7 +2099,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Protein Powders</a><span class="sep">◆</span>Carnivore Complete</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="cc-vanilla" alt="Carnivore Complete"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="cc-vanilla" alt="Carnivore Complete"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="cc-vanilla" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="cc-vanilla" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Protein Powders</div>
         <h1>Carnivore Complete</h1>
@@ -2045,11 +2140,17 @@ body{overflow-x:clip}
         </div>
       </div>
       <div style="margin-bottom:30px"><h3 style="text-align:center;font-size:26px;margin-bottom:24px">What customers say</h3>
-        <div class="rev-grid"><div class="rev-card"><div class="stars">★★★★★</div>
+        <div class="rev-grid rev-scroll"><div class="rev-card"><div class="stars">★★★★★</div>
         <blockquote>"I was spending $90/month on separate liver, heart, and kidney capsules. This replaces all of them in one scoop that actually tastes good."</blockquote>
         <div class="who"><b>Mike D.</b><span class="vb">Verified Buyer</span></div></div><div class="rev-card"><div class="stars">★★★★★</div>
         <blockquote>"I've tried eating liver. I can't do it. This tastes like a normal vanilla shake. My energy levels are noticeably better after 3 weeks."</blockquote>
-        <div class="who"><b>Rachel S.</b><span class="vb">Verified Buyer</span></div></div></div>
+        <div class="who"><b>Rachel S.</b><span class="vb">Verified Buyer</span></div></div><div class="rev-card"><div class="stars">★★★★★</div>
+        <blockquote>"Replaced my whole supplement drawer. One scoop in my morning coffee and I'm covered — liver, heart, the works."</blockquote>
+        <div class="who"><b>Tom B.</b><span class="vb">Verified Buyer</span></div></div><div class="rev-card"><div class="stars">★★★★★</div>
+        <blockquote>"My kids drink it as a 'milkshake.' If they knew it was five organs they'd riot. Sneakiest nutrition win in our house."</blockquote>
+        <div class="who"><b>Jenna K.</b><span class="vb">Verified Buyer</span></div></div><div class="rev-card"><div class="stars">★★★★★</div>
+        <blockquote>"Three months in: steadier energy, better workouts, and I actually look forward to the taste. Never going back to capsules."</blockquote>
+        <div class="who"><b>Chris P.</b><span class="vb">Verified Buyer</span></div></div></div>
         <p style="text-align:center;margin:22px auto 0"><a class="goldlink" style="color:var(--brick)" href="#/reviews">All reviews →</a></p></div>
       
       <div class="chipline" style="justify-content:center;margin:8px 0 34px">
@@ -2057,8 +2158,9 @@ body{overflow-x:clip}
         <div class="chip"><div class="num">13<small>g</small></div><div class="lab">Healthy Fats</div></div>
         <div class="chip"><div class="num">180</div><div class="lab">Calories</div></div>
         <div class="chip"><div class="num">5</div><div class="lab">Organs</div></div>
+        <div class="chip usa"><div class="num">★</div><div class="lab">Made in USA</div></div>
       </div>
-      <div class="sec-head" style="margin-bottom:26px"><div class="kicker center">Nose to tail</div><h2 style="font-size:34px">What's inside every scoop</h2>
+      <div class="organ-band"><div class="sec-head" style="margin-bottom:26px"><div class="kicker center">Nose to tail</div><h2 style="font-size:34px">What's inside every scoop</h2>
       <p class="lede" style="font-size:18px">Eight nutrient-dense ingredients, each with a job. No fillers, no proprietary blends.</p></div>
       <div class="amino-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="amino"><b>Beef Liver</b><span>B12, iron, vitamin A, folate — the most nutrient-dense organ there is.</span></div>
@@ -2069,6 +2171,7 @@ body{overflow-x:clip}
         <div class="amino"><b>Egg White Protein</b><span>All 9 essential amino acids — the complete-protein foundation.</span></div>
         <div class="amino"><b>Grass-Fed Tallow</b><span>Healthy fats and fat-soluble vitamins A, D, E, K.</span></div>
         <div class="amino"><b>Bone Broth</b><span>Collagen, glycine, and minerals for gut, joints, and recovery.</span></div>
+      </div>
       </div>
       <div class="sec-head" style="margin:56px auto 26px"><div class="kicker center">Do the math</div><h2 style="font-size:34px">One scoop replaces the capsule stack</h2></div>
       <div class="cmp-scroll">
@@ -2082,6 +2185,27 @@ body{overflow-x:clip}
             <tr><td>Complete protein included</td><td class="pp"><span class="yes">✓ 13g egg white</span></td><td><span class="no">✗ None</span></td><td>Varies</td></tr>
           </tbody>
         </table>
+      </div><div class="pdp-two" style="margin-top:56px">
+        <div class="panel"><h3>Nutrition facts</h3><div class="rule"></div>
+          <div class="nutri">
+            <div class="nrow head"><span>Amount per scoop</span><span>15 servings</span></div>
+            <div class="nrow big"><span>Calories</span><span>180</span></div>
+            <div class="nrow big"><span>Protein</span><span>13g</span></div>
+            <div class="nrow"><span>Healthy fats</span><span>13g</span></div>
+            <div class="nrow"><span>Total sugars · added sugars</span><span>0g · 0g</span></div>
+            <div class="nrow"><span>Organs per scoop</span><span>5</span></div>
+          </div>
+          <p style="margin-top:12px;font-size:15px;font-style:italic;color:var(--olive)">Transcribed from the Aztec Vanilla label — verify against final panel.</p>
+        </div>
+        <div class="panel"><h3>What's not in this scoop</h3><div class="rule"></div>
+          <ul class="notlist">
+            <li><span class="no">No</span><span>whey, lactose, or dairy of any kind</span></li>
+            <li><span class="no">No</span><span>fillers, gums, or "proprietary blends"</span></li>
+            <li><span class="no">No</span><span>added sugars or artificial sweeteners</span></li>
+            <li><span class="no">No</span><span>organ taste — it drinks like a vanilla shake</span></li>
+          </ul>
+          <p class="standout" style="font-size:20px">A whole shelf of capsules, retired by one scoop.</p>
+        </div>
       </div><div class="sec-head" style="margin:64px auto 30px"><div class="kicker center">Plain answers</div><h2 style="font-size:34px">Questions, answered</h2></div><div class="faq"><details><summary>What does Carnivore Complete taste like? <span class="pm">+</span></summary><div class="a"><p>Like a vanilla shake — seriously. The natural flavors and monk fruit completely mask any organ taste. It's the most common surprise customers report.</p></div></details><details><summary>How does this compare to Beef <span class="amp"><span class="amp">&amp;</span></span> Egg Protein? <span class="pm">+</span></summary><div class="a"><p>They serve different purposes. Beef <span class="amp"><span class="amp">&amp;</span></span> Egg is pure protein — 26g, ~120 calories. Carnivore Complete is a complete ancestral meal — 13g protein, 13g healthy fats, five organs, and bone broth. Many customers use both.</p></div></details><details><summary>Can I use it as a meal replacement? <span class="pm">+</span></summary><div class="a"><p>At 180 calories with 13g protein and 13g fats, it works as a meal boost or light meal replacement. Blend with fruit or nut butter for something more substantial.</p></div></details><details><summary>Where are the organs sourced? <span class="pm">+</span></summary><div class="a"><p>All organs come from grass-fed, pasture-raised cattle, freeze-dried to preserve the natural vitamins and cofactors. Processed in the USA.</p></div></details></div><div class="pdp-guarantee">
       <div class="seal"><div class="n">60</div><div class="t">Day<br>Money-Back<br>Guarantee</div></div>
       <div><h3 style="font-size:24px;margin-bottom:6px">Sixty days to decide. On us.</h3>
@@ -2112,7 +2236,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Collagen <span class="amp"><span class="amp">&amp;</span></span> Broth</a><span class="sep">◆</span>Bone Broth Collagen</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="bbc-vanilla" alt="Bone Broth Collagen"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="bbc-vanilla" alt="Bone Broth Collagen"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="bbc-vanilla" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="bbc-vanilla" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Collagen <span class="amp"><span class="amp">&amp;</span></span> Broth</div>
         <h1>Bone Broth Collagen</h1>
@@ -2175,7 +2308,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Collagen <span class="amp"><span class="amp">&amp;</span></span> Broth</a><span class="sep">◆</span>Multi Collagen</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="mc-jug" alt="Multi Collagen"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="mc-jug" alt="Multi Collagen"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="mc-jug" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="mc-jug" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Collagen <span class="amp"><span class="amp">&amp;</span></span> Broth</div>
         <h1>Multi Collagen</h1>
@@ -2238,7 +2380,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Capsules</a><span class="sep">◆</span>Beef Organ Complex</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-organ" alt="Beef Organ Complex"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-organ" alt="Beef Organ Complex"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="caps-organ" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-organ" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Capsules</div>
         <h1>Beef Organ Complex</h1>
@@ -2301,7 +2452,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Capsules</a><span class="sep">◆</span>Beef Liver Capsules</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-liver" alt="Beef Liver Capsules"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-liver" alt="Beef Liver Capsules"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="caps-liver" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-liver" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Capsules</div>
         <h1>Beef Liver Capsules</h1>
@@ -2364,7 +2524,16 @@ body{overflow-x:clip}
   <div class="wrap">
     <div class="crumb"><a href="#/shop">Shop</a><span class="sep">◆</span><a href="#/shop">Capsules</a><span class="sep">◆</span>Beef Testicle Capsules</div>
     <div class="pdp-grid">
-      <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-testicle" alt="Beef Testicle Capsules"></div>
+      <div class="pdp-media">
+        <div class="pdp-fig"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-testicle" alt="Beef Testicle Capsules"></div>
+        <div class="pdp-gal" aria-label="Product photos">
+          <button class="on" data-img="caps-testicle" aria-label="Product render"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="caps-testicle" alt=""></button>
+          <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
+          <button data-img="vig-raised" class="photo" aria-label="Cattle on pasture"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-raised" alt=""></button>
+          <button data-img="banner-river" class="photo" aria-label="River landscape"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="banner-river" alt=""></button>
+        </div>
+      </div>
       <div class="pdp-info">
         <div class="cat-k">Capsules</div>
         <h1>Beef Testicle Capsules</h1>
@@ -2424,11 +2593,12 @@ body{overflow-x:clip}
   <div class="pdp-bar"><span class="pb-name">Beef Testicle Capsules</span><span class="pb-price">$29.74 <small>subscribed</small></span><a class="btn add-cart" href="#">Add to Cart</a></div>
 </main>
 <main class="view" id="view-science">
-  <section class="sci-hero topo">
+  <section class="sci-hero">
     <div class="wrap">
       <div class="page-hero">
+        <div class="sun-orn" aria-hidden="true"><svg viewBox="0 0 140 70" width="96"><g stroke="#C99B3F" stroke-width="4" stroke-linecap="round"><line x1="70" y1="4" x2="70" y2="18"/><line x1="40" y1="14" x2="48" y2="26"/><line x1="100" y1="14" x2="92" y2="26"/><line x1="18" y1="38" x2="32" y2="44"/><line x1="122" y1="38" x2="108" y2="44"/></g><path d="M44 66a26 26 0 0 1 52 0Z" fill="#C99B3F"/></svg></div>
         <div class="kicker center">The field guide to animal protein</div>
-        <h1>The science is on<br>the side of the scoop.</h1>
+        <h1>The proof behind<br>every scoop.</h1>
         <p class="lede">We built Paleo Pro on a simple bet: real animal protein beats engineered blends. Here is the evidence, in plain language, with every source named. If we can't cite it, we don't say it.</p>
       </div>
       <div class="sci-stats">
@@ -2464,7 +2634,7 @@ body{overflow-x:clip}
     </div>
   </section>
 
-  <section class="sec-pad ground-cream edge-top edge-bot" style="padding:72px 0">
+  <section class="sec-pad ground-cream edge-top edge-bot topo" style="padding:72px 0">
     <div class="wrap">
       <div class="sec-head"><div class="kicker center">Protein quality, scored</div>
         <h2>Not all protein counts the same</h2>
@@ -2766,12 +2936,12 @@ body{overflow-x:clip}
     </div>
   </section>
 
-  <section class="sec-pad" style="padding:80px 0 72px">
+  <section class="sec-pad letter-band" style="padding:80px 0 72px">
     <div class="wrap">
       <div class="about-story">
         <div class="art reveal"><img src="" data-i="founder-doug" alt="Doug, founder of Paleo Pro, climbing a trail under a weighted vest"><span class="cap">Doug · Founder</span></div>
         <div class="reveal">
-          <div class="kicker">Why I made Paleo Pro</div>
+          <div class="kicker">A letter from the founder</div>
           <h2>It started with a hospital bed and a rule.</h2>
           <p>After a life-altering accident left Doug unable to walk, doctors gave him a long road and no promises. He gave himself one rule: only real food. No fillers, no shortcuts, nothing he couldn't name.</p>
           <p>Rebuilding a body takes protein — a lot of it. So he went looking for a powder that matched the way he was eating. Every bag on the shelf read like a chemistry set: whey his gut couldn't handle, sweeteners from a lab, gums and "proprietary blends" nobody could explain.</p>
@@ -3004,12 +3174,68 @@ addEventListener('scroll',()=>{
 },{passive:true});
 addEventListener('hashchange',()=>document.querySelectorAll('.pdp-bar').forEach(b=>b.classList.remove('show')));
 
-// ---------- demo add-to-cart ----------
-let cartN=0;
+// ---------- cart drawer ----------
+const CART_PROD={
+  'view-pdp-beef-egg-protein':{n:'Beef & Egg Protein',p:54.99,img:'pp-vanilla'},
+  'view-pdp-protein-multi-collagen':{n:'Protein + Multi Collagen',p:59.99,img:'ppp-vanilla'},
+  'view-pdp-carnivore-complete':{n:'Carnivore Complete',p:49.99,img:'cc-vanilla'},
+  'view-pdp-bone-broth-collagen':{n:'Bone Broth Collagen',p:44.99,img:'bbc-vanilla'},
+  'view-pdp-multi-collagen':{n:'Multi Collagen',p:39.99,img:'mc-jug'},
+  'view-pdp-beef-organ-complex':{n:'Beef Organ Complex',p:34.99,img:'caps-organ'},
+  'view-pdp-beef-liver':{n:'Beef Liver Capsules',p:29.99,img:'caps-liver'},
+  'view-pdp-beef-testicle':{n:'Beef Testicle Capsules',p:34.99,img:'caps-testicle'}
+};
+let cart=[];
+const cartDrawer=document.getElementById('cart-drawer'),cartBg=document.getElementById('cart-bg'),
+      cdBody=document.getElementById('cd-body'),cdMsg=document.getElementById('cd-msg'),
+      cdFill=document.getElementById('cd-fill'),cdFoot=document.getElementById('cd-foot'),
+      cdTotal=document.getElementById('cd-total');
+function openCart(){cartDrawer.classList.add('open');cartBg.classList.add('open');cartDrawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeCart(){cartDrawer.classList.remove('open');cartBg.classList.remove('open');cartDrawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function money(x){return '$'+x.toFixed(2)}
+function renderCart(){
+  const count=cart.reduce((a,i)=>a+i.q,0);
+  document.querySelectorAll('.cart-n').forEach(n=>n.textContent=count);
+  const sub=cart.reduce((a,i)=>a+i.q*i.p,0);
+  cdFill.style.width=Math.min(sub/120*100,100)+'%';
+  if(sub===0)cdMsg.textContent='Free shipping at $70 · Free bag of protein + collagen at $120';
+  else if(sub<70)cdMsg.textContent="You're "+money(70-sub)+' away from FREE shipping';
+  else if(sub<120)cdMsg.textContent='Free shipping unlocked! '+money(120-sub)+' away from a FREE bag of protein + collagen';
+  else cdMsg.textContent='Unlocked: FREE shipping + a FREE bag of protein and collagen!';
+  if(!cart.length){
+    cdFoot.hidden=true;
+    cdBody.innerHTML='<div class="cd-empty"><p><b>Your cart is empty.</b></p><p style="font-size:16px;color:var(--olive)">Two clean proteins, one complete scoop — and 60 days to decide.</p><a class="btn" href="#/shop" id="cd-cta">Try Paleo Pro Risk-Free</a><p class="cd-note">60-day money-back guarantee · Free shipping on orders $70+</p></div>';
+    document.getElementById('cd-cta').addEventListener('click',closeCart);
+    return;
+  }
+  cdFoot.hidden=false;cdTotal.textContent=money(sub);
+  cdBody.innerHTML=cart.map((i,ix)=>'<div class="cd-item"><img src="'+(window.IMGS&&IMGS[i.img]||'')+'" alt=""><div><div class="nm">'+i.n+'</div><div class="cd-qty"><button data-a="-" data-i="'+ix+'">−</button><b>'+i.q+'</b><button data-a="+" data-i="'+ix+'">+</button></div></div><span class="pr">'+money(i.p*i.q)+'</span><button class="rm" data-a="x" data-i="'+ix+'" aria-label="Remove">×</button></div>').join('');
+  cdBody.querySelectorAll('button[data-a]').forEach(b=>b.addEventListener('click',()=>{
+    const ix=+b.dataset.i,a=b.dataset.a;
+    if(a==='+')cart[ix].q=Math.min(9,cart[ix].q+1);
+    else if(a==='-')cart[ix].q=Math.max(1,cart[ix].q-1);
+    else cart.splice(ix,1);
+    renderCart();
+  }));
+}
+document.querySelectorAll('.nav-ic[aria-label="Cart"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();closeDrawer();renderCart();openCart();}));
+document.getElementById('cd-close').addEventListener('click',closeCart);
+cartBg.addEventListener('click',closeCart);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+document.getElementById('cd-checkout').addEventListener('click',e=>e.preventDefault());
 document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>{
-  e.preventDefault();cartN++;document.querySelectorAll('.cart-n').forEach(n=>n.textContent=cartN);
-  const t=b.textContent;b.textContent='Added ✓';setTimeout(()=>b.textContent=t,1200);
+  e.preventDefault();
+  const view=b.closest('main.view');
+  const prod=(view&&CART_PROD[view.id])||CART_PROD['view-pdp-beef-egg-protein'];
+  let q=1;
+  const inp=view&&view.querySelector('.qty input');
+  if(inp&&b.closest('.qty-row'))q=+inp.value||1;
+  const ex=cart.find(i=>i.n===prod.n);
+  if(ex)ex.q=Math.min(9,ex.q+q);else cart.push({n:prod.n,p:prod.p,img:prod.img,q:q});
+  const t=b.textContent;b.textContent='Added ✓';setTimeout(()=>b.textContent=t,900);
+  renderCart();setTimeout(openCart,250);
 }));
+renderCart();
 </script>
 
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
@@ -3031,7 +3257,7 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'pp-site-v8';
+  var PAGE_ID = 'pp-site-v9';
 
   /* ---------------------------------------------- */
 
@@ -3198,48 +3424,6 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
     return resolveAnchor(a);
   }
   function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
-  // Human-readable name of the view an element lives on. Works for sites that
-  // toggle sections via data-view containers (no hash) as well as hash routers.
-  function detectViewName(sel) {
-    try {
-      var el = sel ? document.querySelector(sel) : null;
-      while (el && el !== document.body) {
-        if (el.dataset && el.dataset.view) return el.dataset.view;
-        if (el.id && /^page-/.test(el.id)) return el.id.replace(/^page-/, '');
-        el = el.parentElement;
-      }
-    } catch (e) {}
-    return location.hash ? viewLabel(location.hash) : undefined;
-  }
-  // For sites that hide views with the `hidden` attribute (no URL change):
-  // reveal the view containing the anchor by flipping `hidden` the same way
-  // the site's own router does. Returns true if the anchor became visible.
-  function tryReveal(a) {
-    try {
-      if (!a.sel) return false;
-      var el = document.querySelector(a.sel);
-      if (!el) return false;
-      if (el.getBoundingClientRect().height > 0) return true;
-      // highest hidden ancestor = the view container that's switched off
-      var hid = null, n = el;
-      while (n && n !== document.body) {
-        if (n.hidden || getComputedStyle(n).display === 'none') hid = n;
-        n = n.parentElement;
-      }
-      if (!hid || !hid.parentElement || !hid.hasAttribute('hidden')) return false;
-      Array.prototype.forEach.call(hid.parentElement.children, function (s) {
-        if (s !== hid && s.tagName === hid.tagName && !s.hasAttribute('hidden')) {
-          var share = Array.prototype.some.call(hid.classList, function (c) {
-            return s.classList.contains(c);
-          });
-          if (share || hid.classList.length === 0) s.setAttribute('hidden', '');
-        }
-      });
-      hid.removeAttribute('hidden');
-      window.scrollTo(0, 0);
-      return el.getBoundingClientRect().height > 0;
-    } catch (e) { return false; }
-  }
 
   /* ------------------- STATE ------------------- */
   var threads = {};           // latest data
@@ -3486,11 +3670,10 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
       num.textContent = threadNumber(tid);
       var body = document.createElement('div');
       body.className = 'pbody';
-      var hashElsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
-      var elsewhere = hashElsewhere || !threadVisiblePos(t);
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
       body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
         + (n > 1 ? ' · ' + n + ' replies' : '')
-        + (elsewhere ? ' · on <b>' + esc(t.viewName || viewLabel(t.view) || 'another page') + '</b>' : '') + '</div>'
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
         + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
       item.appendChild(num);
       item.appendChild(body);
@@ -3502,13 +3685,9 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
           setTimeout(render, 350);
         };
         if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
-          // Hash-routed site: switch views via the URL first
+          // Comment lives on another view of this site — switch to it first
           location.hash = t.view || '#';
           setTimeout(go, 450);
-        } else if (!threadVisiblePos(t)) {
-          // Hidden-attribute site (no URL change): flip the view directly
-          tryReveal(t.anchor || {});
-          setTimeout(go, 300);
         } else go();
       });
       list.appendChild(item);
@@ -3580,8 +3759,6 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
         anchor: draft.anchor, resolved: false, created: Date.now(),
         view: currentView(), comments: {}
       };
-      var vn = detectViewName(draft.anchor.sel);
-      if (vn) t.viewName = vn;
       t.comments[uid()] = { name: name, text: text, ts: Date.now() };
       store.createThread(t).then(function (tid) {
         draft = null; commentMode = false; setMode(false);
@@ -3775,20 +3952,6 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
     openThreadId = null; draft = null;
     render();
   });
-  // Sites that switch views by toggling hidden/class/style (no hash change):
-  // watch for those DOM flips and refresh pin visibility. Only pins are
-  // re-rendered (never the UI) so nobody loses a half-typed comment.
-  if (window.MutationObserver) {
-    var pinTimer = null;
-    new MutationObserver(function () {
-      if (pinTimer) return;
-      pinTimer = setTimeout(function () {
-        pinTimer = null;
-        layer.style.height = document.documentElement.scrollHeight + 'px';
-        renderPins();
-      }, 250);
-    }).observe(document.body, { attributes: true, subtree: true, attributeFilter: ['hidden', 'class', 'style'] });
-  }
 
   /* ------------------- BOOT ------------------- */
   function boot() {
