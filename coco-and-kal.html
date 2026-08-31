@@ -695,7 +695,6 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   display: flex; gap: 1.2rem; width: max-content;
   animation: ticker 45s linear infinite;
 }
-.photo-marquee:hover .photo-marquee-track { animation-play-state: paused; }
 .photo-marquee img {
   height: clamp(180px, 26vw, 280px); width: auto;
   border-radius: 14px; box-shadow: var(--shadow-sm);
@@ -704,6 +703,29 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 .photo-marquee img:nth-child(odd) { transform: rotate(1.5deg); }
 .photo-marquee img:nth-child(even) { transform: rotate(-1.5deg); }
 .photo-marquee img:hover { transform: rotate(0) scale(1.05); }
+
+/* ---------- Contact form ---------- */
+.contact-form-wrap { margin-top: 2.6rem; text-align: left; }
+.contact-form-wrap .kicker { display: block; text-align: center; margin-bottom: 1.2rem; }
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.contact-form .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.contact-form label {
+  display: flex; flex-direction: column; gap: .45rem; text-align: left;
+  font-family: var(--caps-bold); letter-spacing: .16em; text-transform: uppercase;
+  font-size: .72rem; color: var(--navy);
+}
+.contact-form .cf-optional { text-transform: none; letter-spacing: .04em; color: #5a6785; font-family: var(--caps); }
+.contact-form input, .contact-form textarea {
+  border: 2px solid var(--dusty); border-radius: 14px; background: #fff;
+  padding: .85rem 1.1rem; font-family: var(--caps); letter-spacing: .05em;
+  font-size: .95rem; color: var(--navy); outline: none; width: 100%;
+  transition: border-color .25s, box-shadow .25s;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #9aa7c2; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--pink); box-shadow: 0 0 0 4px var(--pink-soft); }
+.contact-form textarea { resize: vertical; min-height: 130px; }
+.contact-form .btn { align-self: center; margin-top: .4rem; cursor: pointer; }
+@media (max-width: 640px) { .contact-form .cf-row { grid-template-columns: 1fr; } }
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -884,6 +906,18 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     </div>
   </section>
 
+  <!-- ══════════ JOURNAL TEASER ══════════ -->
+  <section class="section" style="background: var(--pink-soft);">
+    <div class="wrap center">
+      <span class="kicker">stories & snapshots</span>
+      <h2 class="h-mid" id="journal-title"></h2>
+      <div class="post-grid" id="home-posts"></div>
+      <div style="margin-top:2.4rem;">
+        <a class="btn" href="journal.html" id="journal-btn"></a>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════ EVENTS TEASER ══════════ -->
   <section class="section texture-stripes">
     <div class="wrap">
@@ -899,19 +933,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     </div>
   </section>
 
-  <!-- ══════════ JOURNAL TEASER ══════════ -->
-  <section class="section" style="background: var(--pink-soft);">
-    <div class="wrap center">
-      <span class="kicker">stories & snapshots</span>
-      <h2 class="h-mid" id="journal-title"></h2>
-      <div class="post-grid" id="home-posts"></div>
-      <div style="margin-top:2.4rem;">
-        <a class="btn" href="journal.html" id="journal-btn"></a>
-      </div>
-    </div>
-  </section>
-
-  <div class="ticker flat" aria-hidden="true"></div>
+    <div class="ticker flat" aria-hidden="true"></div>
 
   <!-- ══════════ FOOTER ══════════ -->
   
@@ -991,7 +1013,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 <main class="pageview" data-view="journal" hidden>
 
 
-  <section class="page-hero texture-stripes">
+  <section class="page-hero texture-stripes" style="padding-bottom: 3.5rem;">
     <span class="kicker">the coco & kal journal</span>
     <h1 class="h-script">little stories, big love</h1>
     <p class="lead" id="journal-intro"></p>
@@ -1034,7 +1056,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
   <section class="section center texture-stripes">
     <div class="wrap reveal">
-      <img src="assets/coco-and-kal/d1c99caa62.png" alt="" style="width:130px; margin:0 auto 1rem;">
+      <img src="assets/coco-and-kal/d1c99caa62.png" alt="" style="width:280px; max-width:70vw; margin:0 auto 1.2rem;">
       <h2 class="h-mid">hosting a market or event?</h2>
       <p class="lead">We'd love to set up our two chairs at your gathering. Send us a note and let's make it happen!</p>
       <div style="margin-top:1.8rem;"><a class="btn" href="mailto:hello@cocoandkal.com" id="invite-btn">Invite us over</a></div>
@@ -1099,12 +1121,40 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
   <section class="section" style="padding-top:2rem;">
     <div class="wrap center" style="max-width:720px;">
-      <p class="lead">The fastest way to reach us is email — we usually reply within 1–2 business days.</p>
+      <p class="lead">The fastest way to reach us is a DM on Instagram — we're on there every day.</p>
       <div class="btn-row">
-        <a class="btn" href="mailto:hello@cocoandkal.com">Email hello@cocoandkal.com</a>
-        <a class="btn ghost ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">DM us on Instagram ★</a>
+        <a class="btn ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">DM us on Instagram ★</a>
       </div>
-      <p style="margin-top:2.2rem; color:#5a6785;">Coco &amp; Kal, LLC · Handmade in Minnesota, USA</p>
+
+      <!-- Shopify-ready contact form: on Shopify this posts to /contact.
+           The hidden form_type + utf8 inputs are what Shopify expects, so this
+           markup ports straight into a theme. On this preview, submitting just
+           shows a confirmation. -->
+      <div class="contact-form-wrap">
+        <span class="kicker">or drop us a note</span>
+        <form class="contact-form" id="contact-form" method="post" action="/contact#contact-form" accept-charset="UTF-8">
+          <input type="hidden" name="form_type" value="contact">
+          <input type="hidden" name="utf8" value="✓">
+          <div class="cf-row">
+            <label>Name
+              <input type="text" name="contact[name]" placeholder="your name" required autocomplete="name">
+            </label>
+            <label>Email
+              <input type="email" name="contact[email]" placeholder="you@email.com" required autocomplete="email">
+            </label>
+          </div>
+          <label>Phone <span class="cf-optional">(optional)</span>
+            <input type="tel" name="contact[phone]" placeholder="(555) 555-5555" autocomplete="tel">
+          </label>
+          <label>Message
+            <textarea name="contact[body]" rows="5" placeholder="Tell us what's on your mind — an order, a custom idea, a market invite…" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send it our way ★</button>
+        </form>
+      </div>
+
+      <p style="margin-top:2.2rem; color:#5a6785;">Prefer email? <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a> — we usually reply within 1–2 business days.</p>
+      <p style="margin-top:.6rem; color:#5a6785;">Coco &amp; Kal, LLC · Handmade in Minnesota, USA</p>
       <p style="margin-top:.6rem; color:#5a6785;">You can also catch us in person — see <a href="events.html" style="color:var(--dusty);">where we'll be next</a>.</p>
     </div>
   </section>
@@ -1205,6 +1255,15 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         </ul>
       </div>
       <div>
+        <h4>The fine print</h4>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="shipping-returns.html">Shipping &amp; returns</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div>
         <h4>Stay close</h4>
         <ul>
           <li><a class="footer-ig" href="#" target="_blank" rel="noopener"></a></li>
@@ -1214,15 +1273,6 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
           <input type="email" placeholder="your email" required aria-label="Email">
           <button type="submit">Join</button>
         </form>
-      </div>
-      <div>
-        <h4>The fine print</h4>
-        <ul>
-          <li><a href="contact.html">Contact us</a></li>
-          <li><a href="shipping-returns.html">Shipping &amp; returns</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
-        </ul>
       </div>
     </div>
     <div class="footer-base">
@@ -1707,6 +1757,13 @@ function initFooter() {
     toast("Thanks for joining the table! ♥ (Sign-ups go live with our shop)");
     e.target.reset();
   });
+
+  /* Preview-only: on Shopify the contact form posts to /contact for real. */
+  $("#contact-form")?.addEventListener("submit", e => {
+    e.preventDefault();
+    toast("Thanks for the note! ♥ We'll get back to you soon.");
+    e.target.reset();
+  });
 }
 
 /* ---------- scroll reveal ---------- */
@@ -2157,7 +2214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'coco-and-kal-v11';
+  var PAGE_ID = 'coco-and-kal-v12';
 
   /* ---------------------------------------------- */
 
