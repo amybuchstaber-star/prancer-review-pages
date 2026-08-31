@@ -860,6 +860,18 @@ nav.links{display:none}
 .sci-card .emb{position:absolute;right:22px;top:22px;width:56px;height:56px;opacity:.55}
 .swipe-hint{display:none}
 .sci-note{margin-top:22px}
+/* review round: warm the science band with brick */
+.sci-card{border-top:6px solid var(--brick)}
+.sci-card .n small{color:var(--parchment);background:var(--brick);padding:6px 12px;letter-spacing:.2em}
+.sci-card .src{color:#D9906B;border-top-color:rgba(157,76,50,.55)}
+.ground-forest .car-dots i.on{background:var(--brick);border-color:var(--brick)}
+.ground-forest .car-btn:hover{background:var(--brick);border-color:var(--brick);color:var(--parchment)}
+/* photo card inside the science slider */
+.sci-card.photo{padding:0;overflow:hidden;border-top-color:var(--brick)}
+.sci-card.photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;min-height:380px}
+.sci-card.photo .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(50,17,8,.88),rgba(50,17,8,0));padding:34px 26px 20px;color:var(--parchment)}
+.sci-card.photo .cap b{font-family:'Fraunces';text-transform:uppercase;font-size:20px;display:block;letter-spacing:.03em}
+.sci-card.photo .cap span{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#F2C87E;font-weight:700}
 
 /* ---------- testing v6: its own section ---------- */
 .lab-wrap{margin-top:0}
@@ -1041,6 +1053,23 @@ nav.links{display:none}
 .whey h3{font-size:19px;margin:10px 0 8px}
 .whey p{font-size:16.5px;color:var(--ink)}
 @media(max-width:820px){.whey-grid{grid-template-columns:1fr}}
+
+/* ---------- photo interlude band ---------- */
+.photo-band{position:relative;border-top:2px solid var(--forest);border-bottom:2px solid var(--forest);overflow:hidden;background:var(--forest)}
+.photo-band img{width:100%;height:clamp(360px,46vw,560px);object-fit:cover;object-position:center 38%;display:block}
+.photo-band .pb-inner{position:absolute;left:0;right:0;bottom:0;padding:120px 28px 44px;text-align:center;background:linear-gradient(to top,rgba(30,51,37,.82),rgba(30,51,37,0))}
+.photo-band .pb-quote{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(24px,3.2vw,40px);color:var(--parchment);margin:0 auto 20px;max-width:24ch;line-height:1.25;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.photo-band .btn{border-color:var(--parchment);color:var(--parchment);background:transparent}
+.photo-band .btn:hover{background:var(--brick);border-color:var(--brick)}
+@media(max-width:640px){.photo-band .pb-inner{padding:90px 20px 34px}}
+
+/* ---------- split photo band (science) ---------- */
+.sp-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:60px;align-items:center;padding-top:76px;padding-bottom:76px}
+.sp-img img{border:2.5px solid var(--forest);box-shadow:10px 10px 0 var(--forest-12);transform:rotate(-1.4deg);width:100%}
+.sp-copy .kicker{margin-bottom:14px}
+.sp-copy h2{font-size:clamp(30px,3vw,42px);margin-bottom:16px}
+.sp-copy p{font-size:18.5px;color:var(--ink)}
+@media(max-width:900px){.sp-grid{grid-template-columns:1fr;gap:38px;padding-top:56px;padding-bottom:56px}.sp-img img{max-width:520px;margin:0 auto;display:block}}
 
 /* ---------- science: "built on purpose" interactive deck ---------- */
 .sci-why{transition:background .6s ease}
@@ -1452,6 +1481,10 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
           <p>Higher daily protein supports lean mass, strength, and recovery through every season of life.</p>
           <div class="src">Morton et al., British Journal of Sports Medicine, 2018</div>
         </div>
+        <div class="sci-card photo">
+          <img src="" data-i="photo-canyon" alt="Grand Canyon at dawn with an enamel Paleo Pro mug in the foreground">
+          <div class="cap"><b>Field tested</b><span>Real food for real country</span></div>
+        </div>
       </div>
       <div class="car-nav">
         <button class="car-btn" data-prev aria-label="Previous">‹</button>
@@ -1540,6 +1573,15 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
       <div class="sd-r sd-ft" role="row"><div class="sd-c sd-lbl"></div><div class="sd-c pp"><a class="btn" href="#shop">Try It Risk-Free</a></div><div class="sd-c dim"></div><div class="sd-c dim"></div></div>
     </div>
     <p class="sd-key reveal"><span class="k"><b class="y">✓</b> Yes / included</span><span class="k"><b class="n">✗</b> No / missing</span><span class="k"><b class="m">—</b> Depends on the brand</span></p>
+  </div>
+</section>
+
+<!-- ═══════════════ PHOTO INTERLUDE ═══════════════ -->
+<section class="photo-band" aria-label="Paleo Pro in the field">
+  <img src="" data-i="band-basecamp" alt="Carnivore Complete and Paleo Protein Powder pouches on a rock ledge above an alpine lake">
+  <div class="pb-inner">
+    <p class="pb-quote">Built for the way you actually eat.</p>
+    <a class="btn" href="#shop">Shop the line</a>
   </div>
 </section>
 
@@ -1927,6 +1969,7 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
           <button data-img="pp-naked" aria-label="Plain Naked pouch"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="pp-naked" alt=""></button>
           <button data-img="how-fuel" class="photo" aria-label="Lifestyle photo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="how-fuel" alt=""></button>
           <button data-img="vig-scoop" class="photo" aria-label="Scoop of protein"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="vig-scoop" alt=""></button>
+          <button data-img="photo-drink" class="photo" aria-label="Drinking a Paleo Pro shake"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-i="photo-drink" alt=""></button>
         </div>
         <div class="placeholder-note" style="margin-top:12px">Gallery slot — final photography drops in here</div>
       </div>
@@ -2735,6 +2778,18 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
     </div>
   </section>
 
+  <section class="edge-bot">
+    <div class="wrap sp-grid">
+      <div class="sp-img reveal"><img src="" data-i="photo-realfood" alt="Supplement aisle beside a spread of real food — beef, eggs, and butter"></div>
+      <div class="sp-copy reveal">
+        <div class="kicker">The shortcut is food</div>
+        <h2>One of these actually works.</h2>
+        <p>Walk any supplement aisle and count the promises. Real food doesn't make promises — it just delivers. We put two of the oldest proteins on earth in a bag and left everything else on the shelf.</p>
+        <p style="margin-top:16px"><a class="goldlink" style="color:var(--brick)" href="#/shop">Shop clean protein →</a></p>
+      </div>
+    </div>
+  </section>
+
   <section class="sec-pad sci-why" id="sci-why" data-tone="forest">
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:36px"><div class="kicker center">Built on purpose</div>
@@ -3110,7 +3165,7 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
   </div>
 </footer>
 
-<script>window.IMGS={"banner-river": "assets/pp-site/2960d7da82.webp", "bbc-vanilla": "assets/pp-site/9b5244c1f6.webp", "campsite": "assets/pp-site/cd917978da.webp", "caps-liver": "assets/pp-site/5c605f940c.webp", "caps-organ": "assets/pp-site/4ab5296d50.webp", "caps-testicle": "assets/pp-site/8a95e8357a.webp", "cc-vanilla": "assets/pp-site/98b3113f78.webp", "doug-beach": "assets/pp-site/6071ffb506.webp", "founder-art": "assets/pp-site/862ded3546.webp", "founder-doug": "assets/pp-site/b6a574abd0.webp", "how-fuel": "assets/pp-site/06c07d45c0.webp", "icon-egg": "assets/pp-site/2553e2c08d.webp", "icon-grass": "assets/pp-site/4e8050a7f1.webp", "icon-leaf": "assets/pp-site/c80eda7392.webp", "icon-orchid": "assets/pp-site/e5a290eb74.webp", "icon-shaker": "assets/pp-site/b3e55bcf3a.webp", "mc-jug": "assets/pp-site/ae7dc30407.webp", "pp-cacao": "assets/pp-site/a4f6b93c71.webp", "pp-mayan": "assets/pp-site/9cd5aa8997.webp", "pp-mint": "assets/pp-site/2f9af6a853.webp", "pp-naked": "assets/pp-site/dedcc82e59.webp", "pp-vanilla": "assets/pp-site/13236f95b6.webp", "ppp-vanilla": "assets/pp-site/6aa93f1c76.webp", "vig-raised": "assets/pp-site/170d5787bf.webp", "vig-scoop": "assets/pp-site/2faff2d9df.webp", "vig-simple": "assets/pp-site/52c6d18d5c.webp"};document.querySelectorAll("img[data-i]").forEach(el=>{el.src=IMGS[el.dataset.i]});</script>
+<script>window.IMGS={"banner-river": "assets/pp-site/2960d7da82.webp", "bbc-vanilla": "assets/pp-site/9b5244c1f6.webp", "campsite": "assets/pp-site/cd917978da.webp", "caps-liver": "assets/pp-site/5c605f940c.webp", "caps-organ": "assets/pp-site/4ab5296d50.webp", "caps-testicle": "assets/pp-site/8a95e8357a.webp", "cc-vanilla": "assets/pp-site/98b3113f78.webp", "doug-beach": "assets/pp-site/6071ffb506.webp", "founder-art": "assets/pp-site/862ded3546.webp", "founder-doug": "assets/pp-site/b6a574abd0.webp", "how-fuel": "assets/pp-site/06c07d45c0.webp", "icon-egg": "assets/pp-site/2553e2c08d.webp", "icon-grass": "assets/pp-site/4e8050a7f1.webp", "icon-leaf": "assets/pp-site/c80eda7392.webp", "icon-orchid": "assets/pp-site/e5a290eb74.webp", "icon-shaker": "assets/pp-site/b3e55bcf3a.webp", "mc-jug": "assets/pp-site/ae7dc30407.webp", "pp-cacao": "assets/pp-site/a4f6b93c71.webp", "pp-mayan": "assets/pp-site/9cd5aa8997.webp", "pp-mint": "assets/pp-site/2f9af6a853.webp", "pp-naked": "assets/pp-site/dedcc82e59.webp", "pp-vanilla": "assets/pp-site/13236f95b6.webp", "ppp-vanilla": "assets/pp-site/6aa93f1c76.webp", "vig-raised": "assets/pp-site/170d5787bf.webp", "vig-scoop": "assets/pp-site/2faff2d9df.webp", "vig-simple": "assets/pp-site/52c6d18d5c.webp", "band-basecamp": "assets/pp-site/band-basecamp.webp", "photo-canyon": "assets/pp-site/photo-canyon.webp", "photo-realfood": "assets/pp-site/photo-realfood.webp", "photo-drink": "assets/pp-site/photo-drink.webp"};document.querySelectorAll("img[data-i]").forEach(el=>{el.src=IMGS[el.dataset.i]});</script>
 <script>
 // ---------- v6: drawer menu ----------
 const drawer=document.getElementById('drawer'),drawerBg=document.getElementById('drawer-bg'),hamb=document.getElementById('hamb');
@@ -3345,7 +3400,7 @@ renderCart();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'pp-site-v10';
+  var PAGE_ID = 'pp-site-v11';
 
   /* ---------------------------------------------- */
 
