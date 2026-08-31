@@ -81,11 +81,11 @@ p{max-width:62ch}
 
 /* ---------- announcement + nav ---------- */
 .announce{
-  background:var(--forest);color:var(--parchment);text-align:center;
+  background:var(--brick);color:var(--parchment);text-align:center;
   font-size:15.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
   padding:10px 16px;
 }
-.announce b{color:var(--gold);font-weight:700}
+.announce b{color:#F2C87E;font-weight:700}
 @media(max-width:760px){
   .announce{font-size:13px;letter-spacing:.08em}
   .announce .hide-m{display:none}
@@ -213,7 +213,8 @@ section{position:relative}
 .sec-pad{padding:96px 0}
 .sec-head{max-width:820px;margin:0 auto 56px;text-align:center}
 .sec-head h2{font-size:clamp(34px,3.6vw,52px);margin:18px 0 16px}
-.sec-head .lede{font-size:20px;color:var(--ink)}
+.sec-head .lede{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:21px;line-height:1.55;color:var(--ink)}
+::selection{background:var(--brick);color:var(--parchment)}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 /* mountain divider */
@@ -438,7 +439,7 @@ table.cmp{width:100%;border-collapse:collapse;border:2.5px solid var(--forest);b
   mask-image:linear-gradient(to top,#000 70%,transparent);
 }
 .final h2{font-size:clamp(34px,4vw,56px);margin:20px auto 18px;max-width:20ch}
-.final .lede{font-size:20px;color:var(--ink);max-width:52ch;margin:0 auto 34px}
+.final .lede{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:21px;color:var(--ink);max-width:52ch;margin:0 auto 34px}
 .seal{
   width:150px;height:150px;border-radius:50%;border:2.5px solid var(--brick);
   outline:1.5px dashed var(--brick);outline-offset:5px;
@@ -471,7 +472,7 @@ nav.links a.on{border-color:var(--brick)}
 .goldlink{color:var(--gold);font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .page-hero{padding:64px 0 44px;text-align:center}
 .page-hero h1{font-size:clamp(38px,4.4vw,60px);margin:18px 0 14px}
-.page-hero .lede{font-size:20px;color:var(--ink);max-width:60ch;margin:0 auto}
+.page-hero .lede{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:21px;color:var(--ink);max-width:60ch;margin:0 auto}
 .crumb{font-size:14.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--olive);padding:26px 0 0}
 .crumb a{color:var(--olive);text-decoration:none}
 .crumb a:hover{color:var(--brick)}
@@ -515,8 +516,9 @@ nav.links a.on{border-color:var(--brick)}
 @media(max-width:600px){.shop-all{grid-template-columns:1fr}}
 
 /* ---------- PDP ---------- */
-.pdp-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:36px 0 72px}
-.pdp-fig{position:sticky;top:110px;border:2.5px solid var(--forest);box-shadow:8px 8px 0 var(--forest-12);padding:44px 30px;display:flex;justify-content:center;align-items:center;min-height:480px;background:rgba(201,155,63,.08)}
+.pdp-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,4.5vw,56px);align-items:start;padding:36px 0 72px}
+.pdp-info{min-width:0}
+.pdp-fig{position:sticky;top:110px;border:2.5px solid var(--forest);box-shadow:8px 8px 0 var(--forest-12);padding:44px 30px;display:flex;justify-content:center;align-items:center;min-height:min(480px,52vh);background:rgba(201,155,63,.08)}
 .pdp-fig img{width:min(340px,86%);filter:drop-shadow(0 22px 26px rgba(30,51,37,.32));transition:opacity .2s}
 .pdp-info h1{font-size:clamp(32px,3.4vw,46px);margin:8px 0 10px}
 .pdp-info .cat-k{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brick)}
@@ -548,7 +550,9 @@ nav.links a.on{border-color:var(--brick)}
 .pdp-trust b{color:var(--brick)}
 .pdp-sub{padding:0 0 84px}
 .pdp-two{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;margin-bottom:30px}
-.panel{border:2px solid var(--forest);box-shadow:5px 5px 0 var(--forest-12);padding:32px 34px;background:var(--parchment)}
+.panel{border:2px solid var(--forest);border-top:6px solid var(--brick);box-shadow:8px 8px 0 var(--forest-12);padding:32px 34px;background:#FFF8EC;transition:transform .2s ease,box-shadow .2s ease}
+.panel:hover{transform:translate(-2px,-2px);box-shadow:11px 11px 0 var(--forest-12)}
+.pdp-two .panel:nth-child(2n){border-top-color:var(--gold)}
 .panel h3{font-size:21px;letter-spacing:.04em;margin-bottom:6px}
 .panel .rule{height:2px;background:var(--gold);margin:12px 0 16px}
 .panel p,.panel li{font-size:18px;color:var(--ink)}
@@ -575,9 +579,13 @@ nav.links a.on{border-color:var(--brick)}
 .diaas .brow.hero-p .nm{color:var(--brick)}
 .diaas .vl{font-family:'Fraunces';font-weight:900;font-size:18px}
 .diaas-note{font-size:15px;color:var(--olive);text-align:center;margin:14px auto 0;font-style:italic;max-width:62ch}
-.amino-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.amino{border:2px solid var(--forest);padding:18px 20px;background:var(--parchment);box-shadow:3px 3px 0 var(--forest-12)}
-.amino b{font-family:'Fraunces';font-size:19px;display:block;margin-bottom:3px}
+.amino-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:amino}
+.amino{position:relative;border:2px solid var(--forest);border-top:6px solid var(--brick);padding:22px 22px 20px;background:#FFF8EC;box-shadow:6px 6px 0 var(--forest-12);counter-increment:amino;transition:transform .18s ease,box-shadow .18s ease}
+.amino:nth-child(3n+2){border-top-color:var(--gold)}
+.amino:nth-child(3n){border-top-color:var(--olive)}
+.amino:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--forest-25)}
+.amino::before{content:counter(amino,decimal-leading-zero);position:absolute;top:16px;right:18px;font-family:'Fraunces';font-weight:900;font-size:16px;color:var(--gold)}
+.amino b{font-family:'Fraunces';font-size:20px;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
 .amino span{font-size:16px;color:var(--olive)}
 .src-list{max-width:800px;margin:0 auto;counter-reset:src}
 .src-list li{list-style:none;counter-increment:src;padding:12px 0;border-bottom:1px solid var(--forest-12);font-size:16.5px;color:var(--ink);display:flex;gap:16px}
@@ -830,6 +838,14 @@ nav.links{display:none}
 .ground-forest .car-dots i,.ground-olive .car-dots i{border-color:var(--gold)}
 .ground-forest .car-dots i.on,.ground-olive .car-dots i.on{background:var(--gold)}
 .car-hint{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--olive);margin-left:8px}
+/* small screens: carousel flows edge-to-edge — no clipped box, next card peeks */
+@media(max-width:960px){
+  .car .track{width:100vw;margin-left:calc(50% - 50vw);padding-left:28px;padding-right:28px;scroll-padding-left:28px}
+}
+@media(max-width:600px){
+  .car .track{padding-left:20px;padding-right:20px;scroll-padding-left:20px}
+  .prod-card{width:min(320px,78vw)}
+}
 .ground-forest .car-hint{color:rgba(248,222,185,.6)}
 
 /* ---------- science v6: story slider ---------- */
@@ -1017,11 +1033,45 @@ nav.links{display:none}
 .sci-photo .ptxt p{font-size:18.5px;color:rgba(248,222,185,.9);margin-bottom:14px}
 @media(max-width:820px){.sci-photo{grid-template-columns:1fr}}
 .whey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
-.whey{border:2px solid var(--forest);background:var(--parchment);box-shadow:5px 5px 0 var(--forest-12);padding:26px 26px 24px}
-.whey .big{font-family:'Fraunces';font-weight:900;font-size:44px;color:var(--brick);line-height:1}
+.whey{border:2px solid var(--forest);border-top:6px solid var(--brick);background:#FFF8EC;box-shadow:8px 8px 0 var(--forest-12);padding:28px 26px 26px;transition:transform .2s ease,box-shadow .2s ease}
+.whey:nth-child(2){border-top-color:var(--gold)}
+.whey:nth-child(3){border-top-color:var(--olive)}
+.whey:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--forest-25)}
+.whey .big{font-family:'Fraunces';font-weight:900;font-size:56px;color:var(--brick);line-height:1}
 .whey h3{font-size:19px;margin:10px 0 8px}
 .whey p{font-size:16.5px;color:var(--ink)}
 @media(max-width:820px){.whey-grid{grid-template-columns:1fr}}
+
+/* ---------- science: "built on purpose" interactive deck ---------- */
+.sci-why{transition:background .6s ease}
+.sci-why[data-tone="forest"]{background:rgba(30,51,37,.08)}
+.sci-why[data-tone="brick"]{background:rgba(157,76,50,.11)}
+.sci-why[data-tone="olive"]{background:rgba(82,89,56,.13)}
+.sci-why[data-tone="gold"]{background:rgba(201,155,63,.16)}
+.why-track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:14px max(28px,calc(50vw - 590px)) 30px;scroll-padding-left:max(28px,calc(50vw - 590px));scroll-behavior:smooth}
+.why-track::-webkit-scrollbar{display:none}
+.why-card{scroll-snap-align:center;flex:0 0 auto;width:min(430px,84vw);border:2px solid var(--forest);background:#FFF8EC;box-shadow:8px 8px 0 var(--forest-12);padding:30px 32px 26px;cursor:pointer;transition:background .35s ease,color .35s ease,transform .2s ease,box-shadow .2s ease}
+.why-card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--forest-25)}
+.why-card h3{font-size:22px;margin:10px 0 12px;transition:color .35s ease}
+.why-card p{font-size:17.5px;color:var(--ink);transition:color .35s ease}
+.wc-num{font-family:'Fraunces';font-weight:900;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--brick);transition:color .35s ease}
+.wc-src{margin-top:18px;padding-top:12px;border-top:2px solid var(--gold);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--brick);transition:color .35s ease,border-color .35s ease}
+.why-card.on{color:var(--parchment)}
+.why-card.on h3{color:var(--parchment)}
+.why-card.on p{color:rgba(248,222,185,.92)}
+.why-card.on .wc-num{color:var(--gold)}
+.why-card.on .wc-src{color:rgba(248,222,185,.85);border-top-color:rgba(248,222,185,.35)}
+.why-card.on[data-tone="forest"]{background:var(--forest);border-color:var(--forest)}
+.why-card.on[data-tone="brick"]{background:var(--brick);border-color:var(--brick)}
+.why-card.on[data-tone="olive"]{background:var(--olive);border-color:var(--olive)}
+.why-card.on[data-tone="gold"]{background:var(--gold);border-color:var(--forest);color:var(--forest)}
+.why-card.on[data-tone="gold"] h3{color:var(--forest)}
+.why-card.on[data-tone="gold"] p{color:rgba(30,51,37,.85)}
+.why-card.on[data-tone="gold"] .wc-num{color:var(--brick)}
+.why-card.on[data-tone="gold"] .wc-src{color:var(--forest);border-top-color:rgba(30,51,37,.35)}
+.why-dots{display:flex;justify-content:center;gap:9px;margin-top:2px}
+.why-dots i{width:11px;height:11px;border-radius:50%;border:2px solid var(--forest);cursor:pointer;transition:background .25s ease}
+.why-dots i.on{background:var(--brick);border-color:var(--brick)}
 .bag-card.naked .icn img{filter:brightness(0) invert(1);opacity:.9}
 .bag-card.naked .icn svg g{fill:var(--parchment)}
 
@@ -1035,7 +1085,7 @@ nav.links{display:none}
    ============================================================ */
 body{overflow-x:clip}
 .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
-.pdp-media{position:sticky;top:110px}
+.pdp-media{position:sticky;top:96px;align-self:start}
 .pdp-media .pdp-fig{position:static}
 .pdp-gal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px}
 .pdp-gal button{border:2px solid var(--forest-25);background:rgba(201,155,63,.08);padding:8px;cursor:pointer;aspect-ratio:1;display:flex;align-items:center;justify-content:center;transition:border-color .15s,transform .15s;overflow:hidden}
@@ -1053,7 +1103,8 @@ body{overflow-x:clip}
 .panel .notlist li{padding:10px 0;font-size:18px;align-items:baseline}
 .panel .notlist li::before{display:none}
 .panel .notlist .no{font-size:16px}
-@media(max-width:1020px){.pdp-media{position:static}.pdp-gal{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:1020px){.pdp-gal{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:900px){.pdp-media{position:static}}
 @media(max-width:820px){.rev-grid.three{grid-template-columns:1fr}.pdp-gal{grid-template-columns:repeat(3,1fr)}}
 /* about page */
 .about-hero{position:relative;overflow:hidden;background:var(--olive-deep);color:var(--parchment);padding:72px 0 0}
@@ -2684,27 +2735,40 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
     </div>
   </section>
 
-  <section class="sec-pad">
+  <section class="sec-pad sci-why" id="sci-why" data-tone="forest">
     <div class="wrap">
-      <div class="pdp-two">
-        <div class="panel"><h3>The leucine threshold</h3><div class="rule"></div>
-          <p>Muscle protein synthesis, the process your body uses to build and repair muscle, is switched on by the amino acid leucine. Research puts the trigger at roughly 2–3g per serving. A full 26g scoop of complete animal protein clears that bar. A small serving of incomplete protein never flips the switch.</p>
-          <div class="src" style="border-top-color:var(--gold);color:var(--brick)">Sources 3 <span class="amp">&amp;</span> 4 below</div>
-        </div>
-        <div class="panel"><h3>Muscle you keep</h3><div class="rule"></div>
-          <p>Muscle you don't feed is muscle you lose, and protein intake is one of the few levers proven to help you keep it, alongside staying active. Higher daily protein supports lean mass, strength, and recovery through every season of training and life.</p>
-          <div class="src" style="border-top-color:var(--gold);color:var(--brick)">Source 5 below</div>
-        </div>
-      </div>
-      <div class="pdp-two" style="margin-top:0">
-        <div class="panel"><h3>Easy on the gut, on purpose</h3><div class="rule"></div>
-          <p>No whey means no lactose. No soy, no gluten, no gums, no sugar alcohols — the usual suspects behind protein-shake bloat simply are not in the bag. Beef and egg proteins digest cleanly, which is why people who quit whey tend to stay here.</p>
-        </div>
-        <div class="panel"><h3>Sweetness from a fruit</h3><div class="rule"></div>
-          <p>Monk fruit has been used as a sweetener for centuries and carries zero sugar and zero calories into the scoop. No artificial sweeteners, no cane sugar, no blood-sugar rollercoaster. Prefer none at all? Plain Naked skips it entirely.</p>
-        </div>
+      <div class="sec-head" style="margin-bottom:36px"><div class="kicker center">Built on purpose</div>
+        <h2>Four choices. Four reasons.</h2>
+        <p class="lede">Every decision in the scoop has a why — tap a card to read it.</p>
       </div>
     </div>
+    <div class="why-track" id="why-track" aria-label="Why it works — scrollable cards">
+      <article class="why-card on" data-tone="forest" tabindex="0" role="button" aria-pressed="true">
+        <span class="wc-num">01 · Trigger</span>
+        <h3>The leucine threshold</h3>
+        <p>Muscle protein synthesis, the process your body uses to build and repair muscle, is switched on by the amino acid leucine. Research puts the trigger at roughly 2–3g per serving. A full 26g scoop of complete animal protein clears that bar. A small serving of incomplete protein never flips the switch.</p>
+        <div class="wc-src">Sources 3 <span class="amp">&amp;</span> 4 below</div>
+      </article>
+      <article class="why-card" data-tone="brick" tabindex="0" role="button" aria-pressed="false">
+        <span class="wc-num">02 · Keep</span>
+        <h3>Muscle you keep</h3>
+        <p>Muscle you don't feed is muscle you lose, and protein intake is one of the few levers proven to help you keep it, alongside staying active. Higher daily protein supports lean mass, strength, and recovery through every season of training and life.</p>
+        <div class="wc-src">Source 5 below</div>
+      </article>
+      <article class="why-card" data-tone="olive" tabindex="0" role="button" aria-pressed="false">
+        <span class="wc-num">03 · Digest</span>
+        <h3>Easy on the gut, on purpose</h3>
+        <p>No whey means no lactose. No soy, no gluten, no gums, no sugar alcohols — the usual suspects behind protein-shake bloat simply are not in the bag. Beef and egg proteins digest cleanly, which is why people who quit whey tend to stay here.</p>
+        <div class="wc-src">The clean-label rule</div>
+      </article>
+      <article class="why-card" data-tone="gold" tabindex="0" role="button" aria-pressed="false">
+        <span class="wc-num">04 · Sweeten</span>
+        <h3>Sweetness from a fruit</h3>
+        <p>Monk fruit has been used as a sweetener for centuries and carries zero sugar and zero calories into the scoop. No artificial sweeteners, no cane sugar, no blood-sugar rollercoaster. Prefer none at all? Plain Naked skips it entirely.</p>
+        <div class="wc-src">Zero sugar · zero calories</div>
+      </article>
+    </div>
+    <div class="why-dots" aria-hidden="true"></div>
   </section>
 
   <section class="sec-pad ground-olive">
@@ -3012,6 +3076,7 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
           <li><a href="#/product/carnivore-complete">Carnivore Complete</a></li>
                     <li><a href="#/product/bone-broth-collagen">Bone Broth Collagen</a></li>
           <li><a href="#/product/protein-multi-collagen">Protein + Multi Collagen</a></li>
+          <li><a href="#/product/beef-organ-complex">Organ Capsules</a></li>
           <li><a href="#/shop">Shop All Products</a></li>
         </ul>
       </div>
@@ -3029,15 +3094,17 @@ header.nav .hamb{color:var(--parchment);border-color:var(--parchment)}
         <h4>Support</h4>
         <ul>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://paleopro.com/pages/contact" target="_blank" rel="noopener">Contact Us</a></li>
+          <li><a href="https://paleopro.com/pages/shipping-returns" target="_blank" rel="noopener">Shipping <span class="amp"><span class="amp">&amp;</span></span> Returns</a></li>
+          <li><a href="https://paleopro.com/pages/wholesale" target="_blank" rel="noopener">Wholesale</a></li>
+          <li><a href="https://paleopro.com/pages/affiliate" target="_blank" rel="noopener">Creator Partnerships</a></li>
           <li><a href="mailto:info@paleopro.com">info@paleopro.com</a></li>
-          <li><a href="#">Shipping <span class="amp"><span class="amp">&amp;</span></span> Returns</a></li>
-          <li><a href="#">Subscriptions</a></li>
-          <li><a href="#">Wholesale</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <p>© 2026 Paleo Pro LLC · 1211 Liberty Way, Vista CA 92081 · Made in the USA with ingredients sourced worldwide.</p>
+      <p><a href="https://paleopro.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a> · <a href="https://paleopro.com/policies/terms-of-service" target="_blank" rel="noopener">Terms</a> · <a href="https://paleopro.com/policies/refund-policy" target="_blank" rel="noopener">Refunds</a></p>
       <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
     </div>
   </div>
@@ -3238,6 +3305,27 @@ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',e=>
 renderCart();
 </script>
 
+<script>
+// ---------- science "built on purpose" deck: click = color + tone shift ----------
+(function(){
+  const track=document.getElementById('why-track'),sec=document.getElementById('sci-why');
+  if(!track||!sec)return;
+  const cards=[...track.querySelectorAll('.why-card')];
+  const dotsWrap=sec.querySelector('.why-dots');
+  cards.forEach((c,i)=>{const d=document.createElement('i');if(i===0)d.classList.add('on');d.addEventListener('click',()=>activate(cards[i]));dotsWrap.appendChild(d)});
+  const dots=[...dotsWrap.children];
+  function activate(card){
+    cards.forEach((c,i)=>{const on=c===card;c.classList.toggle('on',on);c.setAttribute('aria-pressed',on);dots[i].classList.toggle('on',on)});
+    sec.dataset.tone=card.dataset.tone;
+    const r=card.getBoundingClientRect(),t=track.getBoundingClientRect();
+    track.scrollBy({left:r.left-t.left-(t.width-r.width)/2,behavior:'smooth'});
+  }
+  cards.forEach(c=>{
+    c.addEventListener('click',()=>activate(c));
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(c)}});
+  });
+})();
+</script>
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
 <script>
 /* ============================================================
@@ -3257,7 +3345,7 @@ renderCart();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'pp-site-v9';
+  var PAGE_ID = 'pp-site-v10';
 
   /* ---------------------------------------------- */
 
