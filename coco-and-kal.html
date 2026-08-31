@@ -116,6 +116,8 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 .h-mid     { font-family: var(--script); font-size: clamp(2.1rem, 4.5vw, 3.4rem); margin-bottom: .8rem; }
 .lead { max-width: 56ch; margin-inline: auto; font-size: 1.02rem; }
 
+.kicker + h1, .kicker + h2 { margin-top: 1.1rem; }
+
 .center { text-align: center; }
 .section { padding: clamp(4rem, 9vw, 7.5rem) clamp(1.2rem, 5vw, 4rem); position: relative; }
 .wrap { max-width: 1200px; margin-inline: auto; position: relative; }
@@ -507,11 +509,12 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 .product-card .frame { overflow: hidden; border-radius: 12px; position: relative; }
 .product-card img { aspect-ratio: 1; object-fit: cover; transition: transform .6s ease; }
 .product-card:hover img { transform: scale(1.09) rotate(1deg); }
-.product-card .cat {
-  position: absolute; top: 10px; left: 10px;
-  background: var(--cream); font-family: var(--caps-bold);
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  padding: .3rem .7rem; border-radius: 999px; box-shadow: var(--shadow-sm);
+.product-card .sold-banner {
+  position: absolute; top: 0; left: 0; right: 0;
+  background: var(--pink); color: var(--navy);
+  font-family: var(--caps-bold); text-align: center;
+  font-size: .68rem; letter-spacing: .25em; text-transform: uppercase;
+  padding: .45rem .7rem;
 }
 .product-card h3 { font-family: var(--caps-bold); font-size: .95rem; letter-spacing: .16em; text-transform: uppercase; margin-top: .9rem; }
 .product-card .note { font-size: .85rem; color: #5a6785; margin-top: .2rem; min-height: 2.6em; }
@@ -748,6 +751,8 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 }
 .footer-base .script { font-size: 1.15rem; color: var(--pink); letter-spacing: 0; text-transform: none; }
 
+.btn-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem 1rem; margin-top: 2rem; }
+
 /* gentle bobbing motion for in-flow elements (e.g. the big starfish) */
 .bob { animation: floaty 6s ease-in-out infinite; }
 
@@ -808,6 +813,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         <li><a href="about.html">About us</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="events.html">Events</a></li>
+        <li><a class="ig-link" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
         <li><a class="nav-cta" href="shop.html">Shop ★</a></li>
       </ul>
     </nav>
@@ -850,7 +856,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   </section>
 
   <!-- ══════════ FEATURED — horizontal drag gallery ══════════ -->
-  <section style="background: var(--sage-soft); position:relative;" class="reveal">
+  <section style="background: var(--dusty-soft); position:relative;" class="reveal">
     <div class="scallop" style="--sc-color: var(--cream);"></div>
     <div class="center" style="padding-top:3.5rem;">
       <span class="kicker">shop favorites</span>
@@ -913,7 +919,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 <main class="pageview" data-view="shop" hidden>
 
 
-  <section class="page-hero">
+  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
     <span class="kicker">handmade & one of a kind</span>
     <h1 class="h-script">shop the collection</h1>
     <p class="lead" id="shop-intro"></p>
@@ -941,7 +947,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <span class="kicker">welcome, friend</span>
     <h1 class="h-script" id="about-intro-title"></h1>
     <p class="lead" id="about-intro-text"></p>
-    <img src="assets/coco-and-kal/24657380c5.png" alt="Coco & Kal" style="width:min(340px, 62vw); margin: 2rem auto 0;" class="reveal">
+    <div style="margin-top:2.2rem;" class="reveal"><a class="btn ig-link" href="https://instagram.com" target="_blank" rel="noopener">Follow along on Instagram ★</a></div>
   </section>
 
   <section class="section" style="padding-top:1rem;">
@@ -968,12 +974,12 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
   <section class="section center">
     <div class="wrap">
-      <img src="assets/coco-and-kal/25565340c9.png" alt="" style="width:230px; margin: 0 auto 1.4rem;" class="reveal bob">
+      <img src="assets/coco-and-kal/25565340c9.png" alt="" style="width:330px; margin: 0 auto 1.4rem;" class="reveal bob">
       <h2 class="h-mid reveal" id="outro-title"></h2>
       <p class="lead reveal d1" id="outro-text"></p>
-      <div style="margin-top:2rem;" class="reveal d2">
+      <div class="btn-row reveal d2">
         <a class="btn" href="shop.html">Shop the collection</a>
-        <a class="btn ghost" href="events.html" style="margin-left:.6rem;">Come see us</a>
+        <a class="btn ghost" href="events.html">Come see us</a>
       </div>
     </div>
   </section>
@@ -1006,33 +1012,26 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 <main class="pageview" data-view="events" hidden>
 
 
-  <section class="page-hero">
+  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
     <span class="kicker">pull up a chair</span>
     <h1 class="h-script">where to find us</h1>
     <p class="lead" id="events-intro"></p>
   </section>
 
-  <section class="section" style="padding-top:2rem;">
-    <div class="floaty slow" style="top:6%; right:4%; width:64px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
-    <div class="floaty" style="bottom:10%; left:3%; width:56px;"><img src="assets/coco-and-kal/7766059cae.png" alt=""></div>
-    <div class="floaty fast" style="top:24%; left:5%; width:44px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
-    <div class="floaty" style="top:46%; right:6%; width:50px;"><img src="assets/coco-and-kal/b095cb4655.png" alt=""></div>
-    <div class="floaty slow" style="top:66%; left:4%; width:60px;"><img src="assets/coco-and-kal/04338598a8.png" alt=""></div>
-    <div class="floaty fast" style="bottom:4%; right:8%; width:46px;"><img src="assets/coco-and-kal/890d3c54b3.png" alt=""></div>
-    <div class="floaty slow" style="top:2%; left:14%; width:38px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
+  <section class="section texture-stripes" style="padding-top:2rem;">
     <div class="wrap">
       <div class="event-list" id="event-list"></div>
     </div>
   </section>
 
-  <section style="background: var(--dusty-soft); padding: 3.5rem 0; position: relative;">
-    <div class="scallop" style="--sc-color: var(--cream); position:absolute; top:0; left:0; right:0;"></div>
+  <section class="texture-stripes" style="padding: 3.5rem 0; position: relative;">
+    <div class="scallop" style="--sc-color: var(--dusty-soft); position:absolute; top:0; left:0; right:0;"></div>
     <div class="center" style="margin-bottom:1.5rem; padding-inline:1.2rem;">
       <span class="kicker">from past markets</span>
       <h2 class="h-mid">market days ♥</h2>
     </div>
     <div class="photo-marquee"><div class="photo-marquee-track" id="event-marquee"></div></div>
-    <div class="scallop" style="--sc-color: var(--cream); position:absolute; bottom:0; left:0; right:0; transform: rotate(180deg);"></div>
+    <div class="scallop" style="--sc-color: var(--dusty-soft); position:absolute; bottom:0; left:0; right:0; transform: rotate(180deg);"></div>
   </section>
 
   <section class="section center texture-stripes">
@@ -1278,6 +1277,7 @@ const CONTENT = {
 
     { name: "Sweet Pea Shell Necklace", price: "$30", category: "Jewelry",
       img: "assets/coco-and-kal/29bc7e44ad.jpg",
+      soldOut: true,      // ← shows the "sold out" banner on its card (delete this line when it's back!)
       note: "Soft green beads and a white shell charm." },
 
     { name: "Sea Glass Strand",       price: "$26", category: "Jewelry",
@@ -1594,6 +1594,7 @@ function initFooter() {
   $(".footer-ig", f).href = C.general.instagramUrl;
   $(".footer-email", f).textContent = C.general.email;
   $(".footer-email", f).href = "mailto:" + C.general.email;
+  $$("a.ig-link").forEach(a => { a.href = C.general.instagramUrl; });
   $(".newsletter", f)?.addEventListener("submit", e => {
     e.preventDefault();
     toast("Thanks for joining the table! ♥ (Sign-ups go live with our shop)");
@@ -1647,7 +1648,7 @@ function productCard(p) {
   const card = el(`
     <div class="product-card reveal" data-cat="${esc(p.category)}">
       <div class="frame">
-        <span class="cat">${esc(p.category)}</span>
+        ${p.soldOut === true ? '<span class="sold-banner">sold out ♥</span>' : ""}
         <img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy">
       </div>
       <h3>${esc(p.name)}</h3>
@@ -1809,7 +1810,7 @@ window.renderProductPage = function (name) {
 
   // merge every matching variant override (later rules win)
   function resolve(selection) {
-    const out = { price: p.price, img: null, soldOut: false, stock: undefined };
+    const out = { price: p.price, img: null, soldOut: p.soldOut === true, stock: undefined };
     (p.variants || []).forEach(v => {
       const hit = v.match.every((m, i) => m === "*" || (opts[i] && m === selection[opts[i].name]));
       if (hit) {
@@ -2049,7 +2050,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'coco-and-kal-v9';
+  var PAGE_ID = 'coco-and-kal-v10';
 
   /* ---------------------------------------------- */
 
@@ -2216,48 +2217,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return resolveAnchor(a);
   }
   function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
-  // Human-readable name of the view an element lives on. Works for sites that
-  // toggle sections via data-view containers (no hash) as well as hash routers.
-  function detectViewName(sel) {
-    try {
-      var el = sel ? document.querySelector(sel) : null;
-      while (el && el !== document.body) {
-        if (el.dataset && el.dataset.view) return el.dataset.view;
-        if (el.id && /^page-/.test(el.id)) return el.id.replace(/^page-/, '');
-        el = el.parentElement;
-      }
-    } catch (e) {}
-    return location.hash ? viewLabel(location.hash) : undefined;
-  }
-  // For sites that hide views with the `hidden` attribute (no URL change):
-  // reveal the view containing the anchor by flipping `hidden` the same way
-  // the site's own router does. Returns true if the anchor became visible.
-  function tryReveal(a) {
-    try {
-      if (!a.sel) return false;
-      var el = document.querySelector(a.sel);
-      if (!el) return false;
-      if (el.getBoundingClientRect().height > 0) return true;
-      // highest hidden ancestor = the view container that's switched off
-      var hid = null, n = el;
-      while (n && n !== document.body) {
-        if (n.hidden || getComputedStyle(n).display === 'none') hid = n;
-        n = n.parentElement;
-      }
-      if (!hid || !hid.parentElement || !hid.hasAttribute('hidden')) return false;
-      Array.prototype.forEach.call(hid.parentElement.children, function (s) {
-        if (s !== hid && s.tagName === hid.tagName && !s.hasAttribute('hidden')) {
-          var share = Array.prototype.some.call(hid.classList, function (c) {
-            return s.classList.contains(c);
-          });
-          if (share || hid.classList.length === 0) s.setAttribute('hidden', '');
-        }
-      });
-      hid.removeAttribute('hidden');
-      window.scrollTo(0, 0);
-      return el.getBoundingClientRect().height > 0;
-    } catch (e) { return false; }
-  }
 
   /* ------------------- STATE ------------------- */
   var threads = {};           // latest data
@@ -2504,11 +2463,10 @@ document.addEventListener("DOMContentLoaded", () => {
       num.textContent = threadNumber(tid);
       var body = document.createElement('div');
       body.className = 'pbody';
-      var hashElsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
-      var elsewhere = hashElsewhere || !threadVisiblePos(t);
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
       body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
         + (n > 1 ? ' · ' + n + ' replies' : '')
-        + (elsewhere ? ' · on <b>' + esc(t.viewName || viewLabel(t.view) || 'another page') + '</b>' : '') + '</div>'
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
         + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
       item.appendChild(num);
       item.appendChild(body);
@@ -2520,13 +2478,9 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(render, 350);
         };
         if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
-          // Hash-routed site: switch views via the URL first
+          // Comment lives on another view of this site — switch to it first
           location.hash = t.view || '#';
           setTimeout(go, 450);
-        } else if (!threadVisiblePos(t)) {
-          // Hidden-attribute site (no URL change): flip the view directly
-          tryReveal(t.anchor || {});
-          setTimeout(go, 300);
         } else go();
       });
       list.appendChild(item);
@@ -2598,8 +2552,6 @@ document.addEventListener("DOMContentLoaded", () => {
         anchor: draft.anchor, resolved: false, created: Date.now(),
         view: currentView(), comments: {}
       };
-      var vn = detectViewName(draft.anchor.sel);
-      if (vn) t.viewName = vn;
       t.comments[uid()] = { name: name, text: text, ts: Date.now() };
       store.createThread(t).then(function (tid) {
         draft = null; commentMode = false; setMode(false);
@@ -2793,20 +2745,6 @@ document.addEventListener("DOMContentLoaded", () => {
     openThreadId = null; draft = null;
     render();
   });
-  // Sites that switch views by toggling hidden/class/style (no hash change):
-  // watch for those DOM flips and refresh pin visibility. Only pins are
-  // re-rendered (never the UI) so nobody loses a half-typed comment.
-  if (window.MutationObserver) {
-    var pinTimer = null;
-    new MutationObserver(function () {
-      if (pinTimer) return;
-      pinTimer = setTimeout(function () {
-        pinTimer = null;
-        layer.style.height = document.documentElement.scrollHeight + 'px';
-        renderPins();
-      }, 250);
-    }).observe(document.body, { attributes: true, subtree: true, attributeFilter: ['hidden', 'class', 'style'] });
-  }
 
   /* ------------------- BOOT ------------------- */
   function boot() {
