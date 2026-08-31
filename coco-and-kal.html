@@ -510,7 +510,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 .product-card img { aspect-ratio: 1; object-fit: cover; transition: transform .6s ease; }
 .product-card:hover img { transform: scale(1.09) rotate(1deg); }
 .product-card .sold-banner {
-  position: absolute; top: 0; left: 0; right: 0;
+  position: absolute; top: 0; left: 0; right: 0; z-index: 2;
   background: var(--pink); color: var(--navy);
   font-family: var(--caps-bold); text-align: center;
   font-size: .68rem; letter-spacing: .25em; text-transform: uppercase;
@@ -713,7 +713,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 }
 .footer-grid {
   max-width: 1200px; margin-inline: auto;
-  display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
 }
 .site-footer .logo-img { width: 170px; margin-bottom: 1.2rem; }
@@ -813,7 +813,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         <li><a href="about.html">About us</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a class="ig-link" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a class="ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a class="nav-cta" href="shop.html">Shop ★</a></li>
       </ul>
     </nav>
@@ -885,7 +885,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   </section>
 
   <!-- ══════════ EVENTS TEASER ══════════ -->
-  <section class="section">
+  <section class="section texture-stripes">
     <div class="wrap">
       <div class="center">
         <span class="kicker">on the calendar</span>
@@ -947,7 +947,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <span class="kicker">welcome, friend</span>
     <h1 class="h-script" id="about-intro-title"></h1>
     <p class="lead" id="about-intro-text"></p>
-    <div style="margin-top:2.2rem;" class="reveal"><a class="btn ig-link" href="https://instagram.com" target="_blank" rel="noopener">Follow along on Instagram ★</a></div>
+    <div style="margin-top:2.2rem;" class="reveal"><a class="btn ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">Follow along on Instagram ★</a></div>
   </section>
 
   <section class="section" style="padding-top:1rem;">
@@ -972,7 +972,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     </div>
   </section>
 
-  <section class="section center">
+  <section class="section center texture-stripes">
     <div class="wrap">
       <img src="assets/coco-and-kal/25565340c9.png" alt="" style="width:330px; margin: 0 auto 1.4rem;" class="reveal bob">
       <h2 class="h-mid reveal" id="outro-title"></h2>
@@ -991,7 +991,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 <main class="pageview" data-view="journal" hidden>
 
 
-  <section class="page-hero">
+  <section class="page-hero texture-stripes">
     <span class="kicker">the coco & kal journal</span>
     <h1 class="h-script">little stories, big love</h1>
     <p class="lead" id="journal-intro"></p>
@@ -1012,26 +1012,24 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 <main class="pageview" data-view="events" hidden>
 
 
-  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
+  <section class="page-hero">
     <span class="kicker">pull up a chair</span>
     <h1 class="h-script">where to find us</h1>
     <p class="lead" id="events-intro"></p>
   </section>
 
-  <section class="section texture-stripes" style="padding-top:2rem;">
+  <section class="section" style="padding-top:2rem;">
     <div class="wrap">
       <div class="event-list" id="event-list"></div>
     </div>
   </section>
 
-  <section class="texture-stripes" style="padding: 3.5rem 0; position: relative;">
-    <div class="scallop" style="--sc-color: var(--dusty-soft); position:absolute; top:0; left:0; right:0;"></div>
+  <section style="background: var(--dusty-soft); padding: 3.5rem 0; position: relative;">
     <div class="center" style="margin-bottom:1.5rem; padding-inline:1.2rem;">
       <span class="kicker">from past markets</span>
       <h2 class="h-mid">market days ♥</h2>
     </div>
     <div class="photo-marquee"><div class="photo-marquee-track" id="event-marquee"></div></div>
-    <div class="scallop" style="--sc-color: var(--dusty-soft); position:absolute; bottom:0; left:0; right:0; transform: rotate(180deg);"></div>
   </section>
 
   <section class="section center texture-stripes">
@@ -1050,7 +1048,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 <main class="pageview" data-view="product" hidden>
 
 
-  <section class="section" style="padding-top: 2rem; padding-bottom: 3rem;">
+  <section class="section texture-stripes" style="padding-top: 2rem; padding-bottom: 3rem;">
     <div class="floaty slow" style="top:10%; right:3%; width:56px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
     <div class="floaty" style="bottom:14%; left:2.5%; width:48px;"><img src="assets/coco-and-kal/7766059cae.png" alt=""></div>
     <div class="wrap">
@@ -1090,6 +1088,105 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
   
 </main>
+
+<main class="pageview" data-view="contact" hidden>
+
+  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
+    <span class="kicker">say hello</span>
+    <h1 class="h-script">contact us</h1>
+    <p class="lead">Questions about an order, a custom idea, or a market invite — we'd love to hear from you.</p>
+  </section>
+
+  <section class="section" style="padding-top:2rem;">
+    <div class="wrap center" style="max-width:720px;">
+      <p class="lead">The fastest way to reach us is email — we usually reply within 1–2 business days.</p>
+      <div class="btn-row">
+        <a class="btn" href="mailto:hello@cocoandkal.com">Email hello@cocoandkal.com</a>
+        <a class="btn ghost ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">DM us on Instagram ★</a>
+      </div>
+      <p style="margin-top:2.2rem; color:#5a6785;">Coco &amp; Kal, LLC · Handmade in Minnesota, USA</p>
+      <p style="margin-top:.6rem; color:#5a6785;">You can also catch us in person — see <a href="events.html" style="color:var(--dusty);">where we'll be next</a>.</p>
+    </div>
+  </section>
+
+  <div class="ticker flat" aria-hidden="true"></div>
+
+</main>
+<main class="pageview" data-view="shipping-returns" hidden>
+
+  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
+    <span class="kicker">the practical stuff</span>
+    <h1 class="h-script">shipping &amp; returns</h1>
+    <p class="lead">Everything you need to know about getting your goodies — and what to do if something isn't right.</p>
+  </section>
+
+  <section class="section" style="padding-top:2rem;">
+    <div class="wrap" style="max-width:760px;">
+      <h2 class="h-mid">Shipping</h2>
+      <p style="margin-top:1rem;">Every piece is handmade, so please allow 2–4 business days for us to pack up your order. Once it ships, you'll receive a confirmation email with tracking. Orders ship from Minnesota via USPS; most arrive within 3–7 business days. We currently ship within the United States.</p>
+      <p style="margin-top:1rem;">Shipping costs are calculated at checkout based on your order. If your package arrives damaged, email us within 7 days at <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a> with a photo and we'll make it right.</p>
+      <h2 class="h-mid" style="margin-top:2.5rem;">Returns &amp; exchanges</h2>
+      <p style="margin-top:1rem;">We want you to love what you ordered. If you don't, you may return unworn, unused items in their original condition within 30 days of delivery for a refund to your original payment method. Return shipping is the buyer's responsibility unless the item arrived damaged or we made a mistake.</p>
+      <p style="margin-top:1rem;">To start a return or exchange, email <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a> with your order number. Custom and made-to-order pieces are final sale unless they arrive damaged.</p>
+      <p style="margin-top:1rem;">Refunds are issued within 5–10 business days of us receiving your return.</p>
+    </div>
+  </section>
+
+  <div class="ticker flat" aria-hidden="true"></div>
+
+</main>
+<main class="pageview" data-view="privacy" hidden>
+
+  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
+    <span class="kicker">your info, kept safe</span>
+    <h1 class="h-script">privacy policy</h1>
+  </section>
+
+  <section class="section" style="padding-top:2rem;">
+    <div class="wrap" style="max-width:760px;">
+      <p>Coco &amp; Kal, LLC (“we”, “us”) respects your privacy. This policy explains what we collect and how we use it.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">What we collect</h2>
+      <p style="margin-top:1rem;">When you place an order or contact us, we collect the information you provide: your name, email address, shipping address, and order details. Payment is processed securely by our payment provider — we never see or store your full card number. Like most websites, we may also collect basic analytics (pages visited, device type) to understand how the site is used.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">How we use it</h2>
+      <p style="margin-top:1rem;">We use your information to fulfill and ship orders, respond to your messages, and — only if you've signed up — send occasional newsletter emails (you can unsubscribe any time). We never sell your personal information.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Sharing</h2>
+      <p style="margin-top:1rem;">We share information only with the services that help us run the shop — our e-commerce platform, payment processor, and shipping carriers — and only what they need to do their job.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Your choices</h2>
+      <p style="margin-top:1rem;">You may request a copy of the personal information we hold about you, or ask us to correct or delete it, by emailing <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a>.</p>
+      <p style="margin-top:2rem; color:#5a6785;">Last updated: August 2026</p>
+    </div>
+  </section>
+
+  <div class="ticker flat" aria-hidden="true"></div>
+
+</main>
+<main class="pageview" data-view="terms" hidden>
+
+  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
+    <span class="kicker">the ground rules</span>
+    <h1 class="h-script">terms of service</h1>
+  </section>
+
+  <section class="section" style="padding-top:2rem;">
+    <div class="wrap" style="max-width:760px;">
+      <p>By using this website and purchasing from Coco &amp; Kal, LLC, you agree to the terms below.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Products &amp; orders</h2>
+      <p style="margin-top:1rem;">Every item is handmade, so slight variations in color, shape, and size are part of the charm — no two pieces are exactly alike. Product photos are as accurate as we can make them, but colors may vary slightly by screen. We reserve the right to cancel and refund any order (for example, if an item is out of stock or mispriced).</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Pricing &amp; payment</h2>
+      <p style="margin-top:1rem;">All prices are in US dollars. Applicable sales tax is added at checkout. Payment is due at the time of purchase through our secure checkout.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Shipping &amp; returns</h2>
+      <p style="margin-top:1rem;">Shipping times and our return policy are described on our <a href="shipping-returns.html" style="color:var(--dusty);">Shipping &amp; returns</a> page, which is part of these terms.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Our content</h2>
+      <p style="margin-top:1rem;">All photos, artwork, designs, and text on this site belong to Coco &amp; Kal, LLC and may not be reproduced without permission.</p>
+      <h2 class="h-mid" style="margin-top:2rem;">Questions</h2>
+      <p style="margin-top:1rem;">Reach us any time at <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a>.</p>
+      <p style="margin-top:2rem; color:#5a6785;">Last updated: August 2026</p>
+    </div>
+  </section>
+
+  <div class="ticker flat" aria-hidden="true"></div>
+
+</main>
 <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -1104,6 +1201,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
           <li><a href="about.html">About us</a></li>
           <li><a href="journal.html">Journal</a></li>
           <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
       </div>
       <div>
@@ -1116,6 +1214,15 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
           <input type="email" placeholder="your email" required aria-label="Email">
           <button type="submit">Join</button>
         </form>
+      </div>
+      <div>
+        <h4>The fine print</h4>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="shipping-returns.html">Shipping &amp; returns</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-base">
@@ -1155,7 +1262,7 @@ const CONTENT = {
     // The scrolling ticker text. Items repeat in a loop with stars between them.
     ticker: ["handmade jewelry", "watercolor prints", "made for gathering", "paper goods", "see you at the market"],
     instagram: "@cocoandkal",                 // shown in the footer
-    instagramUrl: "https://instagram.com",    // paste your real profile link here
+    instagramUrl: "https://www.instagram.com/cocoandkal/",   // the real profile link
     email: "hello@cocoandkal.com",
     footerBlurb: "Two friends making jewelry, watercolors & paper goods in Minnesota — and setting a place at the table for you.",
     // Small note shown when someone taps "Add to bag" (until Shopify checkout is live)
@@ -2050,7 +2157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'coco-and-kal-v10';
+  var PAGE_ID = 'coco-and-kal-v11';
 
   /* ---------------------------------------------- */
 
