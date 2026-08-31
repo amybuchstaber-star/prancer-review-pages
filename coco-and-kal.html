@@ -809,7 +809,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 @media (max-width: 900px) {
   .hero-grid, .about-teaser .wrap, .person { grid-template-columns: 1fr; }
   .hero-stack { min-height: 420px; margin-top: 1rem; }
-  .person:nth-of-type(even) .person-photos { order: 0; }
+  .person .person-photos { order: 2; }
   .footer-grid { grid-template-columns: 1fr; gap: 2.2rem; }
   .make-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
   .event-card { grid-template-columns: auto 1fr; }
@@ -823,6 +823,35 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   .reveal { opacity: 1; transform: none; }
 }
 
+
+/* ═══════ v13 review-round edits ═══════ */
+.hero-tap-hint { display: none; }
+@media (max-width: 900px) {
+  /* hero: tap hint under the polaroids */
+  .hero-tap-hint {
+    display: block; text-align: center;
+    font-family: var(--script-slant); color: var(--dusty);
+    font-size: 1.15rem; letter-spacing: 0; margin-top: 1rem;
+  }
+  /* hero: pink star moves to the right edge, beside the buttons */
+  #home-hero-star { top: 42% !important; left: auto !important; right: 2% !important; width: 54px !important; }
+  /* what-we-make: horizontal scroll to save room */
+  .make-grid {
+    display: flex; overflow-x: auto; max-width: none; margin-inline: 0;
+    gap: 1rem; padding: .5rem .2rem 1rem;
+    scroll-snap-type: x proximity; scrollbar-width: none;
+  }
+  .make-grid::-webkit-scrollbar { display: none; }
+  .make-card { flex: 0 0 auto; width: 74vw; scroll-snap-align: center; }
+  /* journal teaser: just one post on mobile */
+  #home-posts .post-card:nth-child(n+2) { display: none; }
+  /* about hero: stars up out of the text, chairs down off the button */
+  #about-star { top: 2% !important; }
+  #about-star-green { top: 2.5% !important; right: 4% !important; }
+  #about-chairs { bottom: .5% !important; width: 54px !important; }
+  /* events: bigger market-day photos */
+  .photo-marquee img { height: 250px; }
+}
 </style>
 </head>
 <body data-page="preview">
@@ -845,7 +874,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
   <!-- ══════════ HERO ══════════ -->
   <section class="hero">
-    <div class="floaty slow" style="top:8%; left:4%; width:70px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
+    <div class="floaty slow" id="home-hero-star" style="top:8%; left:4%; width:70px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
     <div class="floaty" style="top:60%; left:2%; width:56px;"><img src="assets/coco-and-kal/7766059cae.png" alt=""></div>
     <div class="floaty fast" style="top:12%; right:6%; width:60px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
     <div class="floaty slow" style="bottom:10%; right:3%; width:80px;"><img src="assets/coco-and-kal/04338598a8.png" alt=""></div>
@@ -861,6 +890,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         </div>
       </div>
       <div class="hero-stack" id="hero-stack"></div>
+      <p class="hero-tap-hint" aria-hidden="true">tap to see the photos ★</p>
     </div>
   </section>
 
@@ -874,6 +904,19 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
       <h2 class="h-mid" id="make-title"></h2>
       <p class="lead" id="make-text"></p>
       <div class="make-grid" id="make-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ ABOUT TEASER ══════════ -->
+  <section class="section about-teaser">
+    <div class="wrap">
+      <img class="torn reveal" src="assets/coco-and-kal/32d1a51dbc.png" alt="Courtney and Kali">
+      <div class="reveal d1">
+        <span class="kicker">your creators</span>
+        <h2 class="h-mid" id="about-title"></h2>
+        <p style="margin: 1.2rem 0 1.8rem;" id="about-text"></p>
+        <a class="btn" href="about.html" id="about-btn"></a>
+      </div>
     </div>
   </section>
 
@@ -893,15 +936,17 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <div class="scallop" style="--sc-color: var(--cream); transform: rotate(180deg);"></div>
   </section>
 
-  <!-- ══════════ ABOUT TEASER ══════════ -->
-  <section class="section about-teaser">
+  <!-- ══════════ EVENTS TEASER ══════════ -->
+  <section class="section texture-stripes">
     <div class="wrap">
-      <img class="torn reveal" src="assets/coco-and-kal/32d1a51dbc.png" alt="Courtney and Kali">
-      <div class="reveal d1">
-        <span class="kicker">your creators</span>
-        <h2 class="h-mid" id="about-title"></h2>
-        <p style="margin: 1.2rem 0 1.8rem;" id="about-text"></p>
-        <a class="btn" href="about.html" id="about-btn"></a>
+      <div class="center">
+        <span class="kicker">on the calendar</span>
+        <h2 class="h-mid" id="events-title"></h2>
+        <p class="lead" id="events-text"></p>
+      </div>
+      <div class="event-list" id="home-events"></div>
+      <div class="center" style="margin-top:2.2rem;">
+        <a class="btn ghost" href="events.html" id="events-btn"></a>
       </div>
     </div>
   </section>
@@ -914,21 +959,6 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
       <div class="post-grid" id="home-posts"></div>
       <div style="margin-top:2.4rem;">
         <a class="btn" href="journal.html" id="journal-btn"></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ EVENTS TEASER ══════════ -->
-  <section class="section texture-stripes">
-    <div class="wrap">
-      <div class="center">
-        <span class="kicker">on the calendar</span>
-        <h2 class="h-mid" id="events-title"></h2>
-        <p class="lead" id="events-text"></p>
-      </div>
-      <div class="event-list" id="home-events"></div>
-      <div class="center" style="margin-top:2.2rem;">
-        <a class="btn ghost" href="events.html" id="events-btn"></a>
       </div>
     </div>
   </section>
@@ -947,7 +977,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <p class="lead" id="shop-intro"></p>
   </section>
 
-  <div class="ticker" aria-hidden="true" style="margin-top:2.5rem;"></div>
+  <div class="ticker" aria-hidden="true"></div>
 
   <section class="section" style="padding-top:2.5rem;">
     <div class="wrap">
@@ -962,10 +992,10 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
 
   <section class="page-hero texture-gingham" style="padding-bottom: 4rem;">
-    <div class="floaty slow" style="top:12%; left:6%; width:64px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
+    <div class="floaty slow" id="about-star" style="top:12%; left:6%; width:64px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
     <div class="floaty" style="top:58%; left:3%; width:54px;"><img src="assets/coco-and-kal/7766059cae.png" alt=""></div>
-    <div class="floaty fast" style="top:16%; right:7%; width:56px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
-    <div class="floaty slow" style="bottom:8%; right:4%; width:74px;"><img src="assets/coco-and-kal/04338598a8.png" alt=""></div>
+    <div class="floaty fast" id="about-star-green" style="top:16%; right:7%; width:56px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
+    <div class="floaty slow" id="about-chairs" style="bottom:8%; right:4%; width:74px;"><img src="assets/coco-and-kal/04338598a8.png" alt=""></div>
     <span class="kicker">welcome, friend</span>
     <h1 class="h-script" id="about-intro-title"></h1>
     <p class="lead" id="about-intro-text"></p>
@@ -1054,12 +1084,12 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <div class="photo-marquee"><div class="photo-marquee-track" id="event-marquee"></div></div>
   </section>
 
-  <section class="section center texture-stripes">
+  <section class="section center texture-stripes" style="padding-top:3rem; padding-bottom:4rem;">
     <div class="wrap reveal">
-      <img src="assets/coco-and-kal/d1c99caa62.png" alt="" style="width:280px; max-width:70vw; margin:0 auto 1.2rem;">
+      <img src="assets/coco-and-kal/d1c99caa62.png" alt="" style="width:380px; max-width:80vw; margin:-3.2rem auto -2.4rem;">
       <h2 class="h-mid">hosting a market or event?</h2>
       <p class="lead">We'd love to set up our two chairs at your gathering. Send us a note and let's make it happen!</p>
-      <div style="margin-top:1.8rem;"><a class="btn" href="mailto:hello@cocoandkal.com" id="invite-btn">Invite us over</a></div>
+      <div style="margin-top:1.8rem;"><a class="btn" href="contact.html" id="invite-btn">Invite us over</a></div>
     </div>
   </section>
 
@@ -1135,16 +1165,11 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         <form class="contact-form" id="contact-form" method="post" action="/contact#contact-form" accept-charset="UTF-8">
           <input type="hidden" name="form_type" value="contact">
           <input type="hidden" name="utf8" value="✓">
-          <div class="cf-row">
-            <label>Name
-              <input type="text" name="contact[name]" placeholder="your name" required autocomplete="name">
-            </label>
-            <label>Email
-              <input type="email" name="contact[email]" placeholder="you@email.com" required autocomplete="email">
-            </label>
-          </div>
-          <label>Phone <span class="cf-optional">(optional)</span>
-            <input type="tel" name="contact[phone]" placeholder="(555) 555-5555" autocomplete="tel">
+          <label>Name
+            <input type="text" name="contact[name]" placeholder="your name" required autocomplete="name">
+          </label>
+          <label>Email
+            <input type="email" name="contact[email]" placeholder="you@email.com" required autocomplete="email">
           </label>
           <label>Message
             <textarea name="contact[body]" rows="5" placeholder="Tell us what's on your mind — an order, a custom idea, a market invite…" required></textarea>
@@ -2214,7 +2239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'coco-and-kal-v12';
+  var PAGE_ID = 'coco-and-kal-v13';
 
   /* ---------------------------------------------- */
 
