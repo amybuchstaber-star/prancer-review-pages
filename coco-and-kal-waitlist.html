@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coco & Kal — made for gathering</title>
-  <meta name="description" content="Handmade jewelry & watercolor prints by two friends in Minnesota. Made for gathering.">
+  <meta name="description" content="Handmade jewelry & watercolor prints by two friends in Minnesota. Join the waitlist for first dibs on our first drop.">
   <link rel="icon" type="image/png" href="assets/coco-and-kal/ce3fcc21dd.png">
   
 
@@ -728,6 +728,10 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 .contact-form .btn { align-self: center; margin-top: .4rem; cursor: pointer; }
 @media (max-width: 640px) { .contact-form .cf-row { grid-template-columns: 1fr; } }
 
+.wl-fine { text-align: center; font-size: .82rem; color: #5a6785; margin-top: .2rem; }
+.wl-thanks { text-align: center; }
+.waitlist-form { background: var(--white); border-radius: var(--radius); padding: clamp(1.4rem, 4vw, 2.2rem); box-shadow: var(--shadow-sm); }
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--navy); color: var(--cream);
@@ -863,10 +867,8 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About us</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="events.html">Events</a></li>
         <li><a class="ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a class="nav-cta" href="shop.html">Shop ★</a></li>
+        <li><a class="nav-cta" href="waitlist.html">Join the waitlist ★</a></li>
       </ul>
     </nav>
   </header>
@@ -886,8 +888,8 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         <h1><span class="line1" id="hero-l1"></span><span class="line2" id="hero-l2"></span></h1>
         <p id="hero-text"></p>
         <div class="hero-btns">
-          <a class="btn" href="shop.html" id="hero-b1"></a>
-          <a class="btn ghost" href="events.html" id="hero-b2"></a>
+          <a class="btn" href="waitlist.html" id="hero-b1"></a>
+          <a class="btn ghost" href="about.html" id="hero-b2"></a>
         </div>
       </div>
       <div class="hero-stack" id="hero-stack"></div>
@@ -925,41 +927,27 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   <section style="background: var(--dusty-soft); position:relative;" class="reveal">
     <div class="scallop" style="--sc-color: var(--cream);"></div>
     <div class="center" style="padding-top:3.5rem;">
-      <span class="kicker">shop favorites</span>
+      <span class="kicker">coming soon</span>
       <h2 class="h-mid" id="featured-title"></h2>
       <p class="lead" id="featured-text" style="padding-inline:1.2rem;"></p>
     </div>
     <div class="hscroll" id="featured-track"></div>
     <p class="hscroll-hint">← drag me! →</p>
     <div style="text-align:center; padding: 1.5rem 0 3.5rem;">
-      <a class="btn" href="shop.html">See the whole collection</a>
+      <a class="btn" href="waitlist.html">Join the waitlist ★</a>
     </div>
     <div class="scallop" style="--sc-color: var(--cream); transform: rotate(180deg);"></div>
   </section>
 
-  <!-- ══════════ EVENTS TEASER ══════════ -->
-  <section class="section texture-stripes">
+  <!-- ══════════ WAITLIST BAND ══════════ -->
+  <section class="section center texture-stripes">
     <div class="wrap">
-      <div class="center">
-        <span class="kicker">on the calendar</span>
-        <h2 class="h-mid" id="events-title"></h2>
-        <p class="lead" id="events-text"></p>
-      </div>
-      <div class="event-list" id="home-events"></div>
-      <div class="center" style="margin-top:2.2rem;">
-        <a class="btn ghost" href="events.html" id="events-btn"></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ JOURNAL TEASER ══════════ -->
-  <section class="section" style="background: var(--pink-soft);">
-    <div class="wrap center">
-      <span class="kicker">stories & snapshots</span>
-      <h2 class="h-mid" id="journal-title"></h2>
-      <div class="post-grid" id="home-posts"></div>
-      <div style="margin-top:2.4rem;">
-        <a class="btn" href="journal.html" id="journal-btn"></a>
+      <span class="kicker">first dibs</span>
+      <h2 class="h-mid" id="wl-band-title"></h2>
+      <p class="lead" id="wl-band-text"></p>
+      <div class="btn-row">
+        <a class="btn" href="waitlist.html" id="wl-band-btn"></a>
+        <a class="btn ghost ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">Follow on Instagram</a>
       </div>
     </div>
   </section>
@@ -967,26 +955,6 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <div class="ticker flat" aria-hidden="true"></div>
 
   <!-- ══════════ FOOTER ══════════ -->
-  
-</main>
-<main class="pageview" data-view="shop" hidden>
-
-
-  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
-    <span class="kicker">handmade & one of a kind</span>
-    <h1 class="h-script">shop the collection</h1>
-    <p class="lead" id="shop-intro"></p>
-  </section>
-
-  <div class="ticker" aria-hidden="true"></div>
-
-  <section class="section" style="padding-top:2.5rem;">
-    <div class="wrap">
-      <div class="filter-row" id="filter-row"></div>
-      <div class="shop-grid" id="shop-grid"></div>
-    </div>
-  </section>
-
   
 </main>
 <main class="pageview" data-view="about" hidden>
@@ -1032,8 +1000,8 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
       <h2 class="h-mid reveal" id="outro-title"></h2>
       <p class="lead reveal d1" id="outro-text"></p>
       <div class="btn-row reveal d2">
-        <a class="btn" href="shop.html">Shop the collection</a>
-        <a class="btn ghost" href="events.html">Come see us</a>
+        <a class="btn" href="waitlist.html">Join the waitlist ★</a>
+        <a class="btn ghost ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">Follow on Instagram</a>
       </div>
     </div>
   </section>
@@ -1042,105 +1010,49 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
   
 </main>
-<main class="pageview" data-view="journal" hidden>
+<main class="pageview" data-view="waitlist" hidden>
 
-
-  <section class="page-hero texture-stripes" style="padding-bottom: 3.5rem;">
-    <span class="kicker">the coco & kal journal</span>
-    <h1 class="h-script">little stories, big love</h1>
-    <p class="lead" id="journal-intro"></p>
+  <section class="page-hero texture-gingham" style="padding-bottom: 2.5rem;">
+    <div class="floaty slow" style="top:12%; left:6%; width:60px;"><img src="assets/coco-and-kal/ce3fcc21dd.png" alt=""></div>
+    <div class="floaty fast" style="top:16%; right:7%; width:54px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
+    <span class="kicker" id="wl-kicker"></span>
+    <h1 class="h-script" id="wl-title"></h1>
+    <p class="lead" id="wl-text"></p>
   </section>
 
-  <section class="section" style="padding-top:2.5rem;">
-    <div class="floaty slow" style="top:4%; left:3%; width:60px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
-    <div class="floaty" style="top:30%; right:3%; width:52px;"><img src="assets/coco-and-kal/890d3c54b3.png" alt=""></div>
-    <div class="wrap">
-      <div class="post-grid" id="post-grid"></div>
-    </div>
-  </section>
+  <section class="section" style="padding-top:1.5rem;">
+    <div class="wrap center" style="max-width:560px;">
 
-  <div class="ticker flat" aria-hidden="true"></div>
-
-  
-</main>
-<main class="pageview" data-view="events" hidden>
-
-
-  <section class="page-hero">
-    <span class="kicker">pull up a chair</span>
-    <h1 class="h-script">where to find us</h1>
-    <p class="lead" id="events-intro"></p>
-  </section>
-
-  <section class="section" style="padding-top:2rem;">
-    <div class="wrap">
-      <div class="event-list" id="event-list"></div>
-    </div>
-  </section>
-
-  <section style="background: var(--dusty-soft); padding: 3.5rem 0; position: relative;">
-    <div class="center" style="margin-bottom:1.5rem; padding-inline:1.2rem;">
-      <span class="kicker">from past markets</span>
-      <h2 class="h-mid">market days ♥</h2>
-    </div>
-    <div class="photo-marquee"><div class="photo-marquee-track" id="event-marquee"></div></div>
-  </section>
-
-  <section class="section center texture-stripes" style="padding-top:3rem; padding-bottom:4rem;">
-    <div class="wrap reveal">
-      <img src="assets/coco-and-kal/d1c99caa62.png" alt="" style="width:380px; max-width:80vw; margin:-3.2rem auto -2.4rem;">
-      <h2 class="h-mid">hosting a market or event?</h2>
-      <p class="lead">We'd love to set up our two chairs at your gathering. Send us a note and let's make it happen!</p>
-      <div style="margin-top:1.8rem;"><a class="btn" href="contact.html" id="invite-btn">Invite us over</a></div>
-    </div>
-  </section>
-
-  <div class="ticker flat" aria-hidden="true"></div>
-
-  
-</main>
-<main class="pageview" data-view="product" hidden>
-
-
-  <section class="section texture-stripes" style="padding-top: 2rem; padding-bottom: 3rem;">
-    <div class="floaty slow" style="top:10%; right:3%; width:56px;"><img src="assets/coco-and-kal/f723ec3873.png" alt=""></div>
-    <div class="floaty" style="bottom:14%; left:2.5%; width:48px;"><img src="assets/coco-and-kal/7766059cae.png" alt=""></div>
-    <div class="wrap">
-      <nav class="breadcrumb" id="pdp-crumb" aria-label="Breadcrumb"></nav>
-      <div class="pdp-grid">
-        <div class="pdp-gallery">
-          <figure class="pdp-main polaroid-frame"><img id="pdp-img" src="" alt=""></figure>
-          <div class="pdp-thumbs" id="pdp-thumbs"></div>
-        </div>
-        <div class="pdp-buy">
-          <span class="kicker" id="pdp-cat"></span>
-          <h1 class="pdp-title" id="pdp-title"></h1>
-          <div class="pdp-price" id="pdp-price"></div>
-          <p class="pdp-note" id="pdp-note"></p>
-          <div id="pdp-options"></div>
-          <p class="pdp-stock" id="pdp-stock"></p>
-          <button class="btn pdp-add" id="pdp-add" type="button">Add to bag</button>
-          <div class="pdp-accordions" id="pdp-accordions"></div>
+      <!-- Shopify-ready waitlist form. On Shopify this posts to /contact with
+           form_type=customer, which creates the person under Customers
+           (subscribed to email marketing) and adds the tags below — no Klaviyo
+           needed. On this preview, submitting just shows the thank-you. -->
+      <div class="contact-form-wrap" style="margin-top:0;" id="wl-form-wrap">
+        <form class="contact-form waitlist-form" id="waitlist-form" method="post" action="/contact#waitlist-form" accept-charset="UTF-8">
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+          <input type="hidden" name="contact[tags]" value="newsletter, waitlist, first-drop">
+          <label>First name <span class="cf-optional">(optional)</span>
+            <input type="text" name="contact[first_name]" placeholder="your name" autocomplete="given-name">
+          </label>
+          <label>Email
+            <input type="email" name="contact[email]" placeholder="you@email.com" required autocomplete="email">
+          </label>
+          <button class="btn" type="submit" id="wl-submit"></button>
+          <p class="wl-fine" id="wl-fine"></p>
+        </form>
+        <div class="wl-thanks" id="wl-thanks" hidden>
+          <img src="assets/coco-and-kal/25565340c9.png" alt="" style="width:220px; margin:0 auto 1rem;" class="bob">
+          <h2 class="h-mid" id="wl-thanks-title"></h2>
+          <p class="lead" id="wl-thanks-text"></p>
+          <div class="btn-row"><a class="btn ig-link" href="https://www.instagram.com/cocoandkal/" target="_blank" rel="noopener">Follow along on Instagram ★</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background: var(--sage-soft); position: relative; padding-bottom: 2.5rem;">
-    <div class="scallop" style="--sc-color: var(--cream);"></div>
-    <div class="center" style="padding-top: 3rem;">
-      <span class="kicker">keep browsing</span>
-      <h2 class="h-mid" id="pdp-related-title"></h2>
-    </div>
-    <div class="hscroll" id="pdp-related"></div>
-    <div style="text-align:center; padding: .5rem 0 2.5rem;">
-      <a class="btn" href="shop.html">Back to the whole collection</a>
-    </div>
-  </section>
-
   <div class="ticker flat" aria-hidden="true"></div>
 
-  
 </main>
 
 <main class="pageview" data-view="contact" hidden>
@@ -1148,7 +1060,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
   <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
     <span class="kicker">say hello</span>
     <h1 class="h-script">contact us</h1>
-    <p class="lead">Questions about an order, a custom idea, or a market invite — we'd love to hear from you.</p>
+    <p class="lead">Questions, a custom idea, or a market invite? We'd love to hear from you.</p>
   </section>
 
   <section class="section" style="padding-top:2rem;">
@@ -1174,7 +1086,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
             <input type="email" name="contact[email]" placeholder="you@email.com" required autocomplete="email">
           </label>
           <label>Message
-            <textarea name="contact[body]" rows="5" placeholder="Tell us what's on your mind — an order, a custom idea, a market invite…" required></textarea>
+            <textarea name="contact[body]" rows="5" placeholder="Tell us what's on your mind: a custom idea, a market invite…" required></textarea>
           </label>
           <button class="btn" type="submit">Send it our way ★</button>
         </form>
@@ -1182,30 +1094,6 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
 
       <p style="margin-top:2.2rem; color:#5a6785;">Prefer email? <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a> — we usually reply within 1–2 business days.</p>
       <p style="margin-top:.6rem; color:#5a6785;">Coco &amp; Kal, LLC · Handmade in Minnesota, USA</p>
-      <p style="margin-top:.6rem; color:#5a6785;">You can also catch us in person — see <a href="events.html" style="color:var(--dusty);">where we'll be next</a>.</p>
-    </div>
-  </section>
-
-  <div class="ticker flat" aria-hidden="true"></div>
-
-</main>
-<main class="pageview" data-view="shipping-returns" hidden>
-
-  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
-    <span class="kicker">the practical stuff</span>
-    <h1 class="h-script">shipping &amp; returns</h1>
-    <p class="lead">Everything you need to know about getting your goodies — and what to do if something isn't right.</p>
-  </section>
-
-  <section class="section" style="padding-top:2rem;">
-    <div class="wrap" style="max-width:760px;">
-      <h2 class="h-mid">Shipping</h2>
-      <p style="margin-top:1rem;">Every piece is handmade, so please allow 2–4 business days for us to pack up your order. Once it ships, you'll receive a confirmation email with tracking. Orders ship from Minnesota via USPS; most arrive within 3–7 business days. We currently ship within the United States.</p>
-      <p style="margin-top:1rem;">Shipping costs are calculated at checkout based on your order. If your package arrives damaged, email us within 7 days at <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a> with a photo and we'll make it right.</p>
-      <h2 class="h-mid" style="margin-top:2.5rem;">Returns &amp; exchanges</h2>
-      <p style="margin-top:1rem;">We want you to love what you ordered. If you don't, you may return unworn, unused items in their original condition within 30 days of delivery for a refund to your original payment method. Return shipping is the buyer's responsibility unless the item arrived damaged or we made a mistake.</p>
-      <p style="margin-top:1rem;">To start a return or exchange, email <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a> with your order number. Custom and made-to-order pieces are final sale unless they arrive damaged.</p>
-      <p style="margin-top:1rem;">Refunds are issued within 5–10 business days of us receiving your return.</p>
     </div>
   </section>
 
@@ -1223,41 +1111,14 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
     <div class="wrap" style="max-width:760px;">
       <p>Coco &amp; Kal, LLC (“we”, “us”) respects your privacy. This policy explains what we collect and how we use it.</p>
       <h2 class="h-mid" style="margin-top:2rem;">What we collect</h2>
-      <p style="margin-top:1rem;">When you place an order or contact us, we collect the information you provide: your name, email address, shipping address, and order details. Payment is processed securely by our payment provider — we never see or store your full card number. Like most websites, we may also collect basic analytics (pages visited, device type) to understand how the site is used.</p>
+      <p style="margin-top:1rem;">When you join our waitlist or contact us, we collect the information you provide: your name and email address. Like most websites, we may also collect basic analytics (pages visited, device type) to understand how the site is used.</p>
       <h2 class="h-mid" style="margin-top:2rem;">How we use it</h2>
-      <p style="margin-top:1rem;">We use your information to fulfill and ship orders, respond to your messages, and — only if you've signed up — send occasional newsletter emails (you can unsubscribe any time). We never sell your personal information.</p>
+      <p style="margin-top:1rem;">We use your information to respond to your messages and, only if you've signed up, to email you about our first product drop and occasional news (you can unsubscribe any time). We never sell your personal information.</p>
       <h2 class="h-mid" style="margin-top:2rem;">Sharing</h2>
-      <p style="margin-top:1rem;">We share information only with the services that help us run the shop — our e-commerce platform, payment processor, and shipping carriers — and only what they need to do their job.</p>
+      <p style="margin-top:1rem;">We share information only with the services that help us run the site, like our e-commerce platform, and only what they need to do their job.</p>
       <h2 class="h-mid" style="margin-top:2rem;">Your choices</h2>
       <p style="margin-top:1rem;">You may request a copy of the personal information we hold about you, or ask us to correct or delete it, by emailing <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a>.</p>
-      <p style="margin-top:2rem; color:#5a6785;">Last updated: August 2026</p>
-    </div>
-  </section>
-
-  <div class="ticker flat" aria-hidden="true"></div>
-
-</main>
-<main class="pageview" data-view="terms" hidden>
-
-  <section class="page-hero texture-stripes" style="padding-bottom: 2.5rem;">
-    <span class="kicker">the ground rules</span>
-    <h1 class="h-script">terms of service</h1>
-  </section>
-
-  <section class="section" style="padding-top:2rem;">
-    <div class="wrap" style="max-width:760px;">
-      <p>By using this website and purchasing from Coco &amp; Kal, LLC, you agree to the terms below.</p>
-      <h2 class="h-mid" style="margin-top:2rem;">Products &amp; orders</h2>
-      <p style="margin-top:1rem;">Every item is handmade, so slight variations in color, shape, and size are part of the charm — no two pieces are exactly alike. Product photos are as accurate as we can make them, but colors may vary slightly by screen. We reserve the right to cancel and refund any order (for example, if an item is out of stock or mispriced).</p>
-      <h2 class="h-mid" style="margin-top:2rem;">Pricing &amp; payment</h2>
-      <p style="margin-top:1rem;">All prices are in US dollars. Applicable sales tax is added at checkout. Payment is due at the time of purchase through our secure checkout.</p>
-      <h2 class="h-mid" style="margin-top:2rem;">Shipping &amp; returns</h2>
-      <p style="margin-top:1rem;">Shipping times and our return policy are described on our <a href="shipping-returns.html" style="color:var(--dusty);">Shipping &amp; returns</a> page, which is part of these terms.</p>
-      <h2 class="h-mid" style="margin-top:2rem;">Our content</h2>
-      <p style="margin-top:1rem;">All photos, artwork, designs, and text on this site belong to Coco &amp; Kal, LLC and may not be reproduced without permission.</p>
-      <h2 class="h-mid" style="margin-top:2rem;">Questions</h2>
-      <p style="margin-top:1rem;">Reach us any time at <a href="mailto:hello@cocoandkal.com" style="color:var(--dusty);">hello@cocoandkal.com</a>.</p>
-      <p style="margin-top:2rem; color:#5a6785;">Last updated: August 2026</p>
+      <p style="margin-top:2rem; color:#5a6785;">Last updated: September 2026</p>
     </div>
   </section>
 
@@ -1274,10 +1135,8 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         <h4>Wander around</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop the collection</a></li>
           <li><a href="about.html">About us</a></li>
-          <li><a href="journal.html">Journal</a></li>
-          <li><a href="events.html">Events</a></li>
+          <li><a href="waitlist.html">Join the waitlist</a></li>
           <li><a href="contact.html">Contact us</a></li>
         </ul>
       </div>
@@ -1285,9 +1144,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
         <h4>The fine print</h4>
         <ul>
           <li><a href="contact.html">Contact us</a></li>
-          <li><a href="shipping-returns.html">Shipping &amp; returns</a></li>
           <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
         </ul>
       </div>
       <div>
@@ -1296,8 +1153,11 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
           <li><a class="footer-ig" href="#" target="_blank" rel="noopener"></a></li>
           <li><a class="footer-email" href="#"></a></li>
         </ul>
-        <form class="newsletter">
-          <input type="email" placeholder="your email" required aria-label="Email">
+        <form class="newsletter" method="post" action="/contact#waitlist-form" accept-charset="UTF-8">
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+          <input type="hidden" name="contact[tags]" value="newsletter, waitlist, first-drop">
+          <input type="email" name="contact[email]" placeholder="your email" required aria-label="Email for the waitlist">
           <button type="submit">Join</button>
         </form>
       </div>
@@ -1313,7 +1173,7 @@ h1, h2, h3 { font-weight: normal; line-height: 1.1; }
    ★ COCO & KAL — EDIT ME! ★
    ------------------------------------------------------------
    Hi Courtney & Kali! This ONE file controls almost every word,
-   photo, product, event, and journal post on your site.
+   and photo on your waitlist site.
 
    HOW TO EDIT:
    1. Open this file in any text editor (TextEdit, Notes, VS Code…)
@@ -1342,8 +1202,6 @@ const CONTENT = {
     instagramUrl: "https://www.instagram.com/cocoandkal/",   // the real profile link
     email: "hello@cocoandkal.com",
     footerBlurb: "",   // (removed per review — logo only)
-    // Small note shown when someone taps "Add to bag" (until Shopify checkout is live)
-    shopComingSoon: "Online checkout is coming soon! For now, come find us at our next market ♥",
   },
 
   /* ──────────────────────────────────────────────
@@ -1354,8 +1212,8 @@ const CONTENT = {
     heroLine1: "made for",        // the big script word(s), line 1
     heroLine2: "gathering",       // line 2
     heroText: "",   // (removed per review — type words here to bring a sub-header back)
-    heroButton1: "Shop the collection",
-    heroButton2: "Find us at a market",
+    heroButton1: "Join the waitlist ★",
+    heroButton2: "Meet the makers",
     // The three photos stacked like polaroids in the hero (from assets/photos/…)
     heroPhotos: [
       { img: "assets/coco-and-kal/ba8d55d2e4.jpg",  caption: "your creators" },
@@ -1367,280 +1225,49 @@ const CONTENT = {
     makeTitle: "what we make",
     makeText: "Everything is handmade by us, one bead & brushstroke at a time.",
     makeCards: [
-      { title: "Jewelry",     text: "Beaded necklaces & earrings with shells and stones collected with love.", img: "assets/coco-and-kal/e0329703c0.jpg", link: "shop.html?c=Jewelry" },
-      { title: "Watercolors", text: "Original paintings & prints of gardens, cottages and lake days.",          img: "assets/coco-and-kal/f6297388ea.jpg", link: "shop.html?c=Art%20Prints" },
+      { title: "Jewelry",     text: "Beaded necklaces & earrings with shells and stones collected with love.", img: "assets/coco-and-kal/e0329703c0.jpg", link: "waitlist.html" },
+      { title: "Watercolors", text: "Original paintings & prints of gardens, cottages and lake days.",          img: "assets/coco-and-kal/f6297388ea.jpg", link: "waitlist.html" },
     ],
 
     featuredTitle: "fresh from the workbench",
-    featuredText: "A few favorites — drag to browse, tap to see the whole collection.",
-    // Type product names EXACTLY as they appear in the shop list below
+    featuredText: "A peek at what's coming in our first drop. Drag to browse, then hop on the waitlist for first dibs.",
+    // Type names EXACTLY as they appear in the SNEAK PEEK list below
     featuredProducts: ["Lake Day Necklace", "Sunset Shell Necklace", "Garden Cottage Print", "Little Charms Earrings", "Sea Glass Strand", "Candy Shop Strand"],
 
     aboutTitle: "hi, we're Courtney & Kali!",
     aboutText: "Coco is the southern charm, Kal is the lake water — together we craft, host and gather. Our core value is simple: bring people together and make everyone feel at home. We are so excited you are here!",
     aboutButton: "Get to know us",
 
-    eventsTitle: "come say hi!",
-    eventsText: "We pop up at markets & craft fairs all summer long. Here's where we'll be next:",
-    eventsButton: "See all our events",
-
-    journalTitle: "from the journal",
-    journalButton: "Read more stories",
   },
 
   /* ──────────────────────────────────────────────
-     PRODUCT PAGE — shared text on every product page
+     WAITLIST — the sign-up page + buttons
      ────────────────────────────────────────────── */
-  pdp: {
-    stockNote: "Handmade by us — every piece is a little one-of-a-kind ♥",
-    // shown when a variant has a stock count — {n} becomes the number
-    stockCountNote: "{n} ready right now — we make a small batch of each for every market ♥",
-    lowStockNote: "Only {n} left before the next batch — snag it!",
-    soldOutNote: "This one's sold out for now — more coming to the next market!",
-    shippingTitle: "Pickup & shipping",
-    shippingText: "Right now, the easiest way to take something home is to visit our booth at a market (it's more fun anyway!). Online checkout and shipping are coming soon with our Shopify store.",
-    detailsTitle: "The details",
-    relatedTitle: "you may also like",
+  waitlist: {
+    button: "Join the waitlist ★",
+    kicker: "first dibs",
+    title: "join the waitlist",
+    text: "Our online shop is almost here! Pop your email in and you'll be the very first to know when our first drop goes live, before anyone else gets a peek.",
+    submit: "Count me in ★",
+    finePrint: "We'll only email you about the drop and the occasional hello. Unsubscribe any time.",
+    thanksTitle: "you're on the list!",
+    thanksText: "Thanks for pulling up a chair. We'll email you the moment our first drop is ready.",
+    toast: "You're on the list! ♥ We'll email you when the first drop is ready.",
+    bandTitle: "be first in line",
+    bandText: "Our first drop is coming soon, and every piece is one of a kind. Join the waitlist to get first dibs.",
   },
 
   /* ──────────────────────────────────────────────
-     SHOP — your products!
-     ------------------------------------------------
-     To add a product: copy one whole { ... } block,
-     paste it below the others, and change the details.
-     "category" must be one of:
-     "Jewelry", "Art Prints"
-     (or invent a new category — the filter buttons update automatically!)
-
-     ★ PRODUCT PAGES & VARIANTS ★
-     Every product automatically gets its own product page.
-     These extra lines are ALL OPTIONAL — add them to any product:
-
-       images: ["...jpg", "...jpg"],      ← photo gallery (first = main)
-       description: ["paragraph 1", "…"], ← the story under "The details"
-       options: [                          ← choices the buyer can make
-         { name: "Color",  values: ["Lake Blue", "Blush"] },
-         { name: "Length", values: ["14\"", "16\"", "18\""] },
-       ],
-       variants: [                         ← ONLY the exceptions!
-         { match: ["Lake Blue", "*"], img: "…jpg" },        ← this color shows this photo
-         { match: ["Blush", "18\""], price: "$32" },        ← this combo costs more
-         { match: ["Blush", "14\""], soldOut: true },       ← this combo is sold out
-         { match: ["Pearl", "*"], stock: 6 },               ← 6 made for this market
-       ],
-
-     "stock" is for pieces you make in small batches: the page
-     says how many are ready (and switches to "sold out" at 0).
-     Just update the numbers before/after each market!
-
-     Every combination you DON'T list simply works at the normal
-     price — so even a product with 20 variants only needs a line
-     or two here. "*" means "any choice" for that spot, and the
-     match list goes in the same order as your options.
+     SNEAK PEEK — the pieces shown in the homepage gallery
+     (names + photos only; prices & product pages arrive with the full shop)
      ────────────────────────────────────────────── */
-  shopIntro: "Every piece is one-of-a-kind and handmade by the two of us. See something you love? It'll be at our next market!",
   products: [
-    { name: "Lake Day Necklace",      price: "$28", category: "Jewelry",
-      img: "assets/coco-and-kal/a1d8c735a8.jpg",
-      note: "Deep blue glass beads with a freshwater pearl." },
-
-    { name: "Sunset Shell Necklace",  price: "$32", category: "Jewelry",
-      img: "assets/coco-and-kal/e0329703c0.jpg",
-      note: "A golden shell we couldn't stop staring at.",
-      description: [
-        "One golden shell, found on one perfect evening, strung on warm amber beads. When it's gone, it's gone — that's the beauty of beach treasure.",
-      ],
-      options: [
-        { name: "Length", values: ["16\" classic", "18\" long"] },
-      ] },
-
-    { name: "Shoreline Pearl Necklace", price: "$34", category: "Jewelry",
-      img: "assets/coco-and-kal/2d67e41379.jpg",
-      note: "Pearls + a found shell, straight off the shoreline." },
-
-    { name: "Sweet Pea Shell Necklace", price: "$30", category: "Jewelry",
-      img: "assets/coco-and-kal/29bc7e44ad.jpg",
-      soldOut: true,      // ← shows the "sold out" banner on its card (delete this line when it's back!)
-      note: "Soft green beads and a white shell charm." },
-
-    { name: "Sea Glass Strand",       price: "$26", category: "Jewelry",
-      img: "assets/coco-and-kal/8295b4b3eb.jpg",
-      note: "Chunky, clear and a little bit magic." },
-
-    { name: "Candy Shop Strand",      price: "$26", category: "Jewelry",
-      img: "assets/coco-and-kal/c7b0e1d4a2.jpg",
-      note: "Every color we love, all on one string.",
-      images: [
-        "assets/coco-and-kal/c7b0e1d4a2.jpg",
-        "assets/coco-and-kal/a1d8c735a8.jpg",
-        "assets/coco-and-kal/c928082f7a.jpg",
-        "assets/coco-and-kal/499970dee0.jpg",
-      ],
-      description: [
-        "Every necklace starts as a pile of possibilities — beads collected from every trip, every shoreline, every dusty antique shop.",
-        "Pick your color story and your length, and we'll string it, knot it, and finish it with a little charm. No two are ever alike. That's the whole point.",
-      ],
-      options: [
-        { name: "Color story", values: ["Rainbow", "Lake Blue", "Sweet Pea", "Blush", "Sunshine", "Deep Navy"] },
-        { name: "Length", values: ["14\" choker", "16\" classic", "18\" long"] },
-      ],
-      variants: [
-        { match: ["Lake Blue", "*"],  img: "assets/coco-and-kal/a1d8c735a8.jpg" },
-        { match: ["Sweet Pea", "*"],  img: "assets/coco-and-kal/29bc7e44ad.jpg" },
-        { match: ["Blush", "*"],      img: "assets/coco-and-kal/cd5c1592bc.jpg" },
-        { match: ["*", "18\" long"],  price: "$30" },
-        { match: ["Sunshine", "14\" choker"], soldOut: true },
-        { match: ["Deep Navy", "18\" long"],  soldOut: true },
-      ] },
-
-    { name: "Wildflower Wrap Strand", price: "$29", category: "Jewelry",
-      img: "assets/coco-and-kal/5f46b549c3.jpg",
-      note: "Wrap it twice, wear it everywhere." },
-
-    { name: "Plum Pendant Necklace",  price: "$27", category: "Jewelry",
-      img: "assets/coco-and-kal/bc684974ce.jpg",
-      note: "A moody little pendant on a dainty chain." },
-
-    { name: "Harbor Charm Earrings",  price: "$22", category: "Jewelry",
-      img: "assets/coco-and-kal/7b54d8d20a.jpg",
-      note: "Gold hoops with shells & charms — mix and match." },
-
-    { name: "Little Charms Earrings", price: "$24", category: "Jewelry",
-      img: "assets/coco-and-kal/d0de878685.jpg",
-      note: "Tiny treasures for your ears — pick your charm!",
-      images: [
-        "assets/coco-and-kal/d0de878685.jpg",
-        "assets/coco-and-kal/7b54d8d20a.jpg",
-      ],
-      description: [
-        "Every pair is strung by Courtney's own two hands, one charm at a time. She makes a small batch of each charm for every market — usually five to ten pairs — so when a charm runs out, it's just resting until the next batch.",
-        "Gold-filled hoops, so they're kind to sensitive ears. Mix and match — nobody said your ears have to agree with each other.",
-      ],
-      options: [
-        { name: "Charm", values: [
-          "Pearl", "Bow", "Sailboat", "Turquoise", "Sand Dollar",
-          "Gold Seashell", "Starfish", "Daisy", "Cherry", "Lemon",
-          "Heart", "Anchor", "Sea Glass", "Butterfly", "Little Bird",
-        ] },
-      ],
-      variants: [
-        /* just keep these counts fresh around markets — anything
-           not listed shows the normal handmade note */
-        { match: ["Pearl"],         stock: 8 },
-        { match: ["Bow"],           stock: 6 },
-        { match: ["Sailboat"],      stock: 5 },
-        { match: ["Turquoise"],     stock: 9 },
-        { match: ["Sand Dollar"],   stock: 2 },
-        { match: ["Gold Seashell"], stock: 7 },
-        { match: ["Starfish"],      stock: 10 },
-        { match: ["Cherry"],        stock: 1 },
-        { match: ["Lemon"],         stock: 0 },
-        { match: ["Butterfly"],     stock: 0 },
-        { match: ["Gold Seashell"], price: "$26" },
-        { match: ["Pearl"],         price: "$26" },
-      ] },
-
-    { name: "Garden Cottage Print",   price: "$18", category: "Art Prints",
-      img: "assets/coco-and-kal/f6297388ea.jpg",
-      note: "Original watercolor, printed on thick cotton paper.",
-      images: [
-        "assets/coco-and-kal/f6297388ea.jpg",
-        "assets/coco-and-kal/7ffd24a080.jpg",
-        "assets/coco-and-kal/c9e900fd60.jpg",
-      ],
-      description: [
-        "Painted by Kali one slow summer morning, this little cottage is for everyone who dreams of a garden gate of their own.",
-        "Printed on thick, lightly textured cotton paper that makes the watercolor feel like the original.",
-      ],
-      options: [
-        { name: "Size", values: ["5×7\"", "8×10\"", "11×14\""] },
-      ],
-      variants: [
-        { match: ["5×7\""],   price: "$14" },
-        { match: ["11×14\""], price: "$28" },
-      ] },
-
-    { name: "Wildflower Bunch Print", price: "$16", category: "Art Prints",
-      img: "assets/coco-and-kal/c9e900fd60.jpg",
-      note: "A bouquet that never wilts. 5×7\"." },
-
-    /* ── PARKED: Paper Goods category (removed per review, Sept 2026).
-       To bring it back, delete this line and the closing line below.
-    { name: "Everyday Card Set",      price: "$14", category: "Paper Goods",
-      img: "assets/coco-and-kal/8eaaa9bf19.jpg",
-      note: "Six hand-painted cards for thank-yous & just-becauses." },
-
-    { name: "Save-the-Date Suite",    price: "from $45", category: "Paper Goods",
-      img: "assets/coco-and-kal/77aafcbcc6.jpg",
-      note: "Custom illustrated invites for your big day. Ask us!",
-      images: [
-        "assets/coco-and-kal/77aafcbcc6.jpg",
-        "assets/coco-and-kal/8bfb9b95fb.jpg",
-        "assets/coco-and-kal/99373f63a5.jpg",
-      ],
-      description: [
-        "Custom-illustrated save-the-dates, hand-lettered and made to match your day — chairs, starfish, and all.",
-        "Every suite is designed just for you. Come chat with us at a market or send us a note to get started!",
-      ],
-      options: [
-        { name: "Set size", values: ["25 cards", "50 cards", "100 cards"] },
-      ],
-      variants: [
-        { match: ["25 cards"],  price: "$45" },
-        { match: ["50 cards"],  price: "$80" },
-        { match: ["100 cards"], price: "$140" },
-      ] },
-
-    { name: "Striped Matchboxes",     price: "$6", category: "Paper Goods",
-      img: "assets/coco-and-kal/8024483342.jpg",
-      note: "The cutest little favor — strike up a gathering." },
-    ── end parked Paper Goods ── */
-  ],
-
-  /* ──────────────────────────────────────────────
-     EVENTS — where to find you next
-     ------------------------------------------------
-     Keep upcoming events at the top. To remove a past
-     event, just delete its whole { ... } block.
-     ────────────────────────────────────────────── */
-  eventsIntro: "Our favorite part of all this? Meeting you! Find our tent (look for the chairs ♥) at these markets:",
-  events: [
-    { date: "Sat, Aug 15",  year: "2026",
-      name: "Excelsior Farmers Market",
-      place: "Water Street, Excelsior MN",
-      time: "8am – 1pm",
-      note: "Fresh necklaces + brand new card sets!" },
-
-    { date: "Aug 29 – 30",  year: "2026",
-      name: "Linden Hills Art Fair",
-      place: "Linden Hills Park, Minneapolis MN",
-      time: "10am – 5pm",
-      note: "Our biggest booth of the summer — come early for originals." },
-
-    { date: "Sat, Sep 12",  year: "2026",
-      name: "Fall Gathering Market",
-      place: "50th & France, Edina MN",
-      time: "9am – 3pm",
-      note: "Cozy season kickoff. Warm cider on us." },
-
-    { date: "Sat, Sep 26",  year: "2026",
-      name: "Harvest Craft Fair",
-      place: "Wayzata Depot, Wayzata MN",
-      time: "10am – 4pm",
-      note: "Last outdoor market of the year!" },
-  ],
-  // Photos in the "market days" gallery on the events page
-  eventGallery: [
-    "assets/coco-and-kal/d9af7a7955.jpg",
-    "assets/coco-and-kal/e24afedeaf.jpg",
-    "assets/coco-and-kal/88517e3809.jpg",
-    "assets/coco-and-kal/a189feebe7.jpg",
-    "assets/coco-and-kal/a9dfa34421.jpg",
-    "assets/coco-and-kal/eb34e20cf8.jpg",
-    "assets/coco-and-kal/3f5846241f.jpg",
-    "assets/coco-and-kal/c712a4982f.jpg",
-    "assets/coco-and-kal/18b317e784.jpg",
-    "assets/coco-and-kal/cd3ff75158.jpg",
+    { name: "Lake Day Necklace",      img: "assets/coco-and-kal/a1d8c735a8.jpg" },
+    { name: "Sunset Shell Necklace",  img: "assets/coco-and-kal/e0329703c0.jpg" },
+    { name: "Garden Cottage Print",   img: "assets/coco-and-kal/f6297388ea.jpg" },
+    { name: "Little Charms Earrings", img: "assets/coco-and-kal/d0de878685.jpg" },
+    { name: "Sea Glass Strand",       img: "assets/coco-and-kal/8295b4b3eb.jpg" },
+    { name: "Candy Shop Strand",      img: "assets/coco-and-kal/c7b0e1d4a2.jpg" },
   ],
 
   /* ──────────────────────────────────────────────
@@ -1681,48 +1308,6 @@ const CONTENT = {
     outroText: "Whether it's a necklace, a print, or a spot under our market tent — everything we make is an invitation to pull up a chair.",
   },
 
-  /* ──────────────────────────────────────────────
-     JOURNAL — your blog!
-     ------------------------------------------------
-     To write a new post: copy a whole { ... } block,
-     paste it at the TOP of the list, change the words.
-     "body" is a list of paragraphs — each one goes in "quotes".
-     ────────────────────────────────────────────── */
-  journalIntro: "Little stories from the workbench, the market tent, and everywhere in between.",
-  posts: [
-    { title: "How it started: two friends & a folding table",
-      date: "July 28, 2026",
-      tag: "our story",
-      img: "assets/coco-and-kal/181ad06c41.jpg",
-      excerpt: "It began with one folding table, a hand-painted sign, and a whole lot of nerves. Here's the story of our very first market…",
-      body: [
-        "It began with one folding table, a hand-painted sign that said 'really cute stuff!' and a whole lot of nerves. We loaded Courtney's car until the trunk barely closed and drove to our first market before the sun was up.",
-        "By 9am we had met more kind strangers than we could count. Someone bought a necklace for her sister. Someone else teared up over a watercolor of a cottage that looked like her grandma's. That's when we knew this was never really about the stuff — it's about the gathering.",
-        "One summer later, here we are: more beads, more paint, and the same two chairs waiting for you at our table. Thanks for being here. Pull up a seat!"
-      ] },
-
-    { title: "Behind the beads: how a necklace comes to life",
-      date: "July 12, 2026",
-      tag: "in the studio",
-      img: "assets/coco-and-kal/c928082f7a.jpg",
-      excerpt: "From a bowl of loose treasures to a finished strand — a peek at Kali's beading process (and her very full dining table).",
-      body: [
-        "Every necklace starts as a pile of possibilities. Kali collects beads and shells the way some people collect stories — a little from every trip, every shoreline, every dusty antique shop.",
-        "First comes the color story: blues that look like the lake in July, greens like sweet peas, pinks like the last minute of a sunset. Then the layout — laid across the table, rearranged a dozen times, held up to the light.",
-        "Only when it feels like a place we've been does it get strung, knotted, and finished with a little charm. No two are ever alike. That's the whole point."
-      ] },
-
-    { title: "Our market day rituals",
-      date: "June 30, 2026",
-      tag: "market days",
-      img: "assets/coco-and-kal/3dd3b6abd0.jpg",
-      excerpt: "Early alarms, gingham tablecloths, and the world's most important cooler. How we set up a booth that feels like home.",
-      body: [
-        "Market days start dark and early: coffee in travel mugs, the car packed like a puzzle, and one final check for the tablecloths (the gingham ones — always the gingham ones).",
-        "Setting up the booth is our favorite ritual. The two chairs come out first — they're our logo for a reason. Then prints get propped in windowsill frames, necklaces get draped on wooden stands, and the little pricing sign gets its place of honor.",
-        "If you've ever stopped by, you know the rule: you don't have to buy a thing. Sit down, say hi, stay a while. That's what the chairs are for."
-      ] },
-  ],
 };
 
 </script>
@@ -1783,7 +1368,7 @@ function initFooter() {
   $$("a.ig-link").forEach(a => { a.href = C.general.instagramUrl; });
   $(".newsletter", f)?.addEventListener("submit", e => {
     e.preventDefault();
-    toast("Thanks for joining the table! ♥ (Sign-ups go live with our shop)");
+    toast(C.waitlist.toast);
     e.target.reset();
   });
 
@@ -1834,32 +1419,6 @@ function initDrag() {
   });
 }
 
-/* ---------- product card ---------- */
-function productUrl(p) { return "product.html?p=" + encodeURIComponent(p.name); }
-
-function productCard(p) {
-  const card = el(`
-    <div class="product-card reveal" data-cat="${esc(p.category)}">
-      <div class="frame">
-        ${p.soldOut === true ? '<span class="sold-banner">sold out ♥</span>' : ""}
-        <img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy">
-      </div>
-      <h3>${esc(p.name)}</h3>
-      <p class="note">${esc(p.note || "")}</p>
-      <div class="row">
-        <span class="pr">${esc(p.price)}</span>
-        <a class="btn small" href="${productUrl(p)}">View ★</a>
-      </div>
-    </div>`);
-  card.style.cursor = "pointer";
-  card.addEventListener("click", e => {
-    if (e.target.closest("a")) return;
-    const link = card.querySelector("a.btn");
-    link.click();
-  });
-  return card;
-}
-
 /* ---------- page renderers ---------- */
 function renderHome() {
   const h = C.home;
@@ -1878,7 +1437,7 @@ function renderHome() {
     <a class="make-card reveal d${i}" href="${esc(c.link)}">
       <div class="frame"><img src="${esc(c.img)}" alt="${esc(c.title)}" loading="lazy"></div>
       <h3>${esc(c.title)}</h3><p>${esc(c.text)}</p>
-      <span class="go">shop ${esc(c.title)} →</span>
+      <span class="go">get first dibs →</span>
     </a>`)));
 
   $("#featured-title").textContent = h.featuredTitle;
@@ -1886,257 +1445,36 @@ function renderHome() {
   const feat = h.featuredProducts
     .map(name => C.products.find(p => p.name === name)).filter(Boolean);
   $("#featured-track").append(...feat.map(p => el(`
-    <a class="hs-card" href="${productUrl(p)}">
+    <a class="hs-card" href="waitlist.html">
       <img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy" draggable="false">
-      <div class="nm">${esc(p.name)}</div><div class="pr">${esc(p.price)}</div>
+      <div class="nm">${esc(p.name)}</div><div class="pr">first drop ★</div>
     </a>`)));
 
   $("#about-title").textContent = h.aboutTitle;
   $("#about-text").textContent = h.aboutText;
   $("#about-btn").textContent = h.aboutButton;
 
-  $("#events-title").textContent = h.eventsTitle;
-  $("#events-text").textContent = h.eventsText;
-  $("#events-btn").textContent = h.eventsButton;
-  $("#home-events").append(...C.events.slice(0, 2).map(eventCard));
-
-  $("#journal-title").textContent = h.journalTitle;
-  $("#journal-btn").textContent = h.journalButton;
-  $("#home-posts").append(...C.posts.slice(0, 3).map((p, i) => postCard(p, i)));
-  initPostModal();
+  $("#wl-band-title").textContent = C.waitlist.bandTitle;
+  $("#wl-band-text").textContent = C.waitlist.bandText;
+  $("#wl-band-btn").textContent = C.waitlist.button;
 }
 
-function eventCard(ev) {
-  return el(`
-    <div class="event-card reveal">
-      <div class="event-date"><span class="d">${esc(ev.date)}</span><span class="y">${esc(ev.year)}</span></div>
-      <div>
-        <h3>${esc(ev.name)}</h3>
-        <div class="meta">${esc(ev.place)} ★ ${esc(ev.time)}</div>
-        <div class="note">${esc(ev.note || "")}</div>
-      </div>
-      <img class="event-star" src="assets/coco-and-kal/ce3fcc21dd.png" alt="">
-    </div>`);
-}
-
-function postCard(p, i) {
-  return el(`
-    <button class="post-card reveal d${i % 3}" data-post="${esc(p.title)}" type="button">
-      <div class="frame"><span class="tag">${esc(p.tag)}</span><img src="${esc(p.img)}" alt="${esc(p.title)}" loading="lazy"></div>
-      <div class="pad">
-        <span class="date">${esc(p.date)}</span>
-        <h3>${esc(p.title)}</h3>
-        <p>${esc(p.excerpt)}</p>
-        <span class="read">read the story →</span>
-      </div>
-    </button>`);
-}
-
-function initPostModal() {
-  let modal = $(".post-modal");
-  if (!modal) {
-    modal = el(`<div class="post-modal" role="dialog" aria-modal="true">
-      <div class="post-modal-inner">
-        <button class="post-close" aria-label="Close">✕</button>
-        <span class="date kicker"></span><h2></h2><img alt=""><div class="body"></div>
-      </div></div>`);
-    document.body.appendChild(modal);
-    modal.addEventListener("click", e => { if (e.target === modal) close(); });
-    $(".post-close", modal).addEventListener("click", close);
-    window.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
-  }
-  function close() { modal.classList.remove("open"); document.body.style.overflow = ""; }
-  $$(".post-card").forEach(card => card.addEventListener("click", () => {
-    const p = C.posts.find(x => x.title === card.dataset.post); if (!p) return;
-    $(".kicker", modal).textContent = p.date + "  ·  " + p.tag;
-    $("h2", modal).textContent = p.title;
-    $("img", modal).src = p.img;
-    $(".body", modal).innerHTML = p.body.map(par => `<p>${esc(par)}</p>`).join("");
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
-    $(".post-modal-inner", modal).scrollTop = 0;
-  }));
-}
-
-function renderShop() {
-  $("#shop-intro").textContent = C.shopIntro;
-  const grid = $("#shop-grid");
-  grid.append(...C.products.map(productCard));
-
-  // filters (built automatically from your categories)
-  const cats = ["Everything", ...new Set(C.products.map(p => p.category))];
-  const row = $("#filter-row");
-  const urlCat = new URLSearchParams(location.search).get("c");
-  cats.forEach(cat => {
-    const b = el(`<button class="filter-btn" type="button">${esc(cat)}</button>`);
-    b.addEventListener("click", () => applyFilter(cat, b));
-    row.appendChild(b);
+function renderWaitlist() {
+  const w = C.waitlist;
+  $("#wl-kicker").textContent = w.kicker;
+  $("#wl-title").textContent = w.title;
+  $("#wl-text").textContent = w.text;
+  $("#wl-submit").textContent = w.submit;
+  $("#wl-fine").textContent = w.finePrint;
+  $("#wl-thanks-title").textContent = w.thanksTitle;
+  $("#wl-thanks-text").textContent = w.thanksText;
+  /* Preview-only: on Shopify this form posts to /contact for real and the
+     email lands under Customers. Here we just show the thank-you. */
+  $("#waitlist-form").addEventListener("submit", e => {
+    e.preventDefault();
+    $("#waitlist-form").hidden = true;
+    $("#wl-thanks").hidden = false;
   });
-  function applyFilter(cat, btn) {
-    $$(".filter-btn", row).forEach(b => b.classList.toggle("active", b === btn));
-    $$(".product-card", grid).forEach(c => {
-      c.classList.toggle("hide", cat !== "Everything" && c.dataset.cat !== cat);
-    });
-  }
-  const startBtn = [...row.children].find(b => b.textContent === urlCat) || row.children[0];
-  applyFilter(startBtn.textContent, startBtn);
-
-}
-
-/* ---------- product detail page (PDP) ----------
-   One standard template, auto-filled from each product in
-   content.js. Options/variants mirror Shopify's model, so this
-   ports 1:1 when the real store goes live. */
-function renderProduct() {
-  const name = new URLSearchParams(location.search).get("p");
-  renderProductPage(name);
-}
-
-window.renderProductPage = function (name) {
-  const p = C.products.find(x => x.name === name) || C.products[0];
-  const opts = p.options || [];
-  const images = p.images || [p.img];
-
-  // current selection: first value of every option
-  const sel = {};
-  opts.forEach(o => { sel[o.name] = o.values[0]; });
-
-  // merge every matching variant override (later rules win)
-  function resolve(selection) {
-    const out = { price: p.price, img: null, soldOut: p.soldOut === true, stock: undefined };
-    (p.variants || []).forEach(v => {
-      const hit = v.match.every((m, i) => m === "*" || (opts[i] && m === selection[opts[i].name]));
-      if (hit) {
-        if (v.price !== undefined) out.price = v.price;
-        if (v.img !== undefined) out.img = v.img;
-        if (v.soldOut !== undefined) out.soldOut = v.soldOut;
-        if (v.stock !== undefined) out.stock = v.stock;
-      }
-    });
-    if (out.stock === 0) out.soldOut = true;
-    return out;
-  }
-
-  // ----- static parts -----
-  document.title = p.name + " — Coco & Kal";
-  const crumb = $("#pdp-crumb");
-  crumb.innerHTML = "";
-  crumb.append(
-    el(`<a href="shop.html">Shop</a>`), el(`<span class="sep">★</span>`),
-    el(`<a href="shop.html?c=${encodeURIComponent(p.category)}">${esc(p.category)}</a>`),
-    el(`<span class="sep">★</span>`), el(`<span class="here">${esc(p.name)}</span>`));
-  $("#pdp-cat").textContent = p.category;
-  $("#pdp-title").textContent = p.name;
-  $("#pdp-note").textContent = p.note || "";
-
-  // ----- gallery -----
-  const mainImg = $("#pdp-img");
-  mainImg.alt = p.name;
-  const thumbs = $("#pdp-thumbs");
-  thumbs.innerHTML = "";
-  function showImage(src) {
-    mainImg.src = src;
-    $$(".pdp-thumb", thumbs).forEach(t => t.classList.toggle("active", t.dataset.src === src));
-  }
-  images.forEach(src => {
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "pdp-thumb"; b.dataset.src = src;
-    b.innerHTML = `<img src="${esc(src)}" alt="" loading="lazy">`;
-    b.addEventListener("click", () => showImage(src));
-    thumbs.appendChild(b);
-  });
-  thumbs.style.display = images.length > 1 ? "" : "none";
-
-  // ----- options -----
-  const optHolder = $("#pdp-options");
-  optHolder.innerHTML = "";
-  opts.forEach((o, oi) => {
-    const group = document.createElement("div");
-    group.className = "opt-group";
-    const label = document.createElement("h4");
-    group.appendChild(label);
-    const pills = document.createElement("div");
-    pills.className = "opt-pills";
-    o.values.forEach(v => {
-      const b = document.createElement("button");
-      b.type = "button"; b.className = "opt-pill"; b.textContent = v;
-      b.addEventListener("click", () => { sel[o.name] = v; update(); });
-      pills.appendChild(b);
-    });
-    group.appendChild(pills);
-    group.dataset.opt = o.name;
-    group._label = label;
-    optHolder.appendChild(group);
-  });
-
-  // ----- live update on selection -----
-  const addBtn = $("#pdp-add");
-  const newAdd = addBtn.cloneNode(true);       // drop old listeners on re-render
-  addBtn.replaceWith(newAdd);
-  newAdd.addEventListener("click", () => toast(C.general.shopComingSoon));
-
-  function update() {
-    const v = resolve(sel);
-    $("#pdp-price").textContent = v.price;
-    showImage(v.img || images[0]);
-    let note = C.pdp.stockNote;
-    if (v.soldOut) note = C.pdp.soldOutNote;
-    else if (v.stock !== undefined) {
-      const tpl = v.stock <= 2 ? C.pdp.lowStockNote : C.pdp.stockCountNote;
-      note = tpl.replace("{n}", v.stock);
-    }
-    $("#pdp-stock").textContent = note;
-    $("#pdp-stock").classList.toggle("soldout", v.soldOut);
-    $("#pdp-stock").classList.toggle("lowstock", !v.soldOut && v.stock !== undefined && v.stock <= 2);
-    newAdd.disabled = v.soldOut;
-    newAdd.textContent = v.soldOut ? "Sold out ♥" : "Add to bag";
-
-    $$(".opt-group", optHolder).forEach((group, oi) => {
-      const o = opts[oi];
-      group._label.textContent = o.name + ": " + sel[o.name];
-      $$(".opt-pill", group).forEach(pill => {
-        pill.classList.toggle("active", pill.textContent === sel[o.name]);
-        // grey out values that would be sold out with the other current picks
-        const trial = { ...sel, [o.name]: pill.textContent };
-        pill.classList.toggle("soldout", resolve(trial).soldOut);
-      });
-    });
-  }
-  update();
-
-  // ----- accordions -----
-  const acc = $("#pdp-accordions");
-  acc.innerHTML = "";
-  const description = p.description || (p.note ? [p.note] : []);
-  if (description.length) acc.append(el(`
-    <details class="acc" open><summary>${esc(C.pdp.detailsTitle)}</summary>
-      <div>${description.map(d => `<p>${esc(d)}</p>`).join("")}</div>
-    </details>`));
-  acc.append(el(`
-    <details class="acc"><summary>${esc(C.pdp.shippingTitle)}</summary>
-      <div><p>${esc(C.pdp.shippingText)}</p></div>
-    </details>`));
-
-  // ----- related products -----
-  $("#pdp-related-title").textContent = C.pdp.relatedTitle;
-  const rel = C.products.filter(x => x.name !== p.name && x.category === p.category).slice(0, 6);
-  const more = C.products.filter(x => x.name !== p.name && x.category !== p.category).slice(0, 6 - rel.length);
-  const track = $("#pdp-related");
-  track.innerHTML = "";
-  track.append(...[...rel, ...more].map(x => el(`
-    <a class="hs-card" href="${productUrl(x)}">
-      <img src="${esc(x.img)}" alt="${esc(x.name)}" loading="lazy" draggable="false">
-      <div class="nm">${esc(x.name)}</div><div class="pr">${esc(x.price)}</div>
-    </a>`)));
-  window.scrollTo(0, 0);
-};
-
-function renderEvents() {
-  $("#events-intro").textContent = C.eventsIntro;
-  $("#event-list").append(...C.events.map(eventCard));
-  const track = $("#event-marquee");
-  const imgs = C.eventGallery.map(src => `<img src="${esc(src)}" alt="Coco & Kal at a market" loading="lazy">`).join("");
-  track.innerHTML = imgs + imgs;
 }
 
 function renderAbout() {
@@ -2165,22 +1503,13 @@ function renderAbout() {
   $("#outro-text").textContent = a.outroText;
 }
 
-function renderJournal() {
-  $("#journal-intro").textContent = C.journalIntro;
-  $("#post-grid").append(...C.posts.map((p, i) => postCard(p, i)));
-  initPostModal();
-}
-
 /* ---------- boot ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   initNav(); initTicker(); initFooter();
   const page = document.body.dataset.page;
   if (page === "home")    renderHome();
-  if (page === "shop")    renderShop();
-  if (page === "events")  renderEvents();
   if (page === "about")   renderAbout();
-  if (page === "journal") renderJournal();
-  if (page === "product") renderProduct();
+  if (page === "waitlist") renderWaitlist();
   initReveal(); initDrag();
 });
 
@@ -2188,7 +1517,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderHome(); renderShop(); renderEvents(); renderAbout(); renderJournal(); renderProduct();
+  renderHome(); renderAbout(); renderWaitlist();
   initDrag();
   document.querySelectorAll(".reveal").forEach(x => x.classList.add("in"));
   const views = document.querySelectorAll(".pageview");
@@ -2199,11 +1528,9 @@ document.addEventListener("DOMContentLoaded", () => {
       a.classList.toggle("active", (t === "index" ? "home" : t) === name);
     });
     window.scrollTo(0, 0);
-    if (name === "shop" && qp.c) {
-      const btn = [...document.querySelectorAll(".filter-btn")].find(b => b.textContent === qp.c);
-      if (btn) btn.click();
-    }
-    if (name === "product" && qp.p) renderProductPage(qp.p);
+    if (![...views].some(v => v.dataset.view === name)) name = "home";
+    views.forEach(v => v.hidden = v.dataset.view !== name);
+    try { history.replaceState(null, "", name === "home" ? location.pathname + location.search : "#" + name); } catch (e) {}
     document.querySelectorAll(".reveal").forEach(x => x.classList.add("in"));
   }
   document.addEventListener("click", e => {
@@ -2219,7 +1546,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".burger")?.classList.remove("open");
     document.querySelector(".nav-links")?.classList.remove("open");
   });
-  show("home", {});
+  show((location.hash || "").replace("#", "") || "home", {});
+  window.addEventListener("hashchange", () => show((location.hash || "").replace("#", "") || "home", {}));
 });
 
 </script>
@@ -2243,7 +1571,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'coco-and-kal-v16';
+  var PAGE_ID = 'coco-and-kal-waitlist-v1';
 
   /* ---------------------------------------------- */
 
