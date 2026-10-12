@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="assets/lemon-creative/lemon_slice.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Mr+Dafoe&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Yellowtail&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
@@ -28,7 +28,7 @@
   --paper:#FFFFFF;
   --green-dk:#00805a;
   --pink-dk:#d9628a;
-  --script:"Mr Dafoe","Floraterís",cursive;
+  --script:"Yellowtail","Floraterís",cursive;
   --sans:"Montserrat",system-ui,sans-serif;
   --radius:22px;
   --shadow:0 10px 30px rgba(19,28,42,.10);
@@ -482,6 +482,34 @@ h1,h2{font-weight:700}
 @media (max-width:980px){.reel-row{grid-template-columns:repeat(3,1fr)}.reel-row .reel:nth-child(n+4){display:none}}
 @media (max-width:760px){.reel-row{grid-template-columns:repeat(2,1fr)}.reel-row .reel:nth-child(n+3){display:none}.vlabel{display:none}}
 
+
+/* ===== V4 (comment round 1) ===== */
+.bg-ink .kicker{color:var(--ink)}
+.stamp video{width:100%;height:100%;object-fit:cover;display:block}
+.svc .ttl{display:flex;align-items:center;gap:.7rem}
+.svc .ttl .ico{position:static;width:40px;height:40px;flex:0 0 40px}
+.svc .ttl h3{margin:0}
+.polaroid{width:230px;aspect-ratio:3/3.6;flex:0 0 auto;background:#fff;border:1.5px solid var(--ink);padding:10px 10px 30px;box-shadow:4px 4px 0 var(--ink);transform:rotate(var(--r,0))}
+.polaroid img{width:100%;height:100%;object-fit:cover}
+.vlabel{left:-3.2rem}
+.quote::before{display:none}
+.quote .big{font-weight:600;font-style:normal;margin-top:0}
+.quote p{font-style:normal}
+.quote .big::before{content:"“";color:var(--pink);font-family:var(--sans);font-weight:800;font-size:1.25em;line-height:0;margin-right:.08em}
+.quote .big::after{content:"”";color:var(--pink);font-family:var(--sans);font-weight:800;font-size:1.25em;line-height:0;margin-left:.08em}
+/* steps: number inside the card, gentle bob, dashed connector that draws in */
+.steps.animate{position:relative}
+.steps.animate .step{padding-top:1.3rem;overflow:visible}
+.steps.animate .step::before{position:static;display:inline-grid;margin-bottom:.7rem;animation:bob 3.2s ease-in-out infinite}
+.steps.animate .step:nth-child(2)::before{animation-delay:.4s}.steps.animate .step:nth-child(3)::before{animation-delay:.8s}.steps.animate .step:nth-child(4)::before{animation-delay:1.2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-6px) rotate(4deg)}}
+.steps.animate .step::after{content:"";position:absolute;top:2.35rem;left:calc(100% + 2px);width:1.2rem;border-top:2px dashed var(--pink);opacity:0;transition:opacity .6s .5s}
+.steps.animate .step:last-child::after{display:none}
+.steps.animate .step.in::after{opacity:1}
+.steps.animate .step:hover{transform:translateY(-6px) rotate(-.6deg);transition:transform .25s}
+h1 .script,h2 .script{letter-spacing:.01em}
+@media (max-width:980px){.steps.animate .step::after{display:none}}
+
 [hidden]{display:none!important}
 </style>
 </head>
@@ -529,7 +557,7 @@ h1,h2{font-weight:700}
       <circle cx="100" cy="100" r="98" fill="#F7EF75" stroke="#131C2A" stroke-width="3"/>
       <text font-family="Montserrat,sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#131C2A"><textPath href="#circ">BRIGHT · CANDID · DALLAS TX · LEMON CREATIVE ·</textPath></text>
       <circle cx="100" cy="100" r="34" fill="#F27EA2" stroke="#131C2A" stroke-width="3"/>
-      <text x="100" y="108" text-anchor="middle" font-family="Mr Dafoe,cursive" font-size="34" fill="#fff">LC</text>
+      <text x="100" y="108" text-anchor="middle" font-family="Yellowtail,cursive" font-size="34" fill="#fff">LC</text>
     </symbol>
   </defs>
 </svg>
@@ -560,7 +588,7 @@ h1,h2{font-weight:700}
      ════════════════════════════════════════════════════════════ -->
 <main class="pageview" data-view="home">
 
-  <section class="hero gingham icy doodle denim faded">
+  <section class="hero gingham icy">
     <div class="floaty slow" style="top:6%;left:3%;width:84px"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
     <div class="floaty fast rev" style="top:58%;left:6%;width:58px"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
     <div class="floaty" style="top:10%;right:4%;width:70px"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
@@ -582,11 +610,10 @@ h1,h2{font-weight:700}
 
       <div class="hero-visual reveal d2">
         <div class="stamp ink"><img src="assets/lemon-creative/layne-laptop.jpg" alt="Layne holding a laptop with the Lemon Creative monogram"></div>
-        <div class="stamp two pink"><img src="assets/lemon-creative/wed-bride-celebrate.jpg" alt="Bride celebrating, captured on iPhone"></div>
+        <div class="stamp two pink"><video src="assets/lemon-creative/video/recap-clean.mp4" poster="assets/lemon-creative/video/recap-clean.jpg" autoplay muted loop playsinline></video></div>
         <span class="sticker banana a">social media mgmt</span>
         <span class="sticker pink b">wedding content</span>
         <span class="sticker icy c">photography</span>
-        <div class="spin"><svg><use href="#badge-text"/></svg></div>
       </div>
     </div>
   </section>
@@ -595,13 +622,9 @@ h1,h2{font-weight:700}
     <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
     <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
   </div></div>
-  <div class="wordmark bg-ink doodle ivory faded" style="color:var(--ivory)"><div class="wordmark-track">
-    <span>Lemon Creative</span><span>Lemon Creative</span><span>Lemon Creative</span><span>Lemon Creative</span>
-    <span>Lemon Creative</span><span>Lemon Creative</span><span>Lemon Creative</span><span>Lemon Creative</span>
-  </div></div>
 
   <!-- ── Services ── -->
-  <section class="sec">
+  <section class="sec doodle faded">
     <div class="wrap center">
       <span class="kicker">What I do</span>
       <h2 style="margin-top:1rem">Three ways to <span class="script" style="color:var(--green);font-size:1.3em">work together</span></h2>
@@ -610,23 +633,20 @@ h1,h2{font-weight:700}
       <div class="svc-grid" style="text-align:left">
         <a class="svc social reveal" href="social.html">
           <span class="tag sticker pink" style="--r:-4deg">Most popular</span>
-          <span class="ico"><svg><use href="#i-phone"/></svg></span>
           <div class="pic"><img src="assets/lemon-creative/layne-phone.jpg" alt=""></div>
-          <h3>Social Media Management</h3>
+          <div class="ttl"><span class="ico"><svg><use href="#i-phone"/></svg></span><h3>Social Media Management</h3></div>
           <p>Boutique, done-for-you content and management for small businesses — from full-scale creation + posting to just the piece you're missing.</p>
           <span class="more">Explore social <svg width="18" height="18"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="svc weddings reveal d1" href="weddings.html">
-          <span class="ico"><svg><use href="#i-rings"/></svg></span>
           <div class="pic"><img src="assets/lemon-creative/wed-veil-kiss.jpg" alt=""></div>
-          <h3>Wedding Content Creation</h3>
+          <div class="ttl"><span class="ico"><svg><use href="#i-rings"/></svg></span><h3>Wedding Content Creation</h3></div>
           <p>I show up with an iPhone and capture every in-between moment, then deliver raw content within 24 hours and edited reels within 72.</p>
           <span class="more">See wedding packages <svg width="18" height="18"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="svc photo reveal d2" href="photography.html">
-          <span class="ico"><svg><use href="#i-camera"/></svg></span>
           <div class="pic"><img src="assets/lemon-creative/photo-engagement-1.jpg" alt=""></div>
-          <h3>Photography</h3>
+          <div class="ttl"><span class="ico"><svg><use href="#i-camera"/></svg></span><h3>Photography</h3></div>
           <p>Engagements, maternity, baby announcements, gender reveals, and the little milestones — shot bright, candid, and a little bit playful.</p>
           <span class="more">Book a session <svg width="18" height="18"><use href="#i-arrow"/></svg></span>
         </a>
@@ -654,14 +674,14 @@ h1,h2{font-weight:700}
   </section>
 
   <!-- ── Why Lemon / positioning ── -->
-  <section class="sec ticking scallop-top scallop-bottom" style="--sc:var(--ivory)">
+  <section class="sec ticking ">
     <div class="wrap">
       <div class="split">
         <div class="pic-stack reveal" style="padding-left:2.2rem">
-          <div class="vlabel"><span>Meet Layne</span></div>
+          <div class="vlabel"><span class="script" style="font-size:2.4rem;color:var(--denim);letter-spacing:0;text-transform:none;font-weight:400">Meet Lem</span></div>
           <div class="stamp denim" style="transform:rotate(-3deg);max-width:420px"><img src="assets/lemon-creative/layne-blue.jpg" alt="Layne laughing in pink overalls"></div>
           <span class="sticker banana" style="right:0;top:8%;--r:6deg">no templates, ever</span>
-          <span class="sticker icy" style="left:-4%;bottom:10%;--r:-5deg">hi, I'm Layne <span class="ph">confirm name</span></span>
+          <span class="sticker icy" style="left:-4%;bottom:10%;--r:-5deg">Hi, I'm Lem</span>
         </div>
         <div class="card reveal d1">
           <span class="kicker green">Why Lemon Creative</span>
@@ -693,25 +713,25 @@ h1,h2{font-weight:700}
   </section>
 
   <!-- ── Marquee of recent work ── -->
-  <section class="gingham icy scallop-top scallop-bottom" style="padding:2.5rem 0;--sc:var(--ivory)">
+  <section class="gingham icy " style="padding:2.5rem 0">
     <div class="marquee"><div class="marquee-track">
-      <div class="stamp ink" style="--r:-2deg"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""></div>
-      <div class="stamp" style="--r:2deg"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""></div>
-      <div class="stamp ink" style="--r:-1deg"><img src="assets/lemon-creative/wed-florals.jpg" alt=""></div>
-      <div class="stamp" style="--r:3deg"><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""></div>
-      <div class="stamp ink" style="--r:-3deg"><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""></div>
-      <div class="stamp" style="--r:1deg"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""></div>
-      <div class="stamp ink" style="--r:-2deg"><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""></div>
-      <div class="stamp" style="--r:2deg"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-2deg"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""></div>
+      <div class="polaroid" style="--r:2deg"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-1deg"><img src="assets/lemon-creative/wed-florals.jpg" alt=""></div>
+      <div class="polaroid" style="--r:3deg"><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-3deg"><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""></div>
+      <div class="polaroid" style="--r:1deg"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-2deg"><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""></div>
+      <div class="polaroid" style="--r:2deg"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""></div>
       <!-- duplicate for seamless loop -->
-      <div class="stamp ink" style="--r:-2deg"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""></div>
-      <div class="stamp" style="--r:2deg"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""></div>
-      <div class="stamp ink" style="--r:-1deg"><img src="assets/lemon-creative/wed-florals.jpg" alt=""></div>
-      <div class="stamp" style="--r:3deg"><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""></div>
-      <div class="stamp ink" style="--r:-3deg"><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""></div>
-      <div class="stamp" style="--r:1deg"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""></div>
-      <div class="stamp ink" style="--r:-2deg"><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""></div>
-      <div class="stamp" style="--r:2deg"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-2deg"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""></div>
+      <div class="polaroid" style="--r:2deg"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-1deg"><img src="assets/lemon-creative/wed-florals.jpg" alt=""></div>
+      <div class="polaroid" style="--r:3deg"><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-3deg"><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""></div>
+      <div class="polaroid" style="--r:1deg"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""></div>
+      <div class="polaroid" style="--r:-2deg"><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""></div>
+      <div class="polaroid" style="--r:2deg"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""></div>
     </div></div>
   </section>
 
@@ -720,7 +740,7 @@ h1,h2{font-weight:700}
     <div class="wrap center">
       <span class="kicker">How it works</span>
       <h2 style="margin-top:1rem">Easy as <span class="script" style="color:var(--pink);font-size:1.3em">lemonade</span></h2>
-      <div class="steps" style="text-align:left">
+      <div class="steps animate" style="text-align:left">
         <div class="step reveal"><h4>Say hi</h4><p>Fill out the quick intake form for the service you're after. It takes two minutes and tells me everything I need to know.</p></div>
         <div class="step reveal d1"><h4>Discovery call</h4><p>We hop on a call and I ask a lot of questions — what you do, who you're for, what's working and what's not.</p></div>
         <div class="step reveal d2"><h4>Your custom plan</h4><p>You get a proposal built for <em>your</em> business — not a tiered menu. Approve it and we're off.</p></div>
@@ -730,14 +750,14 @@ h1,h2{font-weight:700}
   </section>
 
   <!-- ── Testimonials ── -->
-  <section class="sec gingham pink scallop-top scallop-bottom" style="--sc:var(--ivory)">
+  <section class="sec gingham pink ">
     <div class="wrap center">
       <span class="kicker pink">Kind words</span>
       <h2 style="margin-top:1rem">Love <span class="script" style="color:var(--pink);font-size:1.3em">notes</span> <span class="ph">need 3 real testimonials</span></h2>
       <div class="quotes" style="text-align:left">
-        <div class="quote reveal"><p class="big">"She turned 400 raw images into a month of reels that actually sound like us."</p><p>Placeholder — our inquiries doubled within two months.</p><cite>Client name<small>Wedding planner · Dallas</small></cite></div>
-        <div class="quote reveal d1"><p class="big">"The reels were posted before we closed. Our best sales week of the year."</p><p>Placeholder — she shot the new arrivals in an hour and knew exactly what would land.</p><cite>Client name<small>Boutique owner · Fort Worth</small></cite></div>
-        <div class="quote reveal d2"><p class="big">"We had our wedding content the next morning. Worth every penny."</p><p>Placeholder — our photographer's gallery was still weeks out and we already had something to post.</p><cite>Client name<small>Bride · Forever Yours package</small></cite></div>
+        <div class="quote reveal"><p class="big">She turned 400 raw images into a month of reels that actually sound like us.</p><p>Placeholder — our inquiries doubled within two months.</p><cite>Client name<small>Wedding planner · Dallas</small></cite></div>
+        <div class="quote reveal d1"><p class="big">The reels were posted before we closed. Our best sales week of the year.</p><p>Placeholder — she shot the new arrivals in an hour and knew exactly what would land.</p><cite>Client name<small>Boutique owner · Fort Worth</small></cite></div>
+        <div class="quote reveal d2"><p class="big">We had our wedding content the next morning. Worth every penny.</p><p>Placeholder — our photographer's gallery was still weeks out and we already had something to post.</p><cite>Client name<small>Bride · Forever Yours package</small></cite></div>
       </div>
     </div>
   </section>
@@ -759,7 +779,7 @@ h1,h2{font-weight:700}
 
   <!-- ── Big CTA ── -->
   <section class="cta-band video">
-    <video src="assets/lemon-creative/video/daynight.mp4" poster="assets/lemon-creative/video/daynight.jpg" autoplay muted loop playsinline></video>
+    <video src="assets/lemon-creative/video/recap-clean.mp4" poster="assets/lemon-creative/video/recap-clean.jpg" autoplay muted loop playsinline></video>
     <div class="wrap">
       <h2>Ready when you are. <span class="script">Let's make something bright.</span></h2>
       <p class="lede center" style="margin-inline:auto">Tell me a little about your business or your big day and I'll be in touch within 48 hours.</p>
@@ -852,7 +872,7 @@ h1,h2{font-weight:700}
   </section>
 
   <!-- ── Who it's for ── -->
-  <section class="sec ticking pink scallop-top scallop-bottom" style="--sc:var(--ivory)">
+  <section class="sec ticking pink ">
     <div class="wrap split">
       <div class="card reveal">
         <span class="kicker pink">Two clients I love</span>
@@ -991,7 +1011,7 @@ h1,h2{font-weight:700}
   </section>
 
   <!-- ── Packages ── -->
-  <section class="sec ticking scallop-top scallop-bottom" id="wed-packages" style="--sc:var(--ivory)">
+  <section class="sec ticking " id="wed-packages">
     <div class="wrap center">
       <span class="kicker">Packages</span>
       <h2 style="margin-top:1rem">Two ways to say <span class="script" style="color:var(--pink);font-size:1.3em">I do</span></h2>
@@ -1062,7 +1082,7 @@ h1,h2{font-weight:700}
   </section>
 
   <!-- ── Wedding intake ── -->
-  <section class="sec gingham icy scallop-top" id="wed-form" style="--sc:var(--ivory)">
+  <section class="sec gingham icy " id="wed-form">
     <div class="wrap" style="max-width:860px">
       <div class="center">
         <span class="kicker icy">Wedding content intake</span>
@@ -1228,7 +1248,7 @@ h1,h2{font-weight:700}
     <div class="wrap split">
       <div class="reveal">
         <span class="kicker">About</span>
-        <h1 style="margin-top:1rem"><span class="script" style="color:var(--pink)">Hi, I'm Layne</span><span class="ph">confirm name</span><br>the person behind the lemon</h1>
+        <h1 style="margin-top:1rem"><span class="script" style="color:var(--pink)">Hi, I'm Lem</span><br>the person behind the lemon</h1>
         <p class="lede"><span class="ph">placeholder bio — needs her words</span> I'm a Dallas-based content creator, social media manager, and photographer who believes marketing should feel like a conversation with your most enthusiastic friend. I started Lemon Creative because too many small businesses were paying for content that looked nothing like them — polished, beige, and forgettable.</p>
         <p>These days I split my time between content days at boutiques, raw galleries from wedding pros, Saturday weddings with my iPhone, and golden-hour sessions with couples and growing families. The common thread: bright, candid, and 100% you.</p>
         <div class="facts">
@@ -1265,7 +1285,7 @@ h1,h2{font-weight:700}
   </section>
 
   <section class="cta-band video">
-    <video src="assets/lemon-creative/video/firstlook.mp4" poster="assets/lemon-creative/video/firstlook.jpg" autoplay muted loop playsinline></video>
+    <video src="assets/lemon-creative/video/reel-a.mp4" poster="assets/lemon-creative/video/reel-a.jpg" autoplay muted loop playsinline></video>
     <div class="wrap">
       <h2>Sound like your kind of person? <span class="script">Let's talk.</span></h2>
       <a class="btn banana" href="contact.html" style="margin-top:1rem">Start with the intake form <svg><use href="#i-arrow"/></svg></a>
@@ -1330,7 +1350,7 @@ h1,h2{font-weight:700}
       <li><a href="contact.html">Intake forms</a></li>
     </ul></div>
     <div><h4>Studio</h4><ul>
-      <li><a href="about.html">About Layne</a></li>
+      <li><a href="about.html">About Lem</a></li>
       <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li>
       <li><a href="mailto:hello@lemoncreative.pro">Email</a></li>
@@ -1425,7 +1445,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'lemon-creative-v3';
+  var PAGE_ID = 'lemon-creative-v4';
 
   /* ---------------------------------------------- */
 
