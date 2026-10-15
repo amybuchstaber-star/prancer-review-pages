@@ -2200,7 +2200,7 @@ applyEdition(+document.documentElement.dataset.edition||10);
   const who=(c.dataset.from||(c.querySelector('cite')||{}).textContent||'A friend · Somewhere').split('·').map(x=>x.trim());
   let about=c.dataset.about;if(!about){const h=c.closest('section')&&c.closest('section').querySelector('h2');const mm=h&&h.textContent.match(/about (.+?)\.?$/i);about=mm?mm[1].replace(/^the /i,'The '):'Postmark Pantry'}
   const day=[3,7,11,9,14,5,12][i%7];
-  const a=document.createElement('div');a.className='addr';a.innerHTML=`<img class="stamp" src="${A(`assets/stamps/${ST[(i*3+1)%ST.length]}.webp`)}" alt="">${postmarkSVG(mo.slice(0,3).toUpperCase()+' '+day+' 2026','POSTMARK PANTRY',(who[1]||'').toUpperCase())}<div class="to"><span>From</span><i>${who[0]}</i><i>${who[1]||''}</i><span class="ab">About</span><i>${about}</i></div>`;c.appendChild(a);
+  const a=document.createElement('div');a.className='addr';a.innerHTML=`<img class="stamp" src="${A(STAMPS[document.documentElement.dataset.season||'autumn'][(i*3+1)%10])}" alt="">${postmarkSVG(mo.slice(0,3).toUpperCase()+' '+day+' 2026','POSTMARK PANTRY',(who[1]||'').toUpperCase())}<div class="to"><span>From</span><i>${who[0]}</i><i>${who[1]||''}</i><span class="ab">About</span><i>${about}</i></div>`;c.appendChild(a);
   /* flip: the front of the postcard is a photograph */
   const face=c.dataset.face||(c.querySelector('.face')||{}).src;if(!face)return;
   const back=document.createElement('div');back.className='side back';while(c.firstChild)back.appendChild(c.firstChild);
