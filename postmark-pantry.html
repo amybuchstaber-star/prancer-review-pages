@@ -7,7 +7,7 @@
 <meta name="description" content="Postmark Pantry. A wholefood fiber blend that becomes real, spreadable jam, and the afternoon glass that goes with it. Steady, faithful, kept.">
 <link rel="icon" href="pp/identity__wax-seal-transparent.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Homemade+Apple&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Homemade+Apple&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    POSTMARK PANTRY · v9 · review round 1 applied
@@ -1459,6 +1459,194 @@ h1,h2,h3{letter-spacing:.005em}
 .bc.now .n{position:relative;align-self:flex-start;z-index:1}
 .bc .inkc{position:absolute;left:50%;top:50%;width:62px;height:62px;transform:translate(-50%,-52%) rotate(var(--ir,0deg));pointer-events:none}
 @media(max-width:600px){.bc .inkc{width:44px;height:44px}.bc.now .n{text-decoration:none}}
+
+/* ===================== v13: Amy's mobile pass (Oct 15) ===================== */
+:root{--card:#FFFCF6;--card-edge:rgba(139,52,56,.16);--lift:0 26px 50px -30px rgba(60,30,10,.5),0 2px 6px -2px rgba(60,30,10,.12);--hand:"Caveat","Homemade Apple",cursive}
+
+/* panels that sit on the paper wallpaper get their own lighter sheet, so they read as objects */
+.pc .cp,.recipe .card,.pcol,.lore .text,.month .sheet,.faq{background:var(--card)!important;background-image:none!important;border:1px solid var(--card-edge)!important;box-shadow:var(--lift)!important}
+.pfacts{background:#F6ECDD;border:0!important;outline:1px solid var(--card-edge)}
+.pfacts div{border-right:1px solid rgba(139,52,56,.14)!important}
+
+/* header: no issue line on phones */
+@media(max-width:860px){.mast .issue,.mast .issue-m,.mast .issue-top{display:none!important}}
+
+/* cover on phones: the film shows; words sit on it */
+@media(max-width:860px){
+  .cover{height:min(88vh,720px)}
+  .cover .scrim{background:linear-gradient(180deg,rgba(30,22,16,.05) 0%,rgba(30,22,16,0) 30%,rgba(30,22,16,.55) 62%,rgba(30,22,16,.82) 100%)!important}
+  .cover .label{background:none!important;box-shadow:none!important;border:0!important;padding:0 2px!important;max-width:none;color:var(--paper)}
+  .cover .label::after{display:none}
+  .cover .label .once{color:#F3D9C9}
+  .cover .label .dept{color:#F3D9C9;border-color:rgba(243,217,201,.6)}
+  .cover h1{color:var(--paper);text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .cover h1 em{color:#F2C6BC}
+  .cover .sub{color:rgba(251,248,241,.92)!important;font-size:16px;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+  .cover .tlink{color:var(--paper)!important;border-color:rgba(251,248,241,.7)!important}
+  .cover .right{display:none}
+  .cover .lines{padding-bottom:30px}
+  .pmark{width:92px!important;top:16px!important;right:16px!important;mix-blend-mode:normal!important;color:var(--paper);background:radial-gradient(circle,rgba(30,22,16,.42) 0 62%,rgba(30,22,16,0) 72%);border-radius:50%;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))!important}
+}
+
+/* in this issue, on phones: all five at once, icon over one word */
+.toc a .sh{display:none}
+@media(max-width:900px){
+  .toc .row{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:4px!important;overflow:visible!important;padding:16px 0 14px!important}
+  .toc a{display:flex!important;flex-direction:column;align-items:center;gap:6px;padding:4px 0!important;text-align:center}
+  .toc a .ic{width:52px!important;height:52px!important}
+  .toc a .cap b,.toc a .cap>span,.toc a .cap small{display:none!important}
+  .toc a .sh{display:block;font-style:normal;font-family:var(--slab);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .toc a .cap{text-align:center}
+}
+
+/* product cards */
+.pc .ptag{position:absolute;left:50%;top:-14px;transform:translateX(-50%) rotate(-1.5deg);z-index:3;font-family:var(--did);font-style:italic;font-size:16px;color:var(--ink);background:var(--card);padding:4px 14px 5px;border:1px solid var(--card-edge);box-shadow:0 6px 12px -8px rgba(60,30,10,.4);white-space:nowrap}
+.pc.pair-card .ptag{left:62%}
+.pc .pstamp{width:clamp(84px,8vw,112px)!important;right:-14px!important;top:-26px!important}
+.pc .buy{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.pc .buy .price{display:flex;align-items:baseline;gap:10px;font-family:var(--did);font-size:34px;line-height:1;color:var(--ink)}
+.pc .buy .price small{font-family:var(--slab);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.pc .buy .price s{font-size:22px;color:var(--ink-3)}
+.pc .buy .acts2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc .buy .btn{justify-content:center;max-width:none;padding-left:10px;padding-right:10px}
+.btn.ghost{background:transparent!important;color:var(--red)!important;border:1.5px solid var(--red)!important;box-shadow:none!important}
+.btn.ghost:hover{background:var(--red)!important;color:var(--paper)!important}
+@media(max-width:600px){
+  .pc .pstamp{width:96px!important;right:-8px!important;top:-24px!important}
+  .pc .ptag{font-size:15px}
+  .pc .buy .acts2{grid-template-columns:1fr}
+  .pc.pair-card .sprig{left:-14px!important;top:-18px!important;bottom:auto!important;right:auto!important;width:92px!important;transform:none!important}
+}
+
+/* the ritual */
+.pola.main video{aspect-ratio:16/9!important;object-fit:cover}
+.recipe .steps b{width:auto!important;height:auto!important;border:0!important;border-radius:0!important;background:none!important;display:block!important;font-family:var(--did)!important;font-style:italic!important;font-size:30px!important;color:var(--red)!important;line-height:1!important;margin-top:-2px!important;text-align:right;padding-right:6px}
+.recipe .steps li{grid-template-columns:48px 1fr!important}
+@media(max-width:900px){
+  .filmstack{aspect-ratio:auto!important;display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;align-items:start;width:100%}
+  .filmstack>*{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important}
+  .filmstack .scribble.big{grid-column:1/-1;order:-1;justify-self:end;font-size:22px!important;transform:rotate(-2deg)!important;margin:0 6px -6px 0}
+  .pola.main{grid-column:1/-1;width:100%!important;transform:rotate(-1deg)!important}
+  .pola.main figcaption{padding-right:4px!important;text-align:center!important}
+  .pola.small{width:100%!important;transform:rotate(2deg)!important}
+  .filmstack .st{width:min(120px,80%)!important;justify-self:center;align-self:center;transform:rotate(-8deg)!important}
+}
+
+/* the particulars */
+.proof{gap:clamp(22px,3vw,40px)}
+.pcol{padding:clamp(20px,2.6vw,34px)!important;position:relative}
+.plabel .in{background:var(--card);border-radius:2px;inset:21% 17% 21% 17%!important;box-shadow:0 0 0 6px var(--card)}
+.tapcue{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-family:var(--slab);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.tapcue .ic{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--red);color:var(--paper);font-size:14px;letter-spacing:0}
+.ftile .face{box-shadow:0 10px 18px -12px rgba(60,30,10,.45)!important;border:0!important}
+.ftile .f{background:var(--tc,#F4E2DC)!important}
+.ftile .f::after{content:"";position:absolute;right:0;top:0;width:22px;height:22px;background:linear-gradient(225deg,var(--paper) 50%,rgba(60,30,10,.18) 50%,var(--tcd,#C98E86) 56%);box-shadow:-2px 2px 3px rgba(60,30,10,.12)}
+.ftile .f i{display:block!important;position:absolute;bottom:8px;right:10px;font-family:var(--slab)!important;font-style:normal;font-size:10.5px!important;letter-spacing:.12em;text-transform:uppercase;color:var(--tcd,#8B3438)!important;opacity:1!important}
+.ftile .bk{background:var(--tb,#8B3438)!important;border:0!important}
+.ftile .bk span{color:#FBF4E8!important}
+.pcol.jam .ftile:nth-child(1){--tc:#F4DCD5;--tcd:#9A3D3F;--tb:#8B3438}
+.pcol.jam .ftile:nth-child(2){--tc:#F2E5C7;--tcd:#8A6A2A;--tb:#7A5B22}
+.pcol.jam .ftile:nth-child(3){--tc:#E3E6D1;--tcd:#56634B;--tb:#4E5B42}
+.pcol.jam .ftile:nth-child(4){--tc:#EAD8E2;--tcd:#7C4A64;--tb:#6E3F58}
+.pcol.lyte .ftile:nth-child(1){--tc:#E3E6D1;--tcd:#56634B;--tb:#4E5B42}
+.pcol.lyte .ftile:nth-child(2){--tc:#F4DCD5;--tcd:#9A3D3F;--tb:#8B3438}
+.pcol.lyte .ftile:nth-child(3){--tc:#EAD8E2;--tcd:#7C4A64;--tb:#6E3F58}
+.pcol.lyte .ftile:nth-child(4){--tc:#F2E5C7;--tcd:#8A6A2A;--tb:#7A5B22}
+.ftile .f b{color:var(--tcd)!important}
+.ftile.peek{transform:rotateY(-28deg) translateY(-4px)!important;transition:transform .55s var(--spring,ease)!important}
+.ingr-line{border-top:1px solid var(--card-edge)!important}
+.ingr-line .ing{font-size:12.5px}
+@media(max-width:600px){.ftile .f i{font-size:9.5px!important;right:8px;bottom:6px}.tiles{gap:10px}}
+
+/* the leaves divider: the canvas carries the motion on phones too */
+
+/* the lore, on phones: big photos in a column, the note gets its own space */
+@media(max-width:700px){
+  .scrap{aspect-ratio:auto!important;display:flex;flex-direction:column;gap:0;padding:6px 0 10px}
+  .scrap>*{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important}
+  .scrap .p1,.scrap .p2,.scrap .p3,.scrap .p4{width:88%!important;aspect-ratio:3/2!important}
+  .scrap .p1{align-self:flex-start;transform:rotate(-2deg)!important;z-index:1}
+  .scrap .p2{align-self:flex-end;margin-top:-26px;transform:rotate(2.2deg)!important;z-index:2}
+  .scrap .note{order:5;width:auto!important;margin:22px 4px 8px;transform:rotate(-.6deg)!important;font-size:22px!important;padding:18px 20px 20px!important}
+  .scrap .p3{order:6;align-self:flex-start;margin-top:10px;transform:rotate(-1.5deg)!important}
+  .scrap .p4{order:7;align-self:flex-end;width:62%!important;aspect-ratio:4/5!important;margin-top:-40px;transform:rotate(3deg)!important;z-index:2}
+  .scrap .seal{position:absolute!important;order:9;width:62px!important;right:30%!important;bottom:22%!important;left:auto!important;top:auto!important}
+  .scrap .stamp{position:absolute!important;width:66px!important;left:auto!important;right:2%!important;top:-14px!important}
+  .scrap .stamp2,.scrap .leaf{display:none!important}
+  .lore .text{position:relative}
+  .lore .text .fl{width:120px!important;right:-2px!important;bottom:-2px!important;transform:scaleX(-1)!important}
+}
+.scrap .note{font-family:var(--hand)!important;font-size:21px;line-height:1.35}
+.scrap .note span{font-family:var(--hand)}
+
+/* the month */
+.month .art{position:static!important;display:block;margin:0 auto 6px;width:clamp(70px,8vw,96px)!important;transform:rotate(-6deg)!important;top:auto!important}
+.month .title{margin-bottom:22px}
+.wkhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:3px double var(--ink);padding-top:14px;margin-bottom:12px}
+.wkhead .k{font-family:var(--slab);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.wkhead .h{font-family:var(--did);font-style:italic;font-size:15px;color:var(--ink-3)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.wday{position:relative;display:flex;flex-direction:column;gap:4px;min-height:150px;padding:12px 12px 14px;text-decoration:none;color:var(--ink);background:#F7EEDF;border:1px solid var(--card-edge);transition:transform .35s var(--ease),box-shadow .35s}
+.wday:hover{transform:translateY(-3px);box-shadow:0 14px 22px -16px rgba(60,30,10,.5)}
+.wday .wd{font-family:var(--slab);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.wday .dn{font-family:var(--did);font-size:34px;line-height:1}
+.wday .tg{align-self:flex-start;margin-top:4px;font-family:var(--slab);font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);background:var(--c,#8B7A66);padding:3px 7px 2px}
+.wday .tt{font-family:var(--body);font-size:14px;line-height:1.35;color:var(--ink-2)}
+.wday.t-recipe{--c:#8B3438}.wday.t-todo{--c:#56634B}.wday.t-film{--c:#7A5B22}.wday.t-letter{--c:#6E3F58}.wday.t-holiday{--c:#A2505F}.wday.t-note{--c:#8B7A66}
+.wday.now{background:var(--card);border:2px solid var(--red);box-shadow:0 16px 26px -18px rgba(139,52,56,.6)}
+.wday .nowtag{position:absolute;right:10px;top:8px;font-family:var(--hand);font-size:18px;color:var(--red)}
+.mfoot{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(20px,4vw,60px);align-items:end;margin-top:30px;padding-top:24px;border-top:1px solid var(--card-edge)}
+.mgo{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.mgo>span{font-family:var(--did);font-style:italic;font-size:15px;color:var(--ink-3)}
+@media(max-width:860px){
+  .week{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -16px;padding:4px 16px 14px;scrollbar-width:none}
+  .week::-webkit-scrollbar{display:none}
+  .wday{flex:0 0 46%;scroll-snap-align:center;min-height:156px}
+  .mfoot{grid-template-columns:1fr;gap:20px}
+  .mgo .btn{width:100%;justify-content:center}
+  .wkhead{flex-direction:column;gap:2px}
+}
+
+/* the postbox: a whole postcard flies, and the letters are legible */
+.mb-ghost{position:fixed;z-index:60;pointer-events:none;transform-origin:50% 100%;background:#FBF6EC;padding:3px;border-radius:2px;box-shadow:0 10px 18px -8px rgba(40,25,10,.55)}
+.mb-ghost img{display:block;width:100%;height:100%;object-fit:cover}
+.card-l q{font-family:var(--hand)!important;font-size:24px!important;line-height:1.3!important;font-weight:500}
+.card-l .addr .to i{font-family:var(--hand)!important;font-size:20px!important}
+.mb-note p{font-family:var(--hand)!important;font-size:20px!important;line-height:1.35!important}
+@media(max-width:600px){.card-l q{font-size:22px!important}}
+
+/* FAQ: the pantry door is a print at the top of the questions, no fade */
+.faqplate{margin:0 0 22px;padding:10px 10px 0;background:#FBF6EC;border:1px solid var(--card-edge);box-shadow:0 18px 30px -22px rgba(60,30,10,.55);transform:rotate(-.6deg)}
+.faqplate .faqscene{position:relative;aspect-ratio:16/9;overflow:hidden;-webkit-mask-image:none!important;mask-image:none!important;margin:0!important;width:100%!important;height:auto!important}
+.faqplate .faqscene img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:none!important;mask-image:none!important}
+.faqplate .faqscene::before,.faqplate .faqscene::after{display:none!important}
+.faqplate figcaption{font-family:var(--hand);font-size:19px;color:var(--red);text-align:center;padding:8px 0 10px}
+.faq{padding:clamp(18px,2.4vw,30px)!important}
+
+/* the letter folds and leaves: the card's paper becomes the folding sheet, the table shows through */
+.lettercard{transition:background-color .5s,border-color .5s,box-shadow .5s}
+.lettercard>.lc-art,.lettercard>.lc-sheet,.lettercard>.st,.lettercard>.wax,.lettercard>.cancel,.lettercard>.fl{transition:opacity .45s,transform .6s var(--settle,ease)}
+.lettercard.s1{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+.lettercard.s1::after{opacity:0!important;transition:opacity .4s}
+.lettercard.s1>.lc-art,.lettercard.s1>.lc-sheet,.lettercard.s1>.st,.lettercard.s1>.wax,.lettercard.s1>.cancel,.lettercard.s1>.fl{opacity:0!important;transform:scale(.97)}
+.lettercard .fold{transform:scale(1.06);transition:transform .9s var(--settle,ease) .1s}
+.lettercard.s2 .fold{transform:scale(1)}
+.lettercard.s4 .fold{transform:translateY(160px) scale(.94)}
+.sent-note{left:50%!important;right:auto!important;transform:translateX(-50%);width:max-content;max-width:90%;background:rgba(251,246,236,.94);padding:8px 16px;box-shadow:0 10px 20px -12px rgba(0,0,0,.5);font-family:var(--hand)!important;font-size:21px!important}
+
+/* footer: postmark inked to the side; the stamp strip closes the page */
+
+.fbot{position:relative;padding-right:220px}.fpm{position:absolute;right:0;top:-34px;width:200px;color:var(--red);opacity:.9;pointer-events:none}
+.fpm .pmk{width:100%}
+footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top:16px}
+@media(max-width:700px){.fbot{padding-right:0}.fpm{position:relative;right:auto;top:auto;display:block;width:180px;margin:0 0 10px -6px;order:-1}}
+
+.pc.jam .buy .acts2,.pc.lyte .buy .acts2{grid-template-columns:1fr}
+.pc .buy .btn{white-space:nowrap}
+
+@media(max-width:860px){.week{margin:0!important;padding:4px 2px 14px!important}.mgo .btn{white-space:nowrap;letter-spacing:.12em;font-size:12px;padding-left:14px;padding-right:14px}}
+
+@media(min-width:901px){.faqwrap{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)!important;align-items:start}.faqart{position:sticky;top:120px}}
 </style>
 </head>
 <body>
@@ -1510,16 +1698,15 @@ h1,h2,h3{letter-spacing:.005em}
     </div>
     <div class="right"><b data-ed="month">October</b>Nº <span data-ed="number">10</span> · <span data-ed="title">Gathered in Autumn</span></div>
   </div>
-  <a class="hero-note" href="#home/pantry">take a breath ↓</a>
 </section>
 
 <section class="toc" aria-label="In this issue"><div class="wrap">
     <div class="row rv">
-      <a href="#home/pantry"><img class="ic" src="pp/illustration__preserves-jar-320.webp" alt=""><div class="cap"><b>01</b><span>THE PANTRY</span><small>Two jars, one rhythm</small></div></a>
-      <a href="#home/ritual"><img class="ic" src="pp/illustration__transferware-teapot-320.webp" alt=""><div class="cap"><b>02</b><span>THE RITUAL</span><small>Three steps, then toast</small></div></a>
-      <a href="#story"><img class="ic" src="pp/illustration__cottage-key-320.webp" alt=""><div class="cap"><b>03</b><span>THE LORE</span><small>It is a returning</small></div></a>
-      <a href="#home/month"><img class="ic" src="pp/illustration__fountain-pen-320.webp" alt=""><div class="cap"><b>04</b><span>THIS MONTH</span><small>Gentle reminders</small></div></a>
-      <a href="#faq"><img class="ic" src="pp/illustration__garden-rose-320.webp" alt=""><div class="cap"><b>05</b><span>ASKED, ANSWERED</span><small>The last little questions</small></div></a>
+      <a href="#home/pantry"><img class="ic" src="pp/illustration__preserves-jar-320.webp" alt=""><div class="cap"><b>01</b><span>THE PANTRY</span><em class="sh">Pantry</em><small>Two jars, one rhythm</small></div></a>
+      <a href="#home/ritual"><img class="ic" src="pp/illustration__transferware-teapot-320.webp" alt=""><div class="cap"><b>02</b><span>THE RITUAL</span><em class="sh">Ritual</em><small>Three steps, then toast</small></div></a>
+      <a href="#story"><img class="ic" src="pp/illustration__cottage-key-320.webp" alt=""><div class="cap"><b>03</b><span>THE LORE</span><em class="sh">Lore</em><small>It is a returning</small></div></a>
+      <a href="#home/month"><img class="ic" src="pp/illustration__fountain-pen-320.webp" alt=""><div class="cap"><b>04</b><span>THIS MONTH</span><em class="sh">Month</em><small>Gentle reminders</small></div></a>
+      <a href="#faq"><img class="ic" src="pp/illustration__garden-rose-320.webp" alt=""><div class="cap"><b>05</b><span>ASKED, ANSWERED</span><em class="sh">Q&amp;A</em><small>The last little questions</small></div></a>
     </div></div></section>
 
 <!-- THE PANTRY -->
@@ -1529,7 +1716,7 @@ h1,h2,h3{letter-spacing:.005em}
     <div class="sec-head rv"><div><span class="dept">The Pantry</span><h2 id="h-pantry">Two small rituals, <em>made to be kept.</em></h2><p class="lede">Jam on toast at eight, a tall glass over ice at noon.</p></div></div>
     <div class="pantry rv d1">
       <article class="pc jam"><img class="pstamp" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true">
-        <span class="scribble" aria-hidden="true">the morning jar ↘</span>
+        <span class="ptag" aria-hidden="true">The morning jar</span>
         <div class="ph"><img class="main" data-ed="pjam" src="pp/photos__product__autumn-jam-pact.webp" alt="A jar of Jam Pact on a wooden table with pears, acorns and toast"></div>
         <div class="cp">
           <div class="no">Nº 01 <i>Fiber blend</i></div>
@@ -1537,12 +1724,11 @@ h1,h2,h3{letter-spacing:.005em}
           <p class="tagline">Real, spreadable jam in two minutes.</p>
           <div class="pfacts"><div><b>11g</b><span>fiber</span></div><div><b>7</b><span>plants</span></div><div><b>2 min</b><span>to jam</span></div></div>
           <p class="desc">A wholefood fiber blend you stir into 4 ounces of tart cherry or pomegranate juice. Two minutes later, she is jam.</p>
-          <div class="act"><span class="price">$44<small>30 servings</small></span><a class="btn" href="#jam-pact">Add to basket</a></div>
-          <a class="more" href="#jam-pact">or read her story →</a>
+          <div class="buy"><span class="price">$44<small>30 servings</small></span><div class="acts2"><a class="btn" href="#jam-pact">Add to basket</a><a class="btn ghost" href="#jam-pact">Read her story</a></div></div>
         </div>
       </article>
       <article class="pc lyte"><img class="pstamp" data-stamp="9" src="pp/stamps__autumn__autumn-10-autumn-tea.webp" alt="" aria-hidden="true">
-        <span class="scribble" aria-hidden="true">the afternoon glass ↘</span>
+        <span class="ptag" aria-hidden="true">The afternoon glass</span>
         <div class="ph"><img class="main" data-ed="plyte" src="pp/photos__product__autumn-pitcher-perfect.webp" alt="A jar of Pitcher Perfect beside a glass of rosy lemonade"></div>
         <div class="cp">
           <div class="no">Nº 02 <i>Electrolyte blend</i></div>
@@ -1550,12 +1736,11 @@ h1,h2,h3{letter-spacing:.005em}
           <p class="tagline">Raspberry lemonade, poured tall over ice.</p>
           <div class="pfacts"><div><b>5g</b><span>fiber</span></div><div><b>0g</b><span>sugar</span></div><div><b>4</b><span>minerals</span></div></div>
           <p class="desc">Hydration, minerals and real fiber. Steady balance for the long middle of the day, never spiked.</p>
-          <div class="act"><span class="price">$38<small>30 servings</small></span><a class="btn" href="#pitcher-perfect">Add to basket</a></div>
-          <a class="more" href="#pitcher-perfect">or read her story →</a>
+          <div class="buy"><span class="price">$38<small>30 servings</small></span><div class="acts2"><a class="btn" href="#pitcher-perfect">Add to basket</a><a class="btn ghost" href="#pitcher-perfect">Read her story</a></div></div>
         </div>
       </article>
       <article class="pc pair-card"><img class="pstamp" data-stamp="5" src="pp/stamps__autumn__autumn-06-harvest-basket.webp" alt="" aria-hidden="true">
-        <span class="scribble" aria-hidden="true">both, wrapped together ↘</span><img class="sprig" data-ed="corner" src="pp/illustration__october-corner.webp" alt="" aria-hidden="true">
+        <span class="ptag" aria-hidden="true">Both, wrapped together</span><img class="sprig" data-ed="corner" src="pp/illustration__october-corner.webp" alt="" aria-hidden="true">
         <div class="ph"><img class="main" data-ed="ppair" src="pp/photos__product__autumn-pantry-pair.webp" alt="The Pantry Pair on a wooden table"></div>
         <div class="cp">
           <div class="no">Nº 03 <i>The bundle</i></div>
@@ -1563,8 +1748,7 @@ h1,h2,h3{letter-spacing:.005em}
           <p class="tagline">Mornings and afternoons, covered.</p>
           <div class="pfacts"><div><b>2</b><span>jars</span></div><div><b>1</b><span>handbook</span></div><div><b>$10</b><span>saved</span></div></div>
           <p class="desc">Both jars in one parcel, with The Inner Garden handbook tucked alongside and a letter sealed in wax.</p>
-          <div class="act"><span class="price"><s>$82</s> $72<small>both jars</small></span><a class="btn" href="#pantry-pair">Add the Pair</a></div>
-          <a class="more" href="#pantry-pair">or see what is in the parcel →</a>
+          <div class="buy"><span class="price"><s>$82</s> $72<small>both jars</small></span><div class="acts2"><a class="btn" href="#pantry-pair">Add the Pair</a><a class="btn ghost" href="#pantry-pair">See the parcel</a></div></div>
         </div>
       </article>
     </div>
@@ -1579,8 +1763,8 @@ h1,h2,h3{letter-spacing:.005em}
     <div class="sec-head rv"><div><span class="dept">The Jam Pact ritual</span><h2 id="h-ritual">Three steps, <em>then toast.</em></h2><p class="lede">How Jam Pact becomes jam. One scoop, one small jar, two minutes.</p></div></div>
     <div class="ritual3 rv d1">
       <div class="filmstack">
-        <figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-clean.mp4" muted loop playsinline poster="pp/photos__oct__toast.webp" aria-label="How Jam Pact becomes jam, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure>
-        <figure class="pola small"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__toast-jam.mp4" muted loop playsinline poster="pp/photos__oct__toast.webp" aria-label="Jam being spread on toast"></video><figcaption>then, toast</figcaption></figure>
+        <figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-wide.mp4" muted loop playsinline poster="pp/films__jam-pact-howto-wide-poster.webp" aria-label="How Jam Pact becomes jam, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure>
+        <figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__oct__toast.webp" alt="Jam Pact spread on toast" loading="lazy"><figcaption>then, toast</figcaption></figure>
         <img class="st" data-stamp="6" src="pp/stamps__autumn__autumn-07-apple-tart.webp" alt="" aria-hidden="true">
         <span class="scribble big" aria-hidden="true">watch her set →</span>
       </div>
@@ -1590,11 +1774,11 @@ h1,h2,h3{letter-spacing:.005em}
           <span class="from">From the recipe box</span>
           <h3>Jam Pact, <em>the house way</em></h3>
           <ol class="steps">
-            <li><b>1</b><div><h4>Pour</h4><p>One scoop into a small jar, then 4 ounces of dark red juice and sweetener, if you like. Tart cherry and pomegranate are the house favorites.</p></div></li>
-            <li><b>2</b><div><h4>Stir</h4><p>A good stir, then two minutes of patience while she sets into real preserves.</p></div></li>
-            <li><b>3</b><div><h4>Spread</h4><p>Straight onto toast, yogurt, or a spoon at the counter. 11g of fiber, disguised as breakfast.</p></div></li>
+            <li><b>i.</b><div><h4>Pour</h4><p>One scoop into a small jar, then 4 ounces of dark red juice and sweetener, if you like. Tart cherry and pomegranate are the house favorites.</p></div></li>
+            <li><b>ii.</b><div><h4>Stir</h4><p>A good stir, then two minutes of patience while she sets into real preserves.</p></div></li>
+            <li><b>iii.</b><div><h4>Spread</h4><p>Straight onto toast, yogurt, or a spoon at the counter. 11g of fiber, disguised as breakfast.</p></div></li>
           </ol>
-          <div class="foot"><span class="kicker">Makes one small jar. Keeps a week in the fridge.</span><a class="tlink" href="#jam-pact">meet Jam Pact →</a></div>
+          <div class="foot"><a class="tlink" href="#jam-pact">meet Jam Pact →</a></div>
         </div>
       </div>
     </div>
@@ -1605,17 +1789,17 @@ h1,h2,h3{letter-spacing:.005em}
 <section class="proofwrap" aria-labelledby="h-proof">
   <div class="facts-tk" aria-hidden="true"><div class="track"><span>11g fiber per serving</span><span>becomes real, spreadable jam</span><span>100% wholefood based</span><span>no isolates, ever</span><span>steady, faithful, kept</span><span>feed what feeds you</span><span>11g fiber per serving</span><span>becomes real, spreadable jam</span><span>100% wholefood based</span><span>no isolates, ever</span><span>steady, faithful, kept</span><span>feed what feeds you</span></div></div>
   <div class="wrap">
-    <div class="sec-head rv"><div><span class="dept">Practical proof</span><h2 id="h-proof">The honest <em>particulars.</em></h2><p class="lede">What is in each jar, and what it does. Tap a card to read more.</p></div></div>
+    <div class="sec-head rv"><div><span class="dept">Practical proof</span><h2 id="h-proof">The honest <em>particulars.</em></h2><p class="lede">What is in each jar, and what it does.</p></div></div>
     <div class="proof rv d1">
       <div class="pcol jam">
-        <div class="plabel"><img class="frame" src="pp/borders__02-red-ribbon-rectangle.webp" alt=""><div class="in"><span class="k">Nº 01 · fiber blend · 30 servings</span><h3>Jam Pact</h3><span class="sub">real jam, by honest means</span></div><img class="jarph" src="pp/packaging__jam-pact-jar.webp" alt="The Jam Pact jar"></div>
-        <div class="tiles"><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>11g</b><span>fiber per serving</span><i>tap to read</i></span><span class="face bk"><span>From seven whole plants. Most of what a day is missing, in one spread.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>7</b><span>whole plants</span><i>tap to read</i></span><span class="face bk"><span>Psyllium, chia, baobab, apple, flax, green banana and turkey tail. Nothing else.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>0</b><span>isolates, gums, fillers</span><i>tap to read</i></span><span class="face bk"><span>No added sugar either. Nothing you would have to explain.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>2 min</b><span>to real jam</span><i>tap to read</i></span><span class="face bk"><span>One scoop, 4 oz of dark red juice, a stir. She sets into spreadable preserves.</span></span></button></div>
-        <div class="ingr-line"><span class="ing">Ingredients</span><span class="list"><span>psyllium husk</span><span>chia seed</span><span>baobab</span><span>apple fiber</span><span>ground flax</span><span>green banana</span><span>turkey tail</span></span></div>
+        <div class="plabel"><img class="frame" src="pp/borders__02-red-ribbon-rectangle.webp" alt=""><div class="in"><span class="k">Nº 01 · fiber blend · 30 servings</span><h3>Jam Pact</h3><span class="sub">real jam, by honest means</span></div></div>
+        <p class="tapcue"><span class="ic" aria-hidden="true">↻</span> Every card turns over. Tap one.</p><div class="tiles"><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>11g</b><span>fiber per serving</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>From seven whole plants. Most of what a day is missing, in one spread.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>7</b><span>whole plants</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>Psyllium, chia, baobab, apple, flax, green banana and turkey tail. Nothing else.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>0</b><span>isolates, gums, fillers</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>No added sugar either. Nothing you would have to explain.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>2 min</b><span>to real jam</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>One scoop, 4 oz of dark red juice, a stir. She sets into spreadable preserves.</span></span></button></div>
+        <div class="ingr-line"><span class="ing">What is in Jam Pact</span><span class="list"><span>psyllium husk</span><span>chia seed</span><span>baobab</span><span>apple fiber</span><span>ground flax</span><span>green banana</span><span>turkey tail</span></span></div>
       </div>
       <div class="pcol lyte">
-        <div class="plabel"><img class="frame" src="pp/borders__04-olive-bookplate.webp" alt=""><div class="in"><span class="k">Nº 02 · electrolyte blend · 30 servings</span><h3>Pitcher Perfect</h3><span class="sub">the afternoon glass</span></div><img class="jarph" src="pp/packaging__pitcher-perfect-jar.webp" alt="The Pitcher Perfect jar"></div>
-        <div class="tiles"><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>4</b><span>minerals</span><i>tap to read</i></span><span class="face bk"><span>Pink salt, potassium, magnesium glycinate and calcium citrate. What a day sweats out.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>5g</b><span>fiber in every glass</span><i>tap to read</i></span><span class="face bk"><span>Soluble tapioca fiber. The only electrolyte we know of that brings fiber at all.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>0g</b><span>sugar</span><i>tap to read</i></span><span class="face bk"><span>Sweetened with monk fruit, blushed with beet root. Never a gram of sugar.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>30 sec</b><span>to rosy</span><i>tap to read</i></span><span class="face bk"><span>A scoop over ice, a stir until she blushes. Steady, not spiked.</span></span></button></div>
-        <div class="ingr-line"><span class="ing">Ingredients</span><span class="list"><span>pink himalayan salt</span><span>potassium</span><span>magnesium glycinate</span><span>calcium citrate</span><span>soluble tapioca fiber</span><span>raspberry &amp; lemon</span><span>beet root</span><span>monk fruit</span></span></div>
+        <div class="plabel"><img class="frame" src="pp/borders__04-olive-bookplate.webp" alt=""><div class="in"><span class="k">Nº 02 · electrolyte blend · 30 servings</span><h3>Pitcher Perfect</h3><span class="sub">the afternoon glass</span></div></div>
+        <p class="tapcue"><span class="ic" aria-hidden="true">↻</span> Every card turns over. Tap one.</p><div class="tiles"><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>4</b><span>minerals</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>Pink salt, potassium, magnesium glycinate and calcium citrate. What a day sweats out.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>5g</b><span>fiber in every glass</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>Soluble tapioca fiber. The only electrolyte we know of that brings fiber at all.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>0g</b><span>sugar</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>Sweetened with monk fruit, blushed with beet root. Never a gram of sugar.</span></span></button><button type="button" class="ftile" aria-pressed="false"><span class="face f"><b>30 sec</b><span>to rosy</span><i aria-hidden="true">turn ↻</i></span><span class="face bk"><span>A scoop over ice, a stir until she blushes. Steady, not spiked.</span></span></button></div>
+        <div class="ingr-line"><span class="ing">What is in Pitcher Perfect</span><span class="list"><span>pink himalayan salt</span><span>potassium</span><span>magnesium glycinate</span><span>calcium citrate</span><span>soluble tapioca fiber</span><span>raspberry &amp; lemon</span><span>beet root</span><span>monk fruit</span></span></div>
       </div>
     </div>
     <img class="kobj bowl" src="pp/borders__mixing-bowl-and-spoon.webp" alt="" aria-hidden="true">
@@ -1650,18 +1834,17 @@ h1,h2,h3{letter-spacing:.005em}
 <!-- A MONTH AT THE PANTRY -->
 <div class="opener rv" data-live="pp/depth__op-garden.webp" data-life="leaves"><img data-ed="sc-garden" src="pp/photos__scene__autumn-garden.webp" alt=""><div class="cap"><span>Chapter four</span><b>A Month at the Pantry</b></div></div>
 <section class="month" id="month" aria-labelledby="mo">
-  <div class="wrap"><div class="sheet"><img class="fl tr" data-ed="fl" src="pp/borders__autumn__corner-flourish-640.webp" alt=""><img class="fl bl" data-ed="fl" src="pp/borders__autumn__corner-flourish-640.webp" alt="">
+  <div class="wrap"><div class="sheet">
     <div class="title rv">
       <img class="art" data-ed="detail" src="pp/illustration__october-detail.webp" width="320" height="320" alt="">
       <h2 id="mo">Amy's <em data-ed="month">October</em></h2>
       <div class="sub">Gentle reminders, helpful tips, <i>and</i> important dates <i>for <span data-ed="month">October</span></i></div>
     </div>
-    <div class="cal rv d1" id="cal" role="table" aria-label="October 2026 at the pantry"></div>
-    <div class="daynote" id="daynote" aria-live="polite"><span class="hint">Tap a day to read its note.</span></div>
-    <div class="mctl rv d1"><button type="button" class="tlink" id="weektoggle" onclick="toggleWeek()">See the whole month</button><a class="btn" href="#calendar">Open the calendar <svg class="arrow" viewBox="0 0 24 10"><path d="M0 5h22M18 1l4 4-4 4"/></svg></a></div>
-    <div class="foot rv d2">
+    <div class="wkhead rv d1"><span class="k">This week at the pantry</span><span class="h">Tap a day to open it</span></div>
+    <div class="week rv d1" id="cal" role="list" aria-label="This week at the pantry"></div>
+    <div class="mfoot rv d2">
       <div class="tip-today"><h4>Amy's tip · <span id="tipdate">October 15</span></h4><h3 id="tiptitle">The keeping season</h3><p id="tiptext">Pears will not wait.</p></div>
-      <a class="calcta" href="#calendar"><img src="pp/illustration__months__10-hero.webp" data-ed="hero" alt=""><span class="t"><span class="k">The whole month</span><b>Open the calendar</b><span class="d">Recipes, lists and little films, day by day.</span><span class="go">Open the calendar →</span></span></a>
+      <div class="mgo"><a class="btn" href="#calendar">Open the whole month <svg class="arrow" viewBox="0 0 24 10"><path d="M0 5h22M18 1l4 4-4 4"/></svg></a><span>Recipes, lists and little films for every day of <span data-ed="month">October</span>.</span></div>
     </div>
   </div></div>
 </section>
@@ -1712,10 +1895,10 @@ h1,h2,h3{letter-spacing:.005em}
   <div class="wrap">
     <div class="faqwrap">
       <aside class="faqart rv">
-        <div class="faqscene" data-live="pp/depth__faq-oct.webp" data-life="leaves" data-live-ed="10" data-strength="0.02"><img data-ed="hero" src="pp/illustration__months__10-hero.webp" alt="The pantry door in October"><span class="glow" aria-hidden="true"></span></div>
         <div class="under"><span class="dept">Asked, answered</span><h2 id="h-faq">The last <em>little questions.</em></h2><p class="kicker">Everything that might still be standing between you and the jar.</p><p class="still">Still wondering? <a class="tlink" href="#contact">Write to us</a>. A person answers.</p></div>
       </aside>
       <div class="faq rv d1">
+      <figure class="faqplate"><div class="faqscene" data-live="pp/depth__faq-oct.webp" data-life="leaves" data-live-ed="10" data-strength="0.02"><img data-ed="hero" src="pp/illustration__months__10-hero.webp" alt="The pantry door in October"><span class="glow" aria-hidden="true"></span></div><figcaption>The pantry door, <span data-ed="month">October</span></figcaption></figure>
       <details open><summary>How does Jam Pact become jam?</summary><p>One scoop into a small jar with 4 ounces of dark red juice (tart cherry and pomegranate are the house favorites) plus the sweetener of your choice. Stir well, wait two minutes, and psyllium and chia set it into real, spreadable preserves. No cooking, no pectin, no tricks.</p></details>
       <details><summary>What do I mix it with? Does water work?</summary><p>Any dark red juice is the house way; it gives her the deepest color and the truest jam flavor. Water works too. She sets just the same, only paler and tarter, so add a spoon of honey or maple if you like. Kefir and yogurt make a lovely thick version.</p></details>
       <details><summary>What does it taste like, and how sweet is it?</summary><p>Like the juice you build her with. Bright, fruit forward, a proper jam texture. The blend itself carries no added sugar, so she is exactly as sweet as you make her. Tart cherry tastes like a cellar shelf in August; pomegranate runs a little deeper.</p></details>
@@ -1803,7 +1986,7 @@ h1,h2,h3{letter-spacing:.005em}
 <div class="wrap"><div class="stats rv"><div><b>11g</b><span>fiber per serving</span></div><div><b>95%</b><span>of adults fall short on fiber</span></div><div><b>0</b><span>isolates · fillers · gums</span></div><div><b>30</b><span>mornings in every jar</span></div></div></div>
 <section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">Inside the jar</span><h2>Ingredients your <em>grandmother could name.</em></h2></div></div><div class="ingr rv d1"><article data-g="✿"><h3>Psyllium husk</h3><p>the gel maker. She is why the jam sets in two minutes flat.</p></article><article data-g="❁"><h3>Chia seed</h3><p>omega rich and quick to thicken. An old friend of good breakfasts.</p></article><article data-g="✽"><h3>Baobab</h3><p>the African tree of life. Tart, bright, beloved by the microbiome.</p></article><article data-g="✾"><h3>Apple fiber</h3><p>orchard grown pectin. The everyday kind.</p></article><article data-g="✿"><h3>Ground flax</h3><p>the omega rich seed your great grandmother already trusted.</p></article><article data-g="❁"><h3>Green banana</h3><p>resistant starch that feeds the good bacteria first.</p></article><article data-g="✽"><h3>Turkey tail</h3><p>the mushroom gut wisdom has trusted for centuries.</p></article><article class="all"><h3>Better, together</h3><p>Seven plants, one blend. Different fibers feed different good bacteria. Variety is the whole point.</p></article></div></div></section>
 <section class="sec band"><div class="wrap"><div class="sec-head rv"><div><span class="dept">A kind comparison</span><h2>The usual way, <em>and the Postmark way.</em></h2></div></div><div class="compare rv d1"><div class="col"><h3>The usual fiber powder</h3><ul><li>a gritty shake, choked down</li><li>isolated powders and gums</li><li>forgotten by Thursday</li></ul></div><div class="col ours"><h3>The Postmark way</h3><ul><li>real, spreadable jam on warm toast</li><li>wholefoods you can read aloud</li><li>a breakfast you look forward to</li></ul></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">The ritual</span><h2>Three <em>steps.</em></h2></div></div><div class="ritual3 rv d1"><div class="filmstack"><figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-clean.mp4" muted loop playsinline poster="pp/photos__oct__toast.webp" aria-label="she sets in two minutes, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure><figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__product__03-jam-pact-breakfast.webp" alt="" style="width:100%;height:100%;object-fit:cover"><figcaption>then, breakfast</figcaption></figure><img class="st" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true"></div><div class="recipe"><div class="card"><img class="jar" src="pp/illustration__preserves-jar-label-640.webp" alt="" aria-hidden="true"><span class="from">From the recipe box</span><h3>Jam Pact, <em>the house way</em></h3><ol class="steps"><li><b>1</b><div><h4>Pour</h4><p>A scoop, 4 oz of dark red juice, and the sweetener of your choice, in a small jar.</p></div></li><li><b>2</b><div><h4>Stir</h4><p>Stir well; two minutes later, she is jam.</p></div></li><li><b>3</b><div><h4>Spread</h4><p>Toast, yogurt, or a spoon at the counter.</p></div></li></ol><div class="foot"><span class="kicker">Makes one small jar. Keeps a week in the fridge.</span></div></div></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">The ritual</span><h2>Three <em>steps.</em></h2></div></div><div class="ritual3 rv d1"><div class="filmstack"><figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-wide.mp4" muted loop playsinline poster="pp/films__jam-pact-howto-wide-poster.webp" aria-label="she sets in two minutes, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure><figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__product__03-jam-pact-breakfast.webp" alt="" style="width:100%;height:100%;object-fit:cover"><figcaption>then, breakfast</figcaption></figure><img class="st" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true"></div><div class="recipe"><div class="card"><img class="jar" src="pp/illustration__preserves-jar-label-640.webp" alt="" aria-hidden="true"><span class="from">From the recipe box</span><h3>Jam Pact, <em>the house way</em></h3><ol class="steps"><li><b>i.</b><div><h4>Pour</h4><p>A scoop, 4 oz of dark red juice, and the sweetener of your choice, in a small jar.</p></div></li><li><b>ii.</b><div><h4>Stir</h4><p>Stir well; two minutes later, she is jam.</p></div></li><li><b>iii.</b><div><h4>Spread</h4><p>Toast, yogurt, or a spoon at the counter.</p></div></li></ol><div class="foot"></div></div></div></div></div></section>
 <section class="sec band"><div class="wrap hands rv"><img src="pp/photos__ed__04-basket-hands.webp" alt=""><div><span class="dept">For the whole table</span><h2>Made for <em>little hands, too.</em></h2><p>Jam Pact was crafted to be enjoyed by the whole family. To little hands it is simply jam: bright, spreadable, made for warm toast and sticky fingers. The seven plant fiber blend working underneath can stay our secret.</p><p>No artificial anything, no sugar bombs, nothing you would have to explain. Just jam, to them. 11g of fiber, to you.</p><div class="pdp-hero" style="padding:0;display:block"><div class="pills"><span>Kid approved</span><span>Just jam, to them</span><span>Nothing artificial</span></div></div></div></div></section>
 <section class="sec postwrap"><div class="wrap"><div class="sec-head rv"><div><span class="dept">From the postbox</span><h2>Letters about <em>Jam Pact.</em></h2></div><p class="lede">First letters arriving with launch.</p></div><div class="postbox rv d1"><div class="card-l" style="--r:-1.2deg"><img class="face" src="pp/photos__ed__10-tart-detail.webp" alt=""><div class="body"><q>It sets while the kettle boils. By the time the toast pops, she is jam.</q><cite>June · Portland</cite></div></div><div class="card-l" style="--r:.8deg"><img class="face" src="pp/photos__ed__04-basket-hands.webp" alt=""><div class="body"><q>My kids fight over the last spoonful. They have no idea it is fiber.</q><cite>Renee · Asheville</cite></div></div><div class="card-l" style="--r:-.6deg"><img class="face" src="pp/photos__ed__15-apple-still-life.webp" alt=""><div class="body"><q>The tart cherry version tastes like my grandmother's cellar. I mean that as the highest compliment.</q><cite>Clare · Vermont</cite></div></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="pairs rv"><img src="pp/photos__product__04-pitcher-perfect-afternoon.webp" alt=""><div class="t"><span class="dept">She pairs well with</span><h3>Pitcher <em>Perfect</em></h3><p style="font-family:var(--body);color:var(--ink-2)">Minerals, real fiber, zero sugar. Raspberry lemonade, poured tall.</p><a class="tlink" href="#pitcher-perfect">meet her →</a></div></div></div></section>
@@ -1835,7 +2018,7 @@ h1,h2,h3{letter-spacing:.005em}
 <div class="wrap"><div class="stats rv"><div><b>5g</b><span>fiber in every glass</span></div><div><b>0g</b><span>sugar · monk fruit sweet</span></div><div><b>4</b><span>minerals · salt, potassium, magnesium, calcium</span></div><div><b>30</b><span>tall glasses per jar</span></div></div></div>
 <section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">Inside the jar</span><h2>Ingredients your <em>grandmother could name.</em></h2></div></div><div class="ingr rv d1"><article data-g="✿"><h3>Pink Himalayan salt</h3><p>rosy, mineral rich, mined the old way. The backbone of hydration.</p></article><article data-g="❁"><h3>Potassium</h3><p>the other half of the hydration equation. The one sweat takes first.</p></article><article data-g="✽"><h3>Magnesium glycinate</h3><p>the calm mineral, in the form your body actually uses.</p></article><article data-g="✾"><h3>Calcium citrate</h3><p>the steady mineral, in the form your body actually absorbs.</p></article><article data-g="✿"><h3>Tapioca fiber</h3><p>soluble and gentle on the glass. The fiber no other 'lyte carries.</p></article><article data-g="❁"><h3>Beet root</h3><p>her blush. Color from the garden, never from a lab.</p></article><article data-g="✽"><h3>Monk fruit</h3><p>sweetness from a small, storied fruit, and not a gram of sugar.</p></article><article class="all"><h3>Balanced, together</h3><p>Four minerals and one fiber, tuned to work as a team. The way hydration actually lands.</p></article></div></div></section>
 <section class="sec band"><div class="wrap"><div class="sec-head rv"><div><span class="dept">A kind comparison</span><h2>The usual way, <em>and the Postmark way.</em></h2></div></div><div class="compare rv d1"><div class="col"><h3>The usual electrolyte</h3><ul><li>neon dyes and sucralose</li><li>a spike, then a crash</li><li>0g fiber, every time</li></ul></div><div class="col ours"><h3>The Postmark way</h3><ul><li>fruit, salt, and nothing artificial</li><li>steady, all afternoon hydration</li><li>5g. The only 'lyte that carries fiber</li></ul></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">The ritual</span><h2>Three <em>steps.</em></h2></div></div><div class="ritual3 rv d1"><div class="filmstack"><figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jars-on-ice.mp4" muted loop playsinline poster="pp/photos__oct__lemonade.webp" aria-label="jars on ice, the afternoon glass"></video><figcaption>jars on ice, the afternoon glass</figcaption></figure><figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__product__04-pitcher-perfect-afternoon.webp" alt="" style="width:100%;height:100%;object-fit:cover"><figcaption>then, the porch</figcaption></figure><img class="st" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true"></div><div class="recipe"><div class="card"><img class="jar" src="pp/illustration__preserves-jar-label-640.webp" alt="" aria-hidden="true"><span class="from">From the recipe box</span><h3>Pitcher Perfect, <em>poured tall</em></h3><ol class="steps"><li><b>1</b><div><h4>Pour</h4><p>A scoop over cold water or a glass of ice.</p></div></li><li><b>2</b><div><h4>Stir</h4><p>Thirty seconds, until she blushes rosy.</p></div></li><li><b>3</b><div><h4>Sip</h4><p>Porch optional, but warmly recommended.</p></div></li></ol><div class="foot"><span class="kicker">One glass, every afternoon. That is the whole protocol.</span></div></div></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">The ritual</span><h2>Three <em>steps.</em></h2></div></div><div class="ritual3 rv d1"><div class="filmstack"><figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jars-on-ice.mp4" muted loop playsinline poster="pp/photos__oct__lemonade.webp" aria-label="jars on ice, the afternoon glass"></video><figcaption>jars on ice, the afternoon glass</figcaption></figure><figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__product__04-pitcher-perfect-afternoon.webp" alt="" style="width:100%;height:100%;object-fit:cover"><figcaption>then, the porch</figcaption></figure><img class="st" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true"></div><div class="recipe"><div class="card"><img class="jar" src="pp/illustration__preserves-jar-label-640.webp" alt="" aria-hidden="true"><span class="from">From the recipe box</span><h3>Pitcher Perfect, <em>poured tall</em></h3><ol class="steps"><li><b>i.</b><div><h4>Pour</h4><p>A scoop over cold water or a glass of ice.</p></div></li><li><b>ii.</b><div><h4>Stir</h4><p>Thirty seconds, until she blushes rosy.</p></div></li><li><b>3</b><div><h4>Sip</h4><p>Porch optional, but warmly recommended.</p></div></li></ol><div class="foot"><span class="kicker">One glass, every afternoon. That is the whole protocol.</span></div></div></div></div></div></section>
 
 <section class="sec postwrap"><div class="wrap"><div class="sec-head rv"><div><span class="dept">From the postbox</span><h2>Letters about <em>Pitcher Perfect.</em></h2></div><p class="lede">First letters arriving with launch.</p></div><div class="postbox rv d1"><div class="card-l" style="--r:-1.2deg"><img class="face" src="pp/photos__ed__08-apple-tea.webp" alt=""><div class="body"><q>It lives on my counter like a little vase of flowers. I actually remember to drink it.</q><cite>Sofia · Austin</cite></div></div><div class="card-l" style="--r:.8deg"><img class="face" src="pp/photos__ed__14-cider-friends.webp" alt=""><div class="body"><q>Steady is the right word. No fizz, no crash. Just an afternoon that holds.</q><cite>May · Boise</cite></div></div><div class="card-l" style="--r:-.6deg"><img class="face" src="pp/photos__ed__19-orchard-laugh.webp" alt=""><div class="body"><q>Raspberry lemonade that does not taste like candy. My whole book club is converted.</q><cite>Dana · Sacramento</cite></div></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="pairs rv"><img src="pp/photos__product__03-jam-pact-breakfast.webp" alt=""><div class="t"><span class="dept">She pairs well with</span><h3>Jam <em>Pact</em></h3><p style="font-family:var(--body);color:var(--ink-2)">The hero jar. 11g of fiber, disguised as breakfast.</p><a class="tlink" href="#jam-pact">meet her →</a></div></div></div></section>
@@ -1984,11 +2167,10 @@ h1,h2,h3{letter-spacing:.005em}
 </main>
 
 <footer>
-  <div class="stamps" aria-label="The ingredient collection"><div class="track" id="stamps"></div></div>
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <svg class="pm" viewBox="0 0 700 320" role="img" aria-label="Postmark Pantry postmark"><g fill="none" stroke="currentColor"><circle cx="160" cy="160" r="140" stroke-width="2.5"/><circle cx="160" cy="160" r="104" stroke-width="1.2"/></g><defs><path id="pmT" d="M 160,160 m -122,0 a 122,122 0 1 1 244,0"/><path id="pmB" d="M 160,160 m -122,0 a 122,122 0 1 0 244,0"/></defs><text font-family="Zilla Slab, Georgia, serif" font-weight="600" font-size="21" letter-spacing="7" fill="currentColor"><textPath href="#pmT" startOffset="50%" text-anchor="middle">POSTMARK PANTRY</textPath></text><text font-family="Zilla Slab, Georgia, serif" font-weight="600" font-size="15" letter-spacing="5" fill="currentColor"><textPath href="#pmB" startOffset="50%" text-anchor="middle">FEED WHAT FEEDS YOU</textPath></text><text x="160" y="150" font-family="IM Fell English, Georgia, serif" font-style="italic" font-size="32" fill="currentColor" text-anchor="middle" data-ed="month">October</text><text x="160" y="190" font-family="IM Fell English, Georgia, serif" font-size="34" fill="currentColor" text-anchor="middle">2026</text><g stroke="currentColor" stroke-width="3" fill="none"><path d="M 320,110 Q 380,90 440,110 T 560,110 T 680,110"/><path d="M 320,160 Q 380,140 440,160 T 560,160 T 680,160"/><path d="M 320,210 Q 380,190 440,210 T 560,210 T 680,210"/></g></svg>
+        
         <div class="tag">Rooted in rhythm.</div>
         <p style="font-size:15px;color:var(--ink-2);max-width:34ch;margin-top:6px">The daily work of well being, made beautiful.</p>
       </div>
@@ -1996,15 +2178,16 @@ h1,h2,h3{letter-spacing:.005em}
       <div><span class="dept soft">The House</span><ul><li><a href="#story">Our Story</a></li><li><a href="#inner-garden">The Inner Garden · our gift</a></li><li><a href="#calendar">This month, day by day</a></li><li><a href="#journal">Journal</a></li></ul></div>
       <div><span class="dept soft">Care</span><ul><li><a href="#contact">Write to us</a></li><li><a href="#shipping">Shipping &amp; returns</a></li><li><a href="#faq">Asked, answered</a></li><li><a href="#">Instagram ↗</a></li></ul></div>
     </div>
-    <div class="fbot">
+    <div class="fbot"><span class="fpm" id="fpm" aria-hidden="true"></span>
       <span>© 2026 Postmark Pantry · Feed what feeds you. · These statements have not been evaluated by the FDA. Our products are not intended to diagnose, treat, cure, or prevent any disease.</span>
       <span class="switch"><label for="edsel" style="margin-right:8px">Design preview, edition</label><select id="edsel"></select></span>
     </div>
   </div>
+  <div class="stamps" aria-label="The ingredient collection"><div class="track" id="stamps"></div></div>
 </footer>
 
 <script>
-const PPMAP={"assets/blender/ink-today.webp": "pp/blender__ink-today.webp", "assets/blender/mailbox-closed.webp": "pp/blender__mailbox-closed.webp", "assets/blender/mailbox-door.webp": "pp/blender__mailbox-door.webp", "assets/blender/mailbox-flag.webp": "pp/blender__mailbox-flag.webp", "assets/blender/mailbox-flagup.webp": "pp/blender__mailbox-flagup.webp", "assets/blender/mailbox-open.webp": "pp/blender__mailbox-open.webp", "assets/blender/mailbox-slot.webp": "pp/blender__mailbox-slot.webp", "assets/borders/02-red-ribbon-rectangle.webp": "pp/borders__02-red-ribbon-rectangle.webp", "assets/borders/04-olive-bookplate.webp": "pp/borders__04-olive-bookplate.webp", "assets/borders/autumn/botanical-divider-960.webp": "pp/borders__autumn__botanical-divider-960.webp", "assets/borders/autumn/corner-flourish-640.webp": "pp/borders__autumn__corner-flourish-640.webp", "assets/borders/autumn/scalloped-edge.svg": "pp/borders__autumn__scalloped-edge.svg", "assets/borders/mixing-bowl-and-spoon.webp": "pp/borders__mixing-bowl-and-spoon.webp", "assets/borders/spring/botanical-divider-960.webp": "pp/borders__spring__botanical-divider-960.webp", "assets/borders/spring/corner-flourish-640.webp": "pp/borders__spring__corner-flourish-640.webp", "assets/borders/spring/scalloped-edge.svg": "pp/borders__spring__scalloped-edge.svg", "assets/borders/summer/botanical-divider-960.webp": "pp/borders__summer__botanical-divider-960.webp", "assets/borders/summer/corner-flourish-640.webp": "pp/borders__summer__corner-flourish-640.webp", "assets/borders/summer/scalloped-edge.svg": "pp/borders__summer__scalloped-edge.svg", "assets/borders/winter/botanical-divider-960.webp": "pp/borders__winter__botanical-divider-960.webp", "assets/borders/winter/corner-flourish-640.webp": "pp/borders__winter__corner-flourish-640.webp", "assets/borders/winter/scalloped-edge.svg": "pp/borders__winter__scalloped-edge.svg", "assets/depth/cover-gate.webp": "pp/depth__cover-gate.webp", "assets/depth/faq-oct.webp": "pp/depth__faq-oct.webp", "assets/depth/news-table.webp": "pp/depth__news-table.webp", "assets/depth/op-garden.webp": "pp/depth__op-garden.webp", "assets/depth/op-kitchen.webp": "pp/depth__op-kitchen.webp", "assets/depth/op-landscape.webp": "pp/depth__op-landscape.webp", "assets/depth/op-orchard.webp": "pp/depth__op-orchard.webp", "assets/films/hero-desktop.mp4": "pp/films__hero-desktop.mp4", "assets/films/hero-mobile.mp4": "pp/films__hero-mobile.mp4", "assets/films/jam-pact-howto-clean.mp4": "pp/films__jam-pact-howto-clean.mp4", "assets/films/jars-on-ice.mp4": "pp/films__jars-on-ice.mp4", "assets/films/toast-jam.mp4": "pp/films__toast-jam.mp4", "assets/identity/wax-seal-transparent.webp": "pp/identity__wax-seal-transparent.webp", "assets/identity/wordmark-transparent.webp": "pp/identity__wordmark-transparent.webp", "assets/illustration/candlelight-letter.webp": "pp/illustration__candlelight-letter.webp", "assets/illustration/cottage-key-320.webp": "pp/illustration__cottage-key-320.webp", "assets/illustration/fountain-pen-320.webp": "pp/illustration__fountain-pen-320.webp", "assets/illustration/garden-robin-320.webp": "pp/illustration__garden-robin-320.webp", "assets/illustration/garden-rose-320.webp": "pp/illustration__garden-rose-320.webp", "assets/illustration/leaf-atlas.webp": "pp/illustration__leaf-atlas.webp", "assets/illustration/letter-paper.webp": "pp/illustration__letter-paper.webp", "assets/illustration/months/01-hero.webp": "pp/illustration__months__01-hero.webp", "assets/illustration/months/02-hero.webp": "pp/illustration__months__02-hero.webp", "assets/illustration/months/03-hero.webp": "pp/illustration__months__03-hero.webp", "assets/illustration/months/04-hero.webp": "pp/illustration__months__04-hero.webp", "assets/illustration/months/05-hero.webp": "pp/illustration__months__05-hero.webp", "assets/illustration/months/06-hero.webp": "pp/illustration__months__06-hero.webp", "assets/illustration/months/07-hero.webp": "pp/illustration__months__07-hero.webp", "assets/illustration/months/08-hero.webp": "pp/illustration__months__08-hero.webp", "assets/illustration/months/09-hero.webp": "pp/illustration__months__09-hero.webp", "assets/illustration/months/10-hero.webp": "pp/illustration__months__10-hero.webp", "assets/illustration/months/11-hero.webp": "pp/illustration__months__11-hero.webp", "assets/illustration/months/12-hero.webp": "pp/illustration__months__12-hero.webp", "assets/illustration/october-corner.webp": "pp/illustration__october-corner.webp", "assets/illustration/october-detail.webp": "pp/illustration__october-detail.webp", "assets/illustration/preserves-jar-320.webp": "pp/illustration__preserves-jar-320.webp", "assets/illustration/preserves-jar-label-640.webp": "pp/illustration__preserves-jar-label-640.webp", "assets/illustration/sealed-envelope-320.webp": "pp/illustration__sealed-envelope-320.webp", "assets/illustration/transferware-teapot-320.webp": "pp/illustration__transferware-teapot-320.webp", "assets/packaging/jam-pact-jar.webp": "pp/packaging__jam-pact-jar.webp", "assets/packaging/pitcher-perfect-jar.webp": "pp/packaging__pitcher-perfect-jar.webp", "assets/photos/amy/03-kitchen-letter.webp": "pp/photos__amy__03-kitchen-letter.webp", "assets/photos/amy/05-garden-bench.webp": "pp/photos__amy__05-garden-bench.webp", "assets/photos/amy/08-lakeside-dogs-1600.webp": "pp/photos__amy__08-lakeside-dogs-1600.webp", "assets/photos/amy/09-breakfast-table.webp": "pp/photos__amy__09-breakfast-table.webp", "assets/photos/amy/10-dogs-leaf-pile.webp": "pp/photos__amy__10-dogs-leaf-pile.webp", "assets/photos/amy/14-heathland-walk-1600.webp": "pp/photos__amy__14-heathland-walk-1600.webp", "assets/photos/amy/18-porch-dog-affection-1600.webp": "pp/photos__amy__18-porch-dog-affection-1600.webp", "assets/photos/ed/03-orchard-table.webp": "pp/photos__ed__03-orchard-table.webp", "assets/photos/ed/04-basket-hands.webp": "pp/photos__ed__04-basket-hands.webp", "assets/photos/ed/06-gate-friends.webp": "pp/photos__ed__06-gate-friends.webp", "assets/photos/ed/07-leaf-walk.webp": "pp/photos__ed__07-leaf-walk.webp", "assets/photos/ed/08-apple-tea.webp": "pp/photos__ed__08-apple-tea.webp", "assets/photos/ed/09-kitchen-baking.webp": "pp/photos__ed__09-kitchen-baking.webp", "assets/photos/ed/10-tart-detail.webp": "pp/photos__ed__10-tart-detail.webp", "assets/photos/ed/11-orchard-picnic.webp": "pp/photos__ed__11-orchard-picnic.webp", "assets/photos/ed/12-book-window.webp": "pp/photos__ed__12-book-window.webp", "assets/photos/ed/13-harvest-door.webp": "pp/photos__ed__13-harvest-door.webp", "assets/photos/ed/14-cider-friends.webp": "pp/photos__ed__14-cider-friends.webp", "assets/photos/ed/15-apple-still-life.webp": "pp/photos__ed__15-apple-still-life.webp", "assets/photos/ed/17-letter-afternoon.webp": "pp/photos__ed__17-letter-afternoon.webp", "assets/photos/ed/18-harvest-supper.webp": "pp/photos__ed__18-harvest-supper.webp", "assets/photos/ed/19-orchard-laugh.webp": "pp/photos__ed__19-orchard-laugh.webp", "assets/photos/ed/w-08-fireside-reading.webp": "pp/photos__ed__w-08-fireside-reading.webp", "assets/photos/garden-breakfast.webp": "pp/photos__garden-breakfast.webp", "assets/photos/garden-harvest.webp": "pp/photos__garden-harvest.webp", "assets/photos/gingham-dress.webp": "pp/photos__gingham-dress.webp", "assets/photos/greenhouse.webp": "pp/photos__greenhouse.webp", "assets/photos/life/04-mother-daughter-leaf-pile-960w.webp": "pp/photos__life__04-mother-daughter-leaf-pile-960w.webp", "assets/photos/life/05-solo-bakery-window-960w.webp": "pp/photos__life__05-solo-bakery-window-960w.webp", "assets/photos/life/06-three-generations-coastal-walk-960w.webp": "pp/photos__life__06-three-generations-coastal-walk-960w.webp", "assets/photos/life/10-mother-daughter-window-baking-960w.webp": "pp/photos__life__10-mother-daughter-window-baking-960w.webp", "assets/photos/life/19-mother-grown-daughter-dog-walk-960w.webp": "pp/photos__life__19-mother-grown-daughter-dog-walk-960w.webp", "assets/photos/meadow-wide.webp": "pp/photos__meadow-wide.webp", "assets/photos/oak-picnic.webp": "pp/photos__oak-picnic.webp", "assets/photos/oct/december.webp": "pp/photos__oct__december.webp", "assets/photos/oct/desk.webp": "pp/photos__oct__desk.webp", "assets/photos/oct/gate.webp": "pp/photos__oct__gate.webp", "assets/photos/oct/kitchen.webp": "pp/photos__oct__kitchen.webp", "assets/photos/oct/lemonade.webp": "pp/photos__oct__lemonade.webp", "assets/photos/oct/pantry.webp": "pp/photos__oct__pantry.webp", "assets/photos/oct/teatable.webp": "pp/photos__oct__teatable.webp", "assets/photos/oct/toast.webp": "pp/photos__oct__toast.webp", "assets/photos/picnic-overhead.webp": "pp/photos__picnic-overhead.webp", "assets/photos/product/01-jam-pact-pdp.webp": "pp/photos__product__01-jam-pact-pdp.webp", "assets/photos/product/02-pitcher-perfect-pdp.webp": "pp/photos__product__02-pitcher-perfect-pdp.webp", "assets/photos/product/03-jam-pact-breakfast.webp": "pp/photos__product__03-jam-pact-breakfast.webp", "assets/photos/product/04-pitcher-perfect-afternoon.webp": "pp/photos__product__04-pitcher-perfect-afternoon.webp", "assets/photos/product/05-pantry-pair-kitchen.webp": "pp/photos__product__05-pantry-pair-kitchen.webp", "assets/photos/product/06-pantry-pair-garden-table.webp": "pp/photos__product__06-pantry-pair-garden-table.webp", "assets/photos/product/07-jam-pact-wrap-angle.webp": "pp/photos__product__07-jam-pact-wrap-angle.webp", "assets/photos/product/autumn-jam-pact.webp": "pp/photos__product__autumn-jam-pact.webp", "assets/photos/product/autumn-pantry-pair.webp": "pp/photos__product__autumn-pantry-pair.webp", "assets/photos/product/autumn-pitcher-perfect.webp": "pp/photos__product__autumn-pitcher-perfect.webp", "assets/photos/product/spring-jam-pact.webp": "pp/photos__product__spring-jam-pact.webp", "assets/photos/product/spring-pantry-pair.webp": "pp/photos__product__spring-pantry-pair.webp", "assets/photos/product/spring-pitcher-perfect.webp": "pp/photos__product__spring-pitcher-perfect.webp", "assets/photos/product/summer-jam-pact.webp": "pp/photos__product__summer-jam-pact.webp", "assets/photos/product/summer-pantry-pair.webp": "pp/photos__product__summer-pantry-pair.webp", "assets/photos/product/summer-pitcher-perfect.webp": "pp/photos__product__summer-pitcher-perfect.webp", "assets/photos/product/winter-jam-pact.webp": "pp/photos__product__winter-jam-pact.webp", "assets/photos/product/winter-pantry-pair.webp": "pp/photos__product__winter-pantry-pair.webp", "assets/photos/product/winter-pitcher-perfect.webp": "pp/photos__product__winter-pitcher-perfect.webp", "assets/photos/scene/autumn-dining-table.webp": "pp/photos__scene__autumn-dining-table.webp", "assets/photos/scene/autumn-garden.webp": "pp/photos__scene__autumn-garden.webp", "assets/photos/scene/autumn-kitchen.webp": "pp/photos__scene__autumn-kitchen.webp", "assets/photos/scene/autumn-landscape.webp": "pp/photos__scene__autumn-landscape.webp", "assets/photos/scene/autumn-orchard.webp": "pp/photos__scene__autumn-orchard.webp", "assets/photos/scene/spring-garden.webp": "pp/photos__scene__spring-garden.webp", "assets/photos/scene/spring-kitchen.webp": "pp/photos__scene__spring-kitchen.webp", "assets/photos/scene/spring-landscape.webp": "pp/photos__scene__spring-landscape.webp", "assets/photos/scene/spring-orchard.webp": "pp/photos__scene__spring-orchard.webp", "assets/photos/scene/summer-garden.webp": "pp/photos__scene__summer-garden.webp", "assets/photos/scene/summer-kitchen.webp": "pp/photos__scene__summer-kitchen.webp", "assets/photos/scene/summer-landscape.webp": "pp/photos__scene__summer-landscape.webp", "assets/photos/scene/summer-orchard.webp": "pp/photos__scene__summer-orchard.webp", "assets/photos/scene/winter-garden.webp": "pp/photos__scene__winter-garden.webp", "assets/photos/scene/winter-kitchen.webp": "pp/photos__scene__winter-kitchen.webp", "assets/photos/scene/winter-landscape.webp": "pp/photos__scene__winter-landscape.webp", "assets/photos/scene/winter-orchard.webp": "pp/photos__scene__winter-orchard.webp", "assets/photos/strawberry-market.webp": "pp/photos__strawberry-market.webp", "assets/photos/strawberry-picking.webp": "pp/photos__strawberry-picking.webp", "assets/photos/watering-can.webp": "pp/photos__watering-can.webp", "assets/stamps/autumn/autumn-01-orchard-apples.webp": "pp/stamps__autumn__autumn-01-orchard-apples.webp", "assets/stamps/autumn/autumn-02-pear-and-oak.webp": "pp/stamps__autumn__autumn-02-pear-and-oak.webp", "assets/stamps/autumn/autumn-03-heirloom-pumpkins.webp": "pp/stamps__autumn__autumn-03-heirloom-pumpkins.webp", "assets/stamps/autumn/autumn-04-autumn-dahlias.webp": "pp/stamps__autumn__autumn-04-autumn-dahlias.webp", "assets/stamps/autumn/autumn-05-chestnut-branch.webp": "pp/stamps__autumn__autumn-05-chestnut-branch.webp", "assets/stamps/autumn/autumn-06-harvest-basket.webp": "pp/stamps__autumn__autumn-06-harvest-basket.webp", "assets/stamps/autumn/autumn-07-apple-tart.webp": "pp/stamps__autumn__autumn-07-apple-tart.webp", "assets/stamps/autumn/autumn-08-preserving-day.webp": "pp/stamps__autumn__autumn-08-preserving-day.webp", "assets/stamps/autumn/autumn-09-orchard-gate.webp": "pp/stamps__autumn__autumn-09-orchard-gate.webp", "assets/stamps/autumn/autumn-10-autumn-tea.webp": "pp/stamps__autumn__autumn-10-autumn-tea.webp", "assets/stamps/st01.webp": "pp/stamps__st01.webp", "assets/stamps/st02.webp": "pp/stamps__st02.webp", "assets/stamps/st03.webp": "pp/stamps__st03.webp", "assets/stamps/st04.webp": "pp/stamps__st04.webp", "assets/stamps/st05.webp": "pp/stamps__st05.webp", "assets/stamps/st06.webp": "pp/stamps__st06.webp", "assets/stamps/st07.webp": "pp/stamps__st07.webp", "assets/stamps/st08.webp": "pp/stamps__st08.webp", "assets/stamps/st09.webp": "pp/stamps__st09.webp", "assets/stamps/st10.webp": "pp/stamps__st10.webp", "assets/stamps/st11.webp": "pp/stamps__st11.webp", "assets/stamps/st12.webp": "pp/stamps__st12.webp", "assets/stamps/st13.webp": "pp/stamps__st13.webp", "assets/stamps/winter/winter-01-orange-evergreen.webp": "pp/stamps__winter__winter-01-orange-evergreen.webp", "assets/stamps/winter/winter-02-winter-robin.webp": "pp/stamps__winter__winter-02-winter-robin.webp", "assets/stamps/winter/winter-03-snowy-cottage.webp": "pp/stamps__winter__winter-03-snowy-cottage.webp", "assets/stamps/winter/winter-04-candlelight.webp": "pp/stamps__winter__winter-04-candlelight.webp", "assets/stamps/winter/winter-05-holly-and-ivy.webp": "pp/stamps__winter__winter-05-holly-and-ivy.webp", "assets/stamps/winter/winter-06-hellebores.webp": "pp/stamps__winter__winter-06-hellebores.webp", "assets/stamps/winter/winter-07-pinecone-bough.webp": "pp/stamps__winter__winter-07-pinecone-bough.webp", "assets/stamps/winter/winter-08-winter-pomander.webp": "pp/stamps__winter__winter-08-winter-pomander.webp", "assets/stamps/winter/winter-09-winter-tea.webp": "pp/stamps__winter__winter-09-winter-tea.webp", "assets/stamps/winter/winter-10-winter-letter.webp": "pp/stamps__winter__winter-10-winter-letter.webp", "assets/textures/autumn-bookcloth.svg": "pp/textures__autumn-bookcloth.svg", "assets/textures/autumn-ticking.svg": "pp/textures__autumn-ticking.svg", "assets/textures/garden-trellis.webp": "pp/textures__garden-trellis.webp", "assets/textures/letter-paper.webp": "pp/textures__letter-paper.webp", "assets/textures/pantry-toile.webp": "pp/textures__pantry-toile.webp", "assets/textures/postmark-pantry-gingham-blue.svg": "pp/textures__postmark-pantry-gingham-blue.svg", "assets/textures/postmark-pantry-gingham-butter.svg": "pp/textures__postmark-pantry-gingham-butter.svg", "assets/textures/postmark-pantry-gingham-pink.svg": "pp/textures__postmark-pantry-gingham-pink.svg", "assets/textures/postmark-pantry-gingham-red.svg": "pp/textures__postmark-pantry-gingham-red.svg", "assets/textures/postmark-pantry-gingham-sage.svg": "pp/textures__postmark-pantry-gingham-sage.svg", "assets/textures/spring-bookcloth.svg": "pp/textures__spring-bookcloth.svg", "assets/textures/spring-ticking.svg": "pp/textures__spring-ticking.svg", "assets/textures/summer-bookcloth.svg": "pp/textures__summer-bookcloth.svg", "assets/textures/summer-ticking.svg": "pp/textures__summer-ticking.svg", "assets/textures/winter-bookcloth.svg": "pp/textures__winter-bookcloth.svg", "assets/textures/winter-ticking.svg": "pp/textures__winter-ticking.svg"};/* filled at publish time: local asset path -> hosted path */
+const PPMAP={"assets/blender/ink-today.webp": "pp/blender__ink-today.webp", "assets/blender/mailbox-closed.webp": "pp/blender__mailbox-closed.webp", "assets/blender/mailbox-door.webp": "pp/blender__mailbox-door.webp", "assets/blender/mailbox-flag.webp": "pp/blender__mailbox-flag.webp", "assets/blender/mailbox-flagup.webp": "pp/blender__mailbox-flagup.webp", "assets/blender/mailbox-open.webp": "pp/blender__mailbox-open.webp", "assets/blender/mailbox-slot.webp": "pp/blender__mailbox-slot.webp", "assets/borders/02-red-ribbon-rectangle.webp": "pp/borders__02-red-ribbon-rectangle.webp", "assets/borders/04-olive-bookplate.webp": "pp/borders__04-olive-bookplate.webp", "assets/borders/autumn/botanical-divider-960.webp": "pp/borders__autumn__botanical-divider-960.webp", "assets/borders/autumn/corner-flourish-640.webp": "pp/borders__autumn__corner-flourish-640.webp", "assets/borders/autumn/scalloped-edge.svg": "pp/borders__autumn__scalloped-edge.svg", "assets/borders/mixing-bowl-and-spoon.webp": "pp/borders__mixing-bowl-and-spoon.webp", "assets/borders/spring/botanical-divider-960.webp": "pp/borders__spring__botanical-divider-960.webp", "assets/borders/spring/corner-flourish-640.webp": "pp/borders__spring__corner-flourish-640.webp", "assets/borders/spring/scalloped-edge.svg": "pp/borders__spring__scalloped-edge.svg", "assets/borders/summer/botanical-divider-960.webp": "pp/borders__summer__botanical-divider-960.webp", "assets/borders/summer/corner-flourish-640.webp": "pp/borders__summer__corner-flourish-640.webp", "assets/borders/summer/scalloped-edge.svg": "pp/borders__summer__scalloped-edge.svg", "assets/borders/winter/botanical-divider-960.webp": "pp/borders__winter__botanical-divider-960.webp", "assets/borders/winter/corner-flourish-640.webp": "pp/borders__winter__corner-flourish-640.webp", "assets/borders/winter/scalloped-edge.svg": "pp/borders__winter__scalloped-edge.svg", "assets/depth/cover-gate.webp": "pp/depth__cover-gate.webp", "assets/depth/faq-oct.webp": "pp/depth__faq-oct.webp", "assets/depth/news-table.webp": "pp/depth__news-table.webp", "assets/depth/op-garden.webp": "pp/depth__op-garden.webp", "assets/depth/op-kitchen.webp": "pp/depth__op-kitchen.webp", "assets/depth/op-landscape.webp": "pp/depth__op-landscape.webp", "assets/depth/op-orchard.webp": "pp/depth__op-orchard.webp", "assets/films/hero-autumn-desktop.mp4": "pp/films__hero-autumn-desktop.mp4", "assets/films/hero-autumn-mobile.mp4": "pp/films__hero-autumn-mobile.mp4", "assets/films/hero-desktop.mp4": "pp/films__hero-desktop.mp4", "assets/films/hero-mobile.mp4": "pp/films__hero-mobile.mp4", "assets/films/jam-pact-howto-clean.mp4": "pp/films__jam-pact-howto-clean.mp4", "assets/films/jam-pact-howto-wide-poster.webp": "pp/films__jam-pact-howto-wide-poster.webp", "assets/films/jam-pact-howto-wide.mp4": "pp/films__jam-pact-howto-wide.mp4", "assets/films/jars-on-ice.mp4": "pp/films__jars-on-ice.mp4", "assets/films/toast-jam.mp4": "pp/films__toast-jam.mp4", "assets/identity/wax-seal-transparent.webp": "pp/identity__wax-seal-transparent.webp", "assets/identity/wordmark-transparent.webp": "pp/identity__wordmark-transparent.webp", "assets/illustration/candlelight-letter.webp": "pp/illustration__candlelight-letter.webp", "assets/illustration/cottage-key-320.webp": "pp/illustration__cottage-key-320.webp", "assets/illustration/fountain-pen-320.webp": "pp/illustration__fountain-pen-320.webp", "assets/illustration/garden-robin-320.webp": "pp/illustration__garden-robin-320.webp", "assets/illustration/garden-rose-320.webp": "pp/illustration__garden-rose-320.webp", "assets/illustration/leaf-atlas.webp": "pp/illustration__leaf-atlas.webp", "assets/illustration/letter-paper.webp": "pp/illustration__letter-paper.webp", "assets/illustration/months/01-hero.webp": "pp/illustration__months__01-hero.webp", "assets/illustration/months/02-hero.webp": "pp/illustration__months__02-hero.webp", "assets/illustration/months/03-hero.webp": "pp/illustration__months__03-hero.webp", "assets/illustration/months/04-hero.webp": "pp/illustration__months__04-hero.webp", "assets/illustration/months/05-hero.webp": "pp/illustration__months__05-hero.webp", "assets/illustration/months/06-hero.webp": "pp/illustration__months__06-hero.webp", "assets/illustration/months/07-hero.webp": "pp/illustration__months__07-hero.webp", "assets/illustration/months/08-hero.webp": "pp/illustration__months__08-hero.webp", "assets/illustration/months/09-hero.webp": "pp/illustration__months__09-hero.webp", "assets/illustration/months/10-hero.webp": "pp/illustration__months__10-hero.webp", "assets/illustration/months/11-hero.webp": "pp/illustration__months__11-hero.webp", "assets/illustration/months/12-hero.webp": "pp/illustration__months__12-hero.webp", "assets/illustration/october-corner.webp": "pp/illustration__october-corner.webp", "assets/illustration/october-detail.webp": "pp/illustration__october-detail.webp", "assets/illustration/preserves-jar-320.webp": "pp/illustration__preserves-jar-320.webp", "assets/illustration/preserves-jar-label-640.webp": "pp/illustration__preserves-jar-label-640.webp", "assets/illustration/sealed-envelope-320.webp": "pp/illustration__sealed-envelope-320.webp", "assets/illustration/transferware-teapot-320.webp": "pp/illustration__transferware-teapot-320.webp", "assets/packaging/jam-pact-jar.webp": "pp/packaging__jam-pact-jar.webp", "assets/packaging/pitcher-perfect-jar.webp": "pp/packaging__pitcher-perfect-jar.webp", "assets/photos/amy/03-kitchen-letter.webp": "pp/photos__amy__03-kitchen-letter.webp", "assets/photos/amy/05-garden-bench.webp": "pp/photos__amy__05-garden-bench.webp", "assets/photos/amy/08-lakeside-dogs-1600.webp": "pp/photos__amy__08-lakeside-dogs-1600.webp", "assets/photos/amy/09-breakfast-table.webp": "pp/photos__amy__09-breakfast-table.webp", "assets/photos/amy/10-dogs-leaf-pile.webp": "pp/photos__amy__10-dogs-leaf-pile.webp", "assets/photos/amy/14-heathland-walk-1600.webp": "pp/photos__amy__14-heathland-walk-1600.webp", "assets/photos/amy/18-porch-dog-affection-1600.webp": "pp/photos__amy__18-porch-dog-affection-1600.webp", "assets/photos/ed/03-orchard-table.webp": "pp/photos__ed__03-orchard-table.webp", "assets/photos/ed/04-basket-hands.webp": "pp/photos__ed__04-basket-hands.webp", "assets/photos/ed/06-gate-friends.webp": "pp/photos__ed__06-gate-friends.webp", "assets/photos/ed/07-leaf-walk.webp": "pp/photos__ed__07-leaf-walk.webp", "assets/photos/ed/08-apple-tea.webp": "pp/photos__ed__08-apple-tea.webp", "assets/photos/ed/09-kitchen-baking.webp": "pp/photos__ed__09-kitchen-baking.webp", "assets/photos/ed/10-tart-detail.webp": "pp/photos__ed__10-tart-detail.webp", "assets/photos/ed/11-orchard-picnic.webp": "pp/photos__ed__11-orchard-picnic.webp", "assets/photos/ed/12-book-window.webp": "pp/photos__ed__12-book-window.webp", "assets/photos/ed/13-harvest-door.webp": "pp/photos__ed__13-harvest-door.webp", "assets/photos/ed/14-cider-friends.webp": "pp/photos__ed__14-cider-friends.webp", "assets/photos/ed/15-apple-still-life.webp": "pp/photos__ed__15-apple-still-life.webp", "assets/photos/ed/17-letter-afternoon.webp": "pp/photos__ed__17-letter-afternoon.webp", "assets/photos/ed/18-harvest-supper.webp": "pp/photos__ed__18-harvest-supper.webp", "assets/photos/ed/19-orchard-laugh.webp": "pp/photos__ed__19-orchard-laugh.webp", "assets/photos/ed/w-08-fireside-reading.webp": "pp/photos__ed__w-08-fireside-reading.webp", "assets/photos/garden-breakfast.webp": "pp/photos__garden-breakfast.webp", "assets/photos/garden-harvest.webp": "pp/photos__garden-harvest.webp", "assets/photos/gingham-dress.webp": "pp/photos__gingham-dress.webp", "assets/photos/greenhouse.webp": "pp/photos__greenhouse.webp", "assets/photos/life/04-mother-daughter-leaf-pile-960w.webp": "pp/photos__life__04-mother-daughter-leaf-pile-960w.webp", "assets/photos/life/05-solo-bakery-window-960w.webp": "pp/photos__life__05-solo-bakery-window-960w.webp", "assets/photos/life/06-three-generations-coastal-walk-960w.webp": "pp/photos__life__06-three-generations-coastal-walk-960w.webp", "assets/photos/life/10-mother-daughter-window-baking-960w.webp": "pp/photos__life__10-mother-daughter-window-baking-960w.webp", "assets/photos/life/19-mother-grown-daughter-dog-walk-960w.webp": "pp/photos__life__19-mother-grown-daughter-dog-walk-960w.webp", "assets/photos/meadow-wide.webp": "pp/photos__meadow-wide.webp", "assets/photos/oak-picnic.webp": "pp/photos__oak-picnic.webp", "assets/photos/oct/december.webp": "pp/photos__oct__december.webp", "assets/photos/oct/desk.webp": "pp/photos__oct__desk.webp", "assets/photos/oct/gate.webp": "pp/photos__oct__gate.webp", "assets/photos/oct/kitchen.webp": "pp/photos__oct__kitchen.webp", "assets/photos/oct/lemonade.webp": "pp/photos__oct__lemonade.webp", "assets/photos/oct/pantry.webp": "pp/photos__oct__pantry.webp", "assets/photos/oct/teatable.webp": "pp/photos__oct__teatable.webp", "assets/photos/oct/toast.webp": "pp/photos__oct__toast.webp", "assets/photos/picnic-overhead.webp": "pp/photos__picnic-overhead.webp", "assets/photos/product/01-jam-pact-pdp.webp": "pp/photos__product__01-jam-pact-pdp.webp", "assets/photos/product/02-pitcher-perfect-pdp.webp": "pp/photos__product__02-pitcher-perfect-pdp.webp", "assets/photos/product/03-jam-pact-breakfast.webp": "pp/photos__product__03-jam-pact-breakfast.webp", "assets/photos/product/04-pitcher-perfect-afternoon.webp": "pp/photos__product__04-pitcher-perfect-afternoon.webp", "assets/photos/product/05-pantry-pair-kitchen.webp": "pp/photos__product__05-pantry-pair-kitchen.webp", "assets/photos/product/06-pantry-pair-garden-table.webp": "pp/photos__product__06-pantry-pair-garden-table.webp", "assets/photos/product/07-jam-pact-wrap-angle.webp": "pp/photos__product__07-jam-pact-wrap-angle.webp", "assets/photos/product/autumn-jam-pact.webp": "pp/photos__product__autumn-jam-pact.webp", "assets/photos/product/autumn-pantry-pair.webp": "pp/photos__product__autumn-pantry-pair.webp", "assets/photos/product/autumn-pitcher-perfect.webp": "pp/photos__product__autumn-pitcher-perfect.webp", "assets/photos/product/spring-jam-pact.webp": "pp/photos__product__spring-jam-pact.webp", "assets/photos/product/spring-pantry-pair.webp": "pp/photos__product__spring-pantry-pair.webp", "assets/photos/product/spring-pitcher-perfect.webp": "pp/photos__product__spring-pitcher-perfect.webp", "assets/photos/product/summer-jam-pact.webp": "pp/photos__product__summer-jam-pact.webp", "assets/photos/product/summer-pantry-pair.webp": "pp/photos__product__summer-pantry-pair.webp", "assets/photos/product/summer-pitcher-perfect.webp": "pp/photos__product__summer-pitcher-perfect.webp", "assets/photos/product/winter-jam-pact.webp": "pp/photos__product__winter-jam-pact.webp", "assets/photos/product/winter-pantry-pair.webp": "pp/photos__product__winter-pantry-pair.webp", "assets/photos/product/winter-pitcher-perfect.webp": "pp/photos__product__winter-pitcher-perfect.webp", "assets/photos/scene/autumn-dining-table.webp": "pp/photos__scene__autumn-dining-table.webp", "assets/photos/scene/autumn-garden.webp": "pp/photos__scene__autumn-garden.webp", "assets/photos/scene/autumn-kitchen.webp": "pp/photos__scene__autumn-kitchen.webp", "assets/photos/scene/autumn-landscape.webp": "pp/photos__scene__autumn-landscape.webp", "assets/photos/scene/autumn-orchard.webp": "pp/photos__scene__autumn-orchard.webp", "assets/photos/scene/spring-garden.webp": "pp/photos__scene__spring-garden.webp", "assets/photos/scene/spring-kitchen.webp": "pp/photos__scene__spring-kitchen.webp", "assets/photos/scene/spring-landscape.webp": "pp/photos__scene__spring-landscape.webp", "assets/photos/scene/spring-orchard.webp": "pp/photos__scene__spring-orchard.webp", "assets/photos/scene/summer-garden.webp": "pp/photos__scene__summer-garden.webp", "assets/photos/scene/summer-kitchen.webp": "pp/photos__scene__summer-kitchen.webp", "assets/photos/scene/summer-landscape.webp": "pp/photos__scene__summer-landscape.webp", "assets/photos/scene/summer-orchard.webp": "pp/photos__scene__summer-orchard.webp", "assets/photos/scene/winter-garden.webp": "pp/photos__scene__winter-garden.webp", "assets/photos/scene/winter-kitchen.webp": "pp/photos__scene__winter-kitchen.webp", "assets/photos/scene/winter-landscape.webp": "pp/photos__scene__winter-landscape.webp", "assets/photos/scene/winter-orchard.webp": "pp/photos__scene__winter-orchard.webp", "assets/photos/strawberry-market.webp": "pp/photos__strawberry-market.webp", "assets/photos/strawberry-picking.webp": "pp/photos__strawberry-picking.webp", "assets/photos/watering-can.webp": "pp/photos__watering-can.webp", "assets/stamps/autumn/autumn-01-orchard-apples.webp": "pp/stamps__autumn__autumn-01-orchard-apples.webp", "assets/stamps/autumn/autumn-02-pear-and-oak.webp": "pp/stamps__autumn__autumn-02-pear-and-oak.webp", "assets/stamps/autumn/autumn-03-heirloom-pumpkins.webp": "pp/stamps__autumn__autumn-03-heirloom-pumpkins.webp", "assets/stamps/autumn/autumn-04-autumn-dahlias.webp": "pp/stamps__autumn__autumn-04-autumn-dahlias.webp", "assets/stamps/autumn/autumn-05-chestnut-branch.webp": "pp/stamps__autumn__autumn-05-chestnut-branch.webp", "assets/stamps/autumn/autumn-06-harvest-basket.webp": "pp/stamps__autumn__autumn-06-harvest-basket.webp", "assets/stamps/autumn/autumn-07-apple-tart.webp": "pp/stamps__autumn__autumn-07-apple-tart.webp", "assets/stamps/autumn/autumn-08-preserving-day.webp": "pp/stamps__autumn__autumn-08-preserving-day.webp", "assets/stamps/autumn/autumn-09-orchard-gate.webp": "pp/stamps__autumn__autumn-09-orchard-gate.webp", "assets/stamps/autumn/autumn-10-autumn-tea.webp": "pp/stamps__autumn__autumn-10-autumn-tea.webp", "assets/stamps/st01.webp": "pp/stamps__st01.webp", "assets/stamps/st02.webp": "pp/stamps__st02.webp", "assets/stamps/st03.webp": "pp/stamps__st03.webp", "assets/stamps/st04.webp": "pp/stamps__st04.webp", "assets/stamps/st05.webp": "pp/stamps__st05.webp", "assets/stamps/st06.webp": "pp/stamps__st06.webp", "assets/stamps/st07.webp": "pp/stamps__st07.webp", "assets/stamps/st08.webp": "pp/stamps__st08.webp", "assets/stamps/st09.webp": "pp/stamps__st09.webp", "assets/stamps/st10.webp": "pp/stamps__st10.webp", "assets/stamps/st11.webp": "pp/stamps__st11.webp", "assets/stamps/st12.webp": "pp/stamps__st12.webp", "assets/stamps/st13.webp": "pp/stamps__st13.webp", "assets/stamps/winter/winter-01-orange-evergreen.webp": "pp/stamps__winter__winter-01-orange-evergreen.webp", "assets/stamps/winter/winter-02-winter-robin.webp": "pp/stamps__winter__winter-02-winter-robin.webp", "assets/stamps/winter/winter-03-snowy-cottage.webp": "pp/stamps__winter__winter-03-snowy-cottage.webp", "assets/stamps/winter/winter-04-candlelight.webp": "pp/stamps__winter__winter-04-candlelight.webp", "assets/stamps/winter/winter-05-holly-and-ivy.webp": "pp/stamps__winter__winter-05-holly-and-ivy.webp", "assets/stamps/winter/winter-06-hellebores.webp": "pp/stamps__winter__winter-06-hellebores.webp", "assets/stamps/winter/winter-07-pinecone-bough.webp": "pp/stamps__winter__winter-07-pinecone-bough.webp", "assets/stamps/winter/winter-08-winter-pomander.webp": "pp/stamps__winter__winter-08-winter-pomander.webp", "assets/stamps/winter/winter-09-winter-tea.webp": "pp/stamps__winter__winter-09-winter-tea.webp", "assets/stamps/winter/winter-10-winter-letter.webp": "pp/stamps__winter__winter-10-winter-letter.webp", "assets/textures/autumn-bookcloth.svg": "pp/textures__autumn-bookcloth.svg", "assets/textures/autumn-ticking.svg": "pp/textures__autumn-ticking.svg", "assets/textures/garden-trellis.webp": "pp/textures__garden-trellis.webp", "assets/textures/letter-paper.webp": "pp/textures__letter-paper.webp", "assets/textures/pantry-toile.webp": "pp/textures__pantry-toile.webp", "assets/textures/postmark-pantry-gingham-blue.svg": "pp/textures__postmark-pantry-gingham-blue.svg", "assets/textures/postmark-pantry-gingham-butter.svg": "pp/textures__postmark-pantry-gingham-butter.svg", "assets/textures/postmark-pantry-gingham-pink.svg": "pp/textures__postmark-pantry-gingham-pink.svg", "assets/textures/postmark-pantry-gingham-red.svg": "pp/textures__postmark-pantry-gingham-red.svg", "assets/textures/postmark-pantry-gingham-sage.svg": "pp/textures__postmark-pantry-gingham-sage.svg", "assets/textures/spring-bookcloth.svg": "pp/textures__spring-bookcloth.svg", "assets/textures/spring-ticking.svg": "pp/textures__spring-ticking.svg", "assets/textures/summer-bookcloth.svg": "pp/textures__summer-bookcloth.svg", "assets/textures/summer-ticking.svg": "pp/textures__summer-ticking.svg", "assets/textures/winter-bookcloth.svg": "pp/textures__winter-bookcloth.svg", "assets/textures/winter-ticking.svg": "pp/textures__winter-ticking.svg"};/* filled at publish time: local asset path -> hosted path */
 const A=p=>PPMAP[p]||p;
 const STAMPS={autumn:['pp/stamps__autumn__autumn-01-orchard-apples.webp', 'pp/stamps__autumn__autumn-02-pear-and-oak.webp', 'pp/stamps__autumn__autumn-03-heirloom-pumpkins.webp', 'pp/stamps__autumn__autumn-04-autumn-dahlias.webp', 'pp/stamps__autumn__autumn-05-chestnut-branch.webp', 'pp/stamps__autumn__autumn-06-harvest-basket.webp', 'pp/stamps__autumn__autumn-07-apple-tart.webp', 'pp/stamps__autumn__autumn-08-preserving-day.webp', 'pp/stamps__autumn__autumn-09-orchard-gate.webp', 'pp/stamps__autumn__autumn-10-autumn-tea.webp'],winter:['pp/stamps__winter__winter-01-orange-evergreen.webp', 'pp/stamps__winter__winter-02-winter-robin.webp', 'pp/stamps__winter__winter-03-snowy-cottage.webp', 'pp/stamps__winter__winter-04-candlelight.webp', 'pp/stamps__winter__winter-05-holly-and-ivy.webp', 'pp/stamps__winter__winter-06-hellebores.webp', 'pp/stamps__winter__winter-07-pinecone-bough.webp', 'pp/stamps__winter__winter-08-winter-pomander.webp', 'pp/stamps__winter__winter-09-winter-tea.webp', 'pp/stamps__winter__winter-10-winter-letter.webp'],spring:['pp/stamps__st01.webp', 'pp/stamps__st02.webp', 'pp/stamps__st03.webp', 'pp/stamps__st04.webp', 'pp/stamps__st05.webp', 'pp/stamps__st06.webp', 'pp/stamps__st07.webp', 'pp/stamps__st08.webp', 'pp/stamps__st09.webp', 'pp/stamps__st10.webp', 'pp/stamps__st11.webp', 'pp/stamps__st12.webp', 'pp/stamps__st13.webp']};STAMPS.summer=STAMPS.spring;
 /* ===== A Month at the Pantry: the day-by-day layer (October draft, Amy to edit) =====
@@ -2121,7 +2304,7 @@ const EDITIONS=[
  {m:7,name:"July",title:"A Table Outdoors",season:"summer",cover:"oak-picnic",news:"picnic-overhead",egg:[45,80]},
  {m:8,name:"August",title:"The Late Summer Kitchen",season:"summer",cover:"garden-harvest",news:"meadow-wide",egg:[70,75]},
  {m:9,name:"September",title:"The Keeping Season",season:"autumn",cover:"oct/kitchen",news:"oct/teatable",egg:[80,80]},
- {m:10,name:"October",title:"Gathered in Autumn",season:"autumn",cover:"oct/gate",news:"oct/teatable",egg:[51,72]},
+ {m:10,name:"October",title:"Gathered in Autumn",season:"autumn",cover:"oct/gate",news:"scene/autumn-dining-table",egg:[51,72]},
  {m:11,name:"November",title:"Room for Company",season:"autumn",cover:"oct/kitchen",news:"oct/pantry",egg:[62,72]},
  {m:12,name:"December",title:"By Candlelight",season:"winter",cover:"oct/december",news:"oct/desk",egg:[69,66]}
 ];
@@ -2162,28 +2345,19 @@ const MONTH={10:[
 ]};
 const HIDDEN={basket:["pp/illustration__garden-robin-320.webp","the robin came too"],envelope:["pp/illustration__sealed-envelope-320.webp","sealed, dated, yours"],robin:["pp/illustration__garden-robin-320.webp","he knows something"],pumpkin:["pp/illustration__october-detail.webp","boo, gently"]};
 function buildMonth(m,year){
-  const cal=document.getElementById('cal'),ag=document.getElementById('agenda');
-  cal.innerHTML='';if(ag)ag.innerHTML='';
-  const dows=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  dows.forEach(d=>{const e=document.createElement('div');e.className='dow';e.innerHTML=`<span class="l">${d}</span><span class="s">${d.slice(0,3)}</span>`;cal.appendChild(e)});
-  const first=new Date(year,m-1,1).getDay(),days=new Date(year,m,0).getDate(),today=new Date(),isNow=today.getFullYear()===year&&today.getMonth()===m-1;
+  const cal=document.getElementById('cal');if(!cal)return;cal.innerHTML='';
+  const days=new Date(year,m,0).getDate(),today=new Date(),isNow=today.getFullYear()===year&&today.getMonth()===m-1;
   const rows=MONTH[m]||MONTH[10];const byDay={};rows.forEach(r=>byDay[r[0]]=r);
-  for(let i=0;i<first;i++){const b=document.createElement('div');if(i===first-1&&first>1){b.className='day botan';b.innerHTML=`<img src="pp/illustration__sealed-envelope-320.webp" alt="">`}else b.className='day blank';cal.appendChild(b)}
-  for(let d=1;d<=days;d++){
-    const r=byDay[d]||[d,null,"",null,null];const c=document.createElement('div');c.className='day'+(isNow&&today.getDate()===d?' today':'');
-    c.dataset.d=d;c.dataset.wk=Math.floor((first+d-1)/7);c.tabIndex=0;c.setAttribute('role','button');c.setAttribute('aria-label',`${EDITIONS[m-1].name} ${d}. ${r[1]?r[1]+'. ':''}${r[2]}`);
-    c.innerHTML=`<div class="n">${d}</div>${r[1]?`<i class="dot hol-dot"></i>`:r[2]?`<i class="dot"></i>`:''}${r[1]?`<div class="hol">${r[1]}</div>`:''}<div class="t">${r[2]}</div>${r[3]?`<div class="r">${r[3]}</div>`:''}${r[4]?`<span class="hid"><img src="${HIDDEN[r[4]][0]}" alt=""><span class="say">${HIDDEN[r[4]][1]}</span></span>`:''}`;
-    cal.appendChild(c);
-    const li=document.createElement('li');li.innerHTML=`<div class="n">${d}<small>${dows[new Date(year,m-1,d).getDay()].slice(0,3)}</small></div><div>${r[1]?`<div class="hol">${r[1]}</div>`:''}<div class="t">${r[2]}</div>${r[3]?`<div class="r">${r[3]}</div>`:''}</div>`;if(ag)ag.appendChild(li);
-  }
-  const tail=(7-(first+days)%7)%7;for(let i=0;i<tail;i++){const b=document.createElement('div');b.className='day blank';cal.appendChild(b)}
-  [...cal.querySelectorAll('.day.blank,.day.botan')].forEach((b,i)=>{const idx=[...cal.children].indexOf(b)-7;b.dataset.wk=Math.floor(idx/7)});
-  /* mobile: show this week (or the first week) until "See the whole month" */
-  const wk=isNow?Math.floor((first+today.getDate()-1)/7):0;cal.dataset.week=wk;cal.querySelectorAll('.day').forEach(c=>c.classList.toggle('off',c.dataset.wk!==String(wk)));
-  const dn=document.getElementById('daynote');const show=(d)=>{const r=byDay[d];if(!r)return;dn.innerHTML=`<b>${EDITIONS[m-1].name} ${d}</b>${r[1]?`<span class="hol">${r[1]}</span>`:''}<span class="t">${r[2]||'A quiet day. Keep it that way.'}</span>${r[3]?`<span class="r">${r[3]}</span>`:''}<a class="tlink" href="#calendar/${d}">open this day →</a>`;cal.querySelectorAll('.day.sel').forEach(x=>x.classList.remove('sel'));cal.querySelector(`.day[data-d="${d}"]`).classList.add('sel')};
-  cal.querySelectorAll('.day[data-d]').forEach(c=>{c.addEventListener('click',()=>{if(matchMedia('(min-width:861px)').matches){location.hash='calendar/'+c.dataset.d}else show(+c.dataset.d)});c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(+c.dataset.d)}})});
-  show(isNow?today.getDate():1);
-  const td=isNow?today.getDate():1,T=(TIPS[m]||TIPS[10])[td]||(TIPS[10][td]);if(T){document.getElementById('tipdate').textContent=EDITIONS[m-1].name+' '+td;document.getElementById('tiptitle').textContent=T[0];document.getElementById('tiptext').textContent=T[1]}
+  const td=isNow?today.getDate():1;let start=td-new Date(year,m-1,td).getDay();start=Math.max(1,Math.min(start,days-6));
+  const dd=(typeof DAYS!=='undefined'&&(DAYS[m]||DAYS[10]))||{};
+  for(let d=start;d<start+7;d++){
+    const r=byDay[d]||[d,null,'',null,null],x=dd[d];const t=x?x.type:(r[1]?'holiday':'note');
+    const label=x?TYPE_LABEL[x.type]:(r[1]?'The date':'A note');const title=x?x.title:(r[1]||r[2]||'A quiet day');
+    const a=document.createElement('a');a.className='wday t-'+t+(isNow&&d===td?' now':'');a.href='#calendar/'+d;a.setAttribute('role','listitem');
+    a.innerHTML=`<span class="wd">${new Date(year,m-1,d).toLocaleDateString('en-US',{weekday:'short'})}</span><span class="dn">${d}</span><span class="tg">${label}</span><span class="tt">${title}</span>${isNow&&d===td?'<span class="nowtag">today</span>':''}`;
+    cal.appendChild(a)}
+  requestAnimationFrame(()=>{const n=cal.querySelector('.now');if(n&&cal.scrollWidth>cal.clientWidth)cal.scrollLeft=Math.max(0,n.offsetLeft-cal.clientWidth/2+n.offsetWidth/2)});
+  const T=(TIPS[m]||TIPS[10])[td]||(TIPS[10][td]);if(T){document.getElementById('tipdate').textContent=EDITIONS[m-1].name+' '+td;document.getElementById('tiptitle').textContent=T[0];document.getElementById('tiptext').textContent=T[1]}
   if(document.getElementById('bcgrid'))buildBigCal(m,year,calDay||td);
 }
 function toggleWeek(){const mo=document.getElementById('month');mo.classList.toggle('full');document.getElementById('weektoggle').textContent=mo.classList.contains('full')?'Back to this week':'See the whole month'}
@@ -2242,7 +2416,8 @@ function startLeaves(season){
 /* a little something when you leave the tab */
 (function(){const t0=document.title;document.addEventListener('visibilitychange',()=>{document.title=document.hidden?'The kettle is on. · Postmark Pantry':t0})})();
 
-(function(){const v=document.getElementById('coverfilm');v.src=A(matchMedia('(max-width:860px)').matches?'pp/films__hero-mobile.mp4':'pp/films__hero-desktop.mp4')})();
+(function(){const v=document.getElementById('coverfilm'),mob=matchMedia('(max-width:860px)').matches,fall=(document.documentElement.dataset.season||'autumn')==='autumn';
+  v.src=A(fall?(mob?'pp/films__hero-autumn-mobile.mp4':'pp/films__hero-autumn-desktop.mp4'):(mob?'pp/films__hero-mobile.mp4':'pp/films__hero-desktop.mp4'))})();
 applyEdition(+document.documentElement.dataset.edition||10);
 
 
@@ -2294,18 +2469,19 @@ const MB=/*MBMETA*/{"files": {"closed": "pp/blender__mailbox-closed.webp", "flag
   let busy=Promise.resolve();
   const finale=async()=>{await new Promise(r=>setTimeout(r,250));await play('flag','closed');await new Promise(r=>setTimeout(r,450));
     await play('door','flagup');note.hidden=false;note.classList.remove('in');void note.offsetWidth;note.classList.add('in')};
-  function fly(c){return new Promise(res=>{const side=c.querySelector(c.classList.contains('flipped')?'.side.front':'.side.back')||c;
-    const r=side.getBoundingClientRect(),cr=cv.getBoundingClientRect();
-    const tx=cr.left+cr.width*MB.slot[0],ty=cr.top+cr.height*MB.slot[1];
-    if(reduce||!r.width){return res()}
-    const g=side.cloneNode(true);g.className='mb-ghost';g.style.cssText+=`left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;overflow:hidden`;
-    document.body.appendChild(g);const s=Math.max(.06,cr.width*.24/r.width);
-    const dx=tx-(r.left+r.width/2),dy=ty-(r.top+r.height/2);
-    g.animate([{transform:'translate(0,0) scale(1) rotate(0)',opacity:1},
-      {transform:`translate(${dx*.55}px,${dy*.55-60}px) scale(${(1+s)/2.4}) rotate(-8deg)`,opacity:1,offset:.6},
-      {transform:`translate(${dx}px,${dy-6}px) scale(${s}) rotate(0deg)`,opacity:1,offset:.88},
-      {transform:`translate(${dx}px,${dy+4}px) scale(${s}) rotate(0deg)`,opacity:0}],
-      {duration:1150,easing:'cubic-bezier(.45,.05,.3,1)'}).onfinish=()=>{g.remove();res()}})}
+  function fly(c){return new Promise(res=>{const r=c.getBoundingClientRect(),cr=cv.getBoundingClientRect();
+    if(reduce||!r.width)return res();
+    const sw=cr.width*.21,sh=sw*2/3,tx=cr.left+cr.width*MB.slot[0],ty=cr.top+cr.height*MB.slot[1]+sh*.18;
+    const g=document.createElement('div');g.className='mb-ghost';const face=c.dataset.face;
+    g.innerHTML=face?`<img src="${A(face)}" alt="">`:'';g.style.cssText=`left:${tx-sw/2}px;top:${ty-sh}px;width:${sw}px;height:${sh}px`;
+    document.body.appendChild(g);const s0=r.width/sw;
+    const cx=r.left+r.width/2,cy=r.top+r.height/2,dx=cx-tx,dy=cy-ty+s0*sh/2;
+    g.animate([{transform:`translate(${dx}px,${dy}px) scale(${s0}) rotate(0deg)`,offset:0},
+      {transform:`translate(${dx*.42}px,${Math.min(dy*.42,-40)-50}px) scale(${(s0+1)/2.6}) rotate(-7deg)`,offset:.5},
+      {transform:`translate(0px,-${sh*.55}px) scale(1) rotate(0deg)`,offset:.82},
+      {transform:`translate(0px,0px) scale(1,1) rotate(0deg)`,offset:.9},
+      {transform:`translate(0px,${sh*.06}px) scale(.96,.04) rotate(0deg)`,offset:1}],
+      {duration:1250,easing:'cubic-bezier(.45,.05,.3,1)',fill:'forwards'}).onfinish=()=>{g.remove();res()}})}
   function post(c){const k=keyOf(c);if(posted.includes(k))return;posted.push(k);save();c.classList.add('posted');
     busy=busy.then(async()=>{await ready;const cr=cv.getBoundingClientRect();
       if(cr.top<0||cr.bottom>innerHeight){box.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});await new Promise(r=>setTimeout(r,550))}
@@ -2328,6 +2504,14 @@ function inkToday(){const n=document.querySelector('#bcgrid .bc.now .n');if(!n||
       const go=()=>{draw(f);if(++f<Q.n)setTimeout(go,1000/24)};setTimeout(go,350)},{threshold:.6});io.observe(c)};
   im.src=A('pp/blender__ink-today.webp')}
 
+
+/* footer: a postmark inked by hand, not drawn */
+(function(){const f=document.getElementById('fpm');if(!f)return;const mo=(EDITIONS[(+document.documentElement.dataset.edition||10)-1]||{}).name||'October';
+  f.innerHTML=postmarkSVG(mo.slice(0,3).toUpperCase()+' 2026','POSTMARK PANTRY','FEED WHAT FEEDS YOU',{rot:-9})})();
+
+/* the honest particulars: one card peeks over once, so people know they turn */
+(function(){const t=document.querySelector('.proof .ftile');if(!t||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;io.disconnect();setTimeout(()=>{t.classList.add('peek');setTimeout(()=>t.classList.remove('peek'),1300)},700)},{threshold:.8});io.observe(t)})();
 
 /* films load only when their section is on screen (and their page is open) */
 (function(){const vids=[...document.querySelectorAll('video[data-src]')];const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src){v.src=A(v.dataset.src)}v.play().catch(()=>{})}else if(v.src){v.pause()}}),{rootMargin:'200px 0px'});vids.forEach(v=>{v.muted=true;v.loop=true;v.setAttribute('playsinline','');io.observe(v)})})();
@@ -2413,12 +2597,12 @@ route();
         float fl=cos(w.y); r.x/=max(abs(fl),.12);
         vec2 luv=r/(q.w*2.)+.5; if(luv.x<0.||luv.x>1.||luv.y<0.||luv.y>1.)continue;
         float cell=w.z; vec2 auv=vec2((mod(cell,4.)+luv.x)/4.,1.-(floor(cell/4.)+luv.y)/2.);
-        float blur=(1.-q.z)*1.8+.15; vec4 sp=texture2D(uLeaf,auv,blur); alpha=sp.a*.97; col=sp.rgb*(.72+.28*abs(fl))*w.w; col=mix(col,c.rgb,(1.-q.z)*.28);
+        if(luv.x<.03||luv.x>.97||luv.y<.03||luv.y>.97)continue; float blur=(1.-q.z)*.7; vec4 sp=texture2D(uLeaf,auv,blur); alpha=smoothstep(.18,.6,sp.a); col=(sp.rgb/max(sp.a,.004))*(.74+.26*abs(fl))*w.w; col=mix(col,c.rgb,(1.-q.z)*.1);
       } else if(uMode==2.||uMode==4.){ float a=1.-smoothstep(q.w*.4,q.w,length(d)); alpha=a*.9; if(uMode==2.)col=vec3(1.); else col=vec3(1.,.95,.8); }
       else { float ang=uTime*(.6+q.z)+float(i); float ca=cos(ang),sa=sin(ang); vec2 r=vec2(d.x*ca-d.y*sa,d.x*sa+d.y*ca);
         vec2 e=r/vec2(q.w,q.w*.5); e.x*=1.+.45*e.y; float l=dot(e,e); float a=1.-smoothstep(.75,1.,l);
         alpha=a*(uMode==5.?(.35+.65*abs(sin(uTime*1.3+float(i)))):.96); }
-      alpha*=mix(.75,1.,q.z);
+      alpha*=uMode==3.?1.:mix(.75,1.,q.z);
       c.rgb=mix(c.rgb,col,alpha);
     }
     gl_FragColor=vec4(c.rgb,1.);
@@ -2443,17 +2627,17 @@ route();
     const U=n=>gl.getUniformLocation(pr,n);
     const tex=(unit)=>{const t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,t);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);return t};
     const tTex=tex(0),tDep=tex(1),tLeaf=tex(2);gl.uniform1i(U('uTex'),0);gl.uniform1i(U('uDep'),1);gl.uniform1i(U('uLeaf'),2);
-    const leafImg=new Image();leafImg.src=(typeof A==='function'?A('pp/illustration__leaf-atlas.webp'):'pp/illustration__leaf-atlas.webp');leafImg.onload=()=>{gl.activeTexture(gl.TEXTURE2);gl.bindTexture(gl.TEXTURE_2D,tLeaf);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,leafImg);gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR)};
+    const leafImg=new Image();leafImg.src=(typeof A==='function'?A('pp/illustration__leaf-atlas.webp'):'pp/illustration__leaf-atlas.webp');leafImg.onload=()=>{gl.activeTexture(gl.TEXTURE2);gl.bindTexture(gl.TEXTURE_2D,tLeaf);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,leafImg);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR)};
     const depImg=new Image();depImg.src=(typeof A==='function'?A(dep):dep);
     let depReady=false;depImg.onload=()=>{gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,tDep);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,depImg);depReady=true};
     const isVid=src.tagName==='VIDEO';let texW=0,texH=0,lastSrc='';
     const inst={el,cv,gl,src,depImg,visible:true,
       life:el.dataset.life||'none',
-      strength:parseFloat(el.dataset.strength||'0.018'),
+      strength:parseFloat(el.dataset.strength||'0.018')*(touch?1.35:1),
       P:[],seed:Math.random()*100};
     const N=inst.life==='dust'?22:inst.life==='fireflies'?12:inst.life==='mist'||inst.life==='none'?0:20;
-    for(let i=0;i<N;i++)inst.P.push({x:Math.random(),y:Math.random(),z:.2+Math.random()*.75,s:0,vy:0,vx:0,ph:Math.random()*6.28,spin:Math.random()*6.28,spinV:(Math.random()-.5)*1.6,tum:Math.random()*6.28,tumV:.8+Math.random()*1.6,cell:Math.floor(Math.random()*8),shade:.88+Math.random()*.18});
-    const sizeFor=()=>{const w=cv.clientWidth;return inst.life==='snow'?2+Math.random()*3:inst.life==='dust'?1.2+Math.random()*1.6:inst.life==='fireflies'?2.5+Math.random()*2:Math.max(6,w/150)+Math.random()*(w/90)};
+    for(let i=0;i<N;i++)inst.P.push({x:Math.random(),y:Math.random(),z:.45+Math.random()*.55,s:0,vy:0,vx:0,ph:Math.random()*6.28,spin:Math.random()*6.28,spinV:(Math.random()-.5)*1.6,tum:Math.random()*6.28,tumV:.8+Math.random()*1.6,cell:Math.floor(Math.random()*8),shade:.88+Math.random()*.18});
+    const sizeFor=()=>{const w=cv.clientWidth;return inst.life==='snow'?2+Math.random()*3:inst.life==='dust'?1.2+Math.random()*1.6:inst.life==='fireflies'?2.5+Math.random()*2:Math.max(13,w/120)+Math.random()*Math.max(9,w/80)};
     inst.P.forEach(p=>{p.s=sizeFor();p.vy=inst.life==='dust'?.004+Math.random()*.01:inst.life==='fireflies'?-.01-Math.random()*.02:inst.life==='snow'?.04+Math.random()*.04:.09+Math.random()*.09;p.vx=(Math.random()-.5)*.02});
     const io=new IntersectionObserver(es=>es.forEach(e=>inst.visible=e.isIntersecting),{rootMargin:'10% 0px'});io.observe(el);
     function resize(){const dpr=Math.min(devicePixelRatio||1,1.5);const w=el.clientWidth,h=el.clientHeight;if(cv.width!==w*dpr|0||cv.height!==h*dpr|0){cv.width=w*dpr|0;cv.height=h*dpr|0;gl.viewport(0,0,cv.width,cv.height)}}
@@ -2468,7 +2652,7 @@ route();
       if(vid||cur!==lastSrc){gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,S);lastSrc=cur;texW=vid?S.videoWidth:S.naturalWidth;texH=vid?S.videoHeight:S.naturalHeight}
       const cs=getComputedStyle(S);const op=(cs.objectPosition||'50% 50%').split(' ').map(x=>parseFloat(x)/100);
       gl.uniform2f(U('uRes'),cv.width,cv.height);gl.uniform2f(U('uTexRes'),texW,texH);gl.uniform2f(U('uObjPos'),isNaN(op[0])?.5:op[0],isNaN(op[1])?.5:1-op[1]);
-      gl.uniform2f(U('uTilt'),tilt.x,-tilt.y);gl.uniform1f(U('uStr'),inst.strength);gl.uniform1f(U('uTime'),t/1000+inst.seed);
+      let tx=tilt.x,ty=tilt.y;if(touch){const r=el.getBoundingClientRect();const sy=Math.max(-1,Math.min(1,((r.top+r.height/2)/innerHeight)*2-1));tx=Math.sin(t/2600+inst.seed)*.75+tilt.x*.5;ty=sy*1.1+Math.sin(t/3700+inst.seed*1.7)*.35}gl.uniform2f(U('uTilt'),tx,-ty);gl.uniform1f(U('uStr'),inst.strength);gl.uniform1f(U('uTime'),t/1000+inst.seed);
       let life=inst.life;const se=season();
       if(life==='leaves'){life=se==='winter'?'snow':se==='spring'?'petals':se==='summer'?'fireflies':'leaves'}
       gl.uniform1f(U('uMode'),MODES[life]||0);gl.uniform1f(U('uN'),inst.P.length);
@@ -2514,7 +2698,7 @@ route();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'postmark-pantry-v12';
+  var PAGE_ID = 'postmark-pantry-v13';
 
   /* ---------------------------------------------- */
 
