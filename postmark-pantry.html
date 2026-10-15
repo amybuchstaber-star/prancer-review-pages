@@ -1325,8 +1325,8 @@ function applyEdition(m){
   document.querySelectorAll('[data-ed="number"]').forEach(e=>e.textContent=String(m).padStart(2,'0'));
   document.querySelector('[data-ed="cover"]').src=A('assets/photos/'+ed.cover+'.webp');
   const se=ed.season;['landscape','orchard','garden'].forEach(k=>document.querySelectorAll('[data-ed="sc-'+k+'"]').forEach(e=>e.src=A('assets/photos/scene/'+se+'-')+k+'.webp'));document.querySelector('[data-ed="pjam"]').src=A('assets/photos/product/'+se+'-jam-pact.webp');document.querySelector('[data-ed="plyte"]').src=A('assets/photos/product/'+se+'-pitcher-perfect.webp');document.querySelector('[data-ed="ppair"]').src=A('assets/photos/product/'+se+'-pantry-pair.webp');
-  document.querySelectorAll('[data-ed="fl"]').forEach(e=>e.src='assets/borders/'+ed.season+'/corner-flourish-640.webp');
-  document.querySelectorAll('[data-ed="div"]').forEach(e=>e.src='assets/borders/'+ed.season+'/botanical-divider-960.webp');
+  document.querySelectorAll('[data-ed="fl"]').forEach(e=>e.src=A('assets/borders/'+ed.season+'/corner-flourish-640.webp'));
+  document.querySelectorAll('[data-ed="div"]').forEach(e=>e.src=A('assets/borders/'+ed.season+'/botanical-divider-960.webp'));
   const cf=document.getElementById('coverfilm'),ci=document.getElementById('coverimg');if(ed.season==='autumn'){cf.style.display='';ci.style.opacity=0}else{cf.style.display='none';ci.style.opacity=1}
   document.querySelector('[data-ed="newsbg"]').src=A('assets/photos/'+ed.news+'.webp');
   const egg=document.querySelector('[data-ed="egg"]');egg.style.setProperty('--x',ed.egg[0]+'%');egg.style.setProperty('--y',ed.egg[1]+'%');
