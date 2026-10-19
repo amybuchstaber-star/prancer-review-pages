@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- lemon-creative v5 · build 2026-10-14 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -178,7 +177,7 @@ section{position:relative}
 
 /* ticker */
 .ticker{
-  overflow:hidden;white-space:nowrap;background:var(--ink);color:var(--banana);
+  overflow:hidden;white-space:nowrap;background:var(--banana);color:var(--ink);
   padding:.75rem 0;transform:rotate(-1.4deg) scale(1.03);border-block:3px solid var(--pink);position:relative;z-index:5;
   font-weight:700;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;
 }
@@ -186,7 +185,7 @@ section{position:relative}
 .ticker.pink{background:var(--pink);color:#fff;border-color:var(--ink)}
 .ticker.green{background:var(--green);color:#fff;border-color:var(--banana)}
 .ticker.denim{background:var(--denim);color:#fff;border-color:var(--icy)}
-.ticker-track{display:inline-block;animation:ticker 28s linear infinite}
+.ticker-track{display:inline-block;animation:ticker 60s linear infinite}
 .ticker-track span{display:inline-block;padding:0 1.4rem}
 .ticker-track span::after{content:"🍋";margin-left:1.4rem}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -205,6 +204,8 @@ section{position:relative}
   box-shadow:4px 4px 0 var(--ink);padding:.6rem;min-width:230px;display:none;flex-direction:column;gap:.1rem;margin-top:.5rem;
 }
 .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex}
+.has-sub .sub::before{content:"";position:absolute;left:-1rem;right:-1rem;top:-1rem;height:1.1rem}
+.has-sub::after{content:"";position:absolute;left:0;right:0;top:100%;height:.6rem}
 .has-sub .sub a{padding:.5rem .7rem;border-radius:9px;display:flex;align-items:center;gap:.6rem}
 .has-sub .sub a:hover{background:var(--banana)}
 .has-sub .sub a::after{display:none}
@@ -225,6 +226,9 @@ section{position:relative}
 .hero-visual .sticker.a{left:4%;bottom:8%;--r:-6deg}
 .hero-visual .sticker.b{right:2%;top:6%;--r:5deg}
 .hero-visual .sticker.c{left:40%;bottom:2%;--r:3deg}
+.hero-tags{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:1.5rem}
+.hero-tags .sticker{text-decoration:none;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.42rem .7rem;white-space:nowrap}
+.hero-tags .sticker.lead{font-size:.78rem;padding:.5rem .9rem;box-shadow:4px 4px 0 var(--ink)}
 .hero-visual .spin{position:absolute;width:120px;right:28%;bottom:16%;z-index:4}
 .hero-visual .spin svg{width:100%;height:auto}
 
@@ -232,7 +236,7 @@ section{position:relative}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.5rem}
 .svc{
   background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:1.3rem;
-  box-shadow:var(--shadow-pop);text-decoration:none;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-pop);text-decoration:none;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:visible;
   transition:transform .2s;
 }
 .svc:hover{transform:translateY(-6px) rotate(-.6deg)}
@@ -244,7 +248,7 @@ section{position:relative}
 .svc h3{margin:0}
 .svc p{margin:0;font-size:.95rem}
 .svc .more{font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.4rem;margin-top:auto}
-.svc .tag{position:absolute;top:1.1rem;left:1.1rem;z-index:2}
+.svc .tag{position:absolute;top:-1rem;left:1rem;z-index:4}
 .svc.social{background:#fff}
 .svc.social .ico{background:var(--pink)}
 .svc.weddings .ico{background:var(--icy)}
@@ -308,7 +312,7 @@ section{position:relative}
 .cta-band .script{display:block;color:var(--pink);font-size:1.3em;transform:rotate(-2deg)}
 
 /* ---------- Footer ---------- */
-footer{background:var(--ink);color:var(--ivory);padding:3.5rem 0 2rem;position:relative}
+footer{background:var(--denim);color:#fff;padding:3.5rem 0 2rem;position:relative;border-top:3px solid var(--ink)}
 .foot-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
 .foot-grid h4{color:var(--banana);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
 .foot-grid ul{list-style:none;padding:0;margin:0}
@@ -316,7 +320,7 @@ footer{background:var(--ink);color:var(--ivory);padding:3.5rem 0 2rem;position:r
 .foot-grid a{text-decoration:none;opacity:.9}
 .foot-grid a:hover{color:var(--banana)}
 .foot-logo img{height:80px;margin-bottom:1rem}
-.foot-bottom{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.15);font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;opacity:.8}
+.foot-bottom{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.35);font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;opacity:.8}
 .foot-form{display:flex;gap:.5rem;margin-top:.5rem}
 .foot-form input{flex:1;padding:.7rem .9rem;border-radius:999px;border:2px solid var(--ivory);background:transparent;color:#fff;font-family:inherit}
 
@@ -540,8 +544,8 @@ h1 .script,h2 .script{letter-spacing:.01em}
 .icon-card img.illus{width:92px;margin:0 auto .5rem}
 .service-pick button img{width:70px;height:70px;object-fit:contain}
 .seal{position:absolute;width:110px;top:-2.2rem;right:4%;transform:rotate(12deg);z-index:3}
-.hero-visual .framed.main{position:absolute;width:62%;left:0;top:2%;transform:rotate(-3deg);z-index:2}
-.hero-visual .framed.two{position:absolute;width:52%;right:0;top:30%;transform:rotate(4deg);z-index:3}
+.hero-visual .framed.main{position:absolute;width:55%;left:0;top:0;transform:rotate(-3deg);z-index:2}
+.hero-visual .framed.two{position:absolute;width:60%;right:-2%;top:30%;transform:rotate(4deg);z-index:3}
 .hero-visual .illus.sprig{position:absolute;width:150px;left:-4%;bottom:0;z-index:1;transform:rotate(-10deg)}
 /* gallery */
 .gal-wall{columns:3;column-gap:2rem;padding-top:1rem}
@@ -649,20 +653,22 @@ h1 .script,h2 .script{letter-spacing:.01em}
           <a class="btn pink" href="contact.html">Book a discovery call <svg><use href="#i-arrow"/></svg></a>
           <a class="btn ghost" href="social.html">See the services</a>
         </div>
+        <div class="hero-tags">
+          <a class="sticker pink lead" href="social.html" style="--r:-2deg">★ Social media management</a>
+          <a class="sticker banana" href="weddings.html" style="--r:1.5deg">Wedding content</a>
+          <a class="sticker icy" href="photography.html" style="--r:-1deg">Photography</a>
+        </div>
       </div>
 
       <div class="hero-visual reveal d2">
         <div class="framed main" style="aspect-ratio:1024/1536;"><img class="photo" src="assets/lemon-creative/layne-laptop.jpg" alt="" style="--clip:polygon(84.375% 50.000%,84.363% 50.600%,84.328% 51.199%,84.366% 51.803%,84.381% 52.409%,84.371% 53.017%,84.338% 53.626%,84.376% 54.247%,84.388% 54.873%,84.375% 55.502%,84.336% 56.133%,84.364% 56.786%,84.364% 57.444%,84.336% 58.106%,84.371% 58.796%,84.375% 59.492%,84.347% 60.195%,84.376% 60.931%,84.370% 61.675%,84.329% 62.426%,84.337% 63.216%,84.305% 64.015%,84.317% 64.857%,84.365% 65.746%,84.367% 66.646%,84.322% 67.557%,84.304% 68.519%,84.307% 69.534%,84.327% 70.605%,84.285% 71.690%,84.320% 72.880%,84.283% 74.085%,84.306% 75.400%,84.312% 76.783%,84.293% 78.232%,84.302% 79.802%,84.268% 81.444%,84.294% 83.266%,84.040% 84.945%,83.064% 85.971%,81.689% 86.592%,79.776% 86.560%,77.931% 86.545%,76.150% 86.550%,74.428% 86.578%,72.722% 86.570%,71.068% 86.590%,69.429% 86.576%,67.835% 86.593%,66.253% 86.580%,64.710% 86.600%,63.177% 86.590%,61.654% 86.553%,60.180% 86.616%,58.693% 86.588%,57.227% 86.598%,55.767% 86.582%,54.321% 86.606%,52.877% 86.603%,51.437% 86.576%,50.000% 86.589%,48.563% 86.576%,47.123% 86.603%,45.679% 86.606%,44.233% 86.582%,42.773% 86.598%,41.307% 86.588%,39.803% 86.680%,38.346% 86.553%,36.823% 86.590%,35.290% 86.600%,33.747% 86.580%,32.165% 86.593%,30.571% 86.576%,28.897% 86.650%,27.278% 86.570%,25.532% 86.637%,23.808% 86.609%,21.980% 86.661%,20.224% 86.560%,18.311% 86.592%,16.936% 85.971%,15.907% 84.999%,15.651% 83.319%,15.617% 81.550%,15.638% 79.854%,15.645% 78.283%,15.625% 76.832%,15.629% 75.449%,15.582% 74.179%,15.611% 72.926%,15.573% 71.780%,15.601% 70.649%,15.618% 69.576%,15.545% 68.601%,15.601% 67.597%,15.554% 66.685%,15.554% 65.783%,15.601% 64.892%,15.528% 64.083%,15.579% 63.249%,15.585% 62.457%,15.543% 61.704%,15.536% 60.959%,15.564% 60.221%,15.535% 59.517%,15.538% 58.819%,15.571% 58.128%,15.543% 57.464%,15.542% 56.805%,15.570% 56.150%,15.530% 55.517%,15.516% 54.886%,15.528% 54.259%,15.566% 53.636%,15.532% 53.025%,15.522% 52.416%,15.536% 51.808%,15.575% 51.203%,15.539% 50.602%,15.527% 50.000%,15.539% 49.398%,15.575% 48.797%,15.536% 48.192%,15.522% 47.584%,15.532% 46.975%,15.566% 46.364%,15.528% 45.741%,15.516% 45.114%,15.530% 44.483%,15.570% 43.850%,15.542% 43.195%,15.543% 42.536%,15.571% 41.872%,15.538% 41.181%,15.535% 40.483%,15.564% 39.779%,15.536% 39.041%,15.543% 38.296%,15.585% 37.543%,15.579% 36.751%,15.528% 35.917%,15.601% 35.108%,15.554% 34.217%,15.554% 33.315%,15.601% 32.403%,15.545% 31.399%,15.618% 30.424%,15.601% 29.351%,15.573% 28.220%,15.611% 27.074%,15.582% 25.821%,15.629% 24.551%,15.625% 23.168%,15.645% 21.717%,15.638% 20.146%,15.617% 18.450%,15.651% 16.681%,15.641% 14.728%,16.374% 13.419%,17.627% 12.619%,19.385% 12.410%,21.182% 12.295%,23.093% 12.392%,24.817% 12.292%,26.605% 12.347%,28.337% 12.377%,30.017% 12.380%,31.652% 12.354%,33.275% 12.359%,34.860% 12.331%,36.458% 12.397%,38.000% 12.364%,39.536% 12.360%,41.063% 12.383%,42.569% 12.369%,44.069% 12.382%,45.556% 12.356%,47.041% 12.356%,48.522% 12.383%,50.000% 12.370%,51.478% 12.383%,52.959% 12.356%,54.444% 12.356%,55.931% 12.382%,57.431% 12.369%,58.937% 12.383%,60.464% 12.360%,62.000% 12.364%,63.542% 12.397%,65.115% 12.394%,66.725% 12.359%,68.348% 12.354%,69.983% 12.380%,71.663% 12.377%,73.357% 12.407%,75.103% 12.411%,76.907% 12.392%,78.818% 12.295%,80.615% 12.410%,82.422% 12.562%,83.575% 13.474%,84.253% 14.837%,84.294% 16.734%,84.268% 18.556%,84.302% 20.198%,84.293% 21.768%,84.312% 23.217%,84.306% 24.600%,84.283% 25.915%,84.320% 27.120%,84.285% 28.310%,84.327% 29.395%,84.307% 30.466%,84.304% 31.481%,84.322% 32.443%,84.367% 33.354%,84.365% 34.254%,84.317% 35.143%,84.305% 35.985%,84.337% 36.784%,84.329% 37.574%,84.370% 38.325%,84.376% 39.069%,84.347% 39.805%,84.375% 40.508%,84.371% 41.204%,84.336% 41.894%,84.364% 42.556%,84.364% 43.214%,84.336% 43.867%,84.375% 44.498%,84.388% 45.127%,84.376% 45.753%,84.338% 46.374%,84.371% 46.983%,84.381% 47.591%,84.366% 48.197%,84.328% 48.801%,84.363% 49.400%);object-position:center 20%"><img class="frame-img" src="assets/lemon-creative/art/gallery/04-sunshine-rectangle.png" alt=""></div>
         <div class="framed two" style="aspect-ratio:1024/1536;"><video class="photo" src="assets/lemon-creative/video/recap-clean.mp4" poster="assets/lemon-creative/video/recap-clean.jpg" autoplay muted loop playsinline style="--clip:polygon(84.766% 50.000%,84.656% 50.605%,84.816% 51.216%,84.853% 51.829%,84.769% 52.436%,84.662% 53.042%,84.627% 53.656%,84.664% 54.283%,84.770% 54.927%,85.134% 55.623%,85.090% 56.268%,84.926% 56.897%,84.736% 57.524%,84.613% 58.171%,84.553% 58.843%,84.375% 59.492%,84.258% 60.168%,84.023% 60.819%,83.848% 61.498%,83.642% 62.177%,83.406% 62.858%,82.807% 63.403%,82.351% 64.006%,81.951% 64.640%,81.681% 65.345%,81.300% 66.012%,81.116% 66.798%,80.891% 67.589%,80.989% 68.601%,80.602% 69.360%,80.176% 70.118%,79.712% 70.873%,79.209% 71.627%,78.730% 72.426%,78.209% 73.223%,77.644% 74.018%,76.978% 74.755%,76.274% 75.486%,75.424% 76.099%,74.645% 76.812%,73.877% 77.571%,73.206% 78.493%,72.434% 79.352%,71.652% 80.262%,70.734% 81.046%,69.732% 81.758%,68.688% 82.457%,67.603% 83.140%,66.477% 83.807%,65.144% 84.083%,63.876% 84.524%,62.607% 85.008%,61.350% 85.598%,60.055% 86.168%,58.677% 86.524%,57.253% 86.727%,55.818% 86.906%,54.329% 86.670%,52.852% 86.278%,51.403% 85.730%,50.000% 85.221%,48.599% 85.665%,47.148% 86.278%,45.671% 86.670%,44.171% 86.971%,42.747% 86.727%,41.307% 86.588%,39.909% 86.296%,38.630% 85.662%,37.347% 85.134%,36.099% 84.587%,34.828% 84.145%,33.493% 83.869%,32.364% 83.201%,31.277% 82.517%,30.231% 81.819%,29.226% 81.106%,28.264% 80.380%,27.433% 79.526%,26.701% 78.607%,25.928% 77.796%,25.202% 76.978%,24.523% 76.154%,23.560% 75.647%,22.849% 74.913%,22.237% 74.121%,21.668% 73.324%,21.079% 72.575%,20.595% 71.772%,20.086% 71.015%,19.686% 70.210%,19.186% 69.494%,18.866% 68.689%,18.811% 67.758%,18.656% 66.921%,18.390% 66.170%,18.082% 65.460%,17.808% 64.750%,17.485% 64.077%,17.027% 63.471%,16.425% 62.923%,16.100% 62.271%,15.978% 61.557%,15.712% 60.903%,15.564% 60.221%,15.355% 59.567%,15.264% 58.889%,15.019% 58.258%,14.986% 57.585%,14.887% 56.934%,14.721% 56.302%,14.676% 55.654%,15.039% 54.954%,15.048% 54.319%,15.084% 53.687%,15.048% 53.068%,14.939% 52.457%,14.855% 51.844%,14.892% 51.227%,15.051% 50.610%,14.941% 50.000%,15.344% 49.395%,15.575% 48.797%,15.049% 48.166%,14.939% 47.543%,15.048% 46.932%,14.408% 46.242%,14.472% 45.610%,14.561% 44.978%,14.676% 44.346%,14.721% 43.698%,14.887% 43.066%,15.264% 42.476%,15.664% 41.894%,15.811% 41.251%,16.076% 40.632%,16.188% 39.964%,16.329% 39.293%,16.326% 38.562%,16.272% 37.791%,16.425% 37.077%,16.694% 36.393%,16.912% 35.675%,17.244% 34.992%,17.529% 34.272%,17.925% 33.592%,18.201% 32.833%,18.589% 32.115%,19.011% 31.399%,19.398% 30.640%,19.893% 29.928%,20.557% 29.315%,21.183% 28.664%,21.650% 27.871%,22.221% 27.131%,22.653% 26.241%,23.251% 25.456%,23.948% 24.729%,24.630% 23.955%,25.355% 23.188%,26.172% 22.486%,26.981% 21.736%,27.877% 21.054%,28.769% 20.325%,29.703% 19.608%,30.716% 18.963%,31.697% 18.212%,32.788% 17.597%,33.915% 16.998%,35.078% 16.416%,36.276% 15.853%,37.507% 15.309%,38.792% 14.848%,40.123% 14.472%,41.460% 14.055%,42.824% 13.660%,44.233% 13.418%,45.656% 13.200%,47.097% 13.072%,48.548% 13.034%,50.000% 13.281%,51.452% 13.034%,52.903% 13.072%,54.337% 13.265%,55.757% 13.482%,57.164% 13.724%,58.524% 14.119%,59.859% 14.536%,61.167% 14.975%,62.447% 15.435%,63.674% 15.979%,64.866% 16.541%,66.024% 17.122%,67.114% 17.781%,68.163% 18.455%,69.209% 19.084%,70.218% 19.727%,71.147% 20.443%,72.034% 21.170%,72.926% 21.850%,73.682% 22.655%,74.492% 23.355%,75.211% 24.119%,75.942% 24.836%,76.577% 25.614%,77.049% 26.499%,77.533% 27.333%,78.160% 28.020%,78.621% 28.809%,79.242% 29.457%,79.900% 30.067%,80.389% 30.774%,80.771% 31.529%,81.189% 32.242%,81.496% 32.997%,81.920% 33.671%,82.155% 34.425%,82.514% 35.102%,82.761% 35.817%,83.056% 36.495%,83.322% 37.174%,83.556% 37.854%,83.413% 38.650%,83.406% 39.377%,83.544% 40.043%,83.653% 40.707%,83.915% 41.321%,84.152% 41.937%,84.457% 42.536%,84.832% 43.122%,84.996% 43.749%,85.134% 44.377%,85.248% 45.005%,85.240% 45.646%,85.013% 46.303%,84.662% 46.958%,84.769% 47.564%,84.658% 48.182%,84.133% 48.807%,84.363% 49.400%);object-position:center 15%"></video><img class="frame-img" src="assets/lemon-creative/art/gallery/06-ribbon-cameo.png" alt=""></div>
         <img class="illus sprig" src="assets/lemon-creative/art/illus/citrus-sprig.png" alt="">
-        <span class="sticker banana a">social media mgmt</span>
-        <span class="sticker pink b">wedding content</span>
-        <span class="sticker icy c">photography</span>
       </div>
     </div>
   </section>
 
-  <div class="ticker"><div class="ticker-track">
+  <div class="ticker green"><div class="ticker-track">
     <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
     <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
   </div></div>
@@ -677,7 +683,7 @@ h1 .script,h2 .script{letter-spacing:.01em}
       <div class="svc-grid" style="text-align:left">
         <a class="svc social reveal" href="social.html">
           <span class="tag sticker pink" style="--r:-4deg">Most popular</span>
-          <div class="pic"><img src="assets/lemon-creative/layne-phone.jpg" alt=""></div>
+          <div class="pic"><img src="assets/lemon-creative/layne-phone.jpg" alt="" style="object-position:center 12%"></div>
           <div class="ttl"><span class="ico"><img src="assets/lemon-creative/art/illus/phone-content.png" alt=""></span><h3>Social Media Management</h3></div>
           <p>Boutique, done-for-you content and management for small businesses — from full-scale creation + posting to just the piece you're missing.</p>
           <span class="more">Explore social <svg width="18" height="18"><use href="#i-arrow"/></svg></span>
@@ -689,7 +695,7 @@ h1 .script,h2 .script{letter-spacing:.01em}
           <span class="more">See wedding packages <svg width="18" height="18"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="svc photo reveal d2" href="photography.html">
-          <div class="pic"><img src="assets/lemon-creative/photo-engagement-1.jpg" alt=""></div>
+          <div class="pic"><img src="assets/lemon-creative/photo-engagement-2.jpg" alt="" style="object-position:center 38%"></div>
           <div class="ttl"><span class="ico"><img src="assets/lemon-creative/art/illus/camera.png" alt=""></span><h3>Photography</h3></div>
           <p>Engagements, maternity, baby announcements, gender reveals, and the little milestones — shot bright, candid, and a little bit playful.</p>
           <span class="more">Book a session <svg width="18" height="18"><use href="#i-arrow"/></svg></span>
@@ -697,13 +703,15 @@ h1 .script,h2 .script{letter-spacing:.01em}
       </div>
     </div>
   </section>
-
-
-  <img class="border-strip" src="assets/lemon-creative/art/borders/lemon-embroidery-border.png" alt="">
   <!-- ── Behind the lens (video reel row) ── -->
   <section class="sec bg-ink doodle ivory">
     <div class="floaty slow" style="top:8%;left:3%;width:72px"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
     <div class="floaty rev" style="bottom:10%;right:3%;width:60px"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
+    <div class="floaty fast" style="top:14%;right:9%;width:52px"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
+    <div class="floaty slow rev" style="bottom:14%;left:8%;width:48px"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
+    <div class="floaty" style="top:46%;left:1.5%;width:44px"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
+    <div class="floaty fast rev" style="top:52%;right:1.5%;width:46px"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
+    <div class="floaty slow" style="bottom:4%;left:46%;width:40px"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
     <div class="wrap center">
       <span class="kicker">Behind the lens</span>
       <h2 style="margin-top:1rem">Shot on iPhone, <span class="script" style="color:var(--banana);font-size:1.3em">back by morning</span></h2>
@@ -722,9 +730,9 @@ h1 .script,h2 .script{letter-spacing:.01em}
   <section class="sec wp wp-ticking" style="--veil:.5">
     <div class="wrap">
       <div class="split">
-        <div class="pic-stack reveal" style="padding-left:2.2rem">
-          <div class="vlabel"><span class="script" style="font-size:2.4rem;color:var(--denim);letter-spacing:0;text-transform:none;font-weight:400">Meet Lem</span></div>
-          <div class="framed " style="aspect-ratio:1024/1536;max-width:440px;transform:rotate(-2deg)"><img class="photo" src="assets/lemon-creative/layne-blue.jpg" alt="" style="--clip:polygon(86.133% 50.000%,86.120% 50.631%,86.181% 51.264%,86.119% 51.895%,86.032% 52.525%,86.017% 53.161%,85.977% 53.799%,85.816% 54.425%,85.821% 55.076%,85.704% 55.715%,85.656% 56.369%,85.394% 56.989%,85.386% 57.665%,85.257% 58.323%,85.009% 58.959%,84.826% 59.617%,84.615% 60.274%,84.464% 60.959%,84.196% 61.616%,83.986% 62.302%,83.660% 62.956%,83.473% 63.675%,83.088% 64.325%,82.756% 65.008%,82.471% 65.728%,82.075% 66.408%,81.647% 67.085%,81.263% 67.801%,80.626% 68.384%,79.539% 68.688%,79.831% 69.887%,79.443% 70.685%,78.882% 71.385%,78.287% 72.079%,77.717% 72.819%,76.990% 73.449%,76.347% 74.176%,75.610% 74.842%,74.839% 75.499%,74.033% 76.145%,73.242% 76.838%,72.320% 77.406%,71.458% 78.076%,70.475% 78.617%,69.503% 79.203%,68.499% 79.773%,67.428% 80.268%,66.364% 80.808%,65.240% 81.268%,64.090% 81.711%,62.890% 82.072%,61.695% 82.476%,60.456% 82.796%,59.219% 83.159%,57.929% 83.373%,56.628% 83.565%,55.329% 83.798%,54.015% 84.009%,52.678% 84.068%,51.340% 84.103%,50.000% 83.984%,48.660% 84.103%,47.322% 84.068%,45.985% 84.009%,44.671% 83.798%,43.372% 83.565%,42.071% 83.373%,40.781% 83.159%,39.544% 82.796%,38.305% 82.476%,37.084% 82.135%,35.910% 81.711%,34.730% 81.330%,33.636% 80.808%,32.537% 80.329%,31.464% 79.834%,30.458% 79.262%,29.483% 78.676%,28.498% 78.134%,27.587% 77.520%,26.709% 76.894%,25.916% 76.201%,25.108% 75.553%,24.335% 74.895%,23.596% 74.228%,22.891% 73.553%,22.283% 72.819%,21.587% 72.179%,21.052% 71.433%,20.489% 70.732%,19.962% 70.025%,20.390% 68.733%,19.374% 68.384%,18.589% 67.885%,18.201% 67.167%,17.770% 66.487%,17.450% 65.766%,17.003% 65.119%,16.748% 64.396%,16.444% 63.709%,16.171% 63.021%,15.843% 62.364%,15.630% 61.675%,15.360% 61.015%,15.118% 60.354%,14.994% 59.667%,14.808% 59.006%,14.651% 58.345%,14.428% 57.705%,14.325% 57.045%,14.249% 56.386%,14.106% 55.745%,13.988% 55.103%,13.992% 54.449%,13.830% 53.819%,13.789% 53.178%,13.774% 52.538%,13.687% 51.905%,13.624% 51.271%,13.684% 50.634%,13.672% 50.000%,13.684% 49.366%,13.624% 48.729%,13.687% 48.095%,13.677% 47.455%,13.789% 46.822%,13.733% 46.171%,13.896% 45.539%,13.893% 44.883%,14.011% 44.240%,14.061% 43.580%,14.138% 42.918%,14.335% 42.275%,14.467% 41.611%,14.626% 40.947%,14.903% 40.308%,15.028% 39.620%,15.272% 38.957%,15.456% 38.266%,15.671% 37.574%,15.917% 36.882%,16.277% 36.223%,16.584% 35.533%,16.922% 34.844%,17.213% 34.119%,17.615% 33.433%,18.049% 32.751%,18.514% 32.073%,19.084% 31.442%,20.177% 31.133%,20.583% 30.389%,20.153% 29.032%,20.660% 28.277%,21.270% 27.574%,21.853% 26.827%,22.475% 26.086%,23.136% 25.350%,23.837% 24.622%,24.630% 23.955%,25.406% 23.244%,26.270% 22.598%,27.121% 21.908%,28.054% 21.286%,29.021% 20.678%,30.021% 20.084%,31.015% 19.445%,32.082% 18.881%,33.179% 18.333%,34.338% 17.865%,35.522% 17.415%,36.705% 16.922%,37.917% 16.448%,39.178% 16.058%,40.479% 15.753%,41.781% 15.405%,43.117% 15.145%,44.478% 14.972%,45.840% 14.757%,47.220% 14.632%,48.609% 14.595%,50.000% 14.518%,51.391% 14.595%,52.780% 14.632%,54.153% 14.822%,55.512% 15.036%,56.870% 15.209%,58.204% 15.469%,59.503% 15.817%,60.802% 16.121%,62.060% 16.511%,63.295% 16.922%,64.478% 17.415%,65.662% 17.865%,66.756% 18.456%,67.883% 18.941%,68.910% 19.565%,69.940% 20.143%,70.937% 20.736%,71.901% 21.344%,72.786% 22.022%,73.682% 22.655%,74.492% 23.355%,75.264% 24.065%,75.997% 24.783%,76.691% 25.508%,77.406% 26.189%,78.024% 26.928%,78.604% 27.673%,79.209% 28.373%,79.712% 29.127%,79.210% 30.527%,79.752% 31.178%,80.843% 31.486%,81.411% 32.115%,81.875% 32.792%,82.307% 33.473%,82.629% 34.196%,82.997% 34.881%,83.252% 35.604%,83.556% 36.291%,83.829% 36.979%,84.157% 37.636%,84.370% 38.325%,84.552% 39.013%,84.704% 39.699%,84.916% 40.358%,85.100% 41.017%,85.349% 41.655%,85.479% 42.315%,85.581% 42.974%,85.751% 43.614%,85.799% 44.270%,85.916% 44.910%,85.912% 45.563%,86.074% 46.191%,86.017% 46.839%,86.129% 47.468%,86.119% 48.105%,86.181% 48.736%,86.120% 49.369%);object-position:center 25%"><img class="frame-img" src="assets/lemon-creative/art/gallery/01-rococo-oval.png" alt=""></div>
+        <div class="pic-stack reveal" style="padding-left:2.6rem">
+          <div class="vlabel" style="left:-.9rem"><span class="script" style="font-size:3.6rem;color:var(--denim);letter-spacing:0;text-transform:none;font-weight:400">Meet Lem</span></div>
+          <div class="framed " style="aspect-ratio:1024/1536;max-width:440px;transform:rotate(-2deg)"><img class="photo" src="assets/lemon-creative/layne-blue.jpg" alt="" style="--clip:polygon(86.133% 50.000%,86.120% 50.631%,86.181% 51.264%,86.119% 51.895%,86.032% 52.525%,86.017% 53.161%,85.977% 53.799%,85.816% 54.425%,85.821% 55.076%,85.704% 55.715%,85.656% 56.369%,85.394% 56.989%,85.386% 57.665%,85.257% 58.323%,85.009% 58.959%,84.826% 59.617%,84.615% 60.274%,84.464% 60.959%,84.196% 61.616%,83.986% 62.302%,83.660% 62.956%,83.473% 63.675%,83.088% 64.325%,82.756% 65.008%,82.471% 65.728%,82.075% 66.408%,81.647% 67.085%,81.263% 67.801%,80.626% 68.384%,79.539% 68.688%,79.831% 69.887%,79.443% 70.685%,78.882% 71.385%,78.287% 72.079%,77.717% 72.819%,76.990% 73.449%,76.347% 74.176%,75.610% 74.842%,74.839% 75.499%,74.033% 76.145%,73.242% 76.838%,72.320% 77.406%,71.458% 78.076%,70.475% 78.617%,69.503% 79.203%,68.499% 79.773%,67.428% 80.268%,66.364% 80.808%,65.240% 81.268%,64.090% 81.711%,62.890% 82.072%,61.695% 82.476%,60.456% 82.796%,59.219% 83.159%,57.929% 83.373%,56.628% 83.565%,55.329% 83.798%,54.015% 84.009%,52.678% 84.068%,51.340% 84.103%,50.000% 83.984%,48.660% 84.103%,47.322% 84.068%,45.985% 84.009%,44.671% 83.798%,43.372% 83.565%,42.071% 83.373%,40.781% 83.159%,39.544% 82.796%,38.305% 82.476%,37.084% 82.135%,35.910% 81.711%,34.730% 81.330%,33.636% 80.808%,32.537% 80.329%,31.464% 79.834%,30.458% 79.262%,29.483% 78.676%,28.498% 78.134%,27.587% 77.520%,26.709% 76.894%,25.916% 76.201%,25.108% 75.553%,24.335% 74.895%,23.596% 74.228%,22.891% 73.553%,22.283% 72.819%,21.587% 72.179%,21.052% 71.433%,20.489% 70.732%,19.962% 70.025%,20.390% 68.733%,19.374% 68.384%,18.589% 67.885%,18.201% 67.167%,17.770% 66.487%,17.450% 65.766%,17.003% 65.119%,16.748% 64.396%,16.444% 63.709%,16.171% 63.021%,15.843% 62.364%,15.630% 61.675%,15.360% 61.015%,15.118% 60.354%,14.994% 59.667%,14.808% 59.006%,14.651% 58.345%,14.428% 57.705%,14.325% 57.045%,14.249% 56.386%,14.106% 55.745%,13.988% 55.103%,13.992% 54.449%,13.830% 53.819%,13.789% 53.178%,13.774% 52.538%,13.687% 51.905%,13.624% 51.271%,13.684% 50.634%,13.672% 50.000%,13.684% 49.366%,13.624% 48.729%,13.687% 48.095%,13.677% 47.455%,13.789% 46.822%,13.733% 46.171%,13.896% 45.539%,13.893% 44.883%,14.011% 44.240%,14.061% 43.580%,14.138% 42.918%,14.335% 42.275%,14.467% 41.611%,14.626% 40.947%,14.903% 40.308%,15.028% 39.620%,15.272% 38.957%,15.456% 38.266%,15.671% 37.574%,15.917% 36.882%,16.277% 36.223%,16.584% 35.533%,16.922% 34.844%,17.213% 34.119%,17.615% 33.433%,18.049% 32.751%,18.514% 32.073%,19.084% 31.442%,20.177% 31.133%,20.583% 30.389%,20.153% 29.032%,20.660% 28.277%,21.270% 27.574%,21.853% 26.827%,22.475% 26.086%,23.136% 25.350%,23.837% 24.622%,24.630% 23.955%,25.406% 23.244%,26.270% 22.598%,27.121% 21.908%,28.054% 21.286%,29.021% 20.678%,30.021% 20.084%,31.015% 19.445%,32.082% 18.881%,33.179% 18.333%,34.338% 17.865%,35.522% 17.415%,36.705% 16.922%,37.917% 16.448%,39.178% 16.058%,40.479% 15.753%,41.781% 15.405%,43.117% 15.145%,44.478% 14.972%,45.840% 14.757%,47.220% 14.632%,48.609% 14.595%,50.000% 14.518%,51.391% 14.595%,52.780% 14.632%,54.153% 14.822%,55.512% 15.036%,56.870% 15.209%,58.204% 15.469%,59.503% 15.817%,60.802% 16.121%,62.060% 16.511%,63.295% 16.922%,64.478% 17.415%,65.662% 17.865%,66.756% 18.456%,67.883% 18.941%,68.910% 19.565%,69.940% 20.143%,70.937% 20.736%,71.901% 21.344%,72.786% 22.022%,73.682% 22.655%,74.492% 23.355%,75.264% 24.065%,75.997% 24.783%,76.691% 25.508%,77.406% 26.189%,78.024% 26.928%,78.604% 27.673%,79.209% 28.373%,79.712% 29.127%,79.210% 30.527%,79.752% 31.178%,80.843% 31.486%,81.411% 32.115%,81.875% 32.792%,82.307% 33.473%,82.629% 34.196%,82.997% 34.881%,83.252% 35.604%,83.556% 36.291%,83.829% 36.979%,84.157% 37.636%,84.370% 38.325%,84.552% 39.013%,84.704% 39.699%,84.916% 40.358%,85.100% 41.017%,85.349% 41.655%,85.479% 42.315%,85.581% 42.974%,85.751% 43.614%,85.799% 44.270%,85.916% 44.910%,85.912% 45.563%,86.074% 46.191%,86.017% 46.839%,86.129% 47.468%,86.119% 48.105%,86.181% 48.736%,86.120% 49.369%);object-position:center 0%"><img class="frame-img" src="assets/lemon-creative/art/gallery/01-rococo-oval.png" alt=""></div>
           <span class="sticker banana" style="right:0;top:8%;--r:6deg">no templates, ever</span>
           <span class="sticker icy" style="left:-4%;bottom:10%;--r:-5deg">Hi, I'm Lem</span>
         </div>
@@ -743,8 +751,6 @@ h1 .script,h2 .script{letter-spacing:.01em}
       </div>
     </div>
   </section>
-
-  <img class="border-strip" src="assets/lemon-creative/art/borders/woven-rickrack.png" alt="">
   <!-- ── Who I work with ── -->
   <section class="sec wp wp-paper" style="--veil:.2">
     <div class="wrap center">
@@ -810,8 +816,6 @@ h1 .script,h2 .script{letter-spacing:.01em}
       </div>
     </div>
   </section>
-
-  <img class="border-strip" src="assets/lemon-creative/art/borders/twisted-cord.png" alt="">
   <!-- ── FAQ ── -->
   <section class="sec">
     <div class="wrap center">
@@ -945,7 +949,7 @@ h1 .script,h2 .script{letter-spacing:.01em}
     <div class="wrap center">
       <span class="kicker icy">The process</span>
       <h2 style="margin-top:1rem">From "I should post more" to <span class="script" style="color:var(--denim);font-size:1.3em">posted</span></h2>
-      <div class="steps" style="text-align:left">
+      <div class="steps animate" style="text-align:left">
         <div class="step reveal"><h4>Intake + call</h4><p>Tell me about your business, your audience, and what's not working. We'll talk goals, voice, and how hands-on you want to be.</p></div>
         <div class="step reveal d1"><h4>Your plan</h4><p>A custom proposal with the exact blend of creation and management you need, a monthly rhythm, and a clear price.</p></div>
         <div class="step reveal d2"><h4>Content day</h4><p>I shoot on location (or you send raws). We batch a month of content in one go so it never feels like a chore.</p></div>
@@ -1419,7 +1423,6 @@ h1 .script,h2 .script{letter-spacing:.01em}
       <div class="center" style="margin-top:2rem"><a class="btn pink" href="contact.html">Let's make yours <svg><use href="#i-arrow"/></svg></a></div>
     </div>
   </section>
-  <img class="border-strip full" src="assets/lemon-creative/art/borders/citrus-eyelet-lace.png" alt="">
 </main>
 
 <!-- ══════════ FOOTER ══════════ -->
@@ -1533,7 +1536,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'lemon-creative-v5';
+  var PAGE_ID = 'lemon-creative-v6';
 
   /* ---------------------------------------------- */
 
