@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prancer — Type options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@400;500;600&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Libre+Baskerville:wght@400;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0,0&family=DM+Serif+Display&family=Newsreader:opsz,wght@6..72,400..700&family=Literata:opsz,wght@7..72,400..700&family=Crimson+Pro:wght@400;500;600&family=Spectral:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400..700&family=Lora:wght@400;500;600&family=Gloock&family=Instrument+Serif&family=Young+Serif&family=Prata&family=Cardo:wght@400;700&family=Old+Standard+TT:wght@400;700&family=Inter:wght@400;500&family=Work+Sans:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Sans+3:wght@400;500;600&family=Karla:wght@400;500&family=Public+Sans:wght@400;500&family=Instrument+Sans:wght@400;500&family=Albert+Sans:wght@400;500&family=Hanken+Grotesk:wght@400;500&family=Libre+Franklin:wght@400;500&family=Archivo:wght@400;500&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#203D62;--porcelain:#6685A4;--chalk:#F7F4EB;--saddle:#A66B48;--butter:#EEDC9A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--chalk);color:var(--ink);font-family:"Inter",Arial,sans-serif;font-size:16px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 24px 120px}
+h1.t{font-family:"Bodoni Moda",serif;font-weight:500;font-size:40px;margin:0 0 6px}
+.intro{max-width:60em;color:rgba(32,61,98,.85);margin-bottom:34px}
+.intro b{font-weight:600}
+.sticky{position:sticky;top:0;z-index:5;background:rgba(247,244,235,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(32,61,98,.15);padding:12px 0;margin-bottom:30px}
+.sticky .wrap{padding:0 24px}
+.pick{display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-size:14px}
+.pick span.lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--porcelain);font-weight:600}
+.pick b{font-weight:600}
+.pick button{font:inherit;border:1px solid var(--ink);background:var(--ink);color:var(--chalk);border-radius:999px;padding:8px 14px;cursor:pointer}
+h2.sec{font-family:"Bodoni Moda",serif;font-weight:500;font-size:28px;margin:48px 0 18px;padding-top:24px;border-top:1px solid rgba(32,61,98,.15)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.opt{position:relative;border:1px solid rgba(32,61,98,.18);border-radius:16px;padding:26px 28px 22px;background:#fbf9f3;cursor:pointer;transition:.25s}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{border-color:var(--ink);box-shadow:0 0 0 3px rgba(32,61,98,.15);background:#fff}
+.opt .n{position:absolute;top:14px;right:16px;font-size:12px;letter-spacing:.14em;color:var(--porcelain);font-weight:600}
+.opt .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--porcelain);font-weight:600;margin-bottom:14px}
+.opt .h{font-size:46px;line-height:1.02;margin:0 0 14px;color:var(--ink)}
+.opt .h em{font-style:italic;color:var(--porcelain)}
+.opt .p{font-size:16px;line-height:1.55;color:rgba(32,61,98,.9);max-width:34em}
+.opt .meta{margin-top:16px;font-size:12px;color:rgba(32,61,98,.6);display:flex;gap:14px;flex-wrap:wrap}
+.opt .meta b{color:var(--ink);font-weight:600}
+.opt .chip{display:inline-block;padding:3px 9px;border:1px solid rgba(32,61,98,.25);border-radius:999px}
+.body .opt .h{font-size:28px;font-family:"Bodoni Moda",serif;font-weight:500}
+.body .opt .p{font-size:17px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.opt .h{font-size:38px}}
+</style>
+</head>
+<body>
+<div class="sticky"><div class="wrap"><div class="pick">
+  <span class="lbl">Your pick</span>
+  <span>Heading: <b id="pH">none yet</b></span>
+  <span>Body: <b id="pB">none yet</b></span>
+  <button onclick="apply()">Preview this pairing on all cards</button>
+  <button onclick="location.reload()" style="background:transparent;color:var(--ink)">Reset</button>
+</div></div></div>
+
+<div class="wrap">
+  <h1 class="t">Prancer — type options</h1>
+  <p class="intro">Twenty heading faces on your real hero line, each with a suggested body partner, then twelve body faces on their own. <b>Click a heading card and a body card</b>, then hit <b>Preview this pairing</b> to see your combination applied everywhere. Leave a comment on the cards you like (or just tell me the numbers, e.g. "H07 + B04"). Every face here is a Google Font, so it's free to embed and will work on Shopify.</p>
+
+  <h2 class="sec">Headings · H01–H20</h2>
+  <div class="grid" id="heads"></div>
+
+  <h2 class="sec">Body text · B01–B12</h2>
+  <p class="intro">Inter read as too round. These are less round: some have a slight squareness, some have a bit of serif calligraphy in them. Shown at site body size.</p>
+  <div class="grid body" id="bodies"></div>
+</div>
+
+<script>
+const HEAD=[
+ ["Cormorant Garamond","'Cormorant Garamond',serif","600","","Work Sans","Elegant, tall, old-style. Needs weight 600 to hold up at small sizes."],
+ ["Playfair Display","'Playfair Display',serif","500","","Source Sans 3","The classic editorial high-contrast serif; much sturdier than Bodoni."],
+ ["Libre Caslon Display","'Libre Caslon Display',serif","400","","Libre Caslon Text","English Caslon: fits the blue-and-white pottery mood exactly."],
+ ["EB Garamond","'EB Garamond',serif","500","","Karla","Warm, bookish, very readable; less dramatic than the logo."],
+ ["Libre Baskerville","'Libre Baskerville',serif","400","","IBM Plex Sans","The face from your brand draft. Wide, calm, authoritative."],
+ ["Fraunces","'Fraunces',serif","500","font-variation-settings:'opsz' 72,'SOFT' 0,'WONK' 0","Albert Sans","Soft old-style with personality; you used it on PaleoPro."],
+ ["DM Serif Display","'DM Serif Display',serif","400","","Public Sans","Bold didone with heft. Reads from across the room."],
+ ["Newsreader","'Newsreader',serif","500","font-variation-settings:'opsz' 60","Instrument Sans","Newspaper serif, slightly condensed, crisp italics."],
+ ["Literata","'Literata',serif","500","font-variation-settings:'opsz' 60","Hanken Grotesk","Designed for screens; sturdy and clear at every size."],
+ ["Crimson Pro","'Crimson Pro',serif","600","","Archivo","Garamond-like with a modern cleanliness."],
+ ["Spectral","'Spectral',serif","500","","Work Sans","Slightly angular, very legible, lovely italic."],
+ ["Source Serif 4","'Source Serif 4',serif","600","font-variation-settings:'opsz' 60","Source Sans 3","Transitional serif, quiet and professional; pairs natively with Source Sans."],
+ ["Lora","'Lora',serif","500","","Figtree","Calligraphic roots, friendly, dependable."],
+ ["Gloock","'Gloock',serif","400","","Libre Franklin","Chunky high-contrast display face: modern western poster energy."],
+ ["Instrument Serif","'Instrument Serif',serif","400","","Instrument Sans","Narrow, fashionable, a little quirky; strong at large sizes."],
+ ["Young Serif","'Young Serif',serif","400","","Karla","Rounded, hand-cut feel; warm and unusual."],
+ ["Bodoni Moda (heavier)","'Bodoni Moda',serif","700","font-variation-settings:'opsz' 11","Work Sans","Same family as the logo lettering, but set at a heavy weight and small optical size so the hairlines thicken."],
+ ["Prata","'Prata',serif","400","","Public Sans","Didone with a softer, more romantic hand."],
+ ["Cardo","'Cardo',serif","700","","IBM Plex Sans","Scholarly Renaissance serif; classical and even."],
+ ["Old Standard TT","'Old Standard TT',serif","400","","Archivo","Early-1900s book type: vintage, engraved-print feel that matches the illustrations."],
+];
+const BODY=[
+ ["Work Sans","'Work Sans',sans-serif","Slightly squared, neutral, very readable."],
+ ["Source Sans 3","'Source Sans 3',sans-serif","Humanist, narrow-ish, quiet. A workhorse."],
+ ["IBM Plex Sans","'IBM Plex Sans',sans-serif","Engineered feel with subtle serifs on i/l; crisp."],
+ ["Karla","'Karla',sans-serif","Grotesque with a bit of personality and tighter curves."],
+ ["Public Sans","'Public Sans',sans-serif","Plain, upright, government-form clarity."],
+ ["Instrument Sans","'Instrument Sans',sans-serif","Modern, compact, slightly condensed."],
+ ["Albert Sans","'Albert Sans',sans-serif","Geometric but less round than Inter; Scandinavian."],
+ ["Hanken Grotesk","'Hanken Grotesk',sans-serif","Clean grotesque, even color, nothing cute."],
+ ["Libre Franklin","'Libre Franklin',sans-serif","American gothic; sturdy and plain."],
+ ["Archivo","'Archivo',sans-serif","Squarer, a touch industrial; pairs well with engravings."],
+ ["Libre Caslon Text","'Libre Caslon Text',serif","Serif body: fully editorial, like a printed brochure."],
+ ["Source Serif 4","'Source Serif 4',serif","Serif body, slightly lighter and more modern than Caslon."],
+];
+const LINE='A website you\'ll <em>actually</em> own.';
+const PARA='Custom Shopify sites for small brands, built by someone who has run the store, not just designed it. When we\'re done, every word, image and section is yours to edit.';
+let selH=null,selB=null;
+const heads=document.getElementById('heads');
+HEAD.forEach((h,i)=>{const id='H'+String(i+1).padStart(2,'0');const bodyFam=BODY.find(b=>b[0]===h[4]);
+ const el=document.createElement('div');el.className='opt';el.dataset.id=id;el.innerHTML=`<span class="n">${id}</span><div class="eyebrow">Custom Shopify websites · DTC consulting</div><h3 class="h" style="font-family:${h[1]};font-weight:${h[2]};${h[3]}">${LINE}</h3><p class="p" style="font-family:${bodyFam?bodyFam[1]:'inherit'}">${PARA}</p><div class="meta"><span><b>${h[0]}</b></span><span class="chip">suggested body: ${h[4]}</span><span>${h[5]}</span></div>`;
+ el.onclick=()=>{document.querySelectorAll('#heads .opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');selH=i;document.getElementById('pH').textContent=id+' '+h[0]};
+ heads.appendChild(el)});
+const bodies=document.getElementById('bodies');
+BODY.forEach((b,i)=>{const id='B'+String(i+1).padStart(2,'0');const el=document.createElement('div');el.className='opt';el.innerHTML=`<span class="n">${id}</span><h3 class="h hh">${LINE}</h3><p class="p" style="font-family:${b[1]}">${PARA} <br><br>Discovery → brand (if needed) → build → hand-off training. Unlimited design revisions, two to three week turnaround, 60 days of post-launch support.</p><div class="meta"><span><b>${b[0]}</b></span><span>${b[2]}</span></div>`;
+ el.onclick=()=>{document.querySelectorAll('#bodies .opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');selB=i;document.getElementById('pB').textContent=id+' '+b[0]};
+ bodies.appendChild(el)});
+function apply(){
+ if(selH!==null){const h=HEAD[selH];document.querySelectorAll('.body .hh').forEach(x=>{x.style.fontFamily=h[1];x.style.fontWeight=h[2];x.style.cssText+=';'+h[3]})}
+ if(selB!==null){const b=BODY[selB];document.querySelectorAll('#heads .p').forEach(x=>x.style.fontFamily=b[1])}
+ scrollTo({top:0,behavior:'smooth'})}
+</script>
+</body>
+</html>
