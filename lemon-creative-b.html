@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lemon Creative — social media, wedding content & photography in Dallas, TX</title>
+<meta name="description" content="Lemon Creative is a Dallas-based creative studio: boutique social media management, iPhone wedding content creation, and bright, candid photography.">
+<link rel="icon" type="image/png" href="assets/lemon-creative/lemon_slice.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Yellowtail&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   LEMON CREATIVE — Direction B: "Scrapbook"
+   Same spirit as the Coco & Kal build: cream paper, script
+   headlines, tilted polaroids that straighten on hover, scallop
+   edges, a rotated ticker, and lots of gentle motion. Brand kit
+   colors stay bright; textures are soft tints instead of
+   full-bleed wallpapers.
+   Script = Yellowtail stand-in for Floraterís.
+   ============================================================ */
+
+:root{
+  --ivory:#FEFDEC;
+  --paper:#FFFFFF;
+  --banana:#F7EF75;
+  --green:#00A271;
+  --pink:#F27EA2;
+  --icy:#BBE6FB;
+  --denim:#6B8DC8;
+  --ink:#131C2A;
+
+  --banana-soft:#FCF8CF;
+  --pink-soft:#FBDDE7;
+  --icy-soft:#E4F4FC;
+  --green-soft:#D6EFE4;
+  --denim-soft:#DCE5F3;
+
+  --script:"Yellowtail","Floraterís",cursive;
+  --sans:"Montserrat",system-ui,sans-serif;
+
+  --radius:18px;
+  --shadow:0 12px 32px rgba(19,28,42,.12);
+  --shadow-sm:0 4px 14px rgba(19,28,42,.09);
+  --wiggle:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--ivory);
+  font-size:15.5px;line-height:1.75;letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--banana);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:inherit}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:3000;opacity:.06;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Type ---------- */
+h1,h2,h3,h4{font-weight:normal;line-height:1.1}
+.script{font-family:var(--script);letter-spacing:0;font-weight:400}
+.h-script{font-family:var(--script);font-size:clamp(3rem,7.5vw,6.2rem);line-height:.95}
+.h-script .line2{display:block;margin-left:clamp(1rem,4vw,3.5rem);color:var(--pink)}
+.h-script .line2.green{color:var(--green)} .h-script .line2.denim{color:var(--denim)}
+.h-mid{font-family:var(--script);font-size:clamp(2.4rem,5vw,4rem);margin-bottom:.6rem}
+.h-mid em{font-style:normal;color:var(--pink)}
+h3{font-family:var(--script);font-size:2rem}
+.caps{font-weight:700;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase}
+.kicker{
+  display:inline-flex;align-items:center;gap:.8em;
+  font-weight:700;font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--denim);
+}
+.kicker::before,.kicker::after{content:"★";color:var(--pink);font-size:.85em}
+.kicker.green{color:var(--green)} .kicker.pink{color:var(--pink)} .kicker.pink::before,.kicker.pink::after{color:var(--green)}
+.kicker + h1,.kicker + h2{margin-top:1rem}
+.lead{max-width:56ch;font-size:1.02rem}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.ph{display:inline-block;background:var(--banana);color:var(--ink);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.1rem .5rem;border-radius:6px;border:1px dashed var(--ink);vertical-align:middle;margin:0 .2rem}
+.wrap{max-width:1180px;margin-inline:auto;position:relative;padding-inline:clamp(1.2rem,4vw,2.5rem)}
+.section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
+.section.tight{padding:clamp(2.5rem,5vw,4rem) 0}
+.bg-banana{background:var(--banana-soft)} .bg-pink{background:var(--pink-soft)} .bg-icy{background:var(--icy-soft)} .bg-green{background:var(--green-soft)} .bg-paper{background:var(--paper)} .bg-denim{background:var(--denim);color:var(--ivory)}
+.bg-denim .kicker{color:var(--banana)} .bg-denim .kicker::before,.bg-denim .kicker::after{color:var(--pink)}
+.bg-denim .h-script .line2,.bg-denim .h-mid em{color:var(--banana)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  padding:1rem 1.8rem;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--ivory);cursor:pointer;
+  transition:transform .35s var(--wiggle),background .25s,color .25s,box-shadow .25s,border-color .25s;box-shadow:var(--shadow-sm);
+  font-family:inherit;
+}
+.btn:hover{transform:translateY(-3px) rotate(-1.5deg) scale(1.03);background:var(--pink);border-color:var(--pink);color:var(--ink);box-shadow:var(--shadow)}
+.btn.pink{background:var(--pink);border-color:var(--pink);color:var(--ink)} .btn.pink:hover{background:var(--ink);border-color:var(--ink);color:var(--ivory)}
+.btn.banana{background:var(--banana);border-color:var(--banana);color:var(--ink)} .btn.banana:hover{background:var(--ink);border-color:var(--ink);color:var(--ivory)}
+.btn.green{background:var(--green);border-color:var(--green);color:#fff} .btn.green:hover{background:var(--banana);border-color:var(--banana);color:var(--ink)}
+.btn.denim{background:var(--denim);border-color:var(--denim);color:#fff} .btn.denim:hover{background:var(--banana);border-color:var(--banana);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)} .btn.ghost:hover{background:var(--icy);border-color:var(--icy);color:var(--ink)}
+.btn.sm{padding:.65rem 1.3rem;font-size:.7rem}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:900;background:rgba(254,253,236,.9);backdrop-filter:blur(10px);border-bottom:2px solid var(--denim-soft)}
+.nav{max-width:1180px;margin-inline:auto;padding:.8rem clamp(1.2rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo img{height:46px;transition:transform .4s var(--wiggle)} .nav-logo:hover img{transform:rotate(-4deg) scale(1.05)}
+.nav-links{list-style:none;display:flex;align-items:center;gap:clamp(.8rem,2vw,1.6rem)}
+.nav-links a{text-decoration:none;font-weight:700;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;border-radius:3px;background:var(--banana);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--wiggle)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-links .btn{padding:.65rem 1.2rem;font-size:.68rem} .nav-links .btn::after{display:none}
+.has-sub{position:relative}
+.has-sub .sub{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);background:var(--paper);border-radius:14px;box-shadow:var(--shadow);padding:.6rem;display:flex;flex-direction:column;min-width:240px;opacity:0;pointer-events:none;transition:.25s var(--wiggle)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;pointer-events:auto;transform:translate(-50%,2px)}
+.sub a{padding:.55rem .8rem;border-radius:9px;font-size:.68rem} .sub a:hover{background:var(--banana-soft)} .sub a::after{display:none}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem}
+.burger span{width:26px;height:3px;background:var(--ink);border-radius:3px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)} .burger.open span:nth-child(2){opacity:0} .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ---------- Ticker ---------- */
+.ticker{overflow:hidden;white-space:nowrap;background:var(--denim);color:var(--ivory);padding:.75rem 0;transform:rotate(-1.2deg) scale(1.03);border-block:3px solid var(--pink);position:relative;z-index:5}
+.ticker.flat{transform:none} .ticker.pink{background:var(--pink);border-color:var(--banana);color:var(--ink)} .ticker.green{background:var(--green);border-color:var(--banana)} .ticker.banana{background:var(--banana);border-color:var(--pink);color:var(--ink)}
+.ticker-track{display:inline-block;animation:ticker 30s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{font-weight:700;font-size:.82rem;letter-spacing:.3em;text-transform:uppercase;margin:0 1.3rem}
+.ticker span::after{content:"★";margin-left:2.6rem;color:var(--banana)} .ticker.pink span::after,.ticker.banana span::after{color:var(--paper)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:clamp(3rem,7vw,5.5rem) 0 clamp(5rem,9vw,7.5rem);overflow:hidden;background:
+  radial-gradient(60% 50% at 10% 20%,var(--banana-soft) 0,transparent 60%),
+  radial-gradient(40% 40% at 95% 80%,var(--pink-soft) 0,transparent 60%),var(--ivory)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(2rem,5vw,4rem);position:relative;z-index:2}
+.hero .h-script{margin:1.1rem 0 1.3rem}
+.hero p{max-width:46ch}
+.hero-stack{position:relative;min-height:540px}
+.polaroid{position:absolute;background:var(--paper);padding:12px 12px 46px;box-shadow:var(--shadow);border-radius:4px;width:min(60%,290px);transition:transform .5s var(--wiggle),z-index 0s .1s}
+.polaroid img,.polaroid video{aspect-ratio:4/5;object-fit:cover;border-radius:2px;width:100%}
+.polaroid .cap{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:var(--script);font-size:1.35rem;color:var(--denim)}
+.polaroid:nth-child(1){top:0;left:0;transform:rotate(-6deg);z-index:3}
+.polaroid:nth-child(2){top:8%;right:0;transform:rotate(4deg);z-index:2}
+.polaroid:nth-child(3){bottom:0;left:22%;transform:rotate(-2deg);z-index:1}
+.polaroid:hover{transform:rotate(0) scale(1.05);z-index:9}
+.polaroid.pin::before{content:"";position:absolute;top:-10px;left:50%;width:22px;height:22px;border-radius:50%;background:var(--pink);transform:translateX(-50%);box-shadow:0 3px 6px rgba(0,0,0,.2);z-index:2}
+.polaroid.pin.yellow::before{background:var(--banana)} .polaroid.pin.blue::before{background:var(--icy)}
+
+/* floaty doodles */
+.floaty{position:absolute;pointer-events:none;z-index:1;animation:floaty 7s ease-in-out infinite;opacity:.9}
+.floaty img{width:100%;height:auto}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-18px) rotate(5deg)}}
+.floaty.slow{animation-duration:10s} .floaty.fast{animation-duration:5.5s}
+.floaty.line{opacity:.6}
+
+/* scallop edges */
+.scallop{--sc:var(--ivory);height:26px;background:radial-gradient(circle at 50% 0,var(--sc) 14px,transparent 15px);background-size:42px 26px;background-position:center top;position:relative;z-index:4;margin-top:-1px}
+.scallop.down{transform:rotate(180deg)}
+
+/* ---------- Service cards ---------- */
+.make-grid{display:grid;grid-template-columns:repeat(3,1fr);justify-content:center;gap:clamp(1.3rem,3vw,2.5rem);margin-top:3rem}
+.make-card{background:var(--paper);border-radius:var(--radius);padding:1rem 1rem 1.6rem;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .45s var(--wiggle),box-shadow .3s;position:relative;display:block}
+.make-card:nth-child(odd){transform:rotate(-1.6deg)} .make-card:nth-child(even){transform:rotate(1.4deg)}
+.make-card:hover{transform:rotate(0) translateY(-8px) scale(1.02);box-shadow:var(--shadow)}
+.make-card .frame{overflow:hidden;border-radius:12px;position:relative}
+.make-card img{aspect-ratio:4/3;object-fit:cover;transition:transform .6s ease;width:100%}
+.make-card:hover img{transform:scale(1.07)}
+.make-card h3{margin:1rem 0 .3rem;font-size:2.1rem}
+.make-card p{font-size:.92rem}
+.make-card .go{display:inline-block;margin-top:.9rem;font-weight:700;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--denim)}
+.make-card .go::after{content:" →";transition:margin .3s} .make-card:hover .go::after{margin-left:.4em}
+.make-card .badge{position:absolute;top:-14px;right:-10px;z-index:3;transform:rotate(6deg)}
+.stripe-edge{position:relative;overflow:hidden}
+.stripe-edge::before{content:"";position:absolute;inset:0 auto 0 0;width:10px;background:repeating-linear-gradient(45deg,var(--pink) 0 10px,var(--paper) 10px 20px);z-index:2}
+.stripe-edge.yellow::before{background:repeating-linear-gradient(45deg,var(--banana) 0 10px,var(--paper) 10px 20px)}
+.stripe-edge.blue::before{background:repeating-linear-gradient(45deg,var(--icy) 0 10px,var(--paper) 10px 20px)}
+.stripe-edge.green::before{background:repeating-linear-gradient(45deg,var(--green) 0 10px,var(--paper) 10px 20px)}
+.gingham-top{position:relative}
+.gingham-top::before{content:"";position:absolute;inset:0 0 auto 0;height:14px;z-index:2;
+  background:repeating-linear-gradient(90deg,var(--banana) 0 14px,transparent 14px 28px),repeating-linear-gradient(0deg,var(--banana) 0 7px,transparent 7px 14px);opacity:.9}
+
+/* sticker tags */
+.sticker{display:inline-block;background:var(--banana);color:var(--ink);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .95rem;border-radius:999px;box-shadow:var(--shadow-sm);transform:rotate(-3deg);transition:transform .35s var(--wiggle)}
+.sticker:hover{transform:rotate(0) scale(1.06)}
+.sticker.pink{background:var(--pink)} .sticker.icy{background:var(--icy)} .sticker.green{background:var(--green);color:#fff} .sticker.paper{background:var(--paper)}
+
+/* ---------- Reel row ---------- */
+.reel-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}
+.reel{position:relative;background:var(--paper);padding:8px 8px 30px;border-radius:10px;box-shadow:var(--shadow-sm);transition:transform .45s var(--wiggle),box-shadow .3s}
+.reel:nth-child(odd){transform:rotate(-2deg)} .reel:nth-child(even){transform:rotate(1.6deg) translateY(10px)}
+.reel:hover{transform:rotate(0) translateY(-8px);box-shadow:var(--shadow);z-index:2}
+.reel video,.reel img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:6px}
+.reel .cap{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-family:var(--script);font-size:1.1rem;color:var(--denim)}
+
+/* ---------- Split + photo stacks ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split.rev > :first-child{order:2}
+.torn{transform:rotate(-3deg);transition:transform .5s var(--wiggle);filter:drop-shadow(0 14px 24px rgba(19,28,42,.18));border-radius:6px;overflow:hidden;background:var(--paper);padding:12px}
+.torn img{border-radius:3px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.torn:hover{transform:rotate(0) scale(1.03)}
+.pic-stack{position:relative}
+.pic-stack .sticker{position:absolute;z-index:3}
+.pic-stack .sticker.a{top:-14px;right:-6px;transform:rotate(6deg)} .pic-stack .sticker.b{bottom:30px;left:-14px;transform:rotate(-5deg)}
+.card{background:var(--paper);border-radius:var(--radius);padding:clamp(1.6rem,3.5vw,2.8rem);box-shadow:var(--shadow-sm)}
+.loves{list-style:none;margin:1.4rem 0 0;display:grid;gap:.7rem}
+.loves li{background:var(--banana-soft);border-radius:12px;padding:.8rem 1rem .8rem 2.6rem;position:relative;font-size:.94rem;transition:transform .35s var(--wiggle)}
+.loves li::before{content:"★";position:absolute;left:1rem;top:.75rem;color:var(--pink)}
+.loves li:nth-child(even){background:var(--icy-soft)} .loves li:nth-child(3n){background:var(--pink-soft)}
+.loves li:hover{transform:translateX(6px) rotate(-.6deg)}
+
+/* ---------- Icon row ---------- */
+.icon-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.4rem;margin-top:2.8rem}
+.icon-card{background:var(--paper);border-radius:var(--radius);padding:1.6rem 1.3rem;box-shadow:var(--shadow-sm);text-align:center;transition:transform .45s var(--wiggle),box-shadow .3s}
+.icon-card:nth-child(odd){transform:rotate(-1.2deg)} .icon-card:nth-child(even){transform:rotate(1.2deg)}
+.icon-card:hover{transform:rotate(0) translateY(-6px);box-shadow:var(--shadow)}
+.icon-card img{width:84px;height:84px;object-fit:contain;margin:0 auto .8rem}
+.icon-card strong{display:block;font-family:var(--script);font-weight:400;font-size:1.7rem;margin-bottom:.3rem;color:var(--ink)}
+.icon-card span{font-size:.9rem;display:block}
+
+/* ---------- Photo marquee ---------- */
+.photo-marquee{overflow:hidden;padding:2.5rem 0}
+.photo-marquee-track{display:flex;gap:1.4rem;width:max-content;animation:ticker 48s linear infinite}
+.photo-marquee:hover .photo-marquee-track{animation-play-state:paused}
+.photo-marquee img{width:230px;aspect-ratio:4/5;object-fit:cover;border-radius:8px;background:var(--paper);padding:8px;box-shadow:var(--shadow-sm);transition:transform .45s var(--wiggle)}
+.photo-marquee img:nth-child(odd){transform:rotate(-2.5deg)} .photo-marquee img:nth-child(even){transform:rotate(2deg) translateY(10px)}
+.photo-marquee img:hover{transform:rotate(0) scale(1.06)}
+
+/* ---------- Steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.6rem;margin-top:2.8rem;counter-reset:step}
+.step{position:relative;background:var(--paper);border-radius:var(--radius);padding:2.4rem 1.4rem 1.6rem;box-shadow:var(--shadow-sm);text-align:center;transition:transform .45s var(--wiggle)}
+.step:hover{transform:translateY(-6px) rotate(-.8deg)}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-24px;left:50%;transform:translateX(-50%) rotate(-6deg);width:52px;height:52px;border-radius:50%;background:var(--pink);color:var(--ink);font-family:var(--script);font-size:1.9rem;display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+.step:nth-child(2)::before{background:var(--banana)} .step:nth-child(3)::before{background:var(--icy)} .step:nth-child(4)::before{background:var(--green);color:#fff}
+.step h4{font-family:var(--script);font-size:1.7rem;margin-bottom:.4rem}
+.step p{font-size:.92rem}
+
+/* ---------- Quotes ---------- */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;margin-top:2.8rem}
+.quote{background:var(--paper);border-radius:var(--radius);padding:2.2rem 1.6rem 1.6rem;box-shadow:var(--shadow-sm);position:relative;transition:transform .45s var(--wiggle);text-align:left}
+.quote:nth-child(1){transform:rotate(-1.5deg)} .quote:nth-child(2){transform:rotate(1deg) translateY(12px)} .quote:nth-child(3){transform:rotate(-.8deg)}
+.quote:hover{transform:rotate(0) translateY(-6px);box-shadow:var(--shadow)}
+.quote .big{font-family:var(--script);font-size:1.7rem;line-height:1.15;color:var(--denim);margin-bottom:.8rem}
+.quote p{font-size:.92rem}
+.quote cite{display:block;font-style:normal;font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-top:1rem}
+.quote cite small{display:block;font-weight:500;letter-spacing:.1em;color:var(--denim);margin-top:.2rem}
+.quote::before{content:"“";position:absolute;top:-18px;left:1.2rem;font-family:var(--script);font-size:5rem;line-height:1;color:var(--pink)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:760px;margin:2.5rem auto 0;text-align:left}
+.acc{border-bottom:2px dashed var(--denim-soft);padding:1.1rem 0}
+.acc summary{list-style:none;cursor:pointer;font-weight:700;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-weight:400;font-size:1.7rem;line-height:1;color:var(--pink);transition:transform .35s var(--wiggle)}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc p{margin-top:.8rem;font-size:.94rem}
+
+/* ---------- CTA band ---------- */
+.cta-band{position:relative;overflow:hidden;padding:clamp(4rem,9vw,7rem) 0;text-align:center;background:var(--denim);color:var(--ivory)}
+.cta-band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+.cta-band .wrap{position:relative;z-index:2}
+.cta-band .h-script{font-size:clamp(2.6rem,6vw,4.6rem)} .cta-band .h-script .line2{color:var(--banana);margin-left:0}
+.cta-band .lead{margin:1rem auto 1.5rem;max-width:48ch}
+
+/* ---------- Inner page hero ---------- */
+.page-hero{padding:clamp(3rem,6vw,5rem) 0 clamp(3rem,6vw,4.5rem);position:relative;overflow:hidden}
+.page-hero .split{align-items:center}
+.page-hero .h-script{font-size:clamp(2.6rem,6vw,4.9rem);margin:1rem 0 1.3rem}
+
+/* phone mock */
+.phones{display:flex;gap:1.4rem;justify-content:center;align-items:flex-end}
+.phone{width:200px;background:var(--ink);border-radius:30px;padding:10px;box-shadow:var(--shadow);transition:transform .5s var(--wiggle)}
+.phone:nth-child(1){transform:rotate(-5deg)} .phone:nth-child(2){transform:rotate(4deg) translateY(16px)} .phone:nth-child(3){transform:rotate(-3deg)}
+.phone:hover{transform:rotate(0) translateY(-8px) scale(1.03);z-index:3}
+.phone .screen{background:var(--paper);border-radius:22px;overflow:hidden;aspect-ratio:9/18.5;position:relative}
+.phone .feed{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding-top:34px}
+.phone .feed img{aspect-ratio:1;object-fit:cover}
+.phone .screen > video{width:100%;height:100%;object-fit:cover}
+.phone .ui{position:absolute;bottom:0;left:0;right:0;padding:.6rem;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- Tiers ---------- */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-top:3rem;align-items:stretch}
+.tiers.two{max-width:860px;margin-inline:auto}
+.tier{background:var(--paper);border-radius:var(--radius);padding:2.2rem 1.8rem;box-shadow:var(--shadow-sm);position:relative;text-align:left;transition:transform .45s var(--wiggle),box-shadow .3s;display:flex;flex-direction:column}
+.tier:nth-child(odd){transform:rotate(-1deg)} .tier:nth-child(even){transform:rotate(1deg)}
+.tier:hover{transform:rotate(0) translateY(-8px);box-shadow:var(--shadow)}
+.tier.feature{border:3px solid var(--banana)}
+.tier .badge{position:absolute;top:-16px;right:1.2rem}
+.tier h3{font-size:2.2rem}
+.tier .price{font-weight:800;font-size:1.4rem;letter-spacing:-.01em;margin:.3rem 0 1rem;color:var(--denim)}
+.tier .price small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);opacity:.7;margin-top:.2rem}
+.tier ul{list-style:none;display:grid;gap:.5rem;margin-bottom:1.6rem;flex:1}
+.tier li{padding-left:1.5rem;position:relative;font-size:.92rem} .tier li::before{content:"★";position:absolute;left:0;color:var(--pink);font-size:.8em;top:.15em}
+.tier .btn{align-self:flex-start}
+
+/* ---------- Collage / gallery ---------- */
+.collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:1.1rem;margin-top:2.5rem}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:14px;box-shadow:var(--shadow-sm);transition:transform .45s var(--wiggle),box-shadow .3s}
+.collage .tall{grid-row:span 2} .collage .wide{grid-column:span 2}
+.collage img:nth-child(odd):hover{transform:rotate(-2deg) scale(1.04);box-shadow:var(--shadow);z-index:2;position:relative}
+.collage img:nth-child(even):hover{transform:rotate(2deg) scale(1.04);box-shadow:var(--shadow);z-index:2;position:relative}
+.filter-row{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin:2rem 0 .3rem}
+.filter-btn{font-family:inherit;font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;padding:.6rem 1.2rem;border-radius:999px;border:2px solid var(--denim-soft);background:var(--paper);cursor:pointer;transition:.3s var(--wiggle)}
+.filter-btn:hover{transform:translateY(-2px) rotate(-1deg)} .filter-btn.active{background:var(--banana);border-color:var(--banana)}
+.gal-wall{columns:3;column-gap:1.4rem;margin-top:2.5rem}
+.gal-wall figure{break-inside:avoid;margin:0 0 1.4rem;background:var(--paper);padding:10px 10px 36px;border-radius:6px;box-shadow:var(--shadow-sm);position:relative;transition:transform .45s var(--wiggle)}
+.gal-wall figure:nth-child(3n+1){transform:rotate(-1.8deg)} .gal-wall figure:nth-child(3n+2){transform:rotate(1.4deg)} .gal-wall figure:nth-child(3n){transform:rotate(-.6deg)}
+.gal-wall figure:hover{transform:rotate(0) scale(1.03);z-index:2;box-shadow:var(--shadow)}
+.gal-wall img{border-radius:3px;width:100%}
+.gal-wall figcaption{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-family:var(--script);font-size:1.15rem;color:var(--denim)}
+.gal-wall .doodle{background:none;box-shadow:none;padding:1rem;transform:none!important}
+.gal-wall .doodle img{max-width:150px;margin:0 auto;opacity:.75}
+
+/* ---------- Forms ---------- */
+.form-card{background:var(--paper);border-radius:var(--radius);padding:clamp(1.6rem,4vw,2.8rem);box-shadow:var(--shadow);max-width:860px;margin:2.5rem auto 0;text-align:left;position:relative}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.3rem}
+.form-grid .full{grid-column:1/-1}
+.form-card label{display:block;font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem;color:var(--denim)}
+.form-card input,.form-card select,.form-card textarea{width:100%;padding:.8rem .95rem;border:2px solid var(--denim-soft);border-radius:12px;font-family:inherit;font-size:.95rem;background:var(--ivory);color:var(--ink);transition:border-color .25s,transform .3s var(--wiggle)}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--pink);transform:translateY(-1px)}
+.form-card textarea{min-height:120px;resize:vertical}
+.choice{display:flex;flex-wrap:wrap;gap:.6rem}
+.choice label{display:inline-flex;align-items:center;gap:.45rem;background:var(--ivory);border:2px solid var(--denim-soft);border-radius:999px;padding:.45rem .9rem;font-size:.78rem;letter-spacing:.08em;text-transform:none;font-weight:600;cursor:pointer;margin:0;color:var(--ink);transition:.3s var(--wiggle)}
+.choice label:hover{transform:translateY(-2px) rotate(-1deg);border-color:var(--pink)}
+.choice input{width:auto;accent-color:var(--pink)}
+.service-pick{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem}
+.service-pick button{font-family:inherit;background:var(--paper);border:2px solid var(--denim-soft);border-radius:var(--radius);padding:1.1rem 1.3rem;cursor:pointer;display:flex;align-items:center;gap:.8rem;font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;transition:.35s var(--wiggle);box-shadow:var(--shadow-sm)}
+.service-pick button img{width:46px;height:46px;object-fit:contain}
+.service-pick button:hover{transform:translateY(-4px) rotate(-1.5deg)} .service-pick button.on{background:var(--banana);border-color:var(--banana)}
+.form-panel{display:none} .form-panel.on{display:block}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--denim);color:var(--ivory);position:relative;overflow:hidden;border-top:12px solid transparent;border-image:repeating-linear-gradient(90deg,var(--pink) 0 18px,var(--banana) 18px 36px,var(--icy) 36px 54px) 12}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;padding:clamp(3rem,6vw,5rem) 0 2.5rem}
+.site-footer h4{font-family:var(--script);font-size:1.8rem;margin-bottom:.8rem;color:var(--banana)}
+.site-footer ul{list-style:none;display:grid;gap:.45rem}
+.site-footer ul a{text-decoration:none;font-size:.9rem;transition:.3s} .site-footer ul a:hover{color:var(--banana);padding-left:.3rem}
+.site-footer p{font-size:.92rem;max-width:36ch}
+.site-footer .logo-img{height:52px;margin-bottom:1rem}
+.newsletter{display:flex;gap:.5rem;margin-top:1.2rem;max-width:380px}
+.newsletter input{flex:1;padding:.7rem 1rem;border-radius:999px;border:2px solid rgba(254,253,236,.5);background:transparent;color:var(--ivory);font-family:inherit}
+.newsletter input::placeholder{color:rgba(254,253,236,.7)}
+.footer-base{border-top:2px dashed rgba(254,253,236,.35);padding:1.2rem 0 1.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.footer-base a{text-decoration:none}
+.footer-base .script{font-family:var(--script);font-size:1.2rem;letter-spacing:0;text-transform:none;color:var(--banana)}
+.site-footer .floaty{opacity:.18}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px) rotate(.4deg);transition:opacity .8s ease,transform .8s var(--wiggle)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s} .reveal.d2{transition-delay:.2s} .reveal.d3{transition-delay:.3s}
+.pageview[hidden]{display:none}
+
+/* about */
+.about-photos{position:relative;min-height:520px}
+.facts{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.4rem 0}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .make-grid{grid-template-columns:1fr 1fr}
+  .reel-row{grid-template-columns:repeat(3,1fr)} .reel:nth-child(n+4){display:none}
+  .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .gal-wall{columns:2}
+}
+@media (max-width:820px){
+  .make-grid{grid-template-columns:1fr;max-width:420px;margin-inline:auto}
+  .burger{display:flex}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--ivory);flex-direction:column;align-items:stretch;padding:1rem 1.4rem 1.4rem;gap:.2rem;display:none;border-bottom:2px solid var(--denim-soft);box-shadow:var(--shadow)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.7rem 0;display:block}
+  .has-sub .sub{position:static;transform:none;opacity:1;pointer-events:auto;box-shadow:none;padding:0 0 0 1rem;background:transparent}
+  .hero-grid,.split{grid-template-columns:1fr} .split.rev > :first-child{order:0}
+  .hero-stack{min-height:440px;margin-top:1rem}
+  .form-grid{grid-template-columns:1fr}
+  .phones{flex-wrap:wrap}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  .gal-wall{columns:1}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html"><img src="assets/lemon-creative/horizontal_dark.png" alt="Lemon Creative"></a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub"><a href="social.html">Services ▾</a>
+        <div class="sub">
+          <a href="social.html">Social Media Management</a>
+          <a href="weddings.html">Wedding Content Creation</a>
+          <a href="photography.html">Photography</a>
+        </div>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a class="btn pink" href="contact.html">Let's work together</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ════════════════════════════ HOME ════════════════════════════ -->
+<main class="pageview" data-view="home">
+
+  <section class="hero">
+    <div class="floaty slow" style="width:90px;top:8%;left:3%"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
+    <div class="floaty fast" style="width:60px;top:70%;left:8%"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
+    <div class="floaty line" style="width:150px;top:6%;right:4%"><img src="assets/lemon-creative/art/line/lemon-branch.png" alt=""></div>
+    <div class="floaty slow line" style="width:90px;bottom:6%;right:40%"><img src="assets/lemon-creative/art/line/wildflower.png" alt=""></div>
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="kicker">Dallas, TX · social · weddings · photography</span>
+        <h1 class="h-script">Content that looks<span class="line2">like you.</span></h1>
+        <p class="lead">Lemon Creative is a one-woman studio for small businesses and big days. Boutique social media management, iPhone wedding content, and bright, candid photography — all with one rule: it has to feel like <strong>you</strong>, not a template.</p>
+        <div class="btn-row">
+          <a class="btn pink" href="contact.html">Book a discovery call</a>
+          <a class="btn ghost" href="social.html">See the services</a>
+        </div>
+      </div>
+      <div class="hero-stack reveal d2">
+        <div class="polaroid pin"><img src="assets/lemon-creative/layne-laptop.jpg" alt=""><span class="cap">hi, I'm Lem</span></div>
+        <div class="polaroid pin yellow"><img src="assets/lemon-creative/wed-veil-kiss.jpg" alt=""><span class="cap">shot on iPhone</span></div>
+        <div class="polaroid pin blue"><img src="assets/lemon-creative/photo-engagement-2.jpg" alt=""><span class="cap">golden hour, always</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ticker-track">
+    <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
+    <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
+  </div></div>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="wrap center">
+      <span class="kicker">What I do</span>
+      <h2 class="h-mid">Three ways to <em>work together</em></h2>
+      <p class="lead">Pick a lane — or mix them. Every project starts with a conversation and an individualized plan, never a one-size-fits-all package.</p>
+      <div class="make-grid">
+        <a class="make-card reveal" href="social.html">
+          <span class="sticker pink badge">Most popular</span>
+          <div class="frame"><img src="assets/lemon-creative/layne-phone.jpg" alt=""></div>
+          <h3>Social media management</h3>
+          <p>Boutique, done-for-you content and management for small businesses — from full-scale creation + posting to just the piece you're missing.</p>
+          <span class="go">Explore social</span>
+        </a>
+        <a class="make-card reveal d1" href="weddings.html">
+          <div class="frame"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""></div>
+          <h3>Wedding content creation</h3>
+          <p>I show up with an iPhone and capture every in-between moment, then deliver raw content within 24 hours and edited reels within 72.</p>
+          <span class="go">See wedding packages</span>
+        </a>
+        <a class="make-card reveal d2" href="photography.html">
+          <div class="frame"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""></div>
+          <h3>Photography</h3>
+          <p>Engagements, maternity, baby announcements, gender reveals, and the little milestones — shot bright, candid, and a little bit playful.</p>
+          <span class="go">Book a session</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind the lens -->
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--denim)"></div>
+  <section class="section bg-denim" style="padding-top:3rem">
+    <div class="floaty slow" style="width:80px;top:10%;left:4%;opacity:.5"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
+    <div class="floaty fast" style="width:60px;bottom:12%;right:5%;opacity:.5"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
+    <div class="wrap center">
+      <span class="kicker">Behind the lens</span>
+      <h2 class="h-mid">Shot on iPhone, <em>back by morning</em></h2>
+      <div class="reel-row">
+        <div class="reel reveal"><video src="assets/lemon-creative/video/recap.mp4" muted loop playsinline autoplay></video><span class="cap">wedding recap</span></div>
+        <div class="reel reveal d1"><video src="assets/lemon-creative/video/firstlook.mp4" muted loop playsinline autoplay></video><span class="cap">first look</span></div>
+        <div class="reel reveal d2"><video src="assets/lemon-creative/video/daynight.mp4" muted loop playsinline autoplay></video><span class="cap">day vs. night</span></div>
+        <div class="reel reveal d3"><video src="assets/lemon-creative/video/reel-a.mp4" muted loop playsinline autoplay></video><span class="cap">client reel</span></div>
+        <div class="reel reveal d3"><video src="assets/lemon-creative/video/reel-b.mp4" muted loop playsinline autoplay></video><span class="cap">client reel</span></div>
+      </div>
+      <div class="btn-row" style="justify-content:center"><a class="btn banana" href="weddings.html">See wedding content</a></div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--denim);background-color:var(--banana-soft)"></div>
+
+  <!-- Why Lemon -->
+  <section class="section bg-banana" style="padding-top:3rem">
+    <div class="wrap split">
+      <div class="pic-stack reveal">
+        <div class="torn"><img src="assets/lemon-creative/layne-blue.jpg" alt=""></div>
+        <span class="sticker icy a">no templates, ever</span>
+        <span class="sticker pink b">hi, I'm Lem</span>
+      </div>
+      <div class="card stripe-edge reveal d1">
+        <span class="kicker green">Why Lemon Creative</span>
+        <h2 class="h-mid">Bright, bubbly, and <em>a little experimental</em></h2>
+        <p>Most "elevated" branding ends up looking exactly like everyone else's. My whole thing is the opposite: content that's fun, colorful, and unmistakably <em>yours</em> — because the best marketing is just showing people who you actually are.</p>
+        <ul class="loves">
+          <li><strong>Individualized plans.</strong> Full-scale creation + management, content-only, or management-only — built around what your business actually needs.</li>
+          <li><strong>Fast turnaround.</strong> Wedding content back in your hands within 24 hours. Reels edited within 72.</li>
+          <li><strong>One person, start to finish.</strong> No agency hand-offs. You talk to me, I make the thing.</li>
+        </ul>
+        <div class="btn-row"><a class="btn green" href="about.html">More about me</a></div>
+      </div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--banana-soft)"></div>
+
+  <!-- Who I work with -->
+  <section class="section" style="padding-top:2rem">
+    <div class="wrap center">
+      <span class="kicker">Who I work with</span>
+      <h2 class="h-mid">Small businesses & <em>big moments</em></h2>
+      <div class="icon-row">
+        <div class="icon-card reveal"><img src="assets/lemon-creative/art/illus/silk-bow.png" alt=""><strong>Boutiques & retail</strong><span>I come to you, shoot the new arrivals, and turn them into reels and posts that sell.</span></div>
+        <div class="icon-card reveal d1"><img src="assets/lemon-creative/art/illus/champagne-coupes.png" alt=""><strong>Wedding pros</strong><span>Planners, florists, venues, photographers — send me your raw gallery, get back a month of content.</span></div>
+        <div class="icon-card reveal d2"><img src="assets/lemon-creative/art/illus/wedding-rings.png" alt=""><strong>Couples</strong><span>Wedding-day iPhone content, engagement sessions, and the announcements in between.</span></div>
+        <div class="icon-card reveal d3"><img src="assets/lemon-creative/art/illus/sunburst.png" alt=""><strong>Growing brands</strong><span>Local businesses that know they need to post more and are tired of doing it themselves.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo marquee -->
+  <div class="photo-marquee bg-icy">
+    <div class="photo-marquee-track">
+      <img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""><img src="assets/lemon-creative/photo-reveal-1.jpg" alt="">
+      <img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/photo-engagement-3.jpg" alt=""><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""><img src="assets/lemon-creative/photo-reveal-1.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="wrap center">
+      <span class="kicker">How it works</span>
+      <h2 class="h-mid">Easy as <em>lemonade</em></h2>
+      <div class="steps">
+        <div class="step reveal"><h4>Say hi</h4><p>Fill out the quick intake form for the service you're after. It takes two minutes and tells me everything I need to know.</p></div>
+        <div class="step reveal d1"><h4>Discovery call</h4><p>We hop on a call and I ask a lot of questions — what you do, who you're for, what's working and what's not.</p></div>
+        <div class="step reveal d2"><h4>Your custom plan</h4><p>You get a proposal built for <em>your</em> business — not a tiered menu. Approve it and we're off.</p></div>
+        <div class="step reveal d3"><h4>Make the thing</h4><p>I shoot, edit, write, schedule, and send you content that feels like you. You get back your time (and a feed you're proud of).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--pink-soft)"></div>
+  <section class="section bg-pink" style="padding-top:3rem">
+    <div class="floaty line" style="width:110px;top:8%;right:3%"><img src="assets/lemon-creative/art/line/lemon-wheel.png" alt=""></div>
+    <div class="floaty slow line" style="width:120px;bottom:6%;left:3%"><img src="assets/lemon-creative/art/line/bowl-of-lemons.png" alt=""></div>
+    <div class="wrap center">
+      <span class="kicker">Kind words</span>
+      <h2 class="h-mid">Love <em>notes</em></h2>
+      <span class="ph">need 3 real testimonials</span>
+      <div class="quotes">
+        <div class="quote reveal"><p class="big">She turned 400 raw images into a month of reels that actually sound like us.</p><p>Placeholder — our inquiries doubled within two months.</p><cite>Client name<small>Wedding planner · Dallas</small></cite></div>
+        <div class="quote reveal d1"><p class="big">The reels were posted before we closed. Our best sales week of the year.</p><p>Placeholder — she shot the new arrivals in an hour and knew exactly what would land.</p><cite>Client name<small>Boutique owner · Fort Worth</small></cite></div>
+        <div class="quote reveal d2"><p class="big">We had our wedding content the next morning. Worth every penny.</p><p>Placeholder — our photographer's gallery was still weeks out and we already had something to post.</p><cite>Client name<small>Bride · Forever Yours package</small></cite></div>
+      </div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--pink-soft)"></div>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:2rem">
+    <div class="wrap center">
+      <span class="kicker">Good to know</span>
+      <h2 class="h-mid">Questions, <em>answered</em></h2>
+      <div class="faq">
+        <details class="acc"><summary>Do I have to pick a package?</summary><p>Nope. Wedding content has two set packages because the day has a set shape. Social media management is fully custom — we build it around what you need and what you can hand off.</p></details>
+        <details class="acc"><summary>Where are you based, and do you travel?</summary><p>Dallas, TX. I work across DFW; travel fees may apply outside the metro. <span class="ph">confirm travel policy</span></p></details>
+        <details class="acc"><summary>How fast do I get wedding content back?</summary><p>Raw photos and videos within 24 hours. Edited highlight reels within 72 hours.</p></details>
+        <details class="acc"><summary>What does social media management actually include?</summary><p>Anywhere from full-scale content creation + posting + engagement, to just creating content you post yourself, to just managing content you already make. We'll figure out the right blend on our call.</p></details>
+        <details class="acc"><summary>Can I hire you for just one shoot?</summary><p>Yes — boutique shoots, brand days, and one-off content sessions are all available. <span class="ph">confirm</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big CTA -->
+  <section class="cta-band">
+    <video src="assets/lemon-creative/video/recap-clean.mp4" muted loop playsinline autoplay></video>
+    <div class="wrap">
+      <h2 class="h-script">Ready when you are.<span class="line2">Let's make something bright.</span></h2>
+      <p class="lead">Tell me a little about your business or your big day and I'll be in touch within 48 hours.</p>
+      <a class="btn banana" href="contact.html">Start with the intake form</a>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════ SOCIAL ════════════════════════════ -->
+<main class="pageview" data-view="social" hidden>
+  <section class="page-hero bg-icy">
+    <div class="floaty slow line" style="width:120px;top:6%;right:5%"><img src="assets/lemon-creative/art/line/lemon-sprig.png" alt=""></div>
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker pink">Service 01 · most popular</span>
+        <h1 class="h-script">Social media,<span class="line2 denim">the boutique way</span></h1>
+        <p class="lead">You didn't start a business to spend your nights editing reels. I build an individualized plan around what you need — anywhere from full-scale content creation and management to just the piece you're missing — so your feed finally looks like your business feels.</p>
+        <div class="btn-row">
+          <a class="btn pink" href="contact.html?s=social">Start your social intake</a>
+          <a class="btn ghost" href="#social-how">How it works</a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="phones">
+          <div class="phone"><div class="screen"><div class="feed">
+            <img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt="">
+            <img src="assets/lemon-creative/wed-sunset-wine.jpg" alt=""><img src="assets/lemon-creative/wed-bouquet-dark.jpg" alt=""><img src="assets/lemon-creative/wed-chapel-wide.jpg" alt="">
+            <img src="assets/lemon-creative/wed-bridesmaids.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/wed-hug.jpg" alt="">
+            <img src="assets/lemon-creative/wed-veil-kiss.jpg" alt=""><img src="assets/lemon-creative/wed-bride-mirror.jpg" alt=""><img src="assets/lemon-creative/wed-bw-getting-ready.jpg" alt="">
+          </div></div></div>
+          <div class="phone"><div class="screen"><video src="assets/lemon-creative/video/reel-a.mp4" muted loop playsinline autoplay></video><div class="ui">client reel · 0:15</div></div></div>
+        </div>
+        <p class="center" style="margin-top:1.4rem"><span class="ph">phone feeds are placeholders — need real client grids</span></p>
+      </div>
+    </div>
+  </section>
+  <div class="ticker pink flat"><div class="ticker-track">
+    <span>Full-scale creation + management</span><span>Content-only</span><span>Management-only</span><span>Boutique shoots</span><span>Wedding-pro content</span>
+    <span>Full-scale creation + management</span><span>Content-only</span><span>Management-only</span><span>Boutique shoots</span><span>Wedding-pro content</span>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap center">
+      <span class="kicker">Built around you</span>
+      <h2 class="h-mid">Three starting points, <em>infinite blends</em></h2>
+      <p class="lead">These aren't packages — they're the three most common shapes a plan takes. We'll mix and match on your discovery call.</p>
+      <div class="tiers">
+        <div class="tier feature reveal">
+          <span class="sticker pink badge">Hands-off</span>
+          <h3>Full-scale</h3>
+          <div class="price">Creation + management<small>custom monthly retainer</small></div>
+          <ul><li>Monthly content days (I come to you)</li><li>Reels, carousels, stories — shot, edited, captioned</li><li>Posting, scheduling &amp; community engagement</li><li>Monthly strategy check-in + analytics</li></ul>
+          <a class="btn pink" href="contact.html?s=social">Inquire</a>
+        </div>
+        <div class="tier reveal d1">
+          <h3>Content-only</h3>
+          <div class="price">You post, I create<small>per shoot or monthly</small></div>
+          <ul><li>Shoot days at your boutique, studio, or venue</li><li>Edited reels + photo sets, ready to post</li><li>Caption starters &amp; hook ideas</li><li>Great for brands who like to stay hands-on</li></ul>
+          <a class="btn ghost" href="contact.html?s=social">Inquire</a>
+        </div>
+        <div class="tier reveal d2">
+          <h3>Management-only</h3>
+          <div class="price">You create, I run it<small>custom monthly retainer</small></div>
+          <ul><li>Send me your raw photos &amp; clips</li><li>I edit, caption, schedule &amp; post</li><li>Perfect for wedding pros with galleries piling up</li><li>Engagement + monthly reporting</li></ul>
+          <a class="btn denim" href="contact.html?s=social">Inquire</a>
+        </div>
+      </div>
+      <p style="margin-top:1.6rem;font-size:.9rem">Pricing is quoted per plan after your discovery call. <span class="ph">decide: show "starting at" numbers or keep inquire-only</span></p>
+    </div>
+  </section>
+
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--banana-soft)"></div>
+  <section class="section bg-banana" style="padding-top:3rem">
+    <div class="wrap split">
+      <div class="card stripe-edge blue reveal">
+        <span class="kicker pink">Two clients I love</span>
+        <h2 class="h-mid">Wedding pros & <em>boutiques</em></h2>
+        <p><strong>If you're a wedding professional:</strong> you already have the content — it's sitting in galleries you never get to. Send me the raw images and video and I'll turn them into reels, carousels, and posts that book your next couple.</p>
+        <p style="margin-top:1rem"><strong>If you own a boutique:</strong> I come to you. One morning on the floor shooting new arrivals becomes a month of reels and product content — styled, edited, and posted while the pieces are still in stock.</p>
+        <div class="btn-row"><a class="btn pink" href="contact.html?s=social">Tell me about your business</a></div>
+      </div>
+      <div class="pic-stack reveal d1">
+        <div class="torn" style="transform:rotate(3deg)"><img src="assets/lemon-creative/layne-camera.jpg" alt=""></div>
+        <span class="sticker a">boutique shoot days</span>
+        <span class="sticker icy b">raw gallery → month of content</span>
+      </div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--banana-soft)"></div>
+
+  <section class="section" id="social-how" style="padding-top:2rem">
+    <div class="wrap center">
+      <span class="kicker">The process</span>
+      <h2 class="h-mid">From "I should post more" to <em>posted</em></h2>
+      <div class="steps">
+        <div class="step reveal"><h4>Intake + call</h4><p>Tell me about your business, your audience, and what's not working. We'll talk goals, voice, and how hands-on you want to be.</p></div>
+        <div class="step reveal d1"><h4>Your plan</h4><p>A custom proposal with the exact blend of creation and management you need, a monthly rhythm, and a clear price.</p></div>
+        <div class="step reveal d2"><h4>Content day</h4><p>I shoot on location (or you send raws). We batch a month of content in one go so it never feels like a chore.</p></div>
+        <div class="step reveal d3"><h4>Post, engage, report</h4><p>Everything gets edited, captioned, scheduled, and posted. You get a monthly recap of what's working.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--denim)"></div>
+  <section class="section bg-denim" style="padding-top:3rem">
+    <div class="wrap center">
+      <span class="kicker">Recent work</span>
+      <h2 class="h-mid">Feeds I've <em>fixed</em> <span class="ph">need client examples</span></h2>
+      <p class="lead">Before/after feeds, reel thumbnails, and a few numbers go here once we collect them.</p>
+      <div class="phones" style="margin-top:2.5rem">
+        <div class="phone"><div class="screen"><video src="assets/lemon-creative/video/firstlook.mp4" muted loop playsinline autoplay></video><div class="ui">first look · reel</div></div></div>
+        <div class="phone"><div class="screen"><video src="assets/lemon-creative/video/reel-b.mp4" muted loop playsinline autoplay></video><div class="ui">client reel · placeholder</div></div></div>
+        <div class="phone"><div class="screen"><video src="assets/lemon-creative/video/daynight.mp4" muted loop playsinline autoplay></video><div class="ui">venue reel · placeholder</div></div></div>
+      </div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--denim)"></div>
+
+  <section class="section" id="social-form" style="padding-top:2rem">
+    <div class="wrap center">
+      <span class="kicker pink">Social media intake</span>
+      <h2 class="h-mid">Let's talk about <em>your feed</em></h2>
+      <p class="lead">Two minutes, no commitment. I'll reply within 48 hours with next steps.</p>
+      <form class="form-card gingham-top" onsubmit="return false">
+        <div class="form-grid">
+          <div><label>Your name</label><input placeholder="First & last"></div>
+          <div><label>Business name</label><input placeholder="e.g. Bloom Boutique"></div>
+          <div><label>Email</label><input type="email" placeholder="you@business.com"></div>
+          <div><label>Phone</label><input placeholder="(214) 555-0123"></div>
+          <div class="full"><label>Instagram handle (and any other platforms)</label><input placeholder="@yourbusiness · TikTok · Facebook"></div>
+          <div class="full"><label>What kind of business are you?</label><div class="choice"><label><input type="checkbox">Boutique / retail</label><label><input type="checkbox">Wedding professional</label><label><input type="checkbox">Restaurant / café</label><label><input type="checkbox">Service-based</label><label><input type="checkbox">Other</label></div></div>
+          <div class="full"><label>What do you need help with? (pick all that apply)</label><div class="choice"><label><input type="checkbox">Content creation (shooting + editing)</label><label><input type="checkbox">Posting + scheduling</label><label><input type="checkbox">Strategy + captions</label><label><input type="checkbox">Engagement / community</label><label><input type="checkbox">Not sure yet — help!</label></div></div>
+          <div><label>How often are you posting now?</label><select><option>Rarely / inconsistently</option><option>A few times a month</option><option>Weekly</option><option>Several times a week</option><option>Daily</option></select></div>
+          <div><label>Monthly budget range <span class="ph">confirm ranges</span></label><select><option>Under $500</option><option>$500–$1,000</option><option>$1,000–$2,000</option><option>$2,000+</option><option>Not sure yet</option></select></div>
+          <div class="full"><label>Tell me about your business and what's not working on social right now</label><textarea placeholder="The more the better — who are your customers, what do you sell, what have you tried?"></textarea></div>
+          <div class="full"><label>How did you hear about Lemon Creative?</label><input placeholder="Instagram, a friend, Google…"></div>
+          <div class="full"><button class="btn pink">Send it over</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════ WEDDINGS ════════════════════════════ -->
+<main class="pageview" data-view="weddings" hidden>
+  <section class="page-hero bg-pink">
+    <div class="floaty slow line" style="width:120px;top:8%;left:3%"><img src="assets/lemon-creative/art/line/bow.png" alt=""></div>
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker">Service 02</span>
+        <h1 class="h-script">Wedding content,<span class="line2 denim">back by morning</span></h1>
+        <p class="lead">While your photographer and videographer are busy making your final gallery and film, I capture all the candid, behind-the-scenes, in-between moments on iPhone — getting ready with your girls, the first look, the dance floor — and deliver them back fast so you can start reliving your day right away.</p>
+        <div class="btn-row">
+          <a class="btn denim" href="contact.html?s=weddings">Check my date</a>
+          <a class="btn ghost" href="#wed-packages">See packages</a>
+        </div>
+      </div>
+      <div class="hero-stack reveal d2">
+        <div class="polaroid pin"><video src="assets/lemon-creative/video/firstlook.mp4" muted loop playsinline autoplay></video><span class="cap">first look</span></div>
+        <div class="polaroid pin yellow"><video src="assets/lemon-creative/video/recap.mp4" muted loop playsinline autoplay></video><span class="cap">wedding recap</span></div>
+        <div class="polaroid pin blue"><img src="assets/lemon-creative/wed-bride-celebrate.jpg" alt=""><span class="cap">the dance floor</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="ticker flat"><div class="ticker-track">
+    <span>Raw content in 24 hours</span><span>Edited reels in 72 hours</span><span>Unlimited photos &amp; videos</span><span>Dallas–Fort Worth</span><span>Custom packages available</span>
+    <span>Raw content in 24 hours</span><span>Edited reels in 72 hours</span><span>Unlimited photos &amp; videos</span><span>Dallas–Fort Worth</span><span>Custom packages available</span>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap split rev">
+      <div class="pic-stack reveal">
+        <div class="torn"><img src="assets/lemon-creative/wed-bride-mirror.jpg" alt=""></div>
+        <span class="sticker a">the moments you'll miss</span>
+        <span class="sticker pink b">shot on iPhone</span>
+      </div>
+      <div class="card stripe-edge reveal d1">
+        <span class="kicker">Not the photographer's job?</span>
+        <h2 class="h-mid">Not the same thing, <em>I promise</em></h2>
+        <p>Your photographer is building a polished gallery. Your videographer is crafting a film. Both are worth every penny — and both take weeks. I'm the third person: phone in hand, capturing the unscripted stuff as it happens and sending it to you by the next morning so you have something to post on the honeymoon.</p>
+        <ul class="loves">
+          <li>Getting ready, first looks, vows, toasts, dance floor — all of it, candid.</li>
+          <li>Vertical video shot for Instagram &amp; TikTok, not cropped from a cinema camera.</li>
+          <li>Edited highlight reels with trending audio, ready to post.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--icy-soft)"></div>
+  <section class="section bg-icy" id="wed-packages" style="padding-top:3rem">
+    <div class="wrap center">
+      <span class="kicker">Packages</span>
+      <h2 class="h-mid">Two ways to say <em>I do</em></h2>
+      <div class="tiers two">
+        <div class="tier reveal">
+          <h3>Love at Last</h3>
+          <div class="price">$1,000<small>5 hours of coverage</small></div>
+          <ul><li>5 hours of wedding coverage</li><li>Unlimited photos and videos</li><li>1 edited highlight reel (over 30 seconds)</li><li>1 edited highlight reel (under 30 seconds)</li><li>Raw content delivered within 24 hours</li><li>Edited within 72 hours</li></ul>
+          <a class="btn pink" href="contact.html?s=weddings">Check availability</a>
+        </div>
+        <div class="tier feature reveal d1">
+          <span class="sticker pink badge">Full day</span>
+          <h3>Forever Yours</h3>
+          <div class="price">$1,200<small>8 hours of coverage</small></div>
+          <ul><li>8 hours of wedding coverage</li><li>Unlimited photos and videos</li><li>2 edited highlight reels (over 30 seconds)</li><li>2 edited highlight reels (under 30 seconds)</li><li>Raw content delivered within 24 hours</li><li>Edited within 72 hours</li></ul>
+          <a class="btn denim" href="contact.html?s=weddings">Check availability</a>
+        </div>
+      </div>
+      <p style="margin-top:1.6rem;font-size:.9rem">Custom packages available upon inquiry. Additional travel fees outside of the DFW area may apply.</p>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--icy-soft)"></div>
+
+  <section class="section" style="padding-top:2rem">
+    <div class="wrap center">
+      <span class="kicker">Recent weddings</span>
+      <h2 class="h-mid">Straight from the <em>camera roll</em></h2>
+      <div class="reel-row">
+        <div class="reel reveal"><video src="assets/lemon-creative/video/recap.mp4" muted loop playsinline autoplay></video><span class="cap">wedding recap</span></div>
+        <div class="reel reveal d1"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><span class="cap">the bouquet</span></div>
+        <div class="reel reveal d2"><video src="assets/lemon-creative/video/daynight.mp4" muted loop playsinline autoplay></video><span class="cap">day vs. night</span></div>
+        <div class="reel reveal d3"><img src="assets/lemon-creative/wed-sunset-wine.jpg" alt=""><span class="cap">golden hour</span></div>
+        <div class="reel reveal d3"><video src="assets/lemon-creative/video/firstlook.mp4" muted loop playsinline autoplay></video><span class="cap">first look</span></div>
+      </div>
+      <div class="collage">
+        <img class="tall" src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/wed-sunset-wine.jpg" alt=""><img src="assets/lemon-creative/wed-bridesmaids.jpg" alt=""><img class="wide" src="assets/lemon-creative/wed-chapel-wide.jpg" alt=""><img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/wed-hug.jpg" alt=""><img class="wide" src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/wed-bw-getting-ready.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--banana-soft)"></div>
+  <section class="section bg-banana" id="wed-form" style="padding-top:3rem">
+    <div class="wrap center">
+      <span class="kicker">Wedding content intake</span>
+      <h2 class="h-mid">Is your date <em>open?</em></h2>
+      <p class="lead">Tell me about the day and I'll confirm availability within 48 hours.</p>
+      <form class="form-card gingham-top" onsubmit="return false">
+        <div class="form-grid">
+          <div><label>Your name</label><input placeholder="First & last"></div>
+          <div><label>Partner's name</label><input placeholder="First & last"></div>
+          <div><label>Email</label><input type="email" placeholder="you@email.com"></div>
+          <div><label>Phone</label><input placeholder="(214) 555-0123"></div>
+          <div><label>Wedding date</label><input type="date"></div>
+          <div><label>Venue + city</label><input placeholder="The Grand Ivory · Leonard, TX"></div>
+          <div class="full"><label>Which package are you leaning toward?</label><div class="choice"><label><input type="radio" name="pkg">Love at Last · 5 hrs</label><label><input type="radio" name="pkg">Forever Yours · 8 hrs</label><label><input type="radio" name="pkg">Something custom</label></div></div>
+          <div><label>Estimated guest count</label><select><option>Under 50</option><option>50–100</option><option>100–150</option><option>150–200</option><option>200+</option></select></div>
+          <div><label>Do you have a photographer &amp; videographer booked?</label><select><option>Both</option><option>Photographer only</option><option>Videographer only</option><option>Not yet</option></select></div>
+          <div class="full"><label>Which moments matter most to you?</label><div class="choice"><label><input type="checkbox">Getting ready</label><label><input type="checkbox">First look</label><label><input type="checkbox">Ceremony</label><label><input type="checkbox">Toasts</label><label><input type="checkbox">Dance floor</label><label><input type="checkbox">Send-off</label></div></div>
+          <div class="full"><label>Anything else I should know?</label><textarea placeholder="Vibe, timeline, surprises planned, Instagram handles…"></textarea></div>
+          <div class="full"><button class="btn denim">Check my date</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════ PHOTOGRAPHY ════════════════════════════ -->
+<main class="pageview" data-view="photography" hidden>
+  <section class="page-hero bg-green">
+    <div class="floaty slow line" style="width:110px;top:10%;right:4%"><img src="assets/lemon-creative/art/line/camera.png" alt=""></div>
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker green">Service 03</span>
+        <h1 class="h-script">Photography for<span class="line2 green">the in-between</span></h1>
+        <p class="lead">Engagements, maternity, baby announcements, gender reveals — the moments worth more than a phone pic. Bright, candid, a little playful, and edited to look like real life (just the good lighting version).</p>
+        <div class="btn-row">
+          <a class="btn green" href="contact.html?s=photography">Book a session</a>
+          <a class="btn ghost" href="#photo-gal">See the gallery</a>
+        </div>
+      </div>
+      <div class="hero-stack reveal d2">
+        <div class="polaroid pin"><img src="assets/lemon-creative/photo-engagement-2.jpg" alt=""><span class="cap">engaged!</span></div>
+        <div class="polaroid pin yellow"><img src="assets/lemon-creative/photo-maternity-2.jpg" alt=""><span class="cap">baby on board</span></div>
+        <div class="polaroid pin blue"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""><span class="cap">it's a…</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="ticker green flat"><div class="ticker-track">
+    <span>Engagements</span><span>Maternity</span><span>Baby announcements</span><span>Gender reveals</span><span>Family &amp; milestones</span><span>Dallas–Fort Worth</span>
+    <span>Engagements</span><span>Maternity</span><span>Baby announcements</span><span>Gender reveals</span><span>Family &amp; milestones</span><span>Dallas–Fort Worth</span>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap center">
+      <span class="kicker">Sessions</span>
+      <h2 class="h-mid">What should we <em>celebrate?</em></h2>
+      <div class="tiers">
+        <div class="tier reveal">
+          <h3>Engagement</h3>
+          <div class="price">Starting at $— <span class="ph">price</span></div>
+          <ul><li>60–90 minute session</li><li>1–2 locations across DFW</li><li>Full edited gallery, delivered online</li><li>Outfit + location guidance included</li></ul>
+          <a class="btn pink" href="contact.html?s=photography">Inquire</a>
+        </div>
+        <div class="tier feature reveal d1">
+          <span class="sticker pink badge">Fan favorite</span>
+          <h3>Maternity &amp; announcements</h3>
+          <div class="price">Starting at $— <span class="ph">price</span></div>
+          <ul><li>Maternity, baby announcement, or gender reveal</li><li>60 minute session</li><li>Full edited gallery + a few reel-ready clips</li><li>Confetti cannons encouraged</li></ul>
+          <a class="btn green" href="contact.html?s=photography">Inquire</a>
+        </div>
+        <div class="tier reveal d2">
+          <h3>Mini &amp; milestone</h3>
+          <div class="price">Starting at $— <span class="ph">price</span></div>
+          <ul><li>30 minute mini session</li><li>Birthdays, graduations, "just because"</li><li>Edited gallery delivered within 1 week</li><li>Seasonal minis announced on Instagram</li></ul>
+          <a class="btn ghost" href="contact.html?s=photography">Inquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop" style="--sc:var(--ivory);background-color:var(--banana-soft)"></div>
+  <section class="section bg-banana" id="photo-gal" style="padding-top:3rem">
+    <div class="wrap center">
+      <span class="kicker green">Gallery</span>
+      <h2 class="h-mid">Recent <em>sessions</em></h2>
+      <div class="filter-row" id="gal-pills">
+        <button class="filter-btn active" data-f="all">All</button><button class="filter-btn" data-f="engagement">Engagement</button><button class="filter-btn" data-f="maternity">Maternity</button><button class="filter-btn" data-f="announce">Announcements</button>
+      </div>
+      <div class="collage" id="photo-gallery">
+        <img class="tall" data-c="engagement" src="assets/lemon-creative/photo-engagement-1.jpg" alt=""><img data-c="maternity" src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-announce-1.jpg" alt=""><img class="wide" data-c="engagement" src="assets/lemon-creative/photo-engagement-4.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-reveal-1.jpg" alt=""><img data-c="maternity" src="assets/lemon-creative/photo-maternity-2.jpg" alt=""><img class="wide" data-c="announce" src="assets/lemon-creative/photo-announce-flatlay.jpg" alt=""><img data-c="engagement" src="assets/lemon-creative/photo-engagement-3.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-announce-3.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-announce-2.jpg" alt=""><img data-c="engagement" src="assets/lemon-creative/photo-engagement-2.jpg" alt="">
+      </div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--banana-soft)"></div>
+
+  <section class="section" id="photo-form" style="padding-top:2rem">
+    <div class="wrap center">
+      <span class="kicker green">Photography intake</span>
+      <h2 class="h-mid">Let's plan your <em>session</em></h2>
+      <form class="form-card gingham-top" onsubmit="return false">
+        <div class="form-grid">
+          <div><label>Your name</label><input placeholder="First & last"></div>
+          <div><label>Email</label><input type="email" placeholder="you@email.com"></div>
+          <div><label>Phone</label><input placeholder="(214) 555-0123"></div>
+          <div><label>Ideal date (or month)</label><input placeholder="Late October, weekends"></div>
+          <div class="full"><label>Session type</label><div class="choice"><label><input type="radio" name="st">Engagement</label><label><input type="radio" name="st">Maternity</label><label><input type="radio" name="st">Baby announcement</label><label><input type="radio" name="st">Gender reveal</label><label><input type="radio" name="st">Family / milestone</label><label><input type="radio" name="st">Other</label></div></div>
+          <div><label>Who's in the photos?</label><input placeholder="Just us two · plus the dog"></div>
+          <div><label>Location preference</label><select><option>You pick — surprise me</option><option>Park / outdoors</option><option>Downtown / urban</option><option>Our home</option><option>Somewhere specific</option></select></div>
+          <div class="full"><label>Vibe + anything special</label><textarea placeholder="Bright and playful? Golden hour? Confetti? A reveal we need to keep secret?"></textarea></div>
+          <div class="full"><button class="btn green">Book my session</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════ ABOUT ════════════════════════════ -->
+<main class="pageview" data-view="about" hidden>
+  <section class="page-hero">
+    <div class="floaty slow" style="width:80px;top:10%;left:3%"><img src="assets/lemon-creative/lemon_wedge.png" alt=""></div>
+    <div class="floaty fast line" style="width:120px;bottom:8%;right:3%"><img src="assets/lemon-creative/art/line/lemon-wreath.png" alt=""></div>
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker">About</span>
+        <h1 class="h-script">Hi, I'm Lem —<span class="line2">the person behind the lemon</span></h1>
+        <p class="lead"><span class="ph">placeholder bio — needs her words</span> I'm a Dallas-based content creator, social media manager, and photographer who believes marketing should feel like a conversation with your most enthusiastic friend. I started Lemon Creative because too many small businesses were paying for content that looked nothing like them — polished, beige, and forgettable.</p>
+        <p style="margin-top:1rem">These days I split my time between content days at boutiques, raw galleries from wedding pros, Saturday weddings with my iPhone, and golden-hour sessions with couples and growing families. The common thread: bright, candid, and 100% you.</p>
+        <div class="facts">
+          <span class="sticker">Dallas, TX</span><span class="sticker pink">Gen Z &amp; proud</span><span class="sticker icy">lemonade over coffee</span><span class="sticker green">iPhone evangelist</span> <span class="ph">fun facts</span>
+        </div>
+        <div class="btn-row"><a class="btn pink" href="contact.html">Let's work together</a></div>
+      </div>
+      <div class="hero-stack about-photos reveal d2">
+        <div class="polaroid pin"><img src="assets/lemon-creative/layne-camera2.jpg" alt=""><span class="cap">camera in hand</span></div>
+        <div class="polaroid pin yellow"><img src="assets/lemon-creative/layne-chair.jpg" alt=""><span class="cap">office hours</span></div>
+        <div class="polaroid pin blue"><img src="assets/lemon-creative/layne-phone.jpg" alt=""><span class="cap">always filming</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="ticker banana flat"><div class="ticker-track">
+    <span>Bright</span><span>Bubbly</span><span>Inviting</span><span>Fun</span><span>Elevated, not stuffy</span><span>Experimental</span><span>Accurately you</span>
+    <span>Bright</span><span>Bubbly</span><span>Inviting</span><span>Fun</span><span>Elevated, not stuffy</span><span>Experimental</span><span>Accurately you</span>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap center">
+      <span class="kicker green">How I work</span>
+      <h2 class="h-mid">A few things <em>I believe</em></h2>
+      <div class="icon-row" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <div class="icon-card reveal"><img src="assets/lemon-creative/art/illus/ribbon-bouquet.png" alt=""><strong>Your brand should look like you</strong><span>Not like the account you're jealous of. If it doesn't feel like you, it won't work — and it won't be fun.</span></div>
+        <div class="icon-card reveal d1"><img src="assets/lemon-creative/art/illus/phone-content.png" alt=""><strong>The phone in your pocket is enough</strong><span>Great content is about timing, light, and knowing what to look for — not a $5,000 camera.</span></div>
+        <div class="icon-card reveal d2"><img src="assets/lemon-creative/art/illus/woven-lemon-basket.png" alt=""><strong>Boutique means boutique</strong><span>I keep my client list small on purpose so every plan is actually custom and every message gets answered by me.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <video src="assets/lemon-creative/video/reel-a.mp4" muted loop playsinline autoplay></video>
+    <div class="wrap">
+      <h2 class="h-script">Sound like your kind of person?<span class="line2">Let's talk.</span></h2>
+      <a class="btn banana" href="contact.html">Start with the intake form</a>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════ CONTACT ════════════════════════════ -->
+<main class="pageview" data-view="contact" hidden>
+  <section class="page-hero bg-banana">
+    <div class="floaty slow line" style="width:110px;top:10%;left:3%"><img src="assets/lemon-creative/art/line/lemonade-pitcher.png" alt=""></div>
+    <div class="floaty fast" style="width:60px;bottom:10%;right:5%"><img src="assets/lemon-creative/lemon_slice.png" alt=""></div>
+    <div class="wrap center">
+      <span class="kicker pink">Let's work together</span>
+      <h1 class="h-script">First things first —<span class="line2 denim">what are we making?</span></h1>
+      <p class="lead">Each service has its own quick intake so I can come to our call already knowing what you need. Pick one below.</p>
+      <div class="service-pick" id="service-pick">
+        <button data-s="social"><img src="assets/lemon-creative/art/illus/phone-content.png" alt="">Social media management</button>
+        <button data-s="weddings"><img src="assets/lemon-creative/art/illus/wedding-rings.png" alt="">Wedding content creation</button>
+        <button data-s="photography"><img src="assets/lemon-creative/art/illus/camera.png" alt="">Photography session</button>
+      </div>
+    </div>
+  </section>
+  <div class="scallop" style="--sc:var(--banana-soft)"></div>
+  <section class="section" style="padding-top:2rem">
+    <div class="wrap center">
+      <div class="form-panel" data-panel="social"><span class="kicker pink">Social media intake</span><h2 class="h-mid">Tell me about your <em>business</em></h2><p class="lead">(Same form as the Social page — in Shopify this is one form rendered in both places.)</p><div class="btn-row" style="justify-content:center"><a class="btn pink" href="social.html#social-form">Open the social intake</a></div></div>
+      <div class="form-panel" data-panel="weddings"><span class="kicker">Wedding intake</span><h2 class="h-mid">Is your date <em>open?</em></h2><div class="btn-row" style="justify-content:center"><a class="btn denim" href="weddings.html#wed-form">Open the wedding intake</a></div></div>
+      <div class="form-panel" data-panel="photography"><span class="kicker green">Photography intake</span><h2 class="h-mid">Plan your <em>session</em></h2><div class="btn-row" style="justify-content:center"><a class="btn green" href="photography.html#photo-form">Open the photography intake</a></div></div>
+      <div class="card stripe-edge yellow" style="max-width:640px;margin:3rem auto 0">
+        <h3>Prefer to just say hi?</h3>
+        <p style="margin-top:.6rem">Email <a href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a> <span class="ph">confirm email</span> · Call or text <a href="tel:5124203580">512-420-3580</a> · DM <a href="https://www.instagram.com/" target="_blank" rel="noopener">@lemoncreative</a> <span class="ph">confirm handle</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════ GALLERY ════════════════════════════ -->
+<main class="pageview" data-view="gallery" hidden>
+  <section class="page-hero center">
+    <div class="floaty slow line" style="width:120px;top:14%;left:4%"><img src="assets/lemon-creative/art/line/lemon-branch.png" alt=""></div>
+    <div class="floaty fast line" style="width:90px;top:20%;right:5%"><img src="assets/lemon-creative/art/line/wildflower.png" alt=""></div>
+    <div class="wrap">
+      <span class="kicker">Gallery</span>
+      <h1 class="h-script">A little collection of<span class="line2">lovely moments</span></h1>
+      <p class="lead" style="margin-inline:auto">Weddings, engagements, announcements, and a few behind-the-scenes — pinned up scrapbook-style.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="gal-wall">
+        <figure class="reveal"><img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="doodle"><img src="assets/lemon-creative/art/line/lemon-wheel.png" alt=""></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><figcaption>maternity</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-chapel-wide.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-florals.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/photo-engagement-4.jpg" alt=""><figcaption>engagement</figcaption></figure>
+        <figure class="doodle"><img src="assets/lemon-creative/art/line/bow.png" alt=""></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/photo-engagement-1.jpg" alt=""><figcaption>engagement</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/photo-announce-flatlay.jpg" alt=""><figcaption>baby announcement</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="doodle"><img src="assets/lemon-creative/art/line/bowl-of-lemons.png" alt=""></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-veil-kiss.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-bridesmaids.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/wed-hug.jpg" alt=""><figcaption>wedding content</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/photo-engagement-2.jpg" alt=""><figcaption>engagement</figcaption></figure>
+        <figure class="doodle"><img src="assets/lemon-creative/art/line/lemon-sprig.png" alt=""></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""><figcaption>gender reveal</figcaption></figure>
+        <figure class="reveal"><img src="assets/lemon-creative/layne-blue.jpg" alt=""><figcaption>behind the lens</figcaption></figure>
+      </div>
+      <div class="center" style="margin-top:2.5rem"><a class="btn pink" href="contact.html">Let's make yours</a></div>
+    </div>
+  </section>
+</main>
+
+<main class="pageview" data-view="privacy" hidden><section class="section"><div class="wrap" style="max-width:760px"><h1 class="h-mid">Privacy policy</h1><p><span class="ph">placeholder</span> Standard Shopify privacy policy will be generated here.</p></div></section></main>
+<main class="pageview" data-view="terms" hidden><section class="section"><div class="wrap" style="max-width:760px"><h1 class="h-mid">Terms of service</h1><p><span class="ph">placeholder</span> Standard terms will be generated here.</p></div></section></main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="floaty slow" style="width:260px;right:-40px;bottom:-30px"><img src="assets/lemon-creative/art/line/lemon-wreath.png" alt=""></div>
+  <div class="wrap footer-grid">
+    <div>
+      <img class="logo-img" src="assets/lemon-creative/horizontal_light.png" alt="Lemon Creative">
+      <p>Social media management, wedding content creation &amp; photography. Bright, candid, and 100% you. Based in Dallas, TX.</p>
+      <form class="newsletter" onsubmit="return false"><input placeholder="Your email for seasonal minis + tips"><button class="btn banana sm">Join</button></form>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="social.html">Social Media Management</a></li><li><a href="weddings.html">Wedding Content Creation</a></li><li><a href="photography.html">Photography</a></li><li><a href="contact.html">Intake forms</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About Lem</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+    <div><h4>Say hi</h4><ul><li>Dallas, TX · serving DFW</li><li><a href="tel:5124203580">512-420-3580</a></li><li><a href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a></li></ul></div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 Lemon Creative · <span class="script">bright, candid, yours</span></span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Site by Prancer</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const views = document.querySelectorAll(".pageview");
+  const burger = document.querySelector(".burger"), links = document.querySelector(".nav-links");
+  burger.addEventListener("click", () => { burger.classList.toggle("open"); links.classList.toggle("open"); });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+  function arm() { document.querySelectorAll(".pageview:not([hidden]) .reveal:not(.in)").forEach(x => io.observe(x)); }
+
+  function pickService(s) {
+    document.querySelectorAll("#service-pick button").forEach(b => b.classList.toggle("on", b.dataset.s === s));
+    document.querySelectorAll(".form-panel").forEach(p => p.classList.toggle("on", p.dataset.panel === s));
+  }
+  document.querySelectorAll("#service-pick button").forEach(b => b.addEventListener("click", () => pickService(b.dataset.s)));
+
+  document.querySelectorAll("#gal-pills .filter-btn").forEach(p => p.addEventListener("click", () => {
+    document.querySelectorAll("#gal-pills .filter-btn").forEach(x => x.classList.toggle("active", x === p));
+    document.querySelectorAll("#photo-gallery img").forEach(s => s.style.display = (p.dataset.f === "all" || s.dataset.c === p.dataset.f) ? "" : "none");
+  }));
+
+  function show(name, qp, anchor) {
+    views.forEach(v => v.hidden = v.dataset.view !== name);
+    document.querySelectorAll(".nav-links a").forEach(a => {
+      const t = (a.getAttribute("href") || "").split("?")[0].split("#")[0].replace(".html", "");
+      a.classList.toggle("active", (t === "index" ? "home" : t) === name);
+    });
+    if (name === "contact") pickService(qp.s || "social");
+    history.replaceState(null, "", "#" + name);
+    if (anchor) { const el = document.getElementById(anchor); if (el) el.scrollIntoView({ behavior: "smooth" }); }
+    else window.scrollTo(0, 0);
+    arm();
+  }
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a[href]");
+    if (!a) return;
+    const href = a.getAttribute("href");
+    if (href.startsWith("#")) { e.preventDefault(); const el = document.querySelector(href); if (el) el.scrollIntoView({ behavior: "smooth" }); return; }
+    if (!href.includes(".html")) return;
+    e.preventDefault();
+    const [fileq, anchor] = href.split("#");
+    const [file, q] = fileq.split("?");
+    const name = file.replace(".html", "");
+    const qp = q ? Object.fromEntries(new URLSearchParams(q)) : {};
+    show(name === "index" ? "home" : name, qp, anchor);
+    burger.classList.remove("open"); links.classList.remove("open");
+  });
+  const initial = (location.hash || "#home").slice(1);
+  show([...views].some(v => v.dataset.view === initial) ? initial : "home", {});
+});
+</script>
+
+<!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
+<script>
+/* ============================================================
+   CLAUDE COMMENTS — Figma-style comment layer for any HTML page
+   ------------------------------------------------------------
+   HOW TO USE:
+   1. Set FIREBASE_URL below to your Firebase Realtime Database
+      URL (looks like https://something-default-rtdb.firebaseio.com)
+      Leave it as-is to run in OFFLINE mode (comments only saved
+      in this browser — good for trying it out).
+   2. Optionally set PAGE_ID to a short name for this page.
+      If left blank, it's derived from the file name / title.
+   3. Paste this whole <script> block right before </body>.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ------------------- CONFIG ------------------- */
+  var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
+  var PAGE_ID = 'lemon-creative-b-v1';
+
+  /* ---------------------------------------------- */
+
+  if (window.__claudeCommentsLoaded) return;
+  window.__claudeCommentsLoaded = true;
+
+  var ONLINE = /^https:\/\/.+firebase/.test(FIREBASE_URL);
+  if (ONLINE) FIREBASE_URL = FIREBASE_URL.replace(/\/+$/, '');
+
+  function slug(s) {
+    return String(s).toLowerCase().replace(/\.[a-z0-9]+$/, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'page';
+  }
+  if (!PAGE_ID) {
+    var fn = (location.pathname.split('/').pop() || '');
+    PAGE_ID = slug(fn && fn !== 'index.html' ? fn : (document.title || fn || 'page'));
+  }
+
+  var COLORS = ['#7C5CFF', '#FF5C8A', '#00A896', '#F4A100', '#2E86DE', '#B8578C'];
+  function colorFor(name) {
+    var h = 0; name = name || '?';
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return COLORS[h % COLORS.length];
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function timeAgo(ts) {
+    var d = Date.now() - ts;
+    if (d < 60e3) return 'just now';
+    if (d < 3600e3) return Math.floor(d / 60e3) + 'm ago';
+    if (d < 86400e3) return Math.floor(d / 3600e3) + 'h ago';
+    if (d < 7 * 86400e3) return Math.floor(d / 86400e3) + 'd ago';
+    var dt = new Date(ts);
+    return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + String(dt.getFullYear()).slice(2);
+  }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+  /* ------------------- STORAGE ------------------- */
+  // Data shape: { threadId: { anchor:{sel,xp,yp,dxp,dyp}, resolved, created,
+  //               comments: { commentId: { name, text, ts } } } }
+  var store;
+
+  function LocalStore() {
+    var KEY = 'claude-comments::' + PAGE_ID;
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+    }
+    function write(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+    return {
+      offline: true,
+      fetchAll: function () { return Promise.resolve(read()); },
+      createThread: function (t) {
+        var d = read(); var id = uid(); d[id] = t; write(d); return Promise.resolve(id);
+      },
+      addComment: function (tid, c) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        d[tid].comments = d[tid].comments || {};
+        d[tid].comments[uid()] = c; write(d); return Promise.resolve();
+      },
+      patchThread: function (tid, patch) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        for (var k in patch) d[tid][k] = patch[k];
+        write(d); return Promise.resolve();
+      },
+      deleteThread: function (tid) {
+        var d = read(); delete d[tid]; write(d); return Promise.resolve();
+      }
+    };
+  }
+
+  function FirebaseStore() {
+    var base = FIREBASE_URL + '/pages/' + encodeURIComponent(PAGE_ID) + '/threads';
+    function req(method, path, body) {
+      return fetch(base + path + '.json', {
+        method: method,
+        body: body === undefined ? undefined : JSON.stringify(body)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Sync error ' + r.status);
+        return r.json();
+      });
+    }
+    return {
+      offline: false,
+      fetchAll: function () { return req('GET', '').then(function (d) { return d || {}; }); },
+      createThread: function (t) {
+        return req('POST', '', t).then(function (res) { return res.name; });
+      },
+      addComment: function (tid, c) { return req('POST', '/' + tid + '/comments', c); },
+      patchThread: function (tid, patch) { return req('PATCH', '/' + tid, patch); },
+      deleteThread: function (tid) { return req('DELETE', '/' + tid); }
+    };
+  }
+
+  store = ONLINE ? FirebaseStore() : LocalStore();
+
+  /* ------------------- ANCHORING ------------------- */
+  function cssPath(el) {
+    if (!(el instanceof Element)) return '';
+    var path = [];
+    while (el && el.nodeType === 1 && el !== document.body && path.length < 8) {
+      var seg = el.tagName.toLowerCase();
+      if (el.id && !/\d{4,}/.test(el.id)) { path.unshift('#' + CSS.escape(el.id)); break; }
+      var sibs = el.parentNode ? Array.prototype.filter.call(el.parentNode.children, function (s) {
+        return s.tagName === el.tagName;
+      }) : [];
+      if (sibs.length > 1) seg += ':nth-of-type(' + (sibs.indexOf(el) + 1) + ')';
+      path.unshift(seg);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+  function makeAnchor(clientX, clientY, target) {
+    var docX = clientX + window.scrollX, docY = clientY + window.scrollY;
+    var a = {
+      dxp: docX / Math.max(1, document.documentElement.scrollWidth),
+      dyp: docY / Math.max(1, document.documentElement.scrollHeight)
+    };
+    if (target && target !== document.body && target !== document.documentElement) {
+      var sel = cssPath(target);
+      try {
+        if (sel && document.querySelector(sel) === target) {
+          var r = target.getBoundingClientRect();
+          if (r.width > 4 && r.height > 4) {
+            a.sel = sel;
+            a.xp = (clientX - r.left) / r.width;
+            a.yp = (clientY - r.top) / r.height;
+          }
+        }
+      } catch (e) {}
+    }
+    return a;
+  }
+  // Returns pin coordinates, or null when the anchored element exists in the
+  // document but is currently hidden (e.g. a single-file site showing a
+  // different "page"/view) — in that case the pin should not be rendered.
+  function resolveAnchor(a) {
+    if (a.sel) {
+      try {
+        var el = document.querySelector(a.sel);
+        if (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width > 0 && r.height > 0) {
+            return { x: r.left + window.scrollX + a.xp * r.width, y: r.top + window.scrollY + a.yp * r.height };
+          }
+          return null; // element is on a hidden view right now
+        }
+      } catch (e) {}
+    }
+    return {
+      x: a.dxp * document.documentElement.scrollWidth,
+      y: a.dyp * document.documentElement.scrollHeight
+    };
+  }
+  function currentView() { return location.hash || ''; }
+  // Should this thread be shown on the current view?
+  function threadVisiblePos(t) {
+    var a = t.anchor || {};
+    if (a.sel) return resolveAnchor(a); // visibility of the anchor decides
+    // No element anchor: fall back to the view recorded at creation
+    if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) return null;
+    return resolveAnchor(a);
+  }
+  function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
+
+  /* ------------------- STATE ------------------- */
+  var threads = {};           // latest data
+  var lastJSON = '';
+  var commentMode = false;
+  var openThreadId = null;    // thread popup currently open
+  var draft = null;           // {anchor, x, y} while composing a new thread
+  var showResolved = false;
+  var panelOpen = false;
+  var myName = '';
+  try { myName = localStorage.getItem('claude-comments-name') || ''; } catch (e) {}
+
+  function sortedIds() {
+    return Object.keys(threads).sort(function (a, b) {
+      return (threads[a].created || 0) - (threads[b].created || 0);
+    });
+  }
+  function threadNumber(tid) { return sortedIds().indexOf(tid) + 1; }
+  function firstComment(t) {
+    var ids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    return ids.length ? t.comments[ids[0]] : null;
+  }
+  function openCount() {
+    return sortedIds().filter(function (id) { return !threads[id].resolved; }).length;
+  }
+
+  /* ------------------- UI SHELL ------------------- */
+  var host = document.createElement('div');
+  host.id = 'claude-comments-host';
+  var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host;
+
+  var css = ''
+    + ':host{all:initial}'
+    + '*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
+    + '.layer{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:2147483000}'
+    + '.pin{position:absolute;pointer-events:auto;width:32px;height:32px;margin:-32px 0 0 0;'
+    + 'border-radius:16px 16px 16px 3px;display:flex;align-items:center;justify-content:center;'
+    + 'color:#fff;font-size:13px;font-weight:700;cursor:pointer;border:2px solid #fff;'
+    + 'box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .12s;user-select:none}'
+    + '.pin:hover{transform:scale(1.15)}'
+    + '.pin.resolved{background:#9aa3ad !important;opacity:.75}'
+    + '.pin.draft{background:#111}'
+    + '.popup{position:fixed;pointer-events:auto;width:min(320px,calc(100vw - 20px));max-height:70vh;display:flex;flex-direction:column;'
+    + 'background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483001;overflow:hidden}'
+    + '.popup-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #eee}'
+    + '.popup-head .title{font-size:13px;font-weight:700;color:#333;flex:1}'
+    + '.iconbtn{border:none;background:none;cursor:pointer;font-size:13px;color:#666;padding:4px 8px;border-radius:6px}'
+    + '.iconbtn:hover{background:#f2f2f4;color:#111}'
+    + '.iconbtn.danger:hover{background:#ffe8ec;color:#c0264b}'
+    + '.comments{overflow-y:auto;padding:6px 0;flex:1}'
+    + '.comment{padding:8px 14px;display:flex;gap:9px}'
+    + '.avatar{width:26px;height:26px;border-radius:50%;color:#fff;display:flex;align-items:center;'
+    + 'justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}'
+    + '.cbody{flex:1;min-width:0}'
+    + '.cmeta{font-size:12px;color:#888;margin-bottom:2px}'
+    + '.cmeta b{color:#222;font-size:12.5px;margin-right:6px}'
+    + '.ctext{font-size:13.5px;color:#222;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}'
+    + '.composer{border-top:1px solid #eee;padding:10px 12px;background:#fafafa}'
+    + '.composer textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13.5px;'
+    + 'resize:none;min-height:38px;max-height:120px;background:#fff;color:#111;outline:none;line-height:1.4}'
+    + '.composer textarea:focus{border-color:#7C5CFF}'
+    + '.composer input{width:100%;border:1px solid #ddd;border-radius:8px;padding:7px 10px;font-size:13px;'
+    + 'margin-bottom:6px;background:#fff;color:#111;outline:none}'
+    + '.composer input:focus{border-color:#7C5CFF}'
+    + '.crow{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}'
+    + '.btn{border:none;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}'
+    + '.btn.primary{background:#7C5CFF;color:#fff}.btn.primary:hover{background:#6a4ae6}'
+    + '.btn.primary:disabled{background:#c9bdfa;cursor:default}'
+    + '.btn.ghost{background:none;color:#666}.btn.ghost:hover{background:#eee}'
+    + '.bar{position:fixed;right:20px;bottom:20px;display:flex;gap:8px;pointer-events:auto;z-index:2147483002}'
+    + '.fab{display:flex;align-items:center;gap:7px;background:#111;color:#fff;border:none;border-radius:24px;'
+    + 'padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.fab:hover{background:#2b2b2e}.fab.active{background:#7C5CFF}'
+    + '.fab .badge{background:#7C5CFF;border-radius:10px;font-size:11.5px;padding:1px 7px;font-weight:700}'
+    + '.fab.active .badge{background:rgba(255,255,255,.25)}'
+    + '.hint{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111;color:#fff;'
+    + 'padding:9px 16px;border-radius:10px;font-size:13px;z-index:2147483002;pointer-events:none;'
+    + 'box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.panel{position:fixed;right:20px;bottom:76px;width:min(300px,calc(100vw - 40px));max-height:60vh;background:#fff;border-radius:12px;'
+    + 'box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483002;pointer-events:auto;display:flex;flex-direction:column;overflow:hidden}'
+    + '.panel-head{padding:11px 14px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}'
+    + '.panel-head .t{font-size:13.5px;font-weight:700;color:#222}'
+    + '.panel-list{overflow-y:auto;flex:1}'
+    + '.pitem{padding:10px 14px;border-bottom:1px solid #f4f4f5;cursor:pointer;display:flex;gap:10px;align-items:flex-start}'
+    + '.pitem:hover{background:#f8f7ff}'
+    + '.pnum{width:22px;height:22px;border-radius:11px 11px 11px 2px;color:#fff;font-size:11px;font-weight:700;'
+    + 'display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}'
+    + '.pbody{flex:1;min-width:0}'
+    + '.pmeta{font-size:11.5px;color:#999;margin-bottom:1px}'
+    + '.ptext{font-size:12.5px;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;'
+    + '-webkit-line-clamp:2;-webkit-box-orient:vertical}'
+    + '.pitem.resolved .ptext,.pitem.resolved .pmeta{color:#aaa;text-decoration:line-through}'
+    + '.panel-foot{padding:9px 14px;border-top:1px solid #eee;font-size:12px;color:#777;display:flex;'
+    + 'align-items:center;justify-content:space-between}'
+    + '.empty{padding:26px 14px;text-align:center;color:#999;font-size:13px}'
+    + '.offline{background:#fff7e0;color:#8a6400;font-size:11.5px;padding:6px 14px;text-align:center}'
+    + 'label.tog{display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:#777}'
+    + '@media (max-width:600px){.composer textarea,.composer input{font-size:16px}'
+    + '.bar{right:12px;bottom:12px}.panel{right:12px;bottom:66px}}';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  root.appendChild(styleEl);
+
+  var layer = document.createElement('div');   // pins (document coords)
+  layer.className = 'layer';
+  var ui = document.createElement('div');      // fixed UI: bar, panel, popup, hint
+  root.appendChild(layer);
+  root.appendChild(ui);
+
+  var cursorStyle = document.createElement('style');
+  cursorStyle.textContent = 'html.claude-commenting, html.claude-commenting *{cursor:crosshair !important}';
+  document.head.appendChild(cursorStyle);
+
+  function mount() { document.body.appendChild(host); render(); }
+
+  /* ------------------- RENDER ------------------- */
+  function render() {
+    layer.style.height = document.documentElement.scrollHeight + 'px';
+    renderPins();
+    renderUI();
+  }
+
+  function renderPins() {
+    layer.innerHTML = '';
+    var ids = sortedIds();
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      if (t.resolved && !showResolved) return;
+      var p = threadVisiblePos(t);
+      if (!p) return; // comment belongs to a view that isn't on screen
+      var fc = firstComment(t);
+      var pin = document.createElement('div');
+      pin.className = 'pin' + (t.resolved ? ' resolved' : '');
+      pin.style.left = p.x + 'px';
+      pin.style.top = p.y + 'px';
+      pin.style.background = colorFor(fc ? fc.name : '?');
+      pin.textContent = threadNumber(tid);
+      pin.title = fc ? fc.name + ': ' + fc.text.slice(0, 80) : '';
+      pin.addEventListener('click', function (e) {
+        e.stopPropagation();
+        draft = null;
+        openThreadId = (openThreadId === tid) ? null : tid;
+        render();
+      });
+      layer.appendChild(pin);
+    });
+    if (draft) {
+      var dp = document.createElement('div');
+      dp.className = 'pin draft';
+      dp.style.left = draft.x + 'px';
+      dp.style.top = draft.y + 'px';
+      dp.textContent = '+';
+      layer.appendChild(dp);
+    }
+  }
+
+  function popupPos(docX, docY) {
+    var vx = docX - window.scrollX, vy = docY - window.scrollY;
+    var pw = Math.min(320, window.innerWidth - 20);
+    var left = Math.max(10, Math.min(vx + 18, window.innerWidth - pw - 10));
+    var top = Math.min(Math.max(10, vy - 20), Math.max(10, window.innerHeight - 260));
+    return { left: left, top: top };
+  }
+
+  function renderUI() {
+    ui.innerHTML = '';
+
+    // --- floating bar ---
+    var bar = document.createElement('div');
+    bar.className = 'bar';
+    var listBtn = document.createElement('button');
+    listBtn.className = 'fab' + (panelOpen ? ' active' : '');
+    listBtn.innerHTML = '&#9776; <span class="badge">' + openCount() + '</span>';
+    listBtn.title = 'All comments';
+    listBtn.addEventListener('click', function () { panelOpen = !panelOpen; renderUI(); });
+    var addBtn = document.createElement('button');
+    addBtn.className = 'fab' + (commentMode ? ' active' : '');
+    addBtn.innerHTML = commentMode ? '&#10005; Done' : '&#128172; Comment';
+    addBtn.addEventListener('click', toggleMode);
+    bar.appendChild(listBtn);
+    bar.appendChild(addBtn);
+    ui.appendChild(bar);
+
+    // --- hint while in comment mode ---
+    if (commentMode && !draft) {
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.textContent = 'Click anywhere on the page to leave a comment';
+      ui.appendChild(hint);
+    }
+
+    // --- panel (thread list) ---
+    if (panelOpen) ui.appendChild(buildPanel());
+
+    // --- popup: draft composer or open thread ---
+    if (draft) ui.appendChild(buildComposerPopup());
+    else if (openThreadId && threads[openThreadId]) ui.appendChild(buildThreadPopup(openThreadId));
+  }
+
+  function buildPanel() {
+    var panel = document.createElement('div');
+    panel.className = 'panel';
+    var head = document.createElement('div');
+    head.className = 'panel-head';
+    head.innerHTML = '<span class="t">Comments</span>';
+    var tog = document.createElement('label');
+    tog.className = 'tog';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = showResolved;
+    cb.addEventListener('change', function () { showResolved = cb.checked; render(); });
+    tog.appendChild(cb);
+    tog.appendChild(document.createTextNode('show resolved'));
+    head.appendChild(tog);
+    panel.appendChild(head);
+
+    if (store.offline) {
+      var off = document.createElement('div');
+      off.className = 'offline';
+      off.textContent = 'Offline mode — comments only saved in this browser';
+      panel.appendChild(off);
+    }
+
+    var list = document.createElement('div');
+    list.className = 'panel-list';
+    var ids = sortedIds().filter(function (id) { return showResolved || !threads[id].resolved; });
+    if (!ids.length) {
+      var em = document.createElement('div');
+      em.className = 'empty';
+      em.textContent = 'No comments yet. Hit “Comment”, then click anywhere on the page.';
+      list.appendChild(em);
+    }
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      var fc = firstComment(t);
+      var n = Object.keys(t.comments || {}).length;
+      var item = document.createElement('div');
+      item.className = 'pitem' + (t.resolved ? ' resolved' : '');
+      var num = document.createElement('div');
+      num.className = 'pnum';
+      num.style.background = t.resolved ? '#9aa3ad' : colorFor(fc ? fc.name : '?');
+      num.textContent = threadNumber(tid);
+      var body = document.createElement('div');
+      body.className = 'pbody';
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
+      body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
+        + (n > 1 ? ' · ' + n + ' replies' : '')
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
+        + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
+      item.appendChild(num);
+      item.appendChild(body);
+      item.addEventListener('click', function () {
+        var go = function () {
+          var p = threadVisiblePos(t) || resolveAnchor(t.anchor || {});
+          if (p) window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
+          openThreadId = tid; draft = null; panelOpen = false;
+          setTimeout(render, 350);
+        };
+        if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
+          // Comment lives on another view of this site — switch to it first
+          location.hash = t.view || '#';
+          setTimeout(go, 450);
+        } else go();
+      });
+      list.appendChild(item);
+    });
+    panel.appendChild(list);
+
+    var foot = document.createElement('div');
+    foot.className = 'panel-foot';
+    foot.innerHTML = '<span>' + (myName ? 'Commenting as <b>' + esc(myName) + '</b>' : '') + '</span>';
+    if (myName) {
+      var chg = document.createElement('button');
+      chg.className = 'iconbtn';
+      chg.textContent = 'change name';
+      chg.addEventListener('click', function () {
+        myName = '';
+        try { localStorage.removeItem('claude-comments-name'); } catch (e) {}
+        renderUI();
+      });
+      foot.appendChild(chg);
+    }
+    panel.appendChild(foot);
+    return panel;
+  }
+
+  function nameField() {
+    var input = document.createElement('input');
+    input.placeholder = 'Your name';
+    input.maxLength = 40;
+    input.value = myName;
+    return input;
+  }
+
+  function buildComposerPopup() {
+    var pos = popupPos(draft.x, draft.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">New comment</span>';
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { draft = null; render(); });
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Write a comment…';
+    comp.appendChild(ta);
+    var row = document.createElement('div');
+    row.className = 'crow';
+    var cancel = document.createElement('button');
+    cancel.className = 'btn ghost'; cancel.textContent = 'Cancel';
+    cancel.addEventListener('click', function () { draft = null; render(); });
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Post';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      var t = {
+        anchor: draft.anchor, resolved: false, created: Date.now(),
+        view: currentView(), comments: {}
+      };
+      t.comments[uid()] = { name: name, text: text, ts: Date.now() };
+      store.createThread(t).then(function (tid) {
+        draft = null; commentMode = false; setMode(false);
+        if (tid) openThreadId = tid;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { draft = null; render(); }
+    });
+    row.appendChild(cancel);
+    row.appendChild(post);
+    comp.appendChild(row);
+    pop.appendChild(comp);
+    setTimeout(function () { (nameIn && !nameIn.value ? nameIn : ta).focus(); }, 30);
+    return pop;
+  }
+
+  function buildThreadPopup(tid) {
+    var t = threads[tid];
+    var p = threadVisiblePos(t)
+      || { x: window.scrollX + window.innerWidth / 2, y: window.scrollY + window.innerHeight / 2 };
+    var pos = popupPos(p.x, p.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">Comment #' + threadNumber(tid) + '</span>';
+    var resolveBtn = document.createElement('button');
+    resolveBtn.className = 'iconbtn';
+    resolveBtn.innerHTML = t.resolved ? '&#8634; Reopen' : '&#10003; Resolve';
+    resolveBtn.addEventListener('click', function () {
+      store.patchThread(tid, { resolved: !t.resolved }).then(function () {
+        if (!t.resolved === true && !showResolved) openThreadId = null;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    var del = document.createElement('button');
+    del.className = 'iconbtn danger';
+    del.innerHTML = '&#128465;';
+    del.title = 'Delete thread';
+    del.addEventListener('click', function () {
+      if (del.dataset.armed) {
+        store.deleteThread(tid).then(function () { openThreadId = null; return refresh(true); }).catch(syncFail);
+      } else {
+        del.dataset.armed = '1';
+        del.textContent = 'Delete?';
+        setTimeout(function () { delete del.dataset.armed; del.innerHTML = '&#128465;'; }, 2500);
+      }
+    });
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { openThreadId = null; render(); });
+    head.appendChild(resolveBtn);
+    head.appendChild(del);
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var box = document.createElement('div');
+    box.className = 'comments';
+    var cids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    cids.forEach(function (cid) {
+      var c = t.comments[cid];
+      var row = document.createElement('div');
+      row.className = 'comment';
+      row.innerHTML = '<div class="avatar" style="background:' + colorFor(c.name) + '">'
+        + esc((c.name || '?').trim().charAt(0).toUpperCase()) + '</div>'
+        + '<div class="cbody"><div class="cmeta"><b>' + esc(c.name) + '</b>' + timeAgo(c.ts) + '</div>'
+        + '<div class="ctext">' + esc(c.text) + '</div></div>';
+      box.appendChild(row);
+    });
+    pop.appendChild(box);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Reply…';
+    comp.appendChild(ta);
+    var row2 = document.createElement('div');
+    row2.className = 'crow';
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Reply';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      store.addComment(tid, { name: name, text: text, ts: Date.now() })
+        .then(function () { return refresh(true); }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { openThreadId = null; render(); }
+    });
+    row2.appendChild(post);
+    comp.appendChild(row2);
+    pop.appendChild(comp);
+    setTimeout(function () { box.scrollTop = box.scrollHeight; }, 30);
+    return pop;
+  }
+
+  function saveName(name) {
+    if (name && name !== 'Anonymous') {
+      myName = name;
+      try { localStorage.setItem('claude-comments-name', name); } catch (e) {}
+    }
+  }
+  function syncFail(err) {
+    alertBar('Couldn’t save — check your internet connection and try again.');
+    render();
+  }
+  var alertTimer = null;
+  function alertBar(msg) {
+    var el = document.createElement('div');
+    el.className = 'hint';
+    el.style.background = '#c0264b';
+    el.textContent = msg;
+    ui.appendChild(el);
+    clearTimeout(alertTimer);
+    alertTimer = setTimeout(function () { el.remove(); }, 4000);
+  }
+
+  /* ------------------- COMMENT MODE ------------------- */
+  function setMode(on) {
+    commentMode = on;
+    document.documentElement.classList.toggle('claude-commenting', on);
+  }
+  function toggleMode() {
+    setMode(!commentMode);
+    if (!commentMode) draft = null;
+    openThreadId = null;
+    render();
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!commentMode) return;
+    if (e.composedPath && e.composedPath().indexOf(host) !== -1) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var target = null;
+    var els = document.elementsFromPoint(e.clientX, e.clientY) || [];
+    for (var i = 0; i < els.length; i++) {
+      if (els[i] !== host && !host.contains(els[i])) { target = els[i]; break; }
+    }
+    draft = {
+      anchor: makeAnchor(e.clientX, e.clientY, target),
+      x: e.clientX + window.scrollX,
+      y: e.clientY + window.scrollY
+    };
+    openThreadId = null;
+    render();
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && commentMode && !draft) { setMode(false); render(); }
+  });
+
+  /* ------------------- SYNC LOOP ------------------- */
+  function refresh(force) {
+    return store.fetchAll().then(function (d) {
+      d = d || {};
+      var j = JSON.stringify(d);
+      if (force || j !== lastJSON) {
+        lastJSON = j;
+        threads = d;
+        render();
+      }
+    }).catch(function () { /* transient network error: keep current view */ });
+  }
+
+  var pollMs = ONLINE ? 4000 : 2500;
+  setInterval(function () {
+    // Don't re-render out from under someone mid-typing
+    var typing = root.activeElement && /TEXTAREA|INPUT/.test(root.activeElement.tagName || '');
+    if (!typing) refresh(false);
+  }, pollMs);
+
+  window.addEventListener('resize', function () { render(); });
+  // Single-file sites that switch views via the URL hash: re-render so each
+  // view only shows its own pins, and close any popup from the previous view.
+  window.addEventListener('hashchange', function () {
+    openThreadId = null; draft = null;
+    render();
+  });
+
+  /* ------------------- BOOT ------------------- */
+  function boot() {
+    mount();
+    refresh(true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+</body>
+</html>
