@@ -9,6 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Homemade+Apple&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:"PP Figures";font-style:normal;font-weight:100 900;font-display:swap;src:url("pp/fonts__pp-figures.woff2") format("woff2");unicode-range:U+0030-0039}
+@font-face{font-family:"PP Figures";font-style:italic;font-weight:100 900;font-display:swap;src:url("pp/fonts__pp-figures-italic.woff2") format("woff2");unicode-range:U+0030-0039}
+/* every number on the site sits at cap height: the digits come from EB Garamond's lining figures, letters stay IM Fell English */
+html{font-variant-numeric:lining-nums}
+
 /* ============================================================
    POSTMARK PANTRY · v9 · review round 1 applied
    Didone headlines · slab department type (Archer's cousin) · photographs carry the story
@@ -18,7 +23,7 @@
   --paper:#FBF8F1; --ivory:#F6F0E4; --linen:#E4DBC9; --oat:#EFE8D9;
   --ink:#2B2723; --ink-2:#574F47; --ink-3:#8C8377;
   --accent:#9A5B3C; --tint:#EBDCC6;
-  --did:"IM Fell English", "Georgia", "Times New Roman", serif;
+  --did:"PP Figures","IM Fell English", "Georgia", "Times New Roman", serif;
   --slab:"Zilla Slab", "Archer", "Rockwell", Georgia, serif;
   --body:"EB Garamond", Georgia, serif;
   --script:"Homemade Apple", cursive;
@@ -2291,7 +2296,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
   <video class="img" id="coverfilm" autoplay muted loop playsinline poster="pp/photos__oct__gate.webp" aria-label="A garden gate in October"></video>
   <img class="img" data-ed="cover" src="pp/photos__oct__gate.webp" width="2000" height="1116" alt="" style="opacity:0;transition:opacity 1.2s" id="coverimg">
   <div class="scrim"></div>
-  <svg class="pmark" viewBox="0 0 320 320" aria-hidden="true"><defs><filter id="inkCover" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="f"/><feDisplacementMap in="SourceGraphic" in2="f" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="3" seed="14" result="b"/><feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.75" result="m"/><feTurbulence type="fractalNoise" baseFrequency="1.8" numOctaves="1" seed="3" result="g"/><feColorMatrix in="g" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5 4.2" result="gm"/><feComposite in="m" in2="gm" operator="arithmetic" k1="1" result="mm"/><feComposite in="d" in2="mm" operator="in"/></filter></defs><g filter="url(#inkCover)"><g fill="none" stroke="currentColor"><circle cx="160" cy="160" r="150" stroke-width="3"/><circle cx="160" cy="160" r="112" stroke-width="1.4"/></g><defs><path id="cT" d="M160,160 m-131,0 a131,131 0 1 1 262,0"/><path id="cB" d="M160,160 m-131,0 a131,131 0 1 0 262,0"/></defs><text font-family="Zilla Slab, Georgia, serif" font-weight="600" font-size="22" letter-spacing="7" fill="currentColor"><textPath href="#cT" startOffset="50%" text-anchor="middle">POSTMARK PANTRY</textPath></text><text font-family="Zilla Slab, Georgia, serif" font-weight="600" font-size="16" letter-spacing="5" fill="currentColor"><textPath href="#cB" startOffset="50%" text-anchor="middle">ROOTED IN RHYTHM</textPath></text><text x="160" y="150" font-family="IM Fell English, Georgia, serif" font-style="italic" font-size="36" fill="currentColor" text-anchor="middle" data-ed="month">October</text><text x="160" y="196" font-family="IM Fell English, Georgia, serif" font-size="40" fill="currentColor" text-anchor="middle">2026</text></g></svg>
+  <svg class="pmark" viewBox="0 0 320 320" aria-hidden="true"><defs><filter id="inkCover" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="f"/><feDisplacementMap in="SourceGraphic" in2="f" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="3" seed="14" result="b"/><feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.75" result="m"/><feTurbulence type="fractalNoise" baseFrequency="1.8" numOctaves="1" seed="3" result="g"/><feColorMatrix in="g" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5 4.2" result="gm"/><feComposite in="m" in2="gm" operator="arithmetic" k1="1" result="mm"/><feComposite in="d" in2="mm" operator="in"/></filter></defs><g filter="url(#inkCover)"><g fill="none" stroke="currentColor"><circle cx="160" cy="160" r="150" stroke-width="3"/><circle cx="160" cy="160" r="112" stroke-width="1.4"/></g><defs><path id="cT" d="M160,160 m-131,0 a131,131 0 1 1 262,0"/><path id="cB" d="M160,160 m-131,0 a131,131 0 1 0 262,0"/></defs><text font-family="Zilla Slab, Georgia, serif" font-weight="600" font-size="22" letter-spacing="7" fill="currentColor"><textPath href="#cT" startOffset="50%" text-anchor="middle">POSTMARK PANTRY</textPath></text><text font-family="Zilla Slab, Georgia, serif" font-weight="600" font-size="16" letter-spacing="5" fill="currentColor"><textPath href="#cB" startOffset="50%" text-anchor="middle">ROOTED IN RHYTHM</textPath></text><text x="160" y="150" font-family="PP Figures, IM Fell English, Georgia, serif" font-style="italic" font-size="36" fill="currentColor" text-anchor="middle" data-ed="month">October</text><text x="160" y="196" font-family="PP Figures, IM Fell English, Georgia, serif" font-size="40" fill="currentColor" text-anchor="middle">2026</text></g></svg>
   <button class="egg" data-ed="egg" style="--x:51%;--y:72%" onclick="location.hash='story'" aria-label="Something is tucked by the gate. Read our story."><span class="tip" aria-hidden="true">sweet friend, welcome in</span></button>
   <div class="lines">
     <div class="label">
@@ -3238,6 +3243,7 @@ function applyEdition(m){
   document.querySelectorAll('.cover .once').forEach(e=>e.textContent=ed.once||('Once upon a '+ed.name+','));
   ci.alt=ed.coverAlt||'';cf.setAttribute('aria-label',ed.coverAlt||'');
   const eg=document.querySelector('.cover .egg');if(eg){eg.setAttribute('aria-label',ed.eggLabel||'Read our story.');const t=eg.querySelector('.tip');if(t)t.textContent=ed.tip||'sweet friend, welcome in'}
+  document.querySelectorAll('[data-ed="corner"]').forEach(e=>e.src=A('assets/illustration/'+(ed.corner||(m===11?'november-corner':(se==='winter'?'december-corner':'october-corner')))+'.webp'));
   document.querySelectorAll('[data-ed="detail"]').forEach(e=>e.src=A('assets/illustration/'+(ed.detail||'october-detail')+'.webp'));
   document.querySelectorAll('[data-ed="hero"]').forEach(e=>e.alt=ed.heroAlt||'');
   document.querySelectorAll('.cal-hero .art').forEach(e=>e.src=A('assets/illustration/months/'+PAD(m)+(m>=10?'-hero-cut':'-hero')+'.webp'));
