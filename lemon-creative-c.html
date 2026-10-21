@@ -3,929 +3,1083 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lemon Creative — social media, wedding content & photography in Dallas, TX</title>
-<meta name="description" content="Lemon Creative is a Dallas-based creative studio: boutique social media management, iPhone wedding content creation, and bright, candid photography.">
+<title>Lemon Creative — Direction C · Sunny Poster</title>
+<meta name="description" content="Lemon Creative is a Dallas-based studio for boutique social media management, iPhone wedding content, and bright, candid photography.">
 <link rel="icon" type="image/png" href="assets/lemon-creative/lemon_slice.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Yellowtail&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   LEMON CREATIVE — Direction C: "Sunny"
-   Simple and very bright. White base, lots of air, big bold
-   Montserrat headlines, and the brand colors used as flat,
-   confident accents (color bars, tags, buttons, one bold block
-   per page). Script appears sparingly as a hand-written aside.
-   Motion is quiet: fades, lifts, one marquee.
-   Script = Yellowtail stand-in for Floraterís.
+   LEMON CREATIVE — Direction C: "Sunny Poster"
+   Full-bleed brand-color blocks with slanted edges, wide display
+   type, sticker-edged photo cut-outs, rotating badges, drifting
+   film strips. Type: Unbounded (display) + Montserrat (body).
+   Every block maps to a Shopify section with editable settings.
    ============================================================ */
-
 :root{
-  --white:#FFFFFF;
-  --ivory:#FEFDEC;
-  --banana:#F7EF75;
-  --green:#00A271;
-  --pink:#F27EA2;
-  --icy:#BBE6FB;
-  --denim:#6B8DC8;
-  --ink:#131C2A;
-  --line:#E9E7D6;
-  --muted:#5C6473;
-
-  --script:"Yellowtail","Floraterís",cursive;
+  --ivory:#FEFDEC; --banana:#F7EF75; --green:#00A271; --pink:#F27EA2;
+  --icy:#BBE6FB; --denim:#6B8DC8; --ink:#131C2A;
+  --pink-lt:#FBD3E0; --green-dk:#00805a; --pink-dk:#d9628a; --denim-dk:#4f71ad;
+  --disp:"Unbounded",system-ui,sans-serif;
   --sans:"Montserrat",system-ui,sans-serif;
-  --r:24px;
-  --ease:cubic-bezier(.2,.8,.2,1);
+  --hh:76px; --gut:clamp(1rem,4vw,3rem); --slant:4vw;
+  --ease:cubic-bezier(.22,.8,.22,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{font-family:var(--sans);color:var(--ink);background:var(--white);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--banana)}
-img{max-width:100%;display:block}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;max-width:100%}
+figure{margin:0}
 a{color:inherit}
+p{margin:0 0 1em}
+h1,h2,h3,h4{margin:0;font-family:var(--disp);font-weight:800;line-height:1.02;letter-spacing:-.02em}
+.lt{font-weight:400}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--gut)}
+.lede{font-size:clamp(1.05rem,1.3vw,1.2rem);max-width:56ch}
+.small{font-size:.86rem}
+.ph{display:inline-block;font:700 .62rem/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;background:#fff3b0;color:#7a5a00;border:1px dashed #c9a400;border-radius:6px;padding:.1rem .45rem;vertical-align:middle;margin-left:.4rem}
+:focus-visible{outline:3px solid var(--denim);outline-offset:3px;border-radius:6px}
 
-/* ---------- Type ---------- */
-h1,h2,h3,h4{font-weight:800;line-height:1.02;letter-spacing:-.025em}
-h1{font-size:clamp(2.6rem,5.2vw,4.6rem)}
-h2{font-size:clamp(2.1rem,4.4vw,3.6rem)}
-h3{font-size:1.35rem;letter-spacing:-.01em}
-.script{font-family:var(--script);font-weight:400;letter-spacing:0;line-height:1}
-.aside{font-family:var(--script);font-size:clamp(1.6rem,2.6vw,2.2rem);color:var(--pink);display:inline-block;transform:rotate(-3deg);margin-bottom:.4rem}
-.aside.green{color:var(--green)} .aside.denim{color:var(--denim)}
-.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem}
-.eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--pink)}
-.eyebrow.green::before{background:var(--green)} .eyebrow.banana::before{background:var(--banana)} .eyebrow.icy::before{background:var(--icy)} .eyebrow.denim::before{background:var(--denim)}
-.hl{background:linear-gradient(transparent 55%,var(--banana) 55%)}
-.hl.pink{background:linear-gradient(transparent 55%,var(--pink) 55%)} .hl.icy{background:linear-gradient(transparent 55%,var(--icy) 55%)} .hl.green{background:linear-gradient(transparent 55%,#9FE2C6 55%)}
-.lead{font-size:1.1rem;color:var(--muted);max-width:56ch;line-height:1.7}
-.center{text-align:center} .center .lead{margin-inline:auto}
-.muted{color:var(--muted)}
-.ph{display:inline-block;background:var(--banana);color:var(--ink);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.1rem .5rem;border-radius:6px;border:1px dashed var(--ink);vertical-align:middle;margin:0 .2rem;line-height:1.6}
-.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(1.2rem,4vw,2.5rem);position:relative}
-.sec{padding:clamp(4rem,8vw,7rem) 0;position:relative}
-.sec.tight{padding:clamp(2.5rem,5vw,4rem) 0}
-.bg-ivory{background:var(--ivory)} .bg-banana{background:var(--banana)} .bg-pink{background:var(--pink)} .bg-icy{background:var(--icy)} .bg-green{background:var(--green);color:var(--white)} .bg-denim{background:var(--denim);color:var(--white)}
-.bg-green .lead,.bg-denim .lead,.bg-green .eyebrow,.bg-denim .eyebrow{color:rgba(255,255,255,.85)}
+/* stickers & tags */
+.stk{display:inline-block;font:700 .78rem/1 var(--sans);padding:.55rem .95rem;border-radius:999px;background:var(--ivory);color:var(--ink);box-shadow:0 6px 16px -8px rgba(19,28,42,.35);transform:rotate(-2deg)}
+.stk.pink{background:var(--pink);color:#fff}.stk.banana{background:var(--banana)}.stk.icy{background:var(--icy)}.stk.green{background:var(--green);color:#fff}.stk.denim{background:var(--denim);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font:700 .92rem/1 var(--sans);padding:1.05rem 1.7rem;border-radius:999px;border:0;cursor:pointer;text-decoration:none;background:var(--ink);color:var(--ivory);transition:transform .35s var(--ease),box-shadow .35s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 24px -14px rgba(19,28,42,.6)}
+.btn.pink{background:var(--pink);color:#fff}.btn.denim{background:var(--denim);color:#fff}.btn.green{background:var(--green);color:#fff}.btn.banana{background:var(--banana);color:var(--ink)}.btn.ivory{background:var(--ivory);color:var(--ink)}
+.link{font-weight:700;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 2px no-repeat;padding-bottom:3px;transition:background-size .35s var(--ease)}
+.link:hover{background-size:0 2px;background-position:100% 100%}
+.btns{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center}
 
-/* ---------- Buttons ---------- */
-.btn{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;letter-spacing:.01em;text-decoration:none;padding:1rem 1.7rem;border-radius:999px;background:var(--ink);color:var(--white);border:2px solid var(--ink);cursor:pointer;font-family:inherit;transition:transform .35s var(--ease),background .25s,color .25s,border-color .25s}
-.btn::after{content:"→";transition:transform .3s var(--ease)}
-.btn:hover{transform:translateY(-3px)} .btn:hover::after{transform:translateX(4px)}
-.btn.pink{background:var(--pink);border-color:var(--pink);color:var(--ink)} .btn.pink:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
-.btn.green{background:var(--green);border-color:var(--green);color:var(--white)} .btn.green:hover{background:var(--ink);border-color:var(--ink)}
-.btn.banana{background:var(--banana);border-color:var(--banana);color:var(--ink)} .btn.banana:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
-.btn.denim{background:var(--denim);border-color:var(--denim);color:var(--white)} .btn.denim:hover{background:var(--ink);border-color:var(--ink)}
-.btn.white{background:var(--white);border-color:var(--white);color:var(--ink)} .btn.white:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
-.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)} .btn.ghost:hover{background:var(--ink);color:var(--white)}
-.btn.sm{padding:.65rem 1.2rem;font-size:.8rem}
-.btn-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
-.link{font-weight:700;text-decoration:none;border-bottom:3px solid var(--banana);padding-bottom:.1rem;transition:border-color .25s}
-.link:hover{border-color:var(--pink)}
+/* ---------- header ---------- */
+.hdr{position:fixed;inset:0 0 auto;z-index:60;height:var(--hh);display:flex;align-items:center;transition:background .3s,box-shadow .3s}
+.hdr.solid{background:rgba(254,253,236,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(19,28,42,.08)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:none}
+.hdr .logo img{height:42px;width:auto}
+.nav{display:flex;gap:1.8rem;align-items:center;font-weight:600;font-size:.9rem}
+.nav a{text-decoration:none;position:relative}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:3px;border-radius:3px;background:var(--pink);transition:right .3s var(--ease)}
+.nav a:not(.btn):hover::after,.nav a.cur::after{right:0}
+.nav .btn{padding:.8rem 1.25rem;font-size:.85rem}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+.burger span{position:absolute;left:10px;right:10px;height:3px;border-radius:3px;background:var(--ink);transition:.3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:26px}
+body.menu .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+body.menu .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:55;background:var(--banana);padding:calc(var(--hh) + 2rem) var(--gut) 2rem;display:flex;flex-direction:column;gap:.5rem;clip-path:circle(0 at calc(100% - 40px) 38px);transition:clip-path .6s var(--ease);visibility:hidden}
+body.menu .sheet{clip-path:circle(150% at calc(100% - 40px) 38px);visibility:visible}
+.sheet a{font:800 clamp(2rem,9vw,3.4rem)/1.1 var(--disp);color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.sheet .btn{margin-top:1.5rem;align-self:flex-start;font:700 1rem var(--sans)}
+@media (max-width:980px){.nav{display:none}.burger{display:block}}
 
-/* ---------- Header ---------- */
-.site-header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{max-width:1180px;margin-inline:auto;padding:.9rem clamp(1.2rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.nav-logo img{height:44px}
-.nav-links{list-style:none;display:flex;align-items:center;gap:clamp(.9rem,2.2vw,1.8rem)}
-.nav-links a{text-decoration:none;font-weight:600;font-size:.92rem;padding:.3rem 0;border-bottom:3px solid transparent;transition:border-color .25s}
-.nav-links a:hover,.nav-links a.active{border-color:var(--banana)}
-.nav-links .btn{border-bottom:2px solid var(--pink)} .nav-links .btn.active{border-color:var(--pink)}
-.has-sub{position:relative}
-.has-sub .sub{position:absolute;top:100%;left:0;transform:translateY(8px);background:var(--white);border:1px solid var(--line);border-radius:16px;padding:.5rem;display:flex;flex-direction:column;min-width:250px;opacity:0;pointer-events:none;transition:.25s var(--ease);box-shadow:0 14px 40px rgba(19,28,42,.1)}
-.has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;pointer-events:auto;transform:translateY(2px)}
-.sub a{padding:.6rem .8rem;border-radius:10px;border:0!important;font-size:.9rem} .sub a:hover{background:var(--ivory)}
-.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem}
-.burger span{width:26px;height:3px;background:var(--ink);border-radius:3px;transition:.3s}
-.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)} .burger.open span:nth-child(2){opacity:0} .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.view{display:none}.view.on{display:block}
 
-/* ---------- Hero ---------- */
-.hero{padding:clamp(3rem,7vw,6rem) 0 clamp(3rem,6vw,5rem);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-.hero h1{margin:.4rem 0 1.4rem}
-.hero h1 .script{color:var(--pink);font-size:1.12em;display:inline-block;transform:rotate(-2deg) translateY(.05em)}
-.hero-visual{position:relative}
-.hero-visual .main{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%;position:relative;z-index:2}
-.blob{position:absolute;inset:auto -8% -8% auto;width:78%;height:78%;background:var(--banana);border-radius:46% 54% 50% 50%/55% 45% 55% 45%;z-index:1;animation:blob 14s ease-in-out infinite}
-@keyframes blob{0%,100%{border-radius:46% 54% 50% 50%/55% 45% 55% 45%;transform:rotate(0)}50%{border-radius:55% 45% 42% 58%/48% 56% 44% 52%;transform:rotate(6deg)}}
-.chip{position:absolute;z-index:3;background:var(--white);border-radius:999px;padding:.6rem 1rem;font-weight:700;font-size:.8rem;display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 10px 30px rgba(19,28,42,.12);animation:bob 6s ease-in-out infinite}
-.chip i{width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block}
-.chip.a{top:8%;left:-6%} .chip.b{bottom:14%;right:-6%;animation-delay:-3s} .chip.b i{background:var(--pink)}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:1.6rem;justify-content:start;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
-.hero-stats b{display:block;font-size:1.7rem;font-weight:800;letter-spacing:-.02em} .hero-stats span{font-size:.8rem;color:var(--muted);font-weight:600}
+/* ---------- color blocks with slanted edges ---------- */
+.blk{position:relative;padding:clamp(4.5rem,9vw,8rem) 0;overflow:hidden}
+.blk.slant{clip-path:polygon(0 0,100% var(--slant),100% 100%,0 100%);margin-top:calc(var(--slant) * -1);padding-top:calc(var(--slant) + clamp(4.5rem,9vw,8rem))}
+.blk.slant.alt{clip-path:polygon(0 var(--slant),100% 0,100% 100%,0 100%)}
+.bg-banana{background:#FBF4C8 url(assets/lemon-creative/art/bg/04-banana-cream-linen.webp) center/700px}
+.bg-pink{background:#FBE3EB url(assets/lemon-creative/art/bg/03-petal-pink-ticking.webp) center/560px}
+.bg-icy{background:#E6F5FD url(assets/lemon-creative/art/bg/02-icy-blue-gingham.webp) center/620px}
+.bg-green{background:#E3F3EA url(assets/lemon-creative/art/bg/05-soft-green-stripe.webp) center/620px}
+.bg-denim{background:var(--denim) url(assets/lemon-creative/art/bg/06-denim-woven-stripe.webp) center/620px;background-blend-mode:multiply;color:var(--ivory)}
+.bg-solid-pink{background:var(--pink);color:#fff}
+.bg-solid-green{background:var(--green);color:#fff}
+.bg-solid-banana{background:var(--banana)}
+.bg-solid-icy{background:var(--icy)}
+.bg-ivory{background:var(--ivory) url(assets/lemon-creative/art/bg/01-ivory-cotton-paper.webp) center/700px}
+.head{max-width:75%;margin-bottom:clamp(2rem,4vw,3.2rem)}
+.head h2{font-size:clamp(2rem,4vw,3.6rem);margin-bottom:1rem}
+.head p{margin:0;max-width:60ch}
+@media (max-width:820px){.head{max-width:100%}}
 
-/* ---------- Marquee ---------- */
-.marquee{overflow:hidden;white-space:nowrap;background:var(--banana);padding:.85rem 0}
-.marquee.pink{background:var(--pink)} .marquee.icy{background:var(--icy)} .marquee.green{background:var(--green);color:var(--white)}
-.marquee-track{display:inline-block;animation:marq 32s linear infinite}
-.marquee:hover .marquee-track{animation-play-state:paused}
-.marquee span{font-weight:800;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;margin:0 1.6rem}
-.marquee span::after{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ink);margin-left:3.2rem;vertical-align:middle;opacity:.55}
-.marquee.green span::after{background:var(--white)}
-@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ---------- photo cut-outs ---------- */
+.cut{position:relative;overflow:hidden;background:#fff;border:9px solid var(--ivory);box-shadow:0 2px 0 rgba(19,28,42,.06),0 34px 70px -34px rgba(19,28,42,.55)}
+.cut img,.cut video{width:100%;height:100%;object-fit:cover}
+.cut.arch{border-radius:999px 999px 30px 30px;aspect-ratio:3/4}
+.cut.round{border-radius:50%;aspect-ratio:1}
+.cut.tall{border-radius:30px;aspect-ratio:9/16}
+.cut.wide{border-radius:30px;aspect-ratio:4/3}
+.cut.scal{border-radius:30px;aspect-ratio:4/5}
+.cap{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);font:700 .8rem/1.2 var(--sans);color:var(--ink);background:#fff;padding:.42rem .8rem;border-radius:999px;box-shadow:0 4px 14px -4px rgba(19,28,42,.35)}
 
-/* ---------- Service cards ---------- */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
-.svc{position:relative;text-decoration:none;background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s;display:flex;flex-direction:column}
-.svc:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(19,28,42,.1)}
-.svc .bar{height:10px;background:var(--pink)} .svc.b .bar{background:var(--icy)} .svc.c .bar{background:var(--green)}
-.svc .pic{overflow:hidden} .svc img{aspect-ratio:4/3;object-fit:cover;width:100%;transition:transform .7s var(--ease)} .svc:hover img{transform:scale(1.05)}
-.svc .body{padding:1.5rem 1.5rem 1.7rem;flex:1;display:flex;flex-direction:column}
-.svc .num{font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--muted);margin-bottom:.5rem}
-.svc h3{margin-bottom:.5rem}
-.svc p{font-size:.95rem;color:var(--muted);flex:1}
-.svc .go{margin-top:1.2rem;font-weight:700;font-size:.9rem} .svc .go::after{content:" →";display:inline-block;transition:transform .3s} .svc:hover .go::after{transform:translateX(4px)}
-.tag{position:absolute;top:22px;left:18px;z-index:2;background:var(--banana);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .75rem;border-radius:999px}
+/* rotating badge */
+.badge{position:absolute;width:clamp(96px,10vw,150px);aspect-ratio:1;animation:spin 18s linear infinite;z-index:4;filter:drop-shadow(0 10px 18px rgba(19,28,42,.25))}
+.badge svg{width:100%;height:100%}
+.badge text{font:800 11.5px var(--disp);letter-spacing:.2em;text-transform:uppercase}
+.badge .bl{width:46%;height:46%;position:absolute;inset:0;margin:auto;animation:spin 18s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* ---------- Split ---------- */
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;padding-top:var(--hh);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:var(--ink)}
+.hero .bgv{position:absolute;inset:0;z-index:0}
+.hero .bgv video{width:100%;height:100%;object-fit:cover}
+.hero .bgv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(187,230,251,.72),rgba(254,253,236,.9) 48%,rgba(254,253,236,.98) 100%)}
+.hero .bgv video{filter:saturate(1.15)}
+.hero .top{position:relative;z-index:1;padding:clamp(1.5rem,4vw,3rem) 0 1.5rem}
+.hero h1{font-size:clamp(2.7rem,7.4vw,7.6rem);line-height:.98;letter-spacing:-.035em;max-width:14ch}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .04em .06em 0;margin-right:.18em}
+.hero h1 .w i{display:inline-block;font-style:normal;transform:translateY(110%);animation:rise .9s var(--ease) forwards;animation-delay:calc(var(--d) * .08s)}
+.hero h1 .c1 i{color:var(--pink-dk)}.hero h1 .c2 i{color:var(--green-dk)}.hero h1 .c3 i{color:var(--denim-dk)}
+@keyframes rise{to{transform:none}}
+.hero .sub{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2rem;align-items:end;margin-top:1.6rem}
+.hero .sub .lede{margin:0}
+.hero .sub .btns{justify-content:flex-end}
+.strip{position:relative;z-index:1;padding:1.5rem 0 2.2rem;overflow:hidden;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.strip .run{display:flex;gap:16px;width:max-content;animation:driftx var(--sd,80s) linear infinite}
+.strip:hover .run{animation-play-state:paused}
+@keyframes driftx{to{transform:translateX(-50%)}}
+.strip .cut{height:clamp(170px,24vh,250px);width:auto;flex:none;border-width:6px}
+.strip .cut.tall{aspect-ratio:9/16}.strip .cut.scal{aspect-ratio:4/5}
+.strip .cut:nth-child(3n){transform:rotate(1.5deg)}.strip .cut:nth-child(3n+1){transform:rotate(-1.5deg)}
+.hero .badge{right:clamp(1rem,5vw,5rem);top:calc(var(--hh) + 1.5rem);z-index:2}
+@media (max-width:820px){.hero .sub{grid-template-columns:1fr}.hero .sub .btns{justify-content:flex-start}.hero .badge{display:none}.hero h1{max-width:none}}
+
+/* ---------- ticker ---------- */
+.tick{overflow:hidden;white-space:nowrap;padding:1rem 0;position:relative;z-index:2}
+.tick .run{display:inline-flex;gap:1.8rem;align-items:center;animation:driftx 34s linear infinite;font:800 .95rem var(--disp);letter-spacing:.06em;text-transform:uppercase}
+.tick img{width:26px;height:auto}
+.tick.ink{background:var(--ink);color:var(--ivory)}
+.tick.denim{background:var(--denim);color:#fff}
+.tick.banana{background:var(--banana)}
+.tick.pink{background:var(--pink);color:#fff}
+.tick.green{background:var(--green);color:#fff}
+.tick.icy{background:var(--icy)}
+
+/* ---------- service posters ---------- */
+.poster .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.poster h2{font-size:clamp(2.2rem,4.6vw,4.4rem);margin:1rem 0 1.2rem}
+.poster .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 1.8rem;padding:0;list-style:none}
+.poster .chips li{font-size:.82rem;font-weight:700;padding:.45rem .9rem;border-radius:999px;background:rgba(255,255,255,.55)}
+.poster.dark .chips li{background:rgba(255,255,255,.18)}
+.poster .art{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center}
+.poster .art .cut.arch{width:min(100%,380px);z-index:2}
+.poster .art .cut.tall{position:absolute;width:clamp(110px,11vw,170px);left:0;bottom:-2%;transform:rotate(-7deg);z-index:3}
+.poster .art .cut.round{position:absolute;width:clamp(120px,13vw,200px);right:0;top:0;transform:rotate(6deg);z-index:1}
+.poster .art .badge{left:4%;top:0}
+.poster.flip .wrap>div:first-child{order:2}
+.poster .art .cut.arch .cap,.shero .art .cut.arch .cap{left:auto;right:12px}
+.poster .price{font:700 clamp(1.2rem,1.6vw,1.5rem)/1 var(--disp);margin-bottom:1.5rem;letter-spacing:-.01em}
+@media (max-width:900px){.poster .wrap{grid-template-columns:1fr}.poster.flip .wrap>div:first-child{order:0}.poster .art{min-height:0;margin-top:1.5rem}.poster .art .cut.arch{width:min(78%,320px)}.poster .art .badge{display:none}}
+
+/* ---------- meet ---------- */
+.meet .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.meet .art{position:relative}
+.meet .art .cut.round{width:min(100%,440px);margin:0 auto}
+.meet .art .cut.tall{position:absolute;width:clamp(110px,12vw,180px);right:-2%;bottom:-6%;transform:rotate(7deg);z-index:3}
+.meet .art .badge{left:-2%;top:-2%}
+.meet h2{font-size:clamp(2rem,3.8vw,3.4rem);margin-bottom:1rem}
+.meet .facts{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.3rem 0 1.8rem}
+.meet .facts .stk:nth-child(2){transform:rotate(2deg)}.meet .facts .stk:nth-child(3){transform:rotate(-1deg)}
+@media (max-width:860px){.meet .wrap{grid-template-columns:1fr}.meet .art .cut.round{width:min(80%,340px)}.meet .art .badge{display:none}}
+
+/* ---------- rail (auto) ---------- */
+.rail{overflow:hidden}
+.rail .rh{padding:0 var(--gut);margin:0 auto clamp(2rem,4vw,3rem);max-width:1360px}
+.rail h2{font-size:clamp(2rem,4vw,3.6rem);max-width:75%}
+.rail .run{display:flex;gap:22px;width:max-content;animation:driftx var(--rd,70s) linear infinite;padding:0 var(--gut)}
+.rail:hover .run{animation-play-state:paused}
+.rail .card{flex:none;width:clamp(200px,17vw,260px)}
+.rail .card:nth-child(odd){transform:rotate(-1.5deg)}.rail .card:nth-child(even){transform:rotate(1.5deg) translateY(14px)}
+.rail .card h4{font:700 .95rem/1.25 var(--disp);margin:.9rem 0 .15rem;letter-spacing:-.01em}
+.rail .card p{font-size:.84rem;margin:0;opacity:.8}
+@media (max-width:820px){.rail h2{max-width:100%}.rail .card{width:58vw}}
+
+/* ---------- who tiles ---------- */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.who a{position:relative;display:flex;flex-direction:column;border-radius:30px;padding:1.4rem 1.5rem 1.7rem;text-decoration:none;overflow:hidden;transition:transform .45s var(--ease)}
+.who a:hover{transform:translateY(-8px) rotate(-.6deg)}
+.who a .cut{width:58%;align-self:flex-end;margin:-2.4rem -1.2rem .4rem 0;transform:rotate(6deg);transition:transform .6s var(--ease)}
+.who a:hover .cut{transform:rotate(0) scale(1.04)}
+.who a h3{font-size:clamp(1.25rem,1.6vw,1.5rem);margin:.6rem 0 .6rem}
+.who a p{font-size:.92rem;margin:0;position:relative;opacity:.92}
+.who .w1{background:var(--pink);color:#fff}.who .w2{background:var(--icy)}.who .w3{background:var(--green);color:#fff}.who .w4{background:var(--banana)}
+@media (max-width:900px){.who{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.who{grid-template-columns:1fr}.who a .cut{width:44%}}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;counter-reset:s}
+.step{background:rgba(255,255,255,.6);border-radius:28px;padding:1.6rem 1.5rem 1.7rem;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--pink);color:#fff;font:800 1.1rem var(--disp);margin-bottom:1.1rem;transform:rotate(-6deg)}
+.step:nth-child(2)::before{background:var(--denim)}.step:nth-child(3)::before{background:var(--green)}.step:nth-child(4)::before{background:var(--banana);color:var(--ink)}
+.step h4{font-size:1.15rem;margin-bottom:.5rem}
+.step p{font-size:.93rem;margin:0}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ---------- love notes ---------- */
+.notes .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.notes .art{position:relative}
+.notes .art .cut.scal{width:min(100%,380px);transform:rotate(-3deg)}
+.notes .art .badge{right:-4%;bottom:-6%}
+.notes .lbl{margin-bottom:1.2rem;display:inline-block}
+.quotes{display:grid}
+.quote{grid-area:1/1;opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s var(--ease);pointer-events:none}
+.quote.on{opacity:1;transform:none;pointer-events:auto}
+.quote blockquote{margin:0;font:700 clamp(1.4rem,2.5vw,2.3rem)/1.2 var(--disp);letter-spacing:-.02em}
+.quote cite{display:block;margin-top:1.3rem;font:700 .95rem var(--sans);font-style:normal}
+.quote cite span{font-weight:500;opacity:.85}
+.qnav{display:flex;gap:.8rem;align-items:center;margin-top:1.8rem}
+.qnav button{width:48px;height:48px;border-radius:50%;border:0;background:var(--banana);color:var(--ink);cursor:pointer;font-size:1.2rem;font-weight:700}
+.qnav span{font:600 .9rem var(--sans);min-width:4.5em}
+@media (max-width:780px){.notes .wrap{grid-template-columns:1fr}.notes .art .cut.scal{width:min(70%,280px)}.notes .art .badge{display:none}}
+
+/* ---------- faq ---------- */
+.faq h2{font-size:clamp(2rem,4vw,3.6rem);max-width:75%;margin-bottom:2rem}
+.qa{border-top:2px solid var(--ink)}
+.qa details{border-bottom:2px solid var(--ink)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.25rem 0;font:700 clamp(1rem,1.4vw,1.25rem)/1.25 var(--disp);letter-spacing:-.01em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;width:36px;height:36px;border-radius:50%;background:var(--banana);position:relative;transition:transform .35s var(--ease),background .3s}
+.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:3px;border-radius:3px;background:var(--ink);transform:translate(-50%,-50%)}
+.qa summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa details[open] summary i{transform:rotate(45deg);background:var(--pink)}
+.qa .ans{overflow:hidden;transition:height .4s var(--ease)}
+.qa .ans p{padding-bottom:1.3rem;margin:0;max-width:60ch}
+@media (max-width:860px){.faq h2{max-width:100%}}
+
+/* ---------- video CTA ---------- */
+.vcta{position:relative;min-height:80svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;clip-path:polygon(0 var(--slant),100% 0,100% 100%,0 100%);margin-top:calc(var(--slant) * -1);padding:calc(var(--slant) + 4rem) 0 4rem}
+.vcta video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcta::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(79,113,173,.74),rgba(107,141,200,.84));z-index:1}
+.vcta .wrap{position:relative;z-index:2}
+.vcta h2{font-size:clamp(2.2rem,5vw,4.8rem);margin-bottom:1.3rem;letter-spacing:-.03em}
+.vcta h2 .lt{display:block;color:var(--banana);font-weight:500}
+.vcta p{margin:0 auto 2.2rem;max-width:44ch;font-size:1.1rem}
+.vcta .btns{justify-content:center}
+
+/* ---------- footer ---------- */
+footer{background:var(--ivory);position:relative;padding:5rem 0 2rem;overflow:hidden;border-top:1px solid rgba(19,28,42,.08)}
+footer::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(242,126,162,.22) 0 3px,transparent 3px 8px,rgba(242,126,162,.22) 8px 11px,transparent 11px 46px)}
+footer .wrap{position:relative}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem}
+.fgrid h5{font:800 .78rem var(--disp);letter-spacing:.04em;text-transform:uppercase;margin:0 0 1rem;color:var(--pink-dk)}
+.fgrid a{display:block;text-decoration:none;margin-bottom:.45rem;font-size:.93rem}
+.fgrid a:hover{color:var(--green-dk)}
+.fgrid .brand img{width:230px;margin:-1.6rem 0 .2rem -1rem}
+.signup{display:flex;gap:.5rem;margin-top:1rem}
+.signup input{flex:1;min-width:0;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:.8rem 1.1rem;font:600 .9rem var(--sans)}
+.signup .btn{padding:.8rem 1.2rem}
+.bigmark{display:block;width:clamp(110px,12vw,170px);height:auto;margin:3.5rem auto 2rem;animation:spin 30s linear infinite}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;border-top:2px solid rgba(19,28,42,.12);padding-top:1.4rem}
+.legal a{text-decoration:none}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}.fgrid .brand{grid-column:1/-1}}
+
+/* ---------- service page heroes ---------- */
+.shero{min-height:100svh;padding-top:var(--hh);position:relative;overflow:hidden;display:flex;align-items:center}
+.shero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center;width:100%;padding-block:3rem}
+.shero h1{font-size:clamp(2.4rem,5.2vw,5.2rem);margin:1rem 0 1.3rem;letter-spacing:-.03em}
+.shero h1 .lt{display:block;font-weight:500}
+.shero .art{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}
+.shero .art .cut.arch{width:min(100%,380px);z-index:2}
+.shero .art .cut.tall{position:absolute;width:clamp(110px,11vw,170px);left:0;bottom:-2%;transform:rotate(-7deg);z-index:3}
+.shero .art .cut.round{position:absolute;width:clamp(120px,13vw,200px);right:0;top:0;transform:rotate(6deg);z-index:1}
+.shero .art .badge{left:4%;top:0}
+@media (max-width:900px){.shero .wrap{grid-template-columns:1fr}.shero .art{min-height:0;margin-top:1rem}.shero .art .cut.arch{width:min(78%,320px)}.shero .art .badge{display:none}}
+
+/* plan tags */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;align-items:start}
+.plan{border-radius:30px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 26px 60px -34px rgba(19,28,42,.5);transition:transform .5s var(--ease)}
+.plan:nth-child(1){background:var(--pink);color:#fff;transform:rotate(-1.4deg)}
+.plan:nth-child(2){background:var(--icy);transform:translateY(2rem) rotate(1deg)}
+.plan:nth-child(3){background:var(--green);color:#fff;transform:rotate(-.8deg)}
+.plan:hover{transform:translateY(-8px) rotate(0)}
+.plan .pm{aspect-ratio:16/11;overflow:hidden;position:relative;border-bottom:8px solid var(--ivory)}
+.plan .pm video{width:100%;height:100%;object-fit:cover}
+.plan .pm .stk{position:absolute;left:14px;top:14px}
+.plan .pb{padding:1.5rem 1.6rem 1.8rem;display:flex;flex-direction:column;flex:1}
+.plan .who{font-size:.82rem;font-weight:700;opacity:.9}
+.plan h3{font-size:clamp(1.4rem,1.9vw,1.8rem);margin:.4rem 0 .3rem}
+.plan .sub{font-size:.9rem;opacity:.85;margin-bottom:1.1rem}
+.plan ul{padding:0;margin:0 0 1.5rem;list-style:none;flex:1}
+.plan li{padding:.45rem 0 .45rem 1.7rem;position:relative;font-size:.93rem}
+.plan li::before{content:"";position:absolute;left:0;top:.7rem;width:16px;height:16px;background:url(assets/lemon-creative/lemon_slice.png) center/contain no-repeat}
+.plan .btn{align-self:flex-start}
+@media (max-width:900px){.plans{grid-template-columns:1fr;gap:1.6rem}.plan:nth-child(n){transform:none}}
+
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
-.split.rev > :first-child{order:2}
-.photo{border-radius:var(--r);overflow:hidden} .photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.photo.sq img{aspect-ratio:1} .photo.wide img{aspect-ratio:4/3}
-.checks{list-style:none;display:grid;gap:1rem;margin-top:1.6rem}
-.checks li{display:grid;grid-template-columns:30px 1fr;gap:.9rem;align-items:start;font-size:.98rem}
-.checks li::before{content:"✓";width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.85rem;margin-top:.1rem}
-.checks li:nth-child(2)::before{background:var(--pink);color:var(--ink)} .checks li:nth-child(3)::before{background:var(--denim)}
+.split h2{font-size:clamp(2rem,3.8vw,3.4rem);margin-bottom:1.2rem}
+.split .art{position:relative}
+.split .art .cut.tall{width:min(60%,320px);margin:0 auto}
+.split .art .badge{left:4%;bottom:0}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.toggle{display:flex;gap:.5rem;margin:1.2rem 0;flex-wrap:wrap}
+.toggle button{font:700 .88rem var(--sans);padding:.7rem 1.1rem;border-radius:999px;border:2px solid var(--ink);background:transparent;cursor:pointer;color:var(--ink)}
+.toggle button.on{background:var(--ink);color:var(--ivory)}
+.tpanel{display:none}.tpanel.on{display:block;animation:fadein .5s var(--ease)}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}}
 
-/* ---------- Reels ---------- */
-.reel-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3rem}
-.reel{position:relative;border-radius:20px;overflow:hidden;background:var(--ivory)}
-.reel video,.reel img{width:100%;aspect-ratio:9/16;object-fit:cover}
-.reel .cap{position:absolute;left:12px;bottom:12px;background:var(--white);padding:.35rem .7rem;border-radius:999px;font-size:.72rem;font-weight:700}
+.compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}
+.compare>div{border-radius:26px;padding:1.6rem;background:rgba(255,255,255,.6)}
+.compare h4{font-size:1.2rem;margin-bottom:.6rem}
+.compare .me{background:var(--banana)}
+@media (max-width:820px){.compare{grid-template-columns:1fr}}
 
-/* ---------- Audience ---------- */
-.aud{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
-.aud div{padding:1.8rem 1.4rem;border-radius:var(--r);background:var(--ivory);transition:transform .4s var(--ease)}
-.aud div:hover{transform:translateY(-6px)}
-.aud div:nth-child(1){background:#FBE3EA} .aud div:nth-child(2){background:var(--icy)} .aud div:nth-child(3){background:#FCF8C9} .aud div:nth-child(4){background:#CDEFE2}
-.aud img{width:64px;height:64px;object-fit:contain;margin-bottom:1rem}
-.aud strong{display:block;font-size:1.05rem;margin-bottom:.35rem} .aud span{font-size:.92rem;color:var(--muted)}
+.pkgs{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.pkg{border-radius:30px;position:relative;overflow:hidden;box-shadow:0 26px 60px -34px rgba(19,28,42,.5);transition:transform .5s var(--ease)}
+.pkg:hover{transform:translateY(-8px) rotate(0)!important}
+.pkg .pm{aspect-ratio:16/9;overflow:hidden;border-bottom:8px solid var(--ivory)}.pkg .pm video{width:100%;height:100%;object-fit:cover}
+.pkg .pb{padding:clamp(1.6rem,3vw,2.4rem)}
+.pkg.a{background:var(--pink);color:#fff;transform:rotate(-1deg)}
+.pkg.b{background:var(--denim);color:#fff;transform:rotate(1deg) translateY(1.4rem)}
+.pkg .hrs{font-weight:700;font-size:.88rem}
+.pkg h3{font-size:clamp(1.6rem,2.6vw,2.3rem);margin:.4rem 0 .2rem}
+.pkg .amt{font:800 clamp(2.2rem,4vw,3.6rem)/1 var(--disp);letter-spacing:-.03em;margin-bottom:1.3rem;color:var(--banana)}
+.pkg ul{list-style:none;padding:0;margin:0 0 1.8rem}
+.pkg li{padding:.5rem 0;border-top:1px solid rgba(255,255,255,.35)}
+@media (max-width:820px){.pkgs{grid-template-columns:1fr}.pkg.a,.pkg.b{transform:none}}
 
-/* ---------- Photo strip ---------- */
-.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem}
-.strip img{aspect-ratio:3/4;object-fit:cover;border-radius:16px;width:100%;transition:transform .5s var(--ease)}
-.strip img:hover{transform:scale(1.03)}
+.sessions{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.sess{position:relative}
+.sess .cut{margin-bottom:1.2rem}
+.sess .stk{position:absolute;top:14px;right:14px;z-index:3}
+.sess h3{font-size:1.35rem;margin-bottom:.3rem}
+.sess .from{font-weight:700;color:var(--green-dk);margin-bottom:.8rem}
+.sess ul{padding-left:1.1rem;margin:0 0 1rem;font-size:.95rem}
+@media (max-width:860px){.sessions{grid-template-columns:1fr}}
 
-/* ---------- Steps ---------- */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:3rem;counter-reset:s}
-.step{position:relative;padding-top:1.4rem;border-top:3px solid var(--line)}
-.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:-1.1rem;left:0;background:var(--white);padding-right:.6rem;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--pink)}
-.step:nth-child(2)::before{color:var(--green)} .step:nth-child(3)::before{color:var(--denim)} .step:nth-child(4)::before{color:#C9B800}
-.step h4{font-size:1.15rem;margin-bottom:.5rem} .step p{font-size:.94rem;color:var(--muted)}
-.bg-ivory .step::before{background:var(--ivory)}
+/* wall */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.filters button{font:700 .86rem var(--sans);padding:.65rem 1.1rem;border-radius:999px;border:0;background:rgba(255,255,255,.85);cursor:pointer;transition:background .25s;color:var(--ink)}
+.filters button.on{background:var(--pink);color:#fff}
+.wall{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:110px;grid-auto-flow:dense;gap:10px}
+.wall figure{border-radius:14px;overflow:hidden;position:relative;cursor:zoom-in;background:#fff;border:5px solid var(--ivory);box-shadow:0 14px 30px -18px rgba(19,28,42,.45)}
+.wall figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.wall figure:hover img{transform:scale(1.05)}
+.wall .s1{grid-row:span 3}.wall .s2{grid-row:span 2}.wall .s3{grid-column:span 2;grid-row:span 3}.wall .s4{grid-row:span 4}.wall .s5{grid-column:span 2;grid-row:span 2}
+.wall figure.hide{display:none}
+@media (max-width:820px){.wall{grid-template-columns:repeat(3,1fr);grid-auto-rows:90px;gap:6px}.wall .s3,.wall .s5{grid-column:span 2}}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(107,141,200,.92);display:none;place-items:center;padding:2rem}
+.lb.on{display:grid}
+.lb img{max-height:86vh;max-width:92vw;border-radius:16px;border:8px solid var(--ivory)}
+.lb button{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:0;background:var(--banana);font-size:1.3rem;cursor:pointer}
 
-/* ---------- Quotes ---------- */
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
-.quote{background:var(--white);border-radius:var(--r);padding:2rem 1.8rem;border:1px solid var(--line);text-align:left}
-.quote .big{font-weight:800;font-size:1.25rem;line-height:1.3;letter-spacing:-.01em;margin-bottom:.9rem}
-.quote .big::before{content:"“";color:var(--pink);font-size:1.3em;line-height:0;margin-right:.05em}
-.quote p{font-size:.92rem;color:var(--muted)}
-.quote cite{display:flex;align-items:center;gap:.7rem;font-style:normal;font-weight:700;font-size:.85rem;margin-top:1.2rem}
-.quote cite::before{content:"";width:34px;height:34px;border-radius:50%;background:var(--icy);flex:none}
-.quote:nth-child(2) cite::before{background:var(--banana)} .quote:nth-child(3) cite::before{background:var(--pink)}
-.quote cite small{display:block;font-weight:500;color:var(--muted)}
+.beliefs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.belief{border-radius:28px;padding:1.8rem;background:rgba(255,255,255,.6)}
+.belief .cut{width:120px;margin-bottom:1.2rem;border-width:6px}
+.belief h4{font-size:1.15rem;margin-bottom:.6rem}
+@media (max-width:860px){.beliefs{grid-template-columns:1fr}}
+.kit{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.kit div{background:rgba(255,255,255,.7);border-radius:26px;padding:1.6rem;text-align:center}
+.kit .cut{width:96px;margin:0 auto 1rem;border-width:6px}
+.kit h4{font-size:1rem;margin-bottom:.5rem}
+.kit p{font-size:.9rem;margin:0}
+@media (max-width:860px){.kit{grid-template-columns:1fr 1fr}}
 
-/* ---------- FAQ ---------- */
-.faq{max-width:780px;margin:2.5rem auto 0;text-align:left}
-.acc{border-bottom:1px solid var(--line);padding:1.2rem 0}
-.acc summary{list-style:none;cursor:pointer;font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.acc summary::-webkit-details-marker{display:none}
-.acc summary::after{content:"+";width:32px;height:32px;border-radius:50%;background:var(--banana);display:grid;place-items:center;font-weight:600;flex:none;transition:transform .3s var(--ease)}
-.acc[open] summary::after{transform:rotate(45deg);background:var(--pink)}
-.acc p{margin-top:.8rem;color:var(--muted);font-size:.96rem;max-width:62ch}
+.chooser{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.choose{border-radius:30px;padding:1.6rem 1.8rem 2rem;text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .45s var(--ease)}
+.choose:hover{transform:translateY(-6px) rotate(-.6deg)}
+.choose h3{font-size:clamp(1.4rem,2vw,1.9rem);margin-top:.4rem}
+.choose .stk{align-self:flex-start}
+.choose .cut{width:56%;align-self:flex-end;margin:-1rem -1rem 1rem 0;transform:rotate(7deg);transition:transform .6s var(--ease)}
+.choose:hover .cut{transform:rotate(0) scale(1.04)}
+.choose.c1{background:var(--pink);color:#fff}.choose.c2{background:var(--icy)}.choose.c3{background:var(--green);color:#fff}
+@media (max-width:860px){.chooser{grid-template-columns:1fr}.choose{min-height:260px}}
 
-/* ---------- CTA ---------- */
-.cta{padding:clamp(4rem,9vw,7.5rem) 0;background:var(--pink);text-align:center;position:relative;overflow:hidden}
-.cta h2{font-size:clamp(2.6rem,6.5vw,5.4rem);max-width:16ch;margin-inline:auto}
-.cta .lead{color:var(--ink);margin:1.2rem auto 0}
-.cta .lemon{position:absolute;width:120px;opacity:.9;animation:bob 7s ease-in-out infinite}
-.cta .lemon.l{left:4%;top:12%} .cta .lemon.r{right:5%;bottom:10%;animation-delay:-3.5s;width:90px}
+.intake{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.intake .side{position:sticky;top:calc(var(--hh) + 2rem)}
+.intake .side h2{font-size:clamp(2.3rem,4vw,3.8rem);margin-bottom:1.2rem}
+.intake .side h2 .it{display:block}
+.intake .side .tile{width:200px;margin-top:2rem;transform:rotate(-3deg)}
+.form{background:#fff;border-radius:32px;padding:clamp(1.6rem,3.4vw,2.8rem);box-shadow:0 30px 80px -40px rgba(19,28,42,.35)}
+.prog{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.85rem;margin-bottom:.8rem}
+.prog .of{opacity:.6;font-weight:500}
+.pbar{height:6px;border-radius:6px;background:var(--icy);overflow:hidden;margin-bottom:2rem}
+.pbar i{display:block;height:100%;background:var(--pink);width:33%;transition:width .5s var(--ease)}
+.fstep{display:none}
+.fstep.on{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem 1rem;animation:fadein .45s var(--ease)}
+.fstep h3{grid-column:1/-1;font-size:clamp(2rem,3vw,2.7rem);margin-bottom:.2rem}
+.fld{display:flex;flex-direction:column;gap:.45rem;grid-column:1/-1}
+.fld.half{grid-column:span 1}
+.fld label,.fld .q{font-weight:600;font-size:.88rem}
+.fld .q .opt{font-weight:500;opacity:.6}
+.fld input,.fld textarea,.fld select{font:500 1rem var(--sans);border:0;border-bottom:2px solid rgba(19,28,42,.2);padding:.6rem 0;background:transparent;border-radius:0;transition:border-color .25s;color:var(--ink)}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--pink)}
+.fld textarea{min-height:96px;resize:vertical}
+.fld.err input,.fld.err textarea{border-color:#d33}
+.fld .msg{font-size:.8rem;color:#c22;display:none}
+.fld.err .msg{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;font:500 .9rem var(--sans);padding:.6rem 1rem;border-radius:999px;background:var(--ivory);border:1.5px solid rgba(19,28,42,.18);transition:background .2s,border-color .2s,color .2s}
+.chips input:checked+span{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.chips input:focus-visible+span{outline:3px solid var(--denim);outline-offset:2px}
+.fnav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;gap:1rem}
+.fnav .back{background:none;border:0;font:600 .95rem var(--sans);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.fnav .back[hidden]{display:inline-block;visibility:hidden}
+.done{display:none;text-align:center;padding:2rem 0}
+.done.on{display:block;animation:fadein .5s var(--ease)}
+.done img{width:120px;margin:0 auto 1rem;animation:spin 10s linear infinite}
+.done h3{font-size:3rem;margin-bottom:.6rem}
+@media (max-width:900px){.intake{grid-template-columns:1fr}.intake .side{position:static}.intake .side .tile{display:none}}
+@media (max-width:560px){.fstep.on{grid-template-columns:1fr}.fld.half{grid-column:1/-1}}
 
-/* ---------- Inner hero ---------- */
-.page-hero{padding:clamp(3rem,6vw,5rem) 0 clamp(2.5rem,5vw,4rem)}
-.page-hero h1{margin:.4rem 0 1.3rem}
-.panel{border-radius:var(--r);padding:clamp(1.5rem,4vw,3rem);position:relative}
-.phones{display:flex;gap:1.2rem;justify-content:center;align-items:flex-end}
-.phone{width:190px;background:var(--ink);border-radius:30px;padding:9px;transition:transform .5s var(--ease)}
-.phone:hover{transform:translateY(-8px)}
-.phone .screen{background:var(--white);border-radius:22px;overflow:hidden;aspect-ratio:9/18.5;position:relative}
-.phone .feed{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding-top:34px}
-.phone .feed img{aspect-ratio:1;object-fit:cover}
-.phone .screen > video{width:100%;height:100%;object-fit:cover}
-.phone .ui{position:absolute;bottom:0;left:0;right:0;padding:.6rem;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.intake .side .cut{width:200px;margin-top:2rem;transform:rotate(-3deg)}
+.intake .side h2{font-size:clamp(2rem,3.8vw,3.4rem);margin-bottom:1.2rem}
+.form{background:#fff;border-radius:30px;padding:clamp(1.6rem,3.4vw,2.8rem);box-shadow:0 30px 80px -40px rgba(19,28,42,.35);border:8px solid var(--ivory)}
+.fstep h3{font-family:var(--disp);font-size:clamp(1.4rem,2vw,1.8rem)}
+.done h3{font-size:2rem}
+.legalpage{max-width:760px}
+.legalpage h1{font-size:clamp(2.4rem,5vw,4.4rem);margin-bottom:2rem}
 
-/* ---------- Tiers ---------- */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem;text-align:left}
-.tiers.two{grid-template-columns:repeat(2,1fr);max-width:860px;margin-inline:auto}
-.tier{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:transform .4s var(--ease),box-shadow .4s}
-.tier:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(19,28,42,.08)}
-.tier.feature{border:3px solid var(--ink)}
-.tier .badge{position:absolute;top:-14px;left:1.6rem;background:var(--pink);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .75rem;border-radius:999px}
-.tier h3{font-size:1.5rem;margin-bottom:.3rem}
-.tier .price{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin:.4rem 0 .2rem}
-.tier .price small{display:block;font-size:.8rem;font-weight:600;letter-spacing:0;color:var(--muted);margin-top:.2rem}
-.tier ul{list-style:none;display:grid;gap:.55rem;margin:1.2rem 0 1.8rem;flex:1}
-.tier li{padding-left:1.4rem;position:relative;font-size:.94rem;color:var(--muted)}
-.tier li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--green)}
-.tier .btn{align-self:flex-start}
-
-/* ---------- Gallery ---------- */
-.grid-gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;grid-auto-flow:dense;gap:1rem;margin-top:2.5rem}
-.grid-gal img{width:100%;height:100%;object-fit:cover;border-radius:18px;transition:transform .5s var(--ease)}
-.grid-gal img:hover{transform:scale(1.02)}
-.grid-gal .tall{grid-row:span 2} .grid-gal .wide{grid-column:span 2}
-.filter-row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.8rem}
-.filter-btn{font-family:inherit;font-weight:700;font-size:.82rem;padding:.6rem 1.2rem;border-radius:999px;border:2px solid var(--line);background:var(--white);cursor:pointer;transition:.25s}
-.filter-btn:hover{border-color:var(--ink)} .filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--white)}
-
-/* ---------- Forms ---------- */
-.form-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.6rem,4vw,2.8rem);max-width:860px;margin:2.5rem auto 0;text-align:left}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.3rem}
-.form-grid .full{grid-column:1/-1}
-.form-card label{display:block;font-weight:700;font-size:.82rem;margin-bottom:.4rem}
-.form-card input,.form-card select,.form-card textarea{width:100%;padding:.85rem 1rem;border:2px solid var(--line);border-radius:12px;font-family:inherit;font-size:.95rem;background:var(--white);color:var(--ink);transition:border-color .25s}
-.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--ink)}
-.form-card textarea{min-height:120px;resize:vertical}
-.choice{display:flex;flex-wrap:wrap;gap:.6rem}
-.choice label{display:inline-flex;align-items:center;gap:.45rem;border:2px solid var(--line);border-radius:999px;padding:.45rem .9rem;font-size:.85rem;font-weight:600;cursor:pointer;margin:0;transition:.25s}
-.choice label:hover{border-color:var(--ink)}
-.choice input{width:auto;accent-color:var(--ink)}
-.service-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem;max-width:900px;margin-inline:auto}
-.service-pick button{font-family:inherit;background:var(--white);border:2px solid var(--line);border-radius:var(--r);padding:1.4rem 1.2rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;transition:.3s var(--ease)}
-.service-pick button img{width:56px;height:56px;object-fit:contain}
-.service-pick button:hover{transform:translateY(-4px);border-color:var(--ink)} .service-pick button.on{background:var(--banana);border-color:var(--banana)}
-.form-panel{display:none} .form-panel.on{display:block}
-
-/* ---------- Footer ---------- */
-.site-footer{background:var(--ivory);border-top:1px solid var(--line)}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;padding:clamp(3rem,6vw,5rem) 0 2.5rem}
-.site-footer h4{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.9rem;color:var(--muted)}
-.site-footer ul{list-style:none;display:grid;gap:.5rem}
-.site-footer ul a{text-decoration:none;font-weight:600;font-size:.95rem} .site-footer ul a:hover{color:var(--green)}
-.site-footer p{font-size:.95rem;color:var(--muted);max-width:36ch}
-.site-footer .logo-img{height:48px;margin-bottom:1rem}
-.newsletter{display:flex;gap:.5rem;margin-top:1.2rem;max-width:380px}
-.newsletter input{flex:1;padding:.75rem 1rem;border-radius:999px;border:2px solid var(--line);background:var(--white);font-family:inherit}
-.footer-base{border-top:1px solid var(--line);padding:1.2rem 0 1.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.82rem;color:var(--muted)}
-.footer-base a{text-decoration:none}
-.footer-bars{display:flex;height:8px} .footer-bars i{flex:1} .footer-bars i:nth-child(1){background:var(--pink)} .footer-bars i:nth-child(2){background:var(--banana)} .footer-bars i:nth-child(3){background:var(--green)} .footer-bars i:nth-child(4){background:var(--icy)} .footer-bars i:nth-child(5){background:var(--denim)}
-
-/* ---------- Reveal ---------- */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.1s} .reveal.d2{transition-delay:.2s} .reveal.d3{transition-delay:.3s}
-.pageview[hidden]{display:none}
-
-.facts{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
-.pill{background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:700}
-.pill.pink{background:var(--pink);border-color:var(--pink)} .pill.icy{background:var(--icy);border-color:var(--icy)} .pill.green{background:var(--green);border-color:var(--green);color:#fff} .pill.banana{background:var(--banana);border-color:var(--banana)}
-.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.about-grid img{border-radius:18px;aspect-ratio:3/4;object-fit:cover;width:100%}
-.about-grid img:nth-child(2){transform:translateY(2rem)}
-.beliefs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
-.belief{padding:2rem 1.6rem;border-radius:var(--r);background:var(--white);border:1px solid var(--line)}
-.belief img{width:64px;height:64px;object-fit:contain;margin-bottom:1rem}
-.belief strong{display:block;font-size:1.15rem;margin-bottom:.4rem} .belief span{font-size:.94rem;color:var(--muted)}
-
-/* ---------- Responsive ---------- */
-@media (max-width:1000px){
-  .svc-grid,.quotes,.tiers,.beliefs{grid-template-columns:1fr 1fr}
-  .aud,.steps{grid-template-columns:1fr 1fr}
-  .reel-row{grid-template-columns:repeat(3,1fr)} .reel:nth-child(n+4){display:none}
-  .strip{grid-template-columns:repeat(3,1fr)}
-  .grid-gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .service-pick{grid-template-columns:1fr}
-}
-@media (max-width:820px){
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .burger{display:flex}
-  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;padding:1rem 1.4rem 1.4rem;gap:.2rem;display:none;border-bottom:1px solid var(--line)}
-  .nav-links.open{display:flex}
-  .nav-links a{padding:.7rem 0;display:block;border-bottom:0}
-  .has-sub .sub{position:static;transform:none;opacity:1;pointer-events:auto;box-shadow:none;border:0;padding:0 0 0 1rem}
-  .hero-grid,.split{grid-template-columns:1fr} .split.rev > :first-child{order:0}
-  .svc-grid,.quotes,.tiers,.tiers.two,.beliefs,.aud,.steps{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .phones{flex-wrap:wrap}
-  .footer-grid{grid-template-columns:1fr;gap:2rem}
-  .chip.a{left:0} .chip.b{right:0}
+.rv{clip-path:inset(10% 10% 10% 10% round 30px);transition:clip-path 1.1s var(--ease)}
+.rv.in{clip-path:inset(0 0 0 0 round 30px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .rv{clip-path:none}.hero h1 .w i{transform:none}
 }
 </style>
 </head>
 <body>
 
-<!-- ══════════ HEADER ══════════ -->
-<header class="site-header">
-  <nav class="nav">
-    <a class="nav-logo" href="index.html"><img src="assets/lemon-creative/horizontal_dark.png" alt="Lemon Creative"></a>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="has-sub"><a href="social.html">Services ▾</a>
-        <div class="sub">
-          <a href="social.html">Social Media Management</a>
-          <a href="weddings.html">Wedding Content Creation</a>
-          <a href="photography.html">Photography</a>
-        </div>
-      </li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a class="btn pink sm" href="contact.html">Let's work together</a></li>
-    </ul>
-  </nav>
-</header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs></svg>
 
-<!-- ════════════════════════════ HOME ════════════════════════════ -->
-<main class="pageview" data-view="home">
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="Lemon Creative home"><img src="assets/lemon-creative/horizontal_dark.png" alt="Lemon Creative"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#social">Social media</a>
+      <a href="#weddings">Weddings</a>
+      <a href="#photography">Photography</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a class="btn pink" href="#contact">Start an inquiry</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <a href="#home">Home</a><a href="#social">Social media</a><a href="#weddings">Weddings</a><a href="#photography">Photography</a><a href="#about">About Lem</a><a href="#gallery">Gallery</a>
+  <a class="btn pink" href="#contact">Start an inquiry</a>
+</div>
+<div class="lb" id="lb" role="dialog" aria-label="Photo"><button aria-label="Close" id="lbx">✕</button><div id="lbc"></div></div>
+
+<main>
+
+<!-- ======================= HOME ======================= -->
+<section class="view" data-view="home">
 
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <span class="eyebrow">Dallas, TX · social · weddings · photography</span>
-        <h1>Content that actually looks like <span class="script">you.</span></h1>
-        <p class="lead">Lemon Creative is a one-woman studio for small businesses and big days. Boutique social media management, iPhone wedding content, and bright, candid photography — with one rule: it has to feel like you, not a template.</p>
-        <div class="btn-row">
-          <a class="btn pink" href="contact.html">Book a discovery call</a>
-          <a class="btn ghost" href="social.html">See the services</a>
-        </div>
-        <div class="hero-stats">
-          <div><b>24 hrs</b><span>raw wedding content back</span></div>
-          <div><b>72 hrs</b><span>edited reels delivered</span></div>
-          <div><b>1 person</b><span>start to finish — no hand-offs</span></div>
-        </div>
-      </div>
-      <div class="hero-visual reveal d2">
-        <div class="blob"></div>
-        <img class="main" src="assets/lemon-creative/brand/brand-43.jpg" alt="">
-        <span class="chip a"><i></i>Booking 2026 weddings</span>
-        <span class="chip b"><i></i>Boutique social plans</span>
+    <div class="bgv"><video data-src="assets/lemon-creative/brand/brand-74.mp4" poster="assets/lemon-creative/brand/brand-74.jpg" muted loop playsinline></video></div>
+    <div class="badge" data-badge="Dallas–Fort Worth · Social · Weddings · Photos · " data-color="#F27EA2"></div>
+    <div class="wrap top">
+      <h1 id="h1" data-words="Bright.|Candid.|100% you."></h1>
+      <div class="sub">
+        <p class="lede">Lemon Creative is a one-woman studio in Dallas for small businesses and big days: boutique social media management, iPhone wedding content, and bright, candid photography that looks like you instead of a template.</p>
+        <div class="btns"><a class="btn pink" href="#contact">Book a discovery call</a><a class="link" href="#services">See the services</a></div>
       </div>
     </div>
+    <div class="strip" id="strip"></div>
   </section>
 
-  <div class="marquee"><div class="marquee-track">
-    <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
-    <span>Social media management</span><span>Wedding content creation</span><span>Engagements · maternity · announcements</span><span>Dallas–Fort Worth</span><span>Bright. Candid. Yours.</span>
-  </div></div>
+  <div class="tick ink"><div class="run" data-tick="Social media management|Wedding content creation|Engagements · Maternity · Announcements|Dallas–Fort Worth|Bright. Candid. Yours."></div></div>
 
-  <!-- Services -->
-  <section class="sec">
+  <section class="blk bg-pink poster" id="services">
     <div class="wrap">
-      <div class="center">
-        <span class="eyebrow green">What I do</span>
-        <h2>Three ways to work together</h2>
-        <p class="lead" style="margin-top:1rem">Pick a lane — or mix them. Every project starts with a conversation and an individualized plan, never a one-size-fits-all package.</p>
+      <div>
+        <span class="stk pink">Where most of my clients start</span>
+        <h2>Social media management</h2>
+        <p class="lede">Boutique, done-for-you content for small businesses. Full-scale creation and posting, content only, or management of what you already make. You choose how hands-off you want to be.</p>
+        <ul class="chips"><li>Full-scale</li><li>Content-only</li><li>Management-only</li><li>Boutique shoots</li><li>Wedding-pro content</li></ul>
+        <div class="btns"><a class="btn pink" href="#social">Explore social media</a><a class="link" href="#social-form">Start the social intake</a></div>
       </div>
-      <div class="svc-grid">
-        <a class="svc a reveal" href="social.html">
-          <div class="bar"></div><span class="tag">Most popular</span>
-          <div class="pic"><img src="assets/lemon-creative/brand/brand-45.jpg" style="object-position:50% 22%" alt=""></div>
-          <div class="body"><div class="num">01</div><h3>Social Media Management</h3><p>Boutique, done-for-you content and management for small businesses — from full-scale creation + posting to just the piece you're missing.</p><span class="go">Explore social</span></div>
-        </a>
-        <a class="svc b reveal d1" href="weddings.html">
-          <div class="bar"></div>
-          <div class="pic"><img src="assets/lemon-creative/wed-veil-kiss.jpg" alt=""></div>
-          <div class="body"><div class="num">02</div><h3>Wedding Content Creation</h3><p>I show up with an iPhone and capture every in-between moment, then deliver raw content within 24 hours and edited reels within 72.</p><span class="go">See wedding packages</span></div>
-        </a>
-        <a class="svc c reveal d2" href="photography.html">
-          <div class="bar"></div>
-          <div class="pic"><img src="assets/lemon-creative/photo-engagement-2.jpg" alt=""></div>
-          <div class="body"><div class="num">03</div><h3>Photography</h3><p>Engagements, maternity, baby announcements, gender reveals, and the little milestones — shot bright, candid, and a little bit playful.</p><span class="go">Book a session</span></div>
-        </a>
+      <div class="art">
+        <div class="badge" data-badge="Reels · Carousels · Stories · Posting · " data-color="#131C2A"></div>
+        <figure class="cut arch"><video data-src="assets/lemon-creative/smm/smm-20.mp4" poster="assets/lemon-creative/smm/smm-20.jpg" muted loop playsinline></video><span class="cap">Kids’ brand launch</span></figure>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/smm/smm-07.mp4" poster="assets/lemon-creative/smm/smm-07.jpg" muted loop playsinline></video></figure>
+        <figure class="cut round"><img src="assets/lemon-creative/layne-laptop.jpg" alt="" loading="lazy"></figure>
       </div>
     </div>
   </section>
 
-  <!-- Behind the lens -->
-  <section class="sec bg-ivory">
+  <section class="blk slant bg-icy poster flip">
     <div class="wrap">
-      <div class="split" style="align-items:end">
-        <div><span class="eyebrow">Behind the lens</span><h2>Shot on iPhone, back by morning</h2></div>
-        <p class="lead">Vertical video made for Instagram and TikTok — not cropped from a cinema camera. Edited with trending audio and ready to post.</p>
+      <div>
+        <span class="stk banana">Back by morning</span>
+        <h2>Wedding content creation</h2>
+        <p class="lede">While your photographer and videographer make the gallery and the film, I capture the in-between moments on iPhone and send them back fast. Raw content in 24 hours, edited reels in 72.</p>
+        <div class="price">Packages from $1,000</div>
+        <div class="btns"><a class="btn denim" href="#weddings">See wedding packages</a><a class="link" href="#wed-form">Check my date</a></div>
       </div>
-      <div class="reel-row">
-        <div class="reel reveal"><video src="assets/lemon-creative/video/recap.mp4" muted loop playsinline autoplay></video><span class="cap">Wedding recap</span></div>
-        <div class="reel reveal d1"><video src="assets/lemon-creative/video/firstlook.mp4" muted loop playsinline autoplay></video><span class="cap">First look</span></div>
-        <div class="reel reveal d2"><video src="assets/lemon-creative/video/daynight.mp4" muted loop playsinline autoplay></video><span class="cap">Day vs. night</span></div>
-        <div class="reel reveal d3"><video src="assets/lemon-creative/smm/smm-07.mp4" poster="assets/lemon-creative/smm/smm-07.jpg" muted loop playsinline autoplay></video><span class="cap">Boutique launch</span></div>
-        <div class="reel reveal d3"><video src="assets/lemon-creative/smm/smm-02.mp4" poster="assets/lemon-creative/smm/smm-02.jpg" muted loop playsinline autoplay></video><span class="cap">Client reel</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Lemon -->
-  <section class="sec">
-    <div class="wrap split">
-      <div class="photo reveal"><video src="assets/lemon-creative/brand/brand-53.mp4" poster="assets/lemon-creative/brand/brand-53.jpg" muted loop playsinline autoplay style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;display:block"></video></div>
-      <div class="reveal d1">
-        <span class="aside">hi, I'm Lem</span>
-        <h2>Bright, bubbly, and <span class="hl pink">a little experimental</span></h2>
-        <p class="lead" style="margin-top:1.2rem">Most "elevated" branding ends up looking exactly like everyone else's. My whole thing is the opposite: content that's fun, colorful, and unmistakably yours — because the best marketing is just showing people who you actually are.</p>
-        <ul class="checks">
-          <li><span><strong>Individualized plans.</strong> Full-scale creation + management, content-only, or management-only — built around what your business actually needs.</span></li>
-          <li><span><strong>Fast turnaround.</strong> Wedding content back in your hands within 24 hours. Reels edited within 72.</span></li>
-          <li><span><strong>One person, start to finish.</strong> No agency hand-offs. You talk to me, I make the thing.</span></li>
-        </ul>
-        <div class="btn-row"><a class="btn green" href="about.html">More about me</a></div>
+      <div class="art">
+        <div class="badge" data-badge="Shot on iPhone · Back by morning · " data-color="#6B8DC8"></div>
+        <figure class="cut arch"><video data-src="assets/lemon-creative/video/recap.mp4" poster="assets/lemon-creative/video/recap.jpg" muted loop playsinline></video><span class="cap">Wedding recap</span></figure>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/video/firstlook.mp4" poster="assets/lemon-creative/video/firstlook.jpg" muted loop playsinline></video></figure>
+        <figure class="cut round"><img src="assets/lemon-creative/wed-florals.jpg" alt="" loading="lazy"></figure>
       </div>
     </div>
   </section>
 
-  <!-- Who I work with -->
-  <section class="sec bg-ivory">
+  <section class="blk slant alt bg-green poster">
     <div class="wrap">
-      <div class="center"><span class="eyebrow icy">Who I work with</span><h2>Small businesses &amp; big moments</h2></div>
-      <div class="aud">
-        <div class="reveal"><img src="assets/lemon-creative/art/illus/silk-bow.png" alt=""><strong>Boutiques &amp; retail</strong><span>I come to you, shoot the new arrivals, and turn them into reels and posts that sell.</span></div>
-        <div class="reveal d1"><img src="assets/lemon-creative/art/illus/champagne-coupes.png" alt=""><strong>Wedding pros</strong><span>Planners, florists, venues, photographers — send me your raw gallery, get back a month of content.</span></div>
-        <div class="reveal d2"><img src="assets/lemon-creative/art/illus/wedding-rings.png" alt=""><strong>Couples</strong><span>Wedding-day iPhone content, engagement sessions, and the announcements in between.</span></div>
-        <div class="reveal d3"><img src="assets/lemon-creative/art/illus/sunburst.png" alt=""><strong>Growing brands</strong><span>Local businesses that know they need to post more and are tired of doing it themselves.</span></div>
+      <div>
+        <span class="stk green">Golden hour, always</span>
+        <h2>Photography</h2>
+        <p class="lede">Engagements, maternity, baby announcements, gender reveals, and the little milestones in between. Bright, candid, a little playful, and edited to look like real life in really good light.</p>
+        <ul class="chips"><li>Engagements</li><li>Maternity</li><li>Announcements</li><li>Gender reveals</li><li>Minis</li></ul>
+        <div class="btns"><a class="btn green" href="#photography">See photography</a><a class="link" href="#photo-form">Book a session</a></div>
+      </div>
+      <div class="art">
+        <div class="badge" data-badge="Engagements · Maternity · Milestones · " data-color="#00A271"></div>
+        <figure class="cut arch"><img src="assets/lemon-creative/photo-engagement-2.jpg" alt="Engagement session" loading="lazy"><span class="cap">Engagement</span></figure>
+        <figure class="cut tall"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt="Maternity session" loading="lazy"></figure>
+        <figure class="cut round"><img src="assets/lemon-creative/photo-announce-1.jpg" alt="Baby announcement" loading="lazy"></figure>
       </div>
     </div>
   </section>
 
-  <!-- Photo strip -->
-  <section class="sec tight">
-    <div class="wrap strip">
-      <img src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/photo-announce-1.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/photo-engagement-3.jpg" alt="">
+  <section class="blk slant bg-banana rail" id="rail1">
+    <div class="rh"><h2>Shot on iPhone, <span class="lt">back by morning</span></h2></div>
+    <div class="run" data-rail="home"></div>
+  </section>
+
+  <section class="blk slant alt bg-ivory meet">
+    <div class="wrap">
+      <div class="art">
+        <div class="badge" data-badge="Hi, I’m Lem · The person behind the lemon · " data-color="#F27EA2"></div>
+        <figure class="cut round rv"><img src="assets/lemon-creative/layne-blue.jpg" alt="Lem, founder of Lemon Creative" loading="lazy"></figure>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/brand/brand-43.mp4" poster="assets/lemon-creative/brand/brand-43.jpg" muted loop playsinline></video></figure>
+      </div>
+      <div>
+        <h2>I make the content, and I’m the one you talk to.</h2>
+        <p class="lede">I started Lemon Creative because too many small businesses were paying for content that looked nothing like them. My days are split between content days at boutiques, raw galleries from wedding pros, Saturday weddings with my iPhone, and golden-hour sessions with couples and growing families. <span class="ph">needs her words</span></p>
+        <div class="facts"><span class="stk icy">Dallas, TX</span><span class="stk banana">Lemonade over coffee</span><span class="stk pink">Camera roll: always full</span></div>
+        <a class="btn pink" href="#about">More about me</a>
+      </div>
     </div>
   </section>
 
-  <!-- How it works -->
-  <section class="sec">
+  <section class="blk slant bg-icy">
     <div class="wrap">
-      <span class="eyebrow banana">How it works</span>
-      <h2>Easy as <span class="script" style="color:var(--green);font-size:1.15em">lemonade</span></h2>
+      <div class="head"><h2>Small businesses <span class="lt">and big moments</span></h2><p class="lede">Who I make content for.</p></div>
+      <div class="who">
+        <a class="w1" href="#social"><figure class="cut round"><img src="assets/lemon-creative/smm/smm-07.jpg" alt="" loading="lazy"></figure><h3>Boutiques &amp; retail</h3><p>I come to you, shoot the new arrivals, and turn them into reels and posts that sell while the pieces are still in stock.</p></a>
+        <a class="w2" href="#social"><figure class="cut round"><img src="assets/lemon-creative/smm/smm-23.jpg" alt="" loading="lazy"></figure><h3>Wedding pros</h3><p>Planners, florists, venues, and photographers. Send me your raw gallery and get back a month of content.</p></a>
+        <a class="w3" href="#social"><figure class="cut round"><img src="assets/lemon-creative/smm/smm-02.jpg" alt="" loading="lazy"></figure><h3>Growing brands</h3><p>Local businesses that know they need to post more and are tired of doing it themselves.</p></a>
+        <a class="w4" href="#weddings"><figure class="cut round"><img src="assets/lemon-creative/photo-engagement-1.jpg" alt="" loading="lazy"></figure><h3>Couples</h3><p>Wedding-day iPhone content, engagement sessions, and the announcements in between.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk slant alt bg-banana">
+    <div class="wrap">
+      <div class="head"><h2>Easy as <span class="lt">lemonade</span></h2><p class="lede">From the first hello to a feed you’re proud of, in four steps.</p></div>
       <div class="steps">
-        <div class="step reveal"><h4>Say hi</h4><p>Fill out the quick intake form for the service you're after. It takes two minutes and tells me everything I need to know.</p></div>
-        <div class="step reveal d1"><h4>Discovery call</h4><p>We hop on a call and I ask a lot of questions — what you do, who you're for, what's working and what's not.</p></div>
-        <div class="step reveal d2"><h4>Your custom plan</h4><p>You get a proposal built for your business — not a tiered menu. Approve it and we're off.</p></div>
-        <div class="step reveal d3"><h4>Make the thing</h4><p>I shoot, edit, write, schedule, and send you content that feels like you. You get back your time (and a feed you're proud of).</p></div>
+        <div class="step"><h4>Say hi</h4><p>Fill out the quick intake for the service you want. It takes two minutes and tells me what I need to know.</p></div>
+        <div class="step"><h4>Discovery call</h4><p>We hop on a call and I ask a lot of questions: what you do, who you’re for, what’s working and what isn’t.</p></div>
+        <div class="step"><h4>Your custom plan</h4><p>You get a proposal built for your business, not a tiered menu. Approve it and we’re off.</p></div>
+        <div class="step"><h4>Make the thing</h4><p>I shoot, edit, write, schedule, and send you content that feels like you. You get your time back.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="sec bg-icy">
-    <div class="wrap center">
-      <span class="eyebrow">Kind words</span>
-      <h2>Love notes</h2>
-      <p style="margin-top:.6rem"><span class="ph">need 3 real testimonials</span></p>
-      <div class="quotes">
-        <div class="quote reveal"><p class="big">She turned 400 raw images into a month of reels that actually sound like us.</p><p>Placeholder — our inquiries doubled within two months.</p><cite><span>Client name<small>Wedding planner · Dallas</small></span></cite></div>
-        <div class="quote reveal d1"><p class="big">The reels were posted before we closed. Our best sales week of the year.</p><p>Placeholder — she shot the new arrivals in an hour and knew exactly what would land.</p><cite><span>Client name<small>Boutique owner · Fort Worth</small></span></cite></div>
-        <div class="quote reveal d2"><p class="big">We had our wedding content the next morning. Worth every penny.</p><p>Placeholder — our photographer's gallery was still weeks out and we already had something to post.</p><cite><span>Client name<small>Bride · Forever Yours package</small></span></cite></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sec">
-    <div class="wrap center">
-      <span class="eyebrow denim">Good to know</span>
-      <h2>Questions, answered</h2>
-      <div class="faq">
-        <details class="acc"><summary>Do I have to pick a package?</summary><p>Nope. Wedding content has two set packages because the day has a set shape. Social media management is fully custom — we build it around what you need and what you can hand off.</p></details>
-        <details class="acc"><summary>Where are you based, and do you travel?</summary><p>Dallas, TX. I work across DFW; travel fees may apply outside the metro. <span class="ph">confirm travel policy</span></p></details>
-        <details class="acc"><summary>How fast do I get wedding content back?</summary><p>Raw photos and videos within 24 hours. Edited highlight reels within 72 hours.</p></details>
-        <details class="acc"><summary>What does social media management actually include?</summary><p>Anywhere from full-scale content creation + posting + engagement, to just creating content you post yourself, to just managing content you already make. We'll figure out the right blend on our call.</p></details>
-        <details class="acc"><summary>Can I hire you for just one shoot?</summary><p>Yes — boutique shoots, brand days, and one-off content sessions are all available. <span class="ph">confirm</span></p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <img class="lemon l" src="assets/lemon-creative/lemon_slice.png" alt="">
-    <img class="lemon r" src="assets/lemon-creative/lemon_wedge.png" alt="">
+  <section class="blk slant bg-solid-pink notes">
     <div class="wrap">
-      <span class="eyebrow" style="color:var(--ink)">Ready when you are</span>
-      <h2>Let's make something bright.</h2>
-      <p class="lead">Tell me a little about your business or your big day and I'll be in touch within 48 hours.</p>
-      <div class="btn-row" style="justify-content:center"><a class="btn" href="contact.html">Start with the intake form</a></div>
-    </div>
-  </section>
-</main>
-
-<!-- ════════════════════════════ SOCIAL ════════════════════════════ -->
-<main class="pageview" data-view="social" hidden>
-  <section class="page-hero">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">Service 01 · most popular</span>
-        <h1>Social media, <span class="hl">the boutique way</span></h1>
-        <p class="lead">You didn't start a business to spend your nights editing reels. I build an individualized plan around what you need — anywhere from full-scale content creation and management to just the piece you're missing — so your feed finally looks like your business feels.</p>
-        <div class="btn-row"><a class="btn pink" href="contact.html?s=social">Start your social intake</a><a class="btn ghost" href="#social-how">How it works</a></div>
+      <div class="art">
+        <figure class="cut scal"><video data-src="assets/lemon-creative/video/recap-clean.mp4" poster="assets/lemon-creative/video/recap-clean.jpg" muted loop playsinline></video></figure>
+        <div class="badge" data-badge="Love notes · Kind words · " data-color="#F7EF75" data-text="#131C2A"></div>
       </div>
-      <div class="panel bg-icy reveal d2">
-        <div class="phones">
-          <div class="phone"><div class="screen"><div class="feed"><img src="assets/lemon-creative/smm/smm-07.jpg" alt=""><img src="assets/lemon-creative/smm/smm-02.jpg" alt=""><img src="assets/lemon-creative/smm/smm-23.jpg" alt=""><img src="assets/lemon-creative/smm/smm-36.jpg" alt=""><img src="assets/lemon-creative/smm/smm-13.jpg" alt=""><img src="assets/lemon-creative/smm/smm-29.jpg" alt=""><img src="assets/lemon-creative/smm/smm-24.jpg" alt=""><img src="assets/lemon-creative/smm/smm-20.jpg" alt=""><img src="assets/lemon-creative/smm/smm-34.jpg" alt=""><img src="assets/lemon-creative/smm/smm-35.jpg" alt=""><img src="assets/lemon-creative/smm/smm-15.jpg" alt=""><img src="assets/lemon-creative/smm/smm-08.jpg" alt=""></div></div></div>
-          <div class="phone"><div class="screen"><video src="assets/lemon-creative/smm/smm-07.mp4" poster="assets/lemon-creative/smm/smm-07.jpg" muted loop playsinline autoplay></video><div class="ui">boutique launch · reel</div></div></div>
+      <div>
+        <span class="stk banana lbl">Love notes</span> <span class="ph">need 3 real testimonials</span>
+        <div class="quotes" id="quotes">
+          <div class="quote on"><blockquote>“She turned 400 raw images into a month of reels that actually sound like us.”</blockquote><cite>Client name <span>· Wedding planner, Dallas</span></cite></div>
+          <div class="quote"><blockquote>“The reels were posted before we closed. Our best sales week of the year.”</blockquote><cite>Client name <span>· Boutique owner, Fort Worth</span></cite></div>
+          <div class="quote"><blockquote>“We had our wedding content the next morning. Worth every penny.”</blockquote><cite>Client name <span>· Bride, Forever Yours package</span></cite></div>
         </div>
-        <p class="center" style="margin-top:1.2rem"><span class="ph">more client grids welcome</span></p>
+        <div class="qnav"><button data-q="-1" aria-label="Previous note">‹</button><span id="qc">1 of 3</span><button data-q="1" aria-label="Next note">›</button></div>
       </div>
     </div>
   </section>
-  <div class="marquee pink"><div class="marquee-track">
-    <span>Full-scale creation + management</span><span>Content-only</span><span>Management-only</span><span>Boutique shoots</span><span>Wedding-pro content</span>
-    <span>Full-scale creation + management</span><span>Content-only</span><span>Management-only</span><span>Boutique shoots</span><span>Wedding-pro content</span>
-  </div></div>
 
-  <section class="sec">
-    <div class="wrap center">
-      <span class="eyebrow green">Built around you</span>
-      <h2>Three starting points, infinite blends</h2>
-      <p class="lead" style="margin-top:1rem">These aren't packages — they're the three most common shapes a plan takes. We'll mix and match on your discovery call.</p>
-      <div class="tiers">
-        <div class="tier feature reveal"><span class="badge">Hands-off</span><h3>Full-scale</h3><div class="price" style="font-size:1.3rem">Creation + management<small>custom monthly retainer</small></div><ul><li>Monthly content days (I come to you)</li><li>Reels, carousels, stories — shot, edited, captioned</li><li>Posting, scheduling &amp; community engagement</li><li>Monthly strategy check-in + analytics</li></ul><a class="btn pink" href="contact.html?s=social">Inquire</a></div>
-        <div class="tier reveal d1"><h3>Content-only</h3><div class="price" style="font-size:1.3rem">You post, I create<small>per shoot or monthly</small></div><ul><li>Shoot days at your boutique, studio, or venue</li><li>Edited reels + photo sets, ready to post</li><li>Caption starters &amp; hook ideas</li><li>Great for brands who like to stay hands-on</li></ul><a class="btn ghost" href="contact.html?s=social">Inquire</a></div>
-        <div class="tier reveal d2"><h3>Management-only</h3><div class="price" style="font-size:1.3rem">You create, I run it<small>custom monthly retainer</small></div><ul><li>Send me your raw photos &amp; clips</li><li>I edit, caption, schedule &amp; post</li><li>Perfect for wedding pros with galleries piling up</li><li>Engagement + monthly reporting</li></ul><a class="btn ghost" href="contact.html?s=social">Inquire</a></div>
-      </div>
-      <p class="muted" style="margin-top:1.6rem;font-size:.92rem">Pricing is quoted per plan after your discovery call. <span class="ph">decide: show "starting at" numbers or keep inquire-only</span></p>
-    </div>
-  </section>
-
-  <section class="sec bg-banana">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow" style="color:var(--ink)">Two clients I love</span>
-        <h2>Wedding pros &amp; boutiques</h2>
-        <p style="margin-top:1.2rem"><strong>If you're a wedding professional:</strong> you already have the content — it's sitting in galleries you never get to. Send me the raw images and video and I'll turn them into reels, carousels, and posts that book your next couple.</p>
-        <p style="margin-top:1rem"><strong>If you own a boutique:</strong> I come to you. One morning on the floor shooting new arrivals becomes a month of reels and product content — styled, edited, and posted while the pieces are still in stock.</p>
-        <div class="btn-row"><a class="btn" href="contact.html?s=social">Tell me about your business</a></div>
-      </div>
-      <div class="photo reveal d1"><img src="assets/lemon-creative/brand/brand-60.jpg" alt=""></div>
-    </div>
-  </section>
-
-  <section class="sec" id="social-how">
+  <section class="blk slant alt bg-ivory faq">
     <div class="wrap">
-      <span class="eyebrow icy">The process</span>
-      <h2>From "I should post more" to posted</h2>
+      <h2>Questions, <span class="lt">answered</span></h2>
+      <div class="qa">
+        <details><summary>Do I have to pick a package?<i></i></summary><div class="ans"><p>Nope. Wedding content has two set packages because the day has a set shape. Social media management is fully custom, built around what you need and what you can hand off.</p></div></details>
+        <details><summary>Where are you based, and do you travel?<i></i></summary><div class="ans"><p>Dallas, TX. I work across DFW, and travel fees may apply outside the metro. <span class="ph">confirm travel policy</span></p></div></details>
+        <details><summary>How fast do I get wedding content back?<i></i></summary><div class="ans"><p>Raw photos and videos within 24 hours. Edited highlight reels within 72 hours.</p></div></details>
+        <details><summary>What does social media management include?<i></i></summary><div class="ans"><p>Anywhere from full-scale creation, posting, and engagement, to creating content you post yourself, to managing content you already make. We’ll find the right blend on our call.</p></div></details>
+        <details><summary>Can I hire you for just one shoot?<i></i></summary><div class="ans"><p>Yes. Boutique shoots, brand days, and one-off content sessions are all available. <span class="ph">confirm</span></p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="vcta">
+    <video data-src="assets/lemon-creative/brand/brand-62.mp4" poster="assets/lemon-creative/brand/brand-62.jpg" muted loop playsinline></video>
+    <div class="wrap">
+      <h2>Ready when you are. <span class="lt">Let’s make something bright.</span></h2>
+      <p>Tell me a little about your business or your big day and I’ll be in touch within 48 hours.</p>
+      <div class="btns"><a class="btn banana" href="#contact">Start with the intake form</a><a class="btn ivory" href="#gallery">Browse the gallery</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ======================= SOCIAL ======================= -->
+<section class="view" data-view="social">
+  <section class="shero bg-pink">
+    <div class="wrap">
+      <div>
+        <span class="stk pink">Where most of my clients start</span>
+        <h1>Social media, <span class="lt">the boutique way</span></h1>
+        <p class="lede">You didn’t start a business to spend your nights editing reels. I build a plan around what you need, from full-scale creation and management to just the piece you’re missing, so your feed finally looks like your business feels.</p>
+        <div class="btns"><a class="btn pink" href="#social-form">Start your social intake</a><a class="link" href="#social-plans">See the three starting points</a></div>
+      </div>
+      <div class="art">
+        <div class="badge" data-badge="Reels · Carousels · Stories · Posting · " data-color="#131C2A"></div>
+        <figure class="cut arch"><video data-src="assets/lemon-creative/smm/smm-20.mp4" poster="assets/lemon-creative/smm/smm-20.jpg" muted loop playsinline></video><span class="cap">Kids’ brand launch</span></figure>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/brand/brand-46.mp4" poster="assets/lemon-creative/brand/brand-46.jpg" muted loop playsinline></video></figure>
+        <figure class="cut round"><video data-src="assets/lemon-creative/smm/smm-02.mp4" poster="assets/lemon-creative/smm/smm-02.jpg" muted loop playsinline></video></figure>
+      </div>
+    </div>
+  </section>
+  <div class="tick pink"><div class="run" data-tick="Full-scale creation + management|Content-only|Management-only|Boutique shoots|Wedding-pro content|Dallas–Fort Worth"></div></div>
+
+  <section class="blk bg-ivory" id="social-plans">
+    <div class="wrap">
+      <div class="head"><h2>Three starting points, <span class="lt">endless blends</span></h2><p class="lede">These aren’t packages. They’re the three most common shapes a plan takes, and we’ll mix and match on your discovery call.</p></div>
+      <div class="plans">
+        <div class="plan"><div class="pm"><video data-src="assets/lemon-creative/smm/smm-20.mp4" poster="assets/lemon-creative/smm/smm-20.jpg" muted loop playsinline></video><span class="stk banana">Most hands-off</span></div><div class="pb"><span class="who">For the totally hands-off</span><h3>Full-scale</h3><div class="sub">Creation and management, custom monthly retainer</div>
+          <ul><li>Monthly content days, I come to you</li><li>Reels, carousels, and stories, shot, edited, and captioned</li><li>Posting, scheduling, and community engagement</li><li>Monthly strategy check-in and analytics</li></ul><a class="btn ivory" href="#social-form">Ask about full-scale</a></div></div>
+        <div class="plan"><div class="pm"><video data-src="assets/lemon-creative/smm/smm-07.mp4" poster="assets/lemon-creative/smm/smm-07.jpg" muted loop playsinline></video></div><div class="pb"><span class="who">You post, I create</span><h3>Content-only</h3><div class="sub">Per shoot or monthly</div>
+          <ul><li>Shoot days at your boutique, studio, or venue</li><li>Edited reels and photo sets, ready to post</li><li>Caption starters and hook ideas</li><li>Great for brands who like to stay hands-on</li></ul><a class="btn denim" href="#social-form">Ask about content-only</a></div></div>
+        <div class="plan"><div class="pm"><video data-src="assets/lemon-creative/smm/smm-29.mp4" poster="assets/lemon-creative/smm/smm-29.jpg" muted loop playsinline></video></div><div class="pb"><span class="who">You create, I run it</span><h3>Management-only</h3><div class="sub">Custom monthly retainer</div>
+          <ul><li>Send me your raw photos and clips</li><li>I edit, caption, schedule, and post</li><li>Perfect for wedding pros with galleries piling up</li><li>Engagement and monthly reporting</li></ul><a class="btn ivory" href="#social-form">Ask about management</a></div></div>
+      </div>
+      <p class="small" style="margin-top:3.4rem">Pricing is quoted per plan after your discovery call. <span class="ph">decide: “starting at” numbers or inquire-only</span></p>
+    </div>
+  </section>
+
+  <section class="blk slant bg-icy">
+    <div class="wrap split">
+      <div>
+        <h2>Two clients <span class="lt">I love</span></h2>
+        <div class="toggle" role="tablist">
+          <button class="on" data-tab="pro" data-vid="assets/lemon-creative/smm/smm-29.mp4">I’m a wedding professional</button>
+          <button data-tab="shop" data-vid="assets/lemon-creative/smm/smm-07.mp4">I own a boutique</button>
+        </div>
+        <div class="tpanel on" data-panel="pro"><p class="lede">You already have the content. It’s sitting in galleries you never get to. Send me the raw images and video and I’ll turn them into reels, carousels, and posts that book your next couple.</p></div>
+        <div class="tpanel" data-panel="shop"><p class="lede">I come to you. One morning on the floor shooting new arrivals becomes a month of reels and product content, styled, edited, and posted while the pieces are still in stock.</p></div>
+        <a class="btn denim" href="#social-form" style="margin-top:1rem">Tell me about your business</a>
+      </div>
+      <div class="art">
+        <figure class="cut tall"><video id="tabvid" data-src="assets/lemon-creative/smm/smm-29.mp4" poster="assets/lemon-creative/smm/smm-29.jpg" muted loop playsinline></video></figure>
+        <div class="badge" data-badge="Raw gallery → month of content · " data-color="#F27EA2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk slant alt bg-banana">
+    <div class="wrap">
+      <div class="head"><h2>From “I should post more” <span class="lt">to posted</span></h2><p class="lede">How a social plan comes together.</p></div>
       <div class="steps">
-        <div class="step reveal"><h4>Intake + call</h4><p>Tell me about your business, your audience, and what's not working. We'll talk goals, voice, and how hands-on you want to be.</p></div>
-        <div class="step reveal d1"><h4>Your plan</h4><p>A custom proposal with the exact blend of creation and management you need, a monthly rhythm, and a clear price.</p></div>
-        <div class="step reveal d2"><h4>Content day</h4><p>I shoot on location (or you send raws). We batch a month of content in one go so it never feels like a chore.</p></div>
-        <div class="step reveal d3"><h4>Post, engage, report</h4><p>Everything gets edited, captioned, scheduled, and posted. You get a monthly recap of what's working.</p></div>
+        <div class="step"><h4>Intake and call</h4><p>Tell me about your business, your audience, and what isn’t working. We’ll talk goals, voice, and how hands-on you want to be.</p></div>
+        <div class="step"><h4>Your plan</h4><p>A custom proposal with the right blend of creation and management, a monthly rhythm, and a clear price.</p></div>
+        <div class="step"><h4>Content day</h4><p>I shoot on location, or you send raws. We batch a month of content in one go so it never feels like a chore.</p></div>
+        <div class="step"><h4>Post, engage, report</h4><p>Everything gets edited, captioned, scheduled, and posted. You get a monthly recap of what’s working.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="sec bg-ivory">
-    <div class="wrap center">
-      <span class="eyebrow">Recent work</span>
-      <h2>Recent client work</h2>
-      <p class="lead" style="margin-top:1rem">Landscapers, kids' brands, wedding pros, florists — a few of the reels that are out there doing the work. <span class="ph">add results numbers when ready</span></p>
-      <div class="phones" style="margin-top:2.5rem">
-        <div class="phone"><div class="screen"><video src="assets/lemon-creative/smm/smm-02.mp4" poster="assets/lemon-creative/smm/smm-02.jpg" muted loop playsinline autoplay></video><div class="ui">landscaper · reel</div></div></div>
-        <div class="phone"><div class="screen"><video src="assets/lemon-creative/smm/smm-29.mp4" poster="assets/lemon-creative/smm/smm-29.jpg" muted loop playsinline autoplay></video><div class="ui">wedding videographer · reel</div></div></div>
-        <div class="phone"><div class="screen"><video src="assets/lemon-creative/smm/smm-13.mp4" poster="assets/lemon-creative/smm/smm-13.jpg" muted loop playsinline autoplay></video><div class="ui">pool &amp; landscape · reel</div></div></div>
-      </div>
-    </div>
+  <section class="blk slant bg-green rail" id="rail2">
+    <div class="rh"><h2>Recent <span class="lt">client work</span></h2></div>
+    <div class="run" data-rail="smm"></div>
   </section>
 
-  <section class="sec" id="social-form">
-    <div class="wrap center">
-      <span class="eyebrow">Social media intake</span>
-      <h2>Let's talk about your feed</h2>
-      <p class="lead" style="margin-top:1rem">Two minutes, no commitment. I'll reply within 48 hours with next steps.</p>
-      <form class="form-card" onsubmit="return false">
-        <div class="form-grid">
-          <div><label>Your name</label><input placeholder="First & last"></div>
-          <div><label>Business name</label><input placeholder="e.g. Bloom Boutique"></div>
-          <div><label>Email</label><input type="email" placeholder="you@business.com"></div>
-          <div><label>Phone</label><input placeholder="(214) 555-0123"></div>
-          <div class="full"><label>Instagram handle (and any other platforms)</label><input placeholder="@yourbusiness · TikTok · Facebook"></div>
-          <div class="full"><label>What kind of business are you?</label><div class="choice"><label><input type="checkbox">Boutique / retail</label><label><input type="checkbox">Wedding professional</label><label><input type="checkbox">Restaurant / café</label><label><input type="checkbox">Service-based</label><label><input type="checkbox">Other</label></div></div>
-          <div class="full"><label>What do you need help with? (pick all that apply)</label><div class="choice"><label><input type="checkbox">Content creation (shooting + editing)</label><label><input type="checkbox">Posting + scheduling</label><label><input type="checkbox">Strategy + captions</label><label><input type="checkbox">Engagement / community</label><label><input type="checkbox">Not sure yet — help!</label></div></div>
-          <div><label>How often are you posting now?</label><select><option>Rarely / inconsistently</option><option>A few times a month</option><option>Weekly</option><option>Several times a week</option><option>Daily</option></select></div>
-          <div><label>Monthly budget range <span class="ph">confirm ranges</span></label><select><option>Under $500</option><option>$500–$1,000</option><option>$1,000–$2,000</option><option>$2,000+</option><option>Not sure yet</option></select></div>
-          <div class="full"><label>Tell me about your business and what's not working on social right now</label><textarea placeholder="The more the better — who are your customers, what do you sell, what have you tried?"></textarea></div>
-          <div class="full"><label>How did you hear about Lemon Creative?</label><input placeholder="Instagram, a friend, Google…"></div>
-          <div class="full"><button class="btn pink">Send it over</button></div>
-        </div>
-      </form>
+  <section class="blk slant alt bg-pink" id="social-form">
+    <div class="wrap intake">
+      <div class="side">
+        <h2>Let’s talk <span class="lt">about your feed</span></h2>
+        <p class="lede">Two minutes, no commitment. I’ll reply within 48 hours with next steps.</p>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/brand/brand-74.mp4" poster="assets/lemon-creative/brand/brand-74.jpg" muted loop playsinline></video></figure>
+      </div>
+      <div class="form" data-form="social"></div>
     </div>
   </section>
-</main>
+</section>
 
-<!-- ════════════════════════════ WEDDINGS ════════════════════════════ -->
-<main class="pageview" data-view="weddings" hidden>
-  <section class="page-hero">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow icy">Service 02</span>
-        <h1>Wedding content, <span class="hl icy">back by morning</span></h1>
-        <p class="lead">While your photographer and videographer are busy making your final gallery and film, I capture all the candid, behind-the-scenes, in-between moments on iPhone — getting ready with your girls, the first look, the dance floor — and deliver them back fast so you can start reliving your day right away.</p>
-        <div class="btn-row"><a class="btn denim" href="contact.html?s=weddings">Check my date</a><a class="btn ghost" href="#wed-packages">See packages</a></div>
-      </div>
-      <div class="panel bg-pink reveal d2">
-        <div class="phones">
-          <div class="phone"><div class="screen"><video src="assets/lemon-creative/video/firstlook.mp4" muted loop playsinline autoplay></video><div class="ui">first look · 0:18</div></div></div>
-          <div class="phone"><div class="screen"><video src="assets/lemon-creative/video/recap.mp4" muted loop playsinline autoplay></video><div class="ui">wedding recap · 0:42</div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="marquee icy"><div class="marquee-track">
-    <span>Raw content in 24 hours</span><span>Edited reels in 72 hours</span><span>Unlimited photos &amp; videos</span><span>Dallas–Fort Worth</span><span>Custom packages available</span>
-    <span>Raw content in 24 hours</span><span>Edited reels in 72 hours</span><span>Unlimited photos &amp; videos</span><span>Dallas–Fort Worth</span><span>Custom packages available</span>
-  </div></div>
-
-  <section class="sec">
-    <div class="wrap split rev">
-      <div class="photo reveal"><img src="assets/lemon-creative/wed-bride-celebrate.jpg" alt=""></div>
-      <div class="reveal d1">
-        <span class="aside denim">not the photographer's job?</span>
-        <h2>Not the same thing, <span class="hl">I promise</span></h2>
-        <p class="lead" style="margin-top:1.2rem">Your photographer is building a polished gallery. Your videographer is crafting a film. Both are worth every penny — and both take weeks. I'm the third person: phone in hand, capturing the unscripted stuff as it happens and sending it to you by the next morning so you have something to post on the honeymoon.</p>
-        <ul class="checks">
-          <li><span>Getting ready, first looks, vows, toasts, dance floor — all of it, candid.</span></li>
-          <li><span>Vertical video shot for Instagram &amp; TikTok, not cropped from a cinema camera.</span></li>
-          <li><span>Edited highlight reels with trending audio, ready to post.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec bg-ivory" id="wed-packages">
-    <div class="wrap center">
-      <span class="eyebrow">Packages</span>
-      <h2>Two ways to say <span class="script" style="color:var(--pink);font-size:1.15em">I do</span></h2>
-      <div class="tiers two">
-        <div class="tier reveal"><h3>Love at Last</h3><div class="price">$1,000<small>5 hours of coverage</small></div><ul><li>5 hours of wedding coverage</li><li>Unlimited photos and videos</li><li>1 edited highlight reel (over 30 seconds)</li><li>1 edited highlight reel (under 30 seconds)</li><li>Raw content delivered within 24 hours</li><li>Edited within 72 hours</li></ul><a class="btn ghost" href="contact.html?s=weddings">Check availability</a></div>
-        <div class="tier feature reveal d1"><span class="badge">Full day</span><h3>Forever Yours</h3><div class="price">$1,200<small>8 hours of coverage</small></div><ul><li>8 hours of wedding coverage</li><li>Unlimited photos and videos</li><li>2 edited highlight reels (over 30 seconds)</li><li>2 edited highlight reels (under 30 seconds)</li><li>Raw content delivered within 24 hours</li><li>Edited within 72 hours</li></ul><a class="btn denim" href="contact.html?s=weddings">Check availability</a></div>
-      </div>
-      <p class="muted" style="margin-top:1.6rem;font-size:.92rem">Custom packages available upon inquiry. Additional travel fees outside of the DFW area may apply.</p>
-    </div>
-  </section>
-
-  <section class="sec">
+<!-- ======================= WEDDINGS ======================= -->
+<section class="view" data-view="weddings">
+  <section class="shero bg-icy">
     <div class="wrap">
-      <span class="eyebrow denim">Recent weddings</span>
-      <h2>Straight from the camera roll</h2>
-      <div class="grid-gal">
-        <img class="tall" src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/wed-sunset-wine.jpg" alt=""><img src="assets/lemon-creative/wed-bridesmaids.jpg" alt=""><img class="wide" src="assets/lemon-creative/wed-chapel-wide.jpg" alt=""><img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/wed-hug.jpg" alt=""><img class="wide" src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/wed-bw-getting-ready.jpg" alt="">
+      <div>
+        <span class="stk banana">Raw content in 24 hours</span>
+        <h1>Wedding content, <span class="lt">back by morning</span></h1>
+        <p class="lede">While your photographer and videographer are busy with the final gallery and film, I capture the candid, in-between moments on iPhone (getting ready, the first look, the dance floor) and deliver them fast so you can relive the day right away.</p>
+        <div class="btns"><a class="btn denim" href="#wed-form">Check my date</a><a class="link" href="#wed-packages">See packages</a></div>
+      </div>
+      <div class="art">
+        <div class="badge" data-badge="Shot on iPhone · Back by morning · " data-color="#6B8DC8"></div>
+        <figure class="cut arch"><video data-src="assets/lemon-creative/video/firstlook.mp4" poster="assets/lemon-creative/video/firstlook.jpg" muted loop playsinline></video><span class="cap">First look</span></figure>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/video/daynight.mp4" poster="assets/lemon-creative/video/daynight.jpg" muted loop playsinline></video></figure>
+        <figure class="cut round"><img src="assets/lemon-creative/wed-veil-kiss.jpg" alt="" loading="lazy"></figure>
       </div>
     </div>
   </section>
+  <div class="tick denim"><div class="run" data-tick="Raw content in 24 hours|Edited reels in 72 hours|Unlimited photos and videos|Dallas–Fort Worth|Custom packages available"></div></div>
 
-  <section class="sec bg-ivory" id="wed-form">
-    <div class="wrap center">
-      <span class="eyebrow icy">Wedding content intake</span>
-      <h2>Is your date open?</h2>
-      <p class="lead" style="margin-top:1rem">Tell me about the day and I'll confirm availability within 48 hours.</p>
-      <form class="form-card" onsubmit="return false">
-        <div class="form-grid">
-          <div><label>Your name</label><input placeholder="First & last"></div>
-          <div><label>Partner's name</label><input placeholder="First & last"></div>
-          <div><label>Email</label><input type="email" placeholder="you@email.com"></div>
-          <div><label>Phone</label><input placeholder="(214) 555-0123"></div>
-          <div><label>Wedding date</label><input type="date"></div>
-          <div><label>Venue + city</label><input placeholder="The Grand Ivory · Leonard, TX"></div>
-          <div class="full"><label>Which package are you leaning toward?</label><div class="choice"><label><input type="radio" name="pkg">Love at Last · 5 hrs</label><label><input type="radio" name="pkg">Forever Yours · 8 hrs</label><label><input type="radio" name="pkg">Something custom</label></div></div>
-          <div><label>Estimated guest count</label><select><option>Under 50</option><option>50–100</option><option>100–150</option><option>150–200</option><option>200+</option></select></div>
-          <div><label>Do you have a photographer &amp; videographer booked?</label><select><option>Both</option><option>Photographer only</option><option>Videographer only</option><option>Not yet</option></select></div>
-          <div class="full"><label>Which moments matter most to you?</label><div class="choice"><label><input type="checkbox">Getting ready</label><label><input type="checkbox">First look</label><label><input type="checkbox">Ceremony</label><label><input type="checkbox">Toasts</label><label><input type="checkbox">Dance floor</label><label><input type="checkbox">Send-off</label></div></div>
-          <div class="full"><label>Anything else I should know?</label><textarea placeholder="Vibe, timeline, surprises planned, Instagram handles…"></textarea></div>
-          <div class="full"><button class="btn denim">Check my date</button></div>
-        </div>
-      </form>
-    </div>
-  </section>
-</main>
-
-<!-- ════════════════════════════ PHOTOGRAPHY ════════════════════════════ -->
-<main class="pageview" data-view="photography" hidden>
-  <section class="page-hero">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow green">Service 03</span>
-        <h1>Photography for <span class="hl green">the in-between</span></h1>
-        <p class="lead">Engagements, maternity, baby announcements, gender reveals — the moments worth more than a phone pic. Bright, candid, a little playful, and edited to look like real life (just the good lighting version).</p>
-        <div class="btn-row"><a class="btn green" href="contact.html?s=photography">Book a session</a><a class="btn ghost" href="#photo-gal">See the gallery</a></div>
-      </div>
-      <div class="about-grid reveal d2" style="grid-template-columns:1fr 1fr">
-        <img src="assets/lemon-creative/photo-engagement-2.jpg" alt=""><img src="assets/lemon-creative/photo-maternity-2.jpg" alt="">
-      </div>
-    </div>
-  </section>
-  <div class="marquee green"><div class="marquee-track">
-    <span>Engagements</span><span>Maternity</span><span>Baby announcements</span><span>Gender reveals</span><span>Family &amp; milestones</span><span>Dallas–Fort Worth</span>
-    <span>Engagements</span><span>Maternity</span><span>Baby announcements</span><span>Gender reveals</span><span>Family &amp; milestones</span><span>Dallas–Fort Worth</span>
-  </div></div>
-
-  <section class="sec">
-    <div class="wrap center">
-      <span class="eyebrow">Sessions</span>
-      <h2>What should we celebrate?</h2>
-      <div class="tiers">
-        <div class="tier reveal"><h3>Engagement</h3><div class="price">$— <span class="ph">price</span><small>starting at</small></div><ul><li>60–90 minute session</li><li>1–2 locations across DFW</li><li>Full edited gallery, delivered online</li><li>Outfit + location guidance included</li></ul><a class="btn ghost" href="contact.html?s=photography">Inquire</a></div>
-        <div class="tier feature reveal d1"><span class="badge">Fan favorite</span><h3>Maternity &amp; announcements</h3><div class="price">$— <span class="ph">price</span><small>starting at</small></div><ul><li>Maternity, baby announcement, or gender reveal</li><li>60 minute session</li><li>Full edited gallery + a few reel-ready clips</li><li>Confetti cannons encouraged</li></ul><a class="btn green" href="contact.html?s=photography">Inquire</a></div>
-        <div class="tier reveal d2"><h3>Mini &amp; milestone</h3><div class="price">$— <span class="ph">price</span><small>starting at</small></div><ul><li>30 minute mini session</li><li>Birthdays, graduations, "just because"</li><li>Edited gallery delivered within 1 week</li><li>Seasonal minis announced on Instagram</li></ul><a class="btn ghost" href="contact.html?s=photography">Inquire</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec bg-ivory" id="photo-gal">
-    <div class="wrap center">
-      <span class="eyebrow green">Gallery</span>
-      <h2>Recent sessions</h2>
-      <div class="filter-row" id="gal-pills">
-        <button class="filter-btn active" data-f="all">All</button><button class="filter-btn" data-f="engagement">Engagement</button><button class="filter-btn" data-f="maternity">Maternity</button><button class="filter-btn" data-f="announce">Announcements</button>
-      </div>
-      <div class="grid-gal" id="photo-gallery">
-        <img class="tall" data-c="engagement" src="assets/lemon-creative/photo-engagement-1.jpg" alt=""><img data-c="maternity" src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-announce-1.jpg" alt=""><img class="wide" data-c="engagement" src="assets/lemon-creative/photo-engagement-4.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-reveal-1.jpg" alt=""><img data-c="maternity" src="assets/lemon-creative/photo-maternity-2.jpg" alt=""><img class="wide" data-c="announce" src="assets/lemon-creative/photo-announce-flatlay.jpg" alt=""><img data-c="engagement" src="assets/lemon-creative/photo-engagement-3.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-announce-3.jpg" alt=""><img data-c="announce" src="assets/lemon-creative/photo-announce-2.jpg" alt=""><img data-c="engagement" src="assets/lemon-creative/photo-engagement-2.jpg" alt="">
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="photo-form">
-    <div class="wrap center">
-      <span class="eyebrow green">Photography intake</span>
-      <h2>Let's plan your session</h2>
-      <form class="form-card" onsubmit="return false">
-        <div class="form-grid">
-          <div><label>Your name</label><input placeholder="First & last"></div>
-          <div><label>Email</label><input type="email" placeholder="you@email.com"></div>
-          <div><label>Phone</label><input placeholder="(214) 555-0123"></div>
-          <div><label>Ideal date (or month)</label><input placeholder="Late October, weekends"></div>
-          <div class="full"><label>Session type</label><div class="choice"><label><input type="radio" name="st">Engagement</label><label><input type="radio" name="st">Maternity</label><label><input type="radio" name="st">Baby announcement</label><label><input type="radio" name="st">Gender reveal</label><label><input type="radio" name="st">Family / milestone</label><label><input type="radio" name="st">Other</label></div></div>
-          <div><label>Who's in the photos?</label><input placeholder="Just us two · plus the dog"></div>
-          <div><label>Location preference</label><select><option>You pick — surprise me</option><option>Park / outdoors</option><option>Downtown / urban</option><option>Our home</option><option>Somewhere specific</option></select></div>
-          <div class="full"><label>Vibe + anything special</label><textarea placeholder="Bright and playful? Golden hour? Confetti? A reveal we need to keep secret?"></textarea></div>
-          <div class="full"><button class="btn green">Book my session</button></div>
-        </div>
-      </form>
-    </div>
-  </section>
-</main>
-
-<!-- ════════════════════════════ ABOUT ════════════════════════════ -->
-<main class="pageview" data-view="about" hidden>
-  <section class="page-hero">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">About</span>
-        <span class="aside" style="display:block">hi, I'm Lem</span>
-        <h1>The person behind <span class="hl">the lemon</span></h1>
-        <p class="lead"><span class="ph">placeholder bio — needs her words</span> I'm a Dallas-based content creator, social media manager, and photographer who believes marketing should feel like a conversation with your most enthusiastic friend. I started Lemon Creative because too many small businesses were paying for content that looked nothing like them — polished, beige, and forgettable.</p>
-        <p class="muted" style="margin-top:1rem">These days I split my time between content days at boutiques, raw galleries from wedding pros, Saturday weddings with my iPhone, and golden-hour sessions with couples and growing families. The common thread: bright, candid, and 100% you.</p>
-        <div class="facts"><span class="pill">Dallas, TX</span><span class="pill pink">camera roll: always full</span><span class="pill icy">lemonade over coffee</span><span class="pill green">iPhone evangelist</span> <span class="ph">fun facts</span></div>
-        <div class="btn-row"><a class="btn pink" href="contact.html">Let's work together</a></div>
-      </div>
-      <div class="about-grid reveal d2">
-        <img src="assets/lemon-creative/brand/brand-62.jpg" alt=""><img src="assets/lemon-creative/brand/brand-53.jpg" style="object-position:50% 14%" alt=""><img src="assets/lemon-creative/brand/brand-45.jpg" style="object-position:50% 22%" alt="">
-      </div>
-    </div>
-  </section>
-  <div class="marquee"><div class="marquee-track">
-    <span>Bright</span><span>Bubbly</span><span>Inviting</span><span>Fun</span><span>Elevated, not stuffy</span><span>Experimental</span><span>Accurately you</span>
-    <span>Bright</span><span>Bubbly</span><span>Inviting</span><span>Fun</span><span>Elevated, not stuffy</span><span>Experimental</span><span>Accurately you</span>
-  </div></div>
-
-  <section class="sec bg-ivory">
+  <section class="blk bg-ivory">
     <div class="wrap">
-      <span class="eyebrow green">How I work</span>
-      <h2>A few things I believe</h2>
+      <div class="head"><h2>Isn’t that the <span class="lt">photographer’s job?</span></h2><p class="lede">Not the same thing, I promise. Your photographer and videographer are worth every penny, and both take weeks. I’m the third person in the room.</p></div>
+      <div class="compare">
+        <div><h4>Photographer</h4><p>A polished, edited gallery of the whole day. Usually delivered in 6–10 weeks.</p></div>
+        <div><h4>Videographer</h4><p>A cinematic film shot on cinema cameras, cut weeks or months later.</p></div>
+        <div class="me"><h4>Lemon Creative</h4><p>Vertical video and candid photos shot for Instagram and TikTok, sent to you by the next morning, with edited reels set to trending audio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk slant bg-banana" id="wed-packages">
+    <div class="wrap">
+      <div class="head"><h2>Two ways <span class="lt">to say I do</span></h2><p class="lede">Custom packages available upon inquiry. Travel fees may apply outside DFW.</p></div>
+      <div class="pkgs">
+        <div class="pkg a"><div class="pm"><video data-src="assets/lemon-creative/video/firstlook.mp4" poster="assets/lemon-creative/video/firstlook.jpg" muted loop playsinline></video></div><div class="pb">
+          <span class="hrs">5 hours of coverage</span><h3>Love at Last</h3><div class="amt">$1,000</div>
+          <ul><li>Unlimited photos and videos</li><li>1 edited highlight reel, over 30 seconds</li><li>1 edited highlight reel, under 30 seconds</li><li>Raw content delivered within 24 hours</li><li>Edited within 72 hours</li></ul>
+          <a class="btn ivory" href="#wed-form">Check availability</a></div></div>
+        <div class="pkg b"><div class="pm"><video data-src="assets/lemon-creative/video/recap.mp4" poster="assets/lemon-creative/video/recap.jpg" muted loop playsinline></video></div><div class="pb">
+          <span class="hrs">8 hours, the full day</span><h3>Forever Yours</h3><div class="amt">$1,200</div>
+          <ul><li>Unlimited photos and videos</li><li>2 edited highlight reels, over 30 seconds</li><li>2 edited highlight reels, under 30 seconds</li><li>Raw content delivered within 24 hours</li><li>Edited within 72 hours</li></ul>
+          <a class="btn banana" href="#wed-form">Check availability</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk slant alt bg-pink rail" id="rail3">
+    <div class="rh"><h2>Straight from <span class="lt">the camera roll</span></h2></div>
+    <div class="run" data-rail="wed"></div>
+  </section>
+
+  <section class="blk slant bg-icy">
+    <div class="wrap">
+      <div class="head"><h2>The little <span class="lt">in-betweens</span></h2><p class="lede">Stills from recent weddings, pulled straight from the iPhone.</p></div>
+      <div class="wall" data-wall="wedding"></div>
+    </div>
+  </section>
+
+  <section class="blk slant alt bg-banana" id="wed-form">
+    <div class="wrap intake">
+      <div class="side">
+        <h2>Is your date <span class="lt">open?</span></h2>
+        <p class="lede">Tell me about the day and I’ll confirm availability within 48 hours.</p>
+        <figure class="cut tall"><video data-src="assets/lemon-creative/video/recap-clean.mp4" poster="assets/lemon-creative/video/recap-clean.jpg" muted loop playsinline></video></figure>
+      </div>
+      <div class="form" data-form="wedding"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ======================= PHOTOGRAPHY ======================= -->
+<section class="view" data-view="photography">
+  <section class="shero bg-green">
+    <div class="wrap">
+      <div>
+        <span class="stk green">Golden hour, always</span>
+        <h1>Photography <span class="lt">for the in-betweens</span></h1>
+        <p class="lede">Engagements, maternity, baby announcements, and gender reveals: the moments worth more than a phone pic. Bright, candid, a little playful, and edited to look like real life in really good light.</p>
+        <div class="btns"><a class="btn green" href="#photo-form">Book a session</a><a class="link" href="#photo-gal">See the gallery</a></div>
+      </div>
+      <div class="art">
+        <div class="badge" data-badge="Engagements · Maternity · Milestones · " data-color="#00A271"></div>
+        <figure class="cut arch"><img src="assets/lemon-creative/photo-maternity-1.jpg" alt="Maternity session"><span class="cap">Maternity</span></figure>
+        <figure class="cut tall"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt="Engagement session"></figure>
+        <figure class="cut round"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt="Gender reveal"></figure>
+      </div>
+    </div>
+  </section>
+  <div class="tick green"><div class="run" data-tick="Engagements|Maternity|Baby announcements|Gender reveals|Family and milestones|Dallas–Fort Worth"></div></div>
+
+  <section class="blk bg-ivory">
+    <div class="wrap">
+      <div class="head"><h2>What should <span class="lt">we celebrate?</span></h2><p class="lede">Three kinds of sessions. Every one comes with outfit and location guidance.</p></div>
+      <div class="sessions">
+        <div class="sess"><figure class="cut arch rv"><img src="assets/lemon-creative/photo-engagement-3.jpg" alt="" loading="lazy"></figure><h3>Engagement</h3><div class="from">Starting at $— <span class="ph">price</span></div><ul><li>60–90 minute session</li><li>1–2 locations across DFW</li><li>Full edited gallery, delivered online</li></ul><a class="link" href="#photo-form">Ask about engagements</a></div>
+        <div class="sess"><span class="stk banana">Fan favorite</span><figure class="cut arch rv"><img src="assets/lemon-creative/photo-announce-2.jpg" alt="" loading="lazy"></figure><h3>Maternity &amp; announcements</h3><div class="from">Starting at $— <span class="ph">price</span></div><ul><li>Maternity, baby announcement, or gender reveal</li><li>60 minute session</li><li>Edited gallery plus a few reel-ready clips</li></ul><a class="link" href="#photo-form">Ask about announcements</a></div>
+        <div class="sess"><figure class="cut arch rv"><img src="assets/lemon-creative/photo-reveal-1.jpg" alt="" loading="lazy"></figure><h3>Mini &amp; milestone</h3><div class="from">Starting at $— <span class="ph">price</span></div><ul><li>30 minute mini session</li><li>Birthdays, graduations, or just because</li><li>Gallery delivered within a week</li></ul><a class="link" href="#photo-form">Ask about minis</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk slant bg-banana" id="photo-gal">
+    <div class="wrap">
+      <div class="head"><h2>Recent <span class="lt">sessions</span></h2><p class="lede">Tap any photo to see it bigger.</p></div>
+      <div class="filters"><button class="on" data-f="all">All</button><button data-f="eng">Engagements</button><button data-f="mat">Maternity</button><button data-f="ann">Announcements</button></div>
+      <div class="wall" data-wall="photo"></div>
+    </div>
+  </section>
+
+  <section class="blk slant alt bg-green" id="photo-form">
+    <div class="wrap intake">
+      <div class="side">
+        <h2>Let’s plan <span class="lt">your session</span></h2>
+        <p class="lede">Tell me what we’re celebrating and I’ll send dates and ideas within 48 hours.</p>
+        <figure class="cut scal"><img src="assets/lemon-creative/photo-maternity-2.jpg" alt=""></figure>
+      </div>
+      <div class="form" data-form="photo"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="view" data-view="about">
+  <section class="shero bg-banana">
+    <div class="wrap">
+      <div>
+        <span class="stk pink">The person behind the lemon</span>
+        <h1>Hi, I’m Lem. <span class="lt">Nice to meet you.</span></h1>
+        <p class="lede">I’m a Dallas-based content creator, social media manager, and photographer who believes marketing should feel like a conversation with your most enthusiastic friend. <span class="ph">placeholder bio, needs her words</span></p>
+        <p>These days I split my time between content days at boutiques, raw galleries from wedding pros, Saturday weddings with my iPhone, and golden-hour sessions with couples and growing families. The common thread is bright, candid, and 100% you.</p>
+        <div class="btns"><a class="btn pink" href="#contact">Let’s work together</a></div>
+      </div>
+      <div class="art">
+        <div class="badge" data-badge="Bright · Bubbly · Inviting · Fun · " data-color="#F27EA2"></div>
+        <figure class="cut arch"><video data-src="assets/lemon-creative/brand/brand-74.mp4" poster="assets/lemon-creative/brand/brand-74.jpg" muted loop playsinline></video></figure>
+        <figure class="cut tall"><img src="assets/lemon-creative/layne-phone.jpg" alt="Lem filming with a phone on a gimbal"></figure>
+        <figure class="cut round"><video data-src="assets/lemon-creative/brand/brand-60.mp4" poster="assets/lemon-creative/brand/brand-60.jpg" muted loop playsinline></video></figure>
+      </div>
+    </div>
+  </section>
+  <div class="tick banana"><div class="run" data-tick="Bright|Bubbly|Inviting|Fun|Elevated, not stuffy|Experimental|Accurately you"></div></div>
+
+  <section class="blk bg-pink">
+    <div class="wrap">
+      <div class="head"><h2>A few things <span class="lt">I believe</span></h2><p class="lede">How I work, and why my client list stays small on purpose.</p></div>
       <div class="beliefs">
-        <div class="belief reveal"><img src="assets/lemon-creative/art/illus/ribbon-bouquet.png" alt=""><strong>Your brand should look like you</strong><span>Not like the account you're jealous of. If it doesn't feel like you, it won't work — and it won't be fun.</span></div>
-        <div class="belief reveal d1"><img src="assets/lemon-creative/art/illus/phone-content.png" alt=""><strong>The phone in your pocket is enough</strong><span>Great content is about timing, light, and knowing what to look for — not a $5,000 camera.</span></div>
-        <div class="belief reveal d2"><img src="assets/lemon-creative/art/illus/woven-lemon-basket.png" alt=""><strong>Boutique means boutique</strong><span>I keep my client list small on purpose so every plan is actually custom and every message gets answered by me.</span></div>
+        <div class="belief"><figure class="cut round"><img src="assets/lemon-creative/layne-camera.jpg" alt="" loading="lazy"></figure><h4>Your brand should look like you</h4><p>Not like the account you’re jealous of. If it doesn’t feel like you, it won’t work, and it won’t be fun.</p></div>
+        <div class="belief"><figure class="cut round"><img src="assets/lemon-creative/layne-phone.jpg" alt="" loading="lazy"></figure><h4>The phone in your pocket is enough</h4><p>Great content is about timing, light, and knowing what to look for, not a $5,000 camera.</p></div>
+        <div class="belief"><figure class="cut round"><img src="assets/lemon-creative/layne-chair.jpg" alt="" loading="lazy"></figure><h4>Boutique means boutique</h4><p>I keep my client list small so every plan is actually custom and every message gets answered by me.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="cta" style="background:var(--green);color:var(--white)">
-    <img class="lemon l" src="assets/lemon-creative/lemon_slice.png" alt="">
+  <section class="blk slant bg-green rail" id="rail4">
+    <div class="rh"><h2>A peek at <span class="lt">studio days</span></h2></div>
+    <div class="run" data-rail="bts"></div>
+  </section>
+
+  <section class="blk slant alt bg-icy">
     <div class="wrap">
-      <h2>Sound like your kind of person?</h2>
-      <p class="lead" style="color:rgba(255,255,255,.9)">Let's talk.</p>
-      <div class="btn-row" style="justify-content:center"><a class="btn white" href="contact.html">Start with the intake form</a></div>
-    </div>
-  </section>
-</main>
-
-<!-- ════════════════════════════ CONTACT ════════════════════════════ -->
-<main class="pageview" data-view="contact" hidden>
-  <section class="page-hero bg-banana">
-    <div class="wrap center" style="padding-top:1rem;padding-bottom:1rem">
-      <span class="eyebrow" style="color:var(--ink)">Let's work together</span>
-      <h1>First things first — <br>what are we making?</h1>
-      <p class="lead" style="color:var(--ink);margin-inline:auto">Each service has its own quick intake so I can come to our call already knowing what you need. Pick one below.</p>
-      <div class="service-pick" id="service-pick">
-        <button data-s="social"><img src="assets/lemon-creative/art/illus/phone-content.png" alt="">Social media management</button>
-        <button data-s="weddings"><img src="assets/lemon-creative/art/illus/wedding-rings.png" alt="">Wedding content creation</button>
-        <button data-s="photography"><img src="assets/lemon-creative/art/illus/camera.png" alt="">Photography session</button>
+      <div class="head"><h2>What’s <span class="lt">in my bag</span></h2><p class="lede">The toolkit behind every content day. <span class="ph">confirm gear + her fun details</span></p></div>
+      <div class="kit">
+        <div><figure class="cut round"><img src="assets/lemon-creative/layne-camera2.jpg" alt="" loading="lazy"></figure><h4>A real camera</h4><p>For sessions, product shoots, and anything that deserves the extra detail.</p></div>
+        <div><figure class="cut round"><img src="assets/lemon-creative/layne-phone.jpg" alt="" loading="lazy"></figure><h4>My iPhone</h4><p>The workhorse. Every wedding reel and most of your feed starts here.</p></div>
+        <div><figure class="cut round"><img src="assets/lemon-creative/layne-laptop.jpg" alt="" loading="lazy"></figure><h4>The laptop</h4><p>Edits, captions, scheduling, and your monthly recap all live here.</p></div>
+        <div><figure class="cut round"><img src="assets/lemon-creative/lemon_slice.png" alt="" loading="lazy" style="object-fit:contain;padding:12%;background:var(--banana)"></figure><h4>A little zest</h4><p>Trending audio, good light, and a lot of “okay, one more take.”</p></div>
       </div>
     </div>
   </section>
-  <section class="sec">
-    <div class="wrap center">
-      <div class="form-panel" data-panel="social"><span class="eyebrow">Social media intake</span><h2>Tell me about your business</h2><p class="lead" style="margin-top:1rem">(Same form as the Social page — in Shopify this is one form rendered in both places.)</p><div class="btn-row" style="justify-content:center"><a class="btn pink" href="social.html#social-form">Open the social intake</a></div></div>
-      <div class="form-panel" data-panel="weddings"><span class="eyebrow icy">Wedding intake</span><h2>Is your date open?</h2><div class="btn-row" style="justify-content:center"><a class="btn denim" href="weddings.html#wed-form">Open the wedding intake</a></div></div>
-      <div class="form-panel" data-panel="photography"><span class="eyebrow green">Photography intake</span><h2>Plan your session</h2><div class="btn-row" style="justify-content:center"><a class="btn green" href="photography.html#photo-form">Open the photography intake</a></div></div>
-      <div class="form-card" style="max-width:640px;margin-top:3rem;text-align:center">
-        <h3>Prefer to just say hi?</h3>
-        <p class="muted" style="margin-top:.6rem">Email <a href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a> <span class="ph">confirm email</span> · Call or text <a href="tel:5124203580">512-420-3580</a> · DM <a href="https://www.instagram.com/" target="_blank" rel="noopener">@lemoncreative</a> <span class="ph">confirm handle</span></p>
-      </div>
-    </div>
-  </section>
-</main>
 
-<!-- ════════════════════════════ GALLERY ════════════════════════════ -->
-<main class="pageview" data-view="gallery" hidden>
-  <section class="page-hero">
-    <div class="wrap center">
-      <span class="eyebrow">Gallery</span>
-      <h1>A little collection of <span class="script" style="color:var(--pink);font-size:1.1em">lovely moments</span></h1>
-      <p class="lead" style="margin-inline:auto">Weddings, engagements, announcements, and a few behind-the-scenes.</p>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:0">
+  <section class="vcta">
+    <video data-src="assets/lemon-creative/brand/brand-69.mp4" poster="assets/lemon-creative/brand/brand-69.jpg" muted loop playsinline></video>
     <div class="wrap">
-      <div class="grid-gal">
-        <img class="tall" src="assets/lemon-creative/wed-bride-bouquet.jpg" alt=""><img src="assets/lemon-creative/photo-maternity-1.jpg" alt=""><img class="wide" src="assets/lemon-creative/wed-chapel-wide.jpg" alt=""><img src="assets/lemon-creative/wed-florals.jpg" alt=""><img src="assets/lemon-creative/photo-engagement-4.jpg" alt=""><img src="assets/lemon-creative/photo-engagement-1.jpg" alt=""><img class="wide" src="assets/lemon-creative/wed-menu-flatlay.jpg" alt=""><img class="tall" src="assets/lemon-creative/photo-announce-flatlay.jpg" alt=""><img src="assets/lemon-creative/wed-rooftop-bride.jpg" alt=""><img src="assets/lemon-creative/wed-veil-kiss.jpg" alt=""><img src="assets/lemon-creative/wed-bridesmaids.jpg" alt=""><img src="assets/lemon-creative/wed-hug.jpg" alt=""><img class="wide" src="assets/lemon-creative/photo-engagement-2.jpg" alt=""><img src="assets/lemon-creative/photo-reveal-1.jpg" alt=""><img src="assets/lemon-creative/brand/brand-74.jpg" alt="">
-      </div>
-      <div class="center" style="margin-top:2.5rem"><a class="btn pink" href="contact.html">Let's make yours</a></div>
+      <h2>Sound like your kind of person? <span class="lt">Let’s talk.</span></h2>
+      <div class="btns"><a class="btn banana" href="#contact">Start with the intake form</a></div>
     </div>
   </section>
+</section>
+
+<!-- ======================= GALLERY ======================= -->
+<section class="view" data-view="gallery">
+  <section class="blk bg-banana" style="padding-top:calc(var(--hh) + 4rem);min-height:100svh">
+    <div class="wrap">
+      <div class="head"><h1 style="font-size:clamp(2.4rem,5.2vw,5.2rem);margin-bottom:1rem">A camera roll <span class="lt">of lovely moments</span></h1><p class="lede">Weddings, engagements, announcements, and a few behind-the-scenes. Tap anything to see it bigger.</p></div>
+      <div class="filters"><button class="on" data-f="all">All</button><button data-f="wed">Weddings</button><button data-f="eng">Engagements</button><button data-f="mat">Maternity</button><button data-f="ann">Announcements</button><button data-f="bts">Behind the lens</button></div>
+      <div class="wall" data-wall="all"></div>
+      <div class="btns" style="justify-content:center;margin-top:3rem"><a class="btn pink" href="#contact">Let’s make yours</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="view" data-view="contact">
+  <section class="blk bg-ivory" style="padding-top:calc(var(--hh) + 4rem)">
+    <div class="wrap">
+      <div class="head"><h1 style="font-size:clamp(2.4rem,5.2vw,5.2rem);margin-bottom:1rem">What are <span class="lt">we making?</span></h1><p class="lede">Each service has its own quick intake, so I come to our call already knowing what you need. Pick one.</p></div>
+      <div class="chooser">
+        <a class="choose c1" href="#social-form"><span class="stk banana">For businesses</span><figure class="cut round"><img src="assets/lemon-creative/smm/smm-07.jpg" alt="" loading="lazy"></figure><h3>Social media management</h3></a>
+        <a class="choose c2" href="#wed-form"><span class="stk pink">For couples</span><figure class="cut round"><img src="assets/lemon-creative/wed-bride-celebrate.jpg" alt="" loading="lazy"></figure><h3>Wedding content creation</h3></a>
+        <a class="choose c3" href="#photo-form"><span class="stk banana">For milestones</span><figure class="cut round"><img src="assets/lemon-creative/photo-announce-3.jpg" alt="" loading="lazy"></figure><h3>Photography session</h3></a>
+      </div>
+      <p class="lede" style="margin-top:3rem">Prefer to just say hi? Email <a class="link" href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a>, call or text <a class="link" href="tel:5124203580">512-420-3580</a>, or DM <a class="link" href="#">@lemoncreative</a>. <span class="ph">confirm email + handle</span></p>
+    </div>
+  </section>
+</section>
+
+<section class="view" data-view="privacy"><section class="blk bg-ivory" style="padding-top:calc(var(--hh) + 4rem)"><div class="wrap legalpage"><h1>Privacy</h1><p>Placeholder privacy policy. In Shopify this page is generated from Settings → Policies. <span class="ph">needs policy text</span></p></div></section></section>
+<section class="view" data-view="terms"><section class="blk bg-ivory" style="padding-top:calc(var(--hh) + 4rem)"><div class="wrap legalpage"><h1>Terms</h1><p>Placeholder terms of service. <span class="ph">needs terms text</span></p></div></section></section>
+
 </main>
 
-<main class="pageview" data-view="privacy" hidden><section class="sec"><div class="wrap" style="max-width:760px"><h1>Privacy policy</h1><p class="lead"><span class="ph">placeholder</span> Standard Shopify privacy policy will be generated here.</p></div></section></main>
-<main class="pageview" data-view="terms" hidden><section class="sec"><div class="wrap" style="max-width:760px"><h1>Terms of service</h1><p class="lead"><span class="ph">placeholder</span> Standard terms will be generated here.</p></div></section></main>
-
-<!-- ══════════ FOOTER ══════════ -->
-<div class="footer-bars"><i></i><i></i><i></i><i></i><i></i></div>
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div>
-      <img class="logo-img" src="assets/lemon-creative/horizontal_dark.png" alt="Lemon Creative">
-      <p>Social media management, wedding content creation &amp; photography. Bright, candid, and 100% you. Based in Dallas, TX.</p>
-      <form class="newsletter" onsubmit="return false"><input placeholder="Your email for seasonal minis + tips"><button class="btn sm">Join</button></form>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="brand"><img src="assets/lemon-creative/horizontal_pink.png" alt="Lemon Creative"><p class="small" style="max-width:34ch">Social media management, wedding content creation, and photography. Bright, candid, and 100% you. Based in Dallas, TX.</p>
+        <form class="signup" onsubmit="event.preventDefault();this.innerHTML='<p class=small>You’re on the list. Talk soon!</p>'"><input type="email" placeholder="Email for news and mini-session dates" aria-label="Email" required><button class="btn pink">Join</button></form></div>
+      <div><h5>Services</h5><a href="#social">Social media management</a><a href="#weddings">Wedding content creation</a><a href="#photography">Photography</a><a href="#contact">Intake forms</a></div>
+      <div><h5>Studio</h5><a href="#gallery">Gallery</a><a href="#about">About Lem</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+      <div><h5>Say hi</h5><a href="#">Dallas, TX, serving DFW</a><a href="tel:5124203580">512-420-3580</a><a href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a></div>
     </div>
-    <div><h4>Services</h4><ul><li><a href="social.html">Social Media Management</a></li><li><a href="weddings.html">Wedding Content Creation</a></li><li><a href="photography.html">Photography</a></li><li><a href="contact.html">Intake forms</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About Lem</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li></ul></div>
-    <div><h4>Say hi</h4><ul><li>Dallas, TX · serving DFW</li><li><a href="tel:5124203580">512-420-3580</a></li><li><a href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a></li></ul></div>
-  </div>
-  <div class="wrap footer-base">
-    <span>© 2026 Lemon Creative. All rights reserved.</span>
-    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Site by Prancer</span>
+    <img class="bigmark" src="assets/lemon-creative/lemon_slice.png" alt="">
+    <div class="legal"><span>© 2026 Lemon Creative. All rights reserved.</span><span><a href="#privacy">Privacy</a> &nbsp;·&nbsp; <a href="#terms">Terms</a> &nbsp;·&nbsp; Site by Prancer</span></div>
   </div>
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const views = document.querySelectorAll(".pageview");
-  const burger = document.querySelector(".burger"), links = document.querySelector(".nav-links");
-  burger.addEventListener("click", () => { burger.classList.toggle("open"); links.classList.toggle("open"); });
+(function(){
+const A='assets/lemon-creative/';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
-  function arm() { document.querySelectorAll(".pageview:not([hidden]) .reveal:not(.in)").forEach(x => io.observe(x)); }
+function vid(src){return `<video data-src="${A+src}" poster="${A+src.replace('.mp4','.jpg')}" muted loop playsinline></video>`}
 
-  function pickService(s) {
-    document.querySelectorAll("#service-pick button").forEach(b => b.classList.toggle("on", b.dataset.s === s));
-    document.querySelectorAll(".form-panel").forEach(p => p.classList.toggle("on", p.dataset.panel === s));
+/* hero headline: staggered rise, one page-load moment */
+const h1=$('#h1');
+if(h1){let d=0;h1.innerHTML=h1.dataset.words.split('|').map((w,wi)=>`<span class="w c${wi+1}">`+w.split('').map(ch=>`<i style="--d:${d++}">${ch===' '?'&nbsp;':ch}</i>`).join('')+`</span>`).join(' ');}
+
+/* hero film strip */
+const STRIP=[{v:'smm/smm-07.mp4',c:'Product reel',k:'tall'},{i:'photo-engagement-2.jpg',c:'Engagement',k:'scal'},{v:'video/recap.mp4',c:'Wedding recap',k:'tall'},{v:'smm/smm-13.mp4',c:'Pool + landscape',k:'tall'},{i:'wed-florals.jpg',c:'Wedding florals',k:'scal'},{v:'video/firstlook.mp4',c:'First look',k:'tall'},{v:'smm/smm-20.mp4',c:'Kids’ brand',k:'tall'},{i:'photo-announce-3.jpg',c:'Announcement',k:'scal'},{v:'smm/smm-29.mp4',c:'Wedding videographer',k:'tall'},{i:'wed-veil-kiss.jpg',c:'Wedding day',k:'scal'},{v:'video/daynight.mp4',c:'Day vs. night',k:'tall'},{v:'smm/smm-02.mp4',c:'Landscaper',k:'tall'}];
+const strip=$('#strip');
+if(strip){const one=STRIP.map(t=>`<figure class="cut ${t.k}">${t.v?vid(t.v):`<img src="${A+t.i}" alt="" loading="lazy">`}<span class="cap">${t.c}</span></figure>`).join('');strip.innerHTML=`<div class="run">${one+one}</div>`;}
+
+/* rotating badges */
+$$('[data-badge]').forEach(b=>{const t=b.dataset.badge, c=b.dataset.color||'#131C2A', tc=b.dataset.text||'#FEFDEC';
+  b.innerHTML=`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${c}"/><text fill="${tc}"><textPath href="#circ">${t}${t}</textPath></text></svg><img class="bl" src="${A}lemon_slice.png" alt="">`;});
+
+/* tickers */
+$$('[data-tick]').forEach(r=>{const one=r.dataset.tick.split('|').map(x=>`<span>${x}</span><img src="${A}lemon_slice.png" alt="">`).join('');r.innerHTML=one+one+one;});
+
+/* rails */
+const RAILS={
+ home:[{v:'video/recap.mp4',h:'Wedding recap',p:'Full day, cut to trending audio'},{v:'video/firstlook.mp4',h:'First look',p:'Delivered the next morning'},{v:'smm/smm-20.mp4',h:'Kids’ brand launch',p:'Social media management'},{v:'video/daynight.mp4',h:'Day vs. night',p:'Wedding content'},{v:'smm/smm-29.mp4',h:'Wedding videographer',p:'Raw gallery → month of reels'},{v:'video/reel-a.mp4',h:'Reception details',p:'Wedding content'},{v:'smm/smm-13.mp4',h:'Pool + landscape',p:'Social media management'},{v:'video/reel-b.mp4',h:'Dinner details',p:'Wedding content'}],
+ smm:[{v:'smm/smm-02.mp4',h:'Landscaper',p:'Launch reel'},{v:'smm/smm-20.mp4',h:'Kids’ brand',p:'Product launch'},{v:'smm/smm-29.mp4',h:'Wedding videographer',p:'Brand reel'},{v:'smm/smm-13.mp4',h:'Pool + landscape',p:'Project reveal'},{v:'smm/smm-23.mp4',h:'Event florals',p:'Wedding pro content'},{v:'smm/smm-15.mp4',h:'Garden shoot',p:'Behind the scenes'},{v:'smm/smm-35.mp4',h:'Engagement shoot',p:'Photographer content'},{v:'smm/smm-36.mp4',h:'Tablescape',p:'Event content'}],
+ wed:[{v:'video/recap.mp4',h:'Wedding recap',p:'Forever Yours package'},{v:'video/firstlook.mp4',h:'First look',p:'Austin, TX'},{v:'video/daynight.mp4',h:'Day vs. night',p:'Two looks, one day'},{v:'smm/smm-08.mp4',h:'Walking in',p:'Ceremony'},{v:'video/recap-clean.mp4',h:'Rooftop bride',p:'Getting ready'},{v:'smm/smm-24.mp4',h:'The vows',p:'Ceremony'}],
+ bts:[{v:'brand/brand-46.mp4',h:'Editing day',p:'Laptop on my lap'},{v:'brand/brand-60.mp4',h:'Camera ready',p:'Session prep'},{v:'brand/brand-45.mp4',h:'Office hours',p:'Planning your month'},{v:'brand/brand-53.mp4',h:'Client call',p:'Discovery calls'},{v:'brand/brand-69.mp4',h:'One more take',p:'Always one more'},{v:'brand/brand-62.mp4',h:'New lens day',p:'Gear check'},{v:'brand/brand-43.mp4',h:'Posting day',p:'Scheduling it all'}]
+};
+$$('[data-rail]').forEach(s=>{const items=RAILS[s.dataset.rail]||[];
+  const one=items.map(t=>`<div class="card"><figure class="cut tall">${vid(t.v)}</figure><h4>${t.h}</h4><p>${t.p}</p></div>`).join('');
+  s.innerHTML=one+one; s.style.setProperty('--rd',(items.length*7)+'s');});
+
+/* walls */
+const PH=[
+ {i:'wed-bride-celebrate.jpg',t:'wed',s:'s4'},{i:'photo-engagement-1.jpg',t:'eng',s:'s1'},{i:'wed-florals.jpg',t:'wed',s:'s5'},{i:'photo-maternity-1.jpg',t:'mat',s:'s4'},
+ {i:'wed-bw-getting-ready.jpg',t:'wed',s:'s2'},{i:'photo-announce-flatlay.jpg',t:'ann',s:'s2'},{i:'wed-hug.jpg',t:'wed',s:'s1'},{i:'photo-engagement-2.jpg',t:'eng',s:'s3'},
+ {i:'layne-camera.jpg',t:'bts',s:'s4'},{i:'photo-announce-1.jpg',t:'ann',s:'s1'},{i:'wed-menu-flatlay.jpg',t:'wed',s:'s2'},{i:'photo-engagement-4.jpg',t:'eng',s:'s1'},
+ {i:'wed-chapel-wide.jpg',t:'wed',s:'s5'},{i:'photo-maternity-2.jpg',t:'mat',s:'s3'},{i:'wed-bride-mirror.jpg',t:'wed',s:'s1'},{i:'photo-reveal-1.jpg',t:'ann',s:'s4'},
+ {i:'wed-sunset-wine.jpg',t:'wed',s:'s2'},{i:'photo-announce-2.jpg',t:'ann',s:'s1'},{i:'layne-laptop.jpg',t:'bts',s:'s1'},{i:'wed-bridesmaids.jpg',t:'wed',s:'s3'},
+ {i:'photo-engagement-3.jpg',t:'eng',s:'s4'},{i:'wed-veil-kiss.jpg',t:'wed',s:'s1'},{i:'photo-announce-3.jpg',t:'ann',s:'s2'},{i:'wed-bouquet-dark.jpg',t:'wed',s:'s1'},
+ {i:'wed-rooftop-bride.jpg',t:'wed',s:'s2'},{i:'layne-camera2.jpg',t:'bts',s:'s1'},{i:'wed-bride-bouquet.jpg',t:'wed',s:'s1'}
+];
+$$('[data-wall]').forEach(w=>{const k=w.dataset.wall;
+  const list=k==='all'?PH:k==='wedding'?PH.filter(p=>p.t==='wed').slice(0,12):PH.filter(p=>['eng','mat','ann'].includes(p.t));
+  w.innerHTML=list.map(p=>`<figure class="${p.s}" data-t="${p.t}"><img src="${A+p.i}" alt="" loading="lazy"></figure>`).join('');});
+$$('.filters').forEach(f=>{const wall=f.parentElement.querySelector('.wall');
+  f.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('button',f).forEach(x=>x.classList.toggle('on',x===b));
+    $$('figure',wall).forEach(fig=>fig.classList.toggle('hide',b.dataset.f!=='all'&&fig.dataset.t!==b.dataset.f));});});
+const lb=$('#lb'),lbc=$('#lbc');
+document.addEventListener('click',e=>{const fig=e.target.closest('.wall figure');if(!fig)return;lbc.innerHTML=`<img src="${fig.querySelector('img').src}" alt="">`;lb.classList.add('on');});
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.id==='lbx')lb.classList.remove('on')});
+addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('on');document.body.classList.remove('menu');}});
+
+const F={
+ social:{title:'Social media intake',done:'I’ll reply within 48 hours with next steps for your feed.',steps:[
+  {h:'About you',f:[['text','Your name',1,1],['text','Business name',1,1],['email','Email',1,1],['tel','Phone',0,1],['text','Instagram handle (and any other platforms)',0]]},
+  {h:'Your business',f:[['radio','What kind of business are you?',1,0,['Boutique / retail','Wedding professional','Restaurant / café','Service-based','Other']],['check','What do you need help with?',0,0,['Content creation','Posting + scheduling','Strategy + captions','Engagement','Not sure yet, help!']],['radio','How often are you posting now?',0,0,['Rarely','A few times a month','Weekly','Several times a week','Daily']]]},
+  {h:'The details',f:[['radio','Monthly budget range',0,0,['Under $500','$500–$1,000','$1,000–$2,000','$2,000+','Not sure yet']],['area','Tell me about your business and what isn’t working on social right now',1],['text','How did you hear about Lemon Creative?',0]]}
+ ],btn:'Send it over'},
+ wedding:{title:'Wedding content intake',done:'I’ll confirm your date within 48 hours. Congratulations, you two!',steps:[
+  {h:'About you two',f:[['text','Your name',1,1],['text','Partner’s name',0,1],['email','Email',1,1],['tel','Phone',0,1]]},
+  {h:'The day',f:[['date','Wedding date',1,1],['text','Venue + city',1,1],['radio','Which package are you leaning toward?',0,0,['Love at Last · 5 hrs','Forever Yours · 8 hrs','Something custom']],['radio','Estimated guest count',0,0,['Under 50','50–100','100–150','150–200','200+']]]},
+  {h:'The moments',f:[['radio','Do you have a photographer and videographer booked?',0,0,['Both','Photographer only','Videographer only','Not yet']],['check','Which moments matter most?',0,0,['Getting ready','First look','Ceremony','Toasts','Dance floor','Send-off']],['area','Anything else I should know?',0]]}
+ ],btn:'Check my date'},
+ photo:{title:'Photography intake',done:'I’ll send dates and ideas for your session within 48 hours.',steps:[
+  {h:'About you',f:[['text','Your name',1,1],['email','Email',1,1],['tel','Phone',0,1],['text','Ideal date (or month)',0,1]]},
+  {h:'The session',f:[['radio','Session type',1,0,['Engagement','Maternity','Baby announcement','Gender reveal','Family / milestone','Other']],['text','Who’s in the photos?',0]]},
+  {h:'The vibe',f:[['radio','Location preference',0,0,['You pick, surprise me','Park / outdoors','Downtown','Our home','Somewhere specific']],['area','Vibe + anything special',0]]}
+ ],btn:'Book my session'}
+};
+let uid=0;
+function field([type,label,req,half,opts]){
+  const id='f'+(++uid), r=req?' required':'', o=req?'':' <span class="opt">(optional)</span>';
+  if(type==='radio'||type==='check'){
+    const t=type==='radio'?'radio':'checkbox';
+    return `<div class="fld${req?' req-group':''}" data-group><span class="q">${label}${o}</span><div class="chips">${opts.map(x=>`<label><input type="${t}" name="${id}" value="${x}"><span>${x}</span></label>`).join('')}</div><span class="msg">Pick one to keep going.</span></div>`;
   }
-  document.querySelectorAll("#service-pick button").forEach(b => b.addEventListener("click", () => pickService(b.dataset.s)));
-
-  document.querySelectorAll("#gal-pills .filter-btn").forEach(p => p.addEventListener("click", () => {
-    document.querySelectorAll("#gal-pills .filter-btn").forEach(x => x.classList.toggle("active", x === p));
-    document.querySelectorAll("#photo-gallery img").forEach(s => s.style.display = (p.dataset.f === "all" || s.dataset.c === p.dataset.f) ? "" : "none");
-  }));
-
-  function show(name, qp, anchor) {
-    views.forEach(v => v.hidden = v.dataset.view !== name);
-    document.querySelectorAll(".nav-links a").forEach(a => {
-      const t = (a.getAttribute("href") || "").split("?")[0].split("#")[0].replace(".html", "");
-      a.classList.toggle("active", (t === "index" ? "home" : t) === name);
-    });
-    if (name === "contact") pickService(qp.s || "social");
-    history.replaceState(null, "", "#" + name);
-    if (anchor) { const el = document.getElementById(anchor); if (el) el.scrollIntoView({ behavior: "smooth" }); }
-    else window.scrollTo(0, 0);
-    arm();
-  }
-  document.addEventListener("click", e => {
-    const a = e.target.closest("a[href]");
-    if (!a) return;
-    const href = a.getAttribute("href");
-    if (href.startsWith("#")) { e.preventDefault(); const el = document.querySelector(href); if (el) el.scrollIntoView({ behavior: "smooth" }); return; }
-    if (!href.includes(".html")) return;
-    e.preventDefault();
-    const [fileq, anchor] = href.split("#");
-    const [file, q] = fileq.split("?");
-    const name = file.replace(".html", "");
-    const qp = q ? Object.fromEntries(new URLSearchParams(q)) : {};
-    show(name === "index" ? "home" : name, qp, anchor);
-    burger.classList.remove("open"); links.classList.remove("open");
-  });
-  const initial = (location.hash || "#home").slice(1);
-  show([...views].some(v => v.dataset.view === initial) ? initial : "home", {});
+  const inp = type==='area'?`<textarea id="${id}"${r}></textarea>`:`<input id="${id}" type="${type}"${r}>`;
+  return `<div class="fld${half?' half':''}"><label for="${id}">${label}${o}</label>${inp}<span class="msg">${type==='email'?'Add an email I can reply to.':'This one’s needed to keep going.'}</span></div>`;
+}
+$$('[data-form]').forEach(el=>{
+  const c=F[el.dataset.form], n=c.steps.length;
+  el.innerHTML=`<div class="prog"><span data-lbl>${c.steps[0].h}</span><span class="of">Step <b data-n>1</b> of ${n}</span></div><div class="pbar"><i></i></div>
+   <form novalidate>${c.steps.map((s,i)=>`<div class="fstep${i?'':' on'}"><h3>${s.h}</h3>${s.f.map(field).join('')}</div>`).join('')}
+   <div class="fnav"><button type="button" class="back" hidden>Back</button><button type="submit" class="btn pink" data-next>Next</button></div></form>
+   <div class="done"><img src="${A}lemon_slice.png" alt=""><h3>Got it, thank you!</h3><p>${c.done}</p></div>`;
+  let cur=0; const steps=$$('.fstep',el), bar=$('.pbar i',el), back=$('.back',el), next=$('[data-next]',el);
+  function show(i){cur=i;steps.forEach((s,j)=>s.classList.toggle('on',j===i));bar.style.width=((i+1)/n*100)+'%';
+    $('[data-lbl]',el).textContent=c.steps[i].h;$('[data-n]',el).textContent=i+1;back.hidden=i===0;next.textContent=i===n-1?c.btn:'Next';}
+  function valid(){let ok=true;
+    $$('.fld',steps[cur]).forEach(f=>{let bad=false;const inp=$('input:not([type=radio]):not([type=checkbox]),textarea',f);
+      if(f.classList.contains('req-group')) bad=!$('input:checked',f);
+      else if(inp&&inp.required) bad=!inp.value.trim()||(inp.type==='email'&&!/^\S+@\S+\.\S+$/.test(inp.value));
+      f.classList.toggle('err',bad); if(bad&&ok){ok=false;(inp||$('input',f)).focus();}});
+    return ok;}
+  $('form',el).addEventListener('submit',e=>{e.preventDefault(); if(!valid()) return;
+    if(cur<n-1){show(cur+1);el.scrollIntoView({behavior:'smooth',block:'start'});}
+    else{$('form',el).style.display='none';$('.prog',el).style.display='none';$('.pbar',el).style.display='none';$('.done',el).classList.add('on');}});
+  back.addEventListener('click',()=>show(cur-1));
+  el.addEventListener('input',e=>{const f=e.target.closest('.fld'); if(f) f.classList.remove('err');});
+  show(0);
 });
+
+
+/* router */
+const views=$$('.view');
+function route(){
+  let h=location.hash.slice(1)||'home',target=null;
+  let v=views.find(x=>x.dataset.view===h);
+  if(!v){target=document.getElementById(h);v=target?target.closest('.view'):null;}
+  if(!v)v=views[0];
+  const changed=!v.classList.contains('on');
+  views.forEach(x=>x.classList.toggle('on',x===v));
+  $$('.nav a').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+v.dataset.view));
+  document.body.classList.remove('menu');
+  if(target){requestAnimationFrame(()=>target.scrollIntoView({behavior:changed?'auto':'smooth'}));}
+  else if(changed)scrollTo(0,0);
+  setTimeout(()=>{onScroll();observe();},60);
+}
+addEventListener('hashchange',route);
+$('#burger').addEventListener('click',()=>{const o=document.body.classList.toggle('menu');$('#burger').setAttribute('aria-expanded',o);$('#sheet').setAttribute('aria-hidden',!o);});
+
+/* videos: lazy + play only when visible */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+  if(e.isIntersecting){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.muted=true;const p=v.play();if(p)p.catch(()=>{});}
+  else if(v.src)v.pause();}),{rootMargin:'200px'});
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target);}}),{threshold:.2});
+function observe(){$$('.view.on video').forEach(v=>vio.observe(v));$$('.view.on .rv').forEach(r=>rio.observe(r));}
+
+/* tabs */
+$$('.toggle').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  $$('button',t).forEach(x=>x.classList.toggle('on',x===b));const wrap=t.parentElement;$$('.tpanel',wrap).forEach(p=>p.classList.toggle('on',p.dataset.panel===b.dataset.tab));
+  const v=$('#tabvid');if(v&&b.dataset.vid){v.poster=b.dataset.vid.replace('.mp4','.jpg');v.src=b.dataset.vid;v.play().catch(()=>{});}}));
+
+/* testimonials */
+const qs=$$('#quotes .quote');let qi=0,qt;
+function q(n){qs[qi].classList.remove('on');qi=(qi+n+qs.length)%qs.length;qs[qi].classList.add('on');$('#qc').textContent=`${qi+1} of ${qs.length}`;}
+$$('[data-q]').forEach(b=>b.addEventListener('click',()=>{q(+b.dataset.q);clearInterval(qt);}));
+if(!RM)qt=setInterval(()=>q(1),6500);
+
+/* faq */
+$$('.qa details').forEach(d=>{const s=$('summary',d),a=$('.ans',d);
+  s.addEventListener('click',e=>{e.preventDefault();
+    if(d.open){a.style.height=a.scrollHeight+'px';requestAnimationFrame(()=>{a.style.height='0px'});setTimeout(()=>{d.open=false;a.style.height=''},400);}
+    else{d.open=true;const h=a.scrollHeight;a.style.height='0px';requestAnimationFrame(()=>{a.style.height=h+'px'});setTimeout(()=>{a.style.height=''},420);}});});
+
+/* header */
+const hdr=$('#hdr');
+function onScroll(){hdr.classList.toggle('solid',scrollY>30||!$('.view.on .hero, .view.on .shero'));}
+let tick=false;addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{onScroll();tick=false;});}},{passive:true});
+route();
+})();
 </script>
 
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
@@ -947,7 +1101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'lemon-creative-c-v1';
+  var PAGE_ID = 'lemon-creative-c-v2';
 
   /* ---------------------------------------------- */
 
