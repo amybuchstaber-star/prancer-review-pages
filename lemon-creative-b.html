@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="assets/lemon-creative/lemon_slice.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Gabarito:wght@400..900&family=Syne:wght@500..800&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    LEMON CREATIVE — Direction B: "The Feed"
@@ -21,7 +21,7 @@
   --ivory:#FEFDEC; --banana:#F7EF75; --green:#00A271; --pink:#F27EA2;
   --icy:#BBE6FB; --denim:#6B8DC8; --ink:#131C2A;
   --pink-lt:#FBD3E0; --green-dk:#00805a; --denim-dk:#4f71ad; --icy-dk:#8fd0f0;
-  --serif:"Bricolage Grotesque",system-ui,sans-serif;
+  --serif:"Fraunces",Georgia,serif;
   --sans:"Montserrat",system-ui,sans-serif;
   --hh:76px; --gut:clamp(1rem,4vw,3rem);
   --ease:cubic-bezier(.22,.8,.22,1);
@@ -33,7 +33,14 @@ img,video{display:block;max-width:100%}
 figure{margin:0}
 a{color:inherit}
 p{margin:0 0 1em}
-h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.03em;font-variation-settings:"opsz" 96}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.025em;font-variation-settings:var(--fvs,"SOFT" 100,"WONK" 0,"opsz" 120)}
+html[data-font="gabarito"]{--serif:"Gabarito",system-ui,sans-serif;--fvs:normal}
+html[data-font="syne"]{--serif:"Syne",system-ui,sans-serif;--fvs:normal}
+html[data-font="bricolage"]{--serif:"Bricolage Grotesque",system-ui,sans-serif;--fvs:"opsz" 96}
+.fontpick{position:fixed;left:14px;bottom:14px;z-index:80;display:flex;gap:4px;align-items:center;background:#fff;border-radius:999px;padding:5px 6px 5px 14px;box-shadow:0 10px 30px -10px rgba(19,28,42,.35);font:600 .75rem var(--sans)}
+.fontpick button{border:0;background:transparent;border-radius:999px;padding:.45rem .75rem;cursor:pointer;font:600 .78rem var(--sans);color:var(--ink)}
+.fontpick button.on{background:var(--ink);color:var(--ivory)}
+@media (max-width:600px){.fontpick{left:8px;bottom:8px;padding:4px}.fontpick span{display:none}.fontpick button{padding:.35rem .55rem;font-size:.7rem}}
 .it{font-weight:300;letter-spacing:-.035em}
 .wrap{max-width:1320px;margin:0 auto;padding:0 var(--gut)}
 .lede{font-size:clamp(1.05rem,1.3vw,1.2rem);max-width:52ch}
@@ -83,12 +90,12 @@ body.menu .sheet{clip-path:circle(150% at calc(100% - 40px) 38px);visibility:vis
 main{padding-top:0}
 
 /* ---------- HERO: the feed ---------- */
-.hero{background:var(--ivory) url(assets/lemon-creative/art/bg/01-ivory-cotton-paper.webp) center/700px;min-height:100svh;position:relative;overflow:hidden;padding-top:var(--hh)}
+.hero{background:#E9F6FD url(assets/lemon-creative/art/bg/02-icy-blue-gingham.webp) center/620px;min-height:100svh;position:relative;overflow:hidden;padding-top:var(--hh)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2rem;min-height:calc(100svh - var(--hh));align-items:center;max-width:1440px}
 .hero h1{font-size:clamp(3rem,6.2vw,6.4rem);line-height:.98;margin-bottom:1.6rem}
 .hero h1 .line{display:block}
 .hero h1 .rot{display:grid;justify-items:start}
-.rot span{grid-area:1/1;font-weight:300;color:var(--pink-dk);opacity:0;filter:blur(8px);transform:translateY(.18em);transition:opacity .7s ease,filter .7s ease,transform .7s var(--ease)}
+.rot span{grid-area:1/1;font-weight:700;color:var(--ink);padding:0 .12em;margin-left:-.12em;background:linear-gradient(transparent 52%,var(--banana) 52%,var(--banana) 94%,transparent 94%);-webkit-box-decoration-break:clone;box-decoration-break:clone;opacity:0;filter:blur(8px);transform:translateY(.18em);transition:opacity .7s ease,filter .7s ease,transform .7s var(--ease)}
 .rot span.on{opacity:1;filter:none;transform:none}
 .rot span.out{opacity:0;filter:blur(8px);transform:translateY(-.18em)}
 .hero .lede{margin-bottom:2rem}
@@ -106,7 +113,7 @@ main{padding-top:0}
 @keyframes feedDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
 .tile{position:relative;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--ivory);flex:none}
 .tile img,.tile video{width:100%;height:100%;object-fit:cover}
-.tile figcaption{position:absolute;left:10px;bottom:10px;font-size:.72rem;font-weight:600;background:rgba(254,253,236,.92);padding:.28rem .6rem;border-radius:999px}
+.tile figcaption{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px);font-size:.8rem;font-weight:700;line-height:1.2;color:var(--ink);background:#fff;padding:.4rem .75rem;border-radius:999px;box-shadow:0 4px 14px -4px rgba(19,28,42,.35)}
 .tile.photo{aspect-ratio:4/5}
 .feed .tile{width:100%}
 @media (max-width:900px){
@@ -147,33 +154,33 @@ main{padding-top:0}
 
 /* ---------- service rooms (sticky stack) ---------- */
 .rooms{padding:0 clamp(.5rem,1.6vw,1.4rem) 4rem}
-.room{position:sticky;top:calc(var(--hh) + var(--i,0)*18px);min-height:calc(100svh - var(--hh) - 70px);border-radius:36px;overflow:hidden;margin-bottom:5vh;display:grid;grid-template-columns:1.05fr 1fr;transform-origin:50% 0;transition:transform .2s linear,filter .2s linear}
-.room .txt{padding:clamp(2rem,5vw,4.5rem);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.room{position:sticky;top:calc(var(--hh) + var(--i,0)*18px);border-radius:36px;overflow:hidden;margin-bottom:4vh;display:grid;grid-template-columns:1.05fr 1fr;transform-origin:50% 0;transition:transform .2s linear,filter .2s linear}
+.room .txt{padding:clamp(2rem,4vw,3.4rem);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
 .room h3{font-size:clamp(2.3rem,4.2vw,4rem);margin:.9rem 0 1.2rem}
 .room h3 .it{display:block}
 .room p{max-width:46ch}
 .room ul{list-style:none;padding:0;margin:.4rem 0 2rem;display:flex;flex-wrap:wrap;gap:.5rem}
 .room li{font-size:.84rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;border:1.5px solid currentColor}
-.room .stage{position:relative;min-height:440px}
-.room .stage .paper{position:absolute;inset:0;background-size:420px;background-position:center}
-.room .stage .tile{position:absolute;width:clamp(130px,12.5vw,200px);box-shadow:0 30px 60px -20px rgba(19,28,42,.45)}
-.room .stage .t1{left:7%;top:9%;transform:rotate(-5deg)}
-.room .stage .t2{left:36%;top:24%;transform:rotate(3deg);z-index:2}
-.room .stage .t3{left:64%;top:7%;transform:rotate(6deg)}
-@media (max-width:900px){.room .stage .tile{width:31%}}
+.room .stage{position:relative;min-height:400px;display:flex;align-items:center;justify-content:center;padding:2.2rem 1.4rem}
+.room .stage .paper{position:absolute;inset:0;background-size:520px;background-position:center}
+.room .stage .tile{position:relative;flex:none;width:clamp(120px,11vw,180px);margin:0 -10px;box-shadow:0 30px 60px -20px rgba(19,28,42,.45)}
+.room .stage .t1{transform:rotate(-6deg) translateY(10px)}
+.room .stage .t2{transform:translateY(-12px);z-index:2}
+.room .stage .t3{transform:rotate(6deg) translateY(10px)}
+@media (max-width:900px){.room .stage .tile{width:32%}}
 .room .stage .ill{position:absolute;width:clamp(110px,12vw,180px);z-index:3;filter:drop-shadow(0 10px 18px rgba(19,28,42,.18))}
 .room .price{font:600 clamp(1.3rem,1.8vw,1.7rem)/1 var(--serif);margin-bottom:1.6rem}
 .r-social{--i:0;background:var(--pink);color:#fff}
-.r-social .paper{background-image:url(assets/lemon-creative/art/wall/05-icy-blue-lemon-confetti.jpg)}
+.r-social .paper{background-image:url(assets/lemon-creative/art/bg/03-petal-pink-ticking.webp);background-color:#FDE3EC}
 .r-wed{--i:1;background:var(--icy);color:var(--ink)}
-.r-wed .paper{background-image:url(assets/lemon-creative/art/wall/01-blue-citrus-toile.jpg)}
+.r-wed .paper{background-image:url(assets/lemon-creative/art/bg/02-icy-blue-gingham.webp)}
 .r-photo{--i:2;background:var(--green);color:#fff;margin-bottom:0}
-.r-photo .paper{background-image:url(assets/lemon-creative/art/wall/04-green-citrus-trellis.jpg)}
+.r-photo .paper{background-image:url(assets/lemon-creative/art/bg/05-soft-green-stripe.webp)}
 .r-social .tag{background:var(--banana)}
 .r-photo .tag{background:var(--banana)}
 @media (max-width:900px){
   .room{grid-template-columns:1fr;position:relative;top:auto;min-height:0}
-  .room .stage{min-height:420px}
+  .room .stage{min-height:0;padding:2rem 1rem}
 }
 
 /* ---------- auto-scrolling reel rail ---------- */
@@ -295,22 +302,18 @@ main{padding-top:0}
 .vcta .btns{justify-content:center}
 
 /* ---------- footer ---------- */
-.awning{height:64px;position:relative;z-index:3;margin-bottom:-64px;
-  background:repeating-linear-gradient(90deg,var(--pink) 0 40px,#fff 40px 80px);
-  -webkit-mask:linear-gradient(#000,#000) top/100% 42px no-repeat,radial-gradient(circle 20px at 20px 42px,#000 97%,transparent 100%) 0 0/40px 64px repeat-x;
-          mask:linear-gradient(#000,#000) top/100% 42px no-repeat,radial-gradient(circle 20px at 20px 42px,#000 97%,transparent 100%) 0 0/40px 64px repeat-x}
-footer{background:var(--ivory);position:relative;padding:7rem 0 2rem;overflow:hidden}
+footer{background:var(--ivory);position:relative;padding:5rem 0 2rem;overflow:hidden;border-top:1px solid rgba(19,28,42,.08)}
 footer::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(242,126,162,.22) 0 3px,transparent 3px 8px,rgba(242,126,162,.22) 8px 11px,transparent 11px 46px)}
 footer .wrap{position:relative}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem}
 .fgrid h5{font:600 .82rem var(--sans);margin:0 0 1rem;color:var(--pink)}
 .fgrid a{display:block;text-decoration:none;margin-bottom:.45rem;font-size:.93rem}
 .fgrid a:hover{color:var(--green)}
-.fgrid .brand img{width:200px;margin-bottom:1rem}
+.fgrid .brand img{width:230px;margin:-1.6rem 0 .2rem -1rem}
 .signup{display:flex;gap:.5rem;margin-top:1rem}
 .signup input{flex:1;min-width:0;border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:.8rem 1.1rem;font:500 .9rem var(--sans)}
 .signup .btn{padding:.8rem 1.2rem}
-.bigmark{display:block;width:min(100%,760px);height:auto;margin:3rem auto 1rem}
+.bigmark{display:block;width:clamp(110px,12vw,170px);height:auto;margin:3.5rem auto 2rem;animation:spin 30s linear infinite}
 .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;border-top:1.5px solid rgba(19,28,42,.15);padding-top:1.4rem}
 .legal a{text-decoration:none}
 @media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}.fgrid .brand{grid-column:1/-1}}
@@ -539,6 +542,7 @@ footer .wrap{position:relative}
   <a class="btn ivory" href="#contact">Start an inquiry</a>
 </div>
 <div class="peek" id="peek" aria-hidden="true"></div>
+<div class="fontpick" id="fontpick" aria-label="Try heading fonts (review only)"><span>Heading font:</span><button data-f="fraunces">Fraunces</button><button data-f="gabarito">Gabarito</button><button data-f="syne">Syne</button><button data-f="bricolage">Bricolage</button></div>
 <div class="lb" id="lb" role="dialog" aria-label="Photo"><button aria-label="Close" id="lbx">✕</button><div id="lbc"></div></div>
 
 <main>
@@ -627,7 +631,7 @@ footer .wrap{position:relative}
     <article class="room r-photo">
       <div class="txt">
         <span class="tag" style="align-self:flex-start">Golden hour, always</span>
-        <h3>Photo<span class="it">graphy</span></h3>
+        <h3>Photography</h3>
         <p>Engagements, maternity, baby announcements, gender reveals, and the little milestones in between. Bright, candid, a little playful, and edited to look like real life in really good light.</p>
         <ul><li>Engagements</li><li>Maternity</li><li>Announcements</li><li>Gender reveals</li><li>Minis</li></ul>
         <div class="btns"><a class="btn banana" href="#photography">See photography</a><a class="link" href="#photo-form">Book a session</a></div>
@@ -1056,17 +1060,16 @@ footer .wrap{position:relative}
 
 </main>
 
-<div class="awning" aria-hidden="true"></div>
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div class="brand"><img src="assets/lemon-creative/monogram_pink_circle.png" alt="" style="width:76px"><p class="small" style="max-width:34ch">Social media management, wedding content creation, and photography. Bright, candid, and 100% you. Based in Dallas, TX.</p>
+      <div class="brand"><img src="assets/lemon-creative/horizontal_pink.png" alt="Lemon Creative"><p class="small" style="max-width:34ch">Social media management, wedding content creation, and photography. Bright, candid, and 100% you. Based in Dallas, TX.</p>
         <form class="signup" onsubmit="event.preventDefault();this.innerHTML='<p class=small>You’re on the list. Talk soon!</p>'"><input type="email" placeholder="Email for news and mini-session dates" aria-label="Email" required><button class="btn pink">Join</button></form></div>
       <div><h5>Services</h5><a href="#social">Social media management</a><a href="#weddings">Wedding content creation</a><a href="#photography">Photography</a><a href="#contact">Intake forms</a></div>
       <div><h5>Studio</h5><a href="#gallery">Gallery</a><a href="#about">About Lem</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
       <div><h5>Say hi</h5><a href="#">Dallas, TX, serving DFW</a><a href="tel:5124203580">512-420-3580</a><a href="mailto:hello@lemoncreative.pro">hello@lemoncreative.pro</a></div>
     </div>
-    <img class="bigmark" src="assets/lemon-creative/horizontal_pink.png" alt="Lemon Creative">
+    <img class="bigmark" src="assets/lemon-creative/lemon_slice.png" alt="">
     <div class="legal"><span>© 2026 Lemon Creative. All rights reserved.</span><span><a href="#privacy">Privacy</a> &nbsp;·&nbsp; <a href="#terms">Terms</a> &nbsp;·&nbsp; Site by Prancer</span></div>
   </div>
 </footer>
@@ -1207,6 +1210,11 @@ $$('[data-doodles]').forEach((host,hi)=>{
     d.appendChild(im);}
   host.prepend(d);
 });
+
+/* review-only heading font picker */
+(function(){const fp=$('#fontpick');let f='fraunces';try{f=localStorage.getItem('lc-b-font')||f}catch(e){}
+  function set(v){document.documentElement.dataset.font=v;$$('button',fp).forEach(b=>b.classList.toggle('on',b.dataset.f===v));try{localStorage.setItem('lc-b-font',v)}catch(e){}}
+  fp.addEventListener('click',e=>{const b=e.target.closest('button');if(b)set(b.dataset.f)});set(f);})();
 
 /* ---------- router ---------- */
 const views=$$('.view');
