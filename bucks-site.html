@@ -389,7 +389,15 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 
 /* ===== WHY ===== */
 .answer{background:#fff;border:1px solid var(--line);border-left:6px solid var(--brown);padding:34px 36px;font-size:1.15rem;line-height:1.6;max-width:860px;box-shadow:0 24px 50px rgba(14,50,37,.16);border-radius:0 3px 3px 0}
-.split .answer{font-size:clamp(1.1rem,1.5vw,1.3rem)}
+/* why-tallow: layered answer panel */
+.aeo{position:relative;border-radius:var(--r);padding:clamp(28px,4vw,56px) clamp(22px,3.5vw,56px) clamp(22px,3vw,40px);margin-top:clamp(70px,8vw,110px);box-shadow:0 30px 70px rgba(14,50,37,.22)}
+.aeo__grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative;z-index:2}
+.aeo__txt .aeo__big{font:600 clamp(1.45rem,2.5vw,2.3rem)/1.18 var(--slab);color:var(--cream);margin:0 0 .7em;letter-spacing:0;max-width:none}
+.aeo__txt p{color:rgba(245,240,233,.85);font-size:1.05rem;max-width:50ch}
+.aeo__txt .kick{color:var(--balm2)}.aeo__txt .kick::before{background:var(--balm2)}
+.aeo__photo{width:100%;max-width:440px;justify-self:end;transform:rotate(2.5deg);margin-top:calc(-1 * clamp(70px,8vw,110px) - clamp(28px,4vw,56px) + 20px);filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
+.aeo .match{margin-top:clamp(26px,3vw,40px);padding:clamp(26px,3vw,40px) 0 0;box-shadow:none;border-radius:0;border-top:1px solid var(--linel);position:relative;z-index:2}
+@media (max-width:860px){.aeo__grid{grid-template-columns:1fr}.aeo__photo{order:-1;justify-self:center;max-width:320px;transform:rotate(-2deg);margin-top:calc(-1 * clamp(70px,8vw,110px) - clamp(28px,4vw,56px) + 30px)}}
 .answer small{display:block;font:600 .85rem var(--sans);color:var(--brown);margin-bottom:10px}
 .match{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;padding:clamp(20px,2.6vw,34px);border-radius:var(--r);box-shadow:0 24px 50px rgba(14,50,37,.18)}
 .match>div{background:var(--cream) var(--im-paper) center/700px;color:var(--ink);padding:30px 26px 28px;border-radius:var(--r-sm);position:relative}
@@ -523,7 +531,6 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
   .uses,.steps,.pdp,.jcard--big,.picks__g,.midcard{grid-template-columns:1fr}
   .uses__img{aspect-ratio:4/3}.jgrid,.bots,.match,.revs,.picks__r,.vals,.foot{grid-template-columns:1fr}
   .revs__img{grid-column:auto}.rev{border-left:0;border-top:1px solid var(--linel)}
-  .match div+div{border-left:0;padding-left:0;border-top:1px solid var(--line)}
   .stds,.vits,.tl{grid-template-columns:1fr}
   .gal{position:static}
   .reel{padding-bottom:20px}
@@ -981,14 +988,20 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 
   <section class="pad bg-paper" id="why-tallow" data-section="Direct answer (AEO)">
     <div class="wrap">
-      <div class="split" style="align-items:center;margin-bottom:10px;grid-template-columns:1.4fr 1fr">
-        <div class="answer"><small>The short answer</small>Tallow works on skin because its fats closely match sebum, the oil your skin makes on its own. It's built mostly from oleic, palmitic and stearic acids in similar ratios, and grass-fed tallow carries fat-soluble vitamins A, D, E and K. That lets it moisturize and support the skin barrier instead of only coating the surface.</div>
-        <div class="framed" style="filter:drop-shadow(0 20px 30px rgba(0,0,0,.22));max-width:460px;justify-self:end;width:100%"><img class="pho" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-k="hand" alt="Balm melting into the back of a hand"><img class="fr" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-k="frame_sq" alt=""></div>
-      </div>
-      <div class="match bg-canvas">
-        <div><b>26%</b><strong>Palmitic acid</strong><p>A main structural fat in skin cell membranes, tied to firmness and barrier strength.</p></div>
-        <div><b>21%</b><strong>Stearic acid</strong><p>Helps restore a skin barrier worn down by over-washing or harsh soap.</p></div>
-        <div><b>A D E K</b><strong>Fat-soluble vitamins</strong><p>Present naturally in grass-fed tallow, not added back in.</p></div>
+      <div class="aeo bg-canvas on-dark">
+        <div class="aeo__grid">
+          <div class="aeo__txt">
+            <p class="kick">The short answer</p>
+            <p class="aeo__big">Tallow works on skin because its fats closely match sebum, the oil your skin already makes.</p>
+            <p>It's built mostly from oleic, palmitic and stearic acids in similar ratios to your skin, and grass-fed tallow carries fat-soluble vitamins A, D, E and K. So it moisturizes and supports the skin barrier instead of only coating the surface.</p>
+          </div>
+          <div class="framed aeo__photo"><img class="pho" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-k="hand" alt="Balm melting into the back of a hand"><img class="fr" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-k="frame_sq" alt=""></div>
+        </div>
+        <div class="match">
+          <div><b>26%</b><strong>Palmitic acid</strong><p>A main structural fat in skin cell membranes, tied to firmness and barrier strength.</p></div>
+          <div><b>21%</b><strong>Stearic acid</strong><p>Helps restore a skin barrier worn down by over-washing or harsh soap.</p></div>
+          <div><b>A D E K</b><strong>Fat-soluble vitamins</strong><p>Present naturally in grass-fed tallow, not added back in.</p></div>
+        </div>
       </div>
     </div>
   </section>
