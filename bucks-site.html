@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bucks Tallow — Site Redesign v12</title>
+<title>Bucks Tallow — Site Redesign v13</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -108,7 +108,7 @@ body.show-sections .sec-toggle i{background:#c08a3e}body.show-sections .sec-togg
 .strip{background:var(--brown);color:var(--cream);overflow:hidden;padding:18px 0;border-top:3px solid var(--sage)}
 .strip__track{display:flex;width:max-content;animation:mq 95s linear infinite;font:600 1rem var(--sans)}
 .strip:hover .strip__track{animation-play-state:paused}
-.strip__track span{padding:0 36px;display:flex;align-items:center;gap:36px}
+.strip__track span{padding:0 18px;display:flex;align-items:center;gap:36px}
 .strip__track span::after{content:"";width:30px;height:24px;background:var(--im-antlers-icon) center/contain no-repeat;filter:brightness(0) invert(.93) sepia(.2);opacity:.9}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.strip__track{animation:none}}
@@ -121,12 +121,12 @@ body.show-sections .sec-toggle i{background:#c08a3e}body.show-sections .sec-togg
 .dense__txt{padding:clamp(60px,8vw,120px) clamp(28px,6vw,90px)}
 .dense__txt h2{color:var(--cream);max-width:9ch;margin-bottom:.3em}
 .dense__txt .lead{color:rgba(245,240,233,.8);margin-bottom:40px}
-.fact{background:var(--cream);color:var(--ink);border-radius:var(--r-sm);padding:22px 26px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;opacity:.28;transform:translateX(18px);transition:opacity .6s,transform .6s}
+.fact{background:var(--cream);color:var(--ink);border-radius:var(--r-sm);padding:22px 26px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:8px;align-items:center;opacity:.28;transform:translateX(18px);transition:opacity .6s,transform .6s}
 .fact.in{opacity:1;transform:none}
 .fact b{font:600 clamp(2.6rem,4.6vw,4.4rem)/.9 var(--slab);color:var(--brown);letter-spacing:0;text-align:left}
 .fact b small{font-size:.6em;line-height:1}.fact b small.sup{font-size:.45em;vertical-align:top;position:relative;top:-.1em}
 .dense__txt .cta{margin:40px 0 0;text-align:right}
-.fact strong{display:block;font:600 1.25rem/1.2 var(--slab);color:var(--deep);margin-bottom:4px;text-transform:uppercase}
+.fact>div{display:contents}.fact b{grid-row:1;grid-column:1}.fact strong{grid-row:1;grid-column:2;align-self:center;display:block;font:600 1.25rem/1.15 var(--slab);color:var(--deep);margin:0;text-transform:uppercase}.fact p{grid-column:1/-1}
 .fact p{margin:0;color:#2d3f34;font-size:.98rem;max-width:40ch}
 
 @media (prefers-reduced-motion:reduce){.fact{opacity:1;transform:none}}
@@ -357,7 +357,7 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 .step p{margin:0;color:rgba(245,240,233,.8);font-size:.98rem}
 /* PDP: who it's for / ingredients / benefits */
 .who{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.who div{background:#fff9;border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 24px}
+.who div{background:rgba(255,253,250,.86);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 24px}
 .who b{font:600 1.15rem var(--slab);display:block;color:var(--deep);margin-bottom:6px;text-transform:uppercase}
 .who p{margin:0;font-size:.95rem;color:#2d3f34}
 .inglist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 34px;counter-reset:ing}
@@ -375,21 +375,22 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 .tips p{margin:0;font-size:.95rem;color:#2d3f34}
 .disclaim{font-size:.85rem;color:var(--sage);border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
 @media (max-width:860px){.who,.inglist,.bens,.tips,.match{grid-template-columns:1fr}}
-.cmpm{display:none}
+.cmpm{display:none}.swipehint{display:none}
 /* ===== v10: mobile-only formatting round ===== */
 @media (max-width:760px){
   /* #1 hero: tin shows up top, copy sits low over the wood, no empty green */
-  .hero{display:block;min-height:0;background:linear-gradient(rgba(14,50,37,.72),rgba(14,50,37,.72)),var(--im-canvas) center/1100px repeat var(--deep)}
-  .hero__img{display:none}.hero__img--m{display:block;position:relative;inset:auto;width:100%;height:52svh;min-height:320px;object-fit:cover;object-position:center 42%;transform:none;animation:none}
-  .hero::after{display:none}
-  .hero .wrap{padding:30px var(--pad) 44px}.hero h1{font-size:clamp(2.2rem,11vw,2.9rem)}.hero .lead{margin:14px 0 22px;font-size:1rem}
+  /* hero: stacked tins anchored left, copy up on the image, gradient tying it together */
+  .hero{min-height:calc(100svh - 120px)}
+  .hero__img{display:none}.hero__img--m{display:block;object-position:22% 40%;transform:none;animation:none}
+  .hero::after{background:linear-gradient(0deg,rgba(14,37,26,.96) 0%,rgba(14,37,26,.82) 38%,rgba(14,37,26,.3) 62%,rgba(14,37,26,.35) 100%)}
+  .hero .wrap{padding-top:34svh;padding-bottom:72px}.hero h1{font-size:clamp(2.2rem,11vw,2.9rem)}.hero .lead{margin:14px 0 22px;font-size:1rem}
   .hero__foot{display:none}
   /* #3 #4 dense: shorter photo, facts scroll sideways */
-  .dense__img{height:38vh;min-height:260px}.dense__img img{object-position:center 72%}
+  .dense__img{height:30vh;min-height:220px}.dense__img img{object-position:88% 70%}
   .facts{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 18px;margin:0 calc(-1*var(--pad));scrollbar-width:none}
   .facts::-webkit-scrollbar{display:none}
   .fact{flex:0 0 76%;scroll-snap-align:start;display:block;padding:22px 20px 20px;margin-bottom:0;opacity:1;transform:none}
-  .fact b{display:block;text-align:left;font-size:2.8rem;margin-bottom:10px}.fact p{max-width:none}
+  .fact{display:grid}.fact b{font-size:2.4rem}.fact p{max-width:none}
   .dense__txt .cta{text-align:left}
   /* #5 uses: chips first, photo under them so it never scrolls out of view */
   .uses{display:flex;flex-direction:column;align-items:stretch;gap:18px}.uses>div:last-child{order:-1}.uses__img{width:100%}
@@ -420,7 +421,7 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
   .stepl,.tips{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 16px;margin:0 calc(-1*var(--pad));scrollbar-width:none}
   .stepl::-webkit-scrollbar,.tips::-webkit-scrollbar{display:none}
   .bg-sage .step{flex:0 0 72%;scroll-snap-align:start;margin-bottom:0;display:block}.bg-sage .step i{display:block;font-size:2.2rem;margin-bottom:8px}
-  .tips{margin-top:28px}.tips div{flex:0 0 76%;scroll-snap-align:start}
+  .tips{margin-top:6px}.tips div{flex:0 0 76%;scroll-snap-align:start}
   /* #22 benefits fit one screen: 2-up compact cards */
   .bens{grid-template-columns:1fr 1fr;gap:10px}.bens div{padding:16px 14px 28px}.bens b{font-size:.95rem}.bens p{font-size:.82rem}
   /* #23 FAQ photos never sticky on phones */
@@ -435,9 +436,13 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
   .dense__txt,.wrap,.uses>div,.pdp>div,.split>div,.steps>div,.page{min-width:0;max-width:100vw}
   html,body{overflow-x:hidden}
   .facts,.who,.stepl,.tips,#home-journal,#related,.revscroll{scroll-padding-left:var(--pad);scroll-padding-right:var(--pad)}
+  .swipehint{display:flex!important;align-items:center;gap:10px;margin:-6px 0 8px;font:500 .72rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+  .swipehint button{width:38px;height:38px;border-radius:50%;border:1.5px solid currentColor;background:transparent;color:inherit;font-size:1.2rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+  .swipehint span{flex:1}
+  .on-dark .swipehint,.bg-sage .swipehint{color:rgba(245,240,233,.8)}
   .revscroll{scroll-padding-left:28px}
   /* #6 treelines a touch larger still on phones */
-  .tl-edge{height:100px}
+  .tl-edge{height:140px}
   .story{padding-top:56px}
 }
 .faq{max-width:840px;margin:0 auto}
@@ -477,7 +482,7 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 .match>div,.vit,.who div,.valbox,.rcard{position:relative;overflow:hidden}.cmp__col::after{left:14px;right:14px}
 .valbox{padding-bottom:40px}.cmp__col{padding-bottom:40px}
 .vits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.vit{background:#fff9;padding:30px 24px;border-radius:3px}
+.vit{background:rgba(255,253,250,.86);padding:30px 24px;border-radius:3px}
 .vit b{font:600 2.4rem/1 var(--slab);color:var(--deep);display:block;margin-bottom:10px}
 .vit p{margin:0;font-size:.95rem;color:#2d3f34}
 .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
@@ -1366,6 +1371,8 @@ document.getElementById('home-journal').innerHTML=ARTICLES.slice(1,4).map(a=>jca
 document.getElementById('journal-grid').innerHTML=jcard(ARTICLES[0],true)+ARTICLES.slice(1).map(a=>jcard(a)).join('');
 document.getElementById('related').innerHTML=ARTICLES.slice(1,4).map(a=>jcard(a)).join('');
 document.getElementById('picks-revs').innerHTML=REVIEWS.map(r=>`<div><span class="stars">★★★★★</span>“${r[0]}”<cite>${r[1]}, verified buyer</cite></div>`).join('');
+// swipe hints under horizontal rows (shown on phones only)
+document.querySelectorAll('.facts,.who,.stepl,.tips,#home-journal').forEach(row=>{const h=document.createElement('div');h.className='swipehint';h.innerHTML='<button aria-label="Scroll back">‹</button><span>Swipe to see more</span><button aria-label="Scroll forward">›</button>';row.insertAdjacentElement('afterend',h);h.querySelectorAll('button').forEach((b,i)=>b.onclick=()=>row.scrollBy({left:(i?1:-1)*row.clientWidth*.75,behavior:'smooth'}))});
 // facts reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.25});
 document.querySelectorAll('.fact').forEach(f=>io.observe(f));
@@ -1438,7 +1445,7 @@ window.addEventListener('hashchange',route);route();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'bucks-site-v11';
+  var PAGE_ID = 'bucks-site-v12';
 
   /* ---------------------------------------------- */
 
