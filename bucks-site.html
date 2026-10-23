@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bucks Tallow — Site Redesign v14</title>
+<title>Bucks Tallow — Site Redesign v15</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ h1{font-size:clamp(2.4rem,6vw,5.4rem)}
 h2{font-size:clamp(1.8rem,3.8vw,3.4rem)}
 h3{font-size:clamp(1.2rem,1.8vw,1.5rem)}
 p{margin:0 0 1em}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
 .lead{font-size:clamp(1.05rem,1.4vw,1.25rem);max-width:52ch;color:#2d3f34}
 .kick{font:500 .78rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brown);margin:0 0 14px;display:block}
 
@@ -408,8 +408,8 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 .match strong{font:600 1.15rem var(--slab);display:block;margin:12px 0 6px;color:var(--deep)}
 .match p{font-size:.95rem;color:#2d3f34;margin:0}
 /* saddle stitch: angled stitches between two faint lines, run across the bottom edge of every card (same system as the Prancer site) */
-:root{--stitch:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='10' viewBox='0 0 32 10'%3E%3Cg stroke='%2370482e' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M-4 2l4 6M4 2l4 6M12 2l4 6M20 2l4 6M28 2l4 6'/%3E%3C/g%3E%3C/svg%3E")}
-.std::after,.valbox::after,.cmp__col::after,.bens div::after,.who div::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--stitch) repeat-x left bottom/32px 10px;pointer-events:none}
+:root{--stitch:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='8' viewBox='0 0 32 8'%3E%3Cg stroke='%2370482e' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M-4 1l4 6M4 1l4 6M12 1l4 6M20 1l4 6M28 1l4 6'/%3E%3C/g%3E%3C/svg%3E")}
+.std::after,.valbox::after,.cmp__col::after,.bens div::after,.who div::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--stitch) repeat-x left bottom/32px 8px;pointer-events:none}
 .match>div,.vit,.who div,.valbox,.rcard{position:relative;overflow:hidden}.cmp__col::after{left:14px;right:14px}
 .valbox{padding-bottom:36px}.cmp__col{padding-bottom:36px}.std{padding-bottom:30px}.bens div{padding-bottom:30px}.who div{padding-bottom:30px}
 .vits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -556,7 +556,7 @@ details.acc .b{padding:0 0 20px;color:#2d3f34}
 .notify input,.news input{border-radius:40px 0 0 40px;padding-left:18px}.notify button,.news button{border-radius:0 40px 40px 0}
 .dbl{box-shadow:0 0 0 2px var(--green),0 0 0 7px var(--cream),0 0 0 8px var(--sage)}
 .on-dark .dbl{box-shadow:0 0 0 2px var(--balm2),0 0 0 7px var(--deep),0 0 0 8px rgba(245,240,233,.35)}
-.tl-edge{position:absolute;left:0;right:0;bottom:-2px;height:clamp(36px,6.5vw,86px);background:var(--im-tl_green) left bottom/auto 100% repeat-x;z-index:4;pointer-events:none}
+.tl-edge{position:absolute;left:0;right:0;bottom:-2px;height:clamp(48px,7.5vw,104px);background:var(--im-tl_green) left bottom/auto 100% repeat-x;z-index:1;pointer-events:none}
 .tl-edge--sage{background-image:var(--im-tl_sage)}
 /* treeline that matches the dark canvas section below it: canvas texture masked by the treeline shape */
 .tl-edge--canvas{background:linear-gradient(rgba(14,50,37,.72),rgba(14,50,37,.72)),var(--im-canvas) center bottom/1100px repeat var(--deep);-webkit-mask:var(--im-tl_green) left bottom/auto 100% repeat-x;mask:var(--im-tl_green) left bottom/auto 100% repeat-x}
@@ -609,10 +609,11 @@ h1,h2{max-width:none!important}
 @media (max-width:760px){
   /* #1 hero: tin shows up top, copy sits low over the wood, no empty green */
   /* hero: stacked tins anchored left, copy up on the image, gradient tying it together */
-  .hero{min-height:calc(100svh - 120px);align-items:start;background:linear-gradient(rgba(14,50,37,.72),rgba(14,50,37,.72)),var(--im-canvas) center/1100px repeat var(--deep)}
-  .hero__img{display:none}.hero__img--m{display:block;top:auto;bottom:0;height:58svh;min-height:360px;object-position:24% 62%;transform:none;animation:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 34%);mask-image:linear-gradient(180deg,transparent 0,#000 34%)}
-  .hero::after{background:linear-gradient(180deg,rgba(14,50,37,0) 55%,rgba(14,50,37,.7) 100%)}
-  .hero .wrap{padding-top:30px;padding-bottom:0;align-self:start}.hero__cta{gap:10px}.hero__cta .btn{padding:15px 20px}.hero h1{font-size:clamp(2.2rem,11vw,2.9rem)}.hero .lead{margin:14px 0 22px;font-size:1rem}
+  .hero{min-height:calc(100svh - 120px);align-items:end;background:linear-gradient(rgba(14,50,37,.72),rgba(14,50,37,.72)),var(--im-canvas) center/1100px repeat var(--deep)}
+  .hero__img{display:none}.hero__img--m{display:block;top:0;bottom:auto;height:60svh;min-height:380px;object-position:24% 40%;transform:none;animation:none;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+  .hero .tl-edge{display:none}
+  .hero::after{background:linear-gradient(180deg,rgba(14,50,37,.15) 0,rgba(14,50,37,0) 30%,rgba(14,50,37,.35) 60%,rgba(14,50,37,.6) 100%)}
+  .hero .wrap{padding-top:0;padding-bottom:40px;align-self:end}.hero__cta{gap:10px}.hero__cta .btn{padding:15px 20px}.hero h1{font-size:clamp(2.2rem,11vw,2.9rem)}.hero .lead{margin:14px 0 22px;font-size:1rem}
   .hero__foot{display:none}
   /* #3 #4 dense: shorter photo, facts scroll sideways */
   .dense__img{height:22vh;min-height:170px}.dense__img img{object-position:88% 70%}
@@ -667,7 +668,7 @@ h1,h2{max-width:none!important}
   .facts,.who,.stepl,.tips,#home-journal,#related,.revscroll{scroll-padding-left:var(--pad);scroll-padding-right:var(--pad)}
   .swipehint{display:flex!important;align-items:center;gap:8px;margin:-6px 0 8px;font:500 .72rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--deep)}
   .swipehint button{width:40px;height:40px;border-radius:50%;border:0;background:var(--deep);color:var(--cream);font-size:1.3rem;line-height:1;cursor:pointer;display:grid;place-items:center}
-  .swipehint span{flex:1;order:-1}
+  .swipehint span{flex:1;order:-1;white-space:nowrap}.swipehint{flex-wrap:nowrap}.tips+.swipehint{display:none!important}
   .on-dark .swipehint,.bg-sage .swipehint{color:var(--cream)}.on-dark .swipehint button,.bg-sage .swipehint button{background:var(--cream);color:var(--deep)}
   .revscroll{scroll-padding-left:28px}
   /* #6 treelines a touch larger still on phones */
@@ -921,7 +922,7 @@ h1,h2{max-width:none!important}
         <div class="szl" id="pdp-sizes">
           <button data-p="12" data-oz="1"><b>1 oz</b><small>$12, travel</small></button>
           <button data-p="22" data-oz="2"><b>2 oz</b><small>$22, daily</small></button>
-          <button data-p="38" data-oz="4" class="on"><em>Best value</em><b>4 oz</b><small>$38, full tin</small></button>
+          <button data-p="38" data-oz="4" class="on"><b>4 oz</b><small>$38, full tin</small></button>
         </div>
         <div class="atc"><div class="qty"><button onclick="q(-1)">−</button><span id="qty">1</span><button onclick="q(1)">+</button></div><button class="btn btn--green btn--wide" onclick="cart.add()">Add to cart</button></div>
         <div class="assure">
@@ -1445,7 +1446,7 @@ window.addEventListener('hashchange',route);route();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'bucks-site-v13';
+  var PAGE_ID = 'bucks-site-v14';
 
   /* ---------------------------------------------- */
 
