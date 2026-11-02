@@ -159,7 +159,7 @@
   .lab-badges{display:flex;gap:28px;margin:28px 0}
   .lab-badges div{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--olive);line-height:1.3}
   .lab-badges b{display:block;font-family:var(--display);font-size:44px;line-height:1;color:var(--brick);letter-spacing:0}
-  .ll-slot{border:2.5px solid var(--forest);background:#fff8ec;padding:20px 22px;min-height:300px;display:flex;flex-direction:column}
+  .ll-slot{border:2.5px solid var(--forest);background:#fff8ec;padding:20px 22px;display:flex;flex-direction:column;margin-top:10px}
   .ll-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--forest);padding-bottom:12px;margin-bottom:12px}
   .ll-head .t{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:18px;letter-spacing:.04em}
   .ll-head .lab-name{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brick)}
@@ -514,7 +514,7 @@
       <p>Light Labs, an independent ISO 17025-accredited lab, screens Paleo Protein Powder for heavy metals and microbial contaminants. The live results are right here — you don't have to email us to ask.</p>
       <div class="lab-badges">
         <div><b>4</b>metals screened</div>
-        <div><b>8</b>microbials screened</div>
+        <div><b>✓</b>microbial panel</div>
         <div><b>0</b>results hidden</div>
       </div>
     </div>
@@ -522,7 +522,8 @@
       <div class="ll-head"><span class="t">Certificate of Analysis</span><span class="lab-name">Light Labs</span></div>
       <div class="ll-embed">
         <script async src="https://transparency.lightlabs.com/embed.js"></script>
-        <lightlabs-panel panel-id="8jyj8jcumf-paleopro-storefront-panel"></lightlabs-panel>
+        <!-- product-id is required off the PDP: Light Labs matches products by URL path (/products/paleo-protein-powder), so landing pages must name it. 11745 = Paleo Protein Powder in Light Labs -->
+        <lightlabs-panel panel-id="8jyj8jcumf-paleopro-storefront-panel" product-id="11745"></lightlabs-panel>
         <p class="ll-fallback" id="ll-fallback" hidden>The live report didn't load here. <a class="link" href="https://paleopro.com/products/paleo-protein-powder#lab">See the current results on the product page</a>.</p>
       </div>
     </div>
@@ -719,7 +720,7 @@
   /* Light Labs: show a link if the live panel hasn't rendered after 8s */
   setTimeout(function(){
     var p=document.querySelector("lightlabs-panel");
-    var rendered = p && (p.shadowRoot || p.children.length || p.getBoundingClientRect().height>40);
+    var rendered = p && p.getBoundingClientRect().height>20;
     if(!rendered) $("ll-fallback").hidden=false;
   },8000);
 
