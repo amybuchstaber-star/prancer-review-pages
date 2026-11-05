@@ -892,6 +892,17 @@
   @media (max-width: 1100px) { #lp-no-whey .day { flex: 0 0 240px; } }
   @media (max-width: 560px) { #lp-no-whey .day { flex: 0 0 68%; } }
 
+  /* ── comment round 1 (2026-11-05) ── */
+  /* frame-strip clips sit exactly where the stills were */
+  #lp-no-whey .day__clip { display: block; width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; background: #16281C; }
+  #lp-no-whey .day--bad .day__clip { filter: saturate(.85) contrast(1.02); }
+  /* problem fact box: make it pop */
+  #lp-no-whey .problem__fact { background: linear-gradient(135deg, rgba(200,149,42,.22), rgba(200,149,42,.08)); border: 1.5px solid var(--gold); border-left: 7px solid var(--gold-2); box-shadow: 0 0 0 1px rgba(200,149,42,.25), 0 22px 50px rgba(0,0,0,.45), inset 0 1px 0 rgba(239,227,201,.12); padding: 30px 32px; transform: rotate(-.6deg); }
+  #lp-no-whey .problem__fact .tag { color: var(--cream); background: var(--rust); display: inline-block; padding: 5px 10px; font-size: .72rem; margin-bottom: 14px; }
+  #lp-no-whey .problem__fact .big { color: var(--gold-2); font-size: clamp(2rem, 3.8vw, 3rem); line-height: .98; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+  #lp-no-whey .problem__fact .small { color: var(--cream); font-size: 1.02rem; margin-top: 14px; }
+  @media (max-width: 900px) { #lp-no-whey .problem__fact { transform: none; padding: 24px 22px; } }
+
 </style>
 
 
@@ -951,7 +962,6 @@
           <video autoplay muted loop playsinline preload="metadata" poster="hvl-assets/lp-nw-poster-notyou.jpg" aria-label="Paleo Pro ad: it's not you, it's the dairy. Beef + egg protein, animal-based and dairy-free.">
             <source src="hvl-assets/lp-nw-loop-notyou.mp4" type="video/mp4">
           </video>
-          <div class="lp-reel__cap">The ad you just saw</div>
         </div>
         <script>
           /* Swap the loop + poster to the matched hook before the reel starts loading. */
@@ -1000,11 +1010,11 @@
         <p>Three tubs on every shelf. If none of them ever sat right, it isn't you — the shelf only had three options.</p>
       </div>
       <div class="week__strip">
-        <div class="day day--bad"><span class="day__tag day__tag--bad">Guilty</span><img src="hvl-assets/lp-nw-f-lineup.jpg" alt="Three unlabeled protein tubs under a single lamp" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">Whey</div><span class="day__time">It's milk</span><p>Whey is what's left over when milk becomes cheese. Dairy, whatever the front of the tub says.</p></div></div>
-        <div class="day day--bad"><span class="day__tag day__tag--bad">Guilty</span><img src="hvl-assets/lp-nw-f-guilty.jpg" alt="Spilled soy beans and peas on a counter" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">Soy &amp; pea</div><span class="day__time">They're plants</span><p>Dairy-free, yes — and a plant shake isn't animal protein. Gritty, chalky, or both.</p></div></div>
-        <div class="day day--bad"><span class="day__tag day__tag--bad">The symptom</span><img src="hvl-assets/lp-nw-f-glass.jpg" alt="A gray protein shake in a glass on a kitchen counter" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">The gray shake</div><span class="day__time">It's not you</span><p>If the shake doesn't sit right, the milk is usually why.</p></div></div>
-        <div class="day"><span class="day__tag">The math</span><img src="hvl-assets/lp-nw-f-scoop.jpg" alt="A scoop of Paleo Protein Powder" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">One scoop</div><span class="day__time">Do the math</span><p>26g protein. 120 calories. 0g added sugar. That's the whole equation.</p></div></div>
-        <div class="day day--switch"><span class="day__tag">The fourth option</span><img src="hvl-assets/lp-nw-f-pouch.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla, next to an empty glass" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">Beef + egg</div><span class="day__time">Animal-based · Dairy-free</span><p>Grass-fed beef protein isolate and egg white. No milk, no soy, no pea.</p></div></div>
+        <div class="day day--bad"><span class="day__tag day__tag--bad">Guilty</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-nw-f-lineup.jpg" width="600" height="800" aria-label="Three unlabeled protein tubs under a single lamp"><source src="hvl-assets/lp-nw-clip-lineup.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">Whey</div><span class="day__time">It's milk</span><p>Whey is what's left over when milk becomes cheese. Dairy, whatever the front of the tub says.</p></div></div>
+        <div class="day day--bad"><span class="day__tag day__tag--bad">Guilty</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-nw-f-guilty.jpg" width="600" height="800" aria-label="Spilled soy beans and peas on a counter"><source src="hvl-assets/lp-nw-clip-guilty.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">Soy &amp; pea</div><span class="day__time">They're plants</span><p>Dairy-free, yes — and a plant shake isn't animal protein. Gritty, chalky, or both.</p></div></div>
+        <div class="day day--bad"><span class="day__tag day__tag--bad">The symptom</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-nw-f-glass.jpg" width="600" height="800" aria-label="A gray protein shake in a glass on a kitchen counter"><source src="hvl-assets/lp-nw-clip-glass.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">The gray shake</div><span class="day__time">It's not you</span><p>If the shake doesn't sit right, the milk is usually why.</p></div></div>
+        <div class="day"><span class="day__tag">The math</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-nw-f-scoop.jpg" width="600" height="800" aria-label="A scoop of Paleo Protein Powder"><source src="hvl-assets/lp-nw-clip-scoop.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">One scoop</div><span class="day__time">Do the math</span><p>26g protein. 120 calories. 0g added sugar. That's the whole equation.</p></div></div>
+        <div class="day day--switch"><span class="day__tag">The fourth option</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-nw-f-pouch.jpg" width="600" height="800" aria-label="Paleo Pro Paleo Protein Powder, Aztec Vanilla, next to an empty glass"><source src="hvl-assets/lp-nw-clip-pouch.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">Beef + egg</div><span class="day__time">Animal-based · Dairy-free</span><p>Grass-fed beef protein isolate and egg white. No milk, no soy, no pea.</p></div></div>
       </div>
       <div class="week__cta"><a class="btn btn--rust" href="#buy">Try the fourth option</a></div>
     </div>
@@ -1043,7 +1053,7 @@
   <section class="sec sol" id="why">
     <div class="c">
       <div class="sol__grid">
-        <div class="plate pos__plate"><img src="hvl-assets/lp-nw-f-pouch.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla, next to a glass" loading="lazy"><div class="plate__cap">The bag from the ad · Aztec Vanilla</div></div>
+        <div class="plate pos__plate"><img src="hvl-assets/lp-hv-pouch-render.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla" loading="lazy"><div class="plate__cap">The bag from the ad · Aztec Vanilla</div></div>
         <div>
           <span class="eyebrow">The fourth option</span>
           <h2 class="brushed">Animal-based.<br>Dairy-free.</h2>
@@ -1148,7 +1158,7 @@
       </div>
       <div class="buy-grid">
         <div class="buy-media">
-          <div class="lp-frame"><img src="hvl-assets/lp-nw-f-pouch.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla" loading="lazy"></div>
+          <div class="lp-frame"><img src="hvl-assets/lp-hv-pouch-render.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla" loading="lazy"></div>
           <div class="buy-trust">
             <div class="bt"><b>26g</b><span>Protein</span></div>
             <div class="bt"><b>120</b><span>Calories</span></div>
@@ -1217,6 +1227,14 @@
   });
   (function(){ var f=document.querySelector('#lp-no-whey .faq__item.open .faq__a'); if(f){ f.style.maxHeight=f.scrollHeight+'px'; } })();
   document.querySelectorAll('#lp-no-whey a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}});});
+  /* Frame-strip clips: load + play only while on screen, pause when scrolled away. */
+  (function(){
+    var vids=[].slice.call(document.querySelectorAll('#lp-no-whey .day__clip')); if(!vids.length) return;
+    var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches; if(rm) return;
+    if(!('IntersectionObserver' in window)){ vids.forEach(function(v){ v.play().catch(function(){}); }); return; }
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target; if(e.isIntersecting){ if(v.preload==='none'){ v.preload='auto'; v.load(); } v.play().catch(function(){}); } else { v.pause(); } }); },{rootMargin:'120px 0px',threshold:0.1});
+    vids.forEach(function(v){ io.observe(v); });
+  })();
   /* Respect reduced motion: stop the hero loop, keep the poster. */
   (function(){ if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { var v=document.querySelector('#lp-no-whey .lp-reel video'); if(v){ v.removeAttribute('autoplay'); v.pause(); } } })();
   /* Light Labs: once the live panel has rendered content, hide the static fallback rows. */

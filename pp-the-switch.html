@@ -892,6 +892,17 @@
   @media (max-width: 1100px) { #lp-the-switch .day { flex: 0 0 240px; } }
   @media (max-width: 560px) { #lp-the-switch .day { flex: 0 0 68%; } }
 
+  /* ── comment round 1 (2026-11-05) ── */
+  /* frame-strip clips sit exactly where the stills were */
+  #lp-the-switch .day__clip { display: block; width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; background: #16281C; }
+  #lp-the-switch .day--bad .day__clip { filter: saturate(.85) contrast(1.02); }
+  /* problem fact box: make it pop */
+  #lp-the-switch .problem__fact { background: linear-gradient(135deg, rgba(200,149,42,.22), rgba(200,149,42,.08)); border: 1.5px solid var(--gold); border-left: 7px solid var(--gold-2); box-shadow: 0 0 0 1px rgba(200,149,42,.25), 0 22px 50px rgba(0,0,0,.45), inset 0 1px 0 rgba(239,227,201,.12); padding: 30px 32px; transform: rotate(-.6deg); }
+  #lp-the-switch .problem__fact .tag { color: var(--cream); background: var(--rust); display: inline-block; padding: 5px 10px; font-size: .72rem; margin-bottom: 14px; }
+  #lp-the-switch .problem__fact .big { color: var(--gold-2); font-size: clamp(2rem, 3.8vw, 3rem); line-height: .98; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+  #lp-the-switch .problem__fact .small { color: var(--cream); font-size: 1.02rem; margin-top: 14px; }
+  @media (max-width: 900px) { #lp-the-switch .problem__fact { transform: none; padding: 24px 22px; } }
+
 </style>
 
 
@@ -951,7 +962,6 @@
           <video autoplay muted loop playsinline preload="metadata" poster="hvl-assets/lp-ts-poster-dairy.jpg" aria-label="Paleo Pro ad: whey is dairy. Beef + egg protein is the carnivore switch.">
             <source src="hvl-assets/lp-ts-loop-dairy.mp4" type="video/mp4">
           </video>
-          <div class="lp-reel__cap">The ad you just saw</div>
         </div>
         <script>
           /* Swap the loop + poster to the matched hook before the reel starts loading. */
@@ -1000,10 +1010,10 @@
         <p>Same kitchen you already run. The only thing that changes is the tub on the counter.</p>
       </div>
       <div class="week__strip">
-        <div class="day day--bad"><span class="day__tag day__tag--bad">Dairy</span><img src="hvl-assets/lp-ts-f-milk.jpg" alt="Milk pouring onto a butcher block" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">Whey</div><span class="day__time">Is milk</span><p>Whey is what's left when milk becomes cheese. Every scoop of whey protein started in a dairy plant.</p></div></div>
-        <div class="day day--bad"><span class="day__tag day__tag--bad">The loophole</span><img src="hvl-assets/lp-ts-f-tub.jpg" alt="An unlabeled whey tub on a carnivore kitchen counter next to eggs and a skillet" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">The tub</div><span class="day__time">Dairy, in disguise</span><p>Most "clean" protein powders are whey. Turn the tub around and look for "contains milk."</p></div></div>
-        <div class="day day--bad"><span class="day__tag day__tag--bad">The gap</span><img src="hvl-assets/lp-ts-f-ribeye.jpg" alt="A ribeye in a skillet on the stove next to a clock reading 6:00" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">6:00 AM</div><span class="day__time">Nobody grills a ribeye</span><p>Steak at dinner is easy. Getting animal protein in before you leave the house isn't.</p></div></div>
-        <div class="day day--switch"><span class="day__tag">The switch</span><img src="hvl-assets/lp-ts-f-pouch.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla, next to a raw steak and eggs" loading="lazy" width="600" height="800"><div class="day__body"><div class="day__name">Beef + egg</div><span class="day__time">26g protein · 120 calories</span><p>Grass-fed beef protein isolate and egg white. No dairy anywhere on the label.</p></div></div>
+        <div class="day day--bad"><span class="day__tag day__tag--bad">Dairy</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-ts-f-milk.jpg" width="600" height="800" aria-label="Milk pouring onto a butcher block"><source src="hvl-assets/lp-ts-clip-milk.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">Whey</div><span class="day__time">Is milk</span><p>Whey is what's left when milk becomes cheese. Every scoop of whey protein started in a dairy plant.</p></div></div>
+        <div class="day day--bad"><span class="day__tag day__tag--bad">The loophole</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-ts-f-tub.jpg" width="600" height="800" aria-label="An unlabeled whey tub on a carnivore kitchen counter next to eggs and a skillet"><source src="hvl-assets/lp-ts-clip-tub.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">The tub</div><span class="day__time">Dairy, in disguise</span><p>Most "clean" protein powders are whey. Turn the tub around and look for "contains milk."</p></div></div>
+        <div class="day day--bad"><span class="day__tag day__tag--bad">The gap</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-ts-f-ribeye.jpg" width="600" height="800" aria-label="A ribeye in a skillet on the stove next to a clock reading 6:00"><source src="hvl-assets/lp-ts-clip-ribeye.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">6:00 AM</div><span class="day__time">Nobody grills a ribeye</span><p>Steak at dinner is easy. Getting animal protein in before you leave the house isn't.</p></div></div>
+        <div class="day day--switch"><span class="day__tag">The switch</span><video class="day__clip" muted loop playsinline preload="none" poster="hvl-assets/lp-ts-f-pouch.jpg" width="600" height="800" aria-label="Paleo Pro Paleo Protein Powder, Aztec Vanilla, next to a raw steak and eggs"><source src="hvl-assets/lp-ts-clip-pouch.mp4" type="video/mp4"></video><div class="day__body"><div class="day__name">Beef + egg</div><span class="day__time">26g protein · 120 calories</span><p>Grass-fed beef protein isolate and egg white. No dairy anywhere on the label.</p></div></div>
       </div>
       <div class="week__cta"><a class="btn btn--rust" href="#buy">Make the switch</a></div>
     </div>
@@ -1043,7 +1053,7 @@
   <section class="sec sol" id="why">
     <div class="c">
       <div class="sol__grid">
-        <div class="plate pos__plate"><img src="hvl-assets/lp-ts-f-pouch.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla, with a raw steak and eggs" loading="lazy"><div class="plate__cap">The bag from the ad · Aztec Vanilla</div></div>
+        <div class="plate pos__plate"><img src="hvl-assets/lp-hv-pouch-render.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla" loading="lazy"><div class="plate__cap">The bag from the ad · Aztec Vanilla</div></div>
         <div>
           <span class="eyebrow">The switch</span>
           <h2 class="brushed">Beef + egg.<br>The protein already on your plate.</h2>
@@ -1148,7 +1158,7 @@
       </div>
       <div class="buy-grid">
         <div class="buy-media">
-          <div class="lp-frame"><img src="hvl-assets/lp-ts-f-pouch.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla" loading="lazy"></div>
+          <div class="lp-frame"><img src="hvl-assets/lp-hv-pouch-render.jpg" alt="Paleo Pro Paleo Protein Powder, Aztec Vanilla" loading="lazy"></div>
           <div class="buy-trust">
             <div class="bt"><b>26g</b><span>Protein</span></div>
             <div class="bt"><b>120</b><span>Calories</span></div>
@@ -1217,6 +1227,14 @@
   });
   (function(){ var f=document.querySelector('#lp-the-switch .faq__item.open .faq__a'); if(f){ f.style.maxHeight=f.scrollHeight+'px'; } })();
   document.querySelectorAll('#lp-the-switch a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}});});
+  /* Frame-strip clips: load + play only while on screen, pause when scrolled away. */
+  (function(){
+    var vids=[].slice.call(document.querySelectorAll('#lp-the-switch .day__clip')); if(!vids.length) return;
+    var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches; if(rm) return;
+    if(!('IntersectionObserver' in window)){ vids.forEach(function(v){ v.play().catch(function(){}); }); return; }
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target; if(e.isIntersecting){ if(v.preload==='none'){ v.preload='auto'; v.load(); } v.play().catch(function(){}); } else { v.pause(); } }); },{rootMargin:'120px 0px',threshold:0.1});
+    vids.forEach(function(v){ io.observe(v); });
+  })();
   /* Respect reduced motion: stop the hero loop, keep the poster. */
   (function(){ if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { var v=document.querySelector('#lp-the-switch .lp-reel video'); if(v){ v.removeAttribute('autoplay'); v.pause(); } } })();
   /* Light Labs: once the live panel has rendered content, hide the static fallback rows. */
