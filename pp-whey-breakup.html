@@ -1,0 +1,1927 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Whey Breakup · PaleoPro LP review</title>
+<style>html,body{margin:0;background:#EFE3C9;overflow-x:hidden}</style></head><body class="pp-motion">
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Special+Elite&family=Architects+Daughter&display=swap" rel="stylesheet">
+
+<style>
+  /* ─────────────────────────── RESET & TOKENS ─────────────────────────── */
+  #lp-whey-breakup, #lp-whey-breakup *, #lp-whey-breakup *::before, #lp-whey-breakup *::after { box-sizing: border-box; }
+  :where(#lp-whey-breakup *) { margin: 0; padding: 0; }
+  :where(#lp-whey-breakup *)::before, :where(#lp-whey-breakup *)::after { margin: 0; padding: 0; }
+
+  #lp-whey-breakup {
+    /* Palette — anchored to the PaleoPro packaging */
+    --cream:    #EFE3C9;
+    --cream-2:  #F6EEDA;
+    --parch:    #E7D8B6;
+    --forest:   #1F3A28;
+    --forest-2: #2E4A35;
+    --rust:     #A8432A;
+    --rust-2:   #8E3621;
+    --gold:     #C8952A;
+    --gold-2:   #E0AE45;
+    --ink:      #221C14;
+    --char:     #18130D;
+    --line:     rgba(34,28,20,0.16);
+
+    /* Hand-drawn mountain-range line textures (inline SVG, self-contained) */
+    --mtn-gold:  url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27600%27%20height%3D%27220%27%20viewBox%3D%270%200%20600%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23C8952A%27%20stroke-width%3D%272%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M0%20200%20L90%2090%20L140%20130%20L210%2050%20L270%20120%20L330%2070%20L400%20150%20L460%2095%20L540%20160%20L600%20120%20L600%20220%20L0%20220%20Z%27%2F%3E%3Cpath%20d%3D%27M0%20210%20L70%20150%20L130%20180%20L200%20120%20L260%20165%20L340%20125%20L410%20180%20L480%20140%20L560%20185%20L600%20165%27%2F%3E%3Cpath%20d%3D%27M210%2050%20L188%2078%20M188%2078%20L232%2078%20M210%2050%20L210%20120%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --mtn-ink:   url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27600%27%20height%3D%27220%27%20viewBox%3D%270%200%20600%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%272%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M0%20200%20L90%2090%20L140%20130%20L210%2050%20L270%20120%20L330%2070%20L400%20150%20L460%2095%20L540%20160%20L600%20120%20L600%20220%20L0%20220%20Z%27%2F%3E%3Cpath%20d%3D%27M0%20210%20L70%20150%20L130%20180%20L200%20120%20L260%20165%20L340%20125%20L410%20180%20L480%20140%20L560%20185%20L600%20165%27%2F%3E%3Cpath%20d%3D%27M210%2050%20L188%2078%20M188%2078%20L232%2078%20M210%2050%20L210%20120%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --mtn-cream: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27600%27%20height%3D%27220%27%20viewBox%3D%270%200%20600%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23EFE3C9%27%20stroke-width%3D%272%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M0%20200%20L90%2090%20L140%20130%20L210%2050%20L270%20120%20L330%2070%20L400%20150%20L460%2095%20L540%20160%20L600%20120%20L600%20220%20L0%20220%20Z%27%2F%3E%3Cpath%20d%3D%27M0%20210%20L70%20150%20L130%20180%20L200%20120%20L260%20165%20L340%20125%20L410%20180%20L480%20140%20L560%20185%20L600%20165%27%2F%3E%3Cpath%20d%3D%27M210%2050%20L188%2078%20M188%2078%20L232%2078%20M210%2050%20L210%20120%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+    --font-display: 'Anton', 'Oswald', Impact, sans-serif;
+    --font-eyebrow: 'Oswald', 'DM Sans', sans-serif;
+    --font-body:    'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-type:    'Special Elite', 'Courier New', monospace;   /* field-guide typewriter labels */
+    --font-script:  'Architects Daughter', 'Comic Sans MS', cursive; /* handwritten signatures */
+
+    /* gold hand-painted brush-stroke underline (field-guide headers) */
+    --brush: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%2046%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M6%2026%20C70%2014%20150%2012%20240%2018%20C320%2023%20360%2030%20470%2022%20C520%2018%20560%2016%20594%2024%20C566%2033%20520%2031%20470%2033%20C380%2037%20300%2035%20220%2033%20C150%2031%2070%2034%208%2032%20C2%2031%202%2028%206%2026%20Z%27%20fill%3D%27%23C8952A%27%2F%3E%3Cpath%20d%3D%27M20%2036%20C120%2031%20260%2038%20360%2034%20C440%2031%20520%2035%20580%2033%27%20stroke%3D%27%23B07E23%27%20stroke-width%3D%272.4%27%20fill%3D%27none%27%20stroke-linecap%3D%27round%27%20opacity%3D%270.7%27%2F%3E%3C%2Fsvg%3E");
+
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+
+    /* full-width bleed escape from any themed container */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw; isolation: isolate; /* was transform: translateX(-50%). A transform makes this wrapper the containing block for position:fixed children and pinned the sticky bar to the page end (2026-09-21). */
+  }
+  /* While a sticky buy bar is showing, lift the theme's Sign up teaser clear of its button. */
+  @media (max-width: 767px) { body:has(.lb2__sticky[data-visible="true"]) [id$="__theme_tooltip"] .fixed { bottom: 64px !important; } }
+
+  /* ─────────────────────────── UTILITIES ─────────────────────────── */
+  #lp-whey-breakup .c       { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  #lp-whey-breakup .c-wide  { max-width: 1360px; margin: 0 auto; padding: 0 28px; }
+  #lp-whey-breakup .sec     { padding: 92px 0; }
+  #lp-whey-breakup .sec-sm  { padding: 64px 0; }
+  #lp-whey-breakup [hidden] { display: none !important; }
+
+  /* field-guide typewriter label — block-level so the heading always sits on its own line */
+  #lp-whey-breakup .eyebrow {
+    font-family: var(--font-type); font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.92rem; color: var(--rust);
+    display: flex; align-items: center; gap: 11px; margin-bottom: 12px;
+  }
+  /* centered section labels */
+  #lp-whey-breakup .how .eyebrow, #lp-whey-breakup .clean .eyebrow, #lp-whey-breakup .faq .eyebrow { justify-content: center; }
+  #lp-whey-breakup .eyebrow::before {
+    content: ""; width: 22px; height: 2px; background: var(--gold); flex: 0 0 22px;
+  }
+  #lp-whey-breakup .eyebrow::after { display: none; }
+
+  /* hand-painted brush-stroke underline under section headings */
+  #lp-whey-breakup h2.brushed { display: inline-block; position: relative; padding-bottom: 18px; }
+  #lp-whey-breakup h2.brushed::after {
+    content: ""; position: absolute; left: -4px; right: -4px; bottom: 0; height: 16px;
+    background: var(--brush) no-repeat center / 100% 100%; opacity: 0.95;
+  }
+  /* handwritten signature */
+  #lp-whey-breakup .script { font-family: var(--font-script) !important; text-transform: none !important; letter-spacing: 0 !important; line-height: 1.2; }
+
+  #lp-whey-breakup h1, #lp-whey-breakup h2, #lp-whey-breakup h3 {
+    font-family: var(--font-display) !important;
+    font-weight: 400; line-height: 0.96; letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  #lp-whey-breakup h2 { font-size: clamp(2.1rem, 4.6vw, 3.5rem); color: var(--forest); }
+  #lp-whey-breakup h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); }
+  #lp-whey-breakup p  { font-size: 1.05rem; }
+
+  /* Buttons — deco double-border pill */
+  #lp-whey-breakup .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font-family: var(--font-eyebrow); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.95rem;
+    padding: 17px 34px; border-radius: 2px; cursor: pointer;
+    text-decoration: none; border: 2px solid transparent;
+    transition: transform .15s ease, background .15s ease, color .15s ease;
+  }
+  #lp-whey-breakup .btn--gold  { background: var(--gold); color: var(--char) !important; box-shadow: inset 0 0 0 2px rgba(24,19,13,0.25), 0 6px 18px rgba(34,28,20,0.22); }
+  #lp-whey-breakup .btn--gold:hover  { background: var(--gold-2); transform: translateY(-2px); }
+  #lp-whey-breakup .btn--rust  { background: var(--rust); color: var(--cream) !important; box-shadow: inset 0 0 0 2px rgba(239,227,201,0.22), 0 6px 18px rgba(34,28,20,0.22); }
+  #lp-whey-breakup .btn--rust:hover  { background: var(--rust-2); transform: translateY(-2px); }
+  #lp-whey-breakup .btn--ghost { background: transparent; color: var(--cream) !important; border-color: rgba(239,227,201,0.55); }
+  #lp-whey-breakup .btn--ghost:hover { background: rgba(239,227,201,0.12); transform: translateY(-2px); }
+  #lp-whey-breakup .btn--ink   { background: transparent; color: var(--forest) !important; border-color: var(--forest); }
+  #lp-whey-breakup .btn--ink:hover { background: var(--forest); color: var(--cream) !important; transform: translateY(-2px); }
+
+  /* deco hairline frame helper */
+  #lp-whey-breakup .deco-frame { position: relative; }
+  #lp-whey-breakup .deco-frame::after {
+    content: ""; position: absolute; inset: 14px;
+    border: 1.5px solid rgba(239,227,201,0.35); pointer-events: none;
+  }
+
+  /* ═══════════════════════════ HERO ═══════════════════════════ */
+  #lp-whey-breakup .hero {
+    position: relative; min-height: 660px; display: flex; align-items: center;
+    background:
+      linear-gradient(90deg, rgba(12,24,16,0.97) 0%, rgba(12,24,16,0.93) 26%, rgba(12,24,16,0.66) 44%, rgba(12,24,16,0.22) 60%, rgba(12,24,16,0) 76%),
+      var(--hero-img, linear-gradient(135deg, #2E4A35 0%, #1F3A28 55%, #16281C 100%));
+    background-size: cover; background-position: right 58%;
+    border-top: 6px solid var(--gold); border-bottom: 6px solid var(--gold);
+  }
+  /* hard-anchor content to the left edge; keep the photo's product side clear on the right */
+  #lp-whey-breakup .hero__inner { max-width: 1460px; width: 100%; margin: 0 auto;
+    padding: 100px 28px 100px clamp(28px, 5vw, 72px); position: relative; z-index: 2; }
+  #lp-whey-breakup .hero__box { max-width: 560px; margin-left: 0; }
+  #lp-whey-breakup .hero .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .hero .eyebrow::before, #lp-whey-breakup .hero .eyebrow::after { background: var(--gold); }
+  #lp-whey-breakup .hero h1 {
+    font-family: var(--font-display) !important;
+    color: var(--cream) !important;
+    font-size: clamp(3.2rem, 7.4vw, 6.2rem); line-height: 1.04; margin: 18px 0 12px;
+    text-shadow: 0 2px 26px rgba(0,0,0,0.4);
+  }
+  #lp-whey-breakup .hero h1 .lede  { display: block; color: var(--gold-2) !important; }
+  #lp-whey-breakup .hero h1 .small { display: block; font-size: 0.46em; line-height: 1.12; color: var(--cream) !important; letter-spacing: 0.02em; margin-top: 14px; }
+  #lp-whey-breakup .hero__sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.22rem); color: rgba(239,227,201,0.94) !important;
+    max-width: 520px; margin: 8px 0 26px; line-height: 1.55;
+  }
+  #lp-whey-breakup .hero__sub strong { color: var(--gold-2) !important; font-weight: 700; }
+  #lp-whey-breakup .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+  #lp-whey-breakup .hero__trust {
+    display: flex; flex-wrap: wrap; gap: 9px 18px; align-items: center;
+    font-family: var(--font-eyebrow); font-weight: 600; font-size: 0.84rem; letter-spacing: 0.07em;
+    text-transform: uppercase; color: #F3E9CF !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.65), 0 0 2px rgba(0,0,0,0.5);
+  }
+  /* color must be set DIRECTLY on the spans — a directly-targeted theme rule beats an inherited value */
+  #lp-whey-breakup .hero__trust, #lp-whey-breakup .hero__trust span { color: #F3E9CF !important; }
+  #lp-whey-breakup .hero__trust span { display: inline-flex; align-items: center; gap: 8px; }
+  #lp-whey-breakup .hero__trust .star { color: var(--gold-2) !important; letter-spacing: 0.05em; text-shadow: none; }
+  #lp-whey-breakup .hero__trust .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 6px rgba(0,0,0,0.4); }
+
+  /* ═══════════════════════════ MARQUEE TRUST STRIP ═══════════════════════════ */
+  #lp-whey-breakup .marquee { background: var(--forest); overflow: hidden; border-bottom: 3px solid var(--gold); }
+  #lp-whey-breakup .marquee__track { display: flex; gap: 0; white-space: nowrap; animation: pp-marq 34s linear infinite; }
+  #lp-whey-breakup .marquee__track:hover { animation-play-state: paused; }
+  #lp-whey-breakup .m-item {
+    font-family: var(--font-display) !important; color: var(--cream) !important;
+    text-transform: uppercase; font-size: 1.05rem; letter-spacing: 0.08em;
+    padding: 16px 30px; display: inline-flex; align-items: center; gap: 30px;
+  }
+  #lp-whey-breakup .m-item::after { content: "✦"; color: var(--gold-2); font-size: 0.9rem; }
+  @keyframes pp-marq { to { transform: translateX(-50%); } }
+
+  /* ═══════════════════════════ STEAK & EGGS POSITIONING ═══════════════════════════ */
+  #lp-whey-breakup .pos { background: var(--cream); text-align: center; }
+  #lp-whey-breakup .pos__kick { font-family: var(--font-display) !important; color: var(--rust); font-size: clamp(2.4rem,5.6vw,4.4rem); line-height: 0.95; }
+  #lp-whey-breakup .pos__kick em { font-style: normal; color: var(--forest); }
+  #lp-whey-breakup .pos p { max-width: 680px; margin: 22px auto 0; font-size: 1.18rem; color: var(--ink); }
+  #lp-whey-breakup .pos p strong { color: var(--rust-2); }
+
+  /* ═══════════════════════════ WHY BEEF ISOLATE (field-guide editorial) ═══════════════════════════ */
+  /* deeper, textured "panel" — recessed beneath the lighter section above for clear separation */
+  #lp-whey-breakup .why {
+    position: relative; overflow: hidden;
+    background:
+      url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201440%20620%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Cpath%20d%3D%27M%20-40%2019.5%20L%2040%2040.5%20L%20120%2056.6%20L%20200%2061.0%20L%20280%2054.8%20L%20360%2045.4%20L%20440%2040.7%20L%20520%2043.3%20L%20600%2048.4%20L%20680%2048.2%20L%20760%2037.4%20L%20840%2018.6%20L%20920%200.3%20L%201000%20-8.2%20L%201080%20-3.5%20L%201160%209.8%20L%201240%2022.9%20L%201320%2028.6%20L%201400%2027.1%20L%201480%2024.5%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%2094.5%20L%2040%20111.1%20L%20120%20114.4%20L%20200%20106.4%20L%20280%2095.2%20L%20360%2088.5%20L%20440%2088.0%20L%20520%2088.9%20L%20600%2083.4%20L%20680%2068.0%20L%20760%2046.6%20L%20840%2028.5%20L%20920%2022.7%20L%201000%2031.1%20L%201080%2048.1%20L%201160%2064.1%20L%201240%2072.7%20L%201320%2074.3%20L%201400%2075.5%20L%201480%2082.8%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20167.3%20L%2040%20167.7%20L%20120%20156.3%20L%20200%20141.8%20L%20280%20131.8%20L%20360%20127.5%20L%20440%20123.7%20L%20520%20113.6%20L%20600%2094.8%20L%20680%2072.5%20L%20760%2056.8%20L%20840%2055.4%20L%20920%2069.2%20L%201000%2090.9%20L%201080%20110.6%20L%201160%20122.0%20L%201240%20126.4%20L%201320%20130.3%20L%201400%20139.5%20L%201480%20153.9%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20218.9%20L%2040%20202.5%20L%20120%20183.6%20L%20200%20169.7%20L%20280%20161.4%20L%20360%20153.4%20L%20440%20139.6%20L%20520%20119.2%20L%20600%2098.4%20L%20680%2087.1%20L%20760%2092.0%20L%20840%20112.2%20L%20920%20139.2%20L%201000%20162.4%20L%201080%20176.3%20L%201160%20182.4%20L%201240%20187.5%20L%201320%20196.6%20L%201400%20208.7%20L%201480%20216.5%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20212.0%20L%2040%20198.2%20L%20120%20193.0%20L%20200%20194.9%20L%20280%20197.1%20L%20360%20192.6%20L%20440%20180.2%20L%20520%20166.2%20L%20600%20159.6%20L%20680%20166.0%20L%20760%20183.2%20L%20840%20202.5%20L%20920%20214.8%20L%201000%20216.6%20L%201080%20211.8%20L%201160%20208.5%20L%201240%20212.2%20L%201320%20221.5%20L%201400%20228.9%20L%201480%20226.4%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20237.2%20L%2040%20229.4%20L%20120%20228.7%20L%20200%20228.1%20L%20280%20221.4%20L%20360%20208.9%20L%20440%20197.2%20L%20520%20195.4%20L%20600%20207.5%20L%20680%20229.7%20L%20760%20252.4%20L%20840%20266.4%20L%20920%20268.9%20L%201000%20264.7%20L%201080%20261.8%20L%201160%20264.7%20L%201240%20271.3%20L%201320%20273.9%20L%201400%20265.5%20L%201480%20245.7%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20261.1%20L%2040%20258.7%20L%20120%20256.7%20L%20200%20249.7%20L%20280%20238.9%20L%20360%20231.7%20L%20440%20236.0%20L%20520%20254.5%20L%20600%20281.6%20L%20680%20307.0%20L%20760%20321.5%20L%20840%20323.4%20L%20920%20318.2%20L%201000%20313.8%20L%201080%20314.3%20L%201160%20316.6%20L%201240%20313.5%20L%201320%20299.0%20L%201400%20274.4%20L%201480%20248.1%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20286.3%20L%2040%20284.7%20L%20120%20279.4%20L%20200%20272.4%20L%20280%20271.1%20L%20360%20282.4%20L%20440%20307.4%20L%20520%20338.7%20L%20600%20365.3%20L%20680%20378.8%20L%20760%20378.3%20L%20840%20370.3%20L%20920%20362.7%20L%201000%20359.2%20L%201080%20356.3%20L%201160%20347.0%20L%201240%20327.0%20L%201320%20299.0%20L%201400%20272.4%20L%201480%20257.6%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20354.0%20L%2040%20351.1%20L%20120%20343.7%20L%20200%20339.6%20L%20280%20345.7%20L%20360%20362.6%20L%20440%20383.3%20L%20520%20398.0%20L%20600%20400.3%20L%20680%20391.8%20L%20760%20380.3%20L%20840%20373.8%20L%20920%20374.9%20L%201000%20378.8%20L%201080%20377.7%20L%201160%20366.8%20L%201240%20348.7%20L%201320%20332.3%20L%201400%20326.3%20L%201480%20333.7%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20385.5%20L%2040%20381.8%20L%20120%20382.9%20L%20200%20394.7%20L%20280%20416.0%20L%20360%20438.8%20L%20440%20452.8%20L%20520%20452.9%20L%20600%20441.6%20L%20680%20427.6%20L%20760%20418.6%20L%20840%20416.5%20L%20920%20416.2%20L%201000%20410.5%20L%201080%20395.8%20L%201160%20376.3%20L%201240%20361.2%20L%201320%20358.9%20L%201400%20370.8%20L%201480%20390.6%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20425.2%20L%2040%20431.8%20L%20120%20448.8%20L%20200%20473.4%20L%20280%20496.5%20L%20360%20508.1%20L%20440%20504.0%20L%20520%20488.5%20L%20600%20470.7%20L%20680%20458.3%20L%20760%20452.7%20L%20840%20448.5%20L%20920%20439.0%20L%201000%20422.1%20L%201080%20403.2%20L%201160%20391.6%20L%201240%20394.7%20L%201320%20412.5%20L%201400%20436.9%20L%201480%20457.9%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20486.3%20L%2040%20507.4%20L%20120%20533.5%20L%20200%20554.7%20L%20280%20561.7%20L%20360%20551.9%20L%20440%20530.8%20L%20520%20508.5%20L%20600%20492.5%20L%20680%20483.6%20L%20760%20476.3%20L%20840%20464.7%20L%20920%20447.6%20L%201000%20431.4%20L%201080%20425.3%20L%201160%20435.4%20L%201240%20459.7%20L%201320%20489.0%20L%201400%20512.7%20L%201480%20525.3%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20541.8%20L%2040%20558.7%20L%20120%20571.6%20L%20200%20572.7%20L%20280%20560.9%20L%20360%20542.8%20L%20440%20528.1%20L%20520%20522.7%20L%20600%20525.1%20L%20680%20528.0%20L%20760%20524.6%20L%20840%20513.9%20L%20920%20502.2%20L%201000%20498.2%20L%201080%20506.9%20L%201160%20525.7%20L%201240%20545.5%20L%201320%20557.2%20L%201400%20557.6%20L%201480%20551.2%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20614.5%20L%2040%20624.5%20L%20120%20620.7%20L%20200%20603.8%20L%20280%20581.6%20L%20360%20564.1%20L%20440%20556.7%20L%20520%20557.2%20L%20600%20558.4%20L%20680%20553.9%20L%20760%20544.2%20L%20840%20535.8%20L%20920%20537.1%20L%201000%20551.7%20L%201080%20575.2%20L%201160%20597.7%20L%201240%20610.3%20L%201320%20610.5%20L%201400%20603.7%20L%201480%20598.0%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3C%2Fsvg%3E") center top / 1440px auto repeat-y,
+      linear-gradient(180deg, #DFCDA4 0%, #D6C198 100%);
+    border-top: 1px solid rgba(34,28,20,0.20);
+    box-shadow: inset 0 18px 28px -18px rgba(34,28,20,0.32);
+  }
+  #lp-whey-breakup .why > .c { position: relative; z-index: 1; }
+  #lp-whey-breakup .why .eyebrow { color: var(--rust); }
+  #lp-whey-breakup .why h2 { color: var(--ink) !important; max-width: 760px; }
+  #lp-whey-breakup .why__lead { color: var(--ink); max-width: 720px; margin: 18px 0 50px; font-size: 1.12rem; }
+  #lp-whey-breakup .why__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  #lp-whey-breakup .why__card {
+    background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--rust);
+    padding: 26px 24px 28px; position: relative;
+  }
+  #lp-whey-breakup .why__num {
+    font-family: var(--font-display) !important; color: var(--gold) !important;
+    font-size: 2.5rem; line-height: 0.85; letter-spacing: 0.01em; display: block; margin-bottom: 8px;
+  }
+  #lp-whey-breakup .why__card h3 {
+    color: var(--rust-2) !important; margin: 4px 0 10px; font-size: 1.12rem;
+    font-family: var(--font-eyebrow) !important; font-weight: 700; letter-spacing: 0.02em;
+  }
+  #lp-whey-breakup .why__card p  { color: var(--ink); font-size: 0.98rem; }
+  #lp-whey-breakup .why__card .icon { display: none; }
+  /* dark field-note callout (handbook signature) */
+  #lp-whey-breakup .fieldnote {
+    position: relative; overflow: hidden; margin-top: 54px;
+    background: var(--char); border: 1px solid rgba(200,149,42,0.3); border-top: 4px solid var(--gold);
+    padding: 38px 40px 64px; max-width: 880px;
+  }
+  #lp-whey-breakup .fieldnote__tag { font-family: var(--font-type); color: var(--gold-2); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.8rem; position: relative; z-index: 1; }
+  #lp-whey-breakup .fieldnote__h { color: var(--cream) !important; font-family: var(--font-eyebrow) !important; font-weight: 700; font-size: clamp(1.3rem,2.4vw,1.85rem); line-height: 1.08; margin: 12px 0 14px; position: relative; z-index: 1; }
+  #lp-whey-breakup .fieldnote p { color: rgba(239,227,201,0.92) !important; max-width: 640px; margin-bottom: 22px; position: relative; z-index: 1; }
+  #lp-whey-breakup .fieldnote .btn { position: relative; z-index: 1; }
+
+  /* ═══════════════════════════ PRODUCT SHOWCASE ═══════════════════════════ */
+  #lp-whey-breakup .shop { background: var(--cream-2); }
+  #lp-whey-breakup .shop__head { text-align: center; margin-bottom: 50px; }
+  #lp-whey-breakup .shop__head p { color: var(--ink); max-width: 620px; margin: 14px auto 0; }
+  #lp-whey-breakup .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  #lp-whey-breakup .pcard {
+    background: var(--cream); border: 1.5px solid var(--line);
+    display: flex; flex-direction: column; overflow: hidden; text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease; color: var(--ink);
+  }
+  #lp-whey-breakup .pcard:hover { transform: translateY(-5px); box-shadow: 0 22px 44px rgba(34,28,20,0.18); }
+  #lp-whey-breakup .pcard__img { aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--forest-2), var(--forest)); position: relative; }
+  #lp-whey-breakup .pcard--cc .pcard__img { background: linear-gradient(135deg, #3a2417, #241510); }
+  #lp-whey-breakup .pcard__img img { width: 100%; height: 100%; object-fit: cover; }
+  #lp-whey-breakup .pcard__tag {
+    position: absolute; top: 16px; left: 16px; background: var(--gold); color: var(--char) !important;
+    font-family: var(--font-eyebrow); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; font-size: 0.72rem; padding: 6px 13px;
+  }
+  #lp-whey-breakup .pcard__body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+  #lp-whey-breakup .pcard__body h3 { color: var(--forest) !important; font-size: 1.7rem; }
+  #lp-whey-breakup .pcard__stars { font-family: var(--font-eyebrow); font-size: 0.82rem; letter-spacing: 0.05em; color: var(--ink); margin: 8px 0 12px; }
+  #lp-whey-breakup .pcard__stars .star { color: var(--gold); }
+  #lp-whey-breakup .pcard__body p { color: var(--ink); font-size: 0.98rem; flex: 1; }
+  #lp-whey-breakup .pcard__stats { display: flex; gap: 22px; margin: 16px 0 20px; flex-wrap: wrap; }
+  #lp-whey-breakup .pcard__stat { display: flex; flex-direction: column; }
+  #lp-whey-breakup .pcard__stat b { font-family: var(--font-display) !important; color: var(--rust); font-size: 1.5rem; line-height: 1; }
+  #lp-whey-breakup .pcard__stat span { font-family: var(--font-eyebrow); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink); opacity: 0.7; margin-top: 4px; }
+  #lp-whey-breakup .pcard .btn { width: 100%; }
+
+  #lp-whey-breakup .shop__more { text-align: center; margin-top: 40px; }
+  #lp-whey-breakup .shop__more p { font-family: var(--font-eyebrow); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.84rem; color: var(--ink); margin-bottom: 16px; opacity: 0.78; }
+
+  /* ═══════════════════════════ HERITAGE / NOSE-TO-TAIL BAND ═══════════════════════════ */
+  #lp-whey-breakup .heritage {
+    position: relative; background:
+      linear-gradient(90deg, rgba(20,30,21,0.86) 0%, rgba(20,30,21,0.55) 60%, rgba(20,30,21,0.30) 100%),
+      var(--heritage-img, linear-gradient(135deg, #2E4A35, #16281C));
+    background-size: cover; background-position: center;
+    border-top: 6px solid var(--gold); border-bottom: 6px solid var(--gold);
+  }
+  #lp-whey-breakup .heritage__inner { padding-top: 104px; padding-bottom: 104px; }
+  #lp-whey-breakup .heritage__box { max-width: 560px; }
+  #lp-whey-breakup .heritage .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .heritage .eyebrow::before, #lp-whey-breakup .heritage .eyebrow::after { background: var(--gold); }
+  #lp-whey-breakup .heritage h2 { color: var(--cream) !important; }
+  #lp-whey-breakup .heritage p { color: rgba(239,227,201,0.92) !important; margin: 18px 0; font-size: 1.1rem; }
+
+  /* ═══════════════════════════ HOW IT WORKS (trail map) ═══════════════════════════ */
+  #lp-whey-breakup .how { background: var(--parch); text-align: center; position: relative; overflow: hidden; }
+  #lp-whey-breakup .how > .c { position: relative; z-index: 1; }
+  #lp-whey-breakup .how__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 58px; position: relative; }
+  /* dashed trail connecting the three markers (desktop) — draws in + marches */
+  #lp-whey-breakup .how__grid::before {
+    content: ""; position: absolute; top: 42px; left: 16.66%; right: 16.66%; height: 2px;
+    background-image: repeating-linear-gradient(90deg, var(--gold) 0 9px, transparent 9px 18px);
+    background-size: 18px 2px; opacity: 0.6; z-index: 0;
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform 1.1s ease 0.35s;
+  }
+  #lp-whey-breakup .how.is-in .how__grid::before { transform: scaleX(1); }
+  #lp-whey-breakup .how__step { position: relative; padding: 0 12px; z-index: 1; }
+
+  /* ── MOTION (scroll-reveal + ambient) — disabled when user prefers reduced motion ── */
+  @media (prefers-reduced-motion: no-preference) {
+    #lp-whey-breakup .how__step { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    #lp-whey-breakup .how.is-in .how__step { opacity: 1; transform: none; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(1) { transition-delay: .05s; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(2) { transition-delay: .25s; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(3) { transition-delay: .45s; }
+    /* trail dashes march along once revealed */
+    #lp-whey-breakup .how.is-in .how__grid::before { animation: how-march 0.9s linear infinite; }
+    /* markers gently float + emit a pulsing ring */
+    #lp-whey-breakup .how.is-in .how__n { animation: how-float 4.6s ease-in-out infinite; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(2) .how__n { animation-delay: .55s; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(3) .how__n { animation-delay: 1.1s; }
+    #lp-whey-breakup .how__n::after {
+      content: ""; position: absolute; inset: -2px; border-radius: 50%;
+      border: 2px solid var(--gold); opacity: 0; pointer-events: none;
+    }
+    #lp-whey-breakup .how.is-in .how__n::after { animation: how-pulse 3.4s ease-out infinite; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(2) .how__n::after { animation-delay: 1.1s; }
+    #lp-whey-breakup .how.is-in .how__step:nth-child(3) .how__n::after { animation-delay: 2.2s; }
+  }
+  @keyframes how-march { to { background-position-x: -18px; } }
+  @keyframes how-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes how-pulse { 0% { transform: scale(1); opacity: .5; } 70% { transform: scale(1.4); opacity: 0; } 100% { opacity: 0; } }
+  /* trail-marker stamp */
+  #lp-whey-breakup .how__n {
+    width: 86px; height: 86px; margin: 0 auto 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display) !important; font-size: 2rem; color: var(--rust);
+    background: var(--cream); border: 2px solid var(--gold);
+    box-shadow: 0 0 0 5px var(--parch), 0 0 0 7px rgba(200,149,42,0.5), 4px 5px 0 rgba(34,28,20,0.10);
+    position: relative; z-index: 1;
+  }
+  #lp-whey-breakup .how__kicker { display: block; font-family: var(--font-type); text-transform: uppercase;
+    letter-spacing: 0.18em; font-size: 0.7rem; color: var(--rust); margin-bottom: 5px; }
+  #lp-whey-breakup .how__step h3 { color: var(--forest) !important; margin-bottom: 8px; }
+  #lp-whey-breakup .how__step p { color: var(--ink); max-width: 280px; margin: 0 auto; font-size: 0.98rem; }
+
+  /* ═══════════════════════════ FOUNDER (a letter, on parchment) ═══════════════════════════ */
+  #lp-whey-breakup .founder { background: var(--cream); }
+  #lp-whey-breakup .founder__grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 62px; align-items: center; }
+  /* framed photo — pinned to the page */
+  #lp-whey-breakup .founder__frame {
+    position: relative; background: #FBF6E9; padding: 14px 14px 14px; max-width: 380px;
+    border: 1px solid rgba(34,28,20,0.08); transform: rotate(-1.8deg);
+    box-shadow: 0 18px 36px rgba(34,28,20,0.20), 9px 10px 0 rgba(31,58,40,0.12);
+  }
+  #lp-whey-breakup .founder__frame::before {
+    content: ""; position: absolute; top: -14px; left: 50%; transform: translateX(-50%) rotate(-2.5deg);
+    width: 130px; height: 28px; background: rgba(200,149,42,0.42); box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  #lp-whey-breakup .founder__frame img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: saturate(0.97) contrast(1.02); }
+  #lp-whey-breakup .founder__cap { font-family: var(--font-script); text-align: center; color: var(--ink); font-size: 1.15rem; padding-top: 10px; }
+  #lp-whey-breakup .founder .eyebrow { color: var(--rust); }
+  #lp-whey-breakup .founder h2 { color: var(--ink) !important; }
+  #lp-whey-breakup .founder p { color: var(--ink); margin: 16px 0; font-size: 1.08rem; }
+  #lp-whey-breakup .founder__rule { display: flex; align-items: center; gap: 14px; margin: 24px 0 4px; }
+  #lp-whey-breakup .founder__rule i { height: 0; border-top: 2px dashed var(--gold); width: 54px; }
+  #lp-whey-breakup .founder__rule span { font-family: var(--font-type); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.72rem; color: var(--rust); }
+  #lp-whey-breakup .founder__sig { font-family: var(--font-script) !important; color: var(--rust-2) !important; font-size: 2rem; letter-spacing: 0 !important; text-transform: none !important; margin-top: 6px; }
+
+  /* ═══════════════════════════ REVIEWS ═══════════════════════════ */
+  #lp-whey-breakup .reviews { background: var(--forest-2); }
+  #lp-whey-breakup .reviews > .c { text-align: center; }
+  #lp-whey-breakup .reviews h2 { color: var(--cream) !important; text-align: center; }
+  #lp-whey-breakup .reviews .rcard { text-align: left; }
+  #lp-whey-breakup .reviews__sub { text-align: center; color: rgba(239,227,201,0.9) !important; margin: 14px auto 46px; max-width: 540px; }
+  #lp-whey-breakup .reviews__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+  #lp-whey-breakup .rcard { background: var(--cream); padding: 26px 22px; border-top: 4px solid var(--gold); }
+  #lp-whey-breakup .rcard .star { color: var(--gold); font-size: 0.95rem; letter-spacing: 0.08em; }
+  #lp-whey-breakup .rcard p { color: var(--ink); font-size: 0.96rem; margin: 12px 0 16px; }
+  #lp-whey-breakup .rcard .who { font-family: var(--font-eyebrow); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; color: var(--rust); }
+  #lp-whey-breakup .rcard .verified { display: block; font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: 0.72rem; color: var(--ink); opacity: 0.6; margin-top: 3px; font-weight: 400; }
+
+  /* ═══════════════════════════ FAQ (AEO) — green field-guide boxes ═══════════════════════════ */
+  #lp-whey-breakup .faq { background: var(--cream); }
+  #lp-whey-breakup .faq__head { text-align: center; margin-bottom: 44px; }
+  #lp-whey-breakup .faq__list { max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  #lp-whey-breakup .faq__item {
+    background: var(--forest); border: 1px solid rgba(200,149,42,0.32); border-left: 4px solid var(--gold);
+    border-radius: 3px; overflow: hidden;
+    box-shadow: 4px 5px 0 rgba(34,28,20,0.13);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  #lp-whey-breakup .faq__item:hover { transform: translateY(-2px); box-shadow: 6px 8px 0 rgba(34,28,20,0.18); }
+  #lp-whey-breakup .faq__item.open { background: var(--forest-2); }
+  #lp-whey-breakup .faq__q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 22px 58px 22px 24px; position: relative;
+    font-family: var(--font-eyebrow); font-weight: 700; font-size: 1.1rem; color: var(--cream) !important;
+  }
+  #lp-whey-breakup .faq__q::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+    font-family: var(--font-display); font-size: 1.7rem; color: var(--gold-2); line-height: 1; }
+  #lp-whey-breakup .faq__item.open .faq__q::after { content: "–"; }
+  #lp-whey-breakup .faq__a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  #lp-whey-breakup .faq__a p { color: rgba(239,227,201,0.92) !important; padding: 0 24px 22px; font-size: 1rem; }
+
+  /* ═══════════════════════════ FINAL CTA ═══════════════════════════ */
+  #lp-whey-breakup .final { background: var(--char); text-align: center; border-top: 6px solid var(--gold); }
+  #lp-whey-breakup .final .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .final .eyebrow::before, #lp-whey-breakup .final .eyebrow::after { background: var(--gold); }
+  #lp-whey-breakup .final h2 { color: var(--cream) !important; max-width: 820px; margin: 14px auto 0; font-size: clamp(2.4rem,5vw,4rem); }
+  #lp-whey-breakup .final p { color: rgba(239,227,201,0.9) !important; max-width: 540px; margin: 18px auto 30px; }
+  #lp-whey-breakup .final__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  #lp-whey-breakup .final__trust { margin-top: 26px; font-family: var(--font-eyebrow); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; color: rgba(239,227,201,0.7) !important; }
+
+  /* ═══════════════════════════ FIELD-GUIDE ARTWORK & TEXTURE LAYER ═══════════════════════════ */
+  #lp-whey-breakup .why, #lp-whey-breakup .reviews, #lp-whey-breakup .final, #lp-whey-breakup .founder, #lp-whey-breakup .clean { position: relative; overflow: hidden; }
+  #lp-whey-breakup .why__card, #lp-whey-breakup .pcard, #lp-whey-breakup .rcard { position: relative; overflow: hidden; }
+
+  /* pine-tree silhouette band along the bottom edge of a section (handbook signature) */
+  #lp-whey-breakup .pinefoot::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 132px;
+    background: url('https://paleopro.com/cdn/shop/t/92/assets/pp-art-pineband.png') repeat-x bottom / auto 132px;
+    opacity: 0.20; pointer-events: none; z-index: 0;
+  }
+  #lp-whey-breakup .pinefoot--strong::after { opacity: 0.55; }
+
+  /* line-art animal / compass watermark, positioned per use via inline style */
+  #lp-whey-breakup .art { position: absolute; pointer-events: none; z-index: 0; }
+
+  /* keep section content above the watermarks */
+  #lp-whey-breakup .why > .c, #lp-whey-breakup .reviews > .c, #lp-whey-breakup .final > .c,
+  #lp-whey-breakup .founder > .c, #lp-whey-breakup .clean > .c { position: relative; z-index: 1; }
+
+  /* printed-panel shadow — calm editorial, no tilt */
+  #lp-whey-breakup .why__card { box-shadow: 5px 6px 0 rgba(34,28,20,0.10); }
+  #lp-whey-breakup .rcard { box-shadow: 4px 5px 0 rgba(34,28,20,0.10); }
+  #lp-whey-breakup .duo .pcard:nth-child(2) { transform: translateY(20px); }
+  #lp-whey-breakup .duo .pcard:nth-child(2):hover { transform: translateY(16px); }
+
+  /* deco section divider — twin gold rule with diamond */
+  #lp-whey-breakup .rule { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto 6px; max-width: 240px; }
+  #lp-whey-breakup .rule i { height: 2px; background: var(--gold); flex: 1; display: block; }
+  #lp-whey-breakup .rule b { color: var(--gold); transform: rotate(45deg); width: 9px; height: 9px; background: var(--gold); display: block; }
+
+  /* ═══════════════════════════ IN-STORE / RETAIL AUTHORITY (full-bleed photo) ═══════════════════════════ */
+  #lp-whey-breakup .instore {
+    position: relative; overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(12,24,16,0.94) 0%, rgba(12,24,16,0.85) 36%, rgba(12,24,16,0.50) 62%, rgba(12,24,16,0.16) 100%),
+      var(--retail-img, linear-gradient(135deg, #2E4A35, #16281C));
+    background-size: cover; background-position: center 32%;
+    border-top: 6px solid var(--gold); border-bottom: 6px solid var(--gold);
+  }
+  #lp-whey-breakup .instore .instore__inner { padding: 112px clamp(32px, 6vw, 80px); position: relative; z-index: 1; }
+  #lp-whey-breakup .instore__box { max-width: 520px; }
+  #lp-whey-breakup .instore__box p { margin-bottom: 32px; }
+  #lp-whey-breakup .instore .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .instore .eyebrow::before, #lp-whey-breakup .instore .eyebrow::after { background: var(--gold); }
+  #lp-whey-breakup .instore h2 { color: var(--cream) !important; }
+  #lp-whey-breakup .instore p { color: rgba(239,227,201,0.93) !important; margin: 16px 0 28px; max-width: 480px; }
+  #lp-whey-breakup .instore__logos { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 28px; }
+  #lp-whey-breakup .instore__logos .retail-logo { max-height: 56px; width: auto; }
+  #lp-whey-breakup .wordmark {
+    border: 2px solid var(--forest); padding: 12px 22px; border-radius: 3px; text-align: center;
+    box-shadow: 4px 4px 0 rgba(31,58,40,0.15); background: var(--cream);
+  }
+  #lp-whey-breakup .wordmark .wm-name { font-family: var(--font-display) !important; text-transform: uppercase; color: var(--forest); font-size: 1.1rem; letter-spacing: 0.04em; line-height: 1; }
+  #lp-whey-breakup .wordmark .wm-sub  { font-family: var(--font-eyebrow); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.58rem; color: var(--rust); margin-top: 4px; }
+  #lp-whey-breakup .wordmark--wf { border-color: var(--rust); box-shadow: 4px 4px 0 rgba(168,67,42,0.15); }
+  #lp-whey-breakup .wordmark--wf .wm-name { color: var(--rust); }
+  #lp-whey-breakup .wordmark--wf .wm-sub { color: var(--forest); }
+
+  /* ═══════════════════════════ CLEAN-LABEL / CERT BAND ═══════════════════════════ */
+  #lp-whey-breakup .clean { background: var(--char); position: relative; overflow: hidden; border-top: 6px solid var(--gold); border-bottom: 6px solid var(--gold); }
+  #lp-whey-breakup .clean::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 150px;
+    background: url('https://paleopro.com/cdn/shop/t/92/assets/pp-art-pineband.png') repeat-x bottom / auto 150px; opacity: 0.40; pointer-events: none;
+  }
+  #lp-whey-breakup .clean__inner { position: relative; z-index: 1; text-align: center; }
+  #lp-whey-breakup .clean .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .clean .eyebrow::before, #lp-whey-breakup .clean .eyebrow::after { background: var(--gold); }
+  #lp-whey-breakup .clean h2 { color: var(--cream) !important; margin: 14px auto 0; max-width: 720px; }
+  #lp-whey-breakup .clean__sub { color: rgba(239,227,201,0.9) !important; max-width: 620px; margin: 16px auto 40px; }
+  #lp-whey-breakup .cert-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  #lp-whey-breakup .cert-badge {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: rgba(239,227,201,0.05); border: 1px solid rgba(200,149,42,0.4); border-radius: 6px;
+    padding: 13px 20px; font-family: var(--font-eyebrow); font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; font-size: 0.76rem; color: var(--cream) !important;
+  }
+  #lp-whey-breakup .cert-badge svg { width: 17px; height: 17px; stroke: var(--gold-2); fill: none; stroke-width: 2; flex: 0 0 17px; }
+
+  /* ═══════════════════════════ BEST SELLERS SCROLL STRIP ═══════════════════════════ */
+  #lp-whey-breakup .bestsellers { background: var(--cream-2); border-bottom: 1px solid var(--line); }
+  #lp-whey-breakup .bs__head { text-align: center; margin-bottom: 34px; }
+  #lp-whey-breakup .bs__head .eyebrow { justify-content: center; }
+  #lp-whey-breakup .bs__head h2 { color: var(--ink) !important; margin-top: 12px; font-size: clamp(1.8rem,3.4vw,2.6rem); }
+  #lp-whey-breakup .bs__scroll {
+    display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 6px 4px 16px; scrollbar-width: thin; scrollbar-color: var(--gold) transparent;
+  }
+  #lp-whey-breakup .bs__scroll::-webkit-scrollbar { height: 7px; }
+  #lp-whey-breakup .bs__scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+  #lp-whey-breakup .bs__card {
+    flex: 0 0 clamp(240px, 24%, 290px); scroll-snap-align: start;
+    background: var(--cream); border: 1px solid var(--line); border-radius: 2px;
+    display: flex; flex-direction: column; overflow: hidden; text-decoration: none; color: var(--ink);
+    box-shadow: 4px 5px 0 rgba(34,28,20,0.08); transition: transform .16s ease, box-shadow .16s ease;
+  }
+  #lp-whey-breakup .bs__card:hover { transform: translateY(-4px); box-shadow: 6px 8px 0 rgba(34,28,20,0.12); }
+  #lp-whey-breakup .bs__img { aspect-ratio: 3/4; background: linear-gradient(150deg,#241a12,#14100a); position: relative; }
+  #lp-whey-breakup .bs__img img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+  #lp-whey-breakup .bs__tag {
+    position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--char) !important;
+    font-family: var(--font-type); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.66rem; padding: 5px 11px;
+  }
+  #lp-whey-breakup .bs__body { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; }
+  #lp-whey-breakup .bs__body h3 { color: var(--forest) !important; font-family: var(--font-eyebrow) !important; font-weight: 700; font-size: 1.18rem; letter-spacing: 0.01em; }
+  #lp-whey-breakup .bs__stars { font-size: 0.8rem; color: var(--gold); margin: 6px 0 9px; }
+  #lp-whey-breakup .bs__stars span { font-family: var(--font-eyebrow); color: var(--ink); opacity: 0.7; letter-spacing: 0.04em; }
+  #lp-whey-breakup .bs__body p { font-size: 0.92rem; color: var(--ink); flex: 1; margin-bottom: 14px; }
+  #lp-whey-breakup .bs__foot { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line); }
+  #lp-whey-breakup .bs__price { font-family: var(--font-display) !important; color: var(--rust); font-size: 1.25rem; }
+  #lp-whey-breakup .bs__cta { font-family: var(--font-type); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; color: var(--forest); }
+  #lp-whey-breakup .bs__card:hover .bs__cta { color: var(--rust); }
+
+  /* ═══════════════════════════ FRAMED FIELD PLATE (infographics) ═══════════════════════════ */
+  #lp-whey-breakup .plate { background: var(--cream); border: 1px solid var(--line); padding: 14px; box-shadow: 6px 7px 0 rgba(34,28,20,0.12); }
+  #lp-whey-breakup .plate img { display: block; width: 100%; height: auto; }
+  #lp-whey-breakup .plate__cap { font-family: var(--font-type); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; color: var(--rust); margin-top: 10px; text-align: center; }
+
+  /* Steak & Eggs — two-column with visual */
+  #lp-whey-breakup .pos__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 54px; align-items: center; text-align: left; }
+  #lp-whey-breakup .pos__grid .pos__kick { text-align: left; }
+  #lp-whey-breakup .pos__grid p { margin: 22px 0 0; }
+  #lp-whey-breakup .pos__plate { transform: rotate(1.4deg); }
+
+  /* Field note — two-column with the decline chart */
+  #lp-whey-breakup .fieldnote { max-width: 1060px; }
+  #lp-whey-breakup .fieldnote__grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 36px; align-items: center; position: relative; z-index: 1; }
+  #lp-whey-breakup .fieldnote__chart { background: var(--cream); padding: 12px; box-shadow: 5px 6px 0 rgba(0,0,0,0.28); }
+  #lp-whey-breakup .fieldnote__chart img { display: block; width: 100%; height: auto; }
+
+  /* ═══════════════════════════ FIELD JOURNAL (blog) ═══════════════════════════ */
+  #lp-whey-breakup .journal {
+    position: relative; overflow: hidden;
+    background:
+      url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201440%20620%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Cpath%20d%3D%27M%20-40%2019.5%20L%2040%2040.5%20L%20120%2056.6%20L%20200%2061.0%20L%20280%2054.8%20L%20360%2045.4%20L%20440%2040.7%20L%20520%2043.3%20L%20600%2048.4%20L%20680%2048.2%20L%20760%2037.4%20L%20840%2018.6%20L%20920%200.3%20L%201000%20-8.2%20L%201080%20-3.5%20L%201160%209.8%20L%201240%2022.9%20L%201320%2028.6%20L%201400%2027.1%20L%201480%2024.5%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%2094.5%20L%2040%20111.1%20L%20120%20114.4%20L%20200%20106.4%20L%20280%2095.2%20L%20360%2088.5%20L%20440%2088.0%20L%20520%2088.9%20L%20600%2083.4%20L%20680%2068.0%20L%20760%2046.6%20L%20840%2028.5%20L%20920%2022.7%20L%201000%2031.1%20L%201080%2048.1%20L%201160%2064.1%20L%201240%2072.7%20L%201320%2074.3%20L%201400%2075.5%20L%201480%2082.8%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20167.3%20L%2040%20167.7%20L%20120%20156.3%20L%20200%20141.8%20L%20280%20131.8%20L%20360%20127.5%20L%20440%20123.7%20L%20520%20113.6%20L%20600%2094.8%20L%20680%2072.5%20L%20760%2056.8%20L%20840%2055.4%20L%20920%2069.2%20L%201000%2090.9%20L%201080%20110.6%20L%201160%20122.0%20L%201240%20126.4%20L%201320%20130.3%20L%201400%20139.5%20L%201480%20153.9%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20218.9%20L%2040%20202.5%20L%20120%20183.6%20L%20200%20169.7%20L%20280%20161.4%20L%20360%20153.4%20L%20440%20139.6%20L%20520%20119.2%20L%20600%2098.4%20L%20680%2087.1%20L%20760%2092.0%20L%20840%20112.2%20L%20920%20139.2%20L%201000%20162.4%20L%201080%20176.3%20L%201160%20182.4%20L%201240%20187.5%20L%201320%20196.6%20L%201400%20208.7%20L%201480%20216.5%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20212.0%20L%2040%20198.2%20L%20120%20193.0%20L%20200%20194.9%20L%20280%20197.1%20L%20360%20192.6%20L%20440%20180.2%20L%20520%20166.2%20L%20600%20159.6%20L%20680%20166.0%20L%20760%20183.2%20L%20840%20202.5%20L%20920%20214.8%20L%201000%20216.6%20L%201080%20211.8%20L%201160%20208.5%20L%201240%20212.2%20L%201320%20221.5%20L%201400%20228.9%20L%201480%20226.4%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20237.2%20L%2040%20229.4%20L%20120%20228.7%20L%20200%20228.1%20L%20280%20221.4%20L%20360%20208.9%20L%20440%20197.2%20L%20520%20195.4%20L%20600%20207.5%20L%20680%20229.7%20L%20760%20252.4%20L%20840%20266.4%20L%20920%20268.9%20L%201000%20264.7%20L%201080%20261.8%20L%201160%20264.7%20L%201240%20271.3%20L%201320%20273.9%20L%201400%20265.5%20L%201480%20245.7%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20261.1%20L%2040%20258.7%20L%20120%20256.7%20L%20200%20249.7%20L%20280%20238.9%20L%20360%20231.7%20L%20440%20236.0%20L%20520%20254.5%20L%20600%20281.6%20L%20680%20307.0%20L%20760%20321.5%20L%20840%20323.4%20L%20920%20318.2%20L%201000%20313.8%20L%201080%20314.3%20L%201160%20316.6%20L%201240%20313.5%20L%201320%20299.0%20L%201400%20274.4%20L%201480%20248.1%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20286.3%20L%2040%20284.7%20L%20120%20279.4%20L%20200%20272.4%20L%20280%20271.1%20L%20360%20282.4%20L%20440%20307.4%20L%20520%20338.7%20L%20600%20365.3%20L%20680%20378.8%20L%20760%20378.3%20L%20840%20370.3%20L%20920%20362.7%20L%201000%20359.2%20L%201080%20356.3%20L%201160%20347.0%20L%201240%20327.0%20L%201320%20299.0%20L%201400%20272.4%20L%201480%20257.6%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20354.0%20L%2040%20351.1%20L%20120%20343.7%20L%20200%20339.6%20L%20280%20345.7%20L%20360%20362.6%20L%20440%20383.3%20L%20520%20398.0%20L%20600%20400.3%20L%20680%20391.8%20L%20760%20380.3%20L%20840%20373.8%20L%20920%20374.9%20L%201000%20378.8%20L%201080%20377.7%20L%201160%20366.8%20L%201240%20348.7%20L%201320%20332.3%20L%201400%20326.3%20L%201480%20333.7%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20385.5%20L%2040%20381.8%20L%20120%20382.9%20L%20200%20394.7%20L%20280%20416.0%20L%20360%20438.8%20L%20440%20452.8%20L%20520%20452.9%20L%20600%20441.6%20L%20680%20427.6%20L%20760%20418.6%20L%20840%20416.5%20L%20920%20416.2%20L%201000%20410.5%20L%201080%20395.8%20L%201160%20376.3%20L%201240%20361.2%20L%201320%20358.9%20L%201400%20370.8%20L%201480%20390.6%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20425.2%20L%2040%20431.8%20L%20120%20448.8%20L%20200%20473.4%20L%20280%20496.5%20L%20360%20508.1%20L%20440%20504.0%20L%20520%20488.5%20L%20600%20470.7%20L%20680%20458.3%20L%20760%20452.7%20L%20840%20448.5%20L%20920%20439.0%20L%201000%20422.1%20L%201080%20403.2%20L%201160%20391.6%20L%201240%20394.7%20L%201320%20412.5%20L%201400%20436.9%20L%201480%20457.9%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20486.3%20L%2040%20507.4%20L%20120%20533.5%20L%20200%20554.7%20L%20280%20561.7%20L%20360%20551.9%20L%20440%20530.8%20L%20520%20508.5%20L%20600%20492.5%20L%20680%20483.6%20L%20760%20476.3%20L%20840%20464.7%20L%20920%20447.6%20L%201000%20431.4%20L%201080%20425.3%20L%201160%20435.4%20L%201240%20459.7%20L%201320%20489.0%20L%201400%20512.7%20L%201480%20525.3%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3Cpath%20d%3D%27M%20-40%20541.8%20L%2040%20558.7%20L%20120%20571.6%20L%20200%20572.7%20L%20280%20560.9%20L%20360%20542.8%20L%20440%20528.1%20L%20520%20522.7%20L%20600%20525.1%20L%20680%20528.0%20L%20760%20524.6%20L%20840%20513.9%20L%20920%20502.2%20L%201000%20498.2%20L%201080%20506.9%20L%201160%20525.7%20L%201240%20545.5%20L%201320%20557.2%20L%201400%20557.6%20L%201480%20551.2%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.07%27%2F%3E%3Cpath%20d%3D%27M%20-40%20614.5%20L%2040%20624.5%20L%20120%20620.7%20L%20200%20603.8%20L%20280%20581.6%20L%20360%20564.1%20L%20440%20556.7%20L%20520%20557.2%20L%20600%20558.4%20L%20680%20553.9%20L%20760%20544.2%20L%20840%20535.8%20L%20920%20537.1%20L%201000%20551.7%20L%201080%20575.2%20L%201160%20597.7%20L%201240%20610.3%20L%201320%20610.5%20L%201400%20603.7%20L%201480%20598.0%27%20fill%3D%27none%27%20stroke%3D%27%23221C14%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.05%27%2F%3E%3C%2Fsvg%3E") center top / 1440px auto repeat-y,
+      radial-gradient(120% 90% at 50% 0%, var(--cream-2) 0%, var(--parch) 58%, #DCCAA2 100%);
+    border-top: 1px solid var(--line);
+  }
+  /* keep journal content above the topo texture */
+  #lp-whey-breakup .journal__head,
+  #lp-whey-breakup .journal__grid,
+  #lp-whey-breakup .journal__cta { position: relative; z-index: 1; }
+  #lp-whey-breakup .journal__head { text-align: center; margin-bottom: 46px; }
+  #lp-whey-breakup .journal__head .eyebrow { justify-content: center; }
+  #lp-whey-breakup .journal__head h2 { color: var(--ink) !important; margin-top: 12px; }
+  #lp-whey-breakup .journal__head p { color: var(--ink); max-width: 600px; margin: 14px auto 0; }
+  #lp-whey-breakup .journal__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  #lp-whey-breakup .jcard {
+    background: var(--cream); border: 1px solid var(--line); display: flex; flex-direction: column;
+    overflow: hidden; text-decoration: none; color: var(--ink);
+    box-shadow: 4px 5px 0 rgba(34,28,20,0.08); transition: transform .16s ease, box-shadow .16s ease;
+  }
+  #lp-whey-breakup .jcard:hover { transform: translateY(-4px); box-shadow: 6px 8px 0 rgba(34,28,20,0.12); }
+  #lp-whey-breakup .jcard__img { aspect-ratio: 16/10; background: linear-gradient(135deg, var(--forest-2), var(--forest)); overflow: hidden; }
+  #lp-whey-breakup .jcard__img img { width: 100%; height: 100%; object-fit: cover; }
+  #lp-whey-breakup .jcard__body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+  #lp-whey-breakup .jcard__date { font-family: var(--font-type); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.7rem; color: var(--rust); margin-bottom: 9px; }
+  #lp-whey-breakup .jcard__body h3 { color: var(--forest) !important; font-family: var(--font-eyebrow) !important; font-weight: 700; font-size: 1.18rem; line-height: 1.16; letter-spacing: 0.01em; }
+  #lp-whey-breakup .jcard__body p { color: var(--ink); font-size: 0.93rem; margin: 10px 0 16px; flex: 1; }
+  #lp-whey-breakup .jcard__more { font-family: var(--font-type); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.76rem; color: var(--forest); }
+  #lp-whey-breakup .jcard:hover .jcard__more { color: var(--rust); }
+  #lp-whey-breakup .journal__cta { text-align: center; margin-top: 42px; }
+
+  /* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
+  @media (max-width: 1024px) {
+    /* Why cards never stack — switch straight to a horizontal swipe strip */
+    #lp-whey-breakup .why__grid {
+      display: flex; grid-template-columns: none;
+      overflow-x: auto; scroll-snap-type: x mandatory; gap: 18px;
+      padding: 4px 4px 16px; -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin; scrollbar-color: var(--rust) transparent;
+    }
+    #lp-whey-breakup .why__grid::-webkit-scrollbar { height: 6px; }
+    #lp-whey-breakup .why__grid::-webkit-scrollbar-thumb { background: var(--rust); border-radius: 4px; }
+    #lp-whey-breakup .why__card { flex: 0 0 300px; scroll-snap-align: start; }
+    #lp-whey-breakup .reviews__grid { grid-template-columns: 1fr 1fr; }
+    #lp-whey-breakup .founder__grid { grid-template-columns: 1fr; gap: 40px; }
+    #lp-whey-breakup .founder__photo { display: flex; justify-content: center; }
+    #lp-whey-breakup .fieldnote__grid { grid-template-columns: 1fr; gap: 26px; }
+    /* Field Journal: horizontal swipe strip instead of a stack */
+    #lp-whey-breakup .journal__grid {
+      display: flex; grid-template-columns: none; max-width: none; margin: 0;
+      overflow-x: auto; scroll-snap-type: x mandatory; gap: 18px;
+      padding: 4px 4px 16px; -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin; scrollbar-color: var(--rust) transparent;
+    }
+    #lp-whey-breakup .journal__grid::-webkit-scrollbar { height: 6px; }
+    #lp-whey-breakup .journal__grid::-webkit-scrollbar-thumb { background: var(--rust); border-radius: 4px; }
+    #lp-whey-breakup .jcard { flex: 0 0 300px; scroll-snap-align: start; }
+  }
+  @media (max-width: 820px) {
+    #lp-whey-breakup .bs__card { flex: 0 0 76%; }
+    #lp-whey-breakup .pos__plate { max-width: 460px; margin-left: auto; margin-right: auto; }
+    #lp-whey-breakup .hero { min-height: 0;
+      background:
+        linear-gradient(180deg, rgba(15,28,19,0.55) 0%, rgba(15,28,19,0.82) 100%),
+        var(--hero-img-m, var(--hero-img, linear-gradient(160deg, #2E4A35, #16281C)));
+      background-size: cover; background-position: center; }
+    #lp-whey-breakup .hero__inner { padding: 58px 24px; }
+    #lp-whey-breakup .duo { grid-template-columns: 1fr; }
+    /* trail map stacks vertically; swap the horizontal trail for vertical connectors in the gaps */
+    #lp-whey-breakup .how__grid { grid-template-columns: 1fr; gap: 48px; }
+    #lp-whey-breakup .how__grid::before { display: none; }
+    #lp-whey-breakup .how__step:not(:last-child)::after {
+      content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+      bottom: -44px; height: 44px; border-left: 2px dashed var(--gold); opacity: 0.5;
+    }
+    #lp-whey-breakup .sec { padding: 64px 0; }
+    /* drop the desktop tilt/stagger on mobile for clean stacking */
+    #lp-whey-breakup .why__card, #lp-whey-breakup .duo .pcard:nth-child(2), #lp-whey-breakup .rcard { transform: none !important; }
+    #lp-whey-breakup .why__card:nth-child(2), #lp-whey-breakup .why__card:nth-child(4) { transform: none !important; }
+    #lp-whey-breakup .instore {
+      background:
+        linear-gradient(180deg, rgba(12,24,16,0.50) 0%, rgba(12,24,16,0.90) 100%),
+        var(--retail-img, linear-gradient(135deg, #2E4A35, #16281C));
+      background-size: cover; background-position: center;
+    }
+    #lp-whey-breakup .instore .instore__inner { padding: 72px 30px; }
+    #lp-whey-breakup .instore__box { max-width: 100%; }
+    /* heritage band: more breathing room + readable vertical gradient on mobile */
+    #lp-whey-breakup .heritage {
+      background:
+        linear-gradient(180deg, rgba(18,28,20,0.62) 0%, rgba(18,28,20,0.88) 100%),
+        var(--heritage-img, linear-gradient(135deg, #2E4A35, #16281C));
+      background-size: cover; background-position: center;
+    }
+    #lp-whey-breakup .heritage .heritage__inner { padding: 92px 32px; }
+    #lp-whey-breakup .heritage__box { max-width: 100%; }
+  }
+  @media (max-width: 560px) {
+    /* Why + Journal cards: wider on phones for readability */
+    #lp-whey-breakup .why__card { flex: 0 0 82%; }
+    #lp-whey-breakup .jcard { flex: 0 0 80%; }
+    /* steak & eggs: stack the visual below the text only on phones */
+    #lp-whey-breakup .pos__grid { grid-template-columns: 1fr; gap: 32px; }
+    #lp-whey-breakup .reviews__grid { grid-template-columns: 1fr; }
+    #lp-whey-breakup .c, #lp-whey-breakup .c-wide { padding: 0 20px; }
+    #lp-whey-breakup .hero__cta .btn, #lp-whey-breakup .final__cta .btn { width: 100%; }
+  }
+
+  /* ── Scroll-reveal motion kit (shared, scoped to .pp-motion) ── */
+  @media (prefers-reduced-motion: no-preference){
+    .pp-motion .pp-r{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
+    .pp-motion .pp-r.pp-in{opacity:1;transform:none;}
+  }
+
+</style>
+
+
+<style>
+  
+  #lp-whey-breakup .lp-annot{background:#fff7e6;border-bottom:1px solid #e3d3a4;color:#7a5b14;font-family:var(--font-type);font-size:.78rem;letter-spacing:.04em;text-align:center;padding:8px 14px}
+  #lp-whey-breakup .lp-top{background:var(--char);color:var(--cream);text-align:center;font-family:var(--font-eyebrow);text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;font-weight:600;padding:9px 12px}
+  #lp-whey-breakup .lp-nav{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+  #lp-whey-breakup .lp-nav .c{display:flex;align-items:center;justify-content:space-between;height:62px}
+  #lp-whey-breakup .lp-logo{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.04em;color:var(--forest)}
+  #lp-whey-breakup .lp-logo b{color:var(--rust)}
+  #lp-whey-breakup .lp-nav .btn{padding:11px 22px;font-size:.82rem}
+
+  #lp-whey-breakup .lp-hero{position:relative;background:linear-gradient(90deg,rgba(12,24,16,0.97) 0%,rgba(12,24,16,0.9) 40%,rgba(12,24,16,0.78) 100%),linear-gradient(135deg,#2E4A35 0%,#1F3A28 55%,#16281C 100%);border-top:6px solid var(--gold);border-bottom:6px solid var(--gold)}
+  #lp-whey-breakup .lp-hero__inner{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"head art" "body art";column-gap:54px;row-gap:16px;align-items:center;padding:64px 28px}
+  #lp-whey-breakup .lp-hero__head{grid-area:head;max-width:600px;align-self:end}
+  #lp-whey-breakup .lp-hero__body{grid-area:body;max-width:600px;align-self:start}
+  #lp-whey-breakup .lp-hero .eyebrow{color:var(--gold-2)}
+  #lp-whey-breakup .lp-hero .eyebrow::before{background:var(--gold)}
+  #lp-whey-breakup .lp-hero h1{font-family:var(--font-display)!important;color:var(--cream)!important;font-size:clamp(3.2rem,6.6vw,5.6rem);line-height:.98;margin:16px 0 14px;text-transform:uppercase;text-shadow:0 2px 26px rgba(0,0,0,.4)}
+  #lp-whey-breakup .lp-hero h1 .lede{display:block;color:var(--gold-2)!important;font-size:.42em;letter-spacing:.04em;margin-bottom:6px}
+  #lp-whey-breakup .lp-hero__hook{font-family:var(--font-eyebrow);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-2);font-size:.95rem;margin-bottom:10px}
+  #lp-whey-breakup .lp-hero__sub{font-size:clamp(1.04rem,1.4vw,1.18rem);color:rgba(239,227,201,.94)!important;max-width:540px;margin:6px 0 26px;line-height:1.6}
+  #lp-whey-breakup .lp-hero__sub strong{color:var(--gold-2)!important;font-weight:700}
+  #lp-whey-breakup .lp-hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:24px}
+  #lp-whey-breakup .lp-hero__art{grid-area:art;display:flex;justify-content:center}
+
+  #lp-whey-breakup .lp-frame{position:relative;padding:12px;background:var(--cream);border:1px solid rgba(34,28,20,.18);box-shadow:0 22px 50px rgba(0,0,0,.34)}
+  #lp-whey-breakup .lp-frame::after{content:"";position:absolute;inset:5px;border:1.5px solid var(--gold);pointer-events:none}
+  #lp-whey-breakup .lp-frame img{display:block;width:100%;max-width:420px}
+
+  #lp-whey-breakup .pos__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;text-align:left}
+  #lp-whey-breakup .pos .plate img{display:block;width:100%}
+  #lp-whey-breakup .pos__plate{padding:12px;background:var(--cream);border:1px solid rgba(34,28,20,.18);box-shadow:0 18px 40px rgba(34,28,20,.2);position:relative}
+  #lp-whey-breakup .pos__plate::after{content:"";position:absolute;inset:5px;border:1.5px solid var(--gold);pointer-events:none}
+  #lp-whey-breakup .plate__cap{font-family:var(--font-type);font-size:.82rem;color:var(--rust);text-align:center;margin-top:12px;letter-spacing:.04em}
+
+  #lp-whey-breakup .switch{background:var(--cream-2)}
+  #lp-whey-breakup .swrow{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin:46px 0}
+  #lp-whey-breakup .swrow:nth-child(even) .swrow__txt{order:2}
+  #lp-whey-breakup .swrow__num{font-family:var(--font-display)!important;color:var(--gold)!important;font-size:2.4rem;line-height:.85;display:block;margin-bottom:8px}
+  #lp-whey-breakup .swrow__txt h3{color:var(--rust-2)!important;font-family:var(--font-eyebrow)!important;font-weight:700;font-size:1.5rem;letter-spacing:.02em;margin-bottom:12px;text-transform:none}
+  #lp-whey-breakup .swrow__txt p{color:var(--ink);font-size:1.05rem}
+
+  #lp-whey-breakup .cmp{background:var(--forest);color:var(--cream)}
+  #lp-whey-breakup .cmp .eyebrow{color:var(--gold-2);justify-content:center}
+  #lp-whey-breakup .cmp h2{color:var(--cream)!important;text-align:center}
+  #lp-whey-breakup .cmp__lead{text-align:center;color:rgba(239,227,201,.9);max-width:560px;margin:16px auto 0}
+  #lp-whey-breakup .cmptable{max-width:760px;margin:40px auto 0;background:var(--cream);border:1px solid rgba(34,28,20,.2);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+  #lp-whey-breakup .cmprow{display:grid;grid-template-columns:1.5fr 1fr 1fr}
+  #lp-whey-breakup .cmprow>div{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;font-size:1rem;color:var(--ink)}
+  #lp-whey-breakup .cmprow .f{justify-content:flex-start;text-align:left;font-family:var(--font-eyebrow);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.86rem;color:var(--ink)}
+  #lp-whey-breakup .cmphead>div{font-family:var(--font-display)!important;text-transform:uppercase;font-size:1.05rem;letter-spacing:.03em;border-bottom:2px solid rgba(34,28,20,.2)}
+  #lp-whey-breakup .cmphead .pp{background:var(--rust);color:var(--cream)}
+  #lp-whey-breakup .cmphead .wh{background:var(--parch);color:var(--ink)}
+  #lp-whey-breakup .cmprow .pp-col{background:rgba(168,67,42,.06);font-weight:600}
+  #lp-whey-breakup .cmp-yes{color:var(--forest);font-weight:800;font-size:1.2rem}
+  #lp-whey-breakup .cmp-no{color:var(--rust);font-weight:800;font-size:1.2rem}
+
+  #lp-whey-breakup .feed{background:var(--cream)}
+  #lp-whey-breakup .feed__row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+  #lp-whey-breakup .feed__row .fr{padding:8px;background:var(--cream-2);border:1px solid rgba(34,28,20,.16);box-shadow:0 10px 24px rgba(34,28,20,.12);position:relative}
+  #lp-whey-breakup .feed__row .fr::after{content:"";position:absolute;inset:3px;border:1px solid var(--gold);pointer-events:none}
+  #lp-whey-breakup .feed__row img{display:block;width:100%}
+
+  #lp-whey-breakup .founder__ph{aspect-ratio:4/5;background:var(--forest-2);border:1px solid rgba(34,28,20,.2);display:flex;align-items:center;justify-content:center;color:var(--cream);font-family:var(--font-type);font-size:.84rem;text-align:center;padding:20px}
+
+  #lp-whey-breakup .faq__item.open .faq__a{max-height:600px}
+
+  #lp-whey-breakup .lp-foot{background:var(--char);color:rgba(239,227,201,.6);text-align:center;padding:28px 0;font-family:var(--font-type);font-size:.82rem;letter-spacing:.04em}
+
+  /* ── FEMININE SKEW (subtle, on-brand) ── */
+  #lp-whey-breakup.pp-fem .lp-hero{background:linear-gradient(90deg,rgba(31,58,40,0.93) 0%,rgba(31,58,40,0.74) 46%,rgba(31,58,40,0.5) 100%),radial-gradient(circle at 82% 18%,rgba(224,174,69,0.28),transparent 58%),linear-gradient(135deg,#34543C 0%,#274536 60%,#1B3327 100%)}
+  #lp-whey-breakup.pp-fem .why__card{border-left-color:var(--gold)}
+  #lp-whey-breakup.pp-fem .why__num{color:var(--gold)!important}
+  #lp-whey-breakup.pp-fem .why__card h3{color:var(--forest)!important}
+  #lp-whey-breakup.pp-fem .swrow__num{color:var(--gold)!important}
+  #lp-whey-breakup.pp-fem .swrow__txt h3{color:var(--forest)!important}
+  #lp-whey-breakup.pp-fem .pos__kick{color:var(--forest)}
+  #lp-whey-breakup.pp-fem .pos__kick em{color:var(--gold)}
+  #lp-whey-breakup.pp-fem .cmphead .pp{background:var(--gold);color:var(--char)}
+  #lp-whey-breakup.pp-fem .cmprow .pp-col{background:rgba(200,149,42,.10)}
+  #lp-whey-breakup.pp-fem .lp-frame::after,#lp-whey-breakup.pp-fem .pos__plate::after,#lp-whey-breakup.pp-fem .feed__row .fr::after{border-color:var(--gold-2)}
+
+  /* ── BUY BOX (renders lp-buy-box.liquid) ── */
+  #lp-whey-breakup .btn-block{display:flex;width:100%}
+  #lp-whey-breakup .buy{background:var(--parch)}
+  #lp-whey-breakup #buy{scroll-margin-top:84px}
+  #lp-whey-breakup .buy-head{text-align:center;max-width:680px;margin:0 auto 34px}
+  #lp-whey-breakup .buy-sub{color:var(--ink);margin-top:12px}
+  #lp-whey-breakup .buy-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start;max-width:980px;margin:0 auto}
+  #lp-whey-breakup .buy-media .lp-frame{margin:0}
+  #lp-whey-breakup .buy-trust{display:flex;gap:12px;margin-top:16px}
+  #lp-whey-breakup .buy-trust .bt{flex:1;text-align:center;background:var(--cream);border:1px solid var(--line);border-top:3px solid var(--gold);padding:12px 6px}
+  #lp-whey-breakup .buy-trust .bt b{display:block;font-family:var(--font-display);color:var(--rust);font-size:1.6rem;line-height:1}
+  #lp-whey-breakup .buy-trust .bt span{font-family:var(--font-type);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink)}
+  #lp-whey-breakup .pp-lp-buy{--lbb-bg:transparent;--lbb-surface:#fff;--lbb-surface-alt:var(--cream-2);--lbb-border:rgba(34,28,20,.14);--lbb-border-strong:var(--ink);--lbb-text:var(--ink);--lbb-text-muted:#6a5a45;--lbb-accent:var(--gold);--lbb-accent-text:var(--char);--lbb-success:var(--forest);--lbb-best-value:var(--rust);--lbb-sub-bg:var(--char);--lbb-sub-text:#fff;--lbb-font-display:var(--font-display);--lbb-font-body:var(--font-body);--lbb-radius:6px;--lbb-shadow:0 16px 40px rgba(34,28,20,.16)}
+  #lp-whey-breakup .pp-lp-buy h1,#lp-whey-breakup .pp-lp-buy h2,#lp-whey-breakup .pp-lp-buy h3{text-transform:none!important;line-height:1.1}
+  #lp-whey-breakup .pp-lp-buy p{font-size:inherit}
+  #lp-whey-breakup .bbmock{background:#fff;border:1px solid var(--line);padding:24px;box-shadow:0 16px 40px rgba(34,28,20,.18)}
+  #lp-whey-breakup .bbmock__label{font-family:var(--font-type);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:#6f675c;margin:14px 0 8px}
+  #lp-whey-breakup .bbmock__opts{display:flex;flex-wrap:wrap;gap:8px}
+  #lp-whey-breakup .bbmock__opts span{border:2px solid var(--line);padding:8px 12px;font-size:.82rem;font-family:var(--font-eyebrow);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+  #lp-whey-breakup .bbmock__opts span.on{border-color:var(--rust);background:#fbf3ee;color:var(--rust-2)}
+  #lp-whey-breakup .bbmock__price{font-family:var(--font-display);font-size:1.8rem;color:var(--ink);margin:18px 0 14px}
+  #lp-whey-breakup .bbmock__price s{color:#9a8c76;font-size:1.1rem;margin-left:8px}
+  #lp-whey-breakup .bbmock__note{font-family:var(--font-type);font-size:.7rem;color:#9a8c76;text-align:center;margin-top:10px}
+  @media(max-width:760px){#lp-whey-breakup .buy-grid{grid-template-columns:1fr}}
+  @media(max-width:900px){
+    #lp-whey-breakup .pos__grid,#lp-whey-breakup .swrow{grid-template-columns:1fr;gap:30px}
+    #lp-whey-breakup .lp-hero__inner{grid-template-columns:1fr;grid-template-areas:"head" "art" "body";row-gap:14px;padding:24px 22px 34px}
+    #lp-whey-breakup .lp-hero h1{font-size:clamp(2.3rem,10.5vw,3.1rem)}
+    #lp-whey-breakup .lp-hero__sub{font-size:1rem;margin:2px 0 18px}
+    #lp-whey-breakup .lp-hero__art .lp-frame{padding:8px}
+    #lp-whey-breakup .lp-hero__art .lp-frame img{max-width:none;width:100%;max-height:44vh;object-fit:contain}
+    #lp-whey-breakup .hero__trust{font-size:.78rem;gap:6px 12px}
+    #lp-whey-breakup .swrow:nth-child(even) .swrow__txt{order:0}
+    #lp-whey-breakup .feed__row{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+
+<style>
+  /* ═══════════════════════════ EASIER MORNINGS ADDITIONS ═══════════════════════════ */
+  /* hook variants: everything carrying data-h is hidden until the wrapper's data-hook matches */
+  #lp-whey-breakup [data-h] { display: none; }
+  
+  #lp-whey-breakup[data-hook="breakup"] [data-h="breakup"] { display: block; }
+  
+  #lp-whey-breakup[data-hook="label"] [data-h="label"] { display: block; }
+  
+  #lp-whey-breakup[data-hook="mornings"] [data-h="mornings"] { display: block; }
+  
+
+  #lp-whey-breakup { --bad: #D9382A; }
+
+  /* hero: kicker reads like the ad's day stamp */
+  #lp-whey-breakup .lp-hero__kick { font-family: var(--font-type); text-transform: uppercase; letter-spacing: .18em; font-size: .86rem; color: var(--gold-2); display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  #lp-whey-breakup .lp-hero__kick::before { content: ""; width: 22px; height: 2px; background: var(--gold); }
+  #lp-whey-breakup .lp-hero h1 .gold { color: var(--gold-2) !important; }
+  #lp-whey-breakup .lp-hero__pair { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 18px; }
+  #lp-whey-breakup .lp-hero__pair span { font-family: var(--font-eyebrow); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; color: var(--char) !important; background: var(--gold); padding: 7px 12px; border-radius: 2px; }
+  #lp-whey-breakup .lp-hero__pair span.ghost { background: transparent; color: var(--cream) !important; border: 1.5px solid rgba(239,227,201,.5); }
+  #lp-whey-breakup .lp-hero .lpao { background: rgba(200,149,42,.14); border-color: var(--gold); color: var(--cream); }
+  #lp-whey-breakup .lp-hero .lpao__head, #lp-whey-breakup .lp-hero .lpao__line { color: var(--cream) !important; }
+  #lp-whey-breakup .lp-hero .lpao__line strong { color: var(--gold-2); }
+  /* the ad itself, looping in a vertical frame */
+  #lp-whey-breakup .lp-reel { padding: 10px; }
+  #lp-whey-breakup .lp-reel video, #lp-whey-breakup .lp-reel img { display: block; width: 100%; max-width: 340px; aspect-ratio: 9/16; object-fit: cover; background: #16281C; }
+  #lp-whey-breakup .lp-reel__cap { font-family: var(--font-type); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); text-align: center; padding-top: 8px; }
+
+  /* the week — seven days, from the ad */
+  #lp-whey-breakup .week { background: var(--cream); }
+  #lp-whey-breakup .week__head { text-align: center; max-width: 980px; margin: 0 auto 40px; }
+  #lp-whey-breakup .week__head h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+  #lp-whey-breakup .week__head .eyebrow { justify-content: center; }
+  #lp-whey-breakup .week__head h2 { color: var(--ink) !important; }
+  #lp-whey-breakup .week__head p { margin-top: 14px; color: var(--ink); }
+  #lp-whey-breakup .week__strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+  #lp-whey-breakup .day { background: var(--cream-2); border: 1px solid var(--line); box-shadow: 4px 5px 0 rgba(34,28,20,.08); display: flex; flex-direction: column; position: relative; }
+  #lp-whey-breakup .day img { display: block; width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; }
+  #lp-whey-breakup .day--bad img { filter: saturate(.85) contrast(1.02); }
+  #lp-whey-breakup .day__body { padding: 12px 12px 14px; }
+  #lp-whey-breakup .day__name { font-family: var(--font-display) !important; text-transform: uppercase; font-size: 1.15rem; letter-spacing: .03em; color: var(--forest); line-height: 1; }
+  #lp-whey-breakup .day__time { display: block; font-family: var(--font-eyebrow); font-weight: 700; font-size: .78rem; letter-spacing: .08em; margin: 4px 0 8px; }
+  #lp-whey-breakup .day--bad .day__time { color: var(--bad); }
+  #lp-whey-breakup .day--switch .day__time, #lp-whey-breakup .day--good .day__time { color: var(--gold); }
+  #lp-whey-breakup .day p { font-size: .88rem; line-height: 1.4; color: var(--ink); }
+  #lp-whey-breakup .day--switch { border: 2px solid var(--gold); box-shadow: 0 0 0 4px rgba(200,149,42,.18), 4px 5px 0 rgba(34,28,20,.1); }
+  #lp-whey-breakup .day__tag { position: absolute; top: 10px; left: 10px; background: var(--gold); color: var(--char) !important; font-family: var(--font-type); text-transform: uppercase; letter-spacing: .08em; font-size: .64rem; padding: 4px 9px; }
+  #lp-whey-breakup .week__cta { text-align: center; margin-top: 34px; }
+
+  /* problem band */
+  #lp-whey-breakup .problem { background: var(--char); border-top: 6px solid var(--gold); border-bottom: 6px solid var(--gold); position: relative; overflow: hidden; }
+  #lp-whey-breakup .problem__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 54px; align-items: center; position: relative; z-index: 1; }
+  #lp-whey-breakup .problem .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .problem .eyebrow::before { background: var(--gold); }
+  #lp-whey-breakup .problem h2 { color: var(--cream) !important; font-size: clamp(2.3rem,5vw,4rem); }
+  #lp-whey-breakup .problem h2 .gold { color: var(--gold-2) !important; }
+  #lp-whey-breakup .problem p { color: rgba(239,227,201,.92) !important; font-size: 1.12rem; margin-top: 18px; max-width: 560px; }
+  #lp-whey-breakup .problem__fact { background: rgba(239,227,201,.05); border: 1px solid rgba(200,149,42,.35); border-left: 5px solid var(--gold); padding: 26px 28px; }
+  #lp-whey-breakup .problem__fact .tag { font-family: var(--font-type); text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; color: var(--gold-2); display: block; margin-bottom: 10px; }
+  #lp-whey-breakup .problem__fact .big { font-family: var(--font-display) !important; color: var(--cream); font-size: clamp(1.6rem,3vw,2.3rem); line-height: 1.02; text-transform: uppercase; }
+  #lp-whey-breakup .problem__fact .small { color: rgba(239,227,201,.8); font-size: .95rem; margin-top: 12px; }
+
+  /* solution + reasons */
+  #lp-whey-breakup .sol { background: var(--cream-2); }
+  #lp-whey-breakup .sol__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center; margin-bottom: 54px; }
+  #lp-whey-breakup .sol__nums { display: flex; gap: 14px; margin: 26px 0 8px; flex-wrap: wrap; }
+  #lp-whey-breakup .sol__num { flex: 1 1 80px; background: var(--cream); border: 1px solid var(--line); border-top: 4px solid var(--rust); padding: 16px 12px; text-align: center; }
+  #lp-whey-breakup .sol__num b { display: block; font-family: var(--font-display) !important; color: var(--rust); font-size: 2.2rem; line-height: 1; }
+  #lp-whey-breakup .sol__num span { font-family: var(--font-type); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); }
+  #lp-whey-breakup .sol .why__card { background: var(--cream); }
+
+  /* compare — 4 columns */
+  #lp-whey-breakup .cmp .c { text-align: center; }
+  #lp-whey-breakup .cmprow--4 { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
+  #lp-whey-breakup .cmptable--4 { max-width: 900px; }
+
+  /* Light Labs proof (from v2) */
+  #lp-whey-breakup .lab { background: var(--forest); border-top: 6px solid var(--gold); position: relative; overflow: hidden; }
+  #lp-whey-breakup .lab__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: start; position: relative; z-index: 1; }
+  #lp-whey-breakup .lab .eyebrow { color: var(--gold-2); }
+  #lp-whey-breakup .lab .eyebrow::before { background: var(--gold); }
+  #lp-whey-breakup .lab h2 { color: var(--cream) !important; }
+  #lp-whey-breakup .lab p { color: rgba(239,227,201,.92) !important; margin-top: 16px; font-size: 1.08rem; }
+  #lp-whey-breakup .lab__badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  #lp-whey-breakup .lab__badge { flex: 1 1 100px; background: rgba(239,227,201,.06); border: 1px solid rgba(200,149,42,.4); padding: 14px 14px; }
+  #lp-whey-breakup .lab__badge b { display: block; font-family: var(--font-display) !important; color: var(--gold-2); font-size: 1.9rem; line-height: 1; }
+  #lp-whey-breakup .lab__badge span { font-family: var(--font-type); font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--cream); }
+  #lp-whey-breakup .lab__panel { background: #F5F0E8; border: 1px solid #C8952A; box-shadow: 0 18px 44px rgba(0,0,0,.32); padding: 18px; min-height: 240px; }
+  #lp-whey-breakup .lab__panel .ll-head { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-type); text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; color: var(--rust); border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 12px; }
+  #lp-whey-breakup .lab__fallback .lab-row { display: grid; grid-template-columns: 1.4fr 1fr .6fr; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .95rem; color: var(--ink); }
+  #lp-whey-breakup .lab__fallback .lab-row .pass { color: var(--forest); font-weight: 700; text-align: right; }
+  #lp-whey-breakup .lab__fallback .lab-row .res { opacity: .8; }
+  #lp-whey-breakup .lab__foot { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-family: var(--font-type); font-size: .76rem; letter-spacing: .06em; color: var(--ink); }
+  #lp-whey-breakup .lab__foot a { color: var(--rust); text-decoration: underline; }
+  #lp-whey-breakup .lab__panel.has-live .lab__fallback, #lp-whey-breakup .lab__panel.has-live .ll-head { display: none; }
+
+  /* buy */
+  #lp-whey-breakup .lpbe__mix { display: none; }
+  #lp-whey-breakup .buy__ladder { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; max-width: 980px; margin: 0 auto 28px; }
+  #lp-whey-breakup .buy__ladder div { background: var(--cream); border: 1px solid var(--line); padding: 14px 16px; text-align: center; font-size: .92rem; color: var(--ink); }
+  #lp-whey-breakup .buy__ladder b { display: block; font-family: var(--font-eyebrow); text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; color: var(--rust); margin-bottom: 4px; }
+  #lp-whey-breakup .buy__ladder div.best { border-top: 4px solid var(--gold); }
+  #lp-whey-breakup .guar { display: flex; gap: 14px; align-items: center; background: var(--cream); border: 1px solid var(--line); padding: 14px 16px; margin-top: 16px; font-size: .95rem; color: var(--ink); }
+  #lp-whey-breakup .guar b { font-family: var(--font-display); font-size: 1.5rem; color: var(--forest); line-height: 1; white-space: nowrap; }
+
+  @media (max-width: 1100px) {
+    #lp-whey-breakup .week__strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding: 4px 4px 16px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--rust) transparent; }
+    #lp-whey-breakup .day { flex: 0 0 210px; scroll-snap-align: start; }
+  }
+  @media (max-width: 900px) {
+    #lp-whey-breakup .problem__grid, #lp-whey-breakup .sol__grid, #lp-whey-breakup .lab__grid { grid-template-columns: 1fr; gap: 28px; }
+    #lp-whey-breakup .buy__ladder { grid-template-columns: 1fr; }
+    #lp-whey-breakup .lp-hero__pair span { font-size: .72rem; padding: 6px 10px; }
+    #lp-whey-breakup .lp-reel video, #lp-whey-breakup .lp-reel img { max-width: none; width: auto; height: 46vh; max-height: 460px; margin: 0 auto; }
+    #lp-whey-breakup .lp-hero h1 { font-size: clamp(3rem, 15vw, 4.2rem); }
+    #lp-whey-breakup .lp-hero h1 .gold { display: block; }
+  }
+  @media (max-width: 560px) {
+    #lp-whey-breakup .day { flex: 0 0 64%; }
+    #lp-whey-breakup .cmprow--4 { grid-template-columns: 1.15fr 1fr 1fr 1fr; }
+    #lp-whey-breakup .cmprow--4 > div { padding: 12px 7px; font-size: .84rem; }
+    #lp-whey-breakup .cmprow--4 .f { font-size: .7rem; }
+    #lp-whey-breakup .cmphead.cmprow--4 > div { font-size: .82rem; }
+  }
+</style>
+
+<style>
+  /* ═══════════════════════════ WHEY BREAKUP · ADVERTORIAL ADDITIONS ═══════════════════════════ */
+  #lp-whey-breakup .lp-ad { padding: 10px; }
+  #lp-whey-breakup .lp-ad img { display: block; width: 100%; height: auto; max-width: 420px; aspect-ratio: 1/1; object-fit: cover; background: #16281C; }
+  #lp-whey-breakup .lp-ad__cap { font-family: var(--font-type); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); text-align: center; padding-top: 8px; }
+  #lp-whey-breakup .lp-hero__kick { margin-bottom: 10px; }
+  #lp-whey-breakup .lp-hero__meta { font-family: var(--font-type); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(239,227,201,.75); margin: 0 0 14px; display: flex; gap: 14px; flex-wrap: wrap; }
+  #lp-whey-breakup .lp-hero__meta b { color: var(--gold-2); font-weight: 400; }
+
+  /* the article */
+  #lp-whey-breakup .story { background: var(--cream); }
+  #lp-whey-breakup .story__wrap { max-width: 720px; margin: 0 auto; }
+  #lp-whey-breakup .story p { font-size: 1.16rem; line-height: 1.72; color: var(--ink); margin: 0 0 22px; }
+  #lp-whey-breakup .story p.lede { font-size: 1.28rem; line-height: 1.6; }
+  #lp-whey-breakup .story p.lede::first-letter { font-family: var(--font-display); font-size: 4.2em; float: left; line-height: .78; padding: 8px 12px 0 0; color: var(--rust); }
+  #lp-whey-breakup .story h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); color: var(--forest); margin: 52px 0 18px; }
+  #lp-whey-breakup .story h2.brushed { display: inline-block; }
+  #lp-whey-breakup .story .eyebrow { margin-top: 10px; }
+  #lp-whey-breakup .story strong { color: var(--rust-2); }
+  #lp-whey-breakup .story ul { margin: 0 0 22px 22px; }
+  #lp-whey-breakup .story li { font-size: 1.1rem; line-height: 1.65; color: var(--ink); margin-bottom: 8px; }
+  /* pull quote — a real review */
+  #lp-whey-breakup .pull { margin: 36px 0; padding: 26px 30px; border-left: 5px solid var(--gold); background: var(--cream-2); }
+  #lp-whey-breakup .pull p { font-family: var(--font-eyebrow); font-weight: 500; font-size: 1.35rem; line-height: 1.38; color: var(--forest); margin: 0 0 10px; }
+  #lp-whey-breakup .pull cite { font-family: var(--font-type); font-style: normal; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); }
+  #lp-whey-breakup .pull .star { color: var(--gold); letter-spacing: .05em; margin-right: 8px; }
+  /* inline figure */
+  #lp-whey-breakup .fig { margin: 36px 0; }
+  #lp-whey-breakup .fig .lp-frame { max-width: 560px; margin: 0 auto; }
+  #lp-whey-breakup .fig .lp-frame img { max-width: none; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+  #lp-whey-breakup .fig figcaption { font-family: var(--font-type); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--rust); text-align: center; margin-top: 10px; }
+  /* the numbers, inline */
+  #lp-whey-breakup .nums { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 10px 0 30px; }
+  #lp-whey-breakup .nums div { background: var(--cream-2); border: 1px solid var(--line); border-top: 5px solid var(--rust); padding: 22px 10px; text-align: center; }
+  #lp-whey-breakup .nums b { display: block; font-family: var(--font-display) !important; color: var(--rust); font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1; }
+  #lp-whey-breakup .nums span { font-family: var(--font-type); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); display: block; margin-top: 6px; }
+  #lp-whey-breakup .nums div.gold { border-top-color: var(--gold); }
+  /* the label, line by line */
+  #lp-whey-breakup .label { background: var(--cream-2); border: 1px solid var(--line); padding: 22px 24px; margin: 10px 0 30px; box-shadow: 4px 5px 0 rgba(34,28,20,.08); }
+  #lp-whey-breakup .label__h { font-family: var(--font-type); text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; color: var(--rust); margin-bottom: 12px; display: flex; justify-content: space-between; }
+  #lp-whey-breakup .label__row { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 1rem; color: var(--ink); }
+  #lp-whey-breakup .label__row b { font-family: var(--font-eyebrow); font-weight: 700; white-space: nowrap; }
+  #lp-whey-breakup .label__foot { font-family: var(--font-type); font-size: .7rem; letter-spacing: .06em; color: #6f675c; margin-top: 12px; }
+  /* mid-article CTA */
+  #lp-whey-breakup .midcta { margin: 44px 0 10px; padding: 30px 32px; background: var(--char); border-top: 4px solid var(--gold); color: var(--cream); display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+  #lp-whey-breakup .midcta .tag { font-family: var(--font-type); color: var(--gold-2); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; display: block; margin-bottom: 8px; }
+  #lp-whey-breakup .midcta .h { font-family: var(--font-display) !important; color: var(--cream) !important; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.02; text-transform: uppercase; }
+  #lp-whey-breakup .midcta p { color: rgba(239,227,201,.85) !important; font-size: 1rem; margin: 8px 0 0; }
+  #lp-whey-breakup .byline { display: flex; gap: 14px; align-items: center; margin: 44px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-family: var(--font-type); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--rust); }
+
+  @media (max-width: 900px) {
+    #lp-whey-breakup .lp-hero__art .lp-ad img { max-width: none; width: 100%; max-height: 60vw; }
+    #lp-whey-breakup .lp-hero h1 { font-size: clamp(3rem, 14vw, 4.2rem); }
+    #lp-whey-breakup .lp-hero h1 .gold { display: block; }
+    #lp-whey-breakup .story p { font-size: 1.08rem; }
+    #lp-whey-breakup .story p.lede { font-size: 1.16rem; }
+    #lp-whey-breakup .midcta { grid-template-columns: 1fr; }
+    #lp-whey-breakup .pull p { font-size: 1.15rem; }
+  }
+  @media (max-width: 560px) { #lp-whey-breakup .nums b { font-size: 1.9rem; } }
+
+</style>
+
+
+
+<div id="lp-whey-breakup" data-hook="breakup" data-keys="breakup label mornings">
+<script>
+  /* Pick the hook block that matches ?h= BEFORE the hero paints. Unknown key → first block. */
+  (function(){
+    var w = document.currentScript.parentElement;
+    var m = (location.search.match(/[?&]h=([^&]+)/) || [])[1];
+    try { if (!m && sessionStorage.getItem('pp_h_wb')) m = sessionStorage.getItem('pp_h_wb'); } catch(e){}
+    if (!m) return;
+    m = decodeURIComponent(m).toLowerCase();
+    var keys = ' ' + (w.getAttribute('data-keys') || '') + ' ';
+    if (keys.indexOf(' ' + m + ' ') > -1) { w.setAttribute('data-hook', m); try { sessionStorage.setItem('pp_h_wb', m); } catch(e){} }
+  })();
+</script>
+
+  
+  <section class="lp-hero">
+    <div class="lp-hero__inner c-wide">
+      <div class="lp-hero__head">
+        
+          
+          <div data-h="breakup" >
+            <div class="lp-hero__kick">Goodbye, whey.</div>
+            <h1>The whey <span class="gold">breakup.</span></h1>
+          </div>
+        
+          
+          <div data-h="label" >
+            <div class="lp-hero__kick">Turn the bag.</div>
+            <h1>Meet your <span class="gold">protein.</span></h1>
+          </div>
+        
+          
+          <div data-h="mornings" >
+            <div class="lp-hero__kick">Hello, mornings.</div>
+            <h1>Goodbye, <span class="gold">whey.</span></h1>
+          </div>
+        
+      </div>
+      <div class="lp-hero__art">
+        <div class="lp-frame lp-ad">
+          
+            
+            <div data-h="breakup"><img src="r2-assets/lp-gw-b04.jpg" alt="Paleo Pro ad: The whey breakup." width="1200" height="1200" fetchpriority="high"></div>
+          
+            
+            <div data-h="label"><img src="r2-assets/lp-gw-a08.jpg" alt="Paleo Pro ad: Meet your protein." width="1200" height="1200" loading="lazy"></div>
+          
+            
+            <div data-h="mornings"><img src="r2-assets/lp-gw-b04.jpg" alt="Paleo Pro ad: Goodbye, whey." width="1200" height="1200" loading="lazy"></div>
+          
+          <div class="lp-ad__cap">The ad you tapped · Ancient Cacao</div>
+        </div>
+      </div>
+      <div class="lp-hero__body">
+        <div class="lp-hero__meta"><span>Field notes</span><span><b>·</b></span><span>Read in about 4 minutes</span></div>
+        
+          
+          <div data-h="breakup"><p class="lp-hero__sub">A short, honest story about the tub in the back of the pantry — and what 26g of protein looks like when none of it comes from milk.</p></div>
+        
+          
+          <div data-h="label"><p class="lp-hero__sub">Beef and egg whites — two ingredients, no milk. The story of why a protein powder was built that way, and what the label says when you turn it over.</p></div>
+        
+          
+          <div data-h="mornings"><p class="lp-hero__sub">How the whey tub ends up in the back of the cupboard, and what replaced it — 26g protein, 120 calories, no dairy — without changing the morning.</p></div>
+        
+        <div class="lp-hero__pair"><span>26g protein</span><span>120 calories</span><span class="ghost">0g added sugar</span><span class="ghost">No whey · No dairy</span></div>
+        <div class="lpao" data-lpao role="status"><p class="lpao__head">Up to 25% off your first order is applied.</p><p class="lpao__line">Shows only when the visitor arrives through the ad's discount link. <strong>Preview copy</strong>, the live banner uses real cart pricing.</p></div>
+<style>.lpao{margin:0 0 18px;padding:14px 16px;border-radius:10px;border:1.5px solid var(--lbb-accent,#b5602f);background:color-mix(in srgb,var(--lbb-accent,#b5602f) 9%,transparent)}.lpao__head{margin:0 0 4px;font-weight:700;font-size:1.05rem;line-height:1.3}.lpao__line{margin:0;font-size:.95rem;line-height:1.45}</style>
+        <div class="lp-hero__cta"><a class="btn btn--ghost" href="#story">Read the story</a><a class="btn btn--gold" href="#buy">Skip to the bag</a></div>
+        <div class="hero__trust"><span><span class="star">★★★★★</span> 4.7 from 250+ reviews</span><span class="dot"></span><span>100,000+ Customers</span><span class="dot"></span><span>60-Day Money-Back Guarantee</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee__track">
+    <span class="m-item">26g Protein · 120 Calories</span><span class="m-item">No Whey · No Dairy</span><span class="m-item">Beef + Egg White Protein</span><span class="m-item">0g Added Sugar</span><span class="m-item">Tested by Light Labs</span><span class="m-item">Made in the USA Since 2013</span><span class="m-item">26g Protein · 120 Calories</span><span class="m-item">No Whey · No Dairy</span><span class="m-item">Beef + Egg White Protein</span><span class="m-item">0g Added Sugar</span><span class="m-item">Tested by Light Labs</span><span class="m-item">Made in the USA Since 2013</span>
+  </div></div>
+
+  
+  <section class="sec story" id="story">
+    <div class="c"><div class="story__wrap">
+
+      <span class="eyebrow">The tub in the back of the pantry</span>
+      <p class="lede">Most people don't decide to stop using whey. They just stop reaching for it. The tub moves from the counter to the cupboard, then to the back of the cupboard, and one day there's a half-full container of something that used to be part of the morning and now isn't.</p>
+      <p>When customers tell us why, it's rarely dramatic. The shake started sitting differently than it used to. The label got read more carefully. Or a doctor, a daughter, or a nutritionist used the word "dairy" and the tub never quite recovered from it.</p>
+      <p>Whatever the reason, the question that follows is the same: <strong>if not whey, then what?</strong> Because the numbers were the whole point. Nobody wants to trade 26 grams of protein for a plant powder that tastes like the bag it came in.</p>
+
+      <h2 class="brushed">What whey actually is</h2>
+      <p>It's worth saying plainly, because the tub never does. Whey is milk. When milk is made into cheese, it separates into curds and a watery liquid — the whey. That liquid gets filtered and dried into the powder. "Whey isolate," "whey concentrate," "hydrolyzed whey" — different levels of filtering, same starting point.</p>
+      <p>So if you're leaving dairy, you're leaving whey. There isn't a version of it that gets around that. Which leaves two roads: plant protein, or another animal protein that was never milk to begin with.</p>
+
+      <div class="pull"><p><span class="star">★★★★★</span>"For those who cannot stomach whey, this is the best there is. Easy to make, easy to digest, and packs a protein punch."</p><cite>Verified buyer · Okendo review</cite></div>
+
+      <h2 class="brushed">The question Doug asked in 2013</h2>
+      <p>Paleo Pro started with the second road. In 2013 our founder, Doug, was rebuilding his body after an accident that had left him unable to walk. He was doing it with real food — meat, eggs, vegetables — and he went looking for a protein powder that matched the plate.</p>
+      <p>Everything on the shelf was whey, soy, or a 25-ingredient lab project. So he made the thing he couldn't buy, in his own kitchen, with one rule: <strong>real animal protein, nothing else.</strong> Grass-fed beef protein isolate for the bulk of it. Egg white protein alongside. No milk anywhere in the process.</p>
+      <p>That recipe is still the recipe. The pouch has changed; the two ingredients on the front of it haven't.</p>
+
+      <figure class="fig"><div class="lp-frame"><img src="r2-assets/lp-gw-a02.jpg" alt="Illustrated protein-source map: beef and egg whites to the Paleo Protein pouch" loading="lazy" width="1200" height="1200"></div><figcaption>Two sources. Beef, egg whites. That's the list.</figcaption></figure>
+
+      <h2 class="brushed">What stayed the same</h2>
+      <p>This is the part that matters if you've been on whey for years. The numbers didn't move. Straight off the back of the bag:</p>
+      <div class="nums">
+        <div><b>26g</b><span>Protein / scoop</span></div>
+        <div><b>120</b><span>Calories / scoop</span></div>
+        <div class="gold"><b>0g</b><span>Added sugar</span></div>
+      </div>
+      <p>Twenty-six grams is roughly the protein in four large eggs. One hundred and twenty calories is the whole scoop, mixed with water — there's no milk to add on top. And the chocolate — Ancient Cacao, the pouch in the ad — is sweetened with monk fruit, not stevia, so it tastes like a chocolate shake and not like the sweetener.</p>
+      <p>That last point is the one reviewers bring up most. Not the protein. The taste. People arrive braced for a "clean" powder to taste like a compromise, because plant protein taught them that, and being wrong about it is the surprise.</p>
+
+      <div class="pull"><p><span class="star">★★★★★</span>"Tastes delicious. (Almost like an ice cream milk shake). No after or funny taste. Not constipating like Whey can be."</p><cite>Verified buyer · Okendo review</cite></div>
+      <div class="pull"><p><span class="star">★★★★★</span>"The best tasting alternative to whey protein I have found."</p><cite>Renae S. · Okendo review</cite></div>
+
+      <h2 class="brushed">Turn the bag</h2>
+      <p>We'd rather you read the label than take our word for it, so here it is, line by line, exactly as it's printed on the pouch:</p>
+      <div class="label">
+        <div class="label__h"><span>The back of the bag</span><span>Paleo Protein · Ancient Cacao</span></div>
+        <div class="label__row"><span>Grass-fed &amp; pastured</span><b>✓</b></div>
+        <div class="label__row"><span>Paleo, Keto and Carnivore friendly</span><b>✓</b></div>
+        <div class="label__row"><span>No dairy, grains, gluten, or soy</span><b>✓</b></div>
+        <div class="label__row"><span>Calories per serving</span><b>120</b></div>
+        <div class="label__row"><span>Protein per serving</span><b>26g</b></div>
+        <div class="label__row"><span>Grams added sugar</span><b>0</b></div>
+        <div class="label__row"><span>Net weight</span><b>1 lb (454g) · 15 servings</b></div>
+        <div class="label__foot">An independent lab, Light Labs, screens every batch for heavy metals and microbials and publishes the results — the current report is further down this page.</div>
+      </div>
+
+      <h2 class="brushed">The switch takes a scoop</h2>
+      <p>Nothing about the routine changes. Same shaker. One scoop, 12–16 ounces of cold water, shake for fifteen or twenty seconds — a few seconds longer than whey, because there's no lactose helping it dissolve. Then it goes wherever the tub used to go: the counter, the car, the gym bag.</p>
+      <p>And if it turns out you'd rather go back to whey, you can. There's a 60-day money-back guarantee on the bag. We'd just be surprised.</p>
+
+      <div class="midcta">
+        <div><span class="tag">Goodbye, whey</span><div class="h">Hello, beef + egg white protein.</div><p>26g protein · 120 calories · 0g added sugar. Ancient Cacao is the pouch from the ad.</p></div>
+        <a class="btn btn--gold" href="#buy">Claim your bag</a>
+      </div>
+
+      <div class="byline"><span>Paleo Pro · Field notes</span><span>·</span><span>Est. 2013 · Made in the USA</span></div>
+    </div></div>
+  </section>
+
+  
+  <section class="sec lab" id="lab">
+    <div class="c"><div class="lab__grid">
+      <div>
+        <span class="eyebrow">Independently tested</span>
+        <h2 class="brushed">The report we<br>mentioned.</h2>
+        <p>Light Labs — an independent third-party lab — screens Paleo Protein Powder for heavy metals and microbial contaminants and publishes the results. A live report, batch by batch, not a badge we print ourselves.</p>
+        <div class="lab__badges">
+          <div class="lab__badge"><b>4</b><span>Heavy metals screened</span></div>
+          <div class="lab__badge"><b>8</b><span>Microbials screened</span></div>
+          <div class="lab__badge"><b>0</b><span>Results hidden</span></div>
+        </div>
+      </div>
+      <div class="lab__panel" data-lab-panel>
+        <div class="ll-head"><span>Certificate of Analysis</span><span>Light Labs</span></div>
+        
+          <script async src="https://transparency.lightlabs.com/embed.js"></script>
+          <lightlabs-panel panel-id="8jyj8jcumf-paleopro-storefront-panel"></lightlabs-panel>
+        
+        <div class="lab__fallback">
+          <div class="lab-row"><span>Lead (Pb)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
+          <div class="lab-row"><span>Arsenic (As)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
+          <div class="lab-row"><span>Cadmium (Cd)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
+          <div class="lab-row"><span>Mercury (Hg)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
+          <div class="lab-row"><span>Microbial panel (8)</span><span class="res">Within spec</span><span class="pass">Pass</span></div>
+        </div>
+        <div class="lab__foot"><span>Paleo Protein Powder · current batch</span><a href="/products/paleo-protein-powder#lab">See the full report →</a></div>
+      </div>
+    </div></div>
+  </section>
+
+  
+  <section class="sec buy" id="buy">
+    <div class="c">
+      <div class="buy-head">
+        <span class="eyebrow solo" style="justify-content:center;">Hello, new protein</span>
+        <h2 class="brushed" style="text-align:center;display:block;">Claim Your Bag</h2>
+        <p class="buy-sub">Ancient Cacao is the pouch from the ad. Subscribe &amp; Save is on by default so the bag doesn't end up in the back of the cupboard — skip or cancel in two clicks.</p>
+      </div>
+      <div class="buy__ladder">
+        <div><b>1 bag</b>Try the switch</div>
+        <div><b>2 bags</b>Two flavors, one delivery</div>
+        <div class="best"><b>3 bags · Best value</b>Six weeks of scoops, biggest savings</div>
+      </div>
+      <div class="buy-grid">
+        <div class="buy-media">
+          <div class="lp-frame"><img src="r2-assets/lp-gw-cacao.jpg" alt="Paleo Pro Paleo Protein Powder, Ancient Cacao" loading="lazy"></div>
+          <div class="buy-trust">
+            <div class="bt"><b>26g</b><span>Protein</span></div>
+            <div class="bt"><b>120</b><span>Calories</span></div>
+            <div class="bt"><b>0g</b><span>Added Sugar</span></div>
+          </div>
+          <div class="guar"><b>60-day</b><span>money-back guarantee. If you'd rather go back to whey, we refund the bag.</span></div>
+        </div>
+        <div class="buy-form-wrap">
+          <div class="lpao" data-lpao role="status"><p class="lpao__head">Up to 25% off your first order is applied.</p><p class="lpao__line">Shows only when the visitor arrives through the ad's discount link. <strong>Preview copy</strong>, the live banner uses real cart pricing.</p></div>
+<style>.lpao{margin:0 0 18px;padding:14px 16px;border-radius:10px;border:1.5px solid var(--lbb-accent,#b5602f);background:color-mix(in srgb,var(--lbb-accent,#b5602f) 9%,transparent)}.lpao__head{margin:0 0 4px;font-weight:700;font-size:1.05rem;line-height:1.3}.lpao__line{margin:0;font-size:.95rem;line-height:1.45}</style>
+          <div class="bbmock"><div class="bbmock__label">Flavor</div><div class="bbmock__opts"><span class="on">Ancient Cacao</span><span>Aztec Vanilla</span><span>Mayan Mocha</span><span>Plain Naked</span></div>
+<div class="bbmock__label">How many bags</div><div class="bbmock__opts"><span class="on">1 bag</span><span>2 bags</span><span>3 bags · Best value</span></div>
+<div class="bbmock__label">Purchase</div><div class="bbmock__opts"><span class="on">Subscribe &amp; Save 15%</span><span>One-time</span></div>
+<div class="bbmock__price">$40.79 <s>$47.99</s></div><a class="btn btn--rust btn-block" href="#">Checkout</a><div class="bbmock__note">[ live buy box renders here — lp-buy-experience v2 ]</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="sec faq">
+    <div class="c">
+      <div class="faq__head"><span class="eyebrow solo" style="margin-bottom:14px;justify-content:center;">Straight Answers</span><h2 class="brushed" style="text-align:center;display:block;">Before You Switch</h2></div>
+      <div class="faq__list">
+        <div class="faq__item open"><button class="faq__q" aria-expanded="true">Is it really dairy-free?</button><div class="faq__a"><p>Yes. There's no whey, milk, lactose or casein in it — nothing from a cow's milk. It's also free of grains, gluten and soy. The full ingredient list is on the pouch and on the product page.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">Does it taste like beef?</button><div class="faq__a"><p>No. The beef protein is flavor-neutral; what you taste is the cacao (or vanilla, or mocha). Sweetened with monk fruit, no stevia. Plain Naked is unflavored if you'd rather add your own.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">Does it mix like whey?</button><div class="faq__a"><p>Almost. Shake it 15–20 seconds in cold water — a few seconds longer than whey, because there's no lactose helping it dissolve. A blender makes it smoother still. No gums or thickeners are added to fake it.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">How does Subscribe &amp; Save work?</button><div class="faq__a"><p>Pick your flavors and how often you want them. You save on every delivery, and you can skip, pause or cancel in two clicks from your account — no phone calls.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">What if I'd rather go back to whey?</button><div class="faq__a"><p>60-day money-back guarantee. Email us and we'll refund the bag.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec final pinefoot pinefoot--strong">
+    <div class="c">
+      <span class="eyebrow solo" style="justify-content:center;">The whey breakup</span>
+      <h2 class="brushed">Hello, new protein.</h2>
+      <p>Beef + egg white protein. 26g protein, 120 calories, 0g added sugar. Same shaker, no dairy.</p>
+      <div class="final__cta"><a href="#buy" class="btn btn--gold">Shop Paleo Protein</a><a href="#story" class="btn btn--ghost">Back to the story</a></div>
+      <div class="final__trust">4.7 ★ from 250+ reviews · 60-Day Money-Back Guarantee · Free Shipping $70+</div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.querySelectorAll('#lp-whey-breakup .faq__item').forEach(function(it){
+    var q=it.querySelector('.faq__q'), a=it.querySelector('.faq__a');
+    q.addEventListener('click',function(){ var open=it.classList.toggle('open'); q.setAttribute('aria-expanded',open?'true':'false'); a.style.maxHeight=open?a.scrollHeight+'px':'0'; });
+  });
+  (function(){ var f=document.querySelector('#lp-whey-breakup .faq__item.open .faq__a'); if(f){ f.style.maxHeight=f.scrollHeight+'px'; } })();
+  document.querySelectorAll('#lp-whey-breakup a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}});});
+  (function(){
+    var p=document.querySelector('#lp-whey-breakup [data-lab-panel]'); if(!p) return;
+    var el=p.querySelector('lightlabs-panel'); if(!el) return;
+    var tries=0, t=setInterval(function(){
+      tries++;
+      var live = (el.shadowRoot && el.shadowRoot.childElementCount>0) || el.childElementCount>0 || el.offsetHeight>80;
+      if(live){ p.classList.add('has-live'); clearInterval(t); }
+      if(tries>40) clearInterval(t);
+    }, 500);
+  })();
+</script>
+
+
+
+
+<!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
+<script>
+/* ============================================================
+   CLAUDE COMMENTS — Figma-style comment layer for any HTML page
+   ------------------------------------------------------------
+   HOW TO USE:
+   1. Set FIREBASE_URL below to your Firebase Realtime Database
+      URL (looks like https://something-default-rtdb.firebaseio.com)
+      Leave it as-is to run in OFFLINE mode (comments only saved
+      in this browser — good for trying it out).
+   2. Optionally set PAGE_ID to a short name for this page.
+      If left blank, it's derived from the file name / title.
+   3. Paste this whole <script> block right before </body>.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ------------------- CONFIG ------------------- */
+  var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
+  var PAGE_ID = 'pp-whey-breakup-v1';
+
+  /* ---------------------------------------------- */
+
+  if (window.__claudeCommentsLoaded) return;
+  window.__claudeCommentsLoaded = true;
+
+  var ONLINE = /^https:\/\/.+firebase/.test(FIREBASE_URL);
+  if (ONLINE) FIREBASE_URL = FIREBASE_URL.replace(/\/+$/, '');
+
+  function slug(s) {
+    return String(s).toLowerCase().replace(/\.[a-z0-9]+$/, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'page';
+  }
+  if (!PAGE_ID) {
+    var fn = (location.pathname.split('/').pop() || '');
+    PAGE_ID = slug(fn && fn !== 'index.html' ? fn : (document.title || fn || 'page'));
+  }
+
+  var COLORS = ['#7C5CFF', '#FF5C8A', '#00A896', '#F4A100', '#2E86DE', '#B8578C'];
+  function colorFor(name) {
+    var h = 0; name = name || '?';
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return COLORS[h % COLORS.length];
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function timeAgo(ts) {
+    var d = Date.now() - ts;
+    if (d < 60e3) return 'just now';
+    if (d < 3600e3) return Math.floor(d / 60e3) + 'm ago';
+    if (d < 86400e3) return Math.floor(d / 3600e3) + 'h ago';
+    if (d < 7 * 86400e3) return Math.floor(d / 86400e3) + 'd ago';
+    var dt = new Date(ts);
+    return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + String(dt.getFullYear()).slice(2);
+  }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+  /* ------------------- STORAGE ------------------- */
+  // Data shape: { threadId: { anchor:{sel,xp,yp,dxp,dyp}, resolved, created,
+  //               comments: { commentId: { name, text, ts } } } }
+  var store;
+
+  function LocalStore() {
+    var KEY = 'claude-comments::' + PAGE_ID;
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+    }
+    function write(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+    return {
+      offline: true,
+      fetchAll: function () { return Promise.resolve(read()); },
+      createThread: function (t) {
+        var d = read(); var id = uid(); d[id] = t; write(d); return Promise.resolve(id);
+      },
+      addComment: function (tid, c) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        d[tid].comments = d[tid].comments || {};
+        d[tid].comments[uid()] = c; write(d); return Promise.resolve();
+      },
+      patchThread: function (tid, patch) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        for (var k in patch) d[tid][k] = patch[k];
+        write(d); return Promise.resolve();
+      },
+      deleteThread: function (tid) {
+        var d = read(); delete d[tid]; write(d); return Promise.resolve();
+      }
+    };
+  }
+
+  function FirebaseStore() {
+    var base = FIREBASE_URL + '/pages/' + encodeURIComponent(PAGE_ID) + '/threads';
+    function req(method, path, body) {
+      return fetch(base + path + '.json', {
+        method: method,
+        body: body === undefined ? undefined : JSON.stringify(body)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Sync error ' + r.status);
+        return r.json();
+      });
+    }
+    return {
+      offline: false,
+      fetchAll: function () { return req('GET', '').then(function (d) { return d || {}; }); },
+      createThread: function (t) {
+        return req('POST', '', t).then(function (res) { return res.name; });
+      },
+      addComment: function (tid, c) { return req('POST', '/' + tid + '/comments', c); },
+      patchThread: function (tid, patch) { return req('PATCH', '/' + tid, patch); },
+      deleteThread: function (tid) { return req('DELETE', '/' + tid); }
+    };
+  }
+
+  store = ONLINE ? FirebaseStore() : LocalStore();
+
+  /* ------------------- ANCHORING ------------------- */
+  function cssPath(el) {
+    if (!(el instanceof Element)) return '';
+    var path = [];
+    while (el && el.nodeType === 1 && el !== document.body && path.length < 8) {
+      var seg = el.tagName.toLowerCase();
+      if (el.id && !/\d{4,}/.test(el.id)) { path.unshift('#' + CSS.escape(el.id)); break; }
+      var sibs = el.parentNode ? Array.prototype.filter.call(el.parentNode.children, function (s) {
+        return s.tagName === el.tagName;
+      }) : [];
+      if (sibs.length > 1) seg += ':nth-of-type(' + (sibs.indexOf(el) + 1) + ')';
+      path.unshift(seg);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+  function makeAnchor(clientX, clientY, target) {
+    var docX = clientX + window.scrollX, docY = clientY + window.scrollY;
+    var a = {
+      dxp: docX / Math.max(1, document.documentElement.scrollWidth),
+      dyp: docY / Math.max(1, document.documentElement.scrollHeight)
+    };
+    if (target && target !== document.body && target !== document.documentElement) {
+      var sel = cssPath(target);
+      try {
+        if (sel && document.querySelector(sel) === target) {
+          var r = target.getBoundingClientRect();
+          if (r.width > 4 && r.height > 4) {
+            a.sel = sel;
+            a.xp = (clientX - r.left) / r.width;
+            a.yp = (clientY - r.top) / r.height;
+          }
+        }
+      } catch (e) {}
+    }
+    return a;
+  }
+  // Returns pin coordinates, or null when the anchored element exists in the
+  // document but is currently hidden (e.g. a single-file site showing a
+  // different "page"/view) — in that case the pin should not be rendered.
+  function resolveAnchor(a) {
+    if (a.sel) {
+      try {
+        var el = document.querySelector(a.sel);
+        if (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width > 0 && r.height > 0) {
+            return { x: r.left + window.scrollX + a.xp * r.width, y: r.top + window.scrollY + a.yp * r.height };
+          }
+          return null; // element is on a hidden view right now
+        }
+      } catch (e) {}
+    }
+    return {
+      x: a.dxp * document.documentElement.scrollWidth,
+      y: a.dyp * document.documentElement.scrollHeight
+    };
+  }
+  function currentView() { return location.hash || ''; }
+  // Should this thread be shown on the current view?
+  function threadVisiblePos(t) {
+    var a = t.anchor || {};
+    if (a.sel) return resolveAnchor(a); // visibility of the anchor decides
+    // No element anchor: fall back to the view recorded at creation
+    if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) return null;
+    return resolveAnchor(a);
+  }
+  function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
+
+  /* ------------------- STATE ------------------- */
+  var threads = {};           // latest data
+  var lastJSON = '';
+  var commentMode = false;
+  var openThreadId = null;    // thread popup currently open
+  var draft = null;           // {anchor, x, y} while composing a new thread
+  var showResolved = false;
+  var panelOpen = false;
+  var myName = '';
+  try { myName = localStorage.getItem('claude-comments-name') || ''; } catch (e) {}
+
+  function sortedIds() {
+    return Object.keys(threads).sort(function (a, b) {
+      return (threads[a].created || 0) - (threads[b].created || 0);
+    });
+  }
+  function threadNumber(tid) { return sortedIds().indexOf(tid) + 1; }
+  function firstComment(t) {
+    var ids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    return ids.length ? t.comments[ids[0]] : null;
+  }
+  function openCount() {
+    return sortedIds().filter(function (id) { return !threads[id].resolved; }).length;
+  }
+
+  /* ------------------- UI SHELL ------------------- */
+  var host = document.createElement('div');
+  host.id = 'claude-comments-host';
+  var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host;
+
+  var css = ''
+    + ':host{all:initial}'
+    + '*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
+    + '.layer{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:2147483000}'
+    + '.pin{position:absolute;pointer-events:auto;width:32px;height:32px;margin:-32px 0 0 0;'
+    + 'border-radius:16px 16px 16px 3px;display:flex;align-items:center;justify-content:center;'
+    + 'color:#fff;font-size:13px;font-weight:700;cursor:pointer;border:2px solid #fff;'
+    + 'box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .12s;user-select:none}'
+    + '.pin:hover{transform:scale(1.15)}'
+    + '.pin.resolved{background:#9aa3ad !important;opacity:.75}'
+    + '.pin.draft{background:#111}'
+    + '.popup{position:fixed;pointer-events:auto;width:min(320px,calc(100vw - 20px));max-height:70vh;display:flex;flex-direction:column;'
+    + 'background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483001;overflow:hidden}'
+    + '.popup-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #eee}'
+    + '.popup-head .title{font-size:13px;font-weight:700;color:#333;flex:1}'
+    + '.iconbtn{border:none;background:none;cursor:pointer;font-size:13px;color:#666;padding:4px 8px;border-radius:6px}'
+    + '.iconbtn:hover{background:#f2f2f4;color:#111}'
+    + '.iconbtn.danger:hover{background:#ffe8ec;color:#c0264b}'
+    + '.comments{overflow-y:auto;padding:6px 0;flex:1}'
+    + '.comment{padding:8px 14px;display:flex;gap:9px}'
+    + '.avatar{width:26px;height:26px;border-radius:50%;color:#fff;display:flex;align-items:center;'
+    + 'justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}'
+    + '.cbody{flex:1;min-width:0}'
+    + '.cmeta{font-size:12px;color:#888;margin-bottom:2px}'
+    + '.cmeta b{color:#222;font-size:12.5px;margin-right:6px}'
+    + '.ctext{font-size:13.5px;color:#222;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}'
+    + '.composer{border-top:1px solid #eee;padding:10px 12px;background:#fafafa}'
+    + '.composer textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13.5px;'
+    + 'resize:none;min-height:38px;max-height:120px;background:#fff;color:#111;outline:none;line-height:1.4}'
+    + '.composer textarea:focus{border-color:#7C5CFF}'
+    + '.composer input{width:100%;border:1px solid #ddd;border-radius:8px;padding:7px 10px;font-size:13px;'
+    + 'margin-bottom:6px;background:#fff;color:#111;outline:none}'
+    + '.composer input:focus{border-color:#7C5CFF}'
+    + '.crow{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}'
+    + '.btn{border:none;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}'
+    + '.btn.primary{background:#7C5CFF;color:#fff}.btn.primary:hover{background:#6a4ae6}'
+    + '.btn.primary:disabled{background:#c9bdfa;cursor:default}'
+    + '.btn.ghost{background:none;color:#666}.btn.ghost:hover{background:#eee}'
+    + '.bar{position:fixed;right:20px;bottom:20px;display:flex;gap:8px;pointer-events:auto;z-index:2147483002}'
+    + '.fab{display:flex;align-items:center;gap:7px;background:#111;color:#fff;border:none;border-radius:24px;'
+    + 'padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.fab:hover{background:#2b2b2e}.fab.active{background:#7C5CFF}'
+    + '.fab .badge{background:#7C5CFF;border-radius:10px;font-size:11.5px;padding:1px 7px;font-weight:700}'
+    + '.fab.active .badge{background:rgba(255,255,255,.25)}'
+    + '.hint{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111;color:#fff;'
+    + 'padding:9px 16px;border-radius:10px;font-size:13px;z-index:2147483002;pointer-events:none;'
+    + 'box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.panel{position:fixed;right:20px;bottom:76px;width:min(300px,calc(100vw - 40px));max-height:60vh;background:#fff;border-radius:12px;'
+    + 'box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483002;pointer-events:auto;display:flex;flex-direction:column;overflow:hidden}'
+    + '.panel-head{padding:11px 14px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}'
+    + '.panel-head .t{font-size:13.5px;font-weight:700;color:#222}'
+    + '.panel-list{overflow-y:auto;flex:1}'
+    + '.pitem{padding:10px 14px;border-bottom:1px solid #f4f4f5;cursor:pointer;display:flex;gap:10px;align-items:flex-start}'
+    + '.pitem:hover{background:#f8f7ff}'
+    + '.pnum{width:22px;height:22px;border-radius:11px 11px 11px 2px;color:#fff;font-size:11px;font-weight:700;'
+    + 'display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}'
+    + '.pbody{flex:1;min-width:0}'
+    + '.pmeta{font-size:11.5px;color:#999;margin-bottom:1px}'
+    + '.ptext{font-size:12.5px;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;'
+    + '-webkit-line-clamp:2;-webkit-box-orient:vertical}'
+    + '.pitem.resolved .ptext,.pitem.resolved .pmeta{color:#aaa;text-decoration:line-through}'
+    + '.panel-foot{padding:9px 14px;border-top:1px solid #eee;font-size:12px;color:#777;display:flex;'
+    + 'align-items:center;justify-content:space-between}'
+    + '.empty{padding:26px 14px;text-align:center;color:#999;font-size:13px}'
+    + '.offline{background:#fff7e0;color:#8a6400;font-size:11.5px;padding:6px 14px;text-align:center}'
+    + 'label.tog{display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:#777}'
+    + '@media (max-width:600px){.composer textarea,.composer input{font-size:16px}'
+    + '.bar{right:12px;bottom:12px}.panel{right:12px;bottom:66px}}';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  root.appendChild(styleEl);
+
+  var layer = document.createElement('div');   // pins (document coords)
+  layer.className = 'layer';
+  var ui = document.createElement('div');      // fixed UI: bar, panel, popup, hint
+  root.appendChild(layer);
+  root.appendChild(ui);
+
+  var cursorStyle = document.createElement('style');
+  cursorStyle.textContent = 'html.claude-commenting, html.claude-commenting *{cursor:crosshair !important}';
+  document.head.appendChild(cursorStyle);
+
+  function mount() { document.body.appendChild(host); render(); }
+
+  /* ------------------- RENDER ------------------- */
+  function render() {
+    layer.style.height = document.documentElement.scrollHeight + 'px';
+    renderPins();
+    renderUI();
+  }
+
+  function renderPins() {
+    layer.innerHTML = '';
+    var ids = sortedIds();
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      if (t.resolved && !showResolved) return;
+      var p = threadVisiblePos(t);
+      if (!p) return; // comment belongs to a view that isn't on screen
+      var fc = firstComment(t);
+      var pin = document.createElement('div');
+      pin.className = 'pin' + (t.resolved ? ' resolved' : '');
+      pin.style.left = p.x + 'px';
+      pin.style.top = p.y + 'px';
+      pin.style.background = colorFor(fc ? fc.name : '?');
+      pin.textContent = threadNumber(tid);
+      pin.title = fc ? fc.name + ': ' + fc.text.slice(0, 80) : '';
+      pin.addEventListener('click', function (e) {
+        e.stopPropagation();
+        draft = null;
+        openThreadId = (openThreadId === tid) ? null : tid;
+        render();
+      });
+      layer.appendChild(pin);
+    });
+    if (draft) {
+      var dp = document.createElement('div');
+      dp.className = 'pin draft';
+      dp.style.left = draft.x + 'px';
+      dp.style.top = draft.y + 'px';
+      dp.textContent = '+';
+      layer.appendChild(dp);
+    }
+  }
+
+  function popupPos(docX, docY) {
+    var vx = docX - window.scrollX, vy = docY - window.scrollY;
+    var pw = Math.min(320, window.innerWidth - 20);
+    var left = Math.max(10, Math.min(vx + 18, window.innerWidth - pw - 10));
+    var top = Math.min(Math.max(10, vy - 20), Math.max(10, window.innerHeight - 260));
+    return { left: left, top: top };
+  }
+
+  function renderUI() {
+    ui.innerHTML = '';
+
+    // --- floating bar ---
+    var bar = document.createElement('div');
+    bar.className = 'bar';
+    var listBtn = document.createElement('button');
+    listBtn.className = 'fab' + (panelOpen ? ' active' : '');
+    listBtn.innerHTML = '&#9776; <span class="badge">' + openCount() + '</span>';
+    listBtn.title = 'All comments';
+    listBtn.addEventListener('click', function () { panelOpen = !panelOpen; renderUI(); });
+    var addBtn = document.createElement('button');
+    addBtn.className = 'fab' + (commentMode ? ' active' : '');
+    addBtn.innerHTML = commentMode ? '&#10005; Done' : '&#128172; Comment';
+    addBtn.addEventListener('click', toggleMode);
+    bar.appendChild(listBtn);
+    bar.appendChild(addBtn);
+    ui.appendChild(bar);
+
+    // --- hint while in comment mode ---
+    if (commentMode && !draft) {
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.textContent = 'Click anywhere on the page to leave a comment';
+      ui.appendChild(hint);
+    }
+
+    // --- panel (thread list) ---
+    if (panelOpen) ui.appendChild(buildPanel());
+
+    // --- popup: draft composer or open thread ---
+    if (draft) ui.appendChild(buildComposerPopup());
+    else if (openThreadId && threads[openThreadId]) ui.appendChild(buildThreadPopup(openThreadId));
+  }
+
+  function buildPanel() {
+    var panel = document.createElement('div');
+    panel.className = 'panel';
+    var head = document.createElement('div');
+    head.className = 'panel-head';
+    head.innerHTML = '<span class="t">Comments</span>';
+    var tog = document.createElement('label');
+    tog.className = 'tog';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = showResolved;
+    cb.addEventListener('change', function () { showResolved = cb.checked; render(); });
+    tog.appendChild(cb);
+    tog.appendChild(document.createTextNode('show resolved'));
+    head.appendChild(tog);
+    panel.appendChild(head);
+
+    if (store.offline) {
+      var off = document.createElement('div');
+      off.className = 'offline';
+      off.textContent = 'Offline mode — comments only saved in this browser';
+      panel.appendChild(off);
+    }
+
+    var list = document.createElement('div');
+    list.className = 'panel-list';
+    var ids = sortedIds().filter(function (id) { return showResolved || !threads[id].resolved; });
+    if (!ids.length) {
+      var em = document.createElement('div');
+      em.className = 'empty';
+      em.textContent = 'No comments yet. Hit “Comment”, then click anywhere on the page.';
+      list.appendChild(em);
+    }
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      var fc = firstComment(t);
+      var n = Object.keys(t.comments || {}).length;
+      var item = document.createElement('div');
+      item.className = 'pitem' + (t.resolved ? ' resolved' : '');
+      var num = document.createElement('div');
+      num.className = 'pnum';
+      num.style.background = t.resolved ? '#9aa3ad' : colorFor(fc ? fc.name : '?');
+      num.textContent = threadNumber(tid);
+      var body = document.createElement('div');
+      body.className = 'pbody';
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
+      body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
+        + (n > 1 ? ' · ' + n + ' replies' : '')
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
+        + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
+      item.appendChild(num);
+      item.appendChild(body);
+      item.addEventListener('click', function () {
+        var go = function () {
+          var p = threadVisiblePos(t) || resolveAnchor(t.anchor || {});
+          if (p) window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
+          openThreadId = tid; draft = null; panelOpen = false;
+          setTimeout(render, 350);
+        };
+        if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
+          // Comment lives on another view of this site — switch to it first
+          location.hash = t.view || '#';
+          setTimeout(go, 450);
+        } else go();
+      });
+      list.appendChild(item);
+    });
+    panel.appendChild(list);
+
+    var foot = document.createElement('div');
+    foot.className = 'panel-foot';
+    foot.innerHTML = '<span>' + (myName ? 'Commenting as <b>' + esc(myName) + '</b>' : '') + '</span>';
+    if (myName) {
+      var chg = document.createElement('button');
+      chg.className = 'iconbtn';
+      chg.textContent = 'change name';
+      chg.addEventListener('click', function () {
+        myName = '';
+        try { localStorage.removeItem('claude-comments-name'); } catch (e) {}
+        renderUI();
+      });
+      foot.appendChild(chg);
+    }
+    panel.appendChild(foot);
+    return panel;
+  }
+
+  function nameField() {
+    var input = document.createElement('input');
+    input.placeholder = 'Your name';
+    input.maxLength = 40;
+    input.value = myName;
+    return input;
+  }
+
+  function buildComposerPopup() {
+    var pos = popupPos(draft.x, draft.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">New comment</span>';
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { draft = null; render(); });
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Write a comment…';
+    comp.appendChild(ta);
+    var row = document.createElement('div');
+    row.className = 'crow';
+    var cancel = document.createElement('button');
+    cancel.className = 'btn ghost'; cancel.textContent = 'Cancel';
+    cancel.addEventListener('click', function () { draft = null; render(); });
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Post';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      var t = {
+        anchor: draft.anchor, resolved: false, created: Date.now(),
+        view: currentView(), comments: {}
+      };
+      t.comments[uid()] = { name: name, text: text, ts: Date.now() };
+      store.createThread(t).then(function (tid) {
+        draft = null; commentMode = false; setMode(false);
+        if (tid) openThreadId = tid;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { draft = null; render(); }
+    });
+    row.appendChild(cancel);
+    row.appendChild(post);
+    comp.appendChild(row);
+    pop.appendChild(comp);
+    setTimeout(function () { (nameIn && !nameIn.value ? nameIn : ta).focus(); }, 30);
+    return pop;
+  }
+
+  function buildThreadPopup(tid) {
+    var t = threads[tid];
+    var p = threadVisiblePos(t)
+      || { x: window.scrollX + window.innerWidth / 2, y: window.scrollY + window.innerHeight / 2 };
+    var pos = popupPos(p.x, p.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">Comment #' + threadNumber(tid) + '</span>';
+    var resolveBtn = document.createElement('button');
+    resolveBtn.className = 'iconbtn';
+    resolveBtn.innerHTML = t.resolved ? '&#8634; Reopen' : '&#10003; Resolve';
+    resolveBtn.addEventListener('click', function () {
+      store.patchThread(tid, { resolved: !t.resolved }).then(function () {
+        if (!t.resolved === true && !showResolved) openThreadId = null;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    var del = document.createElement('button');
+    del.className = 'iconbtn danger';
+    del.innerHTML = '&#128465;';
+    del.title = 'Delete thread';
+    del.addEventListener('click', function () {
+      if (del.dataset.armed) {
+        store.deleteThread(tid).then(function () { openThreadId = null; return refresh(true); }).catch(syncFail);
+      } else {
+        del.dataset.armed = '1';
+        del.textContent = 'Delete?';
+        setTimeout(function () { delete del.dataset.armed; del.innerHTML = '&#128465;'; }, 2500);
+      }
+    });
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { openThreadId = null; render(); });
+    head.appendChild(resolveBtn);
+    head.appendChild(del);
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var box = document.createElement('div');
+    box.className = 'comments';
+    var cids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    cids.forEach(function (cid) {
+      var c = t.comments[cid];
+      var row = document.createElement('div');
+      row.className = 'comment';
+      row.innerHTML = '<div class="avatar" style="background:' + colorFor(c.name) + '">'
+        + esc((c.name || '?').trim().charAt(0).toUpperCase()) + '</div>'
+        + '<div class="cbody"><div class="cmeta"><b>' + esc(c.name) + '</b>' + timeAgo(c.ts) + '</div>'
+        + '<div class="ctext">' + esc(c.text) + '</div></div>';
+      box.appendChild(row);
+    });
+    pop.appendChild(box);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Reply…';
+    comp.appendChild(ta);
+    var row2 = document.createElement('div');
+    row2.className = 'crow';
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Reply';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      store.addComment(tid, { name: name, text: text, ts: Date.now() })
+        .then(function () { return refresh(true); }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { openThreadId = null; render(); }
+    });
+    row2.appendChild(post);
+    comp.appendChild(row2);
+    pop.appendChild(comp);
+    setTimeout(function () { box.scrollTop = box.scrollHeight; }, 30);
+    return pop;
+  }
+
+  function saveName(name) {
+    if (name && name !== 'Anonymous') {
+      myName = name;
+      try { localStorage.setItem('claude-comments-name', name); } catch (e) {}
+    }
+  }
+  function syncFail(err) {
+    alertBar('Couldn’t save — check your internet connection and try again.');
+    render();
+  }
+  var alertTimer = null;
+  function alertBar(msg) {
+    var el = document.createElement('div');
+    el.className = 'hint';
+    el.style.background = '#c0264b';
+    el.textContent = msg;
+    ui.appendChild(el);
+    clearTimeout(alertTimer);
+    alertTimer = setTimeout(function () { el.remove(); }, 4000);
+  }
+
+  /* ------------------- COMMENT MODE ------------------- */
+  function setMode(on) {
+    commentMode = on;
+    document.documentElement.classList.toggle('claude-commenting', on);
+  }
+  function toggleMode() {
+    setMode(!commentMode);
+    if (!commentMode) draft = null;
+    openThreadId = null;
+    render();
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!commentMode) return;
+    if (e.composedPath && e.composedPath().indexOf(host) !== -1) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var target = null;
+    var els = document.elementsFromPoint(e.clientX, e.clientY) || [];
+    for (var i = 0; i < els.length; i++) {
+      if (els[i] !== host && !host.contains(els[i])) { target = els[i]; break; }
+    }
+    draft = {
+      anchor: makeAnchor(e.clientX, e.clientY, target),
+      x: e.clientX + window.scrollX,
+      y: e.clientY + window.scrollY
+    };
+    openThreadId = null;
+    render();
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && commentMode && !draft) { setMode(false); render(); }
+  });
+
+  /* ------------------- SYNC LOOP ------------------- */
+  function refresh(force) {
+    return store.fetchAll().then(function (d) {
+      d = d || {};
+      var j = JSON.stringify(d);
+      if (force || j !== lastJSON) {
+        lastJSON = j;
+        threads = d;
+        render();
+      }
+    }).catch(function () { /* transient network error: keep current view */ });
+  }
+
+  var pollMs = ONLINE ? 4000 : 2500;
+  setInterval(function () {
+    // Don't re-render out from under someone mid-typing
+    var typing = root.activeElement && /TEXTAREA|INPUT/.test(root.activeElement.tagName || '');
+    if (!typing) refresh(false);
+  }, pollMs);
+
+  window.addEventListener('resize', function () { render(); });
+  // Single-file sites that switch views via the URL hash: re-render so each
+  // view only shows its own pins, and close any popup from the previous view.
+  window.addEventListener('hashchange', function () {
+    openThreadId = null; draft = null;
+    render();
+  });
+
+  /* ------------------- BOOT ------------------- */
+  function boot() {
+    mount();
+    refresh(true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+</body></html>
