@@ -2142,6 +2142,22 @@ body.has-bar .preview-pill{bottom:84px;}
 .blank.mini::before{inset:4px;border-width:1px;} .blank.mini .label{font-size:.42rem;letter-spacing:.08em;}
 .post .ph{position:relative;}
 
+/* ---------- v25c: Prancer-owned tags, review layout, pre-launch mode ---------- */
+.ph-tag[data-o="a"],.ph-img[data-o="a"]{background:var(--coral);}
+.appr tr[data-o="a"] td.id a{background:var(--coral);}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.4rem;}
+.rcard{background:#fff;border:2px solid var(--espresso);box-shadow:6px 6px 0 var(--sunshine);padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:.8rem;}
+.rcard:nth-child(2){box-shadow:6px 6px 0 var(--aqua);} .rcard:nth-child(3){box-shadow:6px 6px 0 var(--clay);}
+.rcard .stars{color:var(--sunshine);-webkit-text-stroke:.6px var(--espresso);letter-spacing:.12em;font-size:1.05rem;}
+.rcard p{font-size:1rem;line-height:1.6;color:var(--ink-dim);}
+.rcard .who{margin-top:auto;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;}
+@media(max-width:820px){.rgrid{grid-template-columns:1fr;}}
+body.prelaunch .cart-btn,body.prelaunch .bb-qty{display:none;}
+.wl-note{display:none;margin-top:.9rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);text-align:center;line-height:1.6;}
+body.prelaunch .wl-note{display:block;}
+.signup.is-flash{outline:none!important;box-shadow:inset 0 0 0 6px var(--sunshine);}
+@media(max-width:820px){.preview-pill>span{display:none;}.preview-pill{gap:.4rem;padding:.4rem;max-width:92vw;}}
+
 </style>
 </head>
 <body>
@@ -2202,9 +2218,9 @@ body.has-bar .preview-pill{bottom:84px;}
           <a class="btn btn-sun" href="#shop">Meet Daily &#9656; The First Staple</a>
           <a class="cta-sub" href="#the-fiber">Why fiber &#9656;</a>
         </div>
-        <span class="rating"><b>★★★★★</b>&nbsp; 4.9 · 300+ athlete reviews <span class="ph-tag a" data-o="b" data-ph="B-002">no real reviews yet — remove or replace</span></span>
+        <span class="rating"><b>★★★★★</b>&nbsp; 4.9 · 300+ athlete reviews <span class="ph-tag a" data-k="reviews" data-o="b" data-ph="B-124">placeholder rating — swap for real tester reviews before this goes public</span></span>
       </div>
-      <div class="hero-can-stage rev"><span class="ph-img" data-k="canister" data-o="b" data-ph="B-003"><i>canister is a drawn stand-in — final render needed</i></span>
+      <div class="hero-can-stage rev"><span class="ph-img" data-k="canister" data-o="a" data-ph="B-003"><i>canister is a drawn stand-in — Prancer producing final render</i></span>
         <div class="canister mini">
           <div class="can-lid"></div>
           <div class="can-body">
@@ -2262,7 +2278,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <div class="btn-row rev rev-d3" style="order:5"><a class="btn btn-sun" href="#shop" style="margin-top:0">Shop Now &#9656;</a><a class="more-link" href="#the-fiber">Why fiber matters &#9656;</a></div>
       </div>
       <div class="spec-card rev rev-d1">
-        <span class="spec-tag">Daily &#9656; Spec 001</span><span class="ph-img" data-k="canister" data-o="b" data-ph="B-003"><i>canister is a drawn stand-in — final render needed</i></span>
+        <span class="spec-tag">Daily &#9656; Spec 001</span><span class="ph-img" data-k="canister" data-o="a" data-ph="B-003"><i>canister is a drawn stand-in — Prancer producing final render</i></span>
         <div class="canister">
           <div class="can-lid"></div>
           <div class="can-body">
@@ -2300,28 +2316,28 @@ body.has-bar .preview-pill{bottom:84px;}
     <p class="lead rev rev-d1"><b>Real fruit, zero sugar, nothing artificial.</b> Every flavor hits the same 7g of fiber — the only decision left is what your water tastes like. <span class="ph-tag a" data-k="real-fruit" data-o="b" data-ph="B-010">confirm: real fruit / nothing artificial</span></p>
     <div class="flav-grid">
       <div class="flav-card rev" style="--flav:var(--clay)">
-        <div class="ph"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="b" data-ph="B-011"><i>AI placeholder image — replace</i></span></div>
+        <div class="ph"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="a" data-ph="B-011"><i>AI placeholder image — Prancer producing final</i></span></div>
         <div class="info">
           <span class="flav-badge"><i></i>Raspberry</span>
           <span class="spec">7G Fiber · 0G Sugar</span>
         </div>
       </div>
       <div class="flav-card rev rev-d1" style="--flav:var(--coral)">
-        <div class="ph"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="b" data-ph="B-012"><i>AI placeholder image — replace</i></span></div>
+        <div class="ph"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="a" data-ph="B-012"><i>AI placeholder image — Prancer producing final</i></span></div>
         <div class="info">
           <span class="flav-badge"><i></i>Watermelon</span>
           <span class="spec">7G Fiber · 0G Sugar</span>
         </div>
       </div>
       <div class="flav-card rev rev-d2" style="--flav:var(--sunshine)">
-        <div class="ph"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="b" data-ph="B-013"><i>AI placeholder image — replace</i></span></div>
+        <div class="ph"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="a" data-ph="B-013"><i>AI placeholder image — Prancer producing final</i></span></div>
         <div class="info">
           <span class="flav-badge"><i></i>Blood Orange</span>
           <span class="spec">7G Fiber · 0G Sugar</span>
         </div>
       </div>
       <div class="flav-card rev rev-d3" style="--flav:var(--aqua)">
-        <div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="b" data-ph="B-014"><i>AI placeholder image — replace</i></span></div>
+        <div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="a" data-ph="B-014"><i>AI placeholder image — Prancer producing final</i></span></div>
         <div class="info">
           <span class="flav-badge"><i></i>Fruit Punch</span>
           <span class="spec">7G Fiber · 0G Sugar</span>
@@ -2620,7 +2636,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <h3>Scoop</h3>
         <p>One level scoop. The serving is decided for you — no measuring, no math.</p>
         <div class="real-shot ratio-169">
-          <img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="b" data-ph="B-022"><i>AI placeholder image — replace</i></span>
+          <img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="a" data-ph="B-022"><i>AI placeholder image — Prancer producing final</i></span>
           <span class="cap">The scoop</span>
         </div>
       </div>
@@ -2629,7 +2645,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <h3>Shake</h3>
         <p>Into anything. It dissolves in seconds and blooms like real fruit — because it is. <span class="ph-tag a" data-k="real-fruit" data-o="b" data-ph="B-010">confirm dissolve + real-fruit claims</span></p>
         <div class="real-shot ratio-169">
-          <img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="b" data-ph="B-023"><i>AI placeholder image — replace</i></span>
+          <img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span>
           <span class="cap">The dissolve</span>
         </div>
       </div>
@@ -2638,7 +2654,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <h3>Go</h3>
         <p>That's it. The foundation is handled. Go train, work, live.</p>
         <div class="real-shot ratio-169">
-          <img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink with splash"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="b" data-ph="B-024"><i>AI placeholder image — replace</i></span>
+          <img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink with splash"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="a" data-ph="B-024"><i>AI placeholder image — Prancer producing final</i></span>
           <span class="cap">Done</span>
         </div>
       </div>
@@ -2646,7 +2662,7 @@ body.has-bar .preview-pill{bottom:84px;}
   </div>
 </section>
 
-<section class="pull"><span class="ph-img" data-k="img-burst" data-o="b" data-ph="B-025"><i>AI texture image — replace or approve</i></span>
+<section class="pull"><span class="ph-img" data-k="img-burst" data-o="a" data-ph="B-025"><i>AI texture image — Prancer replacing</i></span>
   <div class="wrap">
     <blockquote class="rev">"Fiber isn't sexy. Neither is showing up at 5AM. <em>Do it anyway.</em>"</blockquote>
     <cite class="rev rev-d1">— <b>Marcus Filly</b><span class="ph"><span class="ph-tag a" data-k="quote" data-o="m" data-ph="M-022">we wrote this quote — approve, edit or replace</span></span></cite>
@@ -2693,7 +2709,7 @@ body.has-bar .preview-pill{bottom:84px;}
   </div>
 </section>
 
-<section class="trail rev-parent"><span class="ph-img" data-k="img-trail" data-o="b" data-ph="B-026"><i>AI placeholder image — trail</i></span>
+<section class="trail rev-parent"><span class="ph-img" data-k="img-trail" data-o="a" data-ph="B-026"><i>AI placeholder image — Prancer replacing</i></span>
   <div class="wrap">
     <span class="mono-label rev">Trail &#9656; Gym &#9656; Kitchen &#9656; Repeat</span>
     <h2 class="display rev">Built for<br><em>the long run.</em></h2>
@@ -2801,9 +2817,9 @@ body.has-bar .preview-pill{bottom:84px;}
       <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">How to take it</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
-        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="b" data-ph="B-022"><i>AI placeholder image — replace</i></span><span class="cap">The scoop</span></div></div>
-        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into water, or anything else you already drink. It dissolves in seconds.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="b" data-ph="B-023"><i>AI placeholder image — replace</i></span><span class="cap">The dissolve</span></div></div>
-        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag" data-o="b" data-ph="B-036">usage copy to confirm</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="b" data-ph="B-024"><i>AI placeholder image — replace</i></span><span class="cap">Done</span></div></div>
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="a" data-ph="B-022"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The scoop</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into water, or anything else you already drink. It dissolves in seconds.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The dissolve</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag" data-o="b" data-ph="B-036">usage copy to confirm</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="a" data-ph="B-024"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">Done</span></div></div>
       </div>
     </div>
   </section>
@@ -2876,7 +2892,7 @@ body.has-bar .preview-pill{bottom:84px;}
       <div class="photo-row">
         <div class="frame rev"><div class="blank"><span class="label">Marcus — between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div><span class="ph-img" data-k="slot-candid" data-o="m" data-ph="M-048"><i>photo needed — candid between sets</i></span></div>
         <div class="frame rev rev-d1"><div class="blank"><span class="label">Marcus — warm-up</span><span class="spec">4:3 photo · mobility or warm-up detail</span></div><span class="ph-img" data-k="slot-warmup" data-o="m" data-ph="M-049"><i>photo needed — warm-up / mobility</i></span></div>
-        <div class="frame rev rev-d2"><img src="assets/staple-home/86ad8c5ea1.jpg" alt="Chalked hands on a barbell"><span class="ph-img" data-k="img-86ad8c5ea1.jpg" data-o="b" data-ph="B-037"><i>AI placeholder image — replace</i></span><span class="cap">Placeholder · chalk macro</span></div>
+        <div class="frame rev rev-d2"><img src="assets/staple-home/86ad8c5ea1.jpg" alt="Chalked hands on a barbell"><span class="ph-img" data-k="img-86ad8c5ea1.jpg" data-o="a" data-ph="B-037"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">Placeholder · chalk macro</span></div>
       </div>
     </div>
   </section>
@@ -3049,7 +3065,7 @@ body.has-bar .preview-pill{bottom:84px;}
       <div class="pdp-grid">
         <div>
           <div class="pdp-stage rev">
-            <span class="spec-tag">Daily &#9656; Launch SKU 001</span><span class="ph-img" data-k="canister" data-o="b" data-ph="B-003"><i>canister is a drawn stand-in — final render needed</i></span>
+            <span class="spec-tag">Daily &#9656; Launch SKU 001</span><span class="ph-img" data-k="canister" data-o="a" data-ph="B-003"><i>canister is a drawn stand-in — Prancer producing final render</i></span>
             <div class="canister">
           <div class="can-lid"></div>
           <div class="can-body">
@@ -3068,10 +3084,10 @@ body.has-bar .preview-pill{bottom:84px;}
         </div>
           </div>
           <div class="pdp-thumbs">
-            <div class="frame"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="b" data-ph="B-011"><i>AI placeholder image — replace</i></span></div>
-            <div class="frame"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="b" data-ph="B-012"><i>AI placeholder image — replace</i></span></div>
-            <div class="frame"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="b" data-ph="B-013"><i>AI placeholder image — replace</i></span></div>
-            <div class="frame"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="b" data-ph="B-014"><i>AI placeholder image — replace</i></span></div>
+            <div class="frame"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="a" data-ph="B-011"><i>AI placeholder image — Prancer producing final</i></span></div>
+            <div class="frame"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="a" data-ph="B-012"><i>AI placeholder image — Prancer producing final</i></span></div>
+            <div class="frame"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="a" data-ph="B-013"><i>AI placeholder image — Prancer producing final</i></span></div>
+            <div class="frame"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="a" data-ph="B-014"><i>AI placeholder image — Prancer producing final</i></span></div>
           </div>
           <p class="ph-note" style="margin-top:1.4rem"><b>Images &#9656;</b> Canister is a drawn stand-in and flavor photos are AI placeholders. Swap for final packaging renders and product photography.</p>
         </div>
@@ -3080,7 +3096,7 @@ body.has-bar .preview-pill{bottom:84px;}
           <h1 class="display">Daily</h1>
           <div class="sub">Performance Fiber · 7g per scoop</div>
           <p class="desc">Real fruit flavor, zero sugar, nothing artificial. One scoop in water, once a day, from 6× CrossFit Games athlete Marcus Filly.</p>
-          <span class="rating">Reviews open at launch</span>
+          <span class="rating"><b>★★★★★</b>&nbsp; Early-tester reviews <span class="ph-tag a" data-k="reviews" data-o="b" data-ph="B-124">placeholder — swap for real reviews</span></span>
           <div class="buy-box">
         <span class="pk">STÄPL — Launch SKU 001</span>
         <h3>Daily</h3>
@@ -3202,10 +3218,10 @@ body.has-bar .preview-pill{bottom:84px;}
       <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">Pick your flavor <span class="ph-tag a" data-k="flavors" data-o="b" data-ph="B-005">confirm flavor line-up + names</span></span></div>
       <h2 class="display rev">Four flavors.<br><em class="aq">Same 7g.</em></h2>
       <div class="ftiles">
-        <button class="ftile rev" data-pick-flavor="Raspberry" style="--flav:var(--clay)"><span class="im"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="b" data-ph="B-011"><i>AI placeholder image — replace</i></span></span><b>Raspberry</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Bright, tart, a little jammy.</span></button>
-        <button class="ftile rev rev-d1" data-pick-flavor="Watermelon" style="--flav:var(--coral)"><span class="im"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="b" data-ph="B-012"><i>AI placeholder image — replace</i></span></span><b>Watermelon</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Light, cold, summer in a shaker.</span></button>
-        <button class="ftile rev rev-d2" data-pick-flavor="Blood Orange" style="--flav:var(--sunshine)"><span class="im"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="b" data-ph="B-013"><i>AI placeholder image — replace</i></span></span><b>Blood Orange</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Citrus with a deeper, grown-up edge.</span></button>
-        <button class="ftile rev rev-d3" data-pick-flavor="Fruit Punch" style="--flav:var(--aqua)"><span class="im"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="b" data-ph="B-014"><i>AI placeholder image — replace</i></span></span><b>Fruit Punch</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> The classic, minus the sugar.</span></button>
+        <button class="ftile rev" data-pick-flavor="Raspberry" style="--flav:var(--clay)"><span class="im"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="a" data-ph="B-011"><i>AI placeholder image — Prancer producing final</i></span></span><b>Raspberry</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Bright, tart, a little jammy.</span></button>
+        <button class="ftile rev rev-d1" data-pick-flavor="Watermelon" style="--flav:var(--coral)"><span class="im"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="a" data-ph="B-012"><i>AI placeholder image — Prancer producing final</i></span></span><b>Watermelon</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Light, cold, summer in a shaker.</span></button>
+        <button class="ftile rev rev-d2" data-pick-flavor="Blood Orange" style="--flav:var(--sunshine)"><span class="im"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="a" data-ph="B-013"><i>AI placeholder image — Prancer producing final</i></span></span><b>Blood Orange</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Citrus with a deeper, grown-up edge.</span></button>
+        <button class="ftile rev rev-d3" data-pick-flavor="Fruit Punch" style="--flav:var(--aqua)"><span class="im"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="a" data-ph="B-014"><i>AI placeholder image — Prancer producing final</i></span></span><b>Fruit Punch</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> The classic, minus the sugar.</span></button>
       </div>
     </div>
   </section>
@@ -3215,9 +3231,9 @@ body.has-bar .preview-pill{bottom:84px;}
       <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">How to use</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
-        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="b" data-ph="B-022"><i>AI placeholder image — replace</i></span><span class="cap">The scoop</span></div></div>
-        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It dissolves in seconds. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">confirm directions vs. label</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="b" data-ph="B-023"><i>AI placeholder image — replace</i></span><span class="cap">The dissolve</span></div></div>
-        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>That's it. The foundation is handled. Go train, work, live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="b" data-ph="B-024"><i>AI placeholder image — replace</i></span><span class="cap">Done</span></div></div>
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="a" data-ph="B-022"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The scoop</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It dissolves in seconds. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">confirm directions vs. label</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The dissolve</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>That's it. The foundation is handled. Go train, work, live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="a" data-ph="B-024"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">Done</span></div></div>
       </div>
     </div>
   </section>
@@ -3294,10 +3310,8 @@ body.has-bar .preview-pill{bottom:84px;}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">J</span><div class="line"></div><span class="mono-label">Reviews</span></div>
       <h2 class="display rev">Earned,<br><em>not invented.</em></h2>
-      <div class="review-empty rev rev-d1">
-        <b>Reviews open at launch</b>
-        <p>This block connects to the review app once real customers have the product. No star rating shows until there are real reviews behind it.</p>
-      </div>
+      <div class="rgrid"><div class="rcard rev"><span class="stars">★★★★★</span><p><span class="ph-tag" data-k="reviews" data-o="b" data-ph="B-124">tester quote</span> One or two sentences from a real early tester about taste.</p><span class="who">First name L. · Early tester</span></div><div class="rcard rev rev-d1"><span class="stars">★★★★★</span><p><span class="ph-tag" data-k="reviews" data-o="b" data-ph="B-124">tester quote</span> One or two sentences from a real early tester about the daily habit.</p><span class="who">First name L. · Early tester</span></div><div class="rcard rev rev-d2"><span class="stars">★★★★★</span><p><span class="ph-tag" data-k="reviews" data-o="b" data-ph="B-124">tester quote</span> One or two sentences from a real early tester about how it mixes.</p><span class="who">First name L. · Early tester</span></div></div>
+      <p class="ph-note rev" style="margin-top:1.6rem"><b>Layout only &#9656;</b> These cards hold the place for real early-tester quotes. They need real words from real people before the site is public.</p>
     </div>
   </section>
 
@@ -3429,12 +3443,12 @@ body.has-bar .preview-pill{bottom:84px;}
           <div class="ph"><div class="blank"><span class="label">Marcus — training action</span><span class="spec">4:5 photo · lifting, full effort</span></div><span class="ph-img" data-k="slot-action" data-o="m" data-ph="M-047"><i>photo needed — training action shot</i></span></div>
           <div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Why most athletes under-eat fiber</h3><p>You track protein to the gram. Here is the nutrient your plan is probably missing, and what to do about it.</p><span class="meta">By Marcus Filly [tbc] · 5 min read</span></div>
         </a>
-        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/aa494ee14a.jpg" alt=""><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="b" data-ph="B-023"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Soluble vs. insoluble: what it means in your shaker</h3><p>Two kinds of fiber, two different jobs.</p><span class="meta">4 min read</span></div></a>
-        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/b93ac55391.jpg" alt=""><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="b" data-ph="B-022"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The ten-second morning</h3><p>How to build a habit small enough that you never skip it.</p><span class="meta">3 min read</span></div></a>
+        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/aa494ee14a.jpg" alt=""><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Soluble vs. insoluble: what it means in your shaker</h3><p>Two kinds of fiber, two different jobs.</p><span class="meta">4 min read</span></div></a>
+        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/b93ac55391.jpg" alt=""><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="a" data-ph="B-022"><i>AI placeholder image — Prancer producing final</i></span></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The ten-second morning</h3><p>How to build a habit small enough that you never skip it.</p><span class="meta">3 min read</span></div></a>
         <a class="post rev rev-d2" href="#journal-post"><div class="ph"><div class="blank"><span class="label">Marcus — between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div><span class="ph-img" data-k="slot-candid" data-o="m" data-ph="M-048"><i>photo needed — candid between sets</i></span></div><div class="body"><span class="cat">From Marcus · Draft topic</span><h3>How I fuel a training week</h3><p>What stays the same every day, and what changes.</p><span class="meta">By Marcus Filly [tbc] · 6 min read</span></div></a>
-        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/747673fa6d.jpg" alt=""><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="b" data-ph="B-024"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Recipes · Draft topic</span><h3>Three ways to drink Daily that aren't water</h3><p>Smoothie, sparkling, frozen.</p><span class="meta">3 min read</span></div></a>
-        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/86ad8c5ea1.jpg" alt=""><span class="ph-img" data-k="img-86ad8c5ea1.jpg" data-o="b" data-ph="B-037"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Training · Draft topic</span><h3>The boring stuff builds you</h3><p>Why fundamentals outlast every trend in the gym.</p><span class="meta">5 min read</span></div></a>
-        <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt=""><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="b" data-ph="B-014"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>What "third-party tested" actually means</h3><p>How to read a supplement label like a skeptic.</p><span class="meta">4 min read</span></div></a>
+        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/747673fa6d.jpg" alt=""><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="a" data-ph="B-024"><i>AI placeholder image — Prancer producing final</i></span></div><div class="body"><span class="cat">Recipes · Draft topic</span><h3>Three ways to drink Daily that aren't water</h3><p>Smoothie, sparkling, frozen.</p><span class="meta">3 min read</span></div></a>
+        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/86ad8c5ea1.jpg" alt=""><span class="ph-img" data-k="img-86ad8c5ea1.jpg" data-o="a" data-ph="B-037"><i>AI placeholder image — Prancer producing final</i></span></div><div class="body"><span class="cat">Training · Draft topic</span><h3>The boring stuff builds you</h3><p>Why fundamentals outlast every trend in the gym.</p><span class="meta">5 min read</span></div></a>
+        <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt=""><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="a" data-ph="B-014"><i>AI placeholder image — Prancer producing final</i></span></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>What "third-party tested" actually means</h3><p>How to read a supplement label like a skeptic.</p><span class="meta">4 min read</span></div></a>
       </div>
     </div>
   </section>
@@ -3570,7 +3584,7 @@ body.has-bar .preview-pill{bottom:84px;}
     <div class="wrap">
       <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Review tool · not a public page</span></div>
       <h1 class="display">Approvals <em class="aq">list</em></h1>
-      <p class="lead">Every tagged placeholder and to-confirm item on the site, copy and images. <b>Aqua tags (M) go to Marcus's team, yellow tags (B) go to Ben.</b> Click an ID to jump to it on the page.</p>
+      <p class="lead">Every tagged placeholder and to-confirm item on the site, copy and images. <b>Aqua tags go to Marcus's team, yellow tags go to Ben, and coral tags are images Prancer is producing.</b> Click an ID to jump to it on the page.</p>
     </div>
   </header>
   <section class="pg-sec white" style="padding-top:3rem">
@@ -3579,6 +3593,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <button class="on" data-f="all">All</button>
         <button data-f="m">Marcus</button>
         <button data-f="b">Ben</button>
+        <button data-f="a">Prancer</button>
         <button data-f="image">Images only</button>
         <button data-f="copy">Copy only</button>
         <button data-copy-list>Copy list for a doc</button>
@@ -4208,8 +4223,22 @@ function renderCart(){
   document.querySelectorAll('[data-checkout]').forEach(b=>b.disabled=!cart.length);
 }
 let toastT;function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2600);}
+/* PRE-LAUNCH MODE: story + waitlist, no checkout. Add ?store=1 to the address to preview the full store. */
+const PRELAUNCH=!new URLSearchParams(location.search).has('store');
+document.body.classList.toggle('prelaunch',PRELAUNCH);
+function toWaitlist(){
+  const v=document.querySelector('.view.is-on');let sec=v&&v.querySelector('.signup');
+  const go=()=>{sec=document.querySelector('.view.is-on .signup');if(!sec)return;window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-80,behavior:'smooth'});
+    sec.classList.add('is-flash');setTimeout(()=>sec.classList.remove('is-flash'),2200);const i=sec.querySelector('input');if(i)setTimeout(()=>i.focus({preventScroll:true}),500);};
+  if(sec)go();else{location.hash='shop';setTimeout(go,150);}
+}
+if(PRELAUNCH){
+  document.querySelectorAll('.add-cart').forEach(b=>{b.innerHTML='Join the waitlist &#9656;';b.insertAdjacentHTML('afterend','<span class="wl-note">Launching soon · the list gets first access</span>');});
+  const pb=document.getElementById('pdpBarAdd');if(pb)pb.innerHTML='Join the waitlist &#9656;';
+}
 document.addEventListener('click',e=>{
   const add=e.target.closest('.add-cart');
+  if(add&&PRELAUNCH){toWaitlist();return;}
   if(add){
     const box=add.closest('.buy-box');
     const flavor=(box.querySelector('.flav-pill.active')||{textContent:'Raspberry'}).textContent.trim();
@@ -4240,6 +4269,7 @@ tagBtn.addEventListener('click',()=>{
   const off=document.body.classList.toggle('tags-off');
   tagBtn.classList.toggle('off',off);tagBtn.textContent=off?'Tags: off':'Tags: on';
 });
+const OWNER={m:'Marcus',b:'Ben',a:'Prancer'},OWNER_GRP={m:"Marcus's team",b:'Ben',a:'Prancer (Amy) — producing'};
 const VIEW_LABEL={home:'Home','the-fiber':'The Fiber','the-athlete':'The Athlete',faq:'FAQ',shop:'Shop Daily',partners:'Partners',journal:'Journal','journal-post':'Journal article',contact:'Contact',cart:'Cart',shipping:'Shipping Policy','refund-policy':'Refund + Return Policy','subscription-policy':'Subscription Policy',privacy:'Privacy Policy','privacy-choices':'Your Privacy Choices',terms:'Terms of Service',disclaimer:'Health + FDA Disclaimer',accessibility:'Accessibility'};
 function tagContext(el){
   const block=el.closest('p,li,h1,h2,h3,td,summary,details,.chip,.role,.stat,.numcard,.benefit,.ccard,.pcard,.row,.logo-slot,.media-slot,.flav-card,.step,.post,.frame,.foot-biz>div,.col,label,.cart-trust>div,section,header')||el.parentElement;
@@ -4263,21 +4293,21 @@ let apprFilter='all';
 function renderApprovals(){
   const rows=collectTags().filter(r=>apprFilter==='all'||apprFilter===r.o||apprFilter===r.type.toLowerCase());
   const body=document.getElementById('apprBody');let html='',last='';
-  rows.sort((a,b)=>a.o===b.o?0:(a.o==='m'?-1:1));
+  const ord={m:0,b:1,a:2};rows.sort((a,b)=>ord[a.o]-ord[b.o]);
   rows.forEach(r=>{
-    const grp=r.o==='m'?"Marcus's team":'Ben';
+    const grp=OWNER_GRP[r.o];
     if(grp!==last){html+=`<tr class="grp"><td colspan="6">${grp} — ${rows.filter(x=>x.o===r.o).length} items</td></tr>`;last=grp;}
-    html+=`<tr data-o="${r.o}"><td class="id"><a href="#" data-goto="${r.id}">${r.id}</a></td><td>${r.o==='m'?'Marcus':'Ben'}</td><td>${r.type}</td><td><b>${r.need}</b></td><td class="ctx">${r.pages.join(', ')}${r.ctx?' — “'+r.ctx.replace(/</g,'&lt;')+'”':''}</td><td class="box"><i></i></td></tr>`;
+    html+=`<tr data-o="${r.o}"><td class="id"><a href="#" data-goto="${r.id}">${r.id}</a></td><td>${OWNER[r.o]}</td><td>${r.type}</td><td><b>${r.need}</b></td><td class="ctx">${r.pages.join(', ')}${r.ctx?' — “'+r.ctx.replace(/</g,'&lt;')+'”':''}</td><td class="box"><i></i></td></tr>`;
   });
   body.innerHTML=html;
   const all=collectTags();
-  document.getElementById('apprCount').textContent=`${all.length} items · ${all.filter(r=>r.o==='m').length} Marcus · ${all.filter(r=>r.o==='b').length} Ben`;
+  document.getElementById('apprCount').textContent=`${all.length} items · ${all.filter(r=>r.o==='m').length} Marcus · ${all.filter(r=>r.o==='b').length} Ben · ${all.filter(r=>r.o==='a').length} Prancer`;
 }
 document.addEventListener('click',e=>{
   const f=e.target.closest('.appr-bar [data-f]');
   if(f){apprFilter=f.dataset.f;document.querySelectorAll('.appr-bar [data-f]').forEach(b=>b.classList.toggle('on',b===f));renderApprovals();}
   if(e.target.closest('[data-copy-list]')){
-    const tsv=['ID\tOwner\tType\tNeeded\tWhere\tApproved / edit'].concat(collectTags().map(r=>[r.id,r.o==='m'?'Marcus':'Ben',r.type,r.need,r.pages.join(', ')+(r.ctx?' — '+r.ctx:''),''].join('\t'))).join('\n');
+    const tsv=['ID\tOwner\tType\tNeeded\tWhere\tApproved / edit'].concat(collectTags().map(r=>[r.id,OWNER[r.o],r.type,r.need,r.pages.join(', ')+(r.ctx?' — '+r.ctx:''),''].join('\t'))).join('\n');
     (navigator.clipboard?navigator.clipboard.writeText(tsv):Promise.reject()).then(()=>toast('List copied — paste into a doc or sheet'),()=>toast('Copy failed — select the table and copy'));
   }
   const g=e.target.closest('[data-goto]');
@@ -4309,7 +4339,7 @@ document.addEventListener('click',e=>{
   if(q){const v=q.parentElement.querySelector('[data-bqv]');v.textContent=Math.max(1,Math.min(12,+v.textContent+ +q.dataset.bq));}
   const t=e.target.closest('[data-pick-flavor]');
   if(t){const pill=[...pdpBox.querySelectorAll('.flav-pill')].find(p=>p.textContent.trim()===t.dataset.pickFlavor);if(pill)pill.click();toast(t.dataset.pickFlavor+' selected');}
-  if(e.target.closest('#pdpBarAdd')){pdpBox.querySelector('.add-cart').click();}
+  if(e.target.closest('#pdpBarAdd')){if(PRELAUNCH)toWaitlist();else pdpBox.querySelector('.add-cart').click();}
   setTimeout(syncPdpBar,0);
 });
 const barIO=new IntersectionObserver(es=>es.forEach(en=>{
@@ -4328,6 +4358,11 @@ syncPdpBar();
     const box=r.el.classList.contains('ph-img')?r.el.parentElement:r.el;box.classList.add('is-flash');setTimeout(()=>box.classList.remove('is-flash'),4000);};
   if(r.view&&currentRoute().view!==r.view){location.hash=r.view;setTimeout(go,200);}else setTimeout(go,200);
 })();
+
+/* ---------- review pill: switch between pre-launch and full-store preview ---------- */
+(function(){const pill=document.querySelector('.preview-pill');const a=document.createElement('a');
+  const u=new URL(location.href);if(PRELAUNCH){u.searchParams.set('store','1');a.textContent='Pre-launch mode · view store';}else{u.searchParams.delete('store');a.textContent='Store mode · view pre-launch';}
+  a.href=u.toString();pill.appendChild(a);})();
 
 </script>
 
