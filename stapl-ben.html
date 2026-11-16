@@ -84,13 +84,27 @@ label.lab+textarea,label.lab+input{margin-top:.5rem;}
   .nav .btn{padding:.95rem 1.1rem;font-size:.66rem;letter-spacing:.14em;}
 }
 
+.lbl{display:block;color:var(--ink-dim);margin-bottom:.7rem;font-size:.6rem;}
+.lbl .diff,.rev .r i.df{background:var(--clay);color:#fff;padding:.12rem .4rem;margin-left:.5rem;}
+.team{margin-top:1.6rem;border:2px solid var(--espresso);background:#EAF6F3;padding:1rem 1.1rem .4rem;}
+.resp,.cm{background:#fff;border:2px solid var(--espresso);padding:.7rem .9rem;margin-bottom:.7rem;}
+.by{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;}
+.by b{font-size:.92rem;} .by i{font-style:normal;font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);white-space:nowrap;}
+.resp p,.cm p{margin-top:.3rem;font-size:.95rem;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere;}
+.thread{margin-top:2rem;border-top:2px dashed rgba(27,27,29,.35);padding-top:1.3rem;}
+.cm{box-shadow:4px 4px 0 var(--sunshine);} .cm.me{box-shadow:4px 4px 0 var(--accent);}
+.thread .none{font-size:.9rem;color:var(--ink-dim);margin-bottom:.8rem;}
+.addc{display:flex;gap:.6rem;align-items:stretch;} .addc input{margin-top:0;flex:1;} .addc .btn{padding:.8rem 1.2rem;clip-path:none;}
+.rev .r span u{text-decoration:none;font-weight:800;color:var(--espresso);} .rev .r span em{font-style:normal;color:var(--clay);}
+.bar .who{max-width:200px;overflow:hidden;text-overflow:ellipsis;}
+
 </style>
 </head>
 <body>
 <div class="shape a"></div><div class="shape b"></div><div class="shape c"></div>
 <div class="bar">
   <img src="assets/staple-home/stapl-wordmark-bone.png" alt="STÄPL">
-  <span class="who">Ben</span>
+  <span class="who" id="whoami">Ben</span>
   <div class="prog"><i id="progFill"></i></div>
   <span class="ct" id="progCt"></span>
   <span class="save" id="saveState">Not saved yet</span>
@@ -102,50 +116,94 @@ label.lab+textarea,label.lab+input{margin-top:.5rem;}
 <script>
 const FORM={"id": "stapl-form-ben", "title": "STÄPL — Ben review", "kicker": "For Ben", "h1": "Ben,<br>the <em>details.<\/em>", "intro": "These are the product, pricing, shipping and business details the STÄPL site is waiting on. Each answer fills in one or more yellow placeholder tags on the site. The small yellow codes (like B-017) open that exact spot. If you don't know one, skip it and it stays flagged.", "minutes": 30, "questions": [{"id": "b01", "sec": "Launch plan", "type": "choice", "q": "What goes live first?", "opts": ["Pre-launch site: story + waitlist, no checkout", "Pre-orders with a ship date", "Full store, selling now"], "hint": "This decides whether Add to Cart, the cart and the policy pages are switched on."}, {"id": "b02", "sec": "Launch plan", "type": "text", "q": "Target date for the site to go live, and for product to ship", "ph": "Site live: …   First shipments: …"}, {"id": "b03", "sec": "Launch plan", "type": "choice", "q": "Is there a Shopify store and domain for STÄPL yet?", "opts": ["Both exist", "Store yes, domain no", "Neither yet"], "tags": ["B-103"], "textLabel": "Store URL and domain, if they exist"}, {"id": "b04", "sec": "Launch plan", "type": "choice", "q": "The homepage shows \"4.9 · 300+ athlete reviews.\" There are no reviews yet. What should we do?", "show": "★★★★★ 4.9 · 300+ athlete reviews", "opts": ["Remove it until real reviews exist", "Replace with early-tester quotes we can supply", "Something else"], "tags": ["B-002"], "textLabel": "Details (optional)"}, {"id": "b05", "sec": "Launch plan", "type": "choice", "q": "Who is producing final product images (packaging renders and product photography)?", "opts": ["Amy / Prancer", "Our designer", "A photographer we'll hire", "Not decided"], "tags": ["B-003", "B-011", "B-022"], "textLabel": "Expected date (optional)", "hint": "Every food, drink and canister image on the site today is a stand-in."}, {"id": "b06", "sec": "Business details", "type": "text", "q": "Legal entity name", "tags": ["B-074"], "hint": "Exactly as registered. It appears in the footer and every policy."}, {"id": "b07", "sec": "Business details", "type": "text", "q": "Business mailing address", "tags": ["B-075"], "hint": "Must match Shopify and Google Merchant Center exactly, unit number included."}, {"id": "b08", "sec": "Business details", "type": "text", "q": "Customer support email", "tags": ["B-071"]}, {"id": "b09", "sec": "Business details", "type": "text", "q": "Customer support phone number", "tags": ["B-073"], "hint": "Google and Meta both look for a second contact method beside email.", "optional": true}, {"id": "b10", "sec": "Business details", "type": "text", "q": "Support hours and time zone", "tags": ["B-072", "B-123"], "ph": "Mon–Fri, 9am–5pm CT"}, {"id": "b11", "sec": "Business details", "type": "long", "q": "STÄPL social accounts", "tags": ["B-120", "B-121", "B-122"], "ph": "Instagram: …\nYouTube: …\nTikTok: …", "hint": "Leave blank any that don't exist yet."}, {"id": "b12", "sec": "Product facts", "type": "multi", "q": "Which flavors are final for launch?", "opts": ["Raspberry", "Watermelon", "Blood Orange", "Fruit Punch"], "tags": ["B-005", "B-039"], "textLabel": "Any other flavors, or exact names if different", "hint": "The site shows four; the latest packaging file shows three."}, {"id": "b13", "sec": "Product facts", "type": "choice", "q": "What container does Daily ship in?", "opts": ["Canister / tub", "Pouch / bag", "Not final"], "tags": ["B-007"], "textLabel": "Net weight and servings per container", "hint": "The site says \"30-serving canister, 16 oz.\""}, {"id": "b14", "sec": "Product facts", "type": "fact", "q": "Fiber per serving", "show": "7g of fiber per scoop", "tags": ["B-015"]}, {"id": "b15", "sec": "Product facts", "type": "long", "q": "What are the fiber sources, and which are soluble vs. insoluble?", "tags": ["B-055", "B-056", "B-019", "B-029", "B-038"], "hint": "Or just say \"see label\" and send Amy the Supplement Facts panel."}, {"id": "b16", "sec": "Product facts", "type": "long", "q": "Where do the flavor and color come from? Is \"real fruit\" accurate?", "tags": ["B-057", "B-010"], "hint": "The site says \"real-fruit flavor\" and \"nothing artificial\" throughout."}, {"id": "b17", "sec": "Product facts", "type": "text", "q": "What is it sweetened with?", "tags": ["B-058", "B-030", "B-040"]}, {"id": "b18", "sec": "Product facts", "type": "fact", "q": "Sugar", "show": "Zero sugar / 0g sugar", "tags": ["B-006"]}, {"id": "b19", "sec": "Product facts", "type": "long", "q": "Any other ingredients (acids, salts, flow agents)?", "tags": ["B-059", "B-051"], "optional": true}, {"id": "b20", "sec": "Product facts", "type": "long", "q": "Supplement Facts numbers", "tags": ["B-032", "B-033", "B-034", "B-035", "B-060"], "ph": "Serving size (g): …\nCalories: …\nTotal carbohydrate: …\nSodium: …", "hint": "Or send Amy the panel file and skip this."}, {"id": "b21", "sec": "Product facts", "type": "long", "q": "Allergen and dietary statement", "tags": ["B-042", "B-115"], "ph": "Vegan? Gluten-free? Dairy-free? Made in a facility that also processes …", "hint": "From the manufacturer."}, {"id": "b22", "sec": "Product facts", "type": "choice", "q": "Is Daily third-party tested?", "opts": ["Yes, every batch", "Yes, periodically", "Planned, not in place yet", "No"], "tags": ["B-009", "B-031", "B-041"], "textLabel": "Lab name and what is tested"}, {"id": "b23", "sec": "Product facts", "type": "choice", "q": "Can we publish the test results on the product page?", "opts": ["Yes", "On request only", "No"], "tags": ["B-064"], "note": false}, {"id": "b24", "sec": "Product facts", "type": "long", "q": "Label directions and warnings", "tags": ["B-043", "B-052", "B-063", "B-114"], "show": "One level scoop in 8 to 12 oz of water, once a day.", "showLabel": "Our draft", "hint": "Give us the exact directions and any warning text from the label."}, {"id": "b25", "sec": "Product facts", "type": "choice", "q": "Can it be mixed into protein shakes or other drinks?", "opts": ["Yes", "Water only", "Need to check with the formulator"], "tags": ["B-045"], "note": false}, {"id": "b26", "sec": "Product facts", "type": "choice", "q": "Are single-serve sachets really coming?", "show": "Single-serve sachets — coming soon", "opts": ["Yes, keep the line", "Maybe — soften it", "No — remove it"], "tags": ["B-008"], "note": false}, {"id": "b27", "sec": "Claims to approve", "type": "approve", "q": "The fiber-gap claim", "show": "Most people get about half the fiber they need — and most fiber products taste like punishment.", "tags": ["B-004", "B-027"]}, {"id": "b28", "sec": "Claims to approve", "type": "approve", "q": "Taste claims", "show": "Daily is 7g of clean, functional fiber that drinks like actual fruit. Zero sugar, nothing artificial, no chalky aftertaste. It dissolves in seconds.", "tags": ["B-010", "B-015"]}, {"id": "b29", "sec": "Claims to approve", "type": "approve", "q": "Health benefit line", "show": "Gut + heart + performance support. Fiber is the most under-consumed nutrient in the modern diet. Fix the gap first.", "tags": ["B-016"], "hint": "\"Heart\" is the riskiest word here for a supplement. Needs a compliance check."}, {"id": "b30", "sec": "Claims to approve", "type": "approve", "q": "Benefit cards on The Fiber page", "show": "Keeps things regular: fiber adds bulk and holds water, which supports regular, comfortable digestion.\nFeeds your gut: fermentable fibers are food for the bacteria that live in your gut.\nHelps you feel full: fiber slows things down, which helps a meal or a shake keep you satisfied for longer.", "tags": ["B-028"]}, {"id": "b31", "sec": "Claims to approve", "type": "approve", "q": "Tolerance advice", "show": "If you're new to fiber, start with half a scoop for the first week and drink plenty of water.", "tags": ["B-020", "B-044", "B-036"]}, {"id": "b32", "sec": "Claims to approve", "type": "approve", "q": "Comparison with other fiber powders", "show": "The usual fiber powder: gritty, beige and hard to finish · flavored like orange-ish candy, or not at all · added sugar or artificial sweeteners · forgotten by Thursday.\nDaily: dissolves in seconds and drinks like fruit · four real-fruit flavors · zero sugar, nothing artificial · one scoop, ten seconds, every morning.", "tags": ["B-061"]}, {"id": "b33", "sec": "Claims to approve", "type": "approve", "q": "Flavor tasting notes", "show": "Raspberry: bright, tart, a little jammy.\nWatermelon: light, cold, summer in a shaker.\nBlood Orange: citrus with a deeper, grown-up edge.\nFruit Punch: the classic, minus the sugar.", "tags": ["B-062"]}, {"id": "b34", "sec": "Claims to approve", "type": "fact", "q": "\"No proprietary blends\"", "show": "No proprietary blends — full label transparency.", "tags": ["B-015"]}, {"id": "b35", "sec": "Pricing + subscription", "type": "text", "q": "One-time price per container", "tags": ["B-017"], "ph": "$39.00"}, {"id": "b36", "sec": "Pricing + subscription", "type": "text", "q": "Subscription discount and delivery cadence", "tags": ["B-098", "B-096", "B-097"], "ph": "20% off, every 30 days"}, {"id": "b37", "sec": "Pricing + subscription", "type": "text", "q": "Which subscription app will the store use?", "optional": true}, {"id": "b38", "sec": "Pricing + subscription", "type": "text", "q": "How many days before each renewal do we email a reminder?", "tags": ["B-100"], "ph": "3"}, {"id": "b39", "sec": "Pricing + subscription", "type": "choice", "q": "Any cancellation fee or minimum number of orders?", "opts": ["None — cancel anytime", "There is a minimum"], "tags": ["B-101", "B-021", "B-049", "B-054"], "textLabel": "If there is a minimum, what is it?"}, {"id": "b40", "sec": "Pricing + subscription", "type": "text", "q": "If a subscription payment fails, how many retries before it pauses?", "tags": ["B-102"], "optional": true}, {"id": "b41", "sec": "Pricing + subscription", "type": "text", "q": "How much notice do subscribers get before a price change?", "tags": ["B-099"], "ph": "30 days", "optional": true}, {"id": "b42", "sec": "Shipping", "type": "multi", "q": "Where do we ship?", "opts": ["Contiguous US", "Alaska + Hawaii", "PO boxes", "APO / FPO", "US territories", "Canada", "Other international"], "tags": ["B-046", "B-077"]}, {"id": "b43", "sec": "Shipping", "type": "text", "q": "Free-shipping threshold", "tags": ["B-001", "B-081", "B-047", "B-053"], "ph": "$50", "hint": "Shown in the top bar, the cart progress bar and three policies. Must match Shopify."}, {"id": "b44", "sec": "Shipping", "type": "text", "q": "Standard shipping price and delivery window", "tags": ["B-080", "B-082", "B-048"], "ph": "$5.95 · 3 to 7 business days"}, {"id": "b45", "sec": "Shipping", "type": "choice", "q": "Do we offer expedited shipping?", "opts": ["Yes", "No"], "tags": ["B-083", "B-084"], "textLabel": "Price and delivery window"}, {"id": "b46", "sec": "Shipping", "type": "text", "q": "Order processing time and daily cutoff", "tags": ["B-078", "B-079"], "ph": "1 to 2 business days · orders by 12pm CT"}, {"id": "b47", "sec": "Shipping", "type": "text", "q": "How long does a customer have to report a damaged or missing order?", "tags": ["B-085", "B-094"], "ph": "30 days"}, {"id": "b48", "sec": "Shipping", "type": "choice", "q": "If an order comes back undeliverable, do we refund the original shipping?", "opts": ["Refund product only", "Refund everything"], "tags": ["B-086"], "note": false}, {"id": "b49", "sec": "Returns + guarantee", "type": "text", "q": "Return window (days from delivery)", "tags": ["B-089"], "ph": "30"}, {"id": "b50", "sec": "Returns + guarantee", "type": "choice", "q": "What does the guarantee cover?", "show": "30-day guarantee on your first canister.", "opts": ["First container only, opened is fine", "Any order, opened is fine", "Unopened product only"], "tags": ["B-065", "B-087", "B-088", "B-050", "B-018"], "textLabel": "Anything to add? One per customer?"}, {"id": "b51", "sec": "Returns + guarantee", "type": "choice", "q": "Who pays return shipping?", "opts": ["Customer", "STÄPL", "No return needed — refund without sending it back"], "tags": ["B-090"], "note": false}, {"id": "b52", "sec": "Returns + guarantee", "type": "choice", "q": "Is the original shipping charge refunded?", "opts": ["No", "Yes"], "tags": ["B-091"], "note": false}, {"id": "b53", "sec": "Returns + guarantee", "type": "text", "q": "How fast do we reply to a return request, and how fast is the refund issued?", "tags": ["B-092", "B-093"], "ph": "Reply in 1 to 2 business days · refund in 5 to 10"}, {"id": "b54", "sec": "Returns + guarantee", "type": "long", "q": "Anything that can't be returned?", "tags": ["B-095"], "ph": "Gift cards, final-sale items …", "optional": true}, {"id": "b55", "sec": "Partners + support", "type": "long", "q": "Partner terms: wholesale pricing, case pricing and affiliate commission", "tags": ["B-066", "B-067", "B-068"], "ph": "Wholesale: …\nCase pricing / minimum: …\nAffiliate commission: …", "hint": "If not decided, say so and the Partners page will say \"terms on request.\""}, {"id": "b56", "sec": "Partners + support", "type": "text", "q": "How quickly do we reply to partner applications and to customer messages?", "tags": ["B-069", "B-070", "B-119"], "ph": "Partners: 3 business days · Customers: 1 business day"}, {"id": "b57", "sec": "Privacy + legal", "type": "multi", "q": "Which ad, analytics and marketing tools will the site use?", "opts": ["Meta pixel", "Google Analytics / Ads", "TikTok pixel", "Klaviyo", "Postscript or other SMS", "Not decided"], "tags": ["B-104"], "textLabel": "Any others"}, {"id": "b58", "sec": "Privacy + legal", "type": "choice", "q": "Will we send marketing texts (SMS)?", "opts": ["Yes", "No", "Later"], "tags": ["B-111"], "note": false}, {"id": "b59", "sec": "Privacy + legal", "type": "choice", "q": "Will we market to the EU or UK?", "opts": ["No, US only", "Yes"], "tags": ["B-107"], "note": false}, {"id": "b60", "sec": "Privacy + legal", "type": "choice", "q": "Cookie banner and \"Do Not Sell or Share\" opt-out", "opts": ["Use Shopify's built-in privacy tools", "We have another consent tool", "Not decided"], "tags": ["B-105", "B-106", "B-108", "B-109"], "textLabel": "Which tool, if another"}, {"id": "b61", "sec": "Privacy + legal", "type": "text", "q": "Which state's law governs the Terms of Service?", "tags": ["B-112"], "ph": "State where the entity is registered"}, {"id": "b62", "sec": "Privacy + legal", "type": "choice", "q": "Will a lawyer review the policies before launch?", "opts": ["Yes", "No — use the templates", "Not decided"], "tags": ["B-113", "B-117", "B-110"], "hint": "The policy pages are template drafts, including the CrossFit trademark line and discount-code rules.", "note": false}, {"id": "b63", "sec": "Privacy + legal", "type": "long", "q": "Anything else we should know before launch?", "optional": true}]};
 const FB='https://prancer-website-devs-default-rtdb.firebaseio.com/pages/'+FORM.id;
-const SITE='staple-home.html';
-const LS='stapl-form-'+FORM.id;
-let S={name:'',answers:{},pos:-1,done:false,updated:0};
-try{const l=JSON.parse(localStorage.getItem(LS)||'null');if(l)S=Object.assign(S,l);}catch(e){}
+const SITE='staple-home.html',LS='stapl-form2-'+FORM.id;
 const Q=FORM.questions,app=document.getElementById('app');
+/* me = this person on this device.  R = the shared form everyone sees. */
+let me={name:'',key:'',pos:-1},R={answers:{},comments:{},meta:{}},mine={};
+try{const l=JSON.parse(localStorage.getItem(LS)||'null');if(l){me=Object.assign(me,l.me||{});mine=l.mine||{};}}catch(e){}
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const slug=n=>n.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'someone';
+const when=t=>t?new Date(t).toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'';
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2600);}
 function setSave(c,m){const e=document.getElementById('saveState');e.className='save '+c;e.textContent=m;}
-/* ---------- saving: this browser first, then online ---------- */
+function saveLocal(){try{localStorage.setItem(LS,JSON.stringify({me,mine}));}catch(e){}}
+/* ---------- shared data helpers ---------- */
+const has=a=>!!a&&(!!a.choice||(a.multi&&a.multi.length)||(a.text&&a.text.trim()));
+function responses(q){const o=Object.assign({},(R.answers||{})[q.id]||{});if(mine[q.id])o[me.key]=mine[q.id];
+  return Object.entries(o).filter(([k,a])=>has(a)).map(([k,a])=>Object.assign({key:k},a)).sort((x,y)=>(x.ts||0)-(y.ts||0));}
+function comments(q){return Object.values(((R.comments||{})[q.id])||{}).sort((x,y)=>(x.ts||0)-(y.ts||0));}
+const isAns=q=>responses(q).length>0;
+const answered=()=>Q.filter(isAns).length;
+function ansLine(q,a){return [a.choice,(a.multi||[]).join(', '),a.text&&a.text!==q.show?a.text:(a.choice==='Approved with my edit'?a.text:''),a.note?('Note: '+a.note):''].filter(Boolean).join('\n');}
+function differ(q){const r=responses(q).map(a=>a.choice||(a.multi||[]).join(',')).filter(Boolean);return new Set(r).size>1;}
+function progress(){const n=answered();document.getElementById('progFill').style.width=(n/Q.length*100)+'%';document.getElementById('progCt').textContent=n+' / '+Q.length;
+  document.getElementById('whoami').textContent=me.name?('You: '+me.name):FORM.who;}
+/* ---------- saving + syncing ---------- */
 let pending={},timer;
-function saveLocal(){S.updated=Date.now();try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}}
-function queue(path,val){pending[path]=val;setSave('','Saving…');clearTimeout(timer);timer=setTimeout(flush,700);}
+function queue(path,val){pending[path]=val;setSave('','Saving…');clearTimeout(timer);timer=setTimeout(flush,650);}
 function flush(){
-  const body=Object.assign({},pending,{'meta/name':S.name,'meta/updated':Date.now(),'meta/done':S.done,'meta/answered':answered()});pending={};
-  return fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw 0;setSave('ok','Saved ✓');}).catch(()=>{setSave('err','Saved on this device only');});
+  if(!Object.keys(pending).length)return Promise.resolve();
+  const body=Object.assign({},pending);body['meta/people/'+me.key]={name:me.name,last:Date.now()};body['meta/updated']=Date.now();pending={};
+  return fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw 0;setSave('ok','Saved ✓');})
+    .catch(()=>{Object.assign(pending,body);setSave('err','Not saved online yet — will retry');});
 }
-function isAns(a){return !!a&&(!!a.choice||(a.multi&&a.multi.length)||(a.text&&a.text.trim())||a.skip);}
-function answered(){return Q.filter(q=>isAns(S.answers[q.id])).length;}
-function setA(q,patch){S.answers[q.id]=Object.assign({},S.answers[q.id],patch,{q:q.q,tags:(q.tags||[]).join(' ')});delete S.answers[q.id].skip;if(patch.skip)S.answers[q.id].skip=true;saveLocal();queue('answers/'+q.id,S.answers[q.id]);progress();}
-function progress(){const n=answered();document.getElementById('progFill').style.width=(n/Q.length*100)+'%';document.getElementById('progCt').textContent=n+' / '+Q.length;}
+function setMine(q,patch){mine[q.id]=Object.assign({},mine[q.id]||((R.answers||{})[q.id]||{})[me.key]||{},patch,{name:me.name,ts:Date.now()});saveLocal();queue('answers/'+q.id+'/'+me.key,mine[q.id]);progress();}
+let lastSig='';
+function pull(first){
+  return fetch(FB+'.json').then(r=>r.json()).then(d=>{
+    R=Object.assign({answers:{},comments:{},meta:{}},d||{});
+    Object.keys(mine).forEach(id=>{const r=((R.answers||{})[id]||{})[me.key];if(r&&(r.ts||0)>=(mine[id].ts||0))delete mine[id];});   // online copy caught up
+    setSave(Object.keys(pending).length?'':'ok',Object.keys(pending).length?'Saving…':'In sync ✓');progress();
+    const sig=JSON.stringify([R.answers,R.comments]);
+    if(sig!==lastSig){lastSig=sig;if(!first)refreshShared();}
+  }).catch(()=>setSave('err','Offline — will sync when back'));
+}
+setInterval(()=>{if(!document.hidden){flush();pull();}},6000);
+addEventListener('focus',()=>pull());
 /* ---------- screens ---------- */
 function tagLinks(q){return (q.tags||[]).map(t=>`<a class="tagid" target="stapl-site" href="${SITE}?tag=${t}" title="See this on the site">${t} ↗</a>`).join('');}
 function intro(){
   const secs=[...new Set(Q.map(q=>q.sec))];
+  const people=Object.values((R.meta||{}).people||{}).map(p=>p.name).filter(Boolean);
   app.innerHTML=`<div class="card">
     <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">${esc(FORM.kicker)}</span></div>
     <h1 class="display">${FORM.h1}</h1>
     <p class="hint">${FORM.intro}</p>
-    <div class="chips"><span class="chip">${Q.length} questions</span><span class="chip">About ${FORM.minutes} minutes</span><span class="chip">Saves as you go</span></div>
-    <div class="secs">${secs.map((s,i)=>`<div>${String(i+1).padStart(2,'0')} · ${esc(s)}<span>${Q.filter(q=>q.sec===s).length} questions</span></div>`).join('')}</div>
-    <label class="lab" for="nm">Who is filling this in?</label><input type="text" id="nm" placeholder="Your name" value="${esc(S.name)}">
-    <div class="nav"><span></span><button class="btn" id="start">${answered()?'Pick up where I left off':'Start'} ▸</button></div></div>`;
-  document.getElementById('start').onclick=()=>{S.name=document.getElementById('nm').value.trim();saveLocal();queue('meta/started',Date.now());
-    const first=Q.findIndex(q=>!isAns(S.answers[q.id]));go(first<0?Q.length:first);};
+    <p class="hint"><b>This is one shared form.</b> Anyone on your team can open this link. Everyone's answers and comments stay on each question with their name, so you can see what's been said and add to it.</p>
+    <div class="chips"><span class="chip">${Q.length} questions</span><span class="chip">About ${FORM.minutes} minutes</span><span class="chip">Shared + saves as you go</span></div>
+    ${people.length?`<p class="hint mono" style="font-size:.62rem">Already here: ${people.map(esc).join(' · ')}</p>`:''}
+    <div class="secs">${secs.map((s,i)=>`<div>${String(i+1).padStart(2,'0')} · ${esc(s)}<span>${Q.filter(q=>q.sec===s&&isAns(q)).length} / ${Q.filter(q=>q.sec===s).length} answered</span></div>`).join('')}</div>
+    <label class="lab" for="nm">Your name (shown next to your answers and comments)</label><input type="text" id="nm" placeholder="First and last name" value="${esc(me.name)}">
+    <div class="nav"><button class="btn ghost" id="toReview">See all answers so far</button><button class="btn" id="start">${answered()?'Continue':'Start'} ▸</button></div></div>`;
+  const need=()=>{const n=document.getElementById('nm').value.trim();if(!n){toast('Add your name first');document.getElementById('nm').focus();return false;}
+    if(n!==me.name){me.name=n;me.key=slug(n);mine={};}saveLocal();queue('meta/people/'+me.key,{name:me.name,last:Date.now()});progress();return true;};
+  document.getElementById('start').onclick=()=>{if(!need())return;pull(true).then(()=>{const first=Q.findIndex(q=>!isAns(q));go(first<0?Q.length:first);});};
+  document.getElementById('toReview').onclick=()=>{if(need())go(Q.length);};
 }
-function go(i){S.pos=i;saveLocal();if(i<0)intro();else if(i>=Q.length)review();else question(i);window.scrollTo({top:0,behavior:'instant'});}
+function go(i){me.pos=i;saveLocal();if(i<0)intro();else if(i>=Q.length)review();else question(i);window.scrollTo({top:0,behavior:'instant'});if(i>=0)pull();}
 const KEYS='ABCDEFGH';
+function othersHTML(q){
+  const rs=responses(q).filter(a=>a.key!==me.key);
+  if(!rs.length)return '';
+  return `<div class="team"><span class="mono lbl">Already answered by your team${differ(q)?' <b class="diff">answers differ</b>':''}</span>${rs.map(a=>`<div class="resp"><div class="by"><b>${esc(a.name||a.key)}</b><i>${when(a.ts)}</i></div><p>${esc(ansLine(q,a))}</p></div>`).join('')}</div>`;
+}
+function threadHTML(q){
+  const cs=comments(q);
+  return `<span class="mono lbl">Comments${cs.length?' · '+cs.length:''}</span>${cs.map(c=>`<div class="cm ${slug(c.name||'')===me.key?'me':''}"><div class="by"><b>${esc(c.name)}</b><i>${when(c.ts)}</i></div><p>${esc(c.text)}</p></div>`).join('')||'<p class="none">No comments yet.</p>'}`;
+}
+function refreshShared(){
+  if(me.pos>=0&&me.pos<Q.length){const q=Q[me.pos],o=document.getElementById('others'),t=document.getElementById('threadList');if(o)o.innerHTML=othersHTML(q);if(t)t.innerHTML=threadHTML(q);}
+  else if(me.pos>=Q.length){const y=scrollY;review();window.scrollTo({top:y,behavior:'instant'});}
+  else if(me.pos<0&&document.activeElement.id!=='nm'){intro();}
+}
 function question(i){
-  const q=Q[i],a=S.answers[q.id]||{};
+  const q=Q[i],a=mine[q.id]||((R.answers||{})[q.id]||{})[me.key]||{};
   const secIdx=[...new Set(Q.map(x=>x.sec))].indexOf(q.sec)+1;
   let body='';
   const opts=q.type==='approve'?['Approved as written','Approved with my edit','Do not use this']
     :q.type==='fact'?['Correct','Not quite — here is the fix','Remove it']:(q.opts||[]);
   if(q.show)body+=`<div class="copy"><small>${esc(q.showLabel||'On the site now')}</small>${esc(q.show)}</div>`;
+  body+=`<div id="others">${othersHTML(q)}</div><span class="mono lbl" style="margin-top:1.6rem">Your answer · ${esc(me.name)}</span>`;
   if(opts.length)body+=`<div class="opts ${opts.length<=4&&opts.every(o=>o.length<26)&&q.type!=='approve'&&q.type!=='fact'?'row':''}">${opts.map((o,n)=>{
       const on=q.type==='multi'?(a.multi||[]).includes(o):a.choice===o;
       return `<button class="opt ${on?'on':''}" data-o="${esc(o)}"><span class="k"><span>${KEYS[n]||''}</span></span>${esc(o)}</button>`;}).join('')}</div>`;
@@ -154,64 +212,65 @@ function question(i){
   const showText=needsText||q.note!==false;
   if(showText)body+=`<div id="tx" class="${(q.type==='approve'&&a.choice!=='Approved with my edit')||(q.type==='fact'&&a.choice!=='Not quite — here is the fix')?'hide':''}">${textLabel?`<label class="lab">${esc(textLabel)}</label>`:''}
       ${q.type==='text'?`<input type="text" id="t" placeholder="${esc(q.ph||'')}" value="${esc(a.text||'')}">`:`<textarea id="t" class="${q.type==='long'||q.type==='approve'?'tall':''}" placeholder="${esc(q.ph||'')}">${esc(a.text||(q.type==='approve'&&a.choice==='Approved with my edit'?q.show:''))}</textarea>`}</div>`;
-  if(q.type==='approve'||q.type==='fact')body+=`<label class="lab">Note for the STÄPL team (optional)</label><input type="text" id="note" value="${esc(a.note||'')}">`;
+  body+=`<div class="thread"><div id="threadList">${threadHTML(q)}</div>
+      <div class="addc"><input type="text" id="cmt" placeholder="Add a comment for the team…"><button class="btn dark" id="cmtAdd">Post</button></div></div>`;
   app.innerHTML=`<div class="card">
     <div class="kick mono"><span class="n">${String(i+1).padStart(2,'0')} / ${Q.length}</span><span class="ln"></span><span class="sec">${String(secIdx).padStart(2,'0')} · ${esc(q.sec)}</span>${tagLinks(q)}</div>
     <h2 class="q">${esc(q.q)}</h2>${q.hint?`<p class="hint">${esc(q.hint)}</p>`:''}
     ${body}
-    <div class="nav"><button class="btn ghost" id="back">◂ Back</button><span style="display:flex;gap:1.2rem;align-items:center"><button class="skip" id="skip">${q.optional?'Skip (optional)':'Not sure — skip for now'}</button><button class="btn" id="next">${i===Q.length-1?'Review answers':'Next'} ▸</button></span></div></div>`;
-  const t=document.getElementById('t'),note=document.getElementById('note'),tx=document.getElementById('tx');
+    <div class="nav"><button class="btn ghost" id="back">◂ Back</button><span style="display:flex;gap:1.2rem;align-items:center"><button class="skip" id="skip">${q.optional?'Skip (optional)':'Skip for now'}</button><button class="btn" id="next">${i===Q.length-1?'Review all answers':'Next'} ▸</button></span></div></div>`;
+  const t=document.getElementById('t'),tx=document.getElementById('tx');
   app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
     const o=b.dataset.o;
-    if(q.type==='multi'){const m=new Set((S.answers[q.id]||{}).multi||[]);m.has(o)?m.delete(o):m.add(o);setA(q,{multi:[...m]});b.classList.toggle('on');return;}
-    setA(q,{choice:o});app.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',x===b));
+    if(q.type==='multi'){const m=new Set((mine[q.id]||a).multi||[]);m.has(o)?m.delete(o):m.add(o);setMine(q,{multi:[...m]});b.classList.toggle('on');return;}
+    setMine(q,{choice:o});app.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',x===b));
     if(q.type==='approve'){const ed=o==='Approved with my edit';tx.classList.toggle('hide',!ed);if(ed&&!t.value){t.value=q.show;}if(ed)t.focus();}
     else if(q.type==='fact'){const fx=o==='Not quite — here is the fix';tx.classList.toggle('hide',!fx);if(fx)t.focus();}
-    else if(q.note===false){setTimeout(()=>go(i+1),260);}
   });
-  if(t)t.oninput=()=>setA(q,{text:t.value});
-  if(note)note.oninput=()=>setA(q,{note:note.value});
+  if(t)t.oninput=()=>setMine(q,{text:t.value});
+  const cmt=document.getElementById('cmt');
+  const post=()=>{const v=cmt.value.trim();if(!v)return;const c={name:me.name,text:v,ts:Date.now()};const id='c'+c.ts+Math.random().toString(36).slice(2,6);
+    R.comments=R.comments||{};(R.comments[q.id]=R.comments[q.id]||{})[id]=c;queue('comments/'+q.id+'/'+id,c);cmt.value='';document.getElementById('threadList').innerHTML=threadHTML(q);flush();};
+  document.getElementById('cmtAdd').onclick=post;cmt.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();post();}};
   document.getElementById('back').onclick=()=>go(i-1);
-  document.getElementById('next').onclick=()=>go(i+1);
-  document.getElementById('skip').onclick=()=>{if(!isAns(S.answers[q.id]))setA(q,{skip:true});go(i+1);};
+  document.getElementById('next').onclick=()=>{flush();go(i+1);};
+  document.getElementById('skip').onclick=()=>go(i+1);
 }
-function ansText(q){const a=S.answers[q.id];if(!a||a.skip&&!a.choice&&!a.text)return '';
-  return [a.choice,(a.multi||[]).join(', '),a.text&&a.text!==q.show?a.text:(a.choice==='Approved with my edit'?a.text:''),a.note?('Note: '+a.note):''].filter(Boolean).join('\n');}
 function summary(){
-  let out=`${FORM.title}\nFilled in by: ${S.name||'(no name)'}\n${new Date().toLocaleString()}\n`;let sec='';
+  let out=`${FORM.title}\n${new Date().toLocaleString()}\n`;let sec='';
   Q.forEach((q,i)=>{if(q.sec!==sec){sec=q.sec;out+=`\n== ${sec} ==\n`;}
-    out+=`\n${i+1}. ${q.q}${q.tags&&q.tags.length?' ['+q.tags.join(', ')+']':''}\n${ansText(q)||'(not answered)'}\n`;});
+    out+=`\n${i+1}. ${q.q}${q.tags&&q.tags.length?' ['+q.tags.join(', ')+']':''}\n`;
+    const rs=responses(q);out+=rs.length?rs.map(a=>`- ${a.name||a.key}: ${ansLine(q,a).replace(/\n/g,' / ')}`).join('\n')+'\n':'(not answered)\n';
+    comments(q).forEach(c=>out+=`  comment — ${c.name}: ${c.text}\n`);});
   return out;
 }
 function review(){
-  const miss=Q.filter(q=>!isAns(S.answers[q.id])||(S.answers[q.id].skip&&!S.answers[q.id].choice&&!S.answers[q.id].text));
+  const miss=Q.filter(q=>!isAns(q)),diffs=Q.filter(differ);
   let sec='',rows='';
   Q.forEach((q,i)=>{if(q.sec!==sec){sec=q.sec;rows+=`<h3>${esc(sec)}</h3>`;}
-    const tx=ansText(q);rows+=`<button class="r ${tx?'':'miss'}" data-i="${i}"><b>${i+1}. ${esc(q.q)}</b><i>${tx?'Answered':'Open'}</i><span>${esc(tx||'Tap to answer')}</span></button>`;});
+    const rs=responses(q),cs=comments(q);
+    rows+=`<button class="r ${rs.length?'':'miss'}" data-i="${i}"><b>${i+1}. ${esc(q.q)}</b><i class="${differ(q)?'df':''}">${!rs.length?'Open':differ(q)?'Answers differ':'Answered'}</i>
+      <span>${rs.length?rs.map(a=>`<u>${esc(a.name||a.key)}</u> ${esc(ansLine(q,a))}`).join('\n'):'Tap to answer'}${cs.length?`\n<em>${cs.length} comment${cs.length>1?'s':''}: ${esc(cs[cs.length-1].name)} — ${esc(cs[cs.length-1].text)}</em>`:''}</span></button>`;});
+  const done=((R.meta||{}).submitted||{})[me.key];
   app.innerHTML=`<div class="card">
-    <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">Review</span></div>
-    <h1 class="display" style="font-size:clamp(2.2rem,6vw,4rem)">${miss.length?`${miss.length} still <em>open.</em>`:'All <em>done.</em>'}</h1>
-    <p class="hint">${miss.length?'Tap any row to answer or change it. You can also submit now and come back to the open ones later.':'Tap any row to change an answer. When you are happy, submit.'}</p>
-    <div class="nav"><button class="btn ghost" id="back">◂ Back to questions</button><button class="btn" id="submit">${S.done?'Submit again':'Submit to the STÄPL team'} ▸</button></div>
-    <div class="nav" style="margin-top:1rem;justify-content:flex-start"><button class="btn dark" id="copy">Copy my answers</button><button class="btn dark" id="mail">Email my answers</button></div>
+    <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">Everyone's answers</span></div>
+    <h1 class="display" style="font-size:clamp(2.2rem,6vw,4rem)">${miss.length?`${miss.length} still <em>open.</em>`:'All <em>answered.</em>'}</h1>
+    <p class="hint">${diffs.length?`<b>${diffs.length} question${diffs.length>1?'s have':' has'} answers that differ</b> between teammates. `:''}Tap any row to answer it, change your answer or add a comment. Mark yourself done when you've said everything you need to.</p>
+    <div class="nav"><button class="btn ghost" id="back">◂ Back to questions</button><button class="btn" id="submit">${done?'You\'re marked done ✓':'Mark me as done'} ▸</button></div>
+    <div class="nav" style="margin-top:1rem;justify-content:flex-start"><button class="btn dark" id="copy">Copy all answers</button><button class="btn dark" id="mail">Email all answers</button></div>
     <div class="rev">${rows}</div></div>`;
   app.querySelectorAll('.r').forEach(r=>r.onclick=()=>go(+r.dataset.i));
-  document.getElementById('back').onclick=()=>go(Q.length-1);
+  document.getElementById('back').onclick=()=>go(Math.max(0,Q.findIndex(q=>!isAns(q))));
   const copy=()=>navigator.clipboard.writeText(summary());
   document.getElementById('copy').onclick=()=>copy().then(()=>toast('Answers copied'),()=>toast('Copy failed — select the list below'));
   document.getElementById('mail').onclick=()=>{copy().catch(()=>{});
-    location.href='mailto:?subject='+encodeURIComponent(FORM.title+' — answers from '+(S.name||''))+'&body='+encodeURIComponent('My answers are copied to the clipboard. Paste them below this line and send to Amy.\n\n');};
-  document.getElementById('submit').onclick=()=>{S.done=true;saveLocal();queue('meta/submitted',Date.now());flush().then(()=>{
-    app.querySelector('h1').innerHTML='Sent. <em>Thank you.</em>';app.querySelector('.hint').textContent='Your answers are saved for the STÄPL team. You can still come back to this link and change anything.';toast('Submitted');window.scrollTo({top:0});});};
+    location.href='mailto:?subject='+encodeURIComponent(FORM.title+' — answers')+'&body='+encodeURIComponent('The answers are copied to the clipboard. Paste them below this line and send to Amy.\n\n');};
+  document.getElementById('submit').onclick=()=>{R.meta=R.meta||{};(R.meta.submitted=R.meta.submitted||{})[me.key]=Date.now();queue('meta/submitted/'+me.key,Date.now());flush().then(()=>{toast('Marked done — thank you');review();});};
 }
-/* ---------- resume from the online copy if this device has nothing newer ---------- */
-progress();
-fetch(FB+'.json').then(r=>r.json()).then(d=>{
-  if(d&&d.answers){const remoteNewer=!S.updated||((d.meta&&d.meta.updated)||0)>S.updated;
-    if(remoteNewer){S.answers=Object.assign({},S.answers,d.answers);if(d.meta&&d.meta.name&&!S.name)S.name=d.meta.name;saveLocal();}}
-  setSave('ok','Connected ✓');progress();if(S.pos<0)intro();
-}).catch(()=>setSave('err','Offline — saving on this device'));
-go(S.pos>=0&&answered()?-1:-1);
+/* ---------- start ---------- */
+document.getElementById('whoami').style.cursor='pointer';document.getElementById('whoami').title='Change name';document.getElementById('whoami').onclick=()=>go(-1);
+progress();intro();
+pull(true).then(()=>{lastSig=JSON.stringify([R.answers,R.comments]);if(me.pos<0)intro();});
 
 </script>
 </body>

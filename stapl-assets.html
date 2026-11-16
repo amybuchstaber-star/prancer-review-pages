@@ -79,6 +79,20 @@ label.lab+textarea,label.lab+input{margin-top:.5rem;}
   .nav .btn{padding:.95rem 1.1rem;font-size:.66rem;letter-spacing:.14em;}
 }
 
+.lbl{display:block;color:var(--ink-dim);margin-bottom:.7rem;font-size:.6rem;}
+.lbl .diff,.rev .r i.df{background:var(--clay);color:#fff;padding:.12rem .4rem;margin-left:.5rem;}
+.team{margin-top:1.6rem;border:2px solid var(--espresso);background:#EAF6F3;padding:1rem 1.1rem .4rem;}
+.resp,.cm{background:#fff;border:2px solid var(--espresso);padding:.7rem .9rem;margin-bottom:.7rem;}
+.by{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;}
+.by b{font-size:.92rem;} .by i{font-style:normal;font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);white-space:nowrap;}
+.resp p,.cm p{margin-top:.3rem;font-size:.95rem;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere;}
+.thread{margin-top:2rem;border-top:2px dashed rgba(27,27,29,.35);padding-top:1.3rem;}
+.cm{box-shadow:4px 4px 0 var(--sunshine);} .cm.me{box-shadow:4px 4px 0 var(--accent);}
+.thread .none{font-size:.9rem;color:var(--ink-dim);margin-bottom:.8rem;}
+.addc{display:flex;gap:.6rem;align-items:stretch;} .addc input{margin-top:0;flex:1;} .addc .btn{padding:.8rem 1.2rem;clip-path:none;}
+.rev .r span u{text-decoration:none;font-weight:800;color:var(--espresso);} .rev .r span em{font-style:normal;color:var(--clay);}
+.bar .who{max-width:200px;overflow:hidden;text-overflow:ellipsis;}
+
 .guide{max-width:1180px;margin:0 auto;padding:3rem 1.4rem 6rem;position:relative;z-index:2;}
 .guide h1{font-size:clamp(2.8rem,8vw,6rem);} .guide .lead{margin-top:1.2rem;max-width:660px;font-size:1.1rem;line-height:1.65;color:var(--ink-dim);}
 .guide h2{font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1;margin:4rem 0 1.4rem;}
@@ -282,5 +296,6 @@ document.getElementById('folder').oninput=e=>{S.folder=e.target.value;save();};
 document.getElementById('notes').oninput=e=>{S.notes=e.target.value;save();};
 document.getElementById('done').onclick=()=>{save({ready:Date.now()});toast('Marked ready — send Amy a quick note too');};
 paint();
-fetch(FB+'.json').then(r=>r.json()).then(d=>{if(d&&(d.updated||0)>S.updated){S=Object.assign(S,{sent:d.sent||{},folder:d.folder||'',notes:d.notes||'',updated:d.updated});paint();}setSave('ok','Connected ✓');}).catch(()=>setSave('err','Offline — saving on this device'));
+function pull(){return fetch(FB+'.json').then(r=>r.json()).then(d=>{if(d&&(d.updated||0)>S.updated&&!['folder','notes'].includes(document.activeElement.id)){S=Object.assign(S,{sent:d.sent||{},folder:d.folder||'',notes:d.notes||'',updated:d.updated});paint();}setSave('ok','In sync ✓');}).catch(()=>setSave('err','Offline — saving on this device'));}
+pull();setInterval(()=>{if(!document.hidden)pull();},8000);addEventListener('focus',pull);
 </script></body></html>
