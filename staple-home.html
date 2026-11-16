@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STAPLE — Daily Fiber | Performance Digestion</title>
+<title>STÄPL — Daily Performance Fiber</title>
 <style>
 @font-face{
   font-family:'Archivo Variable';
@@ -1535,49 +1535,447 @@ footer{
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
 }
 </style>
+<style>
+/* ============================================================
+   STÄPL — multi-page layer (v24)
+   Views, inner-page components, footer, forms, legal pages
+   ============================================================ */
+.view{display:none;}
+.view.is-on{display:block;}
+nav ul a.is-current{color:var(--clay);}
+nav ul a.is-current:not(.nav-cta){border-bottom:3px solid var(--aqua);padding-bottom:.2rem;}
+nav.solid{background:rgba(243,241,234,.94);backdrop-filter:blur(12px);}
+
+.ph-tag{
+  font-family:var(--mono);font-size:.62em;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  background:var(--sunshine);color:var(--ink);padding:.12em .45em;vertical-align:middle;-webkit-box-decoration-break:clone;box-decoration-break:clone;overflow-wrap:anywhere;
+}
+.ph-note{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.7;
+  background:#FFF4CF;border:2px dashed var(--espresso);color:var(--espresso);
+  padding:.9rem 1.1rem;margin:0 0 2rem;max-width:860px;
+}
+.ph-note b{color:var(--clay);}
+.more-link{
+  display:inline-block;margin-top:1.6rem;
+  font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--espresso);border-bottom:3px solid var(--aqua);padding-bottom:.2rem;
+}
+.more-link:hover{border-color:var(--clay);}
+.btn-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2rem;}
+.btn-row .more-link{margin-top:0;}
+
+/* ---------- page hero ---------- */
+.pg-hero{
+  position:relative;overflow:hidden;background:var(--bone);
+  padding:10.5rem 0 4.5rem;
+}
+.pg-hero .wrap{position:relative;z-index:3;}
+.pg-hero h1{font-size:clamp(2.8rem,7.6vw,6.8rem);color:var(--espresso);max-width:1100px;}
+.pg-hero h1 em{font-style:normal;color:var(--clay);}
+.pg-hero h1 em.aq{color:var(--aqua);}
+.pg-hero h1 .ol{color:transparent;-webkit-text-stroke:2.5px var(--aqua);}
+.pg-hero .lead{margin-top:1.6rem;max-width:620px;font-size:1.12rem;line-height:1.65;color:var(--ink-dim);}
+.pg-hero .lead b{color:var(--espresso);font-weight:700;}
+.pg-shapes span{position:absolute;pointer-events:none;}
+.pg-shapes .a{top:-8%;right:-5%;width:34%;height:78%;background:var(--img-pathalfclay) center/cover;clip-path:polygon(24% 0,100% 0,100% 100%,0 80%);}
+.pg-shapes .b{top:16%;right:22%;width:11%;height:44%;background:var(--aqua);transform:skewX(-14deg);z-index:2;}
+.pg-shapes .c{bottom:8%;right:9%;width:6%;height:30%;border:4px solid var(--espresso);transform:skewX(-14deg);z-index:2;}
+.pg-shapes .d{bottom:-12%;left:-7%;width:20%;height:44%;background:var(--aqua);clip-path:polygon(0 6%,100% 22%,80% 100%,0 100%);opacity:.18;}
+.pg-hero.sun .pg-shapes .a{background:var(--sunshine);}
+.pg-hero.sun .pg-shapes .b{background:var(--clay);}
+.pg-hero.aqua .pg-shapes .a{background:var(--aqua);}
+.pg-hero.aqua .pg-shapes .b{background:var(--sunshine);}
+.pg-hero.slim{padding:9.5rem 0 3rem;}
+.pg-hero.slim h1{font-size:clamp(2.3rem,5.6vw,4.6rem);}
+.pg-hero.slim .pg-shapes .a{width:24%;height:70%;}
+.pg-hero.slim .pg-shapes .b{right:16%;width:7%;height:38%;}
+.pg-hero.slim .pg-shapes .c{display:none;}
+
+/* ---------- generic sections ---------- */
+.pg-sec{padding:5.5rem 0;position:relative;background:var(--bone);}
+.pg-sec.white{background:#fff;}
+.pg-sec.gridbg{background:#fff;}
+.pg-sec.gridbg::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(39,212,196,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(39,212,196,.16) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.pg-sec.gridbg .wrap{position:relative;z-index:2;}
+.pg-sec.mint{background:#EAF6F3;}
+.pg-sec.dark{background:var(--espresso);color:var(--bone);}
+.pg-sec.dark .sec-head span{color:var(--bone-dim);}
+.pg-sec h2.display{font-size:clamp(2.2rem,5vw,4.4rem);}
+.pg-sec h2.display em{font-style:normal;color:var(--clay);}
+.pg-sec h2.display em.aq{color:var(--aqua);}
+.pg-sec .lead{margin-top:1.3rem;max-width:620px;font-size:1.05rem;line-height:1.7;color:var(--ink-dim);}
+.pg-sec.dark .lead{color:rgba(243,241,234,.75);}
+.pg-sec .lead b{color:var(--espresso);font-weight:700;}
+.pg-sec.dark .lead b{color:var(--bone);}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.split.top{align-items:start;}
+.split.wide-l{grid-template-columns:1.15fr .85fr;}
+.split.wide-r{grid-template-columns:.85fr 1.15fr;}
+
+/* ---------- cards ---------- */
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem;}
+.pcards.c2{grid-template-columns:repeat(2,1fr);}
+.pcards.c4{grid-template-columns:repeat(4,1fr);}
+.pcard{
+  position:relative;background:#fff;border:2px solid var(--espresso);
+  box-shadow:7px 7px 0 var(--aqua);padding:1.9rem 1.6rem 1.7rem;color:var(--espresso);
+}
+.pcards .pcard:nth-child(4n+2){box-shadow:7px 7px 0 var(--sunshine);}
+.pcards .pcard:nth-child(4n+3){box-shadow:7px 7px 0 var(--clay);}
+.pcards .pcard:nth-child(4n){box-shadow:7px 7px 0 var(--coral);}
+.pcard .n{font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.2em;color:var(--clay);}
+.pcard h3{
+  font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 114;text-transform:uppercase;
+  font-size:1.3rem;line-height:1.05;margin:.7rem 0 .7rem;
+}
+.pcard p{font-size:.93rem;line-height:1.65;color:var(--ink-dim);}
+.pcard p b{color:var(--espresso);}
+.pcard .tag{display:inline-block;margin-top:1rem;}
+
+/* ---------- big stat row ---------- */
+.bigstats{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--espresso);background:#fff;box-shadow:8px 8px 0 var(--aqua);margin-top:2.8rem;}
+.bigstats>div{padding:2rem 1.6rem;border-right:2px solid rgba(27,27,29,.7);}
+.bigstats>div:last-child{border-right:none;}
+.bigstats .v{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 118;font-size:clamp(2.2rem,4.6vw,4rem);line-height:1;color:var(--clay);}
+.bigstats>div:nth-child(2) .v{color:var(--aqua);}
+.bigstats>div:nth-child(3) .v{color:var(--espresso);}
+.bigstats .k{margin-top:.8rem;font-size:.92rem;line-height:1.55;color:var(--ink-dim);}
+.bigstats .src{display:block;margin-top:.7rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,27,29,.5);}
+
+/* ---------- two-type explainer ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--espresso);margin-top:2.6rem;}
+.duo>div{padding:2.2rem 2rem;}
+.duo>div:first-child{background:var(--aqua);border-right:2px solid var(--espresso);}
+.duo>div:last-child{background:var(--sunshine);}
+.duo h3{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:1.7rem;}
+.duo p{margin-top:.8rem;font-size:.96rem;line-height:1.65;color:rgba(27,27,29,.82);}
+.duo .mono-label{display:block;margin-bottom:.7rem;font-weight:700;}
+
+/* ---------- facts panel ---------- */
+.facts{
+  background:#fff;border:3px solid var(--espresso);padding:1.4rem 1.5rem;max-width:420px;
+  font-family:var(--arch);color:var(--espresso);box-shadow:10px 10px 0 var(--sunshine);
+}
+.facts h3{font-weight:900;font-variation-settings:'wdth' 110;font-size:1.7rem;line-height:1;border-bottom:8px solid var(--espresso);padding-bottom:.5rem;}
+.facts .row{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;border-bottom:1px solid rgba(27,27,29,.5);font-size:.9rem;}
+.facts .row b{font-weight:800;}
+.facts .row.thick{border-bottom:5px solid var(--espresso);}
+.facts small{display:block;margin-top:.8rem;font-size:.72rem;line-height:1.5;color:var(--ink-dim);}
+
+/* ---------- checklist ---------- */
+.ticks{list-style:none;margin-top:1.8rem;display:grid;gap:.75rem;max-width:560px;}
+.ticks li{position:relative;padding-left:2rem;font-size:1rem;line-height:1.55;color:var(--ink-dim);}
+.ticks li b{color:var(--espresso);}
+.ticks li::before{content:'';position:absolute;left:0;top:.35em;width:14px;height:14px;background:var(--aqua);border:2px solid var(--espresso);transform:skewX(-14deg);}
+.ticks li:nth-child(3n+2)::before{background:var(--sunshine);}
+.ticks li:nth-child(3n)::before{background:var(--clay);}
+.pg-sec.dark .ticks li{color:rgba(243,241,234,.78);}
+.pg-sec.dark .ticks li b{color:var(--bone);}
+
+/* ---------- photo frames ---------- */
+.frame{position:relative;border:3px solid var(--espresso);box-shadow:14px 14px 0 var(--sunshine);overflow:hidden;background:var(--espresso);}
+.frame.aq{box-shadow:14px 14px 0 var(--aqua);}
+.frame.cl{box-shadow:14px 14px 0 var(--clay);}
+.frame.tilt{transform:rotate(1.4deg);}
+.frame.tilt-l{transform:rotate(-1.4deg);}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.frame .cap{
+  position:absolute;bottom:10px;left:10px;font-family:var(--mono);font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--bone);background:rgba(18,18,20,.7);padding:.4rem .7rem;
+}
+.photo-row{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.2rem;margin-top:2.6rem;}
+.photo-row .frame{aspect-ratio:4/3;box-shadow:8px 8px 0 var(--aqua);}
+.photo-row .frame:nth-child(2){box-shadow:8px 8px 0 var(--sunshine);}
+.photo-row .frame:nth-child(3){box-shadow:8px 8px 0 var(--clay);}
+
+/* ---------- long-form ---------- */
+.prose{max-width:760px;color:var(--espresso);}
+.prose h2{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 114;text-transform:uppercase;font-size:1.55rem;line-height:1.1;margin:2.6rem 0 .9rem;}
+.prose h2:first-child{margin-top:0;}
+.prose h3{font-weight:800;font-size:1.05rem;margin:1.6rem 0 .5rem;}
+.prose p,.prose li{font-size:1rem;line-height:1.75;color:rgba(27,27,29,.8);}
+.prose p{margin-bottom:1rem;}
+.prose ul,.prose ol{margin:0 0 1.1rem 1.3rem;}
+.prose li{margin-bottom:.4rem;}
+.prose a{color:var(--espresso);border-bottom:2px solid var(--aqua);font-weight:600;}
+.prose a:hover{border-color:var(--clay);}
+.prose table{width:100%;border-collapse:collapse;margin:0 0 1.4rem;font-size:.92rem;}
+.prose th,.prose td{border:2px solid var(--espresso);padding:.7rem .8rem;text-align:left;vertical-align:top;}
+.prose th{background:var(--espresso);color:var(--bone);font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;}
+.prose .updated{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:1.8rem;}
+.prose blockquote{border-left:6px solid var(--aqua);padding:.4rem 0 .4rem 1.3rem;margin:1.6rem 0;font-family:var(--arch);font-weight:800;font-variation-settings:'wdth' 110;font-size:1.35rem;line-height:1.25;text-transform:uppercase;}
+
+/* ---------- legal layout ---------- */
+.legal{display:grid;grid-template-columns:250px 1fr;gap:4rem;align-items:start;}
+.legal-nav{position:sticky;top:96px;border:2px solid var(--espresso);background:#fff;box-shadow:6px 6px 0 var(--aqua);padding:1.2rem 1.1rem;}
+.legal-nav span{display:block;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:.8rem;}
+.legal-nav a{display:block;font-size:.9rem;font-weight:600;padding:.42rem 0;border-bottom:1px solid rgba(27,27,29,.12);}
+.legal-nav a:last-child{border-bottom:none;}
+.legal-nav a:hover,.legal-nav a.is-current{color:var(--clay);}
+
+/* ---------- forms ---------- */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;background:#fff;border:2px solid var(--espresso);box-shadow:10px 10px 0 var(--aqua);padding:2rem;}
+.form label{display:block;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--espresso);}
+.form label.full{grid-column:1/-1;}
+.form input,.form select,.form textarea{
+  display:block;width:100%;margin-top:.5rem;background:var(--bone);border:2px solid rgba(27,27,29,.75);
+  font-family:var(--arch);font-size:.95rem;color:var(--espresso);padding:.85rem .9rem;outline:none;border-radius:0;
+}
+.form textarea{min-height:130px;resize:vertical;}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--aqua);background:#fff;}
+.form .btn{grid-column:1/-1;justify-self:start;}
+.form .fine{grid-column:1/-1;font-size:.78rem;line-height:1.55;color:var(--ink-dim);}
+.form .fine a{border-bottom:2px solid var(--aqua);}
+.contact-cards{display:grid;gap:1rem;}
+.ccard{background:#fff;border:2px solid var(--espresso);padding:1.3rem 1.3rem;box-shadow:5px 5px 0 rgba(27,27,29,.15);}
+.ccard span{display:block;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:.5rem;}
+.ccard b{display:block;font-size:1.05rem;}
+.ccard p{font-size:.88rem;color:var(--ink-dim);line-height:1.55;margin-top:.3rem;}
+
+/* ---------- FAQ page ---------- */
+.faq-page{background:#EAF6F3;}
+.faq-page .faq-group{display:grid;grid-template-columns:.42fr 1fr;gap:3rem;padding:2.6rem 0;border-top:2px solid rgba(27,27,29,.12);}
+.faq-page .faq-group:first-of-type{border-top:none;padding-top:0;}
+.faq-page .faq-group h2{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:1.7rem;line-height:1;}
+.faq-page .faq-group .mono-label{display:block;color:var(--clay);font-weight:700;margin-bottom:.7rem;}
+.faq-jump{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem;}
+.faq-jump a{cursor:pointer;}
+.faq.faq-page{padding:4.5rem 0 5.5rem;}
+.faq.faq-page::before,.faq.faq-page::after{display:none;}
+
+/* ---------- product page ---------- */
+.pdp{padding:9.5rem 0 5rem;background:var(--bone);position:relative;overflow:hidden;}
+.pdp .crumbs{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:1.6rem;}
+.pdp .crumbs a{border-bottom:2px solid var(--aqua);}
+.pdp-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:start;position:relative;z-index:2;}
+.pdp-stage{
+  position:relative;background:#fff;border:2px solid var(--espresso);box-shadow:12px 12px 0 var(--aqua);
+  min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.pdp-stage::before{content:'';position:absolute;inset:8% 10%;background:var(--clay);clip-path:polygon(0 14%,100% 0,90% 100%,4% 90%);transform:rotate(-2deg);}
+.pdp-stage::after{content:'';position:absolute;top:10%;left:8%;width:14%;height:22%;background:var(--aqua);transform:skewX(-14deg);}
+.pdp-stage .canister{position:relative;z-index:2;width:270px;transform:rotate(3deg);filter:drop-shadow(0 26px 44px rgba(27,27,29,.35));}
+.pdp-stage .spec-tag{position:absolute;top:14px;left:14px;z-index:3;}
+.pdp-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.4rem;}
+.pdp-thumbs .frame{aspect-ratio:1/1;border-width:2px;box-shadow:4px 4px 0 rgba(27,27,29,.18);}
+.pdp-info h1{font-size:clamp(2.6rem,5.4vw,4.6rem);}
+.pdp-info .kicker{font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:.8rem;}
+.pdp-info>.sub{font-family:var(--arch);font-weight:800;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:1.25rem;margin-top:.5rem;}
+.pdp-info .desc{margin:1.1rem 0 1.5rem;font-size:1.02rem;line-height:1.65;color:var(--ink-dim);max-width:520px;}
+.pdp-info .rating{margin:0 0 1.2rem;}
+.pdp-info .buy-box{margin-top:.4rem;}
+.acc{margin-top:1.6rem;}
+.acc details{border-top:2px solid var(--espresso);padding:0 .2rem;}
+.acc details:last-child{border-bottom:2px solid var(--espresso);}
+.acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:1.05rem 0;font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;}
+.acc summary::-webkit-details-marker{display:none;}
+.acc summary .pm{font-size:1.1rem;transition:transform .25s;}
+.acc details[open] summary .pm{transform:rotate(45deg);}
+.acc details p,.acc details li{font-size:.93rem;line-height:1.65;color:var(--ink-dim);}
+.acc details p{padding:0 0 1.1rem;max-width:540px;}
+.acc details ul{margin:0 0 1.1rem 1.2rem;}
+.review-empty{border:2px dashed var(--espresso);background:#fff;padding:2.6rem 2rem;text-align:center;margin-top:2.4rem;}
+.review-empty b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 114;text-transform:uppercase;font-size:1.4rem;}
+.review-empty p{margin:.7rem auto 0;max-width:520px;color:var(--ink-dim);font-size:.95rem;line-height:1.6;}
+
+/* ---------- partners ---------- */
+.logo-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.6rem;}
+.logo-slot{
+  aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;text-align:center;
+  background:#fff;border:2px dashed rgba(27,27,29,.55);padding:1rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);
+}
+.logo-slot.live{border-style:solid;border-color:var(--espresso);box-shadow:6px 6px 0 var(--aqua);color:var(--espresso);}
+.logo-slot.live b{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;font-size:1.15rem;letter-spacing:0;line-height:1;}
+.tier{display:flex;flex-direction:column;}
+.tier ul{list-style:none;margin-top:1rem;display:grid;gap:.5rem;}
+.tier li{font-size:.9rem;line-height:1.5;color:var(--ink-dim);padding-left:1.1rem;position:relative;}
+.tier li::before{content:'▸';position:absolute;left:0;color:var(--clay);}
+
+/* ---------- journal ---------- */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.6rem;}
+.post{display:flex;flex-direction:column;background:#fff;border:2px solid var(--espresso);box-shadow:7px 7px 0 rgba(27,27,29,.14);transition:transform .2s,box-shadow .2s;color:var(--espresso);}
+.post:hover{transform:translate(-2px,-3px);box-shadow:9px 9px 0 var(--aqua);}
+.post .ph{aspect-ratio:16/10;overflow:hidden;border-bottom:2px solid var(--espresso);background:var(--espresso);}
+.post .ph img{width:100%;height:100%;object-fit:cover;}
+.post .body{padding:1.3rem 1.3rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;flex:1;}
+.post .cat{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);}
+.post h3{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:1.2rem;line-height:1.08;}
+.post p{font-size:.9rem;line-height:1.6;color:var(--ink-dim);}
+.post .meta{margin-top:auto;padding-top:.6rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(27,27,29,.5);}
+.post.feature{grid-column:1/-1;flex-direction:row;}
+.post.feature .ph{flex:0 0 55%;aspect-ratio:auto;min-height:340px;border-bottom:none;border-right:2px solid var(--espresso);}
+.post.feature .body{padding:2.2rem;justify-content:center;}
+.post.feature h3{font-size:clamp(1.6rem,3vw,2.5rem);}
+.cat-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem;}
+.article-head{max-width:860px;}
+.article-head h1{font-size:clamp(2.2rem,5vw,4.2rem);}
+.article-head .meta{margin-top:1.4rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);}
+.article-hero{aspect-ratio:21/9;margin:2.6rem 0 3rem;}
+.byline{display:flex;gap:1rem;align-items:center;margin-top:3rem;padding:1.4rem;border:2px solid var(--espresso);background:#fff;max-width:760px;}
+.byline img{width:72px;height:72px;object-fit:cover;border:2px solid var(--espresso);}
+.byline b{display:block;}
+.byline span{font-size:.86rem;color:var(--ink-dim);line-height:1.5;}
+
+/* ---------- timeline / Q&A ---------- */
+.qa{display:grid;gap:1.2rem;margin-top:2.6rem;max-width:900px;}
+.qa>div{background:#fff;border:2px solid var(--espresso);padding:1.5rem 1.6rem;box-shadow:6px 6px 0 var(--aqua);color:var(--espresso);}
+.qa>div:nth-child(even){box-shadow:6px 6px 0 var(--sunshine);}
+.qa .q{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:1.15rem;line-height:1.1;}
+.qa .a{margin-top:.7rem;font-size:.98rem;line-height:1.7;color:var(--ink-dim);}
+.tl{margin-top:2.6rem;border-left:4px solid var(--espresso);padding-left:1.8rem;display:grid;gap:1.8rem;max-width:760px;}
+.tl>div{position:relative;}
+.tl>div::before{content:'';position:absolute;left:calc(-1.8rem - 11px);top:.3rem;width:18px;height:18px;background:var(--aqua);border:3px solid var(--espresso);transform:skewX(-14deg);}
+.tl>div:nth-child(3n+2)::before{background:var(--sunshine);}
+.tl>div:nth-child(3n)::before{background:var(--clay);}
+.tl .yr{font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.2em;color:var(--clay);text-transform:uppercase;}
+.tl b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:1.15rem;margin:.3rem 0;}
+.tl p{font-size:.94rem;line-height:1.6;color:var(--ink-dim);}
+.pg-sec.dark .tl{border-color:var(--bone);}
+.pg-sec.dark .tl b{color:var(--bone);}
+.pg-sec.dark .tl p{color:rgba(243,241,234,.7);}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:var(--espresso);color:var(--bone);padding:4.5rem 0;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;top:-20%;right:-4%;width:22%;height:140%;background:var(--aqua);transform:skewX(-14deg);}
+.cta-band::after{content:'';position:absolute;top:-20%;right:20%;width:7%;height:140%;background:var(--sunshine);transform:skewX(-14deg);}
+.cta-band .wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.cta-band h2{font-size:clamp(2rem,4.6vw,3.8rem);max-width:760px;}
+.cta-band h2 em{font-style:normal;color:var(--sunshine);}
+
+/* ---------- footer v24 ---------- */
+.foot-grid .col a.sm{font-size:.86rem;font-weight:500;color:rgba(243,241,234,.78);margin-bottom:.6rem;}
+.foot-biz{
+  border-top:1px solid rgba(243,241,234,.14);border-bottom:1px solid rgba(243,241,234,.14);
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;padding:1.8rem 0;margin-bottom:3rem;
+}
+.foot-biz span{display:block;font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--aqua);margin-bottom:.6rem;}
+.foot-biz p,.foot-biz a{font-size:.88rem;line-height:1.6;color:rgba(243,241,234,.8);}
+.foot-biz a{display:block;}
+.foot-biz a:hover{color:var(--sunshine);}
+.foot-fda{
+  border:1px solid rgba(243,241,234,.35);padding:1rem 1.2rem;margin:2.4rem auto 0;max-width:900px;
+  font-size:.74rem;line-height:1.6;color:rgba(243,241,234,.7);text-align:center;
+}
+.foot-legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:center;padding:1.6rem 0 0;}
+.foot-legal a{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,241,234,.6);}
+.foot-legal a:hover{color:var(--sunshine);}
+.foot-logo img{width:min(560px,66%);}
+
+@media(max-width:1100px){
+  nav ul{gap:1.4rem;}
+  nav ul a{font-size:.66rem;letter-spacing:.14em;}
+}
+@media(max-width:900px){
+  .split,.split.wide-l,.split.wide-r,.pdp-grid,.legal{grid-template-columns:1fr;gap:2.4rem;}
+  .pcards,.pcards.c4,.post-grid{grid-template-columns:1fr 1fr;}
+  .logo-wall{grid-template-columns:repeat(2,1fr);}
+  .legal-nav{position:static;}
+  .faq-page .faq-group{grid-template-columns:1fr;gap:1.2rem;}
+  .post.feature{flex-direction:column;}
+  .post.feature .ph{flex:none;min-height:0;aspect-ratio:16/10;border-right:none;border-bottom:2px solid var(--espresso);}
+  .foot-biz{grid-template-columns:1fr;gap:1.4rem;}
+  .photo-row{grid-template-columns:1fr 1fr;}
+  .photo-row .frame:first-child{grid-column:1/-1;}
+}
+@media(max-width:820px){
+  .pg-hero{padding:8.5rem 0 3rem;}
+  .pg-hero.slim{padding:8rem 0 2.2rem;}
+  .pg-shapes .a{width:46%;height:42%;opacity:.9;}
+  .pg-shapes .b{right:30%;width:14%;height:22%;top:8%;}
+  .pg-shapes .c,.pg-shapes .d{display:none;}
+  .pg-hero h1{font-size:clamp(2.4rem,11vw,3.6rem);}
+  .pg-sec{padding:3.8rem 0;}
+  .pdp{padding:8rem 0 3.5rem;}
+  .pdp-stage{min-height:400px;}
+  .pdp-stage .canister{width:215px;}
+  .bigstats,.duo{grid-template-columns:1fr;}
+  .bigstats>div{border-right:none;border-bottom:2px solid rgba(27,27,29,.7);}
+  .bigstats>div:last-child{border-bottom:none;}
+  .duo>div:first-child{border-right:none;border-bottom:2px solid var(--espresso);}
+  .form{grid-template-columns:1fr;padding:1.4rem;}
+  .cta-band::before,.cta-band::after{opacity:.25;}
+  .frame{box-shadow:8px 8px 0 var(--sunshine);}
+  .frame.aq{box-shadow:8px 8px 0 var(--aqua);}
+  .frame.cl{box-shadow:8px 8px 0 var(--clay);}
+}
+@media(max-width:600px){
+  .pcards,.pcards.c2,.pcards.c4,.post-grid{grid-template-columns:1fr;}
+  .pdp-thumbs{grid-template-columns:repeat(4,1fr);gap:.5rem;}
+  .photo-row{grid-template-columns:1fr;}
+}
+
+/* ---------- overflow guards ---------- */
+.split>*,.legal>*,.pdp-grid>*,.pcards>*,.post-grid>*,.form>*{min-width:0;}
+.prose{overflow-wrap:break-word;}
+@media(max-width:820px){
+  .prose table{display:block;overflow-x:auto;}
+  .form select,.form input,.form textarea{max-width:100%;}
+  .tl{padding-left:1.4rem;}
+  .tl>div::before{left:calc(-1.4rem - 11px);}
+}
+.logo-wall>*{min-width:0;}
+.logo-slot{overflow:hidden;}
+@media(max-width:600px){.logo-slot.live b{font-size:.9rem;}.logo-slot{font-size:.5rem;letter-spacing:.12em;}}
+/* wider STÄPL wordmark: keep the mobile nav from colliding */
+@media(max-width:820px){
+  nav .logo img{height:20px;}
+  nav.scrolled .logo img{height:18px;}
+  nav ul a.nav-cta{padding:.55rem .75rem;font-size:.58rem;letter-spacing:.1em;white-space:nowrap;}
+}
+
+</style>
 </head>
 <body>
 
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>Nutrition isn't extra. <b>It's Staple.</b></span><span>&#9656;</span>
+    <span>Nutrition isn't extra. <b>It's STÄPL.</b></span><span>&#9656;</span>
     <span><em>7g functional fiber</em> — 4 real-fruit flavors — zero sugar</span><span>&#9656;</span>
     <span>Free shipping over $50 <b>[placeholder]</b></span><span>&#9656;</span>
-    <span>Nutrition isn't extra. <b>It's Staple.</b></span><span>&#9656;</span>
+    <span>Nutrition isn't extra. <b>It's STÄPL.</b></span><span>&#9656;</span>
     <span><em>7g functional fiber</em> — 4 real-fruit flavors — zero sugar</span><span>&#9656;</span>
     <span>Free shipping over $50 <b>[placeholder]</b></span><span>&#9656;</span>
-    <span>Nutrition isn't extra. <b>It's Staple.</b></span><span>&#9656;</span>
+    <span>Nutrition isn't extra. <b>It's STÄPL.</b></span><span>&#9656;</span>
     <span><em>7g functional fiber</em> — 4 real-fruit flavors — zero sugar</span><span>&#9656;</span>
     <span>Free shipping over $50 <b>[placeholder]</b></span><span>&#9656;</span>
-    <span>Nutrition isn't extra. <b>It's Staple.</b></span><span>&#9656;</span>
+    <span>Nutrition isn't extra. <b>It's STÄPL.</b></span><span>&#9656;</span>
     <span><em>7g functional fiber</em> — 4 real-fruit flavors — zero sugar</span><span>&#9656;</span>
     <span>Free shipping over $50 <b>[placeholder]</b></span><span>&#9656;</span>
   </div>
 </div>
 
 <nav id="nav">
-  <a class="logo" href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABK8AAAD1CAMAAAChgCZUAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJeUExURRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHf7+/seA/z4AAADIdFJOUwADOy80KJLU09ZsKyAYbevVXwGcEnQfTBMp6gklaP6GJvPth/Lx+vmEdpeBp01hZkpRw1bPfQcdG3j96c3kerRnY3JvJL/FxMe25jxLV5lTDlTgWCGCaagjZTLAYC4nrDARg3BBjclcFtH7fFXue7xSGrXbuUSjT878fvaAyK8tsPB/y4m3M5bB2nPZnUNC2GLcdQUXMeiOqVu7i+/1vVnd5+PiNz89RvcexrpJpYxFDF2k7JUN17gEnj6+HHerspQICnGI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" alt="STAPLE"></a>
+  <a class="logo" href="#home"><img src="assets/staple-home/stapl-wordmark-dark.png" alt="STÄPL"></a>
   <ul>
-    <li><a href="#fiber">The Fiber</a></li>
-    <li><a href="#flavors">Flavors</a></li>
-    <li><a href="#athlete">The Athlete</a></li>
-    <li><a href="#ritual">The Ritual</a></li>
+    <li><a href="#the-fiber">The Fiber</a></li>
+    <li><a href="#home" data-scroll="home-flavors">Flavors</a></li>
+    <li><a href="#the-athlete">The Athlete</a></li>
+    <li><a href="#home" data-scroll="home-ritual">The Ritual</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li class="keep"><a class="nav-cta" href="#buy">Shop Daily</a></li>
+    <li class="keep"><a class="nav-cta" href="#shop">Shop Daily</a></li>
   </ul>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mnav" id="mnav">
-  <a href="#fiber"><em>01</em>The Fiber</a>
-  <a href="#flavors"><em>02</em>Flavors</a>
-  <a href="#athlete"><em>03</em>The Athlete</a>
-  <a href="#ritual"><em>04</em>The Ritual</a>
+  <a href="#the-fiber"><em>01</em>The Fiber</a>
+  <a href="#home" data-scroll="home-flavors"><em>02</em>Flavors</a>
+  <a href="#the-athlete"><em>03</em>The Athlete</a>
+  <a href="#home" data-scroll="home-ritual"><em>04</em>The Ritual</a>
   <a href="#faq"><em>05</em>FAQ</a>
-  <a class="mcta" href="#buy"><em>&#9656;</em>Shop Daily</a>
+  <a href="#partners"><em>06</em>Partners</a>
+  <a href="#journal"><em>07</em>Journal</a>
+  <a class="mcta" href="#shop"><em>&#9656;</em>Shop Daily</a>
 </div>
 
-<header class="hero" id="top">
+<main class="view is-on" data-view="home" data-title="STÄPL — Daily Performance Fiber">
+<header class="hero" id="home-top">
   <div class="hero-shapes"><span class="hs1"></span><span class="hs2"></span><span class="hs3"></span><span class="hs4"></span></div>
   <div class="hero-inner">
     <div class="hero-grid">
@@ -1589,7 +1987,8 @@ footer{
         </h1>
         <p class="hero-lead"><b>7g of real-fruit fiber</b> from 6× CrossFit Games athlete <b>Marcus Filly</b>. One scoop in water, once a day. <b>Zero sugar. Nothing artificial.</b></p>
         <div class="cta-row">
-          <a class="btn btn-sun" href="#fiber">Meet Daily &#9656; The First Staple</a>
+          <a class="btn btn-sun" href="#shop">Meet Daily &#9656; The First Staple</a>
+          <a class="cta-sub" href="#the-fiber">Why fiber &#9656;</a>
         </div>
         <span class="rating"><b>★★★★★</b>&nbsp; 4.9 · 300+ athlete reviews [placeholder]</span>
       </div>
@@ -1601,7 +2000,7 @@ footer{
               <span class="can-stripes"></span>
               <span class="can-dots"></span>
               <div class="can-blob">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABK8AAAD1CAMAAAChgCZUAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJeUExURRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHf7+/seA/z4AAADIdFJOUwADOy80KJLU09ZsKyAYbevVXwGcEnQfTBMp6gklaP6GJvPth/Lx+vmEdpeBp01hZkpRw1bPfQcdG3j96c3kerRnY3JvJL/FxMe25jxLV5lTDlTgWCGCaagjZTLAYC4nrDARg3BBjclcFtH7fFXue7xSGrXbuUSjT878fvaAyK8tsPB/y4m3M5bB2nPZnUNC2GLcdQUXMeiOqVu7i+/1vVnd5+PiNz89RvcexrpJpYxFDF2k7JUN17gEnj6+HHerspQICnGI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" alt="STAPLE">
+                <img src="assets/staple-home/stapl-wordmark-dark.png" alt="STÄPL">
                 <div class="can-sub">Daily</div>
                 <div class="can-dose">7G FIBER · 30 SERVINGS</div>
               </div>
@@ -1631,7 +2030,7 @@ footer{
 
 
 
-<section class="intro" id="fiber">
+<section class="intro" id="home-fiber">
   <div class="wrap">
     <div class="sec-head rev">
       <span class="num">01</span><div class="line"></div><span class="mono-label">One product. One job.</span>
@@ -1648,7 +2047,7 @@ footer{
           <span class="chip">Single-serve sachets — coming soon</span>
           <span class="chip">Third-party tested [placeholder]</span>
         </div>
-        <a class="btn btn-sun rev rev-d3" href="#buy">Shop Now &#9656;</a>
+        <div class="btn-row rev rev-d3" style="order:5"><a class="btn btn-sun" href="#shop" style="margin-top:0">Shop Now &#9656;</a><a class="more-link" href="#the-fiber">Why fiber matters &#9656;</a></div>
       </div>
       <div class="spec-card rev rev-d1">
         <span class="spec-tag">Daily &#9656; Spec 001</span>
@@ -1659,7 +2058,7 @@ footer{
               <span class="can-stripes"></span>
               <span class="can-dots"></span>
               <div class="can-blob">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABK8AAAD1CAMAAAChgCZUAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJeUExURRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHRsbHf7+/seA/z4AAADIdFJOUwADOy80KJLU09ZsKyAYbevVXwGcEnQfTBMp6gklaP6GJvPth/Lx+vmEdpeBp01hZkpRw1bPfQcdG3j96c3kerRnY3JvJL/FxMe25jxLV5lTDlTgWCGCaagjZTLAYC4nrDARg3BBjclcFtH7fFXue7xSGrXbuUSjT878fvaAyK8tsPB/y4m3M5bB2nPZnUNC2GLcdQUXMeiOqVu7i+/1vVnd5+PiNz89RvcexrpJpYxFDF2k7JUN17gEnj6+HHerspQICnGI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" alt="STAPLE">
+                <img src="assets/staple-home/stapl-wordmark-dark.png" alt="STÄPL">
                 <div class="can-sub">Daily</div>
                 <div class="can-dose">7G FIBER · 30 SERVINGS</div>
               </div>
@@ -1679,7 +2078,7 @@ footer{
   </div>
 </section>
 
-<section class="flavors" id="flavors">
+<section class="flavors" id="home-flavors">
   <div class="flav-shapes"><span class="fs1"></span><span class="fs2"></span><span class="fs3"></span></div>
   <div class="wrap">
     <div class="sec-head rev">
@@ -1729,7 +2128,7 @@ footer{
 
 <div class="divider-band"><i class="d1"></i><i class="d2"></i><i class="d3"></i><i class="d4"></i><i class="d5"></i></div>
 
-<section class="athlete" id="athlete">
+<section class="athlete" id="home-athlete">
   <div class="wrap">
     <div class="sec-head rev">
       <span class="num">03</span><div class="line"></div><span class="mono-label">The athlete</span>
@@ -1813,6 +2212,7 @@ footer{
       <div class="stat"><div class="v" data-count="20" data-suffix="+">0</div><div class="k">Years Under The Bar</div></div>
       <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Non-Negotiable</div></div>
     </div>
+    <div class="btn-row rev"><a class="btn btn-ghost" href="#the-athlete">Read Marcus\'s story &#9656;</a></div>
   </div>
 </section>
 
@@ -1822,7 +2222,7 @@ footer{
   </div>
 </div>
 
-<section class="story" id="story">
+<section class="story" id="home-story">
   <span class="story-pop sp1"></span><span class="story-pop sp2"></span>
   <div class="wrap">
     <div class="sec-head rev">
@@ -1832,7 +2232,7 @@ footer{
       <div>
         <h2 class="display rev">Chalk up.<br><em>Show up.</em></h2>
         <p class="rev rev-d1">Marcus Filly has spent two decades in the gym learning one truth the hard way: <b>the flashy stuff breaks you, the boring stuff builds you.</b> Six trips to the CrossFit Games regionals. A career reinventing how athletes train. And the same lesson every time — mastery is just the fundamentals, repeated.</p>
-      <p class="rev rev-d2">Staple is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. <b>Just the nutrient almost every athlete under-eats,</b> made effortless enough to never skip.</p>
+      <p class="rev rev-d2">STÄPL is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. <b>Just the nutrient almost every athlete under-eats,</b> made effortless enough to never skip.</p>
         <div class="sig rev rev-d3">
           <svg class="sig-scribble" viewBox="0 0 300 84" xmlns="http://www.w3.org/2000/svg" aria-label="Signature placeholder">
             <path d="M 14 58 C 28 14, 44 66, 62 30 S 88 60, 108 34 C 122 18, 128 56, 148 46 S 186 24, 202 44 C 216 58, 238 28, 262 38" fill="none" stroke="#1B1B1D" stroke-width="3.5" stroke-linecap="round"/>
@@ -1900,7 +2300,7 @@ footer{
   </div>
 </section>
 
-<section class="buy" id="buy">
+<section class="buy" id="home-buy">
   <div class="wrap">
     <div class="grid">
       <div>
@@ -1916,7 +2316,7 @@ footer{
         </div>
       </div>
       <div class="buy-box rev rev-d1">
-        <span class="pk">Staple — Launch SKU 001</span>
+        <span class="pk">STÄPL — Launch SKU 001</span>
         <h3>Daily</h3>
         <span class="sub">7g fiber · real fruit flavor · 30 servings per canister</span>
         <div class="flav-pick">
@@ -1951,7 +2351,7 @@ footer{
   </div>
 </section>
 
-<section class="faq" id="faq">
+<section class="faq" id="home-faq">
   <div class="wrap">
     <div class="grid">
       <div>
@@ -1959,6 +2359,7 @@ footer{
           <span class="num">07</span><div class="line"></div><span class="mono-label">Questions</span>
         </div>
         <h2 class="display rev">Straight<br><em>answers.</em></h2>
+        <a class="more-link rev" href="#faq">See all questions &#9656;</a>
       </div>
       <div class="rev rev-d1">
         <details open>
@@ -1983,7 +2384,7 @@ footer{
         </details>
         <details>
           <summary>Why only one product? <span class="pm">+</span></summary>
-          <p>Because that's the brand. Staple starts with the single most neglected nutrient and does it perfectly. More staples are coming — after this one earns its place in your routine.</p>
+          <p>Because that's the brand. STÄPL starts with the single most neglected nutrient and does it perfectly. More staples are coming — after this one earns its place in your routine.</p>
         </details>
         <details>
           <summary>How does the subscription work? <span class="pm">+</span></summary>
@@ -1994,7 +2395,7 @@ footer{
   </div>
 </section>
 
-<section class="ritual" id="ritual">
+<section class="ritual" id="home-ritual">
   <div class="wrap">
     <div class="sec-head rev">
       <span class="num">08</span><div class="line"></div><span class="mono-label">The ritual</span>
@@ -2045,10 +2446,10 @@ footer{
 
 <section class="signup">
   <div class="wrap">
-    <svg class="lockup rev" viewBox="0 0 1340 80" xmlns="http://www.w3.org/2000/svg" aria-label="Nutrition isn't extra. It's Staple.">
+    <svg class="lockup rev" viewBox="0 0 1340 80" xmlns="http://www.w3.org/2000/svg" aria-label="Nutrition isn't extra. It's STÄPL.">
       <line x1="10" y1="40" x2="120" y2="40" stroke="#FFC72C" stroke-width="4"/>
       <line x1="1220" y1="40" x2="1330" y2="40" stroke="#FFC72C" stroke-width="4"/>
-      <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STAPLE.</tspan></text>
+      <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
     </svg>
     <h2 class="display rev">Get on <em>the list.</em></h2>
     <p class="rev rev-d1">Launch drops, restocks, and training content from Marcus. No spam — that's not very foundational of us.</p>
@@ -2072,7 +2473,7 @@ footer{
         <span class="fbb-tag">Look Good. <em>Move Well.</em></span>
       </div>
       <div class="fbb-right">
-        <p>Staple comes from the same brain as <b>Functional Bodybuilding</b> — Marcus's training methodology that blends the best of bodybuilding and functional fitness, without the burnout. After years of injury, burnout, and digestive distress at the top of the sport, Marcus built FBB to help athletes <b>get built, not burnt</b> — and now Staple, to handle the nutrition side of the same promise. Explore Persist, his flagship training program, plus free workouts, e-books, and coaching.</p>
+        <p>STÄPL comes from the same brain as <b>Functional Bodybuilding</b> — Marcus's training methodology that blends the best of bodybuilding and functional fitness, without the burnout. After years of injury, burnout, and digestive distress at the top of the sport, Marcus built FBB to help athletes <b>get built, not burnt</b> — and now STÄPL, to handle the nutrition side of the same promise. Explore Persist, his flagship training program, plus free workouts, e-books, and coaching.</p>
         <a class="btn btn-ghost" href="https://functional-bodybuilding.com/" target="_blank" rel="noopener">Visit Functional-Bodybuilding.com &#9656;</a>
       </div>
     </div>
@@ -2090,45 +2491,1114 @@ footer{
 
 
 
+</main>
+
+<!-- ============================================================
+     VIEW: THE FIBER (why fiber + benefits)
+     ============================================================ -->
+<main class="view" data-view="the-fiber" data-title="The Fiber — Why Fiber | STÄPL">
+  <header class="pg-hero">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span></div>
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">01</span><div class="line"></div><span class="mono-label">The Fiber</span></div>
+      <h1 class="display rev">The nutrient<br>almost everyone<br><em>skips.</em></h1>
+      <p class="lead rev rev-d1">Protein gets the attention. Fiber does the quiet work. <b>Daily is 7g of functional fiber in one scoop</b>, built so the most-missed part of your nutrition is handled before your coffee is.</p>
+      <div class="btn-row rev rev-d2">
+        <a class="btn btn-sun" href="#shop">Shop Daily &#9656;</a>
+        <a class="more-link" href="#faq">Read the FAQ &#9656;</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pg-sec gridbg">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The gap</span></div>
+      <h2 class="display rev">Most people get<br>about <em>half.</em></h2>
+      <p class="lead rev rev-d1">The fiber gap is one of the most consistent findings in nutrition research. It is not a niche problem, and training hard does not fix it.</p>
+      <div class="bigstats rev rev-d1">
+        <div><div class="v">9 in 10</div><div class="k">American adults fall short of the recommended fiber intake.</div><span class="src">Dietary Guidelines for Americans, 2020–2025</span></div>
+        <div><div class="v">25–38g</div><div class="k">The daily target for most adults: about 25g for women and 38g for men.</div><span class="src">National Academies, Dietary Reference Intakes</span></div>
+        <div><div class="v">~16g</div><div class="k">What the average adult actually eats in a day.</div><span class="src">USDA, What We Eat in America <span class="ph-tag">verify figure</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">What fiber does</span></div>
+      <h2 class="display rev">Boring.<br><em class="aq">Foundational.</em></h2>
+      <p class="lead rev rev-d1">Fiber is the part of plants your body does not break down. That is the point: it does its work on the way through.</p>
+      <p class="ph-note rev" style="margin-top:2rem"><b>Compliance note &#9656;</b> Benefit copy below is general fiber education written as structure/function language. Final wording must be matched to the finished formula and reviewed before launch.</p>
+      <div class="pcards c4">
+        <div class="pcard rev"><span class="n">01</span><h3>Keeps things regular</h3><p>Fiber adds bulk and holds water, which supports regular, comfortable digestion.</p></div>
+        <div class="pcard rev rev-d1"><span class="n">02</span><h3>Feeds your gut</h3><p>Fermentable fibers are food for the bacteria that live in your gut. <span class="ph-tag">confirm vs. formula</span></p></div>
+        <div class="pcard rev rev-d2"><span class="n">03</span><h3>Helps you feel full</h3><p>Fiber slows things down, which helps a meal or a shake keep you satisfied for longer.</p></div>
+        <div class="pcard rev rev-d3"><span class="n">04</span><h3>Backs up the basics</h3><p>You already track protein and training. Fiber is the piece of the foundation most plans leave out.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec white">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Two kinds, one scoop</span></div>
+      <h2 class="display rev">Soluble <em>+</em> insoluble.</h2>
+      <p class="lead rev rev-d1">Not all fiber behaves the same way. Daily uses a blend so you are not choosing one job over the other. <span class="ph-tag">final blend to confirm</span></p>
+      <div class="duo rev rev-d1">
+        <div><span class="mono-label">Type 01</span><h3>Soluble</h3><p>Dissolves in water and forms a gel. This is the fiber that slows digestion and is often fermented by gut bacteria. Found in oats, beans, citrus and psyllium.</p></div>
+        <div><span class="mono-label">Type 02</span><h3>Insoluble</h3><p>Does not dissolve. It adds bulk and helps food move through your system. Found in whole grains, nuts and the skins of fruit and vegetables.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec mint">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">What's in Daily</span></div>
+          <h2 class="display rev">One scoop.<br><em>Full label.</em></h2>
+          <p class="lead rev rev-d1">No proprietary blends. Everything in the canister is on the canister.</p>
+          <ul class="ticks rev rev-d2">
+            <li><b>7g of fiber per scoop</b>, soluble and insoluble</li>
+            <li><b>Real fruit flavor</b> with zero sugar <span class="ph-tag">sweetener to confirm</span></li>
+            <li><b>Nothing artificial</b>: no artificial colors or flavors</li>
+            <li><b>30 servings</b> per canister, scoop included</li>
+            <li><b>Third-party tested</b> <span class="ph-tag">confirm lab + standard</span></li>
+          </ul>
+          <div class="btn-row rev rev-d3"><a class="btn btn-sun" href="#shop">See the product &#9656;</a></div>
+        </div>
+        <div class="rev rev-d1" style="display:flex;justify-content:center">
+          <div class="facts">
+            <h3>Supplement Facts</h3>
+            <div class="row"><span>Serving size</span><b>1 scoop <span class="ph-tag">g</span></b></div>
+            <div class="row thick"><span>Servings per container</span><b>30</b></div>
+            <div class="row"><span>Calories</span><b><span class="ph-tag">tbc</span></b></div>
+            <div class="row"><span>Total carbohydrate</span><b><span class="ph-tag">tbc</span></b></div>
+            <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b>7g</b></div>
+            <div class="row"><span>&nbsp;&nbsp;Total sugars</span><b>0g</b></div>
+            <div class="row thick"><span>Sodium</span><b><span class="ph-tag">tbc</span></b></div>
+            <small>Placeholder panel. Replace with the final Supplement Facts and ingredient list from the manufacturer before launch.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ritual">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">How to take it</span></div>
+      <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
+      <div class="steps">
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into water, or anything else you already drink. It dissolves in seconds.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="cap">The dissolve</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag">usage copy to confirm</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink"><span class="cap">Done</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2 class="display">Fix the gap <em>first.</em></h2>
+      <a class="btn btn-sun" href="#shop">Shop Daily &#9656;</a>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     VIEW: THE ATHLETE (Marcus Filly)
+     ============================================================ -->
+<main class="view" data-view="the-athlete" data-title="The Athlete — Marcus Filly | STÄPL">
+  <header class="pg-hero aqua">
+    <div class="pg-shapes"><span class="d"></span></div>
+    <div class="wrap">
+      <div class="split wide-l">
+        <div>
+          <div class="sec-head rev"><span class="num">02</span><div class="line"></div><span class="mono-label">The Athlete</span></div>
+          <h1 class="display rev">Marcus<br><span class="ol">Filly</span></h1>
+          <div class="roles rev rev-d1" style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem">
+            <span class="role">6× CrossFit Games Athlete</span>
+            <span class="role">Founder — Functional Bodybuilding</span>
+            <span class="role">Coach to 100k+ Athletes [placeholder]</span>
+            <span class="role">Father · Builder · Staple</span>
+          </div>
+          <p class="lead rev rev-d2">Two decades under the bar taught Marcus one thing: <b>the flashy stuff breaks you, the boring stuff builds you.</b> STÄPL is that idea applied to nutrition.</p>
+        </div>
+        <div class="frame aq tilt rev rev-d1" style="aspect-ratio:4/3">
+          <img src="assets/staple-home/marcus-trailer-52.jpg" alt="Marcus Filly seated in the gym between sets">
+          <span class="cap">Marcus Filly · photo credit <b>[tbc]</b></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="pg-sec white">
+    <div class="wrap">
+      <p class="ph-note rev"><b>Pending approval &#9656;</b> Everything on this page about Marcus is our draft. Bio, quotes, stats and timeline dates are waiting on his team's confirmation (see the hand-off list).</p>
+      <div class="split top">
+        <div class="prose">
+          <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The story</span></div>
+          <h2 class="rev" style="font-size:clamp(2rem,4.4vw,3.6rem);line-height:.92">Chalk up.<br>Show up.</h2>
+          <p class="rev">Marcus Filly has spent two decades in the gym learning one truth the hard way: the flashy stuff breaks you, the boring stuff builds you. <span class="ph-tag">competition record line to confirm</span> A career reinventing how athletes train. And the same lesson every time: mastery is just the fundamentals, repeated.</p>
+          <p class="rev">That lesson became Functional Bodybuilding, the training methodology he built to help athletes look good and move well without the burnout. It now reaches athletes around the world through Persist, his flagship program.</p>
+          <p class="rev">STÄPL is the same philosophy in a canister. No proprietary blends. No neon powders promising the moon. Just the nutrient almost every athlete under-eats, made effortless enough to never skip.</p>
+          <blockquote class="rev">"Fiber isn't sexy. Neither is showing up at 5AM. Do it anyway." <span class="ph-tag">placeholder quote</span></blockquote>
+          <p class="rev"><span class="ph-tag">Bio paragraph 4</span> Space for 100 to 150 more words from Marcus's approved bio: where he is from, his path into the sport, family, and what he is building now.</p>
+        </div>
+        <div class="rev rev-d1">
+          <div class="frame cl tilt-l" style="aspect-ratio:4/5">
+            <img src="assets/staple-home/marcus-trailer-82.jpg" alt="Marcus Filly training with a loaded barbell" style="object-position:38% 50%">
+            <span class="cap">Training · Functional Bodybuilding HQ <b>[tbc]</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="athlete" style="padding:5rem 0">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">By the numbers</span></div>
+      <div class="stat-bar rev" style="margin-top:0">
+        <div class="stat"><div class="v" data-count="6" data-suffix="×">0</div><div class="k">CrossFit Games Athlete</div></div>
+        <div class="stat"><div class="v" data-count="12" data-suffix="th">0</div><div class="k">Fittest Man On Earth, 2016 [placeholder]</div></div>
+        <div class="stat"><div class="v" data-count="20" data-suffix="+">0</div><div class="k">Years Under The Bar</div></div>
+        <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Non-Negotiable</div></div>
+      </div>
+      <div class="photo-row">
+        <div class="frame rev"><img src="assets/staple-home/marcus-training-98.jpg" alt="Marcus Filly laughing between sets"><span class="cap">Between sets</span></div>
+        <div class="frame rev rev-d1"><img src="assets/staple-home/marcus-oct-7.jpg" alt="Marcus Filly stretching to a kettlebell" style="object-position:70% 50%"><span class="cap">Warm-up</span></div>
+        <div class="frame rev rev-d2"><img src="assets/staple-home/86ad8c5ea1.jpg" alt="Chalked hands on a barbell"><span class="cap">Placeholder · chalk macro</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec dark">
+    <div class="wrap">
+      <div class="split top">
+        <div>
+          <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">The path</span></div>
+          <h2 class="display rev">Built,<br><em>not burnt.</em></h2>
+          <p class="lead rev rev-d1">A short timeline of how a competitor became a coach, and why a coach started a nutrition brand.</p>
+        </div>
+        <div class="tl rev rev-d1">
+          <div><span class="yr">[Year tbc]</span><b>Starts competing</b><p>Finds CrossFit and begins competing. <span class="ph-tag">detail from Marcus</span></p></div>
+          <div><span class="yr">[Years tbc]</span><b>6× CrossFit Games athlete</b><p>Six trips to the sport's biggest stage. <span class="ph-tag">confirm years + wording</span></p></div>
+          <div><span class="yr">2016 [tbc]</span><b>12th at the CrossFit Games</b><p>Placeholder stat carried over from the homepage. <span class="ph-tag">confirm placing + year</span></p></div>
+          <div><span class="yr">[Year tbc]</span><b>Founds Functional Bodybuilding</b><p>Builds a training method around longevity: look good, move well.</p></div>
+          <div><span class="yr">[Year tbc]</span><b>Launches Persist</b><p>His flagship training program goes out to athletes worldwide.</p></div>
+          <div><span class="yr">Now</span><b>STÄPL Daily</b><p>The nutrition side of the same promise, starting with fiber.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec mint">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">In his words</span></div>
+      <h2 class="display rev">Why fiber.<br><em class="aq">Why now.</em></h2>
+      <div class="qa">
+        <div class="rev"><div class="q">Why start with fiber?</div><div class="a"><span class="ph-tag">Marcus to answer</span> Two or three sentences in his own words.</div></div>
+        <div class="rev"><div class="q">What is your own history with digestion and nutrition?</div><div class="a"><span class="ph-tag">Marcus to answer</span> Only what he is comfortable sharing publicly.</div></div>
+        <div class="rev"><div class="q">How do you take Daily?</div><div class="a"><span class="ph-tag">Marcus to answer</span> Time of day, what he mixes it with, favorite flavor.</div></div>
+        <div class="rev"><div class="q">What does "staple" mean to you?</div><div class="a"><span class="ph-tag">Marcus to answer</span> The idea behind the name.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="athlete" style="padding:5rem 0">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">Watch</span></div>
+      <div class="media-grid">
+        <div class="media-slot t1 rev"><div class="bg bg-chalk"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Gym — Chalk Macro</span><span class="spec">1:1 Loop · Hands + Bar</span></div></div>
+        <div class="media-slot t2 rev rev-d1"><div class="bg bg-herochalk"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Marcus — Story Film</span><span class="spec">16:9 · Why Marcus Built Daily · 60–90s</span></div></div>
+        <div class="media-slot t3 rev rev-d2"><div class="bg bg-knit"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Training — Vertical Loop</span><span class="spec">9:16 · Barbell Cycling · Slow-Mo</span></div></div>
+        <div class="media-slot t4 rev"><div class="bg bg-concrete"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Morning Ritual — Kitchen</span><span class="spec">1:1 Still · Scoop In Hand</span></div></div>
+        <div class="media-slot t5 rev rev-d1"><div class="bg bg-patburst"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Coaching — FBB Session</span><span class="spec">1:1 Loop · Marcus + Athletes</span></div></div>
+        <div class="media-slot t6 rev rev-d2"><div class="bg bg-herotrail"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Trail — Long Run</span><span class="spec">1:1 Still · Golden Hour</span></div></div>
+      </div>
+      <p class="media-hint"><i></i>Swipe to see more</p>
+    </div>
+  </section>
+
+  <section class="fbb">
+  <div class="wrap">
+    <div class="fbb-card rev">
+      <div class="fbb-left">
+        <span class="mono-label fbb-kicker">Also From Marcus</span>
+        <h3 class="display">Functional<br>Bodybuilding</h3>
+        <span class="fbb-tag">Look Good. <em>Move Well.</em></span>
+      </div>
+      <div class="fbb-right">
+        <p>STÄPL comes from the same brain as <b>Functional Bodybuilding</b> — Marcus's training methodology that blends the best of bodybuilding and functional fitness, without the burnout. After years of injury, burnout, and digestive distress at the top of the sport, Marcus built FBB to help athletes <b>get built, not burnt</b> — and now STÄPL, to handle the nutrition side of the same promise. Explore Persist, his flagship training program, plus free workouts, e-books, and coaching.</p>
+        <a class="btn btn-ghost" href="https://functional-bodybuilding.com/" target="_blank" rel="noopener">Visit Functional-Bodybuilding.com &#9656;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2 class="display">One scoop a day. <em>Non-negotiable.</em></h2>
+      <a class="btn btn-sun" href="#shop">Shop Daily &#9656;</a>
+    </div>
+  </section>
+</main>
+<!-- ============================================================
+     VIEW: FAQ
+     ============================================================ -->
+<main class="view" data-view="faq" data-title="FAQ | STÄPL">
+  <header class="pg-hero sun slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">03</span><div class="line"></div><span class="mono-label">FAQ</span></div>
+      <h1 class="display rev">Straight <em class="aq">answers.</em></h1>
+      <p class="lead rev rev-d1">Everything about Daily, orders and subscriptions. Can't find it? <a class="more-link" style="margin:0" href="#contact">Contact us &#9656;</a></p>
+      <div class="faq-jump chip-row rev rev-d2">
+        <a class="chip" data-jump="fq-product">The product</a>
+        <a class="chip" data-jump="fq-use">Using it</a>
+        <a class="chip" data-jump="fq-orders">Orders + shipping</a>
+        <a class="chip" data-jump="fq-subs">Subscriptions</a>
+        <a class="chip" data-jump="fq-returns">Returns</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="faq faq-page">
+    <div class="wrap">
+      <p class="ph-note"><b>Before launch &#9656;</b> Answers marked with a yellow tag depend on the final formula or on Shopify checkout settings. Shipping, return and subscription answers must match the policy pages word for number.</p>
+
+      <div class="faq-group" id="fq-product">
+        <div><span class="mono-label">Group 01</span><h2>The product</h2></div>
+        <div>
+          <details open><summary>What is Daily? <span class="pm">+</span></summary><p>Daily is a fiber supplement powder from STÄPL: 7g of functional fiber per scoop, real fruit flavor, zero sugar. One scoop in water, once a day.</p></details>
+          <details><summary>What kind of fiber is it? <span class="pm">+</span></summary><p><span class="ph-tag">final formulation copy</span> A blend of soluble and insoluble fibers chosen for gut tolerance and clean taste. Full ingredient panel and sourcing to drop in here.</p></details>
+          <details><summary>What are the flavors? <span class="pm">+</span></summary><p>Raspberry, Watermelon, Blood Orange and Fruit Punch. <span class="ph-tag">confirm final flavor line-up</span></p></details>
+          <details><summary>What is it sweetened with? <span class="pm">+</span></summary><p><span class="ph-tag">sweetener system to confirm</span> Zero sugar, nothing artificial.</p></details>
+          <details><summary>Is it third-party tested? <span class="pm">+</span></summary><p><span class="ph-tag">confirm lab, standard and what is tested</span></p></details>
+          <details><summary>Is it vegan, gluten-free, dairy-free? <span class="pm">+</span></summary><p><span class="ph-tag">allergen + dietary statement from manufacturer</span></p></details>
+          <details><summary>Why only one product? <span class="pm">+</span></summary><p>Because that's the brand. STÄPL starts with the single most neglected nutrient and does it properly. More staples are coming, after this one earns its place in your routine.</p></details>
+          <details><summary>Canister or sachets? <span class="pm">+</span></summary><p>We're launching with a 30-serving canister. Single-serve sachets for travel and the gym bag are on the roadmap. Join the list and you'll hear first.</p></details>
+        </div>
+      </div>
+
+      <div class="faq-group" id="fq-use">
+        <div><span class="mono-label">Group 02</span><h2>Using it</h2></div>
+        <div>
+          <details><summary>How do I take it? <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water. Shake or stir and drink. <span class="ph-tag">confirm directions against label</span></p></details>
+          <details><summary>When should I take it? <span class="pm">+</span></summary><p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move.</p></details>
+          <details><summary>Will it make my stomach weird? <span class="pm">+</span></summary><p><span class="ph-tag">advisory language for compliance review</span> If you're new to fiber, start with half a scoop for the first week and drink plenty of water through the day.</p></details>
+          <details><summary>Can I mix it with protein or pre-workout? <span class="pm">+</span></summary><p><span class="ph-tag">confirm with formulator</span> Daily is designed to mix into water. Mixing guidance for shakes to be added.</p></details>
+          <details><summary>Can I take it if I'm pregnant, nursing or on medication? <span class="pm">+</span></summary><p>Talk to your doctor before starting any supplement, including this one. See our <a class="more-link" style="margin:0" href="#disclaimer">health disclaimer</a>.</p></details>
+        </div>
+      </div>
+
+      <div class="faq-group" id="fq-orders">
+        <div><span class="mono-label">Group 03</span><h2>Orders + shipping</h2></div>
+        <div>
+          <details><summary>Where do you ship? <span class="pm">+</span></summary><p><span class="ph-tag">match Shopify shipping zones</span> We currently ship within the United States.</p></details>
+          <details><summary>How much is shipping? <span class="pm">+</span></summary><p><span class="ph-tag">match Shopify rates</span> Free shipping on orders over $50. Full rates are on the <a class="more-link" style="margin:0" href="#shipping">shipping policy</a>.</p></details>
+          <details><summary>How long does delivery take? <span class="pm">+</span></summary><p><span class="ph-tag">match shipping policy</span> Orders leave the warehouse in 1 to 2 business days and arrive in 3 to 7 business days.</p></details>
+          <details><summary>How do I track my order? <span class="pm">+</span></summary><p>You'll get a tracking link by email as soon as your order ships.</p></details>
+        </div>
+      </div>
+
+      <div class="faq-group" id="fq-subs">
+        <div><span class="mono-label">Group 04</span><h2>Subscriptions</h2></div>
+        <div>
+          <details><summary>How does Subscribe &amp; Save work? <span class="pm">+</span></summary><p><span class="ph-tag">final terms</span> A fresh canister ships every 30 days at 20% off. Your card is charged when each order ships.</p></details>
+          <details><summary>Can I pause, skip or cancel? <span class="pm">+</span></summary><p>Yes, anytime, from your account or by emailing us. Changes need to be made before your next order processes. Details in the <a class="more-link" style="margin:0" href="#subscription-policy">subscription policy</a>.</p></details>
+          <details><summary>Can I switch flavors? <span class="pm">+</span></summary><p>Yes. Change your flavor in your account before your next order processes.</p></details>
+        </div>
+      </div>
+
+      <div class="faq-group" id="fq-returns">
+        <div><span class="mono-label">Group 05</span><h2>Returns</h2></div>
+        <div>
+          <details><summary>What is the guarantee? <span class="pm">+</span></summary><p><span class="ph-tag">match refund policy</span> If you don't love your first canister, contact us within 30 days of delivery for a refund.</p></details>
+          <details><summary>How do I start a return? <span class="pm">+</span></summary><p>Email us with your order number. The full process is on the <a class="more-link" style="margin:0" href="#refund-policy">refund policy</a>.</p></details>
+          <details><summary>My order arrived damaged. What now? <span class="pm">+</span></summary><p>Send a photo and your order number to our support email and we'll replace it.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2 class="display">Still have a <em>question?</em></h2>
+      <a class="btn btn-sun" href="#contact">Contact us &#9656;</a>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     VIEW: SHOP DAILY (product page)
+     ============================================================ -->
+<main class="view" data-view="shop" data-title="Shop Daily — Performance Fiber | STÄPL">
+  <section class="pdp">
+    <div class="wrap">
+      <div class="crumbs"><a href="#home">Home</a> &nbsp;/&nbsp; Shop &nbsp;/&nbsp; Daily</div>
+      <div class="pdp-grid">
+        <div>
+          <div class="pdp-stage rev">
+            <span class="spec-tag">Daily &#9656; Launch SKU 001</span>
+            <div class="canister">
+          <div class="can-lid"></div>
+          <div class="can-body">
+            <div class="can-label">
+              <span class="can-stripes"></span>
+              <span class="can-dots"></span>
+              <div class="can-blob">
+                <img src="assets/staple-home/stapl-wordmark-dark.png" alt="STÄPL">
+                <div class="can-sub">Daily</div>
+                <div class="can-dose">7G FIBER · 30 SERVINGS</div>
+              </div>
+              <div class="can-flav-wrap"><span class="can-flav">RASPBERRY</span></div>
+            </div>
+            <div class="can-foot">DIETARY SUPPLEMENT<small>NET WT. 16 OZ (454G) · 30 SERVINGS</small></div>
+          </div>
+        </div>
+          </div>
+          <div class="pdp-thumbs">
+            <div class="frame"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"></div>
+            <div class="frame"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"></div>
+            <div class="frame"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"></div>
+            <div class="frame"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"></div>
+          </div>
+          <p class="ph-note" style="margin-top:1.4rem"><b>Images &#9656;</b> Canister is a drawn stand-in and flavor photos are AI placeholders. Swap for final packaging renders and product photography.</p>
+        </div>
+        <div class="pdp-info">
+          <span class="kicker">STÄPL &#9656; The first staple</span>
+          <h1 class="display">Daily</h1>
+          <div class="sub">Performance Fiber · 7g per scoop</div>
+          <p class="desc">Real fruit flavor, zero sugar, nothing artificial. One scoop in water, once a day, from 6× CrossFit Games athlete Marcus Filly.</p>
+          <span class="rating">Reviews open at launch</span>
+          <div class="buy-box">
+        <span class="pk">STÄPL — Launch SKU 001</span>
+        <h3>Daily</h3>
+        <span class="sub">7g fiber · real fruit flavor · 30 servings per canister</span>
+        <div class="flav-pick">
+          <span class="lbl">Choose your flavor</span>
+          <div class="opts">
+            <button class="flav-pill active" style="--flav:var(--clay)"><i></i>Raspberry</button>
+            <button class="flav-pill" style="--flav:var(--coral)"><i></i>Watermelon</button>
+            <button class="flav-pill" style="--flav:var(--sunshine)"><i></i>Blood Orange</button>
+            <button class="flav-pill" style="--flav:var(--aqua)"><i></i>Fruit Punch</button>
+          </div>
+        </div>
+        <div class="opt">
+          <label class="active">
+            <input type="radio" name="purch-pdp" checked>
+            <span class="t"><b>Subscribe &amp; Save<span class="save-flag">-20%</span></b><span>Delivered every 30 days · pause or cancel anytime</span></span>
+            <span class="pr"><b>$31.20</b><s>$39.00</s></span>
+          </label>
+          <label>
+            <input type="radio" name="purch-pdp">
+            <span class="t"><b>One-Time Purchase</b><span>Try it once. You'll be back.</span></span>
+            <span class="pr"><b>$39.00</b></span>
+          </label>
+        </div>
+        <button class="add-cart">Add To Cart &#9656; [Preview]</button>
+        <div class="buy-meta">
+          <span><b>&#9656;</b> Free ship $50+</span>
+          <span><b>&#9656;</b> 3rd-party tested</span>
+          <span><b>&#9656;</b> 30-day guarantee</span>
+        </div>
+      </div>
+          <div class="acc">
+            <details open><summary>What's inside <span class="pm">+</span></summary><p><span class="ph-tag">final ingredient list</span> 7g fiber blend (soluble + insoluble), real fruit flavor, zero sugar, no artificial colors or flavors. 30 servings per canister, scoop included.</p></details>
+            <details><summary>How to use <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water, once a day. New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag">confirm vs. label</span></p></details>
+            <details><summary>Shipping + returns <span class="pm">+</span></summary><p><span class="ph-tag">match checkout</span> Free shipping over $50. Ships in 1 to 2 business days. 30-day guarantee on your first canister. See the <a class="more-link" style="margin:0" href="#shipping">shipping</a> and <a class="more-link" style="margin:0" href="#refund-policy">refund</a> policies.</p></details>
+            <details><summary>Subscription details <span class="pm">+</span></summary><p><span class="ph-tag">final terms</span> Subscribe &amp; Save ships every 30 days at 20% off and renews automatically until you cancel. Pause, skip or cancel anytime before your next order processes. See the <a class="more-link" style="margin:0" href="#subscription-policy">subscription policy</a>.</p></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec gridbg">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Why Daily</span></div>
+      <h2 class="display rev">One product.<br><em>One job.</em></h2>
+      <div class="pcards">
+        <div class="pcard rev"><span class="n">01</span><h3>Tastes like actual fruit</h3><p>Raspberry, watermelon, blood orange, fruit punch. Zero sugar, nothing artificial, no chalky aftertaste.</p></div>
+        <div class="pcard rev rev-d1"><span class="n">02</span><h3>7g where it counts</h3><p>Most adults get about half the fiber they need. One scoop closes a real part of that gap. <a class="more-link" style="margin:0" href="#the-fiber">Why fiber &#9656;</a></p></div>
+        <div class="pcard rev rev-d2"><span class="n">03</span><h3>Built to be a habit</h3><p>The canister lives where you'll see it every morning. Ten seconds, then get on with your day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec mint">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">The label</span></div>
+          <h2 class="display rev">Nothing<br><em class="aq">hidden.</em></h2>
+          <p class="lead rev rev-d1">No proprietary blends. The full Supplement Facts panel and ingredient list will sit here, readable without zooming into a photo.</p>
+          <ul class="ticks rev rev-d2">
+            <li><b>7g fiber</b> per scoop</li>
+            <li><b>0g sugar</b></li>
+            <li><b>30 servings</b> per canister</li>
+            <li><b>Third-party tested</b> <span class="ph-tag">confirm</span></li>
+          </ul>
+        </div>
+        <div class="rev rev-d1" style="display:flex;justify-content:center">
+          <div class="facts">
+            <h3>Supplement Facts</h3>
+            <div class="row"><span>Serving size</span><b>1 scoop <span class="ph-tag">g</span></b></div>
+            <div class="row thick"><span>Servings per container</span><b>30</b></div>
+            <div class="row"><span>Calories</span><b><span class="ph-tag">tbc</span></b></div>
+            <div class="row"><span>Total carbohydrate</span><b><span class="ph-tag">tbc</span></b></div>
+            <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b>7g</b></div>
+            <div class="row thick"><span>&nbsp;&nbsp;Total sugars</span><b>0g</b></div>
+            <small>Placeholder panel. Replace with the final Supplement Facts, ingredients and allergen statement.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Reviews</span></div>
+      <h2 class="display rev">Earned,<br><em>not invented.</em></h2>
+      <div class="review-empty rev rev-d1">
+        <b>Reviews open at launch</b>
+        <p>This block connects to the review app once real customers have the product. No star rating shows until there are real reviews behind it.</p>
+      </div>
+      <div class="btn-row"><a class="more-link" href="#faq">Product questions? Read the FAQ &#9656;</a></div>
+    </div>
+  </section>
+
+  <section class="signup">
+  <div class="wrap">
+    <svg class="lockup rev" viewBox="0 0 1340 80" xmlns="http://www.w3.org/2000/svg" aria-label="Nutrition isn't extra. It's STÄPL.">
+      <line x1="10" y1="40" x2="120" y2="40" stroke="#FFC72C" stroke-width="4"/>
+      <line x1="1220" y1="40" x2="1330" y2="40" stroke="#FFC72C" stroke-width="4"/>
+      <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
+    </svg>
+    <h2 class="display rev">Get on <em>the list.</em></h2>
+    <p class="rev rev-d1">Launch drops, restocks, and training content from Marcus. No spam — that's not very foundational of us.</p>
+    <form class="sig-form rev rev-d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='YOU\'RE IN ✓';">
+      <input type="email" placeholder="EMAIL ADDRESS" required>
+      <button type="submit">Join &#9656;</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     VIEW: PARTNERS
+     ============================================================ -->
+<main class="view" data-view="partners" data-title="Partners | STÄPL">
+  <header class="pg-hero aqua">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span></div>
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">04</span><div class="line"></div><span class="mono-label">Partners</span></div>
+      <h1 class="display rev">Build it<br><em>with us.</em></h1>
+      <p class="lead rev rev-d1">Gyms, coaches, retailers and brands who believe the basics come first. <b>If your people train, they need fiber.</b></p>
+      <div class="btn-row rev rev-d2">
+        <a class="btn btn-sun" href="#partners" data-jump="partner-apply">Apply to partner &#9656;</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pg-sec white">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Who we work with</span></div>
+      <h2 class="display rev">Our <em class="aq">partners.</em></h2>
+      <p class="lead rev rev-d1">This wall grows as partners join. Each slot takes a logo, a name and a link.</p>
+      <div class="logo-wall rev rev-d1">
+        <a class="logo-slot live" href="https://functional-bodybuilding.com/" target="_blank" rel="noopener"><b>Functional<br>Bodybuilding</b><span>Founding partner</span></a>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Your logo here</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Ways to partner</span></div>
+      <h2 class="display rev">Four ways <em>in.</em></h2>
+      <p class="ph-note rev" style="margin-top:2rem"><b>Terms to set &#9656;</b> Wholesale pricing, minimums, affiliate commission and payout terms are not decided yet. Bullets below describe the structure only.</p>
+      <div class="pcards c4">
+        <div class="pcard tier rev"><span class="n">01</span><h3>Gyms + affiliates</h3><p>Stock Daily at the front desk for your members.</p><ul><li>Wholesale pricing <span class="ph-tag">tbc</span></li><li>Counter display + samples</li><li>Listing on this page</li></ul></div>
+        <div class="pcard tier rev rev-d1"><span class="n">02</span><h3>Coaches + creators</h3><p>Recommend what you actually use and earn on it.</p><ul><li>Affiliate commission <span class="ph-tag">tbc</span></li><li>Your own code + link</li><li>Early access to new staples</li></ul></div>
+        <div class="pcard tier rev rev-d2"><span class="n">03</span><h3>Retail + wholesale</h3><p>Independent retailers, grocers and distributors.</p><ul><li>Case pricing <span class="ph-tag">tbc</span></li><li>Sell sheets + product data</li><li>Launch support</li></ul></div>
+        <div class="pcard tier rev rev-d3"><span class="n">04</span><h3>Events + brands</h3><p>Competitions, retreats and brands we share a customer with.</p><ul><li>Sampling at events</li><li>Co-branded content</li><li>Giveaways + bundles</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec mint" id="partner-apply">
+    <div class="wrap">
+      <div class="split top wide-r">
+        <div>
+          <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Apply</span></div>
+          <h2 class="display rev">Tell us<br>about <em>you.</em></h2>
+          <p class="lead rev rev-d1">We reply to every application within <span class="ph-tag">x business days</span>.</p>
+          <ul class="ticks rev rev-d2">
+            <li><b>Step 1:</b> send the form</li>
+            <li><b>Step 2:</b> a quick call or email to match you to a program</li>
+            <li><b>Step 3:</b> samples, pricing and your partner kit</li>
+          </ul>
+        </div>
+        <form class="form rev rev-d1" onsubmit="event.preventDefault();this.querySelector('button').textContent='SENT ✓ [PREVIEW]';">
+          <label>Name<input type="text" required></label>
+          <label>Email<input type="email" required></label>
+          <label>Business or handle<input type="text"></label>
+          <label>Partner type
+            <select><option>Gym or affiliate</option><option>Coach or creator</option><option>Retail or wholesale</option><option>Event or brand</option><option>Something else</option></select>
+          </label>
+          <label class="full">Website or social link<input type="text"></label>
+          <label class="full">Tell us about your community<textarea></textarea></label>
+          <button class="btn btn-ghost" type="submit">Send application &#9656;</button>
+          <p class="fine">Preview form. Connects to email or a Shopify form at build. By applying you agree to our <a href="#privacy">Privacy Policy</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     VIEW: JOURNAL (blog index)
+     ============================================================ -->
+<main class="view" data-view="journal" data-title="Journal | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">05</span><div class="line"></div><span class="mono-label">Journal</span></div>
+      <h1 class="display rev">The <em>basics,</em> explained.</h1>
+      <p class="lead rev rev-d1">Fiber, training and the habits that hold everything else up.</p>
+      <div class="cat-row chip-row rev rev-d2">
+        <span class="chip">All</span><span class="chip">Fiber 101</span><span class="chip">Training</span><span class="chip">Routine</span><span class="chip">From Marcus</span><span class="chip">Recipes</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Blog-ready &#9656;</b> This layout maps to a Shopify blog: featured post, category filters, post cards. Titles below are draft topics, not written articles.</p>
+      <div class="post-grid">
+        <a class="post feature rev" href="#journal-post">
+          <div class="ph"><img src="assets/staple-home/marcus-trailer-82.jpg" alt=""></div>
+          <div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Why most athletes under-eat fiber</h3><p>You track protein to the gram. Here is the nutrient your plan is probably missing, and what to do about it.</p><span class="meta">By Marcus Filly [tbc] · 5 min read</span></div>
+        </a>
+        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/aa494ee14a.jpg" alt=""></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Soluble vs. insoluble: what it means in your shaker</h3><p>Two kinds of fiber, two different jobs.</p><span class="meta">4 min read</span></div></a>
+        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/b93ac55391.jpg" alt=""></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The ten-second morning</h3><p>How to build a habit small enough that you never skip it.</p><span class="meta">3 min read</span></div></a>
+        <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/marcus-training-98.jpg" alt=""></div><div class="body"><span class="cat">From Marcus · Draft topic</span><h3>How I fuel a training week</h3><p>What stays the same every day, and what changes.</p><span class="meta">By Marcus Filly [tbc] · 6 min read</span></div></a>
+        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/747673fa6d.jpg" alt=""></div><div class="body"><span class="cat">Recipes · Draft topic</span><h3>Three ways to drink Daily that aren't water</h3><p>Smoothie, sparkling, frozen.</p><span class="meta">3 min read</span></div></a>
+        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/86ad8c5ea1.jpg" alt=""></div><div class="body"><span class="cat">Training · Draft topic</span><h3>The boring stuff builds you</h3><p>Why fundamentals outlast every trend in the gym.</p><span class="meta">5 min read</span></div></a>
+        <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt=""></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>What "third-party tested" actually means</h3><p>How to read a supplement label like a skeptic.</p><span class="meta">4 min read</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup">
+  <div class="wrap">
+    <svg class="lockup rev" viewBox="0 0 1340 80" xmlns="http://www.w3.org/2000/svg" aria-label="Nutrition isn't extra. It's STÄPL.">
+      <line x1="10" y1="40" x2="120" y2="40" stroke="#FFC72C" stroke-width="4"/>
+      <line x1="1220" y1="40" x2="1330" y2="40" stroke="#FFC72C" stroke-width="4"/>
+      <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
+    </svg>
+    <h2 class="display rev">Get on <em>the list.</em></h2>
+    <p class="rev rev-d1">Launch drops, restocks, and training content from Marcus. No spam — that's not very foundational of us.</p>
+    <form class="sig-form rev rev-d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='YOU\'RE IN ✓';">
+      <input type="email" placeholder="EMAIL ADDRESS" required>
+      <button type="submit">Join &#9656;</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     VIEW: JOURNAL POST (article template)
+     ============================================================ -->
+<main class="view" data-view="journal-post" data-title="Journal — Article Template | STÄPL">
+  <section class="pdp" style="padding-bottom:4rem">
+    <div class="wrap">
+      <div class="crumbs"><a href="#journal">Journal</a> &nbsp;/&nbsp; Fiber 101</div>
+      <div class="article-head">
+        <h1 class="display">Why most athletes under-eat fiber</h1>
+        <div class="meta">By Marcus Filly [tbc] &nbsp;·&nbsp; [Publish date] &nbsp;·&nbsp; 5 min read</div>
+      </div>
+      <div class="frame aq article-hero"><img src="assets/staple-home/marcus-trailer-82.jpg" alt="" style="object-position:50% 40%"></div>
+      <p class="ph-note"><b>Article template &#9656;</b> This is the layout every blog post uses. The body below shows each text style; it is not a finished article.</p>
+      <div class="prose">
+        <p><b>Intro paragraph.</b> One or two sentences that state the point of the article and who it is for.</p>
+        <h2>A section heading</h2>
+        <p>Body copy runs in a single readable column. Paragraphs stay short. Links look <a href="#the-fiber">like this</a>.</p>
+        <ul><li>Bulleted lists for parallel points</li><li>Each item one line where possible</li></ul>
+        <blockquote>A pull quote breaks up long reads.</blockquote>
+        <h2>A second section</h2>
+        <p>Images, tables and embedded video can sit between paragraphs at full column width.</p>
+        <h3>A smaller sub-heading</h3>
+        <p>Health and nutrition articles end with the standard disclaimer and link to sources.</p>
+        <p style="font-size:.84rem"><i>This article is for general information and is not medical advice. These statements have not been evaluated by the Food and Drug Administration.</i></p>
+      </div>
+      <div class="byline">
+        <img src="assets/staple-home/marcus-trailer-52.jpg" alt="Marcus Filly" style="object-position:62% 30%">
+        <div><b>Marcus Filly</b><span>6× CrossFit Games athlete and founder of Functional Bodybuilding. <span class="ph-tag">author bio tbc</span></span></div>
+      </div>
+      <div class="btn-row"><a class="more-link" href="#journal">&#9664; Back to the Journal</a><a class="btn btn-sun" href="#shop">Shop Daily &#9656;</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     VIEW: CONTACT
+     ============================================================ -->
+<main class="view" data-view="contact" data-title="Contact | STÄPL">
+  <header class="pg-hero sun slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">06</span><div class="line"></div><span class="mono-label">Contact</span></div>
+      <h1 class="display rev">Talk to <em class="aq">us.</em></h1>
+      <p class="lead rev rev-d1">Real people answer. We reply within <span class="ph-tag">1 business day</span>.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <div class="split top wide-l">
+        <form class="form rev" onsubmit="event.preventDefault();this.querySelector('button').textContent='SENT ✓ [PREVIEW]';">
+          <label>Name<input type="text" required></label>
+          <label>Email<input type="email" required></label>
+          <label>Topic
+            <select><option>Order or shipping</option><option>Subscription</option><option>Product question</option><option>Returns</option><option>Partnerships + wholesale</option><option>Press</option></select>
+          </label>
+          <label>Order number (optional)<input type="text"></label>
+          <label class="full">Message<textarea required></textarea></label>
+          <button class="btn btn-ghost" type="submit">Send message &#9656;</button>
+          <p class="fine">Preview form. See our <a href="#privacy">Privacy Policy</a> for how we handle your information.</p>
+        </form>
+        <div class="contact-cards rev rev-d1">
+          <div class="ccard"><span>Customer support</span><b><span class="ph-tag">support@domain</span></b><p>Monday to Friday, <span class="ph-tag">hours + time zone</span></p></div>
+          <div class="ccard"><span>Phone</span><b><span class="ph-tag">(000) 000-0000</span></b><p>Google and Meta both look for a second contact method beside email.</p></div>
+          <div class="ccard"><span>Mailing address</span><b><span class="ph-tag">Legal entity name</span></b><p><span class="ph-tag">Street, City, State ZIP</span> Must match the address in Shopify and Merchant Center exactly.</p></div>
+          <div class="ccard"><span>Partnerships + wholesale</span><b><a class="more-link" style="margin:0" href="#partners">Partner with us &#9656;</a></b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="shipping" data-title="Shipping Policy | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Shipping <em class="aq">Policy</em></h1>
+      <p class="lead">Where we ship, what it costs and how long it takes.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping" class="is-current">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<h2>Where we ship</h2>
+<p>We ship to addresses in the United States. <span class="ph-tag">Confirm: 50 states, PO boxes, APO/FPO, territories</span> We do not currently ship internationally.</p>
+<h2>Processing time</h2>
+<p>Orders are processed within <span class="ph-tag">1 to 2</span> business days, Monday to Friday, excluding holidays. Orders placed after <span class="ph-tag">cutoff time + time zone</span> process the next business day.</p>
+<h2>Rates and delivery times</h2>
+<table>
+<tr><th>Method</th><th>Cost</th><th>Delivery after processing</th></tr>
+<tr><td>Standard</td><td><span class="ph-tag">$0.00</span>; free on orders over <span class="ph-tag">$50</span></td><td><span class="ph-tag">3 to 7</span> business days</td></tr>
+<tr><td>Expedited</td><td><span class="ph-tag">$0.00</span></td><td><span class="ph-tag">2 to 3</span> business days</td></tr>
+</table>
+<p>Delivery times are estimates from the carrier and are not guaranteed.</p>
+<h2>Subscription orders</h2>
+<p>Subscription orders ship on your renewal date and follow the same rates and times. See the <a href="#subscription-policy">Subscription Policy</a>.</p>
+<h2>Tracking</h2>
+<p>You will receive an email with a tracking link when your order ships.</p>
+<h2>Lost, delayed or damaged orders</h2>
+<p>If your order arrives damaged, or tracking shows delivered and you do not have it, email <span class="ph-tag">support@domain</span> within <span class="ph-tag">30</span> days with your order number and a photo of any damage. We will replace it or refund you.</p>
+<h2>Wrong address</h2>
+<p>Email us as soon as possible. We can change an address until the order ships. Orders returned to us as undeliverable are refunded less the original shipping cost. <span class="ph-tag">confirm</span></p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="refund-policy" data-title="Refund + Return Policy | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Refund + Return <em class="aq">Policy</em></h1>
+      <p class="lead">How returns, refunds and our guarantee work.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy" class="is-current">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<h2>Our guarantee</h2>
+<p>If you are not happy with your first canister of Daily, contact us within <span class="ph-tag">30</span> days of delivery and we will refund the purchase price of that canister. <span class="ph-tag">Confirm: one per customer, opened product accepted</span></p>
+<h2>Returns</h2>
+<ul>
+<li>Return window: <span class="ph-tag">30</span> days from delivery.</li>
+<li>Unopened product may be returned for a full refund of the product price.</li>
+<li>Return shipping is paid by <span class="ph-tag">customer / STÄPL</span>.</li>
+<li>Original shipping charges are <span class="ph-tag">non-refundable / refundable</span>.</li>
+</ul>
+<h2>How to start a return</h2>
+<ol>
+<li>Email <span class="ph-tag">support@domain</span> with your order number and the reason.</li>
+<li>We reply within <span class="ph-tag">1 to 2</span> business days with instructions and, if needed, a return address.</li>
+<li>Once we approve the return, your refund is issued to the original payment method.</li>
+</ol>
+<h2>Refund timing</h2>
+<p>Approved refunds are issued within <span class="ph-tag">5 to 10</span> business days. Your bank may take additional time to post it.</p>
+<h2>Damaged or incorrect items</h2>
+<p>Email us within <span class="ph-tag">30</span> days with a photo and your order number. We will send a replacement or refund you at no cost.</p>
+<h2>Subscriptions</h2>
+<p>You can cancel a subscription at any time before the next order processes. Orders that have already processed can be returned under this policy. See the <a href="#subscription-policy">Subscription Policy</a>.</p>
+<h2>Exceptions</h2>
+<p><span class="ph-tag">List any non-returnable items, such as gift cards or final-sale items, or delete this section.</span></p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="subscription-policy" data-title="Subscription Policy | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Subscription <em class="aq">Policy</em></h1>
+      <p class="lead">How Subscribe + Save renews, and how to pause or cancel.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy" class="is-current">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<h2>How it works</h2>
+<p>When you choose Subscribe &amp; Save, you are enrolling in an automatically renewing subscription. We ship your selected product every <span class="ph-tag">30</span> days and charge your payment method for each shipment until you cancel.</p>
+<h2>What you pay</h2>
+<ul>
+<li>Subscription price: <span class="ph-tag">$31.20</span> per canister (<span class="ph-tag">20%</span> off the one-time price), plus applicable tax and shipping.</li>
+<li>Your payment method is charged on each renewal date, when the order processes.</li>
+<li>If the price changes, we will email you at least <span class="ph-tag">30</span> days before the new price applies.</li>
+</ul>
+<h2>Renewal reminders</h2>
+<p>We email you <span class="ph-tag">3</span> days before each renewal so you can skip, change or cancel.</p>
+<h2>Pause, skip or cancel</h2>
+<p>You can pause, skip a shipment, change flavor or cancel at any time:</p>
+<ul>
+<li>Online, in your account under Manage Subscription; or</li>
+<li>By emailing <span class="ph-tag">support@domain</span>.</li>
+</ul>
+<p>Changes must be made before your next order processes. There are no cancellation fees and no minimum number of orders. <span class="ph-tag">confirm</span></p>
+<h2>Failed payments</h2>
+<p>If a payment fails we will retry <span class="ph-tag">x</span> times and email you. If it cannot be completed, the subscription is paused.</p>
+<h2>Refunds</h2>
+<p>Subscription orders are covered by the <a href="#refund-policy">Refund + Return Policy</a>.</p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="privacy" data-title="Privacy Policy | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Privacy <em class="aq">Policy</em></h1>
+      <p class="lead">What we collect, why, and the choices you have.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy" class="is-current">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<p>This policy explains how <span class="ph-tag">Legal entity name</span> ("STÄPL", "we") collects, uses and shares personal information when you visit <span class="ph-tag">domain</span>, buy from us or contact us.</p>
+<h2>Information we collect</h2>
+<ul>
+<li><b>Information you give us:</b> name, email, phone, shipping and billing address, order details, and messages you send us. Payment card details are processed by our payment providers; we do not store full card numbers.</li>
+<li><b>Information collected automatically:</b> device and browser data, IP address, pages viewed and how you reached the site, collected through cookies, pixels and similar technologies.</li>
+<li><b>Information from others:</b> our e-commerce platform (Shopify), payment processors, shipping carriers, and advertising and analytics partners.</li>
+</ul>
+<h2>How we use it</h2>
+<ul>
+<li>To process and deliver orders and subscriptions</li>
+<li>To provide customer support</li>
+<li>To send marketing email or text messages where you have opted in</li>
+<li>To measure and improve the site and our advertising</li>
+<li>To prevent fraud and meet legal obligations</li>
+</ul>
+<h2>Advertising and analytics</h2>
+<p>We use tools from partners such as Meta, Google and <span class="ph-tag">other platforms: TikTok, Klaviyo, etc.</span> that place cookies or pixels on the site. These partners may use that information to show you ads on other sites and to measure results. Under some state laws this may be considered a "sale" or "sharing" of personal information. You can opt out on the <a href="#privacy-choices">Your Privacy Choices</a> page.</p>
+<h2>Who we share information with</h2>
+<ul>
+<li>Service providers who run the store: Shopify, payment processors, fulfillment and shipping partners, email and SMS providers, review and subscription apps</li>
+<li>Advertising and analytics partners, as described above</li>
+<li>Authorities, when required by law, or to protect our rights</li>
+<li>A buyer or successor in a merger or sale of the business</li>
+</ul>
+<h2>Your rights and choices</h2>
+<p>Depending on where you live, you may have the right to access, correct, delete or receive a copy of your personal information, and to opt out of targeted advertising, sale or sharing. To make a request, email <span class="ph-tag">support@domain</span> or use <a href="#privacy-choices">Your Privacy Choices</a>. We will not treat you differently for using these rights. You may appeal a decision by replying to our response.</p>
+<p>You can unsubscribe from marketing email with the link in any message, and from texts by replying STOP.</p>
+<h2>Cookies</h2>
+<p>You can manage cookies through the cookie banner <span class="ph-tag">if installed</span> and your browser settings. We honor Global Privacy Control signals where required by law. <span class="ph-tag">confirm once consent tool is set up</span></p>
+<h2>Retention and security</h2>
+<p>We keep personal information for as long as needed for the purposes above and to meet legal requirements. We use reasonable safeguards, but no system is fully secure.</p>
+<h2>Children</h2>
+<p>The site is not intended for anyone under 18, and we do not knowingly collect information from children.</p>
+<h2>International visitors</h2>
+<p>We are based in the United States and process information here. <span class="ph-tag">Add EU/UK section if you market to those regions.</span></p>
+<h2>Changes</h2>
+<p>We may update this policy and will post the new date above.</p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="privacy-choices" data-title="Your Privacy Choices | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Your Privacy <em class="aq">Choices</em></h1>
+      <p class="lead">Opt out of the sale or sharing of your personal information.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices" class="is-current">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<h2>Do not sell or share my personal information</h2>
+<p>We use advertising and analytics cookies that may count as a "sale" or "sharing" of personal information under laws such as the California Consumer Privacy Act. You can opt out in any of these ways:</p>
+<ul>
+<li>Use the button below to turn off advertising cookies on this browser. <span class="ph-tag">connects to Shopify's privacy / consent tool</span></li>
+<li>Turn on Global Privacy Control in your browser. We treat that signal as an opt-out. <span class="ph-tag">confirm</span></li>
+<li>Email <span class="ph-tag">support@domain</span> with the subject "Privacy request".</li>
+</ul>
+<p><a class="btn btn-ghost" href="#privacy-choices" onclick="event.preventDefault();this.textContent='OPTED OUT ✓ [PREVIEW]'">Opt out on this browser &#9656;</a></p>
+<h2>Other requests</h2>
+<p>To access, correct or delete your information, email <span class="ph-tag">support@domain</span>. We verify requests using the email address on your order. Full details are in the <a href="#privacy">Privacy Policy</a>.</p>
+<h2>Marketing messages</h2>
+<p>Unsubscribe from email with the link in any message. Reply STOP to any text to stop texts.</p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="terms" data-title="Terms of Service | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Terms of <em class="aq">Service</em></h1>
+      <p class="lead">The rules for using this site and buying from us.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms" class="is-current">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<p>These terms are an agreement between you and <span class="ph-tag">Legal entity name</span> ("STÄPL", "we"). By using <span class="ph-tag">domain</span> or placing an order you agree to them.</p>
+<h2>Who can order</h2>
+<p>You must be at least 18 and able to enter a contract. Products are for personal use, not resale, unless you have a written wholesale agreement with us.</p>
+<h2>Orders, pricing and payment</h2>
+<ul>
+<li>Prices are in US dollars and may change. Tax and shipping are shown at checkout.</li>
+<li>We may refuse or cancel an order, for example for suspected fraud, pricing errors or stock problems. If we cancel after charging you, we refund the charge.</li>
+<li>You agree to provide current, accurate payment and shipping information.</li>
+</ul>
+<h2>Subscriptions</h2>
+<p>Subscriptions renew automatically and are charged on each renewal until you cancel. The <a href="#subscription-policy">Subscription Policy</a> is part of these terms.</p>
+<h2>Shipping and returns</h2>
+<p>The <a href="#shipping">Shipping Policy</a> and <a href="#refund-policy">Refund + Return Policy</a> are part of these terms.</p>
+<h2>Product information and health</h2>
+<p>We try to describe products accurately, but packaging and formulas can change; always read the label on the product you receive. Content on this site is general information, not medical advice. See the <a href="#disclaimer">Health + FDA Disclaimer</a>.</p>
+<h2>Promotions and discount codes</h2>
+<p>Codes cannot be combined unless stated, have no cash value, and may be ended at any time. <span class="ph-tag">confirm</span></p>
+<h2>Reviews and content you submit</h2>
+<p>If you post a review or send us content, you give us a non-exclusive, royalty-free license to use it in connection with our business. Reviews must be honest and yours.</p>
+<h2>Intellectual property</h2>
+<p>The STÄPL name, logo, site design, text and images belong to us or our licensors and may not be used without permission. Other names and marks belong to their owners.</p>
+<h2>Text messages</h2>
+<p>If you opt in to texts, message frequency varies and message and data rates may apply. Reply STOP to cancel or HELP for help. Consent is not a condition of purchase. <span class="ph-tag">Only if SMS is used; full mobile terms may be required by the SMS provider.</span></p>
+<h2>Disclaimers and limits of liability</h2>
+<p>The site and products are provided "as is" to the fullest extent the law allows. To that same extent, our total liability for any claim is limited to the amount you paid for the order in question, and we are not liable for indirect or consequential losses. Some states do not allow these limits, so they may not apply to you.</p>
+<h2>Governing law and disputes</h2>
+<p>These terms are governed by the laws of the State of <span class="ph-tag">state</span>. <span class="ph-tag">Add dispute resolution / arbitration clause only on legal advice.</span></p>
+<h2>Changes</h2>
+<p>We may update these terms and will post the new date above. The terms in place when you order apply to that order.</p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="disclaimer" data-title="Health + FDA Disclaimer | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display">Health + FDA <em class="aq">Disclaimer</em></h1>
+      <p class="lead">Read this before using any supplement.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer" class="is-current">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<h2>FDA statement</h2>
+<p><b>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</b></p>
+<h2>Not medical advice</h2>
+<p>Everything on this site, in our emails and on our social channels is general information. It is not medical advice and does not replace advice from your doctor or dietitian.</p>
+<h2>Talk to your doctor first</h2>
+<p>Consult a healthcare professional before using this or any dietary supplement, especially if you are pregnant or nursing, under 18, taking medication, or have a medical condition.</p>
+<h2>Using fiber supplements</h2>
+<ul>
+<li>Take with a full glass of water. <span class="ph-tag">confirm against final label warnings</span></li>
+<li>Fiber can affect how some medications are absorbed. Ask your doctor or pharmacist about timing.</li>
+<li>Stop use and consult a doctor if you have an adverse reaction.</li>
+</ul>
+<h2>Allergens</h2>
+<p><span class="ph-tag">Allergen and manufacturing statement from the manufacturer.</span> Always read the label on the product you receive.</p>
+<h2>Results and testimonials</h2>
+<p>Individual experiences vary. Reviews and testimonials reflect that person's experience and are not a promise of results.</p>
+<h2>Athlete and partner relationships</h2>
+<p>Marcus Filly is a founder of STÄPL <span class="ph-tag">confirm how to describe his role</span>. Some partners, coaches and creators receive free product or earn a commission when you buy through their link or code.</p>
+<h2>Trademarks</h2>
+<p>CrossFit and CrossFit Games are trademarks of CrossFit, LLC. STÄPL is not affiliated with, sponsored by or endorsed by CrossFit, LLC. <span class="ph-tag">legal to confirm wording</span></p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="view" data-view="accessibility" data-title="Accessibility | STÄPL">
+  <header class="pg-hero slim">
+    <div class="pg-shapes"><span class="a"></span><span class="b"></span></div>
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&#9656;</span><div class="line"></div><span class="mono-label">Policies</span></div>
+      <h1 class="display"><em class="aq">Accessibility</em></h1>
+      <p class="lead">Our commitment to a site everyone can use.</p>
+    </div>
+  </header>
+  <section class="pg-sec white" style="padding-top:3rem">
+    <div class="wrap">
+      <p class="ph-note"><b>Draft policy &#9656;</b> Template text for review, not legal advice. Yellow tags need your real details, and every number must match Shopify checkout settings before launch.</p>
+      <div class="legal">
+        <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility" class="is-current">Accessibility</a><a href="#contact">Contact</a></aside>
+        <div class="prose">
+<p class="updated">Last updated: <span class="ph-tag">date</span></p>
+<h2>Our commitment</h2>
+<p>We want everyone to be able to use this site. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, and we review the site as we add to it.</p>
+<h2>What we do</h2>
+<ul>
+<li>Text alternatives for meaningful images</li>
+<li>Keyboard access to navigation, forms and checkout</li>
+<li>Readable color contrast and text that can be resized</li>
+<li>Motion that respects reduced-motion settings <span class="ph-tag">to implement at build</span></li>
+</ul>
+<h2>Tell us if something is not working</h2>
+<p>If you have trouble using any part of the site, email <span class="ph-tag">support@domain</span> or call <span class="ph-tag">(000) 000-0000</span>. Tell us the page and what happened, and we will help you directly and work on a fix. We aim to reply within <span class="ph-tag">2</span> business days.</p>
+<h2>Contact</h2>
+<p><span class="ph-tag">Legal entity name</span><br><span class="ph-tag">Street, City, State ZIP</span><br>Email: <span class="ph-tag">support@domain</span><br>Phone: <span class="ph-tag">(000) 000-0000</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="col">
         <span>Shop</span>
-        <a href="#buy">Daily</a>
-        <a href="#">Subscriptions</a>
-        <a href="#">Gift Cards [placeholder]</a>
+        <a href="#shop">Daily</a>
+        <a href="#subscription-policy">Subscribe + Save</a>
+        <a href="#partners">Wholesale</a>
       </div>
       <div class="col">
         <span>Brand</span>
-        <a href="#athlete">Marcus Filly</a>
-        <a href="#fiber">Why Fiber</a>
-        <a href="#">Journal [placeholder]</a>
+        <a href="#the-fiber">Why Fiber</a>
+        <a href="#the-athlete">Marcus Filly</a>
+        <a href="#partners">Partners</a>
+        <a href="#journal">Journal</a>
       </div>
       <div class="col">
         <span>Support</span>
         <a href="#faq">FAQ</a>
-        <a href="#">Shipping &amp; Returns</a>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
+        <a href="#shipping">Shipping Policy</a>
+        <a href="#refund-policy">Refund + Return Policy</a>
+        <a href="#subscription-policy">Subscription Policy</a>
+      </div>
+      <div class="col">
+        <span>Legal</span>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#privacy-choices">Your Privacy Choices</a>
+        <a href="#disclaimer">Health + FDA Disclaimer</a>
+        <a href="#accessibility">Accessibility</a>
       </div>
       <div class="col">
         <span>Social</span>
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-        <a href="#">TikTok</a>
+        <a href="#contact">Instagram <b class="ph-tag">link</b></a>
+        <a href="#contact">YouTube <b class="ph-tag">link</b></a>
+        <a href="#contact">TikTok <b class="ph-tag">link</b></a>
       </div>
     </div>
+    <div class="foot-biz">
+      <div><span>Company</span><p><b class="ph-tag">Legal entity name</b><br><b class="ph-tag">Street, City, State ZIP</b></p></div>
+      <div><span>Contact</span><a href="#contact"><b class="ph-tag">support@domain</b></a><a href="#contact"><b class="ph-tag">(000) 000-0000</b></a></div>
+      <div><span>Support hours</span><p><b class="ph-tag">Mon–Fri, hours + time zone</b></p></div>
+    </div>
   </div>
-  <div class="foot-logo"><img src="data:image/png;base64,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" alt="STAPLE"></div>
+  <div class="foot-logo"><img src="assets/staple-home/stapl-wordmark-bone.png" alt="STÄPL"></div>
   <div class="wrap">
+    <p class="foot-fda">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+    <div class="foot-legal">
+      <a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#refund-policy">Refunds</a><a href="#shipping">Shipping</a><a href="#privacy-choices">Do Not Sell or Share My Personal Information</a>
+    </div>
     <div class="foot-base">
-      <span>© 2026 Staple Performance Nutrition — HTML Design Preview</span>
+      <span>© 2026 STÄPL — HTML Design Preview</span>
       <span>Built for Shopify · Not a live store</span>
     </div>
   </div>
 </footer>
 
-<div class="preview-pill"><b>&#9656;</b> Design preview v23 — Marcus media slots &amp; claims are placeholders</div>
+<div class="preview-pill"><b>&#9656;</b> Design preview v24 — full site · yellow tags = placeholders</div>
 
 <script>
 /* ---------- nav ---------- */
@@ -2183,12 +3653,14 @@ addEventListener('scroll',()=>{
   requestAnimationFrame(tiltLoop);
 })();
 
-/* ---------- buy option toggle ---------- */
-document.querySelectorAll('.opt label').forEach(l=>{
-  l.addEventListener('click',()=>{
-    document.querySelectorAll('.opt label').forEach(x=>x.classList.remove('active'));
-    l.classList.add('active');
-    l.querySelector('input').checked=true;
+/* ---------- buy option toggle (scoped per buy box) ---------- */
+document.querySelectorAll('.buy-box').forEach(box=>{
+  box.querySelectorAll('.opt label').forEach(l=>{
+    l.addEventListener('click',()=>{
+      box.querySelectorAll('.opt label').forEach(x=>x.classList.remove('active'));
+      l.classList.add('active');
+      l.querySelector('input').checked=true;
+    });
   });
 });
 
@@ -2196,17 +3668,71 @@ document.querySelectorAll('.opt label').forEach(l=>{
 document.querySelectorAll('.flav-pill').forEach(p=>{
   p.addEventListener('click',e=>{
     e.preventDefault();
-    document.querySelectorAll('.flav-pill').forEach(x=>x.classList.remove('active'));
-    p.classList.add('active');
+    const name=p.textContent.trim();
+    document.querySelectorAll('.flav-pill').forEach(x=>x.classList.toggle('active',x.textContent.trim()===name));
     document.querySelectorAll('.can-flav').forEach(cf=>{
-      cf.textContent=p.textContent.trim().toUpperCase();
+      cf.textContent=name.toUpperCase();
       cf.style.background=getComputedStyle(p).getPropertyValue('--flav')||'';
     });
   });
 });
 
+/* ---------- router: one file, many pages (hash routes) ---------- */
+const views=[...document.querySelectorAll('.view')];
+const viewNames=views.map(v=>v.dataset.view);
+let pendingScroll=null;
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+function currentRoute(){
+  const h=decodeURIComponent(location.hash.replace(/^#\/?/,''));
+  if(viewNames.includes(h))return {view:h,el:null};
+  const el=h?document.getElementById(h):null;            // old links like #home-faq still land
+  const v=el&&el.closest('.view');
+  return v?{view:v.dataset.view,el}:{view:'home',el:null};
+}
+function render(){
+  const r=currentRoute();
+  views.forEach(v=>v.classList.toggle('is-on',v.dataset.view===r.view));
+  const on=views.find(v=>v.dataset.view===r.view);
+  document.title=on.dataset.title||document.title;
+  document.querySelectorAll('nav ul a, .mnav a, .legal-nav a').forEach(a=>{
+    const t=(a.getAttribute('href')||'').replace('#','');
+    a.classList.toggle('is-current',t===r.view&&!a.dataset.scroll&&r.view!=='home');
+  });
+  closeMenu();
+  const target=pendingScroll?document.getElementById(pendingScroll):r.el;
+  pendingScroll=null;
+  if(target){window.scrollTo({top:target.getBoundingClientRect().top+scrollY-70,behavior:'instant'});}
+  else{window.scrollTo({top:0,behavior:'instant'});}
+  nav.classList.toggle('scrolled',scrollY>40);
+}
+addEventListener('hashchange',render);
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a');
+  if(!a)return;
+  if(a.dataset.scroll){                                   // home-page section links
+    e.preventDefault();
+    const id=a.dataset.scroll;
+    if(currentRoute().view==='home'){
+      closeMenu();
+      const el=document.getElementById(id);
+      window.scrollTo({top:el.getBoundingClientRect().top+scrollY-70,behavior:'smooth'});
+    }else{pendingScroll=id;location.hash='home';}
+    return;
+  }
+  if(a.dataset.jump){                                     // in-page jumps that keep the route
+    e.preventDefault();
+    const el=document.getElementById(a.dataset.jump);
+    if(el)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-90,behavior:'smooth'});
+    return;
+  }
+  const href=a.getAttribute('href')||'';
+  if(href.startsWith('#')&&href.replace('#','')===location.hash.replace('#','')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}
+});
+render();
 
 </script>
+
+
 
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
 <script>
@@ -2227,7 +3753,7 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v23';
+  var PAGE_ID = 'staple-home-v24';
 
   /* ---------------------------------------------- */
 
@@ -2394,48 +3920,6 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
     return resolveAnchor(a);
   }
   function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
-  // Human-readable name of the view an element lives on. Works for sites that
-  // toggle sections via data-view containers (no hash) as well as hash routers.
-  function detectViewName(sel) {
-    try {
-      var el = sel ? document.querySelector(sel) : null;
-      while (el && el !== document.body) {
-        if (el.dataset && el.dataset.view) return el.dataset.view;
-        if (el.id && /^page-/.test(el.id)) return el.id.replace(/^page-/, '');
-        el = el.parentElement;
-      }
-    } catch (e) {}
-    return location.hash ? viewLabel(location.hash) : undefined;
-  }
-  // For sites that hide views with the `hidden` attribute (no URL change):
-  // reveal the view containing the anchor by flipping `hidden` the same way
-  // the site's own router does. Returns true if the anchor became visible.
-  function tryReveal(a) {
-    try {
-      if (!a.sel) return false;
-      var el = document.querySelector(a.sel);
-      if (!el) return false;
-      if (el.getBoundingClientRect().height > 0) return true;
-      // highest hidden ancestor = the view container that's switched off
-      var hid = null, n = el;
-      while (n && n !== document.body) {
-        if (n.hidden || getComputedStyle(n).display === 'none') hid = n;
-        n = n.parentElement;
-      }
-      if (!hid || !hid.parentElement || !hid.hasAttribute('hidden')) return false;
-      Array.prototype.forEach.call(hid.parentElement.children, function (s) {
-        if (s !== hid && s.tagName === hid.tagName && !s.hasAttribute('hidden')) {
-          var share = Array.prototype.some.call(hid.classList, function (c) {
-            return s.classList.contains(c);
-          });
-          if (share || hid.classList.length === 0) s.setAttribute('hidden', '');
-        }
-      });
-      hid.removeAttribute('hidden');
-      window.scrollTo(0, 0);
-      return el.getBoundingClientRect().height > 0;
-    } catch (e) { return false; }
-  }
 
   /* ------------------- STATE ------------------- */
   var threads = {};           // latest data
@@ -2682,11 +4166,10 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
       num.textContent = threadNumber(tid);
       var body = document.createElement('div');
       body.className = 'pbody';
-      var hashElsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
-      var elsewhere = hashElsewhere || !threadVisiblePos(t);
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
       body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
         + (n > 1 ? ' · ' + n + ' replies' : '')
-        + (elsewhere ? ' · on <b>' + esc(t.viewName || viewLabel(t.view) || 'another page') + '</b>' : '') + '</div>'
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
         + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
       item.appendChild(num);
       item.appendChild(body);
@@ -2698,13 +4181,9 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
           setTimeout(render, 350);
         };
         if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
-          // Hash-routed site: switch views via the URL first
+          // Comment lives on another view of this site — switch to it first
           location.hash = t.view || '#';
           setTimeout(go, 450);
-        } else if (!threadVisiblePos(t)) {
-          // Hidden-attribute site (no URL change): flip the view directly
-          tryReveal(t.anchor || {});
-          setTimeout(go, 300);
         } else go();
       });
       list.appendChild(item);
@@ -2776,8 +4255,6 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
         anchor: draft.anchor, resolved: false, created: Date.now(),
         view: currentView(), comments: {}
       };
-      var vn = detectViewName(draft.anchor.sel);
-      if (vn) t.viewName = vn;
       t.comments[uid()] = { name: name, text: text, ts: Date.now() };
       store.createThread(t).then(function (tid) {
         draft = null; commentMode = false; setMode(false);
@@ -2971,20 +4448,6 @@ document.querySelectorAll('.flav-pill').forEach(p=>{
     openThreadId = null; draft = null;
     render();
   });
-  // Sites that switch views by toggling hidden/class/style (no hash change):
-  // watch for those DOM flips and refresh pin visibility. Only pins are
-  // re-rendered (never the UI) so nobody loses a half-typed comment.
-  if (window.MutationObserver) {
-    var pinTimer = null;
-    new MutationObserver(function () {
-      if (pinTimer) return;
-      pinTimer = setTimeout(function () {
-        pinTimer = null;
-        layer.style.height = document.documentElement.scrollHeight + 'px';
-        renderPins();
-      }, 250);
-    }).observe(document.body, { attributes: true, subtree: true, attributeFilter: ['hidden', 'class', 'style'] });
-  }
 
   /* ------------------- BOOT ------------------- */
   function boot() {
