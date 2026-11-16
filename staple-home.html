@@ -2132,6 +2132,16 @@ body.has-bar .preview-pill{bottom:84px;}
 .ftiles>*{min-width:0;width:100%;}
 .ph-tag{font-size:clamp(8.5px,.62em,11px);}
 
+/* ---------- blank media slots (no real Marcus photos on the site yet) ---------- */
+.blank{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;text-align:center;padding:1.6rem 1rem 1rem;
+  background:var(--espresso);background-image:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(243,241,234,.045) 14px 28px);}
+.blank::before{content:'';position:absolute;inset:10px;border:2px dashed rgba(39,212,196,.7);}
+.blank .label{position:relative;font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bone);}
+.blank .spec{position:relative;font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim);line-height:1.7;}
+.blank.mini{position:relative;inset:auto;flex:0 0 72px;width:72px;height:72px;padding:.3rem;border:2px solid var(--espresso);}
+.blank.mini::before{inset:4px;border-width:1px;} .blank.mini .label{font-size:.42rem;letter-spacing:.08em;}
+.post .ph{position:relative;}
+
 </style>
 </head>
 <body>
@@ -2826,8 +2836,7 @@ body.has-bar .preview-pill{bottom:84px;}
           <p class="lead rev rev-d2">Two decades under the bar taught Marcus one thing: <b>the flashy stuff breaks you, the boring stuff builds you.</b> STÄPL is that idea applied to nutrition.</p>
         </div>
         <div class="frame aq tilt rev rev-d1" style="aspect-ratio:4/3">
-          <img src="assets/staple-home/marcus-trailer-52.jpg" alt="Marcus Filly seated in the gym between sets"><span class="ph-img" data-k="img-marcus-trailer-52.jpg" data-o="m" data-ph="M-025"><i>real photo — confirm cleared for web + credit</i></span>
-          <span class="cap">Marcus Filly · photo credit <b>[tbc]</b></span>
+          <div class="blank"><span class="label">Marcus — page hero</span><span class="spec">4:3 photo · in the gym, looking at camera or mid-set</span></div><span class="ph-img" data-k="slot-athlete-hero" data-o="m" data-ph="M-046"><i>photo needed — athlete page hero</i></span>
         </div>
       </div>
     </div>
@@ -2848,8 +2857,7 @@ body.has-bar .preview-pill{bottom:84px;}
         </div>
         <div class="rev rev-d1">
           <div class="frame cl tilt-l" style="aspect-ratio:4/5">
-            <img src="assets/staple-home/marcus-trailer-82.jpg" alt="Marcus Filly training with a loaded barbell" style="object-position:38% 50%"><span class="ph-img" data-k="img-marcus-trailer-82.jpg" data-o="m" data-ph="M-029"><i>real photo — confirm cleared for web + credit</i></span>
-            <span class="cap">Training · Functional Bodybuilding HQ <b>[tbc]</b></span>
+            <div class="blank"><span class="label">Marcus — training action</span><span class="spec">4:5 photo · lifting, full effort</span></div><span class="ph-img" data-k="slot-action" data-o="m" data-ph="M-047"><i>photo needed — training action shot</i></span>
           </div>
         </div>
       </div>
@@ -2866,8 +2874,8 @@ body.has-bar .preview-pill{bottom:84px;}
         <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Non-Negotiable</div></div>
       </div>
       <div class="photo-row">
-        <div class="frame rev"><img src="assets/staple-home/marcus-training-98.jpg" alt="Marcus Filly laughing between sets"><span class="ph-img" data-k="img-marcus-training-98.jpg" data-o="m" data-ph="M-030"><i>real photo — confirm cleared for web + credit</i></span><span class="cap">Between sets</span></div>
-        <div class="frame rev rev-d1"><img src="assets/staple-home/marcus-oct-7.jpg" alt="Marcus Filly stretching to a kettlebell" style="object-position:70% 50%"><span class="ph-img" data-k="img-marcus-oct-7.jpg" data-o="m" data-ph="M-031"><i>real photo — confirm cleared for web + credit</i></span><span class="cap">Warm-up</span></div>
+        <div class="frame rev"><div class="blank"><span class="label">Marcus — between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div><span class="ph-img" data-k="slot-candid" data-o="m" data-ph="M-048"><i>photo needed — candid between sets</i></span></div>
+        <div class="frame rev rev-d1"><div class="blank"><span class="label">Marcus — warm-up</span><span class="spec">4:3 photo · mobility or warm-up detail</span></div><span class="ph-img" data-k="slot-warmup" data-o="m" data-ph="M-049"><i>photo needed — warm-up / mobility</i></span></div>
         <div class="frame rev rev-d2"><img src="assets/staple-home/86ad8c5ea1.jpg" alt="Chalked hands on a barbell"><span class="ph-img" data-k="img-86ad8c5ea1.jpg" data-o="b" data-ph="B-037"><i>AI placeholder image — replace</i></span><span class="cap">Placeholder · chalk macro</span></div>
       </div>
     </div>
@@ -3242,7 +3250,7 @@ body.has-bar .preview-pill{bottom:84px;}
   <section class="pg-sec white">
     <div class="wrap">
       <div class="split wide-r">
-        <div class="frame aq tilt-l rev" style="aspect-ratio:4/3"><img src="assets/staple-home/marcus-training-98.jpg" alt="Marcus Filly between sets"><span class="ph-img" data-k="img-marcus-training-98.jpg" data-o="m" data-ph="M-030"><i>real photo — confirm cleared for web + credit</i></span></div>
+        <div class="frame aq tilt-l rev" style="aspect-ratio:4/3"><div class="blank"><span class="label">Marcus — between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div><span class="ph-img" data-k="slot-candid" data-o="m" data-ph="M-048"><i>photo needed — candid between sets</i></span></div>
         <div>
           <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">From the founder</span></div>
           <div class="prose"><blockquote class="rev" style="font-size:clamp(1.4rem,2.6vw,2.2rem)">"Fiber isn't sexy. Neither is showing up at 5AM. Do it anyway." <span class="ph-tag a" data-k="quote" data-o="m" data-ph="M-022">we wrote this quote — approve, edit or replace</span></blockquote></div>
@@ -3418,12 +3426,12 @@ body.has-bar .preview-pill{bottom:84px;}
       <p class="ph-note"><b>Blog-ready &#9656;</b> This layout maps to a Shopify blog: featured post, category filters, post cards. Titles below are draft topics, not written articles.</p>
       <div class="post-grid">
         <a class="post feature rev" href="#journal-post">
-          <div class="ph"><img src="assets/staple-home/marcus-trailer-82.jpg" alt=""><span class="ph-img" data-k="img-marcus-trailer-82.jpg" data-o="m" data-ph="M-029"><i>real photo — confirm cleared for web + credit</i></span></div>
+          <div class="ph"><div class="blank"><span class="label">Marcus — training action</span><span class="spec">4:5 photo · lifting, full effort</span></div><span class="ph-img" data-k="slot-action" data-o="m" data-ph="M-047"><i>photo needed — training action shot</i></span></div>
           <div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Why most athletes under-eat fiber</h3><p>You track protein to the gram. Here is the nutrient your plan is probably missing, and what to do about it.</p><span class="meta">By Marcus Filly [tbc] · 5 min read</span></div>
         </a>
         <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/aa494ee14a.jpg" alt=""><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="b" data-ph="B-023"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Soluble vs. insoluble: what it means in your shaker</h3><p>Two kinds of fiber, two different jobs.</p><span class="meta">4 min read</span></div></a>
         <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/b93ac55391.jpg" alt=""><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="b" data-ph="B-022"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The ten-second morning</h3><p>How to build a habit small enough that you never skip it.</p><span class="meta">3 min read</span></div></a>
-        <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/marcus-training-98.jpg" alt=""><span class="ph-img" data-k="img-marcus-training-98.jpg" data-o="m" data-ph="M-030"><i>real photo — confirm cleared for web + credit</i></span></div><div class="body"><span class="cat">From Marcus · Draft topic</span><h3>How I fuel a training week</h3><p>What stays the same every day, and what changes.</p><span class="meta">By Marcus Filly [tbc] · 6 min read</span></div></a>
+        <a class="post rev rev-d2" href="#journal-post"><div class="ph"><div class="blank"><span class="label">Marcus — between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div><span class="ph-img" data-k="slot-candid" data-o="m" data-ph="M-048"><i>photo needed — candid between sets</i></span></div><div class="body"><span class="cat">From Marcus · Draft topic</span><h3>How I fuel a training week</h3><p>What stays the same every day, and what changes.</p><span class="meta">By Marcus Filly [tbc] · 6 min read</span></div></a>
         <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/747673fa6d.jpg" alt=""><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="b" data-ph="B-024"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Recipes · Draft topic</span><h3>Three ways to drink Daily that aren't water</h3><p>Smoothie, sparkling, frozen.</p><span class="meta">3 min read</span></div></a>
         <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/86ad8c5ea1.jpg" alt=""><span class="ph-img" data-k="img-86ad8c5ea1.jpg" data-o="b" data-ph="B-037"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Training · Draft topic</span><h3>The boring stuff builds you</h3><p>Why fundamentals outlast every trend in the gym.</p><span class="meta">5 min read</span></div></a>
         <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt=""><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="b" data-ph="B-014"><i>AI placeholder image — replace</i></span></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>What "third-party tested" actually means</h3><p>How to read a supplement label like a skeptic.</p><span class="meta">4 min read</span></div></a>
@@ -3459,7 +3467,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <h1 class="display">Why most athletes under-eat fiber</h1>
         <div class="meta">By Marcus Filly [tbc] &nbsp;·&nbsp; [Publish date] &nbsp;·&nbsp; 5 min read</div>
       </div>
-      <div class="frame aq article-hero"><img src="assets/staple-home/marcus-trailer-82.jpg" alt="" style="object-position:50% 40%"><span class="ph-img" data-k="img-marcus-trailer-82.jpg" data-o="m" data-ph="M-029"><i>real photo — confirm cleared for web + credit</i></span></div>
+      <div class="frame aq article-hero"><div class="blank"><span class="label">Marcus — training action</span><span class="spec">4:5 photo · lifting, full effort</span></div><span class="ph-img" data-k="slot-action" data-o="m" data-ph="M-047"><i>photo needed — training action shot</i></span></div>
       <p class="ph-note"><b>Article template &#9656;</b> This is the layout every blog post uses. The body below shows each text style; it is not a finished article.</p>
       <div class="prose">
         <p><b>Intro paragraph.</b> One or two sentences that state the point of the article and who it is for.</p>
@@ -3474,7 +3482,7 @@ body.has-bar .preview-pill{bottom:84px;}
         <p style="font-size:.84rem"><i>This article is for general information and is not medical advice. These statements have not been evaluated by the Food and Drug Administration.</i></p>
       </div>
       <div class="byline">
-        <img src="assets/staple-home/marcus-trailer-52.jpg" alt="Marcus Filly" style="object-position:62% 30%">
+        <div class="blank mini"><span class="label">Headshot</span></div>
         <div><b>Marcus Filly</b><span>6× CrossFit Games athlete and founder of Functional Bodybuilding. <span class="ph-tag" data-o="m" data-ph="M-045">author bio tbc</span></span></div>
       </div>
       <div class="btn-row"><a class="more-link" href="#journal">&#9664; Back to the Journal</a><a class="btn btn-sun" href="#shop">Shop Daily &#9656;</a></div>
