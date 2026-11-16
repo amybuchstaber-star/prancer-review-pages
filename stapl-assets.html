@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex">
+<title>STÄPL — Asset guide for Marcus</title>
+<link rel="stylesheet" href="assets/staple-home/stapl-fonts.css"><style>
+:root{--espresso:#1B1B1D;--ink:#121214;--bone:#F3F1EA;--aqua:#27D4C4;--sunshine:#FFC72C;--clay:#FF6B37;--coral:#FFBA6A;--ink-dim:rgba(27,27,29,.66);
+  --mono:'Space Mono',monospace;--arch:'Archivo Variable','Archivo',sans-serif;--accent:#27D4C4;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--espresso);font-family:var(--arch);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;}
+button{font-family:inherit;cursor:pointer;border:none;color:inherit;}
+a{color:inherit;}
+.display{font-weight:900;font-variation-settings:'wdth' 118;text-transform:uppercase;line-height:.9;letter-spacing:-.015em;}
+.mono{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;}
+.bar{position:sticky;top:0;z-index:20;background:var(--espresso);color:var(--bone);display:flex;align-items:center;gap:1.2rem;padding:.8rem 1.4rem;}
+.bar img{height:20px;}
+.bar .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
+.prog{flex:1;height:12px;border:2px solid var(--bone);position:relative;overflow:hidden;min-width:60px;}
+.prog i{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .4s cubic-bezier(.2,.7,.2,1);background-image:repeating-linear-gradient(-55deg,transparent 0 10px,rgba(27,27,29,.16) 10px 14px);}
+.bar .ct{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;white-space:nowrap;}
+.bar .save{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,241,234,.6);white-space:nowrap;}
+.bar .save.ok{color:var(--aqua);} .bar .save.err{color:var(--coral);}
+.stage{position:relative;max-width:920px;margin:0 auto;padding:3.2rem 1.4rem 8rem;}
+.shape{position:fixed;pointer-events:none;z-index:0;}
+.shape.a{top:-6%;right:-8%;width:30vw;height:56vh;background:var(--accent);clip-path:polygon(26% 0,100% 0,100% 100%,0 78%);opacity:.9;}
+.shape.b{top:20%;right:16vw;width:5vw;height:26vh;border:4px solid var(--espresso);transform:skewX(-14deg);}
+.shape.c{bottom:-10%;left:-8%;width:22vw;height:40vh;background:var(--sunshine);clip-path:polygon(0 8%,100% 24%,78% 100%,0 100%);opacity:.5;}
+.card{position:relative;z-index:2;background:#fff;border:3px solid var(--espresso);box-shadow:12px 12px 0 var(--espresso);padding:2.4rem 2.4rem 2rem;}
+.kick{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.kick .n{color:var(--clay);} .kick .ln{flex:0 0 40px;height:2px;background:var(--clay);}
+.kick .sec{color:var(--ink-dim);}
+.tagid{font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.1em;background:var(--accent);border:1.5px solid var(--ink);padding:.15rem .4rem;text-decoration:none;white-space:nowrap;}
+.tagid:hover{background:var(--sunshine);}
+h1.display{font-size:clamp(2.6rem,8vw,5.4rem);} h1 em,h2 em{font-style:normal;color:var(--clay);}
+h2.q{font-weight:900;font-variation-settings:'wdth' 112;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.08;text-transform:uppercase;}
+.hint{margin-top:.8rem;color:var(--ink-dim);font-size:1rem;line-height:1.6;max-width:640px;}
+.copy{margin-top:1.4rem;background:var(--bone);border-left:8px solid var(--accent);padding:1.2rem 1.3rem;font-size:1.08rem;line-height:1.65;white-space:pre-line;}
+.copy small{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:.6rem;font-weight:700;}
+.opts{display:grid;gap:.8rem;margin-top:1.6rem;}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
+.opt{display:flex;align-items:center;gap:.9rem;text-align:left;background:#fff;border:2px solid var(--espresso);padding:1rem 1.1rem;font-size:1rem;font-weight:700;line-height:1.3;box-shadow:4px 4px 0 rgba(27,27,29,.16);transition:transform .15s,box-shadow .15s,background .15s;}
+.opt:hover{transform:translate(-1px,-2px);box-shadow:6px 6px 0 var(--accent);}
+.opt .k{flex:0 0 28px;height:28px;border:2px solid var(--espresso);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;background:var(--bone);}
+.opt.on{background:var(--espresso);color:var(--bone);box-shadow:6px 6px 0 var(--accent);}
+.opt.on .k{background:var(--accent);color:var(--ink);border-color:var(--accent);}
+.opt.on .k::after{content:'✓';} .opt.on .k span{display:none;}
+textarea,input[type=text]{display:block;width:100%;margin-top:1.2rem;background:var(--bone);border:2px solid var(--espresso);font-family:var(--arch);font-size:1.02rem;line-height:1.55;color:var(--espresso);padding:.95rem 1rem;outline:none;border-radius:0;}
+textarea{min-height:130px;resize:vertical;} textarea.tall{min-height:220px;}
+textarea:focus,input:focus{border-color:var(--accent);background:#fff;box-shadow:4px 4px 0 var(--accent);}
+label.lab{display:block;margin-top:1.4rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);}
+label.lab+textarea,label.lab+input{margin-top:.5rem;}
+.hide{display:none!important;}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2.2rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:1.05rem 1.6rem;background:var(--sunshine);color:var(--ink);text-decoration:none;
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:transform .15s,background .2s;}
+.btn:hover{transform:translateY(-2px);background:var(--clay);color:var(--bone);}
+.btn.dark{background:var(--espresso);color:var(--bone);} .btn.dark:hover{background:var(--accent);color:var(--ink);}
+.btn.ghost{background:none;clip-path:none;padding:.6rem 0;border-bottom:3px solid var(--accent);}
+.btn.ghost:hover{background:none;color:var(--clay);transform:none;}
+.skip{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);background:none;border-bottom:1px solid currentColor;}
+.chips{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem;}
+.chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:.55rem .9rem;border:2px solid var(--espresso);box-shadow:3px 3px 0 var(--espresso);background:var(--sunshine);}
+.chips .chip:nth-child(3n+2){background:var(--aqua);} .chips .chip:nth-child(3n){background:var(--coral);}
+.secs{display:grid;gap:.6rem;margin-top:1.8rem;}
+.secs div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(27,27,29,.15);padding:.55rem 0;font-weight:700;}
+.secs span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:var(--ink-dim);white-space:nowrap;}
+.rev{margin-top:1.6rem;display:grid;gap:.7rem;}
+.rev .r{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;border:2px solid var(--espresso);padding:.8rem 1rem;background:#fff;text-align:left;width:100%;}
+.rev .r b{font-size:.92rem;line-height:1.3;} .rev .r span{font-size:.9rem;color:var(--ink-dim);grid-column:1/-1;line-height:1.45;white-space:pre-line;}
+.rev .r i{font-style:normal;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:.15rem .4rem;background:var(--aqua);align-self:start;}
+.rev .r.miss i{background:var(--coral);} .rev .r.miss{border-style:dashed;}
+.rev h3{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-top:1rem;}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);z-index:50;background:var(--espresso);color:var(--bone);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.1rem;border:2px solid var(--sunshine);opacity:0;pointer-events:none;transition:all .3s;max-width:90vw;text-align:center;}
+.toast.on{opacity:1;transform:translate(-50%,0);}
+.foot{position:relative;z-index:2;text-align:center;margin-top:2rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);line-height:1.8;}
+@media(max-width:700px){
+  .stage{padding:1.6rem .9rem 6rem;} .card{padding:1.5rem 1.2rem 1.4rem;box-shadow:7px 7px 0 var(--espresso);}
+  .shape.b,.shape.c{display:none;} .shape.a{width:44vw;height:30vh;opacity:.5;}
+  .bar{gap:.7rem;padding:.7rem .9rem;} .bar .who,.bar .save{display:none;} .bar img{height:16px;}
+  .nav .btn{padding:.95rem 1.1rem;font-size:.66rem;letter-spacing:.14em;}
+}
+
+.guide{max-width:1180px;margin:0 auto;padding:3rem 1.4rem 6rem;position:relative;z-index:2;}
+.guide h1{font-size:clamp(2.8rem,8vw,6rem);} .guide .lead{margin-top:1.2rem;max-width:660px;font-size:1.1rem;line-height:1.65;color:var(--ink-dim);}
+.guide h2{font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1;margin:4rem 0 1.4rem;}
+.guide h2 em{font-style:normal;color:var(--clay);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.steps div{background:#fff;border:2px solid var(--espresso);box-shadow:6px 6px 0 var(--aqua);padding:1.3rem 1.2rem;}
+.steps div:nth-child(2){box-shadow:6px 6px 0 var(--sunshine);} .steps div:nth-child(3){box-shadow:6px 6px 0 var(--clay);} .steps div:nth-child(4){box-shadow:6px 6px 0 var(--coral);}
+.steps b{display:block;font-weight:900;font-variation-settings:'wdth' 120;font-size:2.2rem;color:transparent;-webkit-text-stroke:2px var(--clay);line-height:1;}
+.steps h3{font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:1.05rem;margin:.7rem 0 .4rem;}
+.steps p{font-size:.9rem;line-height:1.55;color:var(--ink-dim);}
+.namebox{background:var(--espresso);color:var(--bone);padding:2rem;clip-path:polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px);}
+.pattern{display:flex;flex-wrap:wrap;gap:.4rem;align-items:stretch;font-family:var(--mono);font-weight:700;font-size:clamp(.8rem,2vw,1.15rem);}
+.pattern span{padding:.7rem .8rem;background:var(--bone);color:var(--ink);display:flex;flex-direction:column;gap:.35rem;}
+.pattern span small{font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:var(--ink-dim);}
+.pattern span:nth-child(2){background:var(--aqua);} .pattern span:nth-child(3){background:var(--sunshine);} .pattern span:nth-child(4){background:var(--coral);}
+.namebox ul{margin:1.4rem 0 0 1.1rem;display:grid;gap:.5rem;font-size:.95rem;line-height:1.55;color:rgba(243,241,234,.85);}
+.namebox code{font-family:var(--mono);background:rgba(243,241,234,.14);padding:.1rem .35rem;}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.specs div{background:#fff;border:2px solid var(--espresso);padding:1.2rem;}
+.specs h3{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:.6rem;}
+.specs p{font-size:.93rem;line-height:1.6;color:var(--ink-dim);}
+.filter{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem;align-items:center;}
+.filter button{font-family:var(--mono);font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;padding:.55rem .9rem;border:2px solid var(--espresso);background:#fff;box-shadow:3px 3px 0 var(--espresso);}
+.filter button.on{background:var(--espresso);color:var(--bone);}
+.filter .ct{margin-left:auto;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);}
+.assets{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.asset{background:#fff;border:2px solid var(--espresso);box-shadow:7px 7px 0 rgba(27,27,29,.14);padding:1.3rem 1.3rem 1.1rem;display:flex;flex-direction:column;gap:.6rem;}
+.asset.done{background:#EAF6F3;box-shadow:7px 7px 0 var(--aqua);}
+.asset .top{display:flex;justify-content:space-between;align-items:center;}
+.pri{font-family:var(--mono);font-size:.54rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.2rem .45rem;border:1.5px solid var(--ink);}
+.p-launch{background:var(--clay);color:#fff;} .p-nice{background:var(--sunshine);} .p-after{background:var(--bone);}
+.asset h3{font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:1.15rem;line-height:1.1;}
+.asset p{font-size:.92rem;line-height:1.55;color:var(--ink-dim);}
+.asset dl{display:grid;gap:.35rem;margin-top:.2rem;} .asset dl div{display:grid;grid-template-columns:62px 1fr;gap:.6rem;font-size:.86rem;line-height:1.45;}
+.asset dt{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:700;padding-top:.15rem;}
+.fn{margin-top:auto;background:var(--bone);border:2px dashed var(--espresso);padding:.6rem .7rem;display:flex;justify-content:space-between;align-items:center;gap:.6rem;}
+.fn code{font-family:var(--mono);font-size:.68rem;font-weight:700;overflow-wrap:anywhere;}
+.cp{flex:0 0 auto;font-family:var(--mono);font-size:.54rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--espresso);color:var(--bone);padding:.4rem .55rem;}
+.sent{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;}
+.sent input{width:20px;height:20px;accent-color:var(--espresso);}
+.have{background:#fff;border:2px solid var(--espresso);padding:1.4rem;}
+.have ul{margin:.8rem 0 0 1.1rem;font-family:var(--mono);font-size:.76rem;line-height:1.9;}
+.have p{font-size:.95rem;line-height:1.6;color:var(--ink-dim);}
+.send{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:start;}
+.send .card{box-shadow:10px 10px 0 var(--aqua);}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr;}.assets{grid-template-columns:1fr 1fr;}.specs,.send{grid-template-columns:1fr;}}
+@media(max-width:600px){.assets,.steps{grid-template-columns:1fr;}.namebox{padding:1.3rem;}}
+
+</style></head>
+<body>
+<div class="shape a"></div><div class="shape b"></div><div class="shape c"></div>
+<div class="bar"><img src="assets/staple-home/stapl-wordmark-bone.png" alt="STÄPL"><span class="who">Asset guide · Marcus's team</span>
+  <div class="prog"><i id="progFill"></i></div><span class="ct" id="progCt"></span><span class="save" id="saveState">Not saved yet</span></div>
+<main class="guide">
+  <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">For Marcus Filly + team</span></div>
+  <h1 class="display">What to send,<br>and what to <em>call it.</em></h1>
+  <p class="lead">The STÄPL site has 12 slots waiting on real photos and video of Marcus. Name each file with its slot code and we know exactly where it goes, with no back-and-forth. <b>Six are needed for launch.</b></p>
+
+  <h2>How it <em>works</em></h2>
+  <div class="steps">
+    <div><b>01</b><h3>Find the slot</h3><p>Each card below is one spot on the site. Tap its code to see that spot live.</p></div>
+    <div><b>02</b><h3>Name the file</h3><p>Use the file name on the card. "Copy name" puts it on your clipboard.</p></div>
+    <div><b>03</b><h3>Upload originals</h3><p>Drop everything in one shared folder and paste the link at the bottom of this page.</p></div>
+    <div><b>04</b><h3>Tick "Sent"</h3><p>So we both know what is in and what is still open. It saves automatically.</p></div>
+  </div>
+
+  <h2>The file <em>name</em></h2>
+  <div class="namebox">
+    <div class="pattern"><span><small>Always</small>STAPL_</span><span><small>Slot code</small>M-002_</span><span><small>What it is</small>hero-film_</span><span><small>Version</small>v1</span><span><small>File type</small>.mp4</span></div>
+    <ul>
+      <li>Sending more than one option for a slot? Keep the code and bump the version: <code>STAPL_M-002_hero-film_v2.mp4</code>.</li>
+      <li>Anything that doesn't fit a slot: <code>STAPL_M-EXTRA_short-description.jpg</code>.</li>
+      <li>Photographer or videographer credits: add one text file named <code>STAPL_credits.txt</code> listing file name and credit.</li>
+      <li>No spaces. Hyphens between words, underscores between parts.</li>
+    </ul>
+  </div>
+
+  <h2>File <em>specs</em></h2>
+  <div class="specs">
+    <div><h3>Photos</h3><p>Original JPG or RAW, at least 3000 px on the long edge. Unedited or lightly graded; we'll crop.</p></div>
+    <div><h3>Video</h3><p>Original MP4 or MOV, 1080p minimum, 4K preferred. No burned-in captions and no licensed music.</p></div>
+    <div><h3>Rights</h3><p>Only send files cleared for website, email and paid ads. If something is website-only, say so in the credits file.</p></div>
+  </div>
+
+  <h2>The <em>slots</em></h2>
+  <div class="filter"><button class="on" data-f="all">All 12</button><button data-f="Launch">Needed for launch</button><button data-f="Nice to have">Nice to have</button><button data-f="After launch">After launch</button><span class="ct" id="sentCt"></span></div>
+  <div class="assets">
+  <article class="asset" data-code="M-002" data-pri="Launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-002">M-002 ↗</a><span class="pri p-launch">Launch</span></div>
+    <h3>Hero film</h3><p>You training or moving. No talking. Loops cleanly.</p>
+    <dl><div><dt>Format</dt><dd>16:9 video · 10–20 sec · no sound needed</dd></div><div><dt>Goes</dt><dd>Top of the homepage</dd></div></dl>
+    <div class="fn"><code>STAPL_M-002_hero-film_v1.mp4</code><button class="cp" data-fn="STAPL_M-002_hero-film_v1.mp4">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-002"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-010" data-pri="Launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-010">M-010 ↗</a><span class="pri p-launch">Launch</span></div>
+    <h3>Story film: why you built Daily</h3><p>You to camera, in your own words. A phone-shot version is fine for launch.</p>
+    <dl><div><dt>Format</dt><dd>16:9 video · 60–90 sec · with sound</dd></div><div><dt>Goes</dt><dd>Homepage watch button + your page</dd></div></dl>
+    <div class="fn"><code>STAPL_M-010_story-film_v1.mp4</code><button class="cp" data-fn="STAPL_M-010_story-film_v1.mp4">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-010"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-008" data-pri="Launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-008">M-008 ↗</a><span class="pri p-launch">Launch</span></div>
+    <h3>Main portrait</h3><p>Full or three-quarter body on a plain background. We currently use a cutout of you in pink shorts: approve it, or send a replacement.</p>
+    <dl><div><dt>Format</dt><dd>High-res photo, or a cutout PNG</dd></div><div><dt>Goes</dt><dd>Athlete section on the homepage</dd></div></dl>
+    <div class="fn"><code>STAPL_M-008_main-portrait_v1.jpg</code><button class="cp" data-fn="STAPL_M-008_main-portrait_v1.jpg">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-008"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-020" data-pri="Launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-020">M-020 ↗</a><span class="pri p-launch">Launch</span></div>
+    <h3>Chalk portrait</h3><p>Moody portrait. Black and white, or able to go B&W. Backlit chalk dust if you have it.</p>
+    <dl><div><dt>Format</dt><dd>4:5 photo</dd></div><div><dt>Goes</dt><dd>Founder story + your page</dd></div></dl>
+    <div class="fn"><code>STAPL_M-020_chalk-portrait_v1.jpg</code><button class="cp" data-fn="STAPL_M-020_chalk-portrait_v1.jpg">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-020"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-019" data-pri="Launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-019">M-019 ↗</a><span class="pri p-launch">Launch</span></div>
+    <h3>Your signature</h3><p>Black ink on white paper, photographed flat. Or a vector file.</p>
+    <dl><div><dt>Format</dt><dd>Vector (AI / SVG / PDF) or a flat photo</dd></div><div><dt>Goes</dt><dd>Under the founder note</dd></div></dl>
+    <div class="fn"><code>STAPL_M-019_signature_v1.png</code><button class="cp" data-fn="STAPL_M-019_signature_v1.png">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-019"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-045" data-pri="Launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-045">M-045 ↗</a><span class="pri p-launch">Launch</span></div>
+    <h3>Headshot</h3><p>Shoulders up, square.</p>
+    <dl><div><dt>Format</dt><dd>1:1 photo</dd></div><div><dt>Goes</dt><dd>Blog byline + your page</dd></div></dl>
+    <div class="fn"><code>STAPL_M-045_headshot_v1.jpg</code><button class="cp" data-fn="STAPL_M-045_headshot_v1.jpg">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-045"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-011" data-pri="Nice to have">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-011">M-011 ↗</a><span class="pri p-nice">Nice to have</span></div>
+    <h3>Training loop</h3><p>Barbell cycling, slow motion.</p>
+    <dl><div><dt>Format</dt><dd>9:16 vertical video</dd></div><div><dt>Goes</dt><dd>Media grid</dd></div></dl>
+    <div class="fn"><code>STAPL_M-011_training-loop_v1.mp4</code><button class="cp" data-fn="STAPL_M-011_training-loop_v1.mp4">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-011"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-009" data-pri="Nice to have">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-009">M-009 ↗</a><span class="pri p-nice">Nice to have</span></div>
+    <h3>Gym chalk close-up</h3><p>Hands and bar, chalk in the air.</p>
+    <dl><div><dt>Format</dt><dd>1:1 video loop</dd></div><div><dt>Goes</dt><dd>Media grid</dd></div></dl>
+    <div class="fn"><code>STAPL_M-009_chalk-macro_v1.mp4</code><button class="cp" data-fn="STAPL_M-009_chalk-macro_v1.mp4">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-009"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-013" data-pri="Nice to have">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-013">M-013 ↗</a><span class="pri p-nice">Nice to have</span></div>
+    <h3>Coaching session</h3><p>You coaching athletes.</p>
+    <dl><div><dt>Format</dt><dd>1:1 video loop</dd></div><div><dt>Goes</dt><dd>Media grid</dd></div></dl>
+    <div class="fn"><code>STAPL_M-013_coaching_v1.mp4</code><button class="cp" data-fn="STAPL_M-013_coaching_v1.mp4">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-013"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-014" data-pri="Nice to have">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-014">M-014 ↗</a><span class="pri p-nice">Nice to have</span></div>
+    <h3>Trail or long run</h3><p>Golden hour. A wide version is a bonus for the closing banner.</p>
+    <dl><div><dt>Format</dt><dd>1:1 photo (+ optional 16:9)</dd></div><div><dt>Goes</dt><dd>Media grid + closing banner</dd></div></dl>
+    <div class="fn"><code>STAPL_M-014_trail-run_v1.jpg</code><button class="cp" data-fn="STAPL_M-014_trail-run_v1.jpg">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-014"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-012" data-pri="After launch">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-012">M-012 ↗</a><span class="pri p-after">After launch</span></div>
+    <h3>Morning routine in the kitchen</h3><p>Scoop in hand. Needs a product sample, so this can follow launch.</p>
+    <dl><div><dt>Format</dt><dd>1:1 photo</dd></div><div><dt>Goes</dt><dd>Media grid + ritual section</dd></div></dl>
+    <div class="fn"><code>STAPL_M-012_morning-kitchen_v1.jpg</code><button class="cp" data-fn="STAPL_M-012_morning-kitchen_v1.jpg">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-012"> Sent</label>
+  </article>
+  <article class="asset" data-code="M-EXTRA" data-pri="Nice to have">
+    <div class="top"><a class="tagid" target="stapl-site" href="staple-home.html?tag=M-025">M-EXTRA ↗</a><span class="pri p-nice">Nice to have</span></div>
+    <h3>3 to 5 extra lifestyle photos</h3><p>Coaching, home, family if you're comfortable.</p>
+    <dl><div><dt>Format</dt><dd>High-res photos, any orientation</dd></div><div><dt>Goes</dt><dd>Your page</dd></div></dl>
+    <div class="fn"><code>STAPL_M-EXTRA_coaching-01.jpg</code><button class="cp" data-fn="STAPL_M-EXTRA_coaching-01.jpg">Copy name</button></div>
+    <label class="sent"><input type="checkbox" data-sent="M-EXTRA"> Sent</label>
+  </article></div>
+
+  <h2>Already in <em>hand</em></h2>
+  <div class="have"><p>We have four photos from earlier shoots and are using them on the Athlete page. Please confirm in your questionnaire that they're cleared for the web, and add their credit to <code>STAPL_credits.txt</code>.</p>
+    <ul><li>May 15th Trailer-52.jpg <a class="tagid" target="stapl-site" href="staple-home.html?tag=M-025">M-025 ↗</a></li><li>May 15th Trailer-82.jpg <a class="tagid" target="stapl-site" href="staple-home.html?tag=M-029">M-029 ↗</a></li><li>May 8th 2026 Training-98.jpg <a class="tagid" target="stapl-site" href="staple-home.html?tag=M-030">M-030 ↗</a></li><li>Oct 20th 2025-7.jpg <a class="tagid" target="stapl-site" href="staple-home.html?tag=M-031">M-031 ↗</a></li></ul></div>
+
+  <h2>Send <em>it</em></h2>
+  <div class="send">
+    <div class="card"><label class="lab" style="margin-top:0">Link to your shared folder (Drive, Dropbox, Frame.io)</label><input type="text" id="folder" placeholder="https://…">
+      <label class="lab">Notes for the STÄPL team (optional)</label><textarea id="notes" placeholder="What's coming later, anything we should know…"></textarea>
+      <div class="nav"><span></span><button class="btn" id="done">Tell the team it's ready ▸</button></div></div>
+    <div><p class="lead" style="margin-top:0">Questions about copy, quotes and facts live in a separate link: <a class="btn ghost" href="stapl-marcus.html">Open the Marcus questionnaire ▸</a></p></div>
+  </div>
+  <p class="foot">STÄPL launch review · this page saves automatically · come back on the same link any time</p>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const FB='https://prancer-website-devs-default-rtdb.firebaseio.com/pages/stapl-assets-marcus',LS='stapl-assets-marcus';
+let S={sent:{},folder:'',notes:'',updated:0};try{const l=JSON.parse(localStorage.getItem(LS)||'null');if(l)S=Object.assign(S,l);}catch(e){}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2400);}
+function setSave(c,m){const e=document.getElementById('saveState');e.className='save '+c;e.textContent=m;}
+let timer;function save(extra){S.updated=Date.now();try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}setSave('','Saving…');clearTimeout(timer);
+  timer=setTimeout(()=>fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(Object.assign({sent:S.sent,folder:S.folder,notes:S.notes,updated:S.updated},extra||{}))}).then(r=>{if(!r.ok)throw 0;setSave('ok','Saved ✓');}).catch(()=>setSave('err','Saved on this device only')),600);}
+function paint(){const all=[...document.querySelectorAll('.asset')];let n=0;all.forEach(a=>{const on=!!S.sent[a.dataset.code];a.classList.toggle('done',on);a.querySelector('[data-sent]').checked=on;if(on)n++;});
+  document.getElementById('progFill').style.width=(n/all.length*100)+'%';document.getElementById('progCt').textContent=n+' / '+all.length+' sent';document.getElementById('sentCt').textContent=n+' of '+all.length+' sent';
+  document.getElementById('folder').value=S.folder||'';document.getElementById('notes').value=S.notes||'';}
+document.addEventListener('change',e=>{const c=e.target.closest('[data-sent]');if(c){S.sent[c.dataset.sent]=c.checked;save();paint();}});
+document.addEventListener('click',e=>{const cp=e.target.closest('.cp');if(cp){navigator.clipboard.writeText(cp.dataset.fn).then(()=>toast('Copied: '+cp.dataset.fn),()=>toast('Copy failed'));}
+  const f=e.target.closest('.filter [data-f]');if(f){document.querySelectorAll('.filter [data-f]').forEach(b=>b.classList.toggle('on',b===f));document.querySelectorAll('.asset').forEach(a=>a.style.display=(f.dataset.f==='all'||a.dataset.pri===f.dataset.f)?'':'none');}});
+document.getElementById('folder').oninput=e=>{S.folder=e.target.value;save();};
+document.getElementById('notes').oninput=e=>{S.notes=e.target.value;save();};
+document.getElementById('done').onclick=()=>{save({ready:Date.now()});toast('Marked ready — send Amy a quick note too');};
+paint();
+fetch(FB+'.json').then(r=>r.json()).then(d=>{if(d&&(d.updated||0)>S.updated){S=Object.assign(S,{sent:d.sent||{},folder:d.folder||'',notes:d.notes||'',updated:d.updated});paint();}setSave('ok','Connected ✓');}).catch(()=>setSave('err','Offline — saving on this device'));
+</script></body></html>

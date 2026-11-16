@@ -2083,6 +2083,55 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
   .cart-lines .c-line .th{width:76px;height:76px;}
 }
 
+/* ---------- v25b: fuller product page ---------- */
+.statstrip{background:var(--espresso);color:var(--bone);border-top:3px solid var(--espresso);}
+.statstrip .wrap{display:grid;grid-template-columns:repeat(5,1fr);}
+.statstrip .wrap>div{padding:1.6rem 1rem;text-align:center;border-right:1px solid rgba(243,241,234,.16);}
+.statstrip .wrap>div:last-child{border-right:none;}
+.statstrip b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 118;font-size:clamp(1.6rem,3vw,2.6rem);line-height:1;color:var(--sunshine);}
+.statstrip .wrap>div:nth-child(even) b{color:var(--aqua);}
+.statstrip span{display:block;margin-top:.5rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,241,234,.7);}
+.ingr{display:grid;gap:.8rem;margin-top:2rem;max-width:560px;}
+.ingr>div{display:grid;grid-template-columns:190px 1fr;gap:1rem;align-items:center;background:#fff;border:2px solid var(--espresso);padding:.9rem 1rem;box-shadow:4px 4px 0 rgba(27,27,29,.14);}
+.ingr b{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:.95rem;line-height:1.2;}
+.ingr span{font-size:.88rem;line-height:1.5;color:var(--ink-dim);}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2.6rem;border:2px solid var(--espresso);}
+.cmp .col{padding:2.2rem 2rem;background:#fff;}
+.cmp .col.ours{background:var(--espresso);color:var(--bone);box-shadow:10px 10px 0 var(--aqua);position:relative;}
+.cmp h3{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:1.4rem;margin-bottom:1.1rem;}
+.cmp .col.ours h3{color:var(--sunshine);}
+.cmp ul{list-style:none;display:grid;gap:.8rem;}
+.cmp li{position:relative;padding-left:1.8rem;font-size:.98rem;line-height:1.5;color:var(--ink-dim);}
+.cmp li::before{content:'✕';position:absolute;left:0;font-weight:700;color:var(--clay);}
+.cmp .ours li{color:rgba(243,241,234,.86);}
+.cmp .ours li::before{content:'✓';color:var(--aqua);}
+.ftiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.6rem;}
+.ftile{display:flex;flex-direction:column;text-align:left;background:#fff;border:2px solid var(--espresso);box-shadow:6px 6px 0 var(--flav);padding:0;color:var(--espresso);transition:transform .2s;}
+.ftile:hover{transform:translate(-2px,-4px);}
+.ftile .im{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-bottom:2px solid var(--espresso);}
+.ftile .im img{width:100%;height:100%;object-fit:cover;}
+.ftile b{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 114;text-transform:uppercase;font-size:1.15rem;padding:1rem 1rem .3rem;}
+.ftile .note{font-family:var(--arch);font-size:.88rem;line-height:1.5;color:var(--ink-dim);padding:0 1rem 1.1rem;}
+.ftile.on{outline:4px solid var(--flav);outline-offset:3px;}
+.facts.lab{box-shadow:10px 10px 0 var(--aqua);}
+.pcard h3.math{font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--clay);margin:.5rem 0 .6rem;}
+.pcard h3.math small{font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.16em;color:var(--espresso);}
+.bb-qty{display:flex;align-items:center;justify-content:space-between;margin-top:1.4rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-dim);}
+.bb-qty .qty{margin-top:0;}
+.bb-qty+.add-cart{margin-top:1rem;}
+.pdp-bar{position:fixed;left:0;right:0;bottom:0;z-index:118;background:var(--espresso);color:var(--bone);border-top:3px solid var(--sunshine);transform:translateY(110%);transition:transform .3s;}
+.pdp-bar.on{transform:none;}
+.pdp-bar .in{max-width:1500px;margin:0 auto;padding:.7rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.pdp-bar .t{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;}
+.pdp-bar .t b{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;font-size:1.05rem;letter-spacing:0;margin-right:.5rem;}
+.pdp-bar .t i{font-style:normal;color:var(--aqua);}
+.pdp-bar .btn{padding:.8rem 1.3rem;}
+body.has-bar .preview-pill{bottom:84px;}
+@media(max-width:900px){.ftiles{grid-template-columns:1fr 1fr;}.statstrip .wrap{grid-template-columns:repeat(3,1fr);}.statstrip .wrap>div:nth-child(n+4){display:none;}.statstrip .wrap>div:nth-child(3){border-right:none;}}
+@media(max-width:820px){.cmp{grid-template-columns:1fr;}.ingr>div{grid-template-columns:1fr;gap:.3rem;}.pdp-bar .in{padding:.6rem 1.25rem;}.pdp-bar .t{font-size:.58rem;}}
+.ftiles>*{min-width:0;width:100%;}
+.ph-tag{font-size:clamp(8.5px,.62em,11px);}
+
 </style>
 </head>
 <body>
@@ -2108,9 +2157,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
   <a class="logo" href="#home"><img src="assets/staple-home/stapl-wordmark-dark.png" alt="STÄPL"></a>
   <ul>
     <li><a href="#the-fiber">The Fiber</a></li>
-    <li><a href="#home" data-scroll="home-flavors">Flavors</a></li>
     <li><a href="#the-athlete">The Athlete</a></li>
-    <li><a href="#home" data-scroll="home-ritual">The Ritual</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li class="keep"><a class="nav-cta" href="#shop">Shop Daily</a></li>
   </ul>
@@ -2122,12 +2169,10 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 
 <div class="mnav" id="mnav">
   <a href="#the-fiber"><em>01</em>The Fiber</a>
-  <a href="#home" data-scroll="home-flavors"><em>02</em>Flavors</a>
-  <a href="#the-athlete"><em>03</em>The Athlete</a>
-  <a href="#home" data-scroll="home-ritual"><em>04</em>The Ritual</a>
-  <a href="#faq"><em>05</em>FAQ</a>
-  <a href="#partners"><em>06</em>Partners</a>
-  <a href="#journal"><em>07</em>Journal</a>
+  <a href="#the-athlete"><em>02</em>The Athlete</a>
+  <a href="#faq"><em>03</em>FAQ</a>
+  <a href="#partners"><em>04</em>Partners</a>
+  <a href="#journal"><em>05</em>Journal</a>
   <a class="mcta" href="#shop"><em>&#9656;</em>Shop Daily</a>
 </div>
 
@@ -3053,6 +3098,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
             <span class="pr"><b>$39.00</b></span>
           </label>
         </div>
+        <div class="bb-qty"><span>Quantity</span><span class="qty"><button type="button" data-bq="-1" aria-label="Decrease quantity">−</button><span data-bqv>1</span><button type="button" data-bq="1" aria-label="Increase quantity">+</button></span></div>
         <button class="add-cart">Add To Cart &#9656;</button>
         <div class="buy-meta">
           <span><b>&#9656;</b> Free ship $50+</span>
@@ -3072,12 +3118,22 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
     </div>
   </section>
 
+  <section class="statstrip">
+    <div class="wrap">
+      <div><b>7g</b><span>Fiber per scoop</span></div>
+      <div><b>0g</b><span>Sugar</span></div>
+      <div><b>30</b><span>Servings per canister</span></div>
+      <div><b>10s</b><span>Scoop to done</span></div>
+      <div><b>1</b><span>Scoop a day</span></div>
+    </div>
+  </section>
+
   <section class="pg-sec gridbg">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Why Daily</span></div>
       <h2 class="display rev">One product.<br><em>One job.</em></h2>
       <div class="pcards">
-        <div class="pcard rev"><span class="n">01</span><h3>Tastes like actual fruit</h3><p>Raspberry, watermelon, blood orange, fruit punch. Zero sugar, nothing artificial, no chalky aftertaste.</p></div>
+        <div class="pcard rev"><span class="n">01</span><h3>Tastes like actual fruit</h3><p>Raspberry, watermelon, blood orange, fruit punch. Zero sugar, nothing artificial, no chalky aftertaste. <span class="ph-tag a" data-k="real-fruit" data-o="b" data-ph="B-010">confirm taste claims</span></p></div>
         <div class="pcard rev rev-d1"><span class="n">02</span><h3>7g where it counts</h3><p>Most adults get about half the fiber they need. One scoop closes a real part of that gap. <a class="more-link" style="margin:0" href="#the-fiber">Why fiber &#9656;</a></p></div>
         <div class="pcard rev rev-d2"><span class="n">03</span><h3>Built to be a habit</h3><p>The canister lives where you'll see it every morning. Ten seconds, then get on with your day.</p></div>
       </div>
@@ -3086,25 +3142,26 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 
   <section class="pg-sec mint">
     <div class="wrap">
-      <div class="split">
+      <div class="split top">
         <div>
-          <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">The label</span></div>
+          <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Inside every scoop</span></div>
           <h2 class="display rev">Nothing<br><em class="aq">hidden.</em></h2>
-          <p class="lead rev rev-d1">No proprietary blends. The full Supplement Facts panel and ingredient list will sit here, readable without zooming into a photo.</p>
-          <ul class="ticks rev rev-d2">
-            <li><b>7g fiber</b> per scoop</li>
-            <li><b>0g sugar</b></li>
-            <li><b>30 servings</b> per canister</li>
-            <li><b>Third-party tested</b> <span class="ph-tag" data-o="b" data-ph="B-055">confirm</span></li>
-          </ul>
+          <p class="lead rev rev-d1">No proprietary blends. Every ingredient is named, with the job it does.</p>
+          <div class="ingr rev rev-d2">
+            <div><b><span class="ph-tag" data-k="ingr-1" data-o="b" data-ph="B-055">Fiber source 1</span></b><span>Soluble fiber. What it is and why it is in the blend.</span></div>
+            <div><b><span class="ph-tag" data-k="ingr-2" data-o="b" data-ph="B-056">Fiber source 2</span></b><span>Insoluble fiber. What it is and why it is in the blend.</span></div>
+            <div><b><span class="ph-tag" data-k="ingr-3" data-o="b" data-ph="B-057">Real fruit ingredient</span></b><span>Where the flavor and color come from.</span></div>
+            <div><b><span class="ph-tag" data-k="ingr-4" data-o="b" data-ph="B-058">Sweetener</span></b><span>Zero sugar. Name the sweetener plainly.</span></div>
+            <div><b><span class="ph-tag" data-k="ingr-5" data-o="b" data-ph="B-059">Anything else</span></b><span>Acids, salts or flow agents, if any. If none, cut this card.</span></div>
+          </div>
         </div>
-        <div class="rev rev-d1" style="display:flex;justify-content:center">
+        <div class="rev rev-d1" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem">
           <div class="facts">
             <h3>Supplement Facts</h3>
-            <div class="row"><span>Serving size</span><b>1 scoop <span class="ph-tag" data-o="b" data-ph="B-056">g</span></b></div>
+            <div class="row"><span>Serving size</span><b>1 scoop <span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">g</span></b></div>
             <div class="row thick"><span>Servings per container</span><b>30</b></div>
-            <div class="row"><span>Calories</span><b><span class="ph-tag" data-o="b" data-ph="B-057">tbc</span></b></div>
-            <div class="row"><span>Total carbohydrate</span><b><span class="ph-tag" data-o="b" data-ph="B-058">tbc</span></b></div>
+            <div class="row"><span>Calories</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
+            <div class="row"><span>Total carbohydrate</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
             <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b>7g</b></div>
             <div class="row thick"><span>&nbsp;&nbsp;Total sugars</span><b>0g</b></div>
             <small>Placeholder panel. Replace with the final Supplement Facts, ingredients and allergen statement.</small>
@@ -3116,15 +3173,134 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 
   <section class="pg-sec">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Reviews</span></div>
+      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">How it compares</span></div>
+      <h2 class="display rev">The usual way.<br><em>The STÄPL way.</em></h2>
+      <div class="cmp rev rev-d1">
+        <div class="col">
+          <h3>The usual fiber powder</h3>
+          <ul><li>Gritty, beige and hard to finish</li><li>Flavored like orange-ish candy, or not at all</li><li>Added sugar or artificial sweeteners</li><li>Bought with good intentions, forgotten by Thursday</li></ul>
+        </div>
+        <div class="col ours">
+          <h3>Daily</h3>
+          <ul><li>Dissolves in seconds and drinks like fruit</li><li>Four real-fruit flavors you would choose anyway</li><li>Zero sugar, nothing artificial</li><li>One scoop, ten seconds, every morning</li></ul>
+        </div>
+      </div>
+      <p style="margin-top:1.2rem"><span class="ph-tag a" data-k="compare" data-o="b" data-ph="B-061">comparison claims — confirm each is true of the final product</span></p>
+    </div>
+  </section>
+
+  <section class="pg-sec white">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">Pick your flavor <span class="ph-tag a" data-k="flavors" data-o="b" data-ph="B-005">confirm flavor line-up + names</span></span></div>
+      <h2 class="display rev">Four flavors.<br><em class="aq">Same 7g.</em></h2>
+      <div class="ftiles">
+        <button class="ftile rev" data-pick-flavor="Raspberry" style="--flav:var(--clay)"><span class="im"><img src="assets/staple-home/9042d32f25.jpg" alt="Raspberry"><span class="ph-img" data-k="img-9042d32f25.jpg" data-o="b" data-ph="B-011"><i>AI placeholder image — replace</i></span></span><b>Raspberry</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Bright, tart, a little jammy.</span></button>
+        <button class="ftile rev rev-d1" data-pick-flavor="Watermelon" style="--flav:var(--coral)"><span class="im"><img src="assets/staple-home/17be3a0437.jpg" alt="Watermelon"><span class="ph-img" data-k="img-17be3a0437.jpg" data-o="b" data-ph="B-012"><i>AI placeholder image — replace</i></span></span><b>Watermelon</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Light, cold, summer in a shaker.</span></button>
+        <button class="ftile rev rev-d2" data-pick-flavor="Blood Orange" style="--flav:var(--sunshine)"><span class="im"><img src="assets/staple-home/90aa19955c.jpg" alt="Blood Orange"><span class="ph-img" data-k="img-90aa19955c.jpg" data-o="b" data-ph="B-013"><i>AI placeholder image — replace</i></span></span><b>Blood Orange</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> Citrus with a deeper, grown-up edge.</span></button>
+        <button class="ftile rev rev-d3" data-pick-flavor="Fruit Punch" style="--flav:var(--aqua)"><span class="im"><img src="assets/staple-home/856820ae5f.jpg" alt="Fruit Punch"><span class="ph-img" data-k="img-856820ae5f.jpg" data-o="b" data-ph="B-014"><i>AI placeholder image — replace</i></span></span><b>Fruit Punch</b><span class="note"><span class="ph-tag" data-k="taste-notes" data-o="b" data-ph="B-062">tasting note</span> The classic, minus the sugar.</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="ritual">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">How to use</span></div>
+      <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
+      <div class="steps">
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="b" data-ph="B-022"><i>AI placeholder image — replace</i></span><span class="cap">The scoop</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It dissolves in seconds. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">confirm directions vs. label</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber dissolving in water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="b" data-ph="B-023"><i>AI placeholder image — replace</i></span><span class="cap">The dissolve</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>That's it. The foundation is handled. Go train, work, live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished fruit drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="b" data-ph="B-024"><i>AI placeholder image — replace</i></span><span class="cap">Done</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec dark">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">Tested, not just claimed</span></div>
+          <h2 class="display rev">Every batch,<br><em>verified.</em></h2>
+          <p class="lead rev rev-d1">Third-party testing on every production run, with the results published here instead of available on request. <span class="ph-tag a" data-k="tested" data-o="b" data-ph="B-009">confirm lab, what is tested, and whether results will be published</span></p>
+          <ul class="ticks rev rev-d2"><li><b>Heavy metals</b> screened</li><li><b>Label claims</b> verified</li><li><b>Results</b> posted per batch</li></ul>
+        </div>
+        <div class="rev rev-d1" style="display:flex;justify-content:center">
+          <div class="facts lab">
+            <h3>Certificate of Analysis</h3>
+            <div class="row thick"><span>Lab</span><b><span class="ph-tag" data-k="tested" data-o="b" data-ph="B-009">lab name</span></b></div>
+            <div class="row"><span>Lead (Pb)</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">result</span></b></div>
+            <div class="row"><span>Arsenic (As)</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">result</span></b></div>
+            <div class="row"><span>Cadmium (Cd)</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">result</span></b></div>
+            <div class="row"><span>Mercury (Hg)</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">result</span></b></div>
+            <div class="row thick"><span>Fiber per serving</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">verified?</span></b></div>
+            <small>Placeholder. This panel only ships if testing is in place and the results can be shown.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec white">
+    <div class="wrap">
+      <div class="split wide-r">
+        <div class="frame aq tilt-l rev" style="aspect-ratio:4/3"><img src="assets/staple-home/marcus-training-98.jpg" alt="Marcus Filly between sets"><span class="ph-img" data-k="img-marcus-training-98.jpg" data-o="m" data-ph="M-030"><i>real photo — confirm cleared for web + credit</i></span></div>
+        <div>
+          <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">From the founder</span></div>
+          <div class="prose"><blockquote class="rev" style="font-size:clamp(1.4rem,2.6vw,2.2rem)">"Fiber isn't sexy. Neither is showing up at 5AM. Do it anyway." <span class="ph-tag a" data-k="quote" data-o="m" data-ph="M-022">we wrote this quote — approve, edit or replace</span></blockquote></div>
+          <p class="lead rev rev-d1"><b>Marcus Filly</b>, 6× CrossFit Games athlete and founder of Functional Bodybuilding, built Daily for the part of nutrition most athletes skip.</p>
+          <div class="btn-row rev rev-d2"><a class="btn btn-ghost" href="#the-athlete">Read Marcus's story &#9656;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec mint">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">H</span><div class="line"></div><span class="mono-label">Do the math <span class="ph-tag a" data-k="pricing" data-o="b" data-ph="B-017">confirm price, discount + cadence</span></span></div>
+      <h2 class="display rev">About a dollar<br><em>a day.</em></h2>
+      <div class="pcards c2" style="max-width:900px">
+        <div class="pcard rev"><span class="n">Subscribe &amp; Save</span><h3 class="math">$1.04 <small>per day</small></h3><p>$31.20 per canister, delivered every 30 days. 20% off, pause or cancel anytime.</p></div>
+        <div class="pcard rev rev-d1"><span class="n">One-time</span><h3 class="math">$1.30 <small>per day</small></h3><p>$39.00 per canister, 30 servings. Try it once. You'll be back.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" style="padding:5rem 0">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <div class="sec-head rev"><span class="num">I</span><div class="line"></div><span class="mono-label">Quick answers</span></div>
+          <h2 class="display rev">Before<br>you <em>buy.</em></h2>
+          <a class="more-link rev" href="#faq">See all questions &#9656;</a>
+        </div>
+        <div class="rev rev-d1">
+          <details open><summary>Will it upset my stomach? <span class="pm">+</span></summary><p><span class="ph-tag a" data-k="tolerance" data-o="b" data-ph="B-020">advisory copy — compliance review</span> If you're new to fiber, start with half a scoop for the first week and drink plenty of water.</p></details>
+          <details><summary>When should I take it? <span class="pm">+</span></summary><p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move.</p></details>
+          <details><summary>Can I cancel my subscription? <span class="pm">+</span></summary><p>Yes, anytime before your next order processes. No fees and no minimum. <span class="ph-tag a" data-k="sub-terms" data-o="b" data-ph="B-021">confirm terms</span></p></details>
+          <details><summary>What if I don't like it? <span class="pm">+</span></summary><p>Your first canister is covered by a 30-day guarantee. <span class="ph-tag a" data-k="guarantee" data-o="b" data-ph="B-065">confirm terms</span></p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="wrap">
+      <div class="sec-head rev"><span class="num">J</span><div class="line"></div><span class="mono-label">Reviews</span></div>
       <h2 class="display rev">Earned,<br><em>not invented.</em></h2>
       <div class="review-empty rev rev-d1">
         <b>Reviews open at launch</b>
         <p>This block connects to the review app once real customers have the product. No star rating shows until there are real reviews behind it.</p>
       </div>
-      <div class="btn-row"><a class="more-link" href="#faq">Product questions? Read the FAQ &#9656;</a></div>
     </div>
   </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2 class="display">Try it for 30 days. <em>Love it or it's on us.</em> <span class="ph-tag a" data-k="guarantee" data-o="b" data-ph="B-065">confirm terms</span></h2>
+      <a class="btn btn-sun" href="#shop">Start your Staple &#9656;</a>
+    </div>
+  </section>
+
+  <div class="pdp-bar" id="pdpBar"><div class="in"><span class="t"><b>Daily</b> <i id="pdpBarFlav">Raspberry</i> · <span id="pdpBarPrice">$31.20</span></span><button class="btn btn-sun" id="pdpBarAdd">Add to cart &#9656;</button></div></div>
 
   <section class="signup">
   <div class="wrap">
@@ -3183,9 +3359,9 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <h2 class="display rev">Four ways <em>in.</em></h2>
       <p class="ph-note rev" style="margin-top:2rem"><b>Terms to set &#9656;</b> Wholesale pricing, minimums, affiliate commission and payout terms are not decided yet. Bullets below describe the structure only.</p>
       <div class="pcards c4">
-        <div class="pcard tier rev"><span class="n">01</span><h3>Gyms + affiliates</h3><p>Stock Daily at the front desk for your members.</p><ul><li>Wholesale pricing <span class="ph-tag" data-o="b" data-ph="B-059">tbc</span></li><li>Counter display + samples</li><li>Listing on this page</li></ul></div>
-        <div class="pcard tier rev rev-d1"><span class="n">02</span><h3>Coaches + creators</h3><p>Recommend what you actually use and earn on it.</p><ul><li>Affiliate commission <span class="ph-tag" data-o="b" data-ph="B-060">tbc</span></li><li>Your own code + link</li><li>Early access to new staples</li></ul></div>
-        <div class="pcard tier rev rev-d2"><span class="n">03</span><h3>Retail + wholesale</h3><p>Independent retailers, grocers and distributors.</p><ul><li>Case pricing <span class="ph-tag" data-o="b" data-ph="B-061">tbc</span></li><li>Sell sheets + product data</li><li>Launch support</li></ul></div>
+        <div class="pcard tier rev"><span class="n">01</span><h3>Gyms + affiliates</h3><p>Stock Daily at the front desk for your members.</p><ul><li>Wholesale pricing <span class="ph-tag" data-o="b" data-ph="B-066">tbc</span></li><li>Counter display + samples</li><li>Listing on this page</li></ul></div>
+        <div class="pcard tier rev rev-d1"><span class="n">02</span><h3>Coaches + creators</h3><p>Recommend what you actually use and earn on it.</p><ul><li>Affiliate commission <span class="ph-tag" data-o="b" data-ph="B-067">tbc</span></li><li>Your own code + link</li><li>Early access to new staples</li></ul></div>
+        <div class="pcard tier rev rev-d2"><span class="n">03</span><h3>Retail + wholesale</h3><p>Independent retailers, grocers and distributors.</p><ul><li>Case pricing <span class="ph-tag" data-o="b" data-ph="B-068">tbc</span></li><li>Sell sheets + product data</li><li>Launch support</li></ul></div>
         <div class="pcard tier rev rev-d3"><span class="n">04</span><h3>Events + brands</h3><p>Competitions, retreats and brands we share a customer with.</p><ul><li>Sampling at events</li><li>Co-branded content</li><li>Giveaways + bundles</li></ul></div>
       </div>
     </div>
@@ -3197,7 +3373,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
         <div>
           <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Apply</span></div>
           <h2 class="display rev">Tell us<br>about <em>you.</em></h2>
-          <p class="lead rev rev-d1">We reply to every application within <span class="ph-tag" data-o="b" data-ph="B-062">x business days</span>.</p>
+          <p class="lead rev rev-d1">We reply to every application within <span class="ph-tag" data-o="b" data-ph="B-069">x business days</span>.</p>
           <ul class="ticks rev rev-d2">
             <li><b>Step 1:</b> send the form</li>
             <li><b>Step 2:</b> a quick call or email to match you to a program</li>
@@ -3315,7 +3491,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">06</span><div class="line"></div><span class="mono-label">Contact</span></div>
       <h1 class="display rev">Talk to <em class="aq">us.</em></h1>
-      <p class="lead rev rev-d1">Real people answer. We reply within <span class="ph-tag" data-o="b" data-ph="B-063">1 business day</span>.</p>
+      <p class="lead rev rev-d1">Real people answer. We reply within <span class="ph-tag" data-o="b" data-ph="B-070">1 business day</span>.</p>
     </div>
   </header>
   <section class="pg-sec white" style="padding-top:3rem">
@@ -3333,9 +3509,9 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
           <p class="fine">Preview form. See our <a href="#privacy">Privacy Policy</a> for how we handle your information.</p>
         </form>
         <div class="contact-cards rev rev-d1">
-          <div class="ccard"><span>Customer support</span><b><span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span></b><p>Monday to Friday, <span class="ph-tag" data-o="b" data-ph="B-065">hours + time zone</span></p></div>
-          <div class="ccard"><span>Phone</span><b><span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></b><p>Google and Meta both look for a second contact method beside email.</p></div>
-          <div class="ccard"><span>Mailing address</span><b><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span></b><p><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span> Must match the address in Shopify and Merchant Center exactly.</p></div>
+          <div class="ccard"><span>Customer support</span><b><span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span></b><p>Monday to Friday, <span class="ph-tag" data-o="b" data-ph="B-072">hours + time zone</span></p></div>
+          <div class="ccard"><span>Phone</span><b><span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></b><p>Google and Meta both look for a second contact method beside email.</p></div>
+          <div class="ccard"><span>Mailing address</span><b><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span></b><p><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span> Must match the address in Shopify and Merchant Center exactly.</p></div>
           <div class="ccard"><span>Partnerships + wholesale</span><b><a class="more-link" style="margin:0" href="#partners">Partner with us &#9656;</a></b></div>
         </div>
       </div>
@@ -3355,7 +3531,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
           <div class="cart-lines" id="cartPageLines"></div>
           <div class="cart-trust">
             <div><b>Free shipping</b>On orders over $50 <span class="ph-tag a" data-k="ship-threshold" data-o="b" data-ph="B-001">confirm threshold</span></div>
-            <div><b>30-day guarantee</b>On your first canister <span class="ph-tag a" data-k="guarantee" data-o="b" data-ph="B-069">confirm terms</span></div>
+            <div><b>30-day guarantee</b>On your first canister <span class="ph-tag a" data-k="guarantee" data-o="b" data-ph="B-065">confirm terms</span></div>
             <div><b>Pause or cancel</b>Subscriptions, anytime <span class="ph-tag a" data-k="sub-terms" data-o="b" data-ph="B-021">confirm terms</span></div>
           </div>
           <div class="btn-row"><a class="more-link" href="#shop">&#9664; Keep shopping</a></div>
@@ -3420,16 +3596,16 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping" class="is-current">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
 <h2>Where we ship</h2>
-<p>We ship to addresses in the United States. <span class="ph-tag" data-o="b" data-ph="B-071">Confirm: 50 states, PO boxes, APO/FPO, territories</span> We do not currently ship internationally.</p>
+<p>We ship to addresses in the United States. <span class="ph-tag" data-o="b" data-ph="B-077">Confirm: 50 states, PO boxes, APO/FPO, territories</span> We do not currently ship internationally.</p>
 <h2>Processing time</h2>
-<p>Orders are processed within <span class="ph-tag" data-o="b" data-ph="B-072">1 to 2</span> business days, Monday to Friday, excluding holidays. Orders placed after <span class="ph-tag" data-o="b" data-ph="B-073">cutoff time + time zone</span> process the next business day.</p>
+<p>Orders are processed within <span class="ph-tag" data-o="b" data-ph="B-078">1 to 2</span> business days, Monday to Friday, excluding holidays. Orders placed after <span class="ph-tag" data-o="b" data-ph="B-079">cutoff time + time zone</span> process the next business day.</p>
 <h2>Rates and delivery times</h2>
 <table>
 <tr><th>Method</th><th>Cost</th><th>Delivery after processing</th></tr>
-<tr><td>Standard</td><td><span class="ph-tag" data-o="b" data-ph="B-074">$0.00</span>; free on orders over <span class="ph-tag" data-o="b" data-ph="B-075">$50</span></td><td><span class="ph-tag" data-o="b" data-ph="B-076">3 to 7</span> business days</td></tr>
-<tr><td>Expedited</td><td><span class="ph-tag" data-o="b" data-ph="B-077">$0.00</span></td><td><span class="ph-tag" data-o="b" data-ph="B-078">2 to 3</span> business days</td></tr>
+<tr><td>Standard</td><td><span class="ph-tag" data-o="b" data-ph="B-080">$0.00</span>; free on orders over <span class="ph-tag" data-o="b" data-ph="B-081">$50</span></td><td><span class="ph-tag" data-o="b" data-ph="B-082">3 to 7</span> business days</td></tr>
+<tr><td>Expedited</td><td><span class="ph-tag" data-o="b" data-ph="B-083">$0.00</span></td><td><span class="ph-tag" data-o="b" data-ph="B-084">2 to 3</span> business days</td></tr>
 </table>
 <p>Delivery times are estimates from the carrier and are not guaranteed.</p>
 <h2>Subscription orders</h2>
@@ -3437,11 +3613,11 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 <h2>Tracking</h2>
 <p>You will receive an email with a tracking link when your order ships.</p>
 <h2>Lost, delayed or damaged orders</h2>
-<p>If your order arrives damaged, or tracking shows delivered and you do not have it, email <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span> within <span class="ph-tag" data-o="b" data-ph="B-079">30</span> days with your order number and a photo of any damage. We will replace it or refund you.</p>
+<p>If your order arrives damaged, or tracking shows delivered and you do not have it, email <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span> within <span class="ph-tag" data-o="b" data-ph="B-085">30</span> days with your order number and a photo of any damage. We will replace it or refund you.</p>
 <h2>Wrong address</h2>
-<p>Email us as soon as possible. We can change an address until the order ships. Orders returned to us as undeliverable are refunded less the original shipping cost. <span class="ph-tag" data-o="b" data-ph="B-080">confirm</span></p>
+<p>Email us as soon as possible. We can change an address until the order ships. Orders returned to us as undeliverable are refunded less the original shipping cost. <span class="ph-tag" data-o="b" data-ph="B-086">confirm</span></p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3462,32 +3638,32 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy" class="is-current">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
 <h2>Our guarantee</h2>
-<p>If you are not happy with your first canister of Daily, contact us within <span class="ph-tag" data-o="b" data-ph="B-081">30</span> days of delivery and we will refund the purchase price of that canister. <span class="ph-tag" data-o="b" data-ph="B-082">Confirm: one per customer, opened product accepted</span></p>
+<p>If you are not happy with your first canister of Daily, contact us within <span class="ph-tag" data-o="b" data-ph="B-087">30</span> days of delivery and we will refund the purchase price of that canister. <span class="ph-tag" data-o="b" data-ph="B-088">Confirm: one per customer, opened product accepted</span></p>
 <h2>Returns</h2>
 <ul>
-<li>Return window: <span class="ph-tag" data-o="b" data-ph="B-083">30</span> days from delivery.</li>
+<li>Return window: <span class="ph-tag" data-o="b" data-ph="B-089">30</span> days from delivery.</li>
 <li>Unopened product may be returned for a full refund of the product price.</li>
-<li>Return shipping is paid by <span class="ph-tag" data-o="b" data-ph="B-084">customer / STÄPL</span>.</li>
-<li>Original shipping charges are <span class="ph-tag" data-o="b" data-ph="B-085">non-refundable / refundable</span>.</li>
+<li>Return shipping is paid by <span class="ph-tag" data-o="b" data-ph="B-090">customer / STÄPL</span>.</li>
+<li>Original shipping charges are <span class="ph-tag" data-o="b" data-ph="B-091">non-refundable / refundable</span>.</li>
 </ul>
 <h2>How to start a return</h2>
 <ol>
-<li>Email <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span> with your order number and the reason.</li>
-<li>We reply within <span class="ph-tag" data-o="b" data-ph="B-086">1 to 2</span> business days with instructions and, if needed, a return address.</li>
+<li>Email <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span> with your order number and the reason.</li>
+<li>We reply within <span class="ph-tag" data-o="b" data-ph="B-092">1 to 2</span> business days with instructions and, if needed, a return address.</li>
 <li>Once we approve the return, your refund is issued to the original payment method.</li>
 </ol>
 <h2>Refund timing</h2>
-<p>Approved refunds are issued within <span class="ph-tag" data-o="b" data-ph="B-087">5 to 10</span> business days. Your bank may take additional time to post it.</p>
+<p>Approved refunds are issued within <span class="ph-tag" data-o="b" data-ph="B-093">5 to 10</span> business days. Your bank may take additional time to post it.</p>
 <h2>Damaged or incorrect items</h2>
-<p>Email us within <span class="ph-tag" data-o="b" data-ph="B-088">30</span> days with a photo and your order number. We will send a replacement or refund you at no cost.</p>
+<p>Email us within <span class="ph-tag" data-o="b" data-ph="B-094">30</span> days with a photo and your order number. We will send a replacement or refund you at no cost.</p>
 <h2>Subscriptions</h2>
 <p>You can cancel a subscription at any time before the next order processes. Orders that have already processed can be returned under this policy. See the <a href="#subscription-policy">Subscription Policy</a>.</p>
 <h2>Exceptions</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-089">List any non-returnable items, such as gift cards or final-sale items, or delete this section.</span></p>
+<p><span class="ph-tag" data-o="b" data-ph="B-095">List any non-returnable items, such as gift cards or final-sale items, or delete this section.</span></p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3508,30 +3684,30 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy" class="is-current">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
 <h2>How it works</h2>
-<p>When you choose Subscribe &amp; Save, you are enrolling in an automatically renewing subscription. We ship your selected product every <span class="ph-tag" data-o="b" data-ph="B-090">30</span> days and charge your payment method for each shipment until you cancel.</p>
+<p>When you choose Subscribe &amp; Save, you are enrolling in an automatically renewing subscription. We ship your selected product every <span class="ph-tag" data-o="b" data-ph="B-096">30</span> days and charge your payment method for each shipment until you cancel.</p>
 <h2>What you pay</h2>
 <ul>
-<li>Subscription price: <span class="ph-tag" data-o="b" data-ph="B-091">$31.20</span> per canister (<span class="ph-tag" data-o="b" data-ph="B-092">20%</span> off the one-time price), plus applicable tax and shipping.</li>
+<li>Subscription price: <span class="ph-tag" data-o="b" data-ph="B-097">$31.20</span> per canister (<span class="ph-tag" data-o="b" data-ph="B-098">20%</span> off the one-time price), plus applicable tax and shipping.</li>
 <li>Your payment method is charged on each renewal date, when the order processes.</li>
-<li>If the price changes, we will email you at least <span class="ph-tag" data-o="b" data-ph="B-093">30</span> days before the new price applies.</li>
+<li>If the price changes, we will email you at least <span class="ph-tag" data-o="b" data-ph="B-099">30</span> days before the new price applies.</li>
 </ul>
 <h2>Renewal reminders</h2>
-<p>We email you <span class="ph-tag" data-o="b" data-ph="B-094">3</span> days before each renewal so you can skip, change or cancel.</p>
+<p>We email you <span class="ph-tag" data-o="b" data-ph="B-100">3</span> days before each renewal so you can skip, change or cancel.</p>
 <h2>Pause, skip or cancel</h2>
 <p>You can pause, skip a shipment, change flavor or cancel at any time:</p>
 <ul>
 <li>Online, in your account under Manage Subscription; or</li>
-<li>By emailing <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span>.</li>
+<li>By emailing <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span>.</li>
 </ul>
-<p>Changes must be made before your next order processes. There are no cancellation fees and no minimum number of orders. <span class="ph-tag" data-o="b" data-ph="B-095">confirm</span></p>
+<p>Changes must be made before your next order processes. There are no cancellation fees and no minimum number of orders. <span class="ph-tag" data-o="b" data-ph="B-101">confirm</span></p>
 <h2>Failed payments</h2>
-<p>If a payment fails we will retry <span class="ph-tag" data-o="b" data-ph="B-096">x</span> times and email you. If it cannot be completed, the subscription is paused.</p>
+<p>If a payment fails we will retry <span class="ph-tag" data-o="b" data-ph="B-102">x</span> times and email you. If it cannot be completed, the subscription is paused.</p>
 <h2>Refunds</h2>
 <p>Subscription orders are covered by the <a href="#refund-policy">Refund + Return Policy</a>.</p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3552,8 +3728,8 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy" class="is-current">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
-<p>This policy explains how <span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span> ("STÄPL", "we") collects, uses and shares personal information when you visit <span class="ph-tag" data-o="b" data-ph="B-097">domain</span>, buy from us or contact us.</p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
+<p>This policy explains how <span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span> ("STÄPL", "we") collects, uses and shares personal information when you visit <span class="ph-tag" data-o="b" data-ph="B-103">domain</span>, buy from us or contact us.</p>
 <h2>Information we collect</h2>
 <ul>
 <li><b>Information you give us:</b> name, email, phone, shipping and billing address, order details, and messages you send us. Payment card details are processed by our payment providers; we do not store full card numbers.</li>
@@ -3569,7 +3745,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 <li>To prevent fraud and meet legal obligations</li>
 </ul>
 <h2>Advertising and analytics</h2>
-<p>We use tools from partners such as Meta, Google and <span class="ph-tag" data-o="b" data-ph="B-098">other platforms: TikTok, Klaviyo, etc.</span> that place cookies or pixels on the site. These partners may use that information to show you ads on other sites and to measure results. Under some state laws this may be considered a "sale" or "sharing" of personal information. You can opt out on the <a href="#privacy-choices">Your Privacy Choices</a> page.</p>
+<p>We use tools from partners such as Meta, Google and <span class="ph-tag" data-o="b" data-ph="B-104">other platforms: TikTok, Klaviyo, etc.</span> that place cookies or pixels on the site. These partners may use that information to show you ads on other sites and to measure results. Under some state laws this may be considered a "sale" or "sharing" of personal information. You can opt out on the <a href="#privacy-choices">Your Privacy Choices</a> page.</p>
 <h2>Who we share information with</h2>
 <ul>
 <li>Service providers who run the store: Shopify, payment processors, fulfillment and shipping partners, email and SMS providers, review and subscription apps</li>
@@ -3578,20 +3754,20 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 <li>A buyer or successor in a merger or sale of the business</li>
 </ul>
 <h2>Your rights and choices</h2>
-<p>Depending on where you live, you may have the right to access, correct, delete or receive a copy of your personal information, and to opt out of targeted advertising, sale or sharing. To make a request, email <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span> or use <a href="#privacy-choices">Your Privacy Choices</a>. We will not treat you differently for using these rights. You may appeal a decision by replying to our response.</p>
+<p>Depending on where you live, you may have the right to access, correct, delete or receive a copy of your personal information, and to opt out of targeted advertising, sale or sharing. To make a request, email <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span> or use <a href="#privacy-choices">Your Privacy Choices</a>. We will not treat you differently for using these rights. You may appeal a decision by replying to our response.</p>
 <p>You can unsubscribe from marketing email with the link in any message, and from texts by replying STOP.</p>
 <h2>Cookies</h2>
-<p>You can manage cookies through the cookie banner <span class="ph-tag" data-o="b" data-ph="B-099">if installed</span> and your browser settings. We honor Global Privacy Control signals where required by law. <span class="ph-tag" data-o="b" data-ph="B-100">confirm once consent tool is set up</span></p>
+<p>You can manage cookies through the cookie banner <span class="ph-tag" data-o="b" data-ph="B-105">if installed</span> and your browser settings. We honor Global Privacy Control signals where required by law. <span class="ph-tag" data-o="b" data-ph="B-106">confirm once consent tool is set up</span></p>
 <h2>Retention and security</h2>
 <p>We keep personal information for as long as needed for the purposes above and to meet legal requirements. We use reasonable safeguards, but no system is fully secure.</p>
 <h2>Children</h2>
 <p>The site is not intended for anyone under 18, and we do not knowingly collect information from children.</p>
 <h2>International visitors</h2>
-<p>We are based in the United States and process information here. <span class="ph-tag" data-o="b" data-ph="B-101">Add EU/UK section if you market to those regions.</span></p>
+<p>We are based in the United States and process information here. <span class="ph-tag" data-o="b" data-ph="B-107">Add EU/UK section if you market to those regions.</span></p>
 <h2>Changes</h2>
 <p>We may update this policy and will post the new date above.</p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3612,21 +3788,21 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices" class="is-current">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
 <h2>Do not sell or share my personal information</h2>
 <p>We use advertising and analytics cookies that may count as a "sale" or "sharing" of personal information under laws such as the California Consumer Privacy Act. You can opt out in any of these ways:</p>
 <ul>
-<li>Use the button below to turn off advertising cookies on this browser. <span class="ph-tag" data-o="b" data-ph="B-102">connects to Shopify's privacy / consent tool</span></li>
-<li>Turn on Global Privacy Control in your browser. We treat that signal as an opt-out. <span class="ph-tag" data-o="b" data-ph="B-103">confirm</span></li>
-<li>Email <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span> with the subject "Privacy request".</li>
+<li>Use the button below to turn off advertising cookies on this browser. <span class="ph-tag" data-o="b" data-ph="B-108">connects to Shopify's privacy / consent tool</span></li>
+<li>Turn on Global Privacy Control in your browser. We treat that signal as an opt-out. <span class="ph-tag" data-o="b" data-ph="B-109">confirm</span></li>
+<li>Email <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span> with the subject "Privacy request".</li>
 </ul>
 <p><a class="btn btn-ghost" href="#privacy-choices" onclick="event.preventDefault();this.textContent='OPTED OUT ✓ [PREVIEW]'">Opt out on this browser &#9656;</a></p>
 <h2>Other requests</h2>
-<p>To access, correct or delete your information, email <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span>. We verify requests using the email address on your order. Full details are in the <a href="#privacy">Privacy Policy</a>.</p>
+<p>To access, correct or delete your information, email <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span>. We verify requests using the email address on your order. Full details are in the <a href="#privacy">Privacy Policy</a>.</p>
 <h2>Marketing messages</h2>
 <p>Unsubscribe from email with the link in any message. Reply STOP to any text to stop texts.</p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3647,8 +3823,8 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms" class="is-current">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
-<p>These terms are an agreement between you and <span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span> ("STÄPL", "we"). By using <span class="ph-tag" data-o="b" data-ph="B-097">domain</span> or placing an order you agree to them.</p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
+<p>These terms are an agreement between you and <span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span> ("STÄPL", "we"). By using <span class="ph-tag" data-o="b" data-ph="B-103">domain</span> or placing an order you agree to them.</p>
 <h2>Who can order</h2>
 <p>You must be at least 18 and able to enter a contract. Products are for personal use, not resale, unless you have a written wholesale agreement with us.</p>
 <h2>Orders, pricing and payment</h2>
@@ -3664,21 +3840,21 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 <h2>Product information and health</h2>
 <p>We try to describe products accurately, but packaging and formulas can change; always read the label on the product you receive. Content on this site is general information, not medical advice. See the <a href="#disclaimer">Health + FDA Disclaimer</a>.</p>
 <h2>Promotions and discount codes</h2>
-<p>Codes cannot be combined unless stated, have no cash value, and may be ended at any time. <span class="ph-tag" data-o="b" data-ph="B-104">confirm</span></p>
+<p>Codes cannot be combined unless stated, have no cash value, and may be ended at any time. <span class="ph-tag" data-o="b" data-ph="B-110">confirm</span></p>
 <h2>Reviews and content you submit</h2>
 <p>If you post a review or send us content, you give us a non-exclusive, royalty-free license to use it in connection with our business. Reviews must be honest and yours.</p>
 <h2>Intellectual property</h2>
 <p>The STÄPL name, logo, site design, text and images belong to us or our licensors and may not be used without permission. Other names and marks belong to their owners.</p>
 <h2>Text messages</h2>
-<p>If you opt in to texts, message frequency varies and message and data rates may apply. Reply STOP to cancel or HELP for help. Consent is not a condition of purchase. <span class="ph-tag" data-o="b" data-ph="B-105">Only if SMS is used; full mobile terms may be required by the SMS provider.</span></p>
+<p>If you opt in to texts, message frequency varies and message and data rates may apply. Reply STOP to cancel or HELP for help. Consent is not a condition of purchase. <span class="ph-tag" data-o="b" data-ph="B-111">Only if SMS is used; full mobile terms may be required by the SMS provider.</span></p>
 <h2>Disclaimers and limits of liability</h2>
 <p>The site and products are provided "as is" to the fullest extent the law allows. To that same extent, our total liability for any claim is limited to the amount you paid for the order in question, and we are not liable for indirect or consequential losses. Some states do not allow these limits, so they may not apply to you.</p>
 <h2>Governing law and disputes</h2>
-<p>These terms are governed by the laws of the State of <span class="ph-tag" data-o="b" data-ph="B-106">state</span>. <span class="ph-tag" data-o="b" data-ph="B-107">Add dispute resolution / arbitration clause only on legal advice.</span></p>
+<p>These terms are governed by the laws of the State of <span class="ph-tag" data-o="b" data-ph="B-112">state</span>. <span class="ph-tag" data-o="b" data-ph="B-113">Add dispute resolution / arbitration clause only on legal advice.</span></p>
 <h2>Changes</h2>
 <p>We may update these terms and will post the new date above. The terms in place when you order apply to that order.</p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3699,7 +3875,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer" class="is-current">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
 <h2>FDA statement</h2>
 <p><b>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</b></p>
 <h2>Not medical advice</h2>
@@ -3708,20 +3884,20 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 <p>Consult a healthcare professional before using this or any dietary supplement, especially if you are pregnant or nursing, under 18, taking medication, or have a medical condition.</p>
 <h2>Using fiber supplements</h2>
 <ul>
-<li>Take with a full glass of water. <span class="ph-tag" data-o="b" data-ph="B-108">confirm against final label warnings</span></li>
+<li>Take with a full glass of water. <span class="ph-tag" data-o="b" data-ph="B-114">confirm against final label warnings</span></li>
 <li>Fiber can affect how some medications are absorbed. Ask your doctor or pharmacist about timing.</li>
 <li>Stop use and consult a doctor if you have an adverse reaction.</li>
 </ul>
 <h2>Allergens</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-109">Allergen and manufacturing statement from the manufacturer.</span> Always read the label on the product you receive.</p>
+<p><span class="ph-tag" data-o="b" data-ph="B-115">Allergen and manufacturing statement from the manufacturer.</span> Always read the label on the product you receive.</p>
 <h2>Results and testimonials</h2>
 <p>Individual experiences vary. Reviews and testimonials reflect that person's experience and are not a promise of results.</p>
 <h2>Athlete and partner relationships</h2>
-<p>Marcus Filly is a founder of STÄPL <span class="ph-tag" data-o="b" data-ph="B-110">confirm how to describe his role</span>. Some partners, coaches and creators receive free product or earn a commission when you buy through their link or code.</p>
+<p>Marcus Filly is a founder of STÄPL <span class="ph-tag" data-o="b" data-ph="B-116">confirm how to describe his role</span>. Some partners, coaches and creators receive free product or earn a commission when you buy through their link or code.</p>
 <h2>Trademarks</h2>
-<p>CrossFit and CrossFit Games are trademarks of CrossFit, LLC. STÄPL is not affiliated with, sponsored by or endorsed by CrossFit, LLC. <span class="ph-tag" data-o="b" data-ph="B-111">legal to confirm wording</span></p>
+<p>CrossFit and CrossFit Games are trademarks of CrossFit, LLC. STÄPL is not affiliated with, sponsored by or endorsed by CrossFit, LLC. <span class="ph-tag" data-o="b" data-ph="B-117">legal to confirm wording</span></p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3742,7 +3918,7 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility" class="is-current">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-070">date</span></p>
+<p class="updated">Last updated: <span class="ph-tag" data-o="b" data-ph="B-076">date</span></p>
 <h2>Our commitment</h2>
 <p>We want everyone to be able to use this site. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, and we review the site as we add to it.</p>
 <h2>What we do</h2>
@@ -3750,12 +3926,12 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
 <li>Text alternatives for meaningful images</li>
 <li>Keyboard access to navigation, forms and checkout</li>
 <li>Readable color contrast and text that can be resized</li>
-<li>Motion that respects reduced-motion settings <span class="ph-tag" data-o="b" data-ph="B-112">to implement at build</span></li>
+<li>Motion that respects reduced-motion settings <span class="ph-tag" data-o="b" data-ph="B-118">to implement at build</span></li>
 </ul>
 <h2>Tell us if something is not working</h2>
-<p>If you have trouble using any part of the site, email <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span> or call <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span>. Tell us the page and what happened, and we will help you directly and work on a fix. We aim to reply within <span class="ph-tag" data-o="b" data-ph="B-113">2</span> business days.</p>
+<p>If you have trouble using any part of the site, email <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span> or call <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span>. Tell us the page and what happened, and we will help you directly and work on a fix. We aim to reply within <span class="ph-tag" data-o="b" data-ph="B-119">2</span> business days.</p>
 <h2>Contact</h2>
-<p><span class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-064">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</span></p></div>
+<p><span class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</span><br><span class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</span><br>Email: <span class="ph-tag" data-o="b" data-ph="B-071">support@domain</span><br>Phone: <span class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</span></p></div>
       </div>
     </div>
   </section>
@@ -3795,15 +3971,15 @@ body.tags-off .ph-tag[data-ph]::before{content:none;}
       </div>
       <div class="col">
         <span>Social</span>
-        <a href="#contact">Instagram <b class="ph-tag" data-o="b" data-ph="B-114">link</b></a>
-        <a href="#contact">YouTube <b class="ph-tag" data-o="b" data-ph="B-115">link</b></a>
-        <a href="#contact">TikTok <b class="ph-tag" data-o="b" data-ph="B-116">link</b></a>
+        <a href="#contact">Instagram <b class="ph-tag" data-o="b" data-ph="B-120">link</b></a>
+        <a href="#contact">YouTube <b class="ph-tag" data-o="b" data-ph="B-121">link</b></a>
+        <a href="#contact">TikTok <b class="ph-tag" data-o="b" data-ph="B-122">link</b></a>
       </div>
     </div>
     <div class="foot-biz">
-      <div><span>Company</span><p><b class="ph-tag" data-o="b" data-ph="B-067">Legal entity name</b><br><b class="ph-tag" data-o="b" data-ph="B-068">Street, City, State ZIP</b></p></div>
-      <div><span>Contact</span><a href="#contact"><b class="ph-tag" data-o="b" data-ph="B-064">support@domain</b></a><a href="#contact"><b class="ph-tag" data-o="b" data-ph="B-066">(000) 000-0000</b></a></div>
-      <div><span>Support hours</span><p><b class="ph-tag" data-o="b" data-ph="B-117">Mon–Fri, hours + time zone</b></p></div>
+      <div><span>Company</span><p><b class="ph-tag" data-o="b" data-ph="B-074">Legal entity name</b><br><b class="ph-tag" data-o="b" data-ph="B-075">Street, City, State ZIP</b></p></div>
+      <div><span>Contact</span><a href="#contact"><b class="ph-tag" data-o="b" data-ph="B-071">support@domain</b></a><a href="#contact"><b class="ph-tag" data-o="b" data-ph="B-073">(000) 000-0000</b></a></div>
+      <div><span>Support hours</span><p><b class="ph-tag" data-o="b" data-ph="B-123">Mon–Fri, hours + time zone</b></p></div>
     </div>
   </div>
   <div class="foot-logo"><img src="assets/staple-home/stapl-wordmark-bone.png" alt="STÄPL"></div>
@@ -4031,7 +4207,7 @@ document.addEventListener('click',e=>{
     const flavor=(box.querySelector('.flav-pill.active')||{textContent:'Raspberry'}).textContent.trim();
     const labels=[...box.querySelectorAll('.opt label')];
     const plan=labels.findIndex(l=>l.classList.contains('active'))===1?'once':'sub';
-    addToCart(flavor,plan,1);openCart();return;
+    const qv=box.querySelector('[data-bqv]');addToCart(flavor,plan,qv?+qv.textContent:1);if(qv)qv.textContent='1';openCart();return;
   }
   if(e.target.closest('.cart-btn')){e.preventDefault();openCart();return;}
   if(e.target.closest('[data-close-cart]')||e.target===scrim){closeCart();}
@@ -4110,6 +4286,40 @@ document.addEventListener('click',e=>{
 addEventListener('hashchange',()=>{if(currentRoute().view==='approvals')renderApprovals();});
 renderApprovals();
 window.__staplTags=collectTags;
+
+/* ---------- product page: quantity, flavor tiles, sticky buy bar ---------- */
+const pdpBox=document.querySelector('[data-view="shop"] .buy-box'),pdpBar=document.getElementById('pdpBar');
+function syncPdpBar(){
+  const f=(pdpBox.querySelector('.flav-pill.active')||{textContent:'Raspberry'}).textContent.trim();
+  const once=[...pdpBox.querySelectorAll('.opt label')].findIndex(l=>l.classList.contains('active'))===1;
+  document.getElementById('pdpBarFlav').textContent=f;
+  document.getElementById('pdpBarPrice').textContent=money(once?PRICE.once:PRICE.sub)+(once?'':' · subscribe');
+  document.querySelectorAll('.ftile').forEach(t=>t.classList.toggle('on',t.dataset.pickFlavor===f));
+}
+document.addEventListener('click',e=>{
+  const q=e.target.closest('[data-bq]');
+  if(q){const v=q.parentElement.querySelector('[data-bqv]');v.textContent=Math.max(1,Math.min(12,+v.textContent+ +q.dataset.bq));}
+  const t=e.target.closest('[data-pick-flavor]');
+  if(t){const pill=[...pdpBox.querySelectorAll('.flav-pill')].find(p=>p.textContent.trim()===t.dataset.pickFlavor);if(pill)pill.click();toast(t.dataset.pickFlavor+' selected');}
+  if(e.target.closest('#pdpBarAdd')){pdpBox.querySelector('.add-cart').click();}
+  setTimeout(syncPdpBar,0);
+});
+const barIO=new IntersectionObserver(es=>es.forEach(en=>{
+  const show=!en.isIntersecting&&en.boundingClientRect.top<0&&currentRoute().view==='shop';
+  pdpBar.classList.toggle('on',show);document.body.classList.toggle('has-bar',show);
+}),{threshold:0});
+barIO.observe(pdpBox.querySelector('.add-cart'));
+addEventListener('hashchange',()=>{if(currentRoute().view!=='shop'){pdpBar.classList.remove('on');document.body.classList.remove('has-bar');}});
+syncPdpBar();
+
+/* ---------- deep link from the questionnaires: staple-home.html?tag=M-001 ---------- */
+(function(){const t=new URLSearchParams(location.search).get('tag');if(!t)return;
+  const r=collectTags().find(x=>x.id===t);if(!r)return;
+  const go=()=>{const d=r.el.closest('details');if(d)d.open=true;
+    window.scrollTo({top:r.el.getBoundingClientRect().top+scrollY-innerHeight/3,behavior:'instant'});
+    const box=r.el.classList.contains('ph-img')?r.el.parentElement:r.el;box.classList.add('is-flash');setTimeout(()=>box.classList.remove('is-flash'),4000);};
+  if(r.view&&currentRoute().view!==r.view){location.hash=r.view;setTimeout(go,200);}else setTimeout(go,200);
+})();
 
 </script>
 

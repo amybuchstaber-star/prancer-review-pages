@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>STÄPL — Marcus review</title>
+<link rel="stylesheet" href="assets/staple-home/stapl-fonts.css">
+<style>
+:root{--espresso:#1B1B1D;--ink:#121214;--bone:#F3F1EA;--aqua:#27D4C4;--sunshine:#FFC72C;--clay:#FF6B37;--coral:#FFBA6A;--ink-dim:rgba(27,27,29,.66);
+  --mono:'Space Mono',monospace;--arch:'Archivo Variable','Archivo',sans-serif;--accent:#27D4C4;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--espresso);font-family:var(--arch);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;}
+button{font-family:inherit;cursor:pointer;border:none;color:inherit;}
+a{color:inherit;}
+.display{font-weight:900;font-variation-settings:'wdth' 118;text-transform:uppercase;line-height:.9;letter-spacing:-.015em;}
+.mono{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;}
+.bar{position:sticky;top:0;z-index:20;background:var(--espresso);color:var(--bone);display:flex;align-items:center;gap:1.2rem;padding:.8rem 1.4rem;}
+.bar img{height:20px;}
+.bar .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
+.prog{flex:1;height:12px;border:2px solid var(--bone);position:relative;overflow:hidden;min-width:60px;}
+.prog i{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .4s cubic-bezier(.2,.7,.2,1);background-image:repeating-linear-gradient(-55deg,transparent 0 10px,rgba(27,27,29,.16) 10px 14px);}
+.bar .ct{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;white-space:nowrap;}
+.bar .save{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,241,234,.6);white-space:nowrap;}
+.bar .save.ok{color:var(--aqua);} .bar .save.err{color:var(--coral);}
+.stage{position:relative;max-width:920px;margin:0 auto;padding:3.2rem 1.4rem 8rem;}
+.shape{position:fixed;pointer-events:none;z-index:0;}
+.shape.a{top:-6%;right:-8%;width:30vw;height:56vh;background:var(--accent);clip-path:polygon(26% 0,100% 0,100% 100%,0 78%);opacity:.9;}
+.shape.b{top:20%;right:16vw;width:5vw;height:26vh;border:4px solid var(--espresso);transform:skewX(-14deg);}
+.shape.c{bottom:-10%;left:-8%;width:22vw;height:40vh;background:var(--sunshine);clip-path:polygon(0 8%,100% 24%,78% 100%,0 100%);opacity:.5;}
+.card{position:relative;z-index:2;background:#fff;border:3px solid var(--espresso);box-shadow:12px 12px 0 var(--espresso);padding:2.4rem 2.4rem 2rem;}
+.kick{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.kick .n{color:var(--clay);} .kick .ln{flex:0 0 40px;height:2px;background:var(--clay);}
+.kick .sec{color:var(--ink-dim);}
+.tagid{font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.1em;background:var(--accent);border:1.5px solid var(--ink);padding:.15rem .4rem;text-decoration:none;white-space:nowrap;}
+.tagid:hover{background:var(--sunshine);}
+h1.display{font-size:clamp(2.6rem,8vw,5.4rem);} h1 em,h2 em{font-style:normal;color:var(--clay);}
+h2.q{font-weight:900;font-variation-settings:'wdth' 112;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.08;text-transform:uppercase;}
+.hint{margin-top:.8rem;color:var(--ink-dim);font-size:1rem;line-height:1.6;max-width:640px;}
+.copy{margin-top:1.4rem;background:var(--bone);border-left:8px solid var(--accent);padding:1.2rem 1.3rem;font-size:1.08rem;line-height:1.65;white-space:pre-line;}
+.copy small{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:.6rem;font-weight:700;}
+.opts{display:grid;gap:.8rem;margin-top:1.6rem;}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
+.opt{display:flex;align-items:center;gap:.9rem;text-align:left;background:#fff;border:2px solid var(--espresso);padding:1rem 1.1rem;font-size:1rem;font-weight:700;line-height:1.3;box-shadow:4px 4px 0 rgba(27,27,29,.16);transition:transform .15s,box-shadow .15s,background .15s;}
+.opt:hover{transform:translate(-1px,-2px);box-shadow:6px 6px 0 var(--accent);}
+.opt .k{flex:0 0 28px;height:28px;border:2px solid var(--espresso);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;background:var(--bone);}
+.opt.on{background:var(--espresso);color:var(--bone);box-shadow:6px 6px 0 var(--accent);}
+.opt.on .k{background:var(--accent);color:var(--ink);border-color:var(--accent);}
+.opt.on .k::after{content:'✓';} .opt.on .k span{display:none;}
+textarea,input[type=text]{display:block;width:100%;margin-top:1.2rem;background:var(--bone);border:2px solid var(--espresso);font-family:var(--arch);font-size:1.02rem;line-height:1.55;color:var(--espresso);padding:.95rem 1rem;outline:none;border-radius:0;}
+textarea{min-height:130px;resize:vertical;} textarea.tall{min-height:220px;}
+textarea:focus,input:focus{border-color:var(--accent);background:#fff;box-shadow:4px 4px 0 var(--accent);}
+label.lab{display:block;margin-top:1.4rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);}
+label.lab+textarea,label.lab+input{margin-top:.5rem;}
+.hide{display:none!important;}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2.2rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:1.05rem 1.6rem;background:var(--sunshine);color:var(--ink);text-decoration:none;
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:transform .15s,background .2s;}
+.btn:hover{transform:translateY(-2px);background:var(--clay);color:var(--bone);}
+.btn.dark{background:var(--espresso);color:var(--bone);} .btn.dark:hover{background:var(--accent);color:var(--ink);}
+.btn.ghost{background:none;clip-path:none;padding:.6rem 0;border-bottom:3px solid var(--accent);}
+.btn.ghost:hover{background:none;color:var(--clay);transform:none;}
+.skip{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);background:none;border-bottom:1px solid currentColor;}
+.chips{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem;}
+.chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:.55rem .9rem;border:2px solid var(--espresso);box-shadow:3px 3px 0 var(--espresso);background:var(--sunshine);}
+.chips .chip:nth-child(3n+2){background:var(--aqua);} .chips .chip:nth-child(3n){background:var(--coral);}
+.secs{display:grid;gap:.6rem;margin-top:1.8rem;}
+.secs div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(27,27,29,.15);padding:.55rem 0;font-weight:700;}
+.secs span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:var(--ink-dim);white-space:nowrap;}
+.rev{margin-top:1.6rem;display:grid;gap:.7rem;}
+.rev .r{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;border:2px solid var(--espresso);padding:.8rem 1rem;background:#fff;text-align:left;width:100%;}
+.rev .r b{font-size:.92rem;line-height:1.3;} .rev .r span{font-size:.9rem;color:var(--ink-dim);grid-column:1/-1;line-height:1.45;white-space:pre-line;}
+.rev .r i{font-style:normal;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:.15rem .4rem;background:var(--aqua);align-self:start;}
+.rev .r.miss i{background:var(--coral);} .rev .r.miss{border-style:dashed;}
+.rev h3{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-top:1rem;}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);z-index:50;background:var(--espresso);color:var(--bone);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.1rem;border:2px solid var(--sunshine);opacity:0;pointer-events:none;transition:all .3s;max-width:90vw;text-align:center;}
+.toast.on{opacity:1;transform:translate(-50%,0);}
+.foot{position:relative;z-index:2;text-align:center;margin-top:2rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);line-height:1.8;}
+@media(max-width:700px){
+  .stage{padding:1.6rem .9rem 6rem;} .card{padding:1.5rem 1.2rem 1.4rem;box-shadow:7px 7px 0 var(--espresso);}
+  .shape.b,.shape.c{display:none;} .shape.a{width:44vw;height:30vh;opacity:.5;}
+  .bar{gap:.7rem;padding:.7rem .9rem;} .bar .who,.bar .save{display:none;} .bar img{height:16px;}
+  .nav .btn{padding:.95rem 1.1rem;font-size:.66rem;letter-spacing:.14em;}
+}
+
+</style>
+</head>
+<body>
+<div class="shape a"></div><div class="shape b"></div><div class="shape c"></div>
+<div class="bar">
+  <img src="assets/staple-home/stapl-wordmark-bone.png" alt="STÄPL">
+  <span class="who">Marcus's team</span>
+  <div class="prog"><i id="progFill"></i></div>
+  <span class="ct" id="progCt"></span>
+  <span class="save" id="saveState">Not saved yet</span>
+</div>
+<div class="stage"><div id="app"></div>
+  <p class="foot">STÄPL launch review · answers save automatically as you go<br>You can close this page and come back on the same link</p>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const FORM={"id": "stapl-form-marcus", "title": "STÄPL — Marcus review", "kicker": "For Marcus Filly + team", "h1": "Marcus,<br>your <em>sign-off.<\/em>", "intro": "Everything on the STÄPL site that speaks for you or about you is our draft. This walks you through it one item at a time: confirm the facts, approve or edit the copy, and answer a few questions in your own words. The small aqua codes (like M-004) open that exact spot on the site.", "minutes": 20, "questions": [{"id": "m01", "sec": "Titles + facts", "type": "fact", "q": "Is this how you describe your Games career?", "show": "6× CrossFit Games Athlete", "tags": ["M-004"], "hint": "This line appears five times across the site, so we want the exact wording you use."}, {"id": "m02", "sec": "Titles + facts", "type": "choice", "q": "Our founder story says \"six trips to the CrossFit Games regionals.\" Which is right?", "show": "Six trips to the CrossFit Games regionals.", "opts": ["Six trips to the Games", "Six trips to Regionals", "Neither — I'll write it"], "tags": ["M-017", "M-026", "M-033"], "textLabel": "The line you'd like us to use", "hint": "It conflicts with \"6× CrossFit Games athlete\" elsewhere on the site."}, {"id": "m03", "sec": "Titles + facts", "type": "fact", "q": "Is this stat right?", "show": "12th — Fittest Man on Earth, 2016", "tags": ["M-015", "M-034"], "hint": "It's a placeholder. If you'd rather feature a different result, tell us which."}, {"id": "m04", "sec": "Titles + facts", "type": "fact", "q": "Is this title right?", "show": "Founder — Functional Bodybuilding", "tags": ["M-005"]}, {"id": "m05", "sec": "Titles + facts", "type": "fact", "q": "Is this number right, and what does it count?", "show": "Coach to 100k+ Athletes", "tags": ["M-006"], "hint": "Program members, app users, followers? We'll word it to match."}, {"id": "m06", "sec": "Titles + facts", "type": "fact", "q": "How many years should we say?", "show": "20+ years under the bar  /  \"two decades in the gym\"", "tags": ["M-016"]}, {"id": "m07", "sec": "Titles + facts", "type": "choice", "q": "Are you comfortable with \"Father\" in your public title line?", "show": "Father · Builder · Staple", "opts": ["Yes, keep it", "Drop \"Father\"", "Change the line"], "tags": ["M-007"], "textLabel": "If changing, what should it say?"}, {"id": "m08", "sec": "Titles + facts", "type": "choice", "q": "How should we describe your role in the formula?", "show": "\"Games athlete behind the formula\"", "opts": ["I developed it", "I co-developed it", "I selected and tested it", "Something else"], "tags": ["M-021"], "textLabel": "In your words (optional)"}, {"id": "m09", "sec": "Titles + facts", "type": "choice", "q": "What is your title at STÄPL?", "opts": ["Founder", "Co-founder", "Partner", "Something else"], "tags": ["B-116"], "textLabel": "If something else"}, {"id": "m10", "sec": "Titles + facts", "type": "long", "q": "How does Functional Bodybuilding normally reference the CrossFit Games name in marketing?", "tags": ["B-117"], "hint": "We'll follow the same convention and trademark wording.", "optional": true}, {"id": "m11", "sec": "Copy to approve", "type": "approve", "q": "Homepage hero line", "show": "7g of real-fruit fiber from 6× CrossFit Games athlete Marcus Filly. One scoop in water, once a day. Zero sugar. Nothing artificial.", "tags": ["M-001"]}, {"id": "m12", "sec": "Copy to approve", "type": "approve", "q": "Intro line under the hero", "show": "From Marcus Filly — 6× CrossFit Games athlete and founder of Functional Bodybuilding. Look good. Move well. Eat right. Daily is the nutrition side of the same promise.", "tags": ["M-003"], "hint": "We added \"Eat right\" to the FBB line \"Look good. Move well.\" Is it OK to extend it this way?"}, {"id": "m13", "sec": "Copy to approve", "type": "approve", "q": "Founder story, signed by you", "show": "Marcus Filly has spent two decades in the gym learning one truth the hard way: the flashy stuff breaks you, the boring stuff builds you. A career reinventing how athletes train. And the same lesson every time — mastery is just the fundamentals, repeated.\n\nSTÄPL is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. Just the nutrient almost every athlete under-eats, made effortless enough to never skip.", "tags": ["M-018"]}, {"id": "m14", "sec": "Copy to approve", "type": "approve", "q": "Second story paragraph on your page", "show": "That lesson became Functional Bodybuilding, the training methodology he built to help athletes look good and move well without the burnout. It now reaches athletes around the world through Persist, his flagship program.", "tags": ["M-026"]}, {"id": "m15", "sec": "Copy to approve", "type": "approve", "q": "The pull quote. We wrote it, not you.", "show": "\"Fiber isn't sexy. Neither is showing up at 5AM. Do it anyway.\"", "tags": ["M-022", "M-027"], "hint": "Approve it as your words, edit it, or tell us not to use it and give us a real quote in the next section."}, {"id": "m16", "sec": "Copy to approve", "type": "approve", "q": "Functional Bodybuilding paragraph", "show": "STÄPL comes from the same brain as Functional Bodybuilding — Marcus's training methodology that blends the best of bodybuilding and functional fitness, without the burnout. After years of injury, burnout, and digestive distress at the top of the sport, Marcus built FBB to help athletes get built, not burnt — and now STÄPL, to handle the nutrition side of the same promise. Explore Persist, his flagship training program, plus free workouts, e-books, and coaching.", "tags": ["M-024"]}, {"id": "m17", "sec": "Copy to approve", "type": "choice", "q": "That paragraph mentions your own \"injury, burnout, and digestive distress.\" Are you OK with that being public?", "opts": ["Yes, that's accurate and fine", "Soften it", "Take it out"], "tags": ["M-024"], "textLabel": "How would you put it? (optional)", "hint": "We only publish personal health history with your explicit OK."}, {"id": "m18", "sec": "In your words", "type": "long", "q": "Why start with fiber?", "tags": ["M-035"], "hint": "Two or three sentences, the way you'd say it out loud."}, {"id": "m19", "sec": "In your words", "type": "long", "q": "What's your own history with digestion and nutrition?", "tags": ["M-036"], "hint": "Only what you're comfortable sharing publicly. Skip it if you'd rather not.", "optional": true}, {"id": "m20", "sec": "In your words", "type": "long", "q": "How do you take Daily?", "tags": ["M-037"], "hint": "Time of day, what you mix it with, favorite flavor."}, {"id": "m21", "sec": "In your words", "type": "long", "q": "What does \"staple\" mean to you?", "tags": ["M-038"]}, {"id": "m22", "sec": "In your words", "type": "long", "q": "Give us one line on taste and one on why a daily habit matters.", "hint": "These become real quotes on the product page, in emails and in ads.", "ph": "Taste: …\nHabit: …"}, {"id": "m23", "sec": "In your words", "type": "long", "q": "Paste your approved bio (150 to 250 words), or tell us where to find it.", "tags": ["M-028"], "hint": "Where you're from, your path into the sport, family if you want it in, what you're building now."}, {"id": "m24", "sec": "In your words", "type": "text", "q": "One-line author bio for blog posts", "tags": ["M-045"], "ph": "6× CrossFit Games athlete and founder of Functional Bodybuilding."}, {"id": "m25", "sec": "Your timeline", "type": "text", "q": "What year did you start competing, and how did you find the sport?", "tags": ["M-032"]}, {"id": "m26", "sec": "Your timeline", "type": "text", "q": "Which years did you compete at the Games?", "tags": ["M-033"], "ph": "e.g. 2012 (team), 2016 (individual) …"}, {"id": "m27", "sec": "Your timeline", "type": "text", "q": "What year did you found Functional Bodybuilding?"}, {"id": "m28", "sec": "Your timeline", "type": "text", "q": "What year did Persist launch?"}, {"id": "m29", "sec": "Content + permissions", "type": "choice", "q": "Our email signup promises \"training content from Marcus.\" Can your team supply it?", "show": "Launch drops, restocks, and training content from Marcus.", "opts": ["Yes", "Sometimes — say \"occasional\"", "No — remove that promise"], "tags": ["M-023"], "textLabel": "Who on your team would send it? (optional)"}, {"id": "m30", "sec": "Content + permissions", "type": "choice", "q": "Can launch blog posts carry your byline?", "opts": ["Yes, if I approve each one", "Yes, no approval needed", "No — use \"STÄPL team\""]}, {"id": "m31", "sec": "Content + permissions", "type": "choice", "q": "Can we republish or adapt existing Functional Bodybuilding articles?", "opts": ["Yes, with a link back", "Ask per article", "No"], "textLabel": "Any articles you'd point us to first? (optional)"}, {"id": "m32", "sec": "Content + permissions", "type": "long", "q": "Which social handles should the site link to for you?", "ph": "Instagram: @…\nYouTube: …\nTikTok: …", "hint": "Tell us whether each should point to you, to Functional Bodybuilding, or both."}, {"id": "m33", "sec": "Content + permissions", "type": "long", "q": "Which Functional Bodybuilding links should we feature, and any to leave out?", "ph": "Homepage, Persist, …", "optional": true}, {"id": "m34", "sec": "Content + permissions", "type": "multi", "q": "Where may we use your name, image and video?", "opts": ["STÄPL website", "Email", "Organic social", "Paid ads", "Retail and partner materials"], "textLabel": "Any limits we should know about? (optional)"}, {"id": "m35", "sec": "Content + permissions", "type": "multi", "q": "Will Functional Bodybuilding announce STÄPL at launch? Pick the channels.", "opts": ["FBB email list", "FBB Instagram", "Your personal Instagram", "YouTube", "Inside the Persist app", "Not at launch"], "optional": true}, {"id": "m36", "sec": "Content + permissions", "type": "choice", "q": "We have four photos of you (trailer and training shoots). Are they cleared for the website?", "opts": ["Yes, all four", "Some — I'll say which", "No, don't use them"], "tags": ["M-025", "M-029", "M-030", "M-031"], "textLabel": "Photographer credit, and any we shouldn't use"}, {"id": "m37", "sec": "Content + permissions", "type": "text", "q": "Who is our one contact for approvals, and how fast can they turn things around?", "ph": "Name · typical turnaround"}]};
+const FB='https://prancer-website-devs-default-rtdb.firebaseio.com/pages/'+FORM.id;
+const SITE='staple-home.html';
+const LS='stapl-form-'+FORM.id;
+let S={name:'',answers:{},pos:-1,done:false,updated:0};
+try{const l=JSON.parse(localStorage.getItem(LS)||'null');if(l)S=Object.assign(S,l);}catch(e){}
+const Q=FORM.questions,app=document.getElementById('app');
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2600);}
+function setSave(c,m){const e=document.getElementById('saveState');e.className='save '+c;e.textContent=m;}
+/* ---------- saving: this browser first, then online ---------- */
+let pending={},timer;
+function saveLocal(){S.updated=Date.now();try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}}
+function queue(path,val){pending[path]=val;setSave('','Saving…');clearTimeout(timer);timer=setTimeout(flush,700);}
+function flush(){
+  const body=Object.assign({},pending,{'meta/name':S.name,'meta/updated':Date.now(),'meta/done':S.done,'meta/answered':answered()});pending={};
+  return fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw 0;setSave('ok','Saved ✓');}).catch(()=>{setSave('err','Saved on this device only');});
+}
+function isAns(a){return !!a&&(!!a.choice||(a.multi&&a.multi.length)||(a.text&&a.text.trim())||a.skip);}
+function answered(){return Q.filter(q=>isAns(S.answers[q.id])).length;}
+function setA(q,patch){S.answers[q.id]=Object.assign({},S.answers[q.id],patch,{q:q.q,tags:(q.tags||[]).join(' ')});delete S.answers[q.id].skip;if(patch.skip)S.answers[q.id].skip=true;saveLocal();queue('answers/'+q.id,S.answers[q.id]);progress();}
+function progress(){const n=answered();document.getElementById('progFill').style.width=(n/Q.length*100)+'%';document.getElementById('progCt').textContent=n+' / '+Q.length;}
+/* ---------- screens ---------- */
+function tagLinks(q){return (q.tags||[]).map(t=>`<a class="tagid" target="stapl-site" href="${SITE}?tag=${t}" title="See this on the site">${t} ↗</a>`).join('');}
+function intro(){
+  const secs=[...new Set(Q.map(q=>q.sec))];
+  app.innerHTML=`<div class="card">
+    <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">${esc(FORM.kicker)}</span></div>
+    <h1 class="display">${FORM.h1}</h1>
+    <p class="hint">${FORM.intro}</p>
+    <div class="chips"><span class="chip">${Q.length} questions</span><span class="chip">About ${FORM.minutes} minutes</span><span class="chip">Saves as you go</span></div>
+    <div class="secs">${secs.map((s,i)=>`<div>${String(i+1).padStart(2,'0')} · ${esc(s)}<span>${Q.filter(q=>q.sec===s).length} questions</span></div>`).join('')}</div>
+    <label class="lab" for="nm">Who is filling this in?</label><input type="text" id="nm" placeholder="Your name" value="${esc(S.name)}">
+    <div class="nav"><span></span><button class="btn" id="start">${answered()?'Pick up where I left off':'Start'} ▸</button></div></div>`;
+  document.getElementById('start').onclick=()=>{S.name=document.getElementById('nm').value.trim();saveLocal();queue('meta/started',Date.now());
+    const first=Q.findIndex(q=>!isAns(S.answers[q.id]));go(first<0?Q.length:first);};
+}
+function go(i){S.pos=i;saveLocal();if(i<0)intro();else if(i>=Q.length)review();else question(i);window.scrollTo({top:0,behavior:'instant'});}
+const KEYS='ABCDEFGH';
+function question(i){
+  const q=Q[i],a=S.answers[q.id]||{};
+  const secIdx=[...new Set(Q.map(x=>x.sec))].indexOf(q.sec)+1;
+  let body='';
+  const opts=q.type==='approve'?['Approved as written','Approved with my edit','Do not use this']
+    :q.type==='fact'?['Correct','Not quite — here is the fix','Remove it']:(q.opts||[]);
+  if(q.show)body+=`<div class="copy"><small>${esc(q.showLabel||'On the site now')}</small>${esc(q.show)}</div>`;
+  if(opts.length)body+=`<div class="opts ${opts.length<=4&&opts.every(o=>o.length<26)&&q.type!=='approve'&&q.type!=='fact'?'row':''}">${opts.map((o,n)=>{
+      const on=q.type==='multi'?(a.multi||[]).includes(o):a.choice===o;
+      return `<button class="opt ${on?'on':''}" data-o="${esc(o)}"><span class="k"><span>${KEYS[n]||''}</span></span>${esc(o)}</button>`;}).join('')}</div>`;
+  const needsText=q.type==='text'||q.type==='long';
+  const textLabel=q.type==='approve'?'Your edit (change the text below)':q.type==='fact'?'The correct version':(q.textLabel||(needsText?'':'Anything to add? (optional)'));
+  const showText=needsText||q.note!==false;
+  if(showText)body+=`<div id="tx" class="${(q.type==='approve'&&a.choice!=='Approved with my edit')||(q.type==='fact'&&a.choice!=='Not quite — here is the fix')?'hide':''}">${textLabel?`<label class="lab">${esc(textLabel)}</label>`:''}
+      ${q.type==='text'?`<input type="text" id="t" placeholder="${esc(q.ph||'')}" value="${esc(a.text||'')}">`:`<textarea id="t" class="${q.type==='long'||q.type==='approve'?'tall':''}" placeholder="${esc(q.ph||'')}">${esc(a.text||(q.type==='approve'&&a.choice==='Approved with my edit'?q.show:''))}</textarea>`}</div>`;
+  if(q.type==='approve'||q.type==='fact')body+=`<label class="lab">Note for the STÄPL team (optional)</label><input type="text" id="note" value="${esc(a.note||'')}">`;
+  app.innerHTML=`<div class="card">
+    <div class="kick mono"><span class="n">${String(i+1).padStart(2,'0')} / ${Q.length}</span><span class="ln"></span><span class="sec">${String(secIdx).padStart(2,'0')} · ${esc(q.sec)}</span>${tagLinks(q)}</div>
+    <h2 class="q">${esc(q.q)}</h2>${q.hint?`<p class="hint">${esc(q.hint)}</p>`:''}
+    ${body}
+    <div class="nav"><button class="btn ghost" id="back">◂ Back</button><span style="display:flex;gap:1.2rem;align-items:center"><button class="skip" id="skip">${q.optional?'Skip (optional)':'Not sure — skip for now'}</button><button class="btn" id="next">${i===Q.length-1?'Review answers':'Next'} ▸</button></span></div></div>`;
+  const t=document.getElementById('t'),note=document.getElementById('note'),tx=document.getElementById('tx');
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const o=b.dataset.o;
+    if(q.type==='multi'){const m=new Set((S.answers[q.id]||{}).multi||[]);m.has(o)?m.delete(o):m.add(o);setA(q,{multi:[...m]});b.classList.toggle('on');return;}
+    setA(q,{choice:o});app.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',x===b));
+    if(q.type==='approve'){const ed=o==='Approved with my edit';tx.classList.toggle('hide',!ed);if(ed&&!t.value){t.value=q.show;}if(ed)t.focus();}
+    else if(q.type==='fact'){const fx=o==='Not quite — here is the fix';tx.classList.toggle('hide',!fx);if(fx)t.focus();}
+    else if(q.note===false){setTimeout(()=>go(i+1),260);}
+  });
+  if(t)t.oninput=()=>setA(q,{text:t.value});
+  if(note)note.oninput=()=>setA(q,{note:note.value});
+  document.getElementById('back').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>go(i+1);
+  document.getElementById('skip').onclick=()=>{if(!isAns(S.answers[q.id]))setA(q,{skip:true});go(i+1);};
+}
+function ansText(q){const a=S.answers[q.id];if(!a||a.skip&&!a.choice&&!a.text)return '';
+  return [a.choice,(a.multi||[]).join(', '),a.text&&a.text!==q.show?a.text:(a.choice==='Approved with my edit'?a.text:''),a.note?('Note: '+a.note):''].filter(Boolean).join('\n');}
+function summary(){
+  let out=`${FORM.title}\nFilled in by: ${S.name||'(no name)'}\n${new Date().toLocaleString()}\n`;let sec='';
+  Q.forEach((q,i)=>{if(q.sec!==sec){sec=q.sec;out+=`\n== ${sec} ==\n`;}
+    out+=`\n${i+1}. ${q.q}${q.tags&&q.tags.length?' ['+q.tags.join(', ')+']':''}\n${ansText(q)||'(not answered)'}\n`;});
+  return out;
+}
+function review(){
+  const miss=Q.filter(q=>!isAns(S.answers[q.id])||(S.answers[q.id].skip&&!S.answers[q.id].choice&&!S.answers[q.id].text));
+  let sec='',rows='';
+  Q.forEach((q,i)=>{if(q.sec!==sec){sec=q.sec;rows+=`<h3>${esc(sec)}</h3>`;}
+    const tx=ansText(q);rows+=`<button class="r ${tx?'':'miss'}" data-i="${i}"><b>${i+1}. ${esc(q.q)}</b><i>${tx?'Answered':'Open'}</i><span>${esc(tx||'Tap to answer')}</span></button>`;});
+  app.innerHTML=`<div class="card">
+    <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">Review</span></div>
+    <h1 class="display" style="font-size:clamp(2.2rem,6vw,4rem)">${miss.length?`${miss.length} still <em>open.</em>`:'All <em>done.</em>'}</h1>
+    <p class="hint">${miss.length?'Tap any row to answer or change it. You can also submit now and come back to the open ones later.':'Tap any row to change an answer. When you are happy, submit.'}</p>
+    <div class="nav"><button class="btn ghost" id="back">◂ Back to questions</button><button class="btn" id="submit">${S.done?'Submit again':'Submit to the STÄPL team'} ▸</button></div>
+    <div class="nav" style="margin-top:1rem;justify-content:flex-start"><button class="btn dark" id="copy">Copy my answers</button><button class="btn dark" id="mail">Email my answers</button></div>
+    <div class="rev">${rows}</div></div>`;
+  app.querySelectorAll('.r').forEach(r=>r.onclick=()=>go(+r.dataset.i));
+  document.getElementById('back').onclick=()=>go(Q.length-1);
+  const copy=()=>navigator.clipboard.writeText(summary());
+  document.getElementById('copy').onclick=()=>copy().then(()=>toast('Answers copied'),()=>toast('Copy failed — select the list below'));
+  document.getElementById('mail').onclick=()=>{copy().catch(()=>{});
+    location.href='mailto:?subject='+encodeURIComponent(FORM.title+' — answers from '+(S.name||''))+'&body='+encodeURIComponent('My answers are copied to the clipboard. Paste them below this line and send to Amy.\n\n');};
+  document.getElementById('submit').onclick=()=>{S.done=true;saveLocal();queue('meta/submitted',Date.now());flush().then(()=>{
+    app.querySelector('h1').innerHTML='Sent. <em>Thank you.</em>';app.querySelector('.hint').textContent='Your answers are saved for the STÄPL team. You can still come back to this link and change anything.';toast('Submitted');window.scrollTo({top:0});});};
+}
+/* ---------- resume from the online copy if this device has nothing newer ---------- */
+progress();
+fetch(FB+'.json').then(r=>r.json()).then(d=>{
+  if(d&&d.answers){const remoteNewer=!S.updated||((d.meta&&d.meta.updated)||0)>S.updated;
+    if(remoteNewer){S.answers=Object.assign({},S.answers,d.answers);if(d.meta&&d.meta.name&&!S.name)S.name=d.meta.name;saveLocal();}}
+  setSave('ok','Connected ✓');progress();if(S.pos<0)intro();
+}).catch(()=>setSave('err','Offline — saving on this device'));
+go(S.pos>=0&&answered()?-1:-1);
+
+</script>
+</body>
+</html>
