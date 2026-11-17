@@ -2177,6 +2177,18 @@ body.prelaunch .wl-note{display:block;}
 .hero h1 .row i{white-space:nowrap;}
 #home-flavors h2.display{font-size:clamp(2.4rem,5.2vw,4.6rem);}
 
+/* ---------- v27: phase-2 items (built, hidden until the facts exist) ---------- */
+.p2{display:none!important;}
+body.show-p2 .p2{display:revert!important;outline:3px dashed var(--clay);outline-offset:4px;position:relative;}
+body.show-p2 section.p2,body.show-p2 div.p2{display:block!important;}
+body.show-p2 div.p2[style*="flex"]{display:flex!important;}
+body.show-p2 li.p2{display:list-item!important;}
+body.show-p2 .p2::before{content:"PHASE 2 · " attr(data-p2);position:absolute;top:-11px;left:8px;z-index:12;background:var(--clay);color:#fff;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis;}
+body:not(.show-p2) .split.has-p2{grid-template-columns:1fr;}
+body:not(.show-p2) .split.has-p2 .ingr{max-width:none;grid-template-columns:1fr 1fr;gap:.9rem 1.2rem;}
+body:not(.show-p2) .split.has-p2 .ticks{max-width:none;grid-template-columns:1fr 1fr;gap:.75rem 2rem;}
+@media(max-width:820px){body:not(.show-p2) .split.has-p2 .ingr,body:not(.show-p2) .split.has-p2 .ticks{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -2233,12 +2245,12 @@ body.prelaunch .wl-note{display:block;}
           <span class="row"><i>tastes like</i></span>
           <span class="row"><i class="fr">raspberry.</i></span>
         </h1>
-        <p class="hero-lead"><b>Full-spectrum fiber</b> from 6× CrossFit Games athlete <b>Marcus Filly</b>. One scoop in water, once a day. <span class="ph-tag a" data-k="fiber-grams" data-o="b" data-ph="B-125">Marcus's line opens “[X]g of full spectrum fiber” — add the number after the lab assay</span></p>
+        <p class="hero-lead"><b>Full-spectrum fiber</b> from <b>Marcus Filly</b>, founder of Functional Bodybuilding. One scoop in water, once a day.</p>
         <div class="cta-row">
           <a class="btn btn-sun" href="#shop">Meet Daily Performance Fiber &#9656;</a>
           <a class="cta-sub" href="#the-fiber">Why fiber &#9656;</a>
         </div>
-        <span class="rating"><b>★★★★★</b>&nbsp; 4.9 · 300+ athlete reviews <span class="ph-tag a" data-k="reviews" data-o="b" data-ph="B-124">placeholder rating — swap for real tester reviews before this goes public</span></span>
+        <span class="rating p2" data-p2="Star rating + review count (needs real reviews)"><b>★★★★★</b>&nbsp; Rating + review count</span>
       </div>
       <div class="hero-can-stage rev"><span class="ph-img" data-k="canister" data-o="a" data-ph="B-003"><i>canister is a drawn stand-in — Prancer producing final render</i></span>
         <div class="canister mini">
@@ -2270,7 +2282,7 @@ body.prelaunch .wl-note{display:block;}
   </div>
   <div class="hero-band">
     <div class="wrap">
-      <p>From <b>Marcus Filly</b> — 6× CrossFit Games athlete and founder of <b>Functional Bodybuilding</b>. <b class="aq">Look good. Move well. Eat right.</b> Daily Performance Fiber is the nutrition side of the same promise.</p>
+      <p>From <b>Marcus Filly</b> — founder of <b>Functional Bodybuilding</b> and coach to 100k+ athletes. <b class="aq">Look good. Move well. Eat right.</b> Daily Performance Fiber is the nutrition side of the same promise.</p>
       <span class="callout">One Scoop A Day &#9656; Non&#8209;Negotiable</span>
     </div>
   </div>
@@ -2292,7 +2304,7 @@ body.prelaunch .wl-note{display:block;}
           <span class="chip">Tastes like raspberry</span>
           <span class="chip">30 servings / canister</span>
           <span class="chip">No proprietary blends</span>
-          <span class="chip">Lab results posted <span class="ph-tag a" data-k="tested" data-o="b" data-ph="B-009">first-lot testing ~Jan — confirm wording before launch</span></span>
+          <span class="chip p2" data-p2="Lab results posted (after first-lot testing)">Lab results posted</span>
         </div>
         <div class="btn-row rev rev-d3" style="order:5"><a class="btn btn-sun" href="#shop" style="margin-top:0">Shop Now &#9656;</a><a class="more-link" href="#the-fiber">Why fiber matters &#9656;</a></div>
       </div>
@@ -2315,7 +2327,7 @@ body.prelaunch .wl-note{display:block;}
           </div>
         </div>
         <div class="spec-notes">
-          <span class="spec-note sn1" style="--dot:var(--aqua)"><i></i>Three fibers — every gram on the label</span>
+          <span class="spec-note sn1" style="--dot:var(--aqua)"><i></i>Full spectrum — three fibers in every scoop</span>
           <span class="spec-note sn2" style="--dot:var(--clay)"><i></i>Natural raspberry flavor</span>
           <span class="spec-note sn3" style="--dot:var(--sunshine)"><i></i>No proprietary blends</span>
           <span class="spec-note sn4" style="--dot:var(--coral)"><i></i>30 servings — scoop inside</span>
@@ -2362,7 +2374,7 @@ body.prelaunch .wl-note{display:block;}
           <span class="l2">Filly</span>
         </h2>
         <div class="roles rev rev-d1">
-          <span class="role">6× CrossFit Games Athlete</span>
+          <span class="role">Founder + Formulator — STÄPL</span>
           <span class="role">Founder — Functional Bodybuilding</span>
           <span class="role">Coach to 100k+ Athletes</span>
           <span class="role">Father · Builder · Staple</span>
@@ -2429,7 +2441,7 @@ body.prelaunch .wl-note{display:block;}
     </div>
     <p class="media-hint"><i></i>Swipe to see more</p>
     <div class="stat-bar rev">
-      <div class="stat"><div class="v" data-count="6" data-suffix="×">0</div><div class="k">CrossFit Games Athlete</div></div>
+      <div class="stat"><div class="v" data-count="2017">0</div><div class="k">Founded Functional Bodybuilding</div></div>
       <div class="stat"><div class="v" data-count="100" data-suffix="k+">0</div><div class="k">Athletes Coached</div></div>
       <div class="stat"><div class="v" data-count="20" data-suffix="+">0</div><div class="k">Years Under The Bar</div></div>
       <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Non-Negotiable</div></div>
@@ -2460,7 +2472,7 @@ body.prelaunch .wl-note{display:block;}
             <path d="M 14 58 C 28 14, 44 66, 62 30 S 88 60, 108 34 C 122 18, 128 56, 148 46 S 186 24, 202 44 C 216 58, 238 28, 262 38" fill="none" stroke="#1B1B1D" stroke-width="3.5" stroke-linecap="round"/>
             <path d="M 18 68 C 90 62, 200 62, 282 66" fill="none" stroke="#FF6B37" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <span class="sig-cap">Marcus Filly — Founder <span class="ph-tag a" data-k="signature" data-o="m" data-ph="M-019">signature file needed</span></span>
+          <span class="sig-cap">Marcus Filly — Founder + Formulator <span class="ph-tag a" data-k="signature" data-o="m" data-ph="M-019">signature file needed</span></span>
         </div>
       </div>
       <div class="portrait rev rev-d2">
@@ -2488,19 +2500,19 @@ body.prelaunch .wl-note{display:block;}
     <div class="grid">
       <div class="numcard c1 rev">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#27D4C4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><path d="M 34,36 L 56,36 A 7,7 0 0 1 56,50 L 40,50 A 7,7 0 0 0 40,64 L 60,64"/><path d="M 55,58 L 61,64 L 55,70"/></g></svg></span>
-        <div class="big">X<small>g</small></div><div class="k">Fiber per scoop <span class="ph-tag a" data-k="fiber-grams" data-o="b" data-ph="B-125">number published after the lab assay (~Jan 6)</span></div>
+        <div class="big"><span data-count="3">0</span></div><div class="k">Fibers in every scoop: psyllium, resistant starch, acacia</div>
       </div>
       <div class="numcard c2 rev rev-d1">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFC72C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34"/><path d="M 48,32 L 62,39 L 62,53 L 48,60 L 34,53 L 34,39 Z"/><path d="M 34,39 L 48,46 L 62,39 M 48,46 L 48,60"/><line x1="29" y1="67" x2="67" y2="29"/></g></svg></span>
-        <div class="big"><span data-count="3">0</span></div><div class="k">Fibers in every scoop: resistant starch, psyllium, acacia</div>
+        <div class="big"><span data-count="1">0</span></div><div class="k">Scoop a day — that's the whole protocol</div>
       </div>
       <div class="numcard c3 rev rev-d2">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FF6B37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34"/><line x1="48" y1="34" x2="48" y2="49"/><line x1="48" y1="49" x2="59" y2="54"/><line x1="48" y1="24" x2="48" y2="29"/><line x1="72" y1="48" x2="67" y2="48"/><line x1="48" y1="72" x2="48" y2="67"/><line x1="24" y1="48" x2="29" y2="48"/></g></svg></span>
-        <div class="big"><span data-count="1">0</span></div><div class="k">Scoop a day — that's the whole protocol</div>
+        <div class="big"><span data-count="30">0</span></div><div class="k">Servings per canister. One month of showing up.</div>
       </div>
       <div class="numcard c4 rev rev-d3">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFBA6A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 48,16 L 76,26 L 76,50 C 76,66 64,76 48,82 C 32,76 20,66 20,50 L 20,26 Z"/><path d="M 48,28 L 66,34 L 66,50 C 66,60 58,67 48,72 C 38,67 30,60 30,50 L 30,34 Z" opacity=".55"/></g></svg></span>
-        <div class="big"><span data-count="30">0</span></div><div class="k">Servings per canister. One month of showing up.</div>
+        <div class="big"><span data-count="10">0</span><small>s</small></div><div class="k">From scoop to shaker to done</div>
       </div>
       <div class="numcard c4 rev">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFBA6A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><path d="M 48,26 C 56,38 62,46 62,54 A 14,14 0 0 1 34,54 C 34,46 40,38 48,26 Z"/><path d="M 42,54 A 6,6 0 0 0 46,60"/></g></svg></span>
@@ -2508,15 +2520,15 @@ body.prelaunch .wl-note{display:block;}
       </div>
       <div class="numcard c3 rev rev-d1">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FF6B37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 85.0,48.0 L 66.5,80.0 L 29.5,80.0 L 11.0,48.0 L 29.5,16.0 L 66.5,16.0 Z"/><path d="M 52,24 L 38,52 L 47,52 L 44,72 L 58,44 L 49,44 Z"/></g></svg></span>
-        <div class="big"><span data-count="10">0</span><small>s</small></div><div class="k">From scoop to shaker to done</div>
+        <div class="big"><span data-count="0">0</span></div><div class="k">Proprietary blends — full label transparency</div>
       </div>
       <div class="numcard c1 m-hide rev rev-d2">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#27D4C4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"/><line x1="32" y1="35" x2="64" y2="35"/><line x1="32" y1="44" x2="52" y2="44"/><line x1="32" y1="53" x2="64" y2="53"/><line x1="32" y1="62" x2="46" y2="62"/></g></svg></span>
-        <div class="big"><span data-count="0">0</span></div><div class="k">Proprietary blends — full label transparency</div>
+        <div class="big"><span data-count="30">0</span></div><div class="k">Day guarantee on your first canister</div>
       </div>
       <div class="numcard c2 m-hide rev rev-d3">
         <span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFC72C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34"/><line x1="40" y1="48" x2="56" y2="48"/><line x1="34" y1="38" x2="34" y2="58"/><line x1="27" y1="42" x2="27" y2="54"/><line x1="62" y1="38" x2="62" y2="58"/><line x1="69" y1="42" x2="69" y2="54"/></g></svg></span>
-        <div class="big"><span data-count="6" data-suffix="&#215;">0</span></div><div class="k">CrossFit Games athlete who co-developed the formula</div>
+        <div class="big"><span data-count="20" data-suffix="+">0</span></div><div class="k">Years of coaching behind the formula</div>
       </div>
       </div>
   </div>
@@ -2563,7 +2575,7 @@ body.prelaunch .wl-note{display:block;}
         <button class="add-cart">Add To Cart &#9656;</button>
         <div class="buy-meta">
           <span><b>&#9656;</b> Subscriptions ship free</span>
-          <span><b>&#9656;</b> Lab results posted</span>
+          <span><b>&#9656;</b> Skip or cancel anytime</span>
           <span><b>&#9656;</b> 30-day first-canister guarantee</span>
         </div>
       </div>
@@ -2584,7 +2596,7 @@ body.prelaunch .wl-note{display:block;}
       <div class="rev rev-d1">
         <details open>
           <summary>What kind of fiber is it? <span class="pm">+</span></summary>
-          <p>Three fibers in every scoop: resistant potato starch, psyllium husk and acacia. No proprietary blends, so every gram is on the label.</p>
+          <p>Three fibers in every scoop: resistant potato starch, psyllium husk and acacia. Full-spectrum fiber with no proprietary blends, so every ingredient is named on the label.</p>
         </details>
         <details>
           <summary>What does it taste like? <span class="pm">+</span></summary>
@@ -2600,7 +2612,7 @@ body.prelaunch .wl-note{display:block;}
         </details>
         <details>
           <summary>When should I take it? <span class="pm">+</span></summary>
-          <p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move: ten seconds, done.</p>
+          <p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move: ten seconds, done. For a change, stir it into yogurt.</p>
         </details>
         <details>
           <summary>Why only one product? <span class="pm">+</span></summary>
@@ -2634,7 +2646,7 @@ body.prelaunch .wl-note{display:block;}
       <div class="step rev rev-d1">
         <div class="n">02</div>
         <h3>Shake</h3>
-        <p>Into 8 to 12 oz of water. It mixes in seconds.</p>
+        <p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p>
         <div class="real-shot ratio-169">
           <img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span>
           <span class="cap">The mix</span>
@@ -2759,19 +2771,19 @@ body.prelaunch .wl-note{display:block;}
   <section class="pg-sec white">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Three fibers, one scoop</span></div>
-      <h2 class="display rev">Three fibers.<br><em>Every gram named.</em></h2>
-      <p class="lead rev rev-d1">Different fibers do different jobs, so Daily Performance Fiber uses three. No proprietary blends: each one is on the label with its amount. <span class="ph-tag a" data-k="fiber-amounts" data-o="b" data-ph="B-126">amounts are per serving — final figures come with the Supplement Facts panel</span></p>
+      <h2 class="display rev">Full spectrum.<br><em>Three fibers.</em></h2>
+      <p class="lead rev rev-d1">Different fibers do different jobs, so Daily Performance Fiber is full-spectrum: three fibers in one scoop. No proprietary blends, so each one is named on the label.</p>
       <div class="pcards">
-        <div class="pcard rev"><span class="n">5 g</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. It holds water and adds bulk.</p></div>
-        <div class="pcard rev rev-d1"><span class="n">3.5 g</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the gut intact, where it is fermented.</p></div>
-        <div class="pcard rev rev-d2"><span class="n">About 3 g</span><h3>Acacia</h3><p>Fiber from the sap of the acacia tree, also called gum arabic.</p></div>
+        <div class="pcard rev"><span class="n">01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. It holds water and adds bulk.</p></div>
+        <div class="pcard rev rev-d1"><span class="n">02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the gut intact, where it is fermented.</p></div>
+        <div class="pcard rev rev-d2"><span class="n">03</span><h3>Acacia</h3><p>Fiber from the sap of the acacia tree, also called gum arabic.</p></div>
       </div>
     </div>
   </section>
 
   <section class="pg-sec mint">
     <div class="wrap">
-      <div class="split">
+      <div class="split has-p2">
         <div>
           <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">What's in Daily</span></div>
           <h2 class="display rev">One scoop.<br><em>Full label.</em></h2>
@@ -2782,19 +2794,19 @@ body.prelaunch .wl-note{display:block;}
             <li><b>Sweetened with stevia leaf extract and monk fruit</b> <span class="ph-tag a" data-k="sweetener" data-o="b" data-ph="B-127">expected — final with the Supplement Facts panel</span></li>
             <li><b>No proprietary blends</b></li>
             <li><b>30 servings</b> per canister, scoop included</li>
-            <li><b>Lab results posted here</b> from the first production lot <span class="ph-tag a" data-k="tested" data-o="b" data-ph="B-009">first-lot testing ~Jan — confirm wording before launch</span></li>
+            <li class="p2" data-p2="Lab results posted (after first-lot testing)"><b>Lab results posted here</b> from the first production lot</li>
           </ul>
           <p style="margin-top:1.2rem"><span class="ph-tag a" data-k="held-claims" data-o="b" data-ph="B-128">held until the final panel: “zero sugar”, “nothing artificial”, vegan / gluten-free / allergen statements</span></p>
           <div class="btn-row rev rev-d3"><a class="btn btn-sun" href="#shop">See the product &#9656;</a></div>
         </div>
-        <div class="rev rev-d1" style="display:flex;justify-content:center">
+        <div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;justify-content:center">
           <div class="facts">
             <h3>Supplement Facts</h3>
             <div class="row"><span>Serving size</span><b>1 scoop <span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">g</span></b></div>
             <div class="row thick"><span>Servings per container</span><b>30</b></div>
             <div class="row"><span>Calories</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
             <div class="row"><span>Total carbohydrate</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
-            <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b><span class="ph-tag" data-k="fiber-grams" data-o="b" data-ph="B-125">X</span>g</b></div>
+            <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b>Xg</b></div>
             <div class="row"><span>&nbsp;&nbsp;Total sugars</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
             <div class="row thick"><span>Sodium</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
             <small>Placeholder panel. The final Supplement Facts and ingredient list replace this when they arrive from the manufacturer.</small>
@@ -2810,7 +2822,7 @@ body.prelaunch .wl-note{display:block;}
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
         <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="a" data-ph="B-022"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The scoop</span></div></div>
-        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The mix</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The mix</span></div></div>
         <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">final directions + take-with-water warning come from the label after counsel review</span></p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="a" data-ph="B-024"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">Done</span></div></div>
       </div>
     </div>
@@ -2836,12 +2848,12 @@ body.prelaunch .wl-note{display:block;}
           <div class="sec-head rev"><span class="num">02</span><div class="line"></div><span class="mono-label">The Athlete</span></div>
           <h1 class="display rev">Marcus<br><span class="ol">Filly</span></h1>
           <div class="roles rev rev-d1" style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem">
-            <span class="role">6× CrossFit Games Athlete</span>
             <span class="role">Founder — Functional Bodybuilding</span>
+            <span class="role">Founder + Formulator — STÄPL</span>
             <span class="role">Coach to 100k+ Athletes</span>
             <span class="role">Father · Builder · Staple</span>
           </div>
-          <p class="lead rev rev-d2">More than two decades under the bar taught Marcus one thing: <b>the flashy stuff breaks you, the boring stuff builds you.</b> STÄPL is that idea applied to nutrition.</p>
+          <p class="lead rev rev-d2">More than two decades under the bar taught Marcus one thing: <b>the flashy stuff breaks you, the boring stuff builds you.</b> Through Functional Bodybuilding he coaches busy dads and athletes with resistance training, cardio, nutrition and lifestyle. STÄPL is that idea applied to nutrition.</p>
         </div>
         <div class="frame aq tilt rev rev-d1" style="aspect-ratio:4/3">
           <div class="blank"><span class="label">Marcus — page hero</span><span class="spec">4:3 photo · in the gym, looking at camera or mid-set</span></div><span class="ph-img" data-k="slot-athlete-hero" data-o="m" data-ph="M-046"><i>photo needed — athlete page hero</i></span>
@@ -2877,7 +2889,7 @@ body.prelaunch .wl-note{display:block;}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">By the numbers</span></div>
       <div class="stat-bar rev" style="margin-top:0">
-        <div class="stat"><div class="v" data-count="6" data-suffix="×">0</div><div class="k">CrossFit Games Athlete</div></div>
+        <div class="stat"><div class="v" data-count="2017">0</div><div class="k">Founded Functional Bodybuilding</div></div>
         <div class="stat"><div class="v" data-count="100" data-suffix="k+">0</div><div class="k">Athletes Coached</div></div>
         <div class="stat"><div class="v" data-count="20" data-suffix="+">0</div><div class="k">Years Under The Bar</div></div>
         <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Non-Negotiable</div></div>
@@ -2901,7 +2913,7 @@ body.prelaunch .wl-note{display:block;}
         <div class="tl rev rev-d1">
           <div><span class="yr">2006 – 2008</span><b>Finds CrossFit</b><p>Starts in Northern California, where the sport originated. His first coach is Kelly Starrett.</p></div>
           <div><span class="yr">The turn</span><b>Leaves medical school</b><p>Goes all in on physical fitness and serving people through lifestyle and training.</p></div>
-          <div><span class="yr">2012 – 2016</span><b>Competes at the CrossFit Games</b><p>2012 (team), 2013, 2014 and 2016 (individual). <span class="ph-tag" data-k="six-x-years" data-o="m" data-ph="M-050">he lists four Games years; the site says 6× — confirm which</span></p></div>
+          <div><span class="yr">2012 – 2016</span><b>Competes at the CrossFit Games</b><p>Six trips to the Games, on a team and as an individual. A small part of the story, and the part that taught him what burnout costs.</p></div>
           <div><span class="yr">2017</span><b>Founds Functional Bodybuilding</b><p>Burned out after the 2016 Games and about to become a first-time father, he builds a method for longevity: look good, move well.</p></div>
           <div><span class="yr">2021</span><b>Launches Persist</b><p>His flagship training program goes out to athletes worldwide.</p></div>
           <div><span class="yr">Now</span><b>STÄPL Daily Performance Fiber</b><p>The nutrition side of the same promise, starting with fiber.</p></div>
@@ -2917,7 +2929,7 @@ body.prelaunch .wl-note{display:block;}
       <div class="qa">
         <div class="rev"><div class="q">Why start with fiber?</div><div class="a">"Fiber is the glue that holds digestion together. Without adequate and diverse fiber, you will not achieve the same results or return on the investment you are making in the gym. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</div></div>
         <div class="rev"><div class="q">What is your own history with digestion and nutrition?</div><div class="a">"I've been focused on macros and nutrition for decades. Only recently I discovered and really internalized the importance, the foundational importance, of fiber. I've seen it in my personal journey and in the journey of countless people that I coach to elite levels of fitness and performance. Fiber is often overlooked and always underestimated. When people get their digestion dialed in, the performance, the results in the gym, it all starts to compound."</div></div>
-        <div class="rev"><div class="q">How do you take it?</div><div class="a">"I take it first thing when I wake up in the morning. Sometimes in a glass of water, sometimes mixed in non-fat Greek yogurt. It is something I look forward to, as I know that it helps me cover my bases and makes the decisions I make around food in the rest of the day easier to navigate." <span class="ph-tag a" data-k="mixing" data-o="b" data-ph="B-129">yogurt line: mixing beyond water is still with the formulator</span></div></div>
+        <div class="rev"><div class="q">How do you take it?</div><div class="a">"I take it first thing when I wake up in the morning. Sometimes in a glass of water, sometimes mixed in non-fat Greek yogurt. It is something I look forward to, as I know that it helps me cover my bases and makes the decisions I make around food in the rest of the day easier to navigate."</div></div>
         <div class="rev"><div class="q">What does "staple" mean to you?</div><div class="a">"Non-negotiable. Fundamental to success and progress. The basics that get lost in the world of IG and short-form video."</div></div>
         <div class="rev"><div class="q">What does it taste like?</div><div class="a">"STÄPL is a highlight in my day. It's delicious, and I wake up excited every morning to get my fiber and morning hydration in a single glass."</div></div>
         <div class="rev"><div class="q">Why does a daily habit matter?</div><div class="a">"We are what we repeatedly do. STÄPL makes performance digestion easy, and is a delicious daily affirmation and commitment to quality and performance."</div></div>
@@ -2990,11 +3002,11 @@ body.prelaunch .wl-note{display:block;}
         <div><span class="mono-label">Group 01</span><h2>The product</h2></div>
         <div>
           <details open><summary>What is Daily Performance Fiber? <span class="pm">+</span></summary><p>A fiber supplement powder from STÄPL: three fibers in one scoop, raspberry flavor. One scoop in water, once a day.</p></details>
-          <details><summary>What kind of fiber is it? <span class="pm">+</span></summary><p>Three fibers in every scoop: psyllium husk, resistant potato starch and acacia. No proprietary blends, so every gram is on the label.</p></details>
-          <details><summary>How much fiber is in a scoop? <span class="pm">+</span></summary><p><span class="ph-tag a" data-k="fiber-grams" data-o="b" data-ph="B-125">fiber grams per scoop — published once the first production lot is lab-assayed (~Jan 6)</span> The exact number goes on the label and on this page once the first production lot has been tested.</p></details>
+          <details><summary>What kind of fiber is it? <span class="pm">+</span></summary><p>Three fibers in every scoop: psyllium husk, resistant potato starch and acacia. No proprietary blends, so every ingredient is named on the label.</p></details>
+<details class="p2" data-p2="FAQ: how much fiber is in a scoop (after lab assay)"><summary>How much fiber is in a scoop? <span class="pm">+</span></summary><p>The exact number goes on the label and on this page once the first production lot has been tested.</p></details>
           <details><summary>What does it taste like? <span class="pm">+</span></summary><p>Raspberry: bright, tart, a little jammy. One flavor at launch. Founders vote on flavor two after launch.</p></details>
           <details><summary>What is it flavored and sweetened with? <span class="pm">+</span></summary><p>Natural flavors, sweetened with stevia leaf extract and monk fruit extract. No sugar alcohols or sucralose. <span class="ph-tag a" data-k="sweetener" data-o="b" data-ph="B-127">expected — final with the Supplement Facts panel</span></p></details>
-          <details><summary>Is it lab-tested? <span class="pm">+</span></summary><p>The first production lot is being lab-tested, and the results will be posted on the product page. <span class="ph-tag a" data-k="tested" data-o="b" data-ph="B-009">first-lot testing ~Jan — confirm wording before launch</span></p></details>
+<details class="p2" data-p2="FAQ: is it lab-tested (after first-lot testing)"><summary>Is it lab-tested? <span class="pm">+</span></summary><p>The first production lot is being lab-tested, and the results will be posted on the product page.</p></details>
           <details><summary>Is it vegan, gluten-free, dairy-free? <span class="pm">+</span></summary><p><span class="ph-tag a" data-k="held-claims" data-o="b" data-ph="B-128">held until the manufacturer's written allergen + dietary statement arrives</span> We'll publish the full allergen and dietary statement with the final label.</p></details>
           <details><summary>Why only one product? <span class="pm">+</span></summary><p>Because that's the brand. STÄPL starts with the single most neglected nutrient and does it properly. More staples are coming, after this one earns its place in your routine.</p></details>
         </div>
@@ -3003,10 +3015,10 @@ body.prelaunch .wl-note{display:block;}
       <div class="faq-group" id="fq-use">
         <div><span class="mono-label">Group 02</span><h2>Using it</h2></div>
         <div>
-          <details><summary>How do I take it? <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water, once a day. Shake or stir and drink. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">final directions + take-with-water warning come from the label after counsel review</span></p></details>
+          <details><summary>How do I take it? <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water, once a day. Shake or stir and drink. Want to mix it up? Stir it into yogurt. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">final directions + take-with-water warning come from the label after counsel review</span></p></details>
           <details><summary>When should I take it? <span class="pm">+</span></summary><p>Whenever you'll actually do it every day. First thing with a glass of water is the popular move.</p></details>
           <details><summary>Will it make my stomach weird? <span class="pm">+</span></summary><p>If you're new to fiber, start with half a scoop for the first week and drink plenty of water.</p></details>
-          <details><summary>Can I mix it with protein or other drinks? <span class="pm">+</span></summary><p>It's designed to mix into water. <span class="ph-tag a" data-k="mixing" data-o="b" data-ph="B-129">mixing beyond water is still with the formulator</span></p></details>
+          <details><summary>Can I mix it with something other than water? <span class="pm">+</span></summary><p>Water first: one scoop in 8 to 12 oz. When you want to mix it up, stir it into yogurt. That's how Marcus takes it some mornings.</p></details>
           <details><summary>Can I take it if I'm pregnant, nursing or on medication? <span class="pm">+</span></summary><p>Talk to your doctor before starting any supplement, including this one. See our <a class="more-link" style="margin:0" href="#disclaimer">health disclaimer</a>.</p></details>
         </div>
       </div>
@@ -3095,8 +3107,8 @@ body.prelaunch .wl-note{display:block;}
           <span class="kicker">STÄPL &#9656; The first staple</span>
           <h1 class="display" style="font-size:clamp(2.3rem,4.6vw,3.9rem)">Daily<br>Performance Fiber</h1>
           <div class="sub">Three fibers · one scoop · raspberry</div>
-          <p class="desc">One scoop of clean, functional fiber that tastes like raspberry, not punishment. No chalky aftertaste. Mixes in seconds. Co-developed by 6× CrossFit Games athlete Marcus Filly.</p>
-          <span class="rating"><b>★★★★★</b>&nbsp; Early-tester reviews <span class="ph-tag a" data-k="reviews" data-o="b" data-ph="B-124">placeholder — swap for real reviews</span></span>
+          <p class="desc">One scoop of clean, functional fiber that tastes like raspberry, not punishment. No chalky aftertaste. Mixes in seconds. From Marcus Filly, founder of Functional Bodybuilding and the founder and formulator of STÄPL.</p>
+          <span class="rating p2" data-p2="Star rating + review count (needs real reviews)"><b>★★★★★</b>&nbsp; Rating + review count</span>
           <div class="presale"><b>Founders presale opens Dec 1</b><span>25% off your first canister ($44.99) for the waitlist. Ships the week of Jan 11, 2027.</span></div>
           <div class="buy-box">
         <span class="pk">STÄPL — Launch SKU 001</span>
@@ -3125,13 +3137,13 @@ body.prelaunch .wl-note{display:block;}
         <button class="add-cart">Add To Cart &#9656;</button>
         <div class="buy-meta">
           <span><b>&#9656;</b> Subscriptions ship free</span>
-          <span><b>&#9656;</b> Lab results posted</span>
+          <span><b>&#9656;</b> Skip or cancel anytime</span>
           <span><b>&#9656;</b> 30-day first-canister guarantee</span>
         </div>
       </div>
           <div class="acc">
-            <details open><summary>What's inside <span class="pm">+</span></summary><p>Psyllium husk (5 g), resistant potato starch (3.5 g) and acacia (about 3 g). Natural flavors, stevia leaf extract, monk fruit extract and citric acid. 30 servings per canister, scoop included. <span class="ph-tag a" data-k="sweetener" data-o="b" data-ph="B-127">expected formula — final ingredient list comes with the Supplement Facts panel</span></p></details>
-            <details><summary>How to use <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water, once a day. New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">final directions + take-with-water warning come from the label after counsel review</span></p></details>
+            <details open><summary>What's inside <span class="pm">+</span></summary><p>Full-spectrum fiber: psyllium husk, resistant potato starch and acacia. Natural flavors, stevia leaf extract, monk fruit extract and citric acid. 30 servings per canister, scoop included. <span class="ph-tag a" data-k="sweetener" data-o="b" data-ph="B-127">expected formula — final ingredient list comes with the Supplement Facts panel</span></p></details>
+            <details><summary>How to use <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water, once a day. Want to mix it up? Stir it into yogurt. New to fiber? Start with half a scoop for the first week and drink plenty of water. <span class="ph-tag a" data-k="directions" data-o="b" data-ph="B-063">final directions + take-with-water warning come from the label after counsel review</span></p></details>
             <details><summary>Shipping + guarantee <span class="pm">+</span></summary><p>Subscriptions ship free. One-time orders of $80 or more ship free; otherwise $5.95. Try your first canister: if it isn't for you, tell us within 30 days and we'll refund it. Keep the canister. See the <a class="more-link" style="margin:0" href="#shipping">shipping</a> and <a class="more-link" style="margin:0" href="#refund-policy">refund</a> policies.</p></details>
             <details><summary>Subscription details <span class="pm">+</span></summary><p>$59.99 every 30 days with free shipping. It renews automatically until you cancel. We email you 3 days before each renewal, and you can skip or cancel anytime before your next order processes. See the <a class="more-link" style="margin:0" href="#subscription-policy">subscription policy</a>.</p></details>
           </div>
@@ -3142,11 +3154,11 @@ body.prelaunch .wl-note{display:block;}
 
   <section class="statstrip">
     <div class="wrap">
-      <div><b>Xg</b><span>Fiber per scoop <span class="ph-tag a" data-k="fiber-grams" data-o="b" data-ph="B-125">after lab assay</span></span></div>
       <div><b>3</b><span>Fibers, all named</span></div>
       <div><b>30</b><span>Servings per canister</span></div>
       <div><b>10s</b><span>Scoop to done</span></div>
       <div><b>1</b><span>Scoop a day</span></div>
+      <div><b>30</b><span>Day first-canister guarantee</span></div>
     </div>
   </section>
 
@@ -3164,28 +3176,28 @@ body.prelaunch .wl-note{display:block;}
 
   <section class="pg-sec mint">
     <div class="wrap">
-      <div class="split top">
+      <div class="split top has-p2">
         <div>
           <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Inside every scoop</span></div>
           <h2 class="display rev">Nothing<br><em class="aq">hidden.</em></h2>
-          <p class="lead rev rev-d1">No proprietary blends. Every ingredient is named, with the job it does. <span class="ph-tag a" data-k="fiber-amounts" data-o="b" data-ph="B-126">amounts are per serving — final figures come with the Supplement Facts panel</span></p>
+          <p class="lead rev rev-d1">Full-spectrum fiber, no proprietary blends. Every ingredient is named, with the job it does.</p>
           <div class="ingr rev rev-d2">
-            <div><b>Psyllium husk · 5 g</b><span>The husk of the psyllium seed. It holds water and adds bulk.</span></div>
-            <div><b>Resistant potato starch · 3.5 g</b><span>A starch that resists digestion and reaches the gut intact, where it is fermented.</span></div>
-            <div><b>Acacia · about 3 g</b><span>Fiber from the sap of the acacia tree, also called gum arabic.</span></div>
+            <div><b>Psyllium husk</b><span>The husk of the psyllium seed. It holds water and adds bulk.</span></div>
+            <div><b>Resistant potato starch</b><span>A starch that resists digestion and reaches the gut intact, where it is fermented.</span></div>
+            <div><b>Acacia</b><span>Fiber from the sap of the acacia tree, also called gum arabic.</span></div>
             <div><b>Natural flavors</b><span>Where the raspberry comes from.</span></div>
             <div><b>Stevia leaf + monk fruit</b><span>The sweeteners. No sugar alcohols or sucralose. <span class="ph-tag a" data-k="sweetener" data-o="b" data-ph="B-127">expected — final with the Supplement Facts panel</span></span></div>
             <div><b>Citric acid</b><span>For tartness. <span class="ph-tag a" data-k="sweetener" data-o="b" data-ph="B-127">expected — final with the Supplement Facts panel</span></span></div>
           </div>
         </div>
-        <div class="rev rev-d1" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem">
+        <div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem">
           <div class="facts">
             <h3>Supplement Facts</h3>
             <div class="row"><span>Serving size</span><b>1 scoop <span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">g</span></b></div>
             <div class="row thick"><span>Servings per container</span><b>30</b></div>
             <div class="row"><span>Calories</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
             <div class="row"><span>Total carbohydrate</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
-            <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b><span class="ph-tag" data-k="fiber-grams" data-o="b" data-ph="B-125">X</span>g</b></div>
+            <div class="row"><span>&nbsp;&nbsp;Dietary fiber</span><b>Xg</b></div>
             <div class="row thick"><span>&nbsp;&nbsp;Total sugars</span><b><span class="ph-tag" data-k="facts-panel" data-o="b" data-ph="B-060">tbc</span></b></div>
             <small>Placeholder panel. The final Supplement Facts, ingredients and allergen statement replace this when they arrive from the manufacturer.</small>
           </div>
@@ -3205,7 +3217,7 @@ body.prelaunch .wl-note{display:block;}
         </div>
         <div class="col ours">
           <h3>Daily Performance Fiber</h3>
-          <ul><li>Mixes in seconds and tastes like raspberry</li><li>Three fibers, every gram on the label</li><li>One scoop, ten seconds, every morning</li></ul>
+          <ul><li>Mixes in seconds and tastes like raspberry</li><li>Full-spectrum: three fibers, all named on the label</li><li>One scoop, ten seconds, every morning</li></ul>
         </div>
       </div>
       <p style="margin-top:1.2rem"><span class="ph-tag a" data-k="compare" data-o="b" data-ph="B-061">counsel reviews comparative claims before this runs in paid ads</span></p>
@@ -3231,26 +3243,26 @@ body.prelaunch .wl-note{display:block;}
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
         <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="ph-img" data-k="img-b93ac55391.jpg" data-o="a" data-ph="B-022"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The scoop</span></div></div>
-        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The mix</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="ph-img" data-k="img-aa494ee14a.jpg" data-o="a" data-ph="B-023"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">The mix</span></div></div>
         <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>That's it. The foundation is handled. Go train, work, live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished drink"><span class="ph-img" data-k="img-747673fa6d.jpg" data-o="a" data-ph="B-024"><i>AI placeholder image — Prancer producing final</i></span><span class="cap">Done</span></div></div>
       </div>
     </div>
   </section>
 
-  <section class="pg-sec dark">
+  <section class="pg-sec dark p2" data-p2="Lab results section (after first-lot testing)">
     <div class="wrap">
       <div class="split">
         <div>
           <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">Lab-tested</span></div>
           <h2 class="display rev">Tested.<br><em>Then posted.</em></h2>
-          <p class="lead rev rev-d1">The first production lot goes to the lab, and the results get posted right here. We start with the essentials and expand testing as we grow. <span class="ph-tag a" data-k="tested" data-o="b" data-ph="B-009">first-lot testing ~Jan — confirm wording before launch</span></p>
+          <p class="lead rev rev-d1">The first production lot goes to the lab, and the results get posted right here. We start with the essentials and expand testing as we grow.</p>
         </div>
         <div class="rev rev-d1" style="display:flex;justify-content:center">
           <div class="facts lab">
             <h3>Lab results</h3>
-            <div class="row thick"><span>Lot</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">first production lot</span></b></div>
-            <div class="row"><span>Fiber per serving</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">result</span></b></div>
-            <div class="row thick"><span>Other tests</span><b><span class="ph-tag" data-k="coa" data-o="b" data-ph="B-064">to be listed</span></b></div>
+            <div class="row thick"><span>Lot</span><b>first production lot</b></div>
+            <div class="row"><span>Fiber per serving</span><b>result</b></div>
+            <div class="row thick"><span>Other tests</span><b>to be listed</b></div>
             <small>Placeholder. Results and a link to the full report go here once the first lot is tested.</small>
           </div>
         </div>
@@ -3265,7 +3277,7 @@ body.prelaunch .wl-note{display:block;}
         <div>
           <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">From the founder</span></div>
           <div class="prose"><blockquote class="rev" style="font-size:clamp(1.3rem,2.3vw,1.9rem)">"STÄPL is a highlight in my day. It's delicious, and I wake up excited every morning to get my fiber and morning hydration in a single glass."</blockquote></div>
-          <p class="lead rev rev-d1"><b>Marcus Filly</b>, 6× CrossFit Games athlete and founder of Functional Bodybuilding, co-developed Daily Performance Fiber for the part of nutrition most athletes skip.</p>
+          <p class="lead rev rev-d1"><b>Marcus Filly</b> is the founder of Functional Bodybuilding, where he coaches busy dads and athletes to look good and move well. He is the founder and formulator of STÄPL, built for the part of nutrition most athletes skip.</p>
           <div class="btn-row rev rev-d2"><a class="btn btn-ghost" href="#the-athlete">Read Marcus's story &#9656;</a></div>
         </div>
       </div>
@@ -3302,16 +3314,16 @@ body.prelaunch .wl-note{display:block;}
     </div>
   </section>
 
-  <section class="pg-sec">
+  <section class="pg-sec p2" data-p2="Reviews section (needs real customer reviews)">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">J</span><div class="line"></div><span class="mono-label">Reviews</span></div>
       <h2 class="display rev">Earned,<br><em>not invented.</em></h2>
       <div class="rgrid">
-        <div class="rcard rev"><span class="stars">★★★★★</span><p><span class="ph-tag" data-k="reviews" data-o="b" data-ph="B-124">tester quote</span> One or two sentences from a real early tester about taste.</p><span class="who">First name L. · Early tester</span></div>
-        <div class="rcard rev rev-d1"><span class="stars">★★★★★</span><p><span class="ph-tag" data-k="reviews" data-o="b" data-ph="B-124">tester quote</span> One or two sentences from a real early tester about the daily habit.</p><span class="who">First name L. · Early tester</span></div>
-        <div class="rcard rev rev-d2"><span class="stars">★★★★★</span><p><span class="ph-tag" data-k="reviews" data-o="b" data-ph="B-124">tester quote</span> One or two sentences from a real early tester about how it mixes.</p><span class="who">First name L. · Early tester</span></div>
+        <div class="rcard rev"><span class="stars">★★★★★</span><p>One or two sentences from a real early tester about taste.</p><span class="who">First name L. · Early tester</span></div>
+        <div class="rcard rev rev-d1"><span class="stars">★★★★★</span><p>One or two sentences from a real early tester about the daily habit.</p><span class="who">First name L. · Early tester</span></div>
+        <div class="rcard rev rev-d2"><span class="stars">★★★★★</span><p>One or two sentences from a real early tester about how it mixes.</p><span class="who">First name L. · Early tester</span></div>
       </div>
-      <p class="ph-note rev" style="margin-top:1.6rem"><b>Layout only &#9656;</b> These cards hold the place for real early-tester quotes. They need real words from real people before the site is public.</p>
+
     </div>
   </section>
 
@@ -3496,7 +3508,7 @@ body.prelaunch .wl-note{display:block;}
       </div>
       <div class="byline">
         <div class="blank mini"><span class="label">Headshot</span></div>
-        <div><b>Marcus Filly</b><span>6× CrossFit Games athlete and founder of Functional Bodybuilding.</span></div>
+        <div><b>Marcus Filly</b><span>Founder of Functional Bodybuilding. Founder and formulator of STÄPL.</span></div>
       </div>
       <div class="btn-row"><a class="more-link" href="#journal">&#9664; Back to Chalk Talk</a><a class="btn btn-sun" href="#shop">Shop Daily &#9656;</a></div>
     </div>
@@ -3640,10 +3652,10 @@ body.prelaunch .wl-note{display:block;}
           <div class="btn-row rev rev-d1"><a class="btn btn-sun" href="#the-athlete">Read Marcus's story &#9656;</a><a class="more-link" style="color:var(--bone)" href="#the-fiber">Why fiber &#9656;</a></div>
         </div>
         <ul class="ticks rev rev-d1">
-          <li><b>Three fibers, one scoop:</b> psyllium husk, resistant potato starch and acacia</li>
+          <li><b>Full-spectrum fiber:</b> psyllium husk, resistant potato starch and acacia in one scoop</li>
           <li><b>Tastes like raspberry,</b> not punishment</li>
           <li><b>One scoop in water,</b> once a day</li>
-          <li><b>No proprietary blends:</b> every gram on the label</li>
+          <li><b>No proprietary blends:</b> every ingredient named on the label</li>
         </ul>
       </div>
     </div>
@@ -3991,7 +4003,7 @@ body.prelaunch .wl-note{display:block;}
 <h2>Results and testimonials</h2>
 <p>Individual experiences vary. Reviews and testimonials reflect that person's experience and are not a promise of results.</p>
 <h2>Athlete and partner relationships</h2>
-<p>Marcus Filly co-developed Daily Performance Fiber. <span class="ph-tag" data-o="b" data-ph="B-137">confirm how to describe Marcus's role at STÄPL: founder, co-founder or partner</span> Some partners, coaches and creators receive free product or earn a commission when you buy through their link or code.</p>
+<p>Marcus Filly is the Founder and Formulator of STÄPL. Some partners, coaches and creators receive free product or earn a commission when you buy through their link or code.</p>
 <h2>Trademarks</h2>
 <p>CrossFit and CrossFit Games are trademarks of CrossFit, LLC. STÄPL is not affiliated with, sponsored by or endorsed by CrossFit, LLC.</p>
 <h2>Contact</h2>
@@ -4093,7 +4105,7 @@ body.prelaunch .wl-note{display:block;}
   </div>
 </footer>
 
-<div class="preview-pill"><span><b>&#9656;</b> Design preview v26</span><button id="tagToggle">Tags: on</button><a href="#approvals">Approvals list</a></div>
+<div class="preview-pill"><span><b>&#9656;</b> Design preview v27</span><button id="tagToggle">Tags: on</button><button id="p2Toggle" class="off">Phase 2: hidden</button><a href="#approvals">Approvals list</a></div>
 <div class="cart-scrim" id="cartScrim"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Cart">
   <div class="cd-head"><h2>Your cart <span id="cdCount">Empty</span></h2><button class="cd-close" data-close-cart aria-label="Close cart">&times;</button></div>
@@ -4449,6 +4461,10 @@ document.addEventListener('click',e=>{
   else{location.hash='shop';setTimeout(pick,60);}
 });
 
+/* ---------- phase-2 switch: show the built-but-hidden pieces and where they sit ---------- */
+(function(){const b=document.getElementById('p2Toggle');if(!b)return;
+  b.addEventListener('click',()=>{const on=document.body.classList.toggle('show-p2');b.classList.toggle('off',!on);b.textContent=on?'Phase 2: shown':'Phase 2: hidden';});})();
+
 </script>
 
 
@@ -4472,7 +4488,7 @@ document.addEventListener('click',e=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-v26';
+  var PAGE_ID = 'staple-home-v27';
 
   /* ---------------------------------------------- */
 
