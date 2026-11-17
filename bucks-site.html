@@ -621,6 +621,8 @@ h1,h2{max-width:none!important}
   .hero__foot{display:none}
   /* #3 #4 dense: shorter photo, facts scroll sideways */
   .dense__img{height:22vh;min-height:170px}.dense__img img{object-position:88% 70%}
+  /* v15 comment (product page, mobile only): photo sits below the section's text */
+  #p-product .dense__img{order:2}
   .facts{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 18px;margin:0 calc(-1*var(--pad));scrollbar-width:none}
   .facts::-webkit-scrollbar{display:none}
   .fact{flex:0 0 76%;scroll-snap-align:start;display:block;padding:22px 20px 20px;margin-bottom:0;opacity:1;transform:none}
@@ -1450,7 +1452,7 @@ window.addEventListener('hashchange',route);route();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'bucks-site-v15';
+  var PAGE_ID = 'bucks-site-v16';
 
   /* ---------------------------------------------- */
 
