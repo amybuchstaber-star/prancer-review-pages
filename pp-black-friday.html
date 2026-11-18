@@ -922,31 +922,111 @@
   #lp-easier-mornings .lp-hero__inner>*{min-width:0}
   #lp-easier-mornings .bf-trio{padding:16px 10px 12px}
 }
+
+  /* ===== v2 (Nov 17): calmer hero, product story for cold traffic, live Light Labs card ===== */
+  #lp-easier-mornings .bf-hero2{position:relative;background:#17120f;overflow:hidden;padding:0}
+  #lp-easier-mornings .bf-hero2__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
+  #lp-easier-mornings .bf-hero2::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(23,18,15,.72) 0%,rgba(23,18,15,.35) 42%,rgba(23,18,15,0) 62%)}
+  #lp-easier-mornings .bf-hero2__inner{position:relative;z-index:2;display:flex;align-items:center;min-height:min(78vh,680px);padding:84px 28px}
+  #lp-easier-mornings .bf-hero2__copy{max-width:560px}
+  #lp-easier-mornings .bf-hero2 h1{margin:14px 0 16px}
+  #lp-easier-mornings .bf-hero2 .lp-hero__sub{max-width:440px;margin:0 0 28px}
+  #lp-easier-mornings .bf-hero2 .lp-hero__cta{margin-bottom:0}
+  #lp-easier-mornings .bf-intro .why__lead{margin-bottom:30px}
+  #lp-easier-mornings .bf-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--cream);margin-bottom:26px}
+  #lp-easier-mornings .bf-stats div{padding:20px 12px;text-align:center;border-right:1px solid var(--line)}
+  #lp-easier-mornings .bf-stats div:last-child{border-right:0}
+  #lp-easier-mornings .bf-stats b{display:block;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--forest)}
+  #lp-easier-mornings .bf-stats span{font-family:var(--font-type);text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;color:var(--rust)}
+  #lp-easier-mornings .bf-proof{margin-top:28px;font-family:var(--font-type);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--ink);opacity:.8}
+  #lp-easier-mornings .bf-show{background:var(--cream)}
+  #lp-easier-mornings .bf-show .why__lead{margin-bottom:30px}
+  #lp-easier-mornings .bf-table{border:1px solid var(--line);background:var(--cream-2)}
+  #lp-easier-mornings .bf-tr{display:grid;grid-template-columns:1.2fr 1.1fr 1fr 1fr;border-bottom:1px solid var(--line)}
+  #lp-easier-mornings .bf-tr:last-child{border-bottom:0}
+  #lp-easier-mornings .bf-tr>span{padding:14px 16px;font-size:1rem;display:flex;flex-direction:column;justify-content:center}
+  #lp-easier-mornings .bf-tr>span:first-child{font-family:var(--font-eyebrow);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.88rem;color:var(--forest)}
+  #lp-easier-mornings .bf-tr .us{background:var(--forest);color:var(--cream);font-weight:700}
+  #lp-easier-mornings .bf-th>span{font-family:var(--font-display);text-transform:uppercase;font-size:1.25rem;color:var(--forest);line-height:1.1}
+  #lp-easier-mornings .bf-th .us{color:var(--gold-2)}
+  #lp-easier-mornings .bf-th small{font-family:var(--font-body,inherit);font-size:.78rem;text-transform:none;letter-spacing:0;font-weight:400;opacity:.85;margin-top:3px}
+  #lp-easier-mornings .bf-allrev{margin-top:34px;position:relative;z-index:1}
+  #lp-easier-mornings .bf-lab{--parchment:#F8DEB9;--parchment-2:#FBEBD2;--brick:#9D4C32;--olive:#525938;--forest-12:rgba(30,51,37,.12);--line-strong:#d9c9a8;background:var(--cream-2)}
+  #lp-easier-mornings .bf-lab .lab-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+  #lp-easier-mornings .bf-lab .lab-copy p{font-size:1.08rem;color:var(--ink);margin-top:16px}
+  #lp-easier-mornings .bf-lab .lab-copy ul{list-style:none;margin-top:20px}
+  #lp-easier-mornings .bf-lab .lab-copy li{padding:10px 0;border-bottom:1px solid var(--forest-12);display:flex;gap:12px;align-items:baseline}
+  #lp-easier-mornings .bf-lab .lab-copy li::before{content:"\2713";color:var(--brick);font-weight:700}
+  #lp-easier-mornings .bf-lab .lab-badges{display:flex;flex-wrap:wrap;border:1px solid var(--line-strong);width:max-content;max-width:100%;margin-top:24px}
+  #lp-easier-mornings .bf-lab .lab-badge{border-right:1px solid var(--line-strong);padding:10px 16px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--forest)}
+  #lp-easier-mornings .bf-lab .lab-badge:last-child{border-right:0}
+  #lp-easier-mornings .bf-lab .lab-badge b{font-family:var(--font-display);font-size:1.25rem;color:var(--brick)}
+  #lp-easier-mornings .bf-lab .lab-card{position:relative;background:var(--parchment-2);color:var(--forest);border:1px solid var(--line-strong);padding:32px 34px;min-width:0}
+  #lp-easier-mornings .bf-lab .lab-card .stamp{position:absolute;right:-10px;top:-14px;width:84px;height:84px;border-radius:50%;border:1.5px solid var(--brick);outline:1.5px dashed var(--brick);outline-offset:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--brick);background:var(--parchment);transform:rotate(6deg);font-family:var(--font-display);line-height:1}
+  #lp-easier-mornings .bf-lab .lab-card .stamp b{font-size:22px}
+  #lp-easier-mornings .bf-lab .lab-card .stamp span{font-family:var(--font-body,inherit);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-top:3px}
+  #lp-easier-mornings .bf-lab .lc-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1.5px solid var(--forest);padding-bottom:14px;margin-bottom:8px;padding-right:70px}
+  #lp-easier-mornings .bf-lab .lc-head .t{font-family:var(--font-display);text-transform:uppercase;font-size:20px;letter-spacing:.04em}
+  #lp-easier-mornings .bf-lab .lc-head .lab-name{flex-basis:100%;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brick)}
+  #lp-easier-mornings .bf-lab .ll-insights{margin:14px 0 16px}
+  #lp-easier-mornings .bf-lab .ll-insight-list{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  #lp-easier-mornings .bf-lab .ll-insight{display:flex;align-items:baseline;gap:10px;font-size:16.5px;line-height:1.4;color:var(--ink)}
+  #lp-easier-mornings .bf-lab .ll-insight b{font-weight:700;color:var(--forest)}
+  #lp-easier-mornings .bf-lab .ll-insight .muted{color:var(--olive);font-size:14px}
+  #lp-easier-mornings .bf-lab .ll-insight .chk{color:var(--brick);font-weight:900;flex:0 0 auto}
+  #lp-easier-mornings .bf-lab .ll-insight--note{font-style:italic;color:var(--olive);font-size:15px;margin:0}
+  #lp-easier-mornings .bf-lab .ll-insights-meta{margin-top:12px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
+  #lp-easier-mornings .bf-lab .ll-embed{min-height:40px}
+  #lp-easier-mornings .bf-line p{max-width:640px}
+  #lp-easier-mornings .bf-line__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  #lp-easier-mornings .bf-line__card{background:var(--cream-2);border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+  #lp-easier-mornings .bf-line__card img{height:170px;width:auto;max-width:100%;object-fit:contain;margin:0 auto 12px;display:block}
+  #lp-easier-mornings .bf-line__card h3{font-family:var(--font-display);text-transform:uppercase;font-size:1.25rem;line-height:1.08;color:var(--forest)}
+  #lp-easier-mornings .bf-line__card p{color:var(--ink)!important;font-size:.95rem!important;margin:8px 0 12px!important;line-height:1.45}
+  #lp-easier-mornings .bf-line__card .pr{margin-top:auto;font-family:var(--font-display);font-size:1.3rem;color:var(--rust)}
+  #lp-easier-mornings .bf-line__card .pr s{color:#9a8c76;font-size:.95rem;margin-left:8px}
+  #lp-easier-mornings .bf-line__cta{margin-top:30px}
+  @media (max-width:900px){
+    #lp-easier-mornings .bf-lab .lab-wrap{grid-template-columns:1fr;gap:30px}
+    #lp-easier-mornings .bf-line__grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    #lp-easier-mornings .bf-hero2{display:flex;flex-direction:column}
+    #lp-easier-mornings .bf-hero2::before{display:none}
+    #lp-easier-mornings .bf-hero2__inner{order:1;min-height:0;padding:34px 22px 0;display:block}
+    #lp-easier-mornings .bf-hero2__bg{order:2;display:block;margin-top:-34%;position:relative;z-index:1;pointer-events:none}
+    #lp-easier-mornings .bf-hero2__bg img{position:static;width:100%;height:auto;object-fit:contain}
+    #lp-easier-mornings .bf-hero2__copy{max-width:none}
+    #lp-easier-mornings .bf-hero2 .lp-hero__sub{max-width:none;margin-bottom:20px}
+    #lp-easier-mornings .bf-hero2 .lp-hero__cta .btn{width:100%}
+    #lp-easier-mornings .bf-stats{grid-template-columns:1fr 1fr}
+    #lp-easier-mornings .bf-stats div:nth-child(2){border-right:0}
+    #lp-easier-mornings .bf-stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    #lp-easier-mornings .bf-tr{grid-template-columns:1.05fr 1fr 1fr 1fr}
+    #lp-easier-mornings .bf-tr>span{padding:10px 8px;font-size:.84rem}
+    #lp-easier-mornings .bf-tr>span:first-child{font-size:.72rem}
+    #lp-easier-mornings .bf-th>span{font-size:.92rem}
+    #lp-easier-mornings .bf-th small{font-size:.66rem}
+    #lp-easier-mornings .bf-lab .lab-card{padding:24px 18px}
+    #lp-easier-mornings .bf-lab .lab-badge{padding:9px 10px;font-size:.62rem;flex-direction:column;gap:2px;text-align:center;flex:1}
+    #lp-easier-mornings .bf-lab .lab-badges{width:100%}
+    #lp-easier-mornings .bf-line__card img{height:130px}
+    #lp-easier-mornings .bf-line__card{padding:14px}
+    #lp-easier-mornings .bf-line__card h3{font-size:1.02rem}
+  }
 </style>
 <div id="lp-easier-mornings" data-hook="bf">
-  <div class="bf-note">PREVIEW · Black Friday sale lander. Header, footer and cart come from the live theme. The buy box is a mock-up.</div>
+  <div class="bf-note">PREVIEW v2 · Black Friday sale lander. Header, footer and cart come from the live theme. The buy box is a mock-up.</div>
   <div class="bf-bar"><a href="/collections/all"><b>25% off everything, automatically applied</b> and a free bag of Vanilla Multi-Collagen + Protein on orders over $80.</a></div>
 
-  <section class="lp-hero">
-    <div class="lp-hero__inner c-wide">
-      <div class="lp-hero__head">
+  <section class="lp-hero bf-hero2">
+    <picture class="bf-hero2__bg"><source media="(max-width:760px)" srcset="assets/pp-black-friday/hero-c-4x5.jpg"><img src="assets/pp-black-friday/hero-c-16x9.jpg" alt="Paleo Protein Powder in Ancient Cacao beside the free bag of Vanilla Paleo Protein + Multi-Collagen"></picture>
+    <div class="bf-hero2__inner c-wide">
+      <div class="bf-hero2__copy">
         <div class="lp-hero__kick">Black Friday · Nov 18 to Dec 2</div>
-        <h1>25% off <span class="gold">every&shy;thing.</span></h1>
-      </div>
-      <div class="lp-hero__art">
-        <div class="lp-frame" style="position:relative">
-          <div class="bf-burst"><span>25%<small>off sitewide</small></span></div>
-          <div class="bf-trio">
-            <figure><img class="jpg" src="em-assets/lp-em-cacao.jpg" alt="Paleo Pro Paleo Protein Powder, Ancient Cacao"><figcaption>Paleo Protein Powder</figcaption></figure>
-            <figure><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/CarnivoreComplete-AncientCacao-fr_80d54939-1b80-4f1a-8670-35f34d6fb92c.png?v=1698277534" alt="Paleo Pro Carnivore Complete, Ancient Cacao"><figcaption>Carnivore Complete</figcaption></figure>
-          </div>
-        </div>
-      </div>
-      <div class="lp-hero__body">
-        <div class="lp-hero__pair"><span>26g protein</span><span>120 calories</span><span class="ghost">No whey, no dairy</span><span class="ghost">Grass-fed &amp; pastured</span></div>
-        <p class="lp-hero__sub">Our biggest sale of the year. 25% comes off every bag at checkout, no code needed. Spend over $80 and a free bag of Vanilla Multi-Collagen + Protein is added to your cart.</p>
-        <div class="lp-hero__cta"><a class="btn btn--gold" href="#buy">Shop the sale</a><a class="btn btn--ghost" href="#offer">How it works</a></div>
-        <div class="hero__trust"><span><span class="star">★★★★★</span> 4.7 from 250+ reviews</span><span class="dot"></span><span>100,000+ Customers</span><span class="dot"></span><span>60-Day Money-Back Guarantee</span></div>
+        <h1>25% off <span class="gold">everything.</span></h1>
+        <p class="lp-hero__sub">Plus a free bag of Vanilla Multi-Collagen + Protein on orders over $80. No code needed.</p>
+        <div class="lp-hero__cta"><a class="btn btn--gold" href="#buy">Shop the sale</a></div>
       </div>
     </div>
   </section>
@@ -954,25 +1034,29 @@
     <span class="m-item">25% Off Everything</span><span class="m-item">No Code Needed</span><span class="m-item">Free Bag Over $80</span><span class="m-item">26g Protein · 120 Calories</span><span class="m-item">Grass-Fed &amp; Pastured</span><span class="m-item">Tested by Light Labs</span><span class="m-item">Ends Dec 2</span><span class="m-item">25% Off Everything</span><span class="m-item">No Code Needed</span><span class="m-item">Free Bag Over $80</span><span class="m-item">26g Protein · 120 Calories</span><span class="m-item">Grass-Fed &amp; Pastured</span><span class="m-item">Tested by Light Labs</span><span class="m-item">Ends Dec 2</span>
   </div></div>
 
-  <section class="sec sol" id="offer">
+    <section class="sec sol bf-intro" id="why">
     <div class="c">
-      <span class="eyebrow">The Black Friday offer</span>
-      <h2 class="brushed">Three things happen at checkout.</h2>
-      <div class="why__grid bf-steps">
-        <div class="why__card"><span class="why__num">01</span><h3>25% comes off every bag</h3><p>Sitewide, automatically. There is no code to remember or paste.</p></div>
-        <div class="why__card"><span class="why__num">02</span><h3>Subscribers save 40% on the first order</h3><p>The sale stacks with Subscribe &amp; Save. Skip, pause or cancel in two clicks.</p></div>
-        <div class="why__card"><span class="why__num">03</span><h3>Over $80, a free bag is added</h3><p>Vanilla Multi-Collagen + Protein goes into your cart on its own once your total passes $80 after the discount.</p></div>
+      <span class="eyebrow">New to Paleo Pro?</span>
+      <h2 class="brushed">Two clean proteins. One complete scoop.</h2>
+      <p class="why__lead">Paleo Protein Powder is grass-fed beef and egg white protein, and not much else. 26g of complete protein, 120 calories, five ingredients you can name. No whey, no fillers, no shortcuts.</p>
+      <div class="bf-stats">
+        <div><b>26g</b><span>Protein</span></div>
+        <div><b>120</b><span>Calories</span></div>
+        <div><b>5</b><span>Ingredients</span></div>
+        <div><b>0g</b><span>Added sugar</span></div>
       </div>
-      <div class="bf-gift">
-        <img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/PaleoProteinPlus-AztecVanilla-fr_75b9ee2d-164f-4c06-88b4-ea3eca6fb846.png?v=1699554617" alt="Paleo Pro Protein+ Multi-Collagen, Aztec Vanilla" loading="lazy">
-        <div><span class="eyebrow">Free over $80</span><h3>Vanilla Multi-Collagen + Protein</h3><p>A full-size bag, $39.99 on its own. Added automatically while the sale runs, Nov 18 through Dec 2.</p></div>
+      <div class="why__grid">
+        <div class="why__card"><span class="why__num">01</span><h3>Five ingredients</h3><p>Grass-fed beef protein isolate, egg white protein, sunflower lecithin, monk fruit and natural flavor. That's the whole list.</p></div>
+        <div class="why__card"><span class="why__num">02</span><h3>Nothing from dairy</h3><p>No whey, lactose, soy, gluten or grains. If other protein powders wreck your stomach, this is why ours won't.</p></div>
+        <div class="why__card"><span class="why__num">03</span><h3>Complete protein</h3><p>Beef and egg together deliver every essential amino acid, in one scoop.</p></div>
+        <div class="why__card"><span class="why__num">04</span><h3>Tested, not just claimed</h3><p>Every flavor goes to Light Labs, an independent lab, and we publish what comes back.</p></div>
       </div>
+      <p class="bf-proof">Sold at Sprouts Farmers Market and Whole Foods Market · 100,000+ customers served · 60-day money-back guarantee</p>
     </div>
   </section>
-
-  <section class="sec problem">
+<section class="sec problem">
     <div class="c">
-      <span class="eyebrow">Two ways to stock up</span>
+      <span class="eyebrow">Two ways to start</span>
       <h2>Pick your <span class="gold">bag.</span></h2>
       <div class="bf-duo">
         <div class="bf-prod">
@@ -995,35 +1079,24 @@
     </div>
   </section>
 
-  <section class="sec lab" id="lab">
-    <div class="c"><div class="lab__grid">
-      <div>
-        <span class="eyebrow">Independently tested</span>
-        <h2 class="brushed">On sale.<br>Not cutting corners.</h2>
-        <p>Light Labs, an independent third-party lab, screens Paleo Protein Powder for heavy metals and microbial contaminants and publishes the results. A live report, batch by batch, not a badge we print ourselves.</p>
-        <div class="lab__badges">
-          <div class="lab__badge"><b>4</b><span>Heavy metals screened</span></div>
-          <div class="lab__badge"><b>8</b><span>Microbials screened</span></div>
-          <div class="lab__badge"><b>0</b><span>Results hidden</span></div>
-        </div>
+  
+  <section class="sec bf-show">
+    <div class="c">
+      <span class="eyebrow">Read any label next to ours</span>
+      <h2 class="brushed">The label showdown</h2>
+      <p class="why__lead">Put a two-protein scoop next to a typical whey and a typical plant powder. Same shelf. Very different bags.</p>
+      <div class="bf-table" role="table" aria-label="Paleo Pro compared with typical whey and plant protein">
+        <div class="bf-tr bf-th" role="row"><span role="columnheader"></span><span role="columnheader" class="us">Paleo Pro<small>Beef &amp; egg protein</small></span><span role="columnheader">Typical whey<small>Dairy protein</small></span><span role="columnheader">Typical plant<small>Pea, rice, hemp blends</small></span></div>
+        <div class="bf-tr" role="row"><span role="rowheader">Protein per scoop</span><span class="us">26g</span><span>20–25g</span><span>15–20g</span></div>
+        <div class="bf-tr" role="row"><span role="rowheader">Ingredients</span><span class="us">5 (3 in Plain Naked)</span><span>10–15+</span><span>10–20</span></div>
+        <div class="bf-tr" role="row"><span role="rowheader">Dairy-free</span><span class="us">✓ Yes</span><span>✗ No</span><span>✓ Yes</span></div>
+        <div class="bf-tr" role="row"><span role="rowheader">Artificial sweeteners</span><span class="us">None</span><span>Common</span><span>Sometimes</span></div>
+        <div class="bf-tr" role="row"><span role="rowheader">Complete aminos</span><span class="us">✓ Yes</span><span>✓ Yes</span><span>Often no</span></div>
+        <div class="bf-tr" role="row"><span role="rowheader">Whole30</span><span class="us">✓ Yes</span><span>✗ No</span><span>✗ No</span></div>
       </div>
-      <div class="lab__panel" data-lab-panel>
-        <div class="ll-head"><span>Certificate of Analysis</span><span>Light Labs</span></div>
-          <script async src="https://transparency.lightlabs.com/embed.js"></script>
-          <lightlabs-panel panel-id="8jyj8jcumf-paleopro-storefront-panel"></lightlabs-panel>
-        <div class="lab__fallback">
-          <div class="lab-row"><span>Lead (Pb)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
-          <div class="lab-row"><span>Arsenic (As)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
-          <div class="lab-row"><span>Cadmium (Cd)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
-          <div class="lab-row"><span>Mercury (Hg)</span><span class="res">Below limit</span><span class="pass">Pass</span></div>
-          <div class="lab-row"><span>Microbial panel (8)</span><span class="res">Within spec</span><span class="pass">Pass</span></div>
-        </div>
-        <div class="lab__foot"><span>Paleo Protein Powder · current batch</span><a href="/products/paleo-protein-powder#lab">See the full report →</a></div>
-      </div>
-    </div></div>
+    </div>
   </section>
-
-  <section class="sec reviews pinefoot">
+<section class="sec reviews pinefoot">
     <div class="c">
       <h2 class="brushed">Why people reorder</h2>
       <p class="reviews__sub">100,000+ customers keep a bag of Paleo Pro on the counter.</p>
@@ -1033,8 +1106,148 @@
         <div class="rcard"><div class="star">★★★★★</div><p>"This blends beautifully with my morning coffee, tastes great and doesn’t have a gritty texture. It’s been an easy way to get an extra 26 grams of protein in my day!"</p><div class="who">Jennifer F.<span class="verified">Verified Buyer</span></div></div>
         <div class="rcard"><div class="star">★★★★★</div><p>"I&#x27;ve been drinking this protein drink for the past year as a morning breakfast supplement. I really like all three flavors, but the Ancient Cacao is my favorite."</p><div class="who">Shawna R.<span class="verified">Verified Buyer</span></div></div>
       </div>
+      <div class="bf-allrev"><a class="btn btn--ghost" href="https://paleopro.com/products/paleo-protein-powder">Read all Paleo Protein Powder reviews</a></div>
     </div>
   </section>
+
+  
+  <section class="sec bf-lab lab-sec" id="lab">
+    <div class="c"><div class="lab-wrap">
+      <div class="lab-copy">
+        <span class="eyebrow">Tested, not just claimed</span>
+        <h2 class="brushed">Tested by an independent lab. Results published.</h2>
+        <p>"Clean" is the easiest word in this industry to print and the hardest to prove. So we don't prove it ourselves. Every flavor goes to Light Labs, an ISO 17025-accredited lab, and we publish what comes back.</p>
+        <ul><li>Heavy metals, pesticides, glyphosate, bisphenols, mycotoxins and gluten</li><li>Protein content measured against the label</li><li>Full report published on the product page, not on request</li></ul>
+        <div class="lab-badges"><span class="lab-badge"><b>208</b> substances screened</span><span class="lab-badge"><b>176</b> pesticides screened</span><span class="lab-badge"><b>0</b> results hidden</span></div>
+      </div>
+      <div class="lab-card" data-lightlabs-product="paleo-protein-powder">
+  <div class="stamp"><b>✓</b><span>Batch pass</span></div>
+  <div class="lc-head">
+    <span class="t">Certificate of Analysis</span>
+    <span class="lab-name">Independent testing · Light Labs</span>
+  </div><div class="ll-insights" data-ll-insights data-ll-product="11745" data-ll-handle="paleo-protein-powder" data-ll-label="" hidden></div>
+    <div class="ll-embed"><script async src="https://transparency.lightlabs.com/embed.js"></script>
+<lightlabs-panel product-id="11745" panel-id="8jyj8jcumf-paleopro-storefront-panel"></lightlabs-panel></div></div><script>
+(function(){
+  if (window.__ppLL) return; window.__ppLL = true;
+  var panelEl = function(){ return document.querySelector('lightlabs-panel'); };
+  var api = 'https://transparency.lightlabs.com';
+  var currentVariant = function(){
+    var i = document.querySelector('[data-lb2="variant-id"]'); if (i && i.value) return String(i.value);
+    var q = new URLSearchParams(location.search).get('variant'); return q && /^\d+$/.test(q) ? q : null;
+  };
+  var esc = function(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var fmtDate = function(iso){ try { return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); } catch(e){ return ''; } };
+  var productIdCache = {};
+  var resolveProduct = function(box, panelId){
+    var pinned = box.getAttribute('data-ll-product'); if (pinned) return Promise.resolve(pinned);
+    var handle = box.getAttribute('data-ll-handle');
+    if (productIdCache[handle]) return Promise.resolve(productIdCache[handle]);
+    return fetch(api + '/panel/' + encodeURIComponent(panelId), {credentials:'omit'}).then(function(r){ return r.json(); }).then(function(j){
+      var p = (j.products||[]).find(function(x){ return (x.pagePaths||[]).indexOf('/products/'+handle) >= 0 || (x.matchSlugs||[]).indexOf(handle) >= 0; });
+      if (p) productIdCache[handle] = String(p.id);
+      return p ? String(p.id) : null;
+    });
+  };
+  var render = function(box, rep, variantId){
+    var known = !variantId || (rep.variants||[]).some(function(v){ return (v.externalIds||[]).indexOf(String(variantId)) >= 0; });
+    if (!known) { box.innerHTML = '<p class="ll-insight ll-insight--note">This flavor hasn’t been through the lab yet. Results below are for ' + esc((rep.variants.find(function(v){return v.id===rep.selectedVariantId;})||{}).name||'another flavor') + '.</p>'; box.hidden = false; return; }
+    var cats = {}; (rep.categories||[]).forEach(function(c){ cats[c.name] = c; });
+    var items = [];
+    var protein = cats['Protein'] && cats['Protein'].analytes.find(function(a){ return a.name === 'Protein'; });
+    var label = box.getAttribute('data-ll-label');
+    if (protein && protein.resultDisplay) items.push('<b>' + esc(protein.resultDisplay) + '</b> protein per serving, measured' + (label ? ' <span class="muted">(label: ' + esc(label) + ')</span>' : ''));
+    var nd = function(name, text){ var c = cats[name]; if (c && c.allNotDetected) items.push('<b>' + text + '</b>' + (c.analytes.length >= 3 ? ' <span class="muted">(' + c.analytes.length + ' screened)</span>' : '')); };
+    nd('Pesticides', 'No pesticides detected'); nd('Glyphosate', 'No glyphosate detected'); nd('Bisphenols', 'No bisphenols (BPA/BPS/BPF) detected'); nd('Mycotoxins', 'No mycotoxins detected'); nd('Allergens', 'No gluten detected');
+    // Heavy metals are intentionally left out of the list (Amy, 2026-11-16). The "Lead, in context"
+    // comparison below only renders when the card carries data-ll-compare (for a testing page / CS use).
+    var hm = cats['Heavy Metals'], compare = '';
+    if (box.hasAttribute('data-ll-compare') && hm && hm.analytes.length && hm.analytes.every(function(a){ return a.status === 'in_spec' || a.status === 'not_detected'; })) {
+      var lead = hm.analytes.find(function(a){ return a.name === 'Lead'; });
+      var lm = lead && lead.measurement, pl = lead && lead.plain;
+      var food = pl && pl.text && !pl.fixed ? /^(.+?) typically has around ([\d.]+) micrograms? of lead/i.exec(pl.text) : null;
+      if (lead && lm && lm.value != null && food) {
+        var scoop = lm.value, foodVal = parseFloat(food[2]), max = Math.max(scoop, foodVal, lm.limit || 0) || 1;
+        var w = function(v){ return Math.max(4, Math.round(v / max * 100)); };
+        var scoopLabel = lead.resultDisplay ? esc(lead.resultDisplay.replace(/^<\s*/, 'under ')) : (Math.round(scoop * 100) / 100) + ' mcg';
+        compare = '<div class="ll-compare" aria-label="Lead in one scoop compared with everyday food">' +
+          '<div class="ll-compare-head"><b>Lead, in context</b><span class="muted">one scoop vs. everyday food</span></div>' +
+          '<div class="ll-bar"><span class="ll-bar-label">One scoop \u2014 <b>' + scoopLabel + '</b></span><span class="ll-bar-track"><span class="ll-bar-fill is-scoop" style="width:' + w(scoop) + '%"></span></span></div>' +
+          '<div class="ll-bar"><span class="ll-bar-label">' + esc(food[1].replace(/^A /, 'a ').replace(/^An /, 'an ').replace(/^(\w)/, function(c){ return c.toUpperCase(); })) + ' \u2014 <b>about ' + esc(food[2]) + ' mcg</b></span><span class="ll-bar-track"><span class="ll-bar-fill" style="width:' + w(foodVal) + '%"></span></span></div>' +
+          '<div class="ll-compare-foot">All four heavy metals under limit' + (lm.limitDisplay ? ' \u00b7 ' + (String(lm.limit) === '0.5' ? 'Prop 65 ' : '') + 'lead limit ' + esc(lm.limitDisplay) : '') + '</div></div>';
+      }
+    }
+    var mi = cats['Microbials'];
+    if (mi && mi.analytes.length && mi.analytes.every(function(a){ return a.status === 'in_spec' || a.status === 'not_detected'; })) {
+      var nice = { 'E. Coli': 'E. coli', 'Salmonella': 'salmonella', 'Staphylococcus Aureus': 'staph', 'Total Coliforms': 'coliforms', 'Total Mold': 'mold', 'Total Yeast': 'yeast', 'Listeria': 'listeria', 'Enterobacteriaceae': 'enterobacteria', 'Bacillus cereus': 'B. cereus' };
+      var ndNames = mi.analytes.filter(function(a){ return a.status === 'not_detected'; }).map(function(a){ return nice[a.name] || a.name.toLowerCase(); });
+      var tpc = mi.analytes.find(function(a){ return /plate count/i.test(a.name); });
+      if (ndNames.length) items.push('<b>No ' + esc(ndNames.join(', ').replace(/, ([^,]*)$/, ' or $1')) + ' detected</b>' + (tpc && tpc.resultDisplay ? ' <span class="muted">(plate count ' + esc(tpc.resultDisplay) + ', in spec)</span>' : ''));
+      else items.push('<b>Microbials within limits</b> <span class="muted">(' + mi.analytes.length + ' screened)</span>');
+    }
+    if (!items.length) { box.hidden = true; return; }
+    var sum = rep.summary || {};
+    box.innerHTML = '<ul class="ll-insight-list">' + items.map(function(h){ return '<li class="ll-insight"><span class="chk" aria-hidden="true">✓</span><span>' + h + '</span></li>'; }).join('') + '</ul>' + compare +
+      (sum.screened ? '<div class="ll-insights-meta">' + sum.screened + ' substances screened' + (sum.lastTestedAt ? ' · last tested ' + esc(fmtDate(sum.lastTestedAt)) : '') + ' · full report below</div>' : '');
+    box.hidden = false;
+  };
+  var load = function(variantId){
+    var pe = panelEl(); var panelId = pe && pe.getAttribute('panel-id'); if (!panelId) return;
+    document.querySelectorAll('[data-ll-insights]').forEach(function(box){
+      resolveProduct(box, panelId).then(function(pid){
+        if (!pid) return;
+        var url = api + '/panel/' + encodeURIComponent(panelId) + '/report/' + pid + (variantId && !box.getAttribute('data-ll-product') ? '?external_id=' + encodeURIComponent(variantId) : '');
+        return fetch(url, {credentials:'omit'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(rep){ if (rep) render(box, rep, box.getAttribute('data-ll-product') ? null : variantId); });
+      }).catch(function(){});
+    });
+  };
+  var applyVariant = function(id){
+    if (!id) return;
+    document.querySelectorAll('lightlabs-panel').forEach(function(p){ if (p.getAttribute('external-id') !== String(id)) p.setAttribute('external-id', String(id)); });
+    load(id);
+  };
+  document.addEventListener('pp:variant', function(e){ applyVariant(e.detail && e.detail.variantId); });
+  var init = currentVariant();
+  if (init) applyVariant(init); else load(null);
+})();
+</script>
+    
+    </div></div>
+  </section>
+
+  <section class="sec problem bf-line" id="line">
+    <div class="c">
+      <span class="eyebrow">The whole line is 25% off</span>
+      <h2>More from the <span class="gold">same pasture.</span></h2>
+      <p>Every Paleo Pro product starts the same way: grass-fed, pasture-raised sources and a short label. All of it is on sale, and all of it counts toward the free bag.</p>
+      <div class="bf-line__grid">
+        <a class="bf-line__card" href="/products/protein-plus-multi-collagen"><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/PaleoProteinPlus-AztecVanilla-fr.png?v=1699554380" alt="Paleo Pro Protein+ Multi-Collagen" loading="lazy"><h3>Protein+ Multi-Collagen</h3><p>Protein and collagen in one scoop. 20g protein, 90 calories.</p><div class="pr">$29.99 <s>$39.99</s></div></a>
+        <a class="bf-line__card" href="/products/grass-fed-bone-broth"><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/BoneBrothCollagen-AztecVanilla-01-1_873aac5a-5481-4717-a921-0a2a84ebd59c.png?v=1731437756" alt="Paleo Pro Bone Broth Collagen + Turmeric" loading="lazy"><h3>Bone Broth Collagen + Turmeric</h3><p>Collagen from grass-fed, pasture-raised cows. Hot or cold.</p><div class="pr">$29.99 <s>$39.99</s></div></a>
+        <a class="bf-line__card" href="/products/multi-collagen"><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/Multi-Collagen-PlainNaked-01_1_f74e65c2-8034-4c6c-8241-97c9308ef3e2.png?v=1729194494" alt="Paleo Pro Premium Multi-Collagen" loading="lazy"><h3>Premium Multi-Collagen</h3><p>Five types of collagen, built on grass-fed beef collagen.</p><div class="pr">$26.24 <s>$34.99</s></div></a>
+        <a class="bf-line__card" href="/products/beef-protein-isolate"><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/paleo-pro-bpi-ancient-cacao-front-2026-11.png?v=1793901324" alt="Paleo Pro Beef Protein Isolate" loading="lazy"><h3>Beef Protein Isolate</h3><p>One protein source and a short label. 21g protein per scoop.</p><div class="pr">$37.49 <s>$49.99</s></div></a>
+        <a class="bf-line__card" href="/products/egg-white-protein-powder"><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/paleo-pro-egg-white-front-2026-11.png?v=1793901316" alt="Paleo Pro Egg White Protein, Plain Naked" loading="lazy"><h3>Egg White Protein, Plain Naked</h3><p>Two ingredients, unflavored. 20g protein, 90 calories.</p><div class="pr">$37.49 <s>$49.99</s></div></a>
+        <a class="bf-line__card" href="/products/beef-organ-complex"><img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/CapsuleBottle-BeefOrganComplex-1.png?v=1771529084" alt="Paleo Pro Beef Organ Complex" loading="lazy"><h3>Beef Organ Complex</h3><p>Five organs in one nose-to-tail capsule.</p><div class="pr">$24.74 <s>$32.99</s></div></a>
+      </div>
+      <div class="bf-line__cta"><a class="btn btn--gold" href="/collections/all">Shop the whole line</a></div>
+    </div>
+  </section>
+<section class="sec sol" id="offer">
+    <div class="c">
+      <span class="eyebrow">The Black Friday offer</span>
+      <h2 class="brushed">Three things happen at checkout.</h2>
+      <div class="why__grid bf-steps">
+        <div class="why__card"><span class="why__num">01</span><h3>25% comes off every bag</h3><p>Sitewide, automatically. There is no code to remember or paste.</p></div>
+        <div class="why__card"><span class="why__num">02</span><h3>Subscribers save 40% on the first order</h3><p>The sale stacks with Subscribe &amp; Save. Skip, pause or cancel in two clicks.</p></div>
+        <div class="why__card"><span class="why__num">03</span><h3>Over $80, a free bag is added</h3><p>Vanilla Multi-Collagen + Protein goes into your cart on its own once your total passes $80 after the discount.</p></div>
+      </div>
+      <div class="bf-gift">
+        <img src="https://cdn.shopify.com/s/files/1/0742/9783/5793/files/PaleoProteinPlus-AztecVanilla-fr_75b9ee2d-164f-4c06-88b4-ea3eca6fb846.png?v=1699554617" alt="Paleo Pro Protein+ Multi-Collagen, Aztec Vanilla" loading="lazy">
+        <div><span class="eyebrow">Free over $80</span><h3>Vanilla Multi-Collagen + Protein</h3><p>A full-size bag, $39.99 on its own. Added automatically while the sale runs, Nov 18 through Dec 2.</p></div>
+      </div>
+    </div>
+  </section>
+
+  
 
   <section class="sec buy" id="buy">
     <div class="c">
@@ -1143,7 +1356,7 @@
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'pp-black-friday-v1';
+  var PAGE_ID = 'pp-black-friday-v2';
 
   /* ---------------------------------------------- */
 
