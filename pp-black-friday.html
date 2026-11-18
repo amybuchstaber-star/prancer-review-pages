@@ -1277,7 +1277,7 @@
             <div class="bbmock__tabs" id="bfTabs"><span class="on" data-p="ppp">Paleo Protein Powder</span><span data-p="cc">Carnivore Complete</span></div>
             <div class="bbmock__label">Flavor</div><div class="bbmock__opts" id="bfFlav"></div>
             <div class="bbmock__label">Purchase</div><div class="bbmock__opts" id="bfBuy"><span class="on" data-m="sub">Subscribe &amp; Save</span><span data-m="once">One-time</span></div>
-            <div class="bbmock__price"><span id="bfPrice">$28.79</span> <s id="bfWas">$47.99</s><span class="bbmock__save" id="bfSave">40% off first order</span></div>
+            <div class="bbmock__price"><span id="bfPrice">$28.79</span> <s id="bfWas">$47.99</s><span class="bbmock__save" id="bfSave">40% off your first order, then 15% off every order after</span></div>
             <div class="bbmock__gift"><b>Free with any 2 bags:</b> a bag of Vanilla Multi-Collagen + Protein is added to your cart automatically.</div>
             <a class="btn btn--rust btn-block" href="#">Add to cart</a>
             <div class="bbmock__note">[ live buy box renders here: lp-buy-experience v2, with the 1 / 2 / 3 bag options ]</div>
@@ -1324,7 +1324,7 @@
   function draw(){var p=P[cur],x=mode==='sub'?.60:.80;
     document.getElementById('bfPrice').textContent='$'+(Math.round(p.list*x*100)/100).toFixed(2);
     document.getElementById('bfWas').textContent='$'+p.list.toFixed(2);
-    document.getElementById('bfSave').textContent=mode==='sub'?'40% off first order':'20% off';
+    document.getElementById('bfSave').textContent=mode==='sub'?'40% off your first order, then 15% off every order after':'20% off one-time';
     var im=document.getElementById('bfImg'); im.src=p.img; im.alt=p.alt;
     document.getElementById('bfFlav').innerHTML=p.fl.map(function(n,i){return '<span'+(i?'':' class="on"')+'>'+n+'</span>';}).join('');
     document.getElementById('bfTrust').innerHTML=p.t.map(function(r){return '<div class="bt"><b>'+r[0]+'</b><span>'+r[1]+'</span></div>';}).join('');
