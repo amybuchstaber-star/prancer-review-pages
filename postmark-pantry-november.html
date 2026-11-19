@@ -2258,6 +2258,61 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 .bigfold.v2.gone{transition:opacity .35s!important}
 .archive .shelf .mo.on{box-shadow:0 0 0 2px #8B3438,0 10px 24px rgba(48,44,39,.12)}
 </style>
+
+<style id="r1119">
+/* ===== Review round, Nov 19 2026 (postmark-pantry-november-v2 comments) ===== */
+/* the Lore: one button, one quiet link */
+.lore .bk-btn.pv{display:none!important}
+.lore .bk-ctl{gap:22px}
+.lore .bk-ctl .bk-story{font-family:var(--slab);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+/* postcards: post from either side */
+.card-l .postit{opacity:1!important;pointer-events:auto!important}
+.card-l .postit:hover{background:#6E2A2E!important}
+.card-l.posted .postit{opacity:.5!important;pointer-events:none!important}
+/* postbox: less empty room, and a clear end to the section */
+.sec.postwrap{padding-bottom:clamp(26px,3vw,40px)!important;border-bottom:3px double rgba(139,52,56,.5)}
+.sec.postwrap .pbnav{margin-top:46px}
+.sec.postwrap+*{margin-top:0}
+.postwrap+.faqsec,.postwrap+section{padding-top:clamp(40px,5vw,72px)}
+/* the letter: whole line of handwriting visible while typing */
+.lform .blank input{line-height:1.5!important;height:auto!important;min-height:50px;padding:10px 4px 8px!important;box-sizing:border-box;overflow:visible;text-overflow:clip}
+.lform .blank.name input{max-width:min(100%,460px)!important}
+.calsub input{line-height:1.5;min-height:48px;padding:8px 4px 6px;box-sizing:border-box}
+/* footer postmark, larger */
+@media(min-width:701px){.fbot{padding-right:340px!important;min-height:120px}.fpm{width:310px!important;top:-64px!important}}
+@media(max-width:700px){.fpm{width:230px!important}}
+/* cover postmark: the ring sits wholly on the card */
+@media(min-width:861px){.pmark.pm2.onlabel{bottom:20px!important;right:-108px!important;width:240px!important}}
+/* how-to film, re-cut */
+.pola.main video[data-src*="howto-centered"],.pola.main video[src*="howto-centered"]{aspect-ratio:720/584!important;object-fit:cover!important}
+/* Said plainly */
+.band.said{background:var(--red);border:0;position:relative;color:#FBF1E4;text-align:center;padding:clamp(44px,6vw,84px) 0;overflow:hidden}
+.band.said::before,.band.said::after{content:"";position:absolute;left:0;right:0;height:7px;border-top:1px solid rgba(251,241,228,.75);border-bottom:1px solid rgba(251,241,228,.75)}
+.band.said::before{top:12px}.band.said::after{bottom:12px}
+.band.said .dept{color:#F2C9B8;border-color:rgba(242,201,184,.7)}
+.band.said .saidq{font-family:var(--did);font-size:clamp(34px,5vw,72px);line-height:1.08;margin:16px auto 0;max-width:17ch;color:#FBF1E4}
+.band.said .saidq em{font-style:italic;position:relative;white-space:nowrap}
+.band.said .saidq em::after{content:"";position:absolute;left:-2%;right:-2%;top:98%;height:.06em;background:#F2C9B8;border-radius:50%;transform:rotate(-1.2deg) scaleX(0);transform-origin:left;transition:transform .9s .5s var(--settle,ease)}
+.band.said.in .saidq em::after{transform:rotate(-1.2deg) scaleX(1)}
+@media(prefers-reduced-motion:reduce){.band.said .saidq em::after{transition:none;transform:rotate(-1.2deg) scaleX(1)}}
+/* Our Story: four pinned photographs, no captions, and a note on letter paper */
+.athome-grid .ah{padding:10px!important}
+.athome-grid .ah .tape{left:50%!important;top:-8px!important;width:19px!important;height:19px!important;border-radius:50%;transform:translateX(-50%)!important;background:radial-gradient(circle at 34% 30%,#F0B9B1 0 10%,#BF4D51 28%,#8B3438 60%,#5A1D21 100%)!important;box-shadow:0 4px 5px rgba(40,20,10,.45),inset 0 -1px 1px rgba(0,0,0,.3);z-index:3}
+.athome .athome-grid .founder.note .paper{background:#F3E7CF url("pp/textures__letter-paper.webp") center/720px!important;background-blend-mode:multiply!important;border:1px solid #DCCBA8!important;box-shadow:0 30px 46px -30px rgba(60,30,10,.65),inset 0 0 60px rgba(150,110,60,.10)!important;padding-top:clamp(40px,4.4vw,64px)}
+.athome .athome-grid .founder.note .paper::before{display:block!important;content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent calc(33.3% - 1px),rgba(120,90,50,.13) 33.3%,rgba(255,255,255,.35) calc(33.3% + 1px),transparent calc(33.3% + 3px)),linear-gradient(to bottom,transparent calc(66.6% - 1px),rgba(120,90,50,.13) 66.6%,rgba(255,255,255,.35) calc(66.6% + 1px),transparent calc(66.6% + 3px))!important}
+.athome .athome-grid .founder.note .ldate{display:block;font-family:var(--hand);font-size:19px;color:var(--ink-3);margin:0 0 14px;padding-right:110px}
+.athome .athome-grid .founder.note .salute{font-family:var(--hand);font-size:34px;color:var(--red-ink,#6B262A);margin-bottom:8px}
+.athome .athome-grid .founder.note p{font-family:var(--hand);font-size:22px;line-height:1.5;color:#3A332C}
+.athome .athome-grid .founder.note .ps{font-family:var(--hand);font-size:19px;line-height:1.45}
+/* calendar hello */
+.cal-hero p.calhello{font-family:var(--hand);font-size:25px;line-height:1.4;color:var(--ink);max-width:30ch;margin-bottom:6px}
+.cal-hero .calsig{font-family:var(--script);font-size:20px;color:var(--red)}
+/* archive: the month that is coming */
+.shelf a.mo.soon{cursor:pointer}
+.shelf a.mo.soon .mt{color:var(--red)}
+.calsub.nudge{animation:csnudge .9s var(--settle,ease)}
+@keyframes csnudge{0%{box-shadow:0 0 0 0 rgba(139,52,56,.55),0 22px 36px -28px rgba(60,30,10,.55)}100%{box-shadow:0 0 0 18px rgba(139,52,56,0),0 22px 36px -28px rgba(60,30,10,.55)}}
+</style>
 </head>
 <body>
 
@@ -2373,7 +2428,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
     <div class="sec-head rv"><div><span class="dept">The Jam Pact ritual</span><h2 id="h-ritual">Three steps, <em>then toast.</em></h2><p class="lede">How Jam Pact becomes jam. One scoop, one small jar, two minutes.</p></div></div>
     <div class="ritual3 rv d1">
       <div class="filmstack">
-        <figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-full.mp4" muted loop playsinline poster="pp/films__jam-pact-howto-full-poster.webp" aria-label="How Jam Pact becomes jam, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure>
+        <figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-centered.mp4" muted loop playsinline poster="pp/films__jam-pact-howto-centered-poster.webp" aria-label="How Jam Pact becomes jam, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure>
         <figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__oct__toast.webp" alt="Jam Pact spread on toast" loading="lazy"><figcaption>then, toast</figcaption></figure>
         <div class="need"><span class="k">You will need</span><ul><li>1 scoop of Jam Pact</li><li>4 oz of dark red juice</li><li>A small jar and a spoon</li><li>Sweetener, if you like</li></ul><img class="st" data-stamp="6" src="pp/stamps__autumn__autumn-07-apple-tart.webp" alt="" aria-hidden="true"></div>
       </div>
@@ -2421,9 +2476,8 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
     <div class="book rv" id="book">
       <div class="bk-scroll"><div class="bk-stage"><canvas class="bk-cv" width="1500" height="1000" role="img" aria-label="An open scrapbook: The Lore, with photographs from the October issue"></canvas>
         <button type="button" class="bk-hit prev" aria-label="Turn back a page"></button><button type="button" class="bk-hit next" aria-label="Turn the page"></button></div></div>
-      <div class="bk-ctl"><button type="button" class="bk-btn pv" aria-label="Previous page" disabled>←</button><span class="bk-count" aria-live="polite">Page 1 of 3</span><span class="bk-swipe" aria-hidden="true">swipe to read across</span><button type="button" class="bk-btn nx">Turn the page →</button></div>
+      <div class="bk-ctl"><button type="button" class="bk-btn pv" aria-label="Previous page" disabled>←</button><span class="bk-count" aria-live="polite">Page 1 of 3</span><span class="bk-swipe" aria-hidden="true">swipe to read across</span><button type="button" class="bk-btn nx">Turn the page →</button><a class="tlink bk-story" href="#story">Read our story</a></div>
     </div>
-    <div class="bk-after rv d1"><a class="btn" href="#story">Read our story</a><a class="tlink" href="#shop">or meet the jars</a></div>
   </div>
 </section>
 
@@ -2450,14 +2504,14 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 <div class="opener rv" data-live="pp/depth__op-desk.webp" data-life="none" data-strength="0.016"><img data-ed="sc-desk" src="pp/photos__scene__autumn-desk-wide.webp" alt=""><div class="cap"><span>Chapter five</span><b>From the Postbox</b></div></div>
 <section class="sec postwrap" aria-labelledby="h-post">
   <div class="wrap">
-    <div class="sec-head rv"><div><span class="dept">From the postbox</span><h2 id="h-post">Letters from <em>sweet friends.</em></h2><p class="lede">Turn each postcard over to read it, then post it in the box. Something happens when all five are in.</p></div></div>
+    <div class="sec-head rv"><div><span class="dept">From the postbox</span><h2 id="h-post">Letters from <em>sweet friends.</em></h2><p class="lede">Read a postcard, then post it in the box. Something happens when all five are in.</p></div></div>
     <div class="postrow">
     <div class="mbox rv" id="mbox">
       <div class="mb-stage"><canvas class="mb-cv" width="640" height="800" role="img" aria-label="A cream wooden cottage mailbox with a brass letter slot and a red flag"></canvas>
         <div class="mb-note" id="mbnote" hidden><span class="k">A note from Amy</span><p>You read every letter.</p><p>These came from the first people to try the jars, and we keep every one.</p><p>If you have a story of your own, write to us. We read them all.</p><i class="sig">A.</i><a class="tlink" href="#contact">Write us a letter</a><button type="button" class="mb-fold" id="mbfold">Fold it away</button></div>
       </div>
       <p class="mb-count" aria-live="polite"><b id="mbn">0</b> of <span id="mbt">5</span> letters posted</p>
-      <p class="mb-hint" id="mbhint">Turn a postcard over, then post it.</p>
+      <p class="mb-hint" id="mbhint">Post a card whenever you like.</p>
       <button type="button" class="mb-reset" id="mbreset" hidden>Put the letters back</button>
     </div>
     <div class="postbox rv d1" data-month="October">
@@ -2584,7 +2638,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 <div class="wrap"><div class="stats rv"><div><b>11g</b><span>fiber per serving</span></div><div><b>95%</b><span>of adults fall short on fiber</span></div><div><b>0</b><span>isolates · fillers · gums</span></div><div><b>30</b><span>mornings in every jar</span></div></div></div>
 <section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">Inside the jar</span><h2>Ingredients your <em>grandmother could name.</em></h2></div></div><div class="ingr rv d1"><article data-g="✿"><h3>Psyllium husk</h3><p>the gel maker. She is why the jam sets in two minutes flat.</p></article><article data-g="❁"><h3>Chia seed</h3><p>omega rich and quick to thicken. An old friend of good breakfasts.</p></article><article data-g="✽"><h3>Baobab</h3><p>the African tree of life. Tart, bright, beloved by the microbiome.</p></article><article data-g="✾"><h3>Apple fiber</h3><p>orchard grown pectin. The everyday kind.</p></article><article data-g="✿"><h3>Ground flax</h3><p>the omega rich seed your great grandmother already trusted.</p></article><article data-g="❁"><h3>Green banana</h3><p>resistant starch that feeds the good bacteria first.</p></article><article data-g="✽"><h3>Turkey tail</h3><p>the mushroom gut wisdom has trusted for centuries.</p></article><article class="all"><h3>Better, together</h3><p>Seven plants, one blend. Different fibers feed different good bacteria. Variety is the whole point.</p></article></div></div></section>
 <section class="sec band"><div class="wrap"><div class="sec-head rv"><div><span class="dept">How she compares</span><h2>The usual way, <em>and the Postmark way.</em></h2></div></div><div class="compare rv d1"><div class="col"><h3>The usual fiber powder</h3><ul><li>a gritty shake, choked down</li><li>isolated powders and gums</li><li>forgotten by Thursday</li></ul></div><div class="col ours"><h3>The Postmark way</h3><ul><li>real, spreadable jam on warm toast</li><li>wholefoods you can read aloud</li><li>a breakfast you look forward to</li></ul></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">The ritual</span><h2>Three <em>steps.</em></h2></div></div><div class="ritual3 rv d1"><div class="filmstack"><figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-full.mp4" muted loop playsinline poster="pp/films__jam-pact-howto-full-poster.webp" aria-label="she sets in two minutes, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure><figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__product__03-jam-pact-breakfast.webp" alt=""><figcaption>then, breakfast</figcaption></figure><div class="need"><span class="k">You will need</span><ul><li>1 scoop of Jam Pact</li><li>4 oz of dark red juice</li><li>A small jar and a spoon</li><li>Sweetener, if you like</li></ul><img class="st" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true"></div></div><div class="recipe"><div class="card"><img class="jar" src="pp/illustration__preserves-jar-label-640.webp" alt="" aria-hidden="true"><span class="from">From the recipe box</span><h3>Jam Pact, <em>the house way</em></h3><ol class="steps"><li><b>01</b><div><h4>Pour</h4><p>A scoop, 4 oz of dark red juice, and the sweetener of your choice, in a small jar.</p></div></li><li><b>02</b><div><h4>Stir</h4><p>Stir well; two minutes later, she is jam.</p></div></li><li><b>03</b><div><h4>Spread</h4><p>Toast, yogurt, or a spoon at the counter.</p></div></li></ol><div class="foot"></div></div></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">The ritual</span><h2>Three <em>steps.</em></h2></div></div><div class="ritual3 rv d1"><div class="filmstack"><figure class="pola main"><span class="tape" aria-hidden="true"></span><video preload="none" data-src="pp/films__jam-pact-howto-centered.mp4" muted loop playsinline poster="pp/films__jam-pact-howto-centered-poster.webp" aria-label="she sets in two minutes, start to finish"></video><figcaption>two minutes, start to finish</figcaption></figure><figure class="pola small"><span class="tape" aria-hidden="true"></span><img src="pp/photos__product__03-jam-pact-breakfast.webp" alt=""><figcaption>then, breakfast</figcaption></figure><div class="need"><span class="k">You will need</span><ul><li>1 scoop of Jam Pact</li><li>4 oz of dark red juice</li><li>A small jar and a spoon</li><li>Sweetener, if you like</li></ul><img class="st" data-stamp="7" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" aria-hidden="true"></div></div><div class="recipe"><div class="card"><img class="jar" src="pp/illustration__preserves-jar-label-640.webp" alt="" aria-hidden="true"><span class="from">From the recipe box</span><h3>Jam Pact, <em>the house way</em></h3><ol class="steps"><li><b>01</b><div><h4>Pour</h4><p>A scoop, 4 oz of dark red juice, and the sweetener of your choice, in a small jar.</p></div></li><li><b>02</b><div><h4>Stir</h4><p>Stir well; two minutes later, she is jam.</p></div></li><li><b>03</b><div><h4>Spread</h4><p>Toast, yogurt, or a spoon at the counter.</p></div></li></ol><div class="foot"></div></div></div></div></div></section>
 <section class="sec band"><div class="wrap hands rv"><img src="pp/photos__life__10-mother-daughter-window-baking-960w.webp" alt="A mother and her daughter baking together at the kitchen window"><div><span class="dept">For the whole table</span><h2>Made for <em>little hands, too.</em></h2><p>Jam Pact was crafted to be enjoyed by the whole family. To little hands it is simply jam: bright, spreadable, made for warm toast and sticky fingers. The seven plant fiber blend working underneath can stay our secret.</p><p>No artificial anything, no sugar bombs, nothing you would have to explain. Just jam, to them. 11g of fiber, to you.</p><div class="pdp-hero" style="padding:0;display:block"><div class="pills"><span>Kid approved</span><span>Just jam, to them</span><span>Nothing artificial</span></div></div></div></div></section>
 <section class="sec recsec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">From the recipe box</span><h2>Bake with <em>Jam Pact.</em></h2><p class="lede">Make a jar the house way first, then use it like any good jam.</p></div></div><div class="rgrid rv d1"><article class="rcard"><img src="pp/photos__ed__09-kitchen-baking.webp" alt="" loading="lazy"><div class="rb"><span class="rt">35 minutes · makes 24</span><h3>Jam thumbprint cookies</h3><p class="ri">Butter, flour, brown sugar, an egg yolk, vanilla, and a small jar of set Jam Pact.</p><details><summary>How to make it</summary><ol><li>Cream 1 cup soft butter with 1/2 cup brown sugar, then beat in an egg yolk and a teaspoon of vanilla.</li><li>Mix in 2 cups flour and a pinch of salt. Roll into small balls and press a thumbprint into each.</li><li>Bake at 350°F for 10 minutes, fill each print with a little Jam Pact, then bake 5 minutes more.</li></ol></details></div></article><article class="rcard"><img src="pp/photos__amy__04-apple-tart-baking.webp" alt="" loading="lazy"><div class="rb"><span class="rt">45 minutes · makes 16</span><h3>Oat crumble bars</h3><p class="ri">Rolled oats, flour, brown sugar, butter, cinnamon, and a full jar of set Jam Pact.</p><details><summary>How to make it</summary><ol><li>Rub together 1 1/2 cups oats, 1 cup flour, 2/3 cup brown sugar, 3/4 cup cold butter and a teaspoon of cinnamon.</li><li>Press two thirds into a lined 8 inch pan and spread the jam over it.</li><li>Scatter the rest on top and bake at 350°F for 30 to 35 minutes. Cool before cutting.</li></ol></details></div></article><article class="rcard"><img src="pp/photos__oct__teatable.webp" alt="" loading="lazy"><div class="rb"><span class="rt">5 minutes · makes 2</span><h3>Yogurt parfait jars</h3><p class="ri">Thick yogurt, granola, a few spoonfuls of Jam Pact, and whatever fruit is in the bowl.</p><details><summary>How to make it</summary><ol><li>Spoon a layer of yogurt into two small jars.</li><li>Add a spoonful of Jam Pact, then a handful of granola.</li><li>Repeat, finish with fruit, and keep in the fridge for tomorrow morning.</li></ol></details></div></article></div></div></section><section class="sec edsec"><div class="wrap"><div class="sec-head rv"><div><span class="dept">On the table</span><h2>Jam Pact, <em>at home.</em></h2></div></div><div class="edgrid rv d1"><figure class="ed e1"><img src="pp/photos__oct__toast.webp" alt="" loading="lazy"><figcaption>warm toast, the whole point</figcaption></figure><figure class="ed e2"><img src="pp/photos__ed__10-tart-detail.webp" alt="" loading="lazy"><figcaption>a spoonful on the tart</figcaption></figure><figure class="ed e3"><img src="pp/photos__ed__08-apple-tea.webp" alt="" loading="lazy"><figcaption>with the afternoon tea</figcaption></figure><figure class="ed e4"><img src="pp/photos__product__03-jam-pact-breakfast.webp" alt="" loading="lazy"><figcaption>breakfast, kept simple</figcaption></figure></div></div></section><section class="sec postwrap"><div class="wrap"><div class="sec-head rv"><div><span class="dept">From the postbox</span><h2>Letters about <em>Jam Pact.</em></h2></div><p class="lede">First letters arriving with launch.</p></div><div class="postbox rv d1"><div class="card-l" style="--r:-1.2deg"><img class="face" src="pp/photos__ed__10-tart-detail.webp" alt=""><div class="body"><q>It sets while the kettle boils. By the time the toast pops, she is jam.</q><cite>June · Portland</cite></div></div><div class="card-l" style="--r:.8deg"><img class="face" src="pp/photos__ed__04-basket-hands.webp" alt=""><div class="body"><q>My kids fight over the last spoonful. They have no idea it is fiber.</q><cite>Renee · Asheville</cite></div></div><div class="card-l" style="--r:-.6deg"><img class="face" src="pp/photos__ed__15-apple-still-life.webp" alt=""><div class="body"><q>The tart cherry version tastes like my grandmother's cellar. I mean that as the highest compliment.</q><cite>Clare · Vermont</cite></div></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="pairs rv"><img src="pp/photos__product__04-pitcher-perfect-afternoon.webp" alt=""><div class="t"><span class="dept">She pairs well with</span><h3>Pitcher <em>Perfect</em></h3><p style="font-family:var(--body);color:var(--ink-2)">Minerals, real fiber, zero sugar. Raspberry lemonade, poured tall.</p><a class="tlink" href="#pitcher-perfect">meet her →</a></div></div></div></section>
@@ -2663,27 +2717,25 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 <div class="view" id="view-story">
 <section class="story-hero rv"><img src="pp/photos__scene__autumn-landscape.webp" alt=""><div class="sh-card"><span class="dept">Our story</span><h1>Wellness is not a transformation you purchase. <em>It is a returning you practice.</em></h1><span class="sh-sig">Amy, founder</span></div></section>
 <div class="wrap">
-<section class="chap"><div class="pic rv"><img src="pp/photos__ed__12-book-window.webp" alt=""><span class="cap">where it started · Amy's own kitchen</span></div><div class="rv d1"><span class="dept">Chapter I</span><h2>The single <em>nutrient mindset</em></h2><p>Somewhere along the way, nutrition became about extremes: more protein, fewer calories, louder claims. Food was stripped down, simplified, and sold as a shortcut. Whole foods became isolates; meals became macros; eating became arithmetic.</p><p>But the body does not thrive on shortcuts. She thrives on balance. Health does not come from isolating nutrients. It comes from how they work together. Protein without context is incomplete, and nourishment without digestion does not deliver.</p><div class="pull">So we do not obsess over a single number on a label. We look at the whole picture.</div></div></section>
+<section class="chap"><div class="pic rv"><img src="pp/photos__amy__03-kitchen-letter.webp" alt="Amy writing a letter at her kitchen table"><span class="cap">where it started · Amy's own kitchen</span></div><div class="rv d1"><span class="dept">Chapter I</span><h2>The single <em>nutrient mindset</em></h2><p>Somewhere along the way, nutrition became about extremes: more protein, fewer calories, louder claims. Food was stripped down, simplified, and sold as a shortcut. Whole foods became isolates; meals became macros; eating became arithmetic.</p><p>But the body does not thrive on shortcuts. She thrives on balance. Health does not come from isolating nutrients. It comes from how they work together. Protein without context is incomplete, and nourishment without digestion does not deliver.</p><div class="pull">So we do not obsess over a single number on a label. We look at the whole picture.</div></div></section>
 </div>
-<div class="band"><div class="wrap" style="text-align:center;padding:40px 0"><span class="dept">Said plainly</span><p style="font-family:var(--did);font-style:italic;font-size:clamp(28px,3.6vw,48px);margin:10px auto 0;max-width:22ch">Your body was not built for isolates.</p></div></div>
+<div class="band said rv"><div class="wrap"><span class="dept">Said plainly</span><p class="saidq">Your body was not built for <em>isolates.</em></p></div></div>
 <div class="wrap">
-<section class="chap alt"><div class="pic rv"><img src="pp/photos__ed__15-apple-still-life.webp" alt=""><span class="cap">the first jam that set properly · august</span></div><div class="rv d1"><span class="dept">Chapter II</span><h2>Two voices, <em>one table</em></h2><p>Postmark Pantry weaves two voices together, and refuses to choose between them. The modern science: the microbiome, the hormones, the research on fiber that has bloomed in the last twenty years. And the older wisdom: the traditional, grandmotherly, seasonal knowledge that has always known digestion is the root of vitality.</p><div class="two"><div><h4>The modern science</h4><p>Fiber and blood sugar, satiety and skin. Research that keeps blooming, twenty years strong.</p></div><div><h4>The older wisdom</h4><p>Jars put up in August, broth on the back burner. Knowledge that never needed a study.</p></div></div><p>They are not at odds. They are old friends, finally having coffee. And about fiber, they emphatically agree.</p></div></section>
+<section class="chap alt"><div class="pic rv"><img src="pp/photos__ed__15-apple-still-life.webp" alt=""><span class="cap">apple season, and a full table</span></div><div class="rv d1"><span class="dept">Chapter II</span><h2>Two voices, <em>one table</em></h2><p>Postmark Pantry weaves two voices together, and refuses to choose between them. The modern science: the microbiome, the hormones, the research on fiber that has bloomed in the last twenty years. And the older wisdom: the traditional, grandmotherly, seasonal knowledge that has always known digestion is the root of vitality.</p><div class="two"><div><h4>The modern science</h4><p>Fiber and blood sugar, satiety and skin. Research that keeps blooming, twenty years strong.</p></div><div><h4>The older wisdom</h4><p>Jars put up in August, broth on the back burner. Knowledge that never needed a study.</p></div></div><p>They are not at odds. They are old friends, finally having coffee. And about fiber, they emphatically agree.</p></div></section>
 <section class="sec" style="padding-top:0"><div class="sec-head rv"><div><span class="dept">How she came to be</span><h2>Four seasons, <em>one returning.</em></h2></div></div>
 <div class="seasons rv d1">
 <article><img src="pp/photos__ed__w-08-fireside-reading.webp" alt=""><div class="t"><span class="k">Winter · the question</span><h3>Why does "healthy" feel like homework?</h3><p>Amy starts asking why every wellness product feels like a protocol. Another powder hidden in a cabinet, another thing to fail at by Thursday.</p></div></article>
 <article><img src="pp/photos__garden-breakfast.webp" alt=""><div class="t"><span class="k">Spring · batch nº 1</span><h3>The first jam sets.</h3><p>Made in Amy's own kitchen one sunny afternoon, and batch nº 1 was already delicious. She has only grown since, gathering more fibers along the way.</p></div></article>
 <article><img src="pp/photos__strawberry-picking.webp" alt=""><div class="t"><span class="k">Summer · the look</span><h3>The brand takes shape.</h3><p>Linen, wax seals, and a letter in every parcel. Designed around a hope: long lunches, jam on warm bread, and friends who stay late.</p></div></article>
-<article><img src="pp/photos__ed__13-harvest-door.webp" alt=""><div class="t"><span class="k">Autumn · the pantry opens</span><h3>First jars ship.</h3><p>Jars leave the pantry and land in kitchens. On countertops, in baskets, passed hand to hand. Nourishing you, your babies, your friends. This part is almost here.</p></div></article>
+<article><img src="pp/photos__parcel__doorstep-november.webp" alt="A wrapped parcel with a red wax seal on a cottage doorstep"><div class="t"><span class="k">Autumn · the pantry opens</span><h3>First jars ship.</h3><p>Jars leave the pantry and land in kitchens. On countertops, in baskets, passed hand to hand. Nourishing you, your babies, your friends. This part is almost here.</p></div></article>
 </div></section>
 <section class="sec athome"><div class="sec-head rv"><div><span class="dept">From my kitchen to yours</span><h2>A note, and the <em>two who run the house.</em></h2></div></div>
 <div class="athome-grid rv d1">
-  <figure class="ah p1" style="--r:-2.2deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__08-lakeside-dogs.webp" alt="" loading="lazy"><figcaption>the lake loop, every morning</figcaption></figure>
-  <figure class="ah p2" style="--r:1.6deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__18-porch-dog-affection-b.webp" alt="" loading="lazy"><figcaption>porch, coffee, two shadows</figcaption></figure>
-  <div class="founder note"><div class="paper"><img class="wax" src="pp/identity__wax-seal-transparent.webp" alt=""><span class="dept" style="margin-bottom:18px">From my kitchen to yours</span><div class="salute">Sweet friend,</div><p>Postmark Pantry began at my kitchen counter, with a question I could not put down: why does taking care of yourself feel like a second job?</p><p>I wanted the opposite of a protocol. Something you would keep on the counter, not hide in a cabinet. Something that works the way gardens work: slowly, faithfully, in season. So I made jam. The kind that keeps a promise.</p><p>If it makes one of your mornings feel a little more looked after, then it is doing exactly what I built it for.</p><div class="sign">Warmly, Amy</div><div class="ps">P.S. I keep every photo you send. Show me how the jars live in your kitchen: the toast, the tall glasses, the people you share them with. hello@postmarkpantry.com</div></div></div>
-  <figure class="ah p3" style="--r:-1.4deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__10-dogs-leaf-pile.webp" alt="" loading="lazy"><figcaption>they found the leaf pile first</figcaption></figure>
-  <figure class="ah p4" style="--r:2.1deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__17-sofa-two-dogs.webp" alt="" loading="lazy"><figcaption>the afternoon nap committee</figcaption></figure>
-  <figure class="ah p5" style="--r:-1.8deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__20-quiet-courtyard.webp" alt="" loading="lazy"><figcaption>the courtyard, last light</figcaption></figure>
-  <figure class="ah p6" style="--r:1.2deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__14-heathland-walk.webp" alt="" loading="lazy"><figcaption>the long way home</figcaption></figure>
+  <figure class="ah p1" style="--r:-2.2deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__08-lakeside-dogs.webp" alt="" loading="lazy"></figure>
+  <figure class="ah p2" style="--r:1.6deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__18-porch-dog-affection-b.webp" alt="" loading="lazy"></figure>
+  <div class="founder note"><div class="paper"><span class="ldate">from my kitchen · <span data-ed="month">November</span> 2026</span><img class="wax" src="pp/identity__wax-seal-transparent.webp" alt=""><span class="dept" style="margin-bottom:18px">From my kitchen to yours</span><div class="salute">Sweet friend,</div><p>Postmark Pantry began at my kitchen counter, with a question I could not put down: why does taking care of yourself feel like a second job?</p><p>I wanted the opposite of a protocol. Something you would keep on the counter, not hide in a cabinet. Something that works the way gardens work: slowly, faithfully, in season. So I made jam. The kind that keeps a promise.</p><p>If it makes one of your mornings feel a little more looked after, then it is doing exactly what I built it for.</p><div class="sign">Warmly, Amy</div><div class="ps">P.S. I keep every photo you send. Show me how the jars live in your kitchen: the toast, the tall glasses, the people you share them with. hello@postmarkpantry.com</div></div></div>
+  <figure class="ah p3" style="--r:-1.4deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__10-dogs-leaf-pile.webp" alt="" loading="lazy"></figure>
+  <figure class="ah p4" style="--r:2.1deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__17-sofa-two-dogs.webp" alt="" loading="lazy"></figure>
 </div></section>
 <section class="chap"><div class="pic rv"><img src="pp/photos__ed__03-orchard-table.webp" alt=""><span class="cap">the table, set for company</span></div><div class="rv d1"><span class="dept">Chapter III</span><h2>The Postmark <em>way.</em></h2><p>This is not about building a certain body. It is about supporting the one you live in. We keep things simple, seasonal, and thoughtfully made: without dairy, without gluten, without fillers, and without the idea that more (or less) is better. Just real nourishment, designed for real life.</p><div class="pull">Steady, faithful, kept.</div><div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><a class="btn" href="#shop">Meet the jars</a><a class="tlink" href="#contact">or write to us</a></div></div></section>
 </div>
@@ -2743,7 +2795,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
     <div class="crumb"><a href="#home">Home</a> · A month at the pantry</div>
     <div class="cal-hero rv">
       <img class="art" src="pp/illustration__months__10-hero-cut.webp" alt="">
-      <div class="t"><span class="dept">A month at the pantry</span><h1>Amy's <em data-ed="month">October</em></h1><p>Pick a day. Some hold a recipe, some a list, some a little film. Every one holds a note.</p>
+      <div class="t"><span class="dept">A month at the pantry</span><h1>Amy's <em data-ed="month">October</em></h1><p class="calhello">Hello, sweet friend. I keep my month here, one day at a time. Have a wander and open any day you like. I left something in each one for you.</p><span class="calsig">Amy</span>
 </div>
     </div>
     <div class="cal-layout">
@@ -2751,12 +2803,12 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
       <aside class="daycard rv d2" id="daycard" aria-live="polite"></aside>
     </div>
     <div class="calmore">
-      <div class="archive rv"><div class="ah"><span class="dept">The archive</span><h2>Past <em>months.</em></h2><p>Every month's calendar is kept here once the month is over.</p></div>
+      <div class="archive rv"><div class="ah"><span class="dept">The archive</span><h2>Past <em>months.</em></h2><p>Each month is filed here once it is over. The next one is on its way.</p></div>
         <div class="shelf"><a class="mo now" href="#calendar"><img src="pp/illustration__months__10-hero.webp" alt=""><span class="ml">October 2026</span><span class="mt">Gathered in Autumn · this month</span></a>
           <div class="mo soon"><img src="pp/illustration__months__09-hero.webp" alt=""><span class="ml">September 2026</span><span class="mt">The first issue arrives with launch</span></div>
           <div class="mo soon"><img src="pp/illustration__months__11-hero.webp" alt=""><span class="ml">November 2026</span><span class="mt">Filed here at the start of December</span></div></div></div>
       <form class="calsub rv" id="calsub"><img src="pp/illustration__sealed-envelope-320.webp" alt="" aria-hidden="true"><div class="cs-t"><span class="dept">Next month, by post</span><h3>Get each calendar <em>in your inbox.</em></h3><p>The new month arrives on the first, with a recipe and a note from Amy.</p></div>
-        <div class="cs-f"><label class="sr" for="cs-email">Email address</label><input id="cs-email" type="email" placeholder="your@address.com" required><button class="btn" type="submit">Send me the calendar</button></div><p class="cs-done" hidden>Thank you. November's calendar will find you on the first.</p></form>
+        <div class="cs-f"><label class="sr" for="cs-email">Email address</label><input id="cs-email" type="email" placeholder="your@address.com" required><button class="btn" type="submit">Send me the calendar</button></div><p class="cs-done" hidden>Thank you. We will write the day the next month opens.</p></form>
     </div>
   </div>
 </section>
@@ -3201,14 +3253,17 @@ function buildMonth(m,year){
 }
 
 /* the calendar archive: this month, the months already kept, and the one coming */
+const FIRST_ISSUE=11; /* November 2026 is the first issue; nothing earlier is filed */
 function buildShelf(m){const sh=document.querySelector('.archive .shelf');if(!sh)return;const E=EDITIONS;let h='';
   const card=(k,cls,mt,live)=>`<${live?'a href="#calendar"':'div'} class="mo ${cls}" data-pm="${k}"><img src="${A('assets/illustration/months/'+PAD(k)+'-hero.webp')}" alt=""><span class="ml">${E[k-1].name} 2026</span><span class="mt">${mt}</span></${live?'a':'div'}>`;
   h+=card(m,'now',E[m-1].title+' · this month',true);
-  for(let k=m-1;k>=10;k--)h+=card(k,'past',E[k-1].title+' · open the month',true);
-  if(m===10)h+=card(9,'soon','The first issue arrives with launch',false);
-  if(m<12)h+=card(m+1,'soon','Filed here at the start of '+E[(m+1)%12].name,false);
+  for(let k=m-1;k>=FIRST_ISSUE;k--)h+=card(k,'past',E[k-1].title+' · open the month',true);
+  const nxt=E[m%12].name;
+  h+=`<a href="#calsub" class="mo soon" data-soon="1"><img src="${A('assets/illustration/months/'+PAD(m%12+1)+'-hero.webp')}" alt=""><span class="ml">${nxt} ${m===12?2027:2026}</span><span class="mt">Coming soon · tell me when it opens</span></a>`;
   sh.innerHTML=h;
-  sh.querySelectorAll('a.mo').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();showCalMonth(+a.dataset.pm)}));
+  sh.querySelectorAll('a.mo:not(.soon)').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();showCalMonth(+a.dataset.pm)}));
+  const cs=document.getElementById('calsub');if(cs){const d=cs.querySelector('.cs-done');if(d)d.textContent='Thank you. We will write the day '+nxt+' opens.';
+    sh.querySelectorAll('a.mo.soon').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();const p=cs.querySelector('.cs-t p');if(p)p.textContent=nxt+' is coming soon. Leave your email and we will write to you the day it opens.';cs.scrollIntoView({behavior:'smooth',block:'center'});cs.classList.remove('nudge');void cs.offsetWidth;cs.classList.add('nudge');const i=cs.querySelector('input');if(i&&!cs.querySelector('.cs-f').hidden)setTimeout(()=>i.focus({preventScroll:true}),450)}))}
 }
 function showCalMonth(k){const ed=EDITIONS[k-1];calDay=0;buildBigCal(k,2026,1);
   const h=document.querySelector('.cal-hero h1 em');if(h)h.textContent=ed.name;
@@ -3331,7 +3386,7 @@ const MB=/*MBMETA*/{"files": {"closed": "pp/blender__mailbox-closed.webp", "flag
   let posted=[];try{posted=JSON.parse(localStorage.getItem('pp-posted')||'[]')}catch(e){}
   const save=()=>{try{localStorage.setItem('pp-posted',JSON.stringify(posted))}catch(e){}};
   const count=()=>{document.getElementById('mbn').textContent=posted.length;
-    document.getElementById('mbhint').textContent=posted.length>=total?'All five are in. Tap the box to read the note again.':posted.length?'Keep going.':'Turn a postcard over, then post it.';
+    document.getElementById('mbhint').textContent=posted.length>=total?'All five are in. Tap the box to read the note again.':posted.length?'Keep going.':'Post a card whenever you like.';
     document.getElementById('mbreset').hidden=!posted.length};
   const keyOf=c=>c.dataset.from||c.textContent.slice(0,20);
   cards.forEach(c=>{const b=document.createElement('button');b.type='button';b.className='postit';b.textContent='post it ✉';
@@ -3382,7 +3437,7 @@ const MB=/*MBMETA*/{"files": {"closed": "pp/blender__mailbox-closed.webp", "flag
   if(nav){const by=d=>{const v=cards.find(c=>!c.classList.contains('gone'));if(v)row.scrollBy({left:d*(v.getBoundingClientRect().width+24),behavior:'smooth'})};
     nav.querySelector('.pv').addEventListener('click',()=>by(-1));nav.querySelector('.nx').addEventListener('click',()=>by(1));
     row.addEventListener('scroll',()=>requestAnimationFrame(pbUpdate),{passive:true});pbUpdate();
-    if(!reduce){const io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;io.disconnect();if(row.scrollWidth>row.clientWidth+10){setTimeout(()=>{row.scrollBy({left:90,behavior:'smooth'});setTimeout(()=>row.scrollBy({left:-90,behavior:'smooth'}),700)},500)}},{threshold:.6});io.observe(row)}}
+    }
 })();
 
 /* today's ink circle: drawn on once the calendar is on screen */
@@ -3429,7 +3484,7 @@ document.addEventListener('toggle',e=>{const d=e.target;if(!(d.tagName==='DETAIL
   const upd=()=>{const i=Math.min(cards.length-1,Math.round(row.scrollLeft/step()));nav.querySelector('.pbcount').textContent=(i+1)+' of '+cards.length;nav.querySelector('.pv').disabled=row.scrollLeft<8;nav.querySelector('.nx').disabled=row.scrollLeft+row.clientWidth>=row.scrollWidth-8};
   nav.querySelector('.pv').onclick=()=>row.scrollBy({left:-step(),behavior:'smooth'});nav.querySelector('.nx').onclick=()=>row.scrollBy({left:step(),behavior:'smooth'});
   row.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});upd();
-  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){const io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;io.disconnect();if(row.scrollWidth>row.clientWidth+10){setTimeout(()=>{row.scrollBy({left:90,behavior:'smooth'});setTimeout(()=>row.scrollBy({left:-90,behavior:'smooth'}),700)},500)}},{threshold:.6});io.observe(row)}})})();
+  })})();
 
 /* the journal: filter by kind */
 (function(){const list=document.querySelector('.jlist');if(!list)return;const items=[...list.querySelectorAll('a')];
@@ -3452,7 +3507,7 @@ const BK=/*BKMETA*/{"files": {"s1": "pp/blender__book-spread1.webp", "s2": "pp/b
   const nx=root.querySelector('.bk-btn.nx'),pv=root.querySelector('.bk-btn.pv'),cnt=root.querySelector('.bk-count');
   const IM={};const load=k=>IM[k]||(IM[k]=new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=A(BK.files[k])}));
   let spread=1,busy=false;
-  const draw=i=>{cx.clearRect(0,0,cv.width,cv.height);cx.drawImage(i,0,0,cv.width,cv.height)};
+  const rib=()=>cx.clearRect(cv.width*.5,cv.height*.945,cv.width*.04,cv.height*.055);const draw=i=>{cx.clearRect(0,0,cv.width,cv.height);cx.drawImage(i,0,0,cv.width,cv.height);rib()};
   const show=async n=>{const i=await load('s'+n);if(i)draw(i)};
   const ui=()=>{cnt.textContent='Page '+spread+' of 3';pv.disabled=spread<=1||busy;nx.disabled=busy;nx.textContent=spread>=3?'Read our story →':'Turn the page →'};
   const FR={};const frames=n=>FR[n]||(FR[n]=load('t'+n).then(async sh=>{if(!sh)return null;const out=[];
@@ -3462,7 +3517,7 @@ const BK=/*BKMETA*/{"files": {"s1": "pp/blender__book-spread1.webp", "s2": "pp/b
   const play=(n,dir)=>new Promise(async res=>{const fr=await frames(n);if(!fr||reduce)return res();
     const N=fr.length,dur=760,t0=performance.now();
     const step=now=>{const p=Math.max(0,Math.min(1,(now-t0)/dur));let k=Math.max(0,Math.min(N-1,Math.floor(p*N)));if(dir<0)k=N-1-k;
-      cx.clearRect(0,0,cv.width,cv.height);cx.drawImage(fr[k],0,0,cv.width,cv.height);if(p<1)requestAnimationFrame(step);else res()};
+      cx.clearRect(0,0,cv.width,cv.height);cx.drawImage(fr[k],0,0,cv.width,cv.height);rib();if(p<1)requestAnimationFrame(step);else res()};
     requestAnimationFrame(step)});
   async function turn(dir){if(busy)return;if(dir<0&&spread<=1)return;busy=true;ui();{const sc=root.querySelector('.bk-scroll');if(sc&&sc.scrollWidth>sc.clientWidth+4){sc.scrollTo({left:(sc.scrollWidth-sc.clientWidth)/2,behavior:'smooth'});await new Promise(r=>setTimeout(r,320))}}
     if(dir>0){const n=spread;load('s'+Math.min(3,n+1));await play(n,1);
