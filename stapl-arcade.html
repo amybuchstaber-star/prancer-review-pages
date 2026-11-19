@@ -115,6 +115,30 @@ a{color:inherit}
   .legend div{font-size:.46rem;padding:.4rem}
 }
 @media(prefers-reduced-motion:reduce){.blink{animation:none}}
+
+.games{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 1.25rem .9rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.games a{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:.55rem .8rem;border:2px solid var(--espresso);background:#fff;box-shadow:3px 3px 0 var(--espresso)}
+.games a i{font-style:normal;color:var(--clay);margin-right:.5em}
+.games a.on{background:var(--sun)}
+.bars{display:grid;gap:7px;margin-bottom:8px}
+.bars .b{display:grid;grid-template-columns:62px 1fr 92px;gap:.6rem;align-items:center;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone)}
+.bars .b div{height:12px;background:rgba(243,241,234,.14);position:relative}
+.bars .b u{position:absolute;inset:0 auto 0 0;background:var(--bone);width:0;transition:width .25s}
+.bars .b em{font-style:normal;text-align:right;color:var(--dim);letter-spacing:.04em}
+.bars .b.f{color:var(--clay)}
+.bars .b.f div{background:none;border:2px dashed var(--clay);height:14px}
+.bars .b.f u{background:var(--aqua)}
+.hud .lives.txt{display:block;font-size:1.05rem;letter-spacing:.04em;color:var(--sun);margin-top:.1rem;font-weight:700}
+.ov .kc{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;width:100%}
+.ov .kc button{font-family:var(--mono);font-size:.8rem;font-weight:700;letter-spacing:.1em;padding:.7rem .9rem;min-width:86px;min-height:52px;border:2px solid var(--bone);background:transparent;color:var(--bone);cursor:pointer}
+.ov .kc button small{display:block;font-size:.66em;font-weight:400;opacity:.7}
+.ov .kc button[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.ov .knum{width:100%;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.ov .knum b{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 120;font-size:2.6rem;color:var(--sun);letter-spacing:0;margin-right:.15em}
+.fine{background:rgba(243,241,234,.92);padding:.6rem .9rem;position:relative}
+.pad.lr{grid-template-columns:repeat(2,96px);grid-template-rows:56px}
+.pad.lr .l{grid-column:1;grid-row:1}.pad.lr .r{grid-column:2;grid-row:1}
+@media(max-width:900px){.games{gap:.4rem;padding-bottom:.7rem}.games a{font-size:.5rem;padding:.45rem .5rem;letter-spacing:.08em;box-shadow:2px 2px 0 var(--espresso)}}
 </style>
 </head>
 <body>
@@ -124,6 +148,7 @@ a{color:inherit}
   <a class="back" href="staple-home.html">Back to the site &#9656;</a>
 </div>
 
+<nav class="games" aria-label="STÄPL Arcade games"><a href="stapl-arcade.html" class=on><i>01</i>Close the Gap</a><a href="stapl-snake.html"><i>02</i>The Route</a><a href="stapl-catch.html"><i>03</i>Fill the Plate</a></nav>
 <div class="shell">
   <div class="cab" id="cab">
     <div class="marq"><b>Close the Gap</b><span>STÄPL Arcade &middot; 1 player</span></div>
@@ -176,7 +201,7 @@ a{color:inherit}
   </div>
 
   <div class="side">
-    <div class="sec"><i>00</i><u></u><span>The fiber gap, playable</span></div>
+    <div class="sec"><i>01</i><u></u><span>The fiber gap, playable</span></div>
     <h1>You count protein.<br>Now count <em>fiber.</em></h1>
     <p class="lead"><b>US adults average 16.3 grams of fiber a day.</b> The Daily Value is 28. That leaves most people 11.7 grams short, every day. In this game those missing grams chase you.</p>
     <div class="cards">
