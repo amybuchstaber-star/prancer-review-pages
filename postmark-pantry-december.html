@@ -3707,7 +3707,7 @@ route();
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'postmark-pantry-december-v1';
+  var PAGE_ID = 'postmark-pantry-december-v2';
 
   /* ---------------------------------------------- */
 
@@ -4412,5 +4412,177 @@ route();
   else boot();
 })();
 </script>
+<!-- ===== Nov 19 keeps: peel-up stamps (3), ribbon on Add to basket (4), send a jar to a friend (6) ===== -->
+<style id="keeps-1119">
+/* 3 · peel-up stamps: press a footer stamp and it lifts at a corner, let go and it settles */
+.stamps:hover .track,.stamps.held .track{animation-play-state:paused}
+.stamps .track img{cursor:grab;touch-action:pan-x pan-y;-webkit-user-drag:none;user-select:none;will-change:transform}
+.stamps .track img.peeling{cursor:grabbing;transition:none!important;filter:drop-shadow(0 18px 14px rgba(0,0,0,.28)) brightness(1.04)}
+.stamps .track img.settle{transition:transform .7s var(--spring),filter .5s!important}
+.stamps .track img.tap{animation:peelTap .9s var(--spring)}
+@keyframes peelTap{0%{transform:none}35%{transform:perspective(320px) rotateX(30deg) rotateZ(-7deg) translateY(-12px);filter:drop-shadow(0 18px 14px rgba(0,0,0,.28))}100%{transform:none}}
+
+/* 4 · ribbon on Add to basket: a red ribbon draws around the button and ties a bow */
+.btn.ribboned{position:relative;overflow:visible}
+.btn .rbn{position:absolute;inset:-6px;pointer-events:none;overflow:visible}
+.btn .rbn svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.btn .rbn rect{fill:none;stroke:var(--red-ink,#6B262A);stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .6s cubic-bezier(.6,.1,.3,1)}
+.btn .rbn .bow{position:absolute;left:50%;top:-15px;width:46px;height:30px;margin-left:-23px;transform:scale(0) rotate(-20deg);transform-origin:50% 70%;transition:transform .45s var(--spring) .5s}
+.btn.tied .rbn rect{stroke-dashoffset:0}
+.btn.tied .rbn .bow{transform:scale(1) rotate(0)}
+.btn.untie .rbn{opacity:0;transition:opacity .4s}
+.btn .lbl{display:inline-block;transition:opacity .2s}
+.btn .lbl.swap{opacity:0}
+
+/* 6 · send a jar to a friend */
+.sendjar{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--slab);font-size:14px;color:var(--red);border-bottom:1px solid currentColor;padding-bottom:2px}
+.sendjar svg{width:18px;height:14px}
+.pc-modal{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(46,34,24,.55);backdrop-filter:blur(3px)}
+.pc-modal.open{display:flex}
+.pc-shell{width:min(760px,100%);max-height:100%;overflow:auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.pc-shell h3{margin:0;font-family:var(--script);font-size:30px;color:var(--paper);font-weight:400;text-align:center}
+.pc-shell .pc-sub{margin:-6px 0 0;font-family:var(--body);color:var(--paper);opacity:.85;text-align:center;font-size:16px}
+.pc-card{width:100%;aspect-ratio:3/2;perspective:1600px;cursor:pointer}
+.pc-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s var(--settle)}
+.pc-card.back .pc-in{transform:rotateY(180deg)}
+.pc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper) url("pp/textures__letter-paper.webp") center/600px;background-blend-mode:multiply;border:1px solid var(--linen);box-shadow:0 30px 50px -26px rgba(0,0,0,.6);overflow:hidden}
+.pc-front img{position:absolute;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px);object-fit:cover}
+.pc-front .cap{position:absolute;left:28px;bottom:24px;font-family:var(--script);font-size:26px;color:var(--paper);text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.pc-back{transform:rotateY(180deg);display:grid;grid-template-columns:1.15fr 1fr}
+.pc-back .note{padding:26px 22px;border-right:1px solid var(--ink-3,#9a8f80);display:flex;flex-direction:column;gap:10px}
+.pc-back .note textarea,.pc-back .note .msg{flex:1;width:100%;border:0;background:transparent;resize:none;font-family:var(--hand,Caveat,cursive);font-size:24px;line-height:1.35;color:var(--ink,#2E2C3D);outline:none;background-image:linear-gradient(transparent 31px,rgba(139,52,56,.18) 32px);background-size:100% 32.4px}
+.pc-back .note .msg{white-space:pre-wrap;overflow-wrap:anywhere}
+.pc-back .note label{font-family:var(--slab);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3,#9a8f80)}
+.pc-back input{width:100%;border:0;border-bottom:1px solid var(--ink-3,#9a8f80);background:transparent;font-family:var(--hand,Caveat,cursive);font-size:22px;color:var(--ink-2,#4a4458);padding:2px 0;outline:none}
+.pc-back .addr{position:relative;padding:22px 20px}
+.pc-back .addr .stamp{position:absolute;right:18px;top:16px;width:58px;transform:rotate(3deg);box-shadow:0 2px 4px rgba(0,0,0,.15)}
+.pc-back .addr .pmk{position:absolute;right:26px;top:6px;width:min(78%,230px);color:#2E2C3D;opacity:0;transform:rotate(var(--pr,-10deg)) scale(1.25);transition:opacity .25s,transform .35s var(--spring);z-index:2;pointer-events:none}
+.pc-card.stamped .pc-back .addr .pmk{opacity:.82;transform:rotate(var(--pr,-10deg)) scale(1)}
+.pc-back .addr .to{position:absolute;left:20px;right:20px;bottom:26px;display:flex;flex-direction:column;gap:6px}
+.pc-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
+.pc-acts .btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper)}
+.pc-note{min-height:20px;font-family:var(--slab);font-size:14px;color:var(--paper);text-align:center}
+.pc-x{position:absolute;top:14px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:transparent;color:var(--paper);font-size:22px;cursor:pointer}
+@media(max-width:600px){.pc-card{aspect-ratio:auto;height:auto}.pc-in{height:auto;display:grid}.pc-face{position:relative;grid-area:1/1}.pc-front{aspect-ratio:3/2}.pc-back{grid-template-columns:1fr}.pc-back .note{border-right:0;border-bottom:1px solid var(--ink-3,#9a8f80);min-height:230px}.pc-back .addr{min-height:190px}.pc-shell h3{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.pc-in,.btn .rbn rect,.btn .rbn .bow,.pc-back .addr .pmk{transition:none!important}.stamps .track img.tap{animation:none}}
+</style>
+<script id="keeps-1119-js">
+(function(){
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- 3 · peel-up stamps ---------- */
+(function(){
+  const box=document.querySelector('.stamps');if(!box)return;
+  let cur=null,sx=0,sy=0;
+  box.addEventListener('dragstart',e=>e.preventDefault());
+  box.addEventListener('pointerdown',e=>{
+    const im=e.target.closest('.track img');if(!im)return;
+    if(e.pointerType==='touch'||RM){ /* a tap gives a quick peel; dragging stays free for scrolling */
+      im.classList.remove('tap');void im.offsetWidth;if(!RM)im.classList.add('tap');return}
+    e.preventDefault();cur=im;sx=e.clientX;sy=e.clientY;box.classList.add('held');
+    im.classList.remove('settle');im.classList.add('peeling');im.setPointerCapture(e.pointerId);peel(0,0)});
+  function peel(dx,dy){ /* drag up and sideways: the bottom corner lifts toward the pointer */
+    const up=Math.max(0,Math.min(1,(-dy+14)/90)),side=Math.max(-1,Math.min(1,dx/80));
+    cur.style.transform=`perspective(360px) rotateX(${8+up*34}deg) rotateY(${side*-16}deg) rotateZ(${-3-side*5}deg) translate(${dx*.25}px,${-6-up*16}px)`}
+  box.addEventListener('pointermove',e=>{if(cur)peel(e.clientX-sx,e.clientY-sy)});
+  function drop(){if(!cur)return;const im=cur;cur=null;im.classList.remove('peeling');im.classList.add('settle');im.style.transform='';
+    setTimeout(()=>{im.classList.remove('settle');box.classList.remove('held')},700)}
+  box.addEventListener('pointerup',drop);box.addEventListener('pointercancel',drop);
+  box.addEventListener('animationend',e=>e.target.classList&&e.target.classList.remove('tap'));
+})();
+
+/* ---------- 4 · ribbon on Add to basket (placeholder until the store is wired) ---------- */
+(function(){
+  const BOW='<svg class="bow" viewBox="0 0 46 30" aria-hidden="true"><g fill="none" stroke="#6B262A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 15 C14 4 4 6 5 13 C6 20 15 19 23 15Z" fill="#8B3438"/><path d="M23 15 C32 4 42 6 41 13 C40 20 31 19 23 15Z" fill="#8B3438"/><path d="M21 16 L15 28 M25 16 L31 28"/></g><circle cx="23" cy="15" r="3.6" fill="#6B262A"/></svg>';
+  document.querySelectorAll('a.btn').forEach(b=>{
+    if(b.textContent.trim().toLowerCase()!=='add to basket')return;
+    b.classList.add('ribboned');b.innerHTML='<span class="lbl">Add to basket</span>';
+    const r=document.createElement('span');r.className='rbn';r.setAttribute('aria-hidden','true');
+    r.innerHTML='<svg preserveAspectRatio="none"><rect x="1.5" y="1.5" rx="2" pathLength="1" style="width:calc(100% - 3px);height:calc(100% - 3px)"/></svg>'+BOW;b.appendChild(r);
+    let busy=false;
+    b.addEventListener('click',e=>{
+      const go=b.getAttribute('href');e.preventDefault();if(busy)return;busy=true;
+      const lbl=b.querySelector('.lbl');b.classList.remove('untie');b.classList.add('tied');
+      setTimeout(()=>{lbl.classList.add('swap');setTimeout(()=>{lbl.textContent='In your basket';lbl.classList.remove('swap')},200)},RM?0:450);
+      b.setAttribute('aria-live','polite');
+      setTimeout(()=>{
+        if(go&&go!=='#'){location.hash=go}  /* the home cards still open the jar's page */
+        b.classList.add('untie');setTimeout(()=>{b.classList.remove('tied','untie');lbl.textContent='Add to basket';busy=false},420)
+      },RM?1400:2600)});
+  });
+})();
+
+/* ---------- 6 · send a jar to a friend ---------- */
+(function(){
+  const JARS={'jam-pact':{name:'Jam Pact',img:'big-jam-pact'},'pitcher-perfect':{name:'Pitcher Perfect',img:'big-pitcher-perfect'}};
+  const season=document.documentElement.dataset.season||'autumn';
+  const stampSrc=()=>{try{const L=STAMPS[season]||STAMPS.autumn;return A(L[(new Date().getDate())%L.length])}catch(_){return 'pp/stamps__st07.webp'}};
+  const enc=o=>btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  const dec=s=>{try{s=s.replace(/-/g,'+').replace(/_/g,'/');return JSON.parse(decodeURIComponent(escape(atob(s))))}catch(_){return null}};
+  const clip=(s,n)=>String(s||'').replace(/[\u0000-\u001f\u007f]/g,' ').slice(0,n);
+  const today=()=>{const d=new Date();return d.toLocaleDateString('en-US',{month:'short'}).toUpperCase()+' '+d.getDate()+' '+d.getFullYear()};
+
+  const m=document.createElement('div');m.className='pc-modal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-label','Send a jar to a friend');
+  m.innerHTML=`<button class="pc-x" type="button" aria-label="Close">×</button><div class="pc-shell">
+   <h3 class="pc-h"></h3><p class="pc-sub"></p>
+   <div class="pc-card"><div class="pc-in">
+     <div class="pc-face pc-front"><img alt=""><span class="cap"></span></div>
+     <div class="pc-face pc-back"><div class="note"><label for="pc-msg">On the back</label><textarea id="pc-msg" maxlength="180"></textarea><div class="msg" hidden></div><label for="pc-from">From</label><input id="pc-from" maxlength="40" autocomplete="given-name"></div>
+       <div class="addr"><img class="stamp" alt=""><div class="pmw"></div><div class="to"><label for="pc-to">To</label><input id="pc-to" maxlength="40"></div></div></div>
+   </div></div>
+   <div class="pc-acts"></div><div class="pc-note" aria-live="polite"></div></div>`;
+  document.body.appendChild(m);
+  const $=s=>m.querySelector(s),card=$('.pc-card'),ta=$('#pc-msg'),fr=$('#pc-from'),to=$('#pc-to'),msg=$('.msg'),acts=$('.pc-acts'),note=$('.pc-note');
+  let jar='jam-pact',lastFocus=null;
+  card.addEventListener('click',e=>{if(e.target.closest('textarea,input,button'))return;card.classList.toggle('back')});
+  function close(){m.classList.remove('open');document.body.style.overflow='';lastFocus&&lastFocus.focus&&lastFocus.focus()}
+  $('.pc-x').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))close()});
+  function dress(k){jar=JARS[k]?k:'jam-pact';const J=JARS[jar],big=document.getElementById(J.img);
+    $('.pc-front img').src=big?big.getAttribute('src'):'';$('.pc-front .cap').textContent=J.name;
+    $('.stamp').src=stampSrc();$('.pmw').innerHTML=postmarkSVG(today(),'POSTMARK PANTRY',J.name.toUpperCase(),{rot:-10});
+    card.classList.remove('stamped')}
+  function btn(t,cls,fn){const b=document.createElement('button');b.type='button';b.className='btn'+(cls?' '+cls:'');b.textContent=t;b.onclick=fn;acts.appendChild(b);return b}
+
+  /* the sender writes the card */
+  function compose(k){dress(k);$('.pc-h').textContent='Send a jar to a friend';
+    $('.pc-sub').textContent='Write a line on the back. We postmark it and give you a link to send.';
+    ta.hidden=false;msg.hidden=true;[ta,fr,to].forEach(x=>{x.readOnly=false});ta.placeholder='This made me think of you.';fr.placeholder='your name';to.placeholder='their name';
+    acts.innerHTML='';note.textContent='';
+    btn('Turn it over','ghost',()=>{card.classList.toggle('back');if(card.classList.contains('back'))setTimeout(()=>ta.focus(),500)});
+    btn('Postmark it','',send);
+    card.classList.remove('back');open()}
+  async function send(){
+    const o={p:jar,m:clip(ta.value.trim()||ta.placeholder,180),f:clip(fr.value.trim(),40),t:clip(to.value.trim(),40)};
+    card.classList.add('back');setTimeout(()=>card.classList.add('stamped'),RM?0:550);
+    const url=location.origin+location.pathname+'?postcard='+enc(o)+'#'+jar;
+    const text=(o.t?o.t+', ':'')+'a postcard from '+(o.f||'a friend')+' at Postmark Pantry.';
+    await new Promise(r=>setTimeout(r,RM?0:1100));
+    if(navigator.share){try{await navigator.share({title:'A postcard for you',text,url});note.textContent='Sent on its way.';return}catch(err){if(err&&err.name==='AbortError'){note.textContent='';return}}}
+    try{await navigator.clipboard.writeText(url);note.textContent='Link copied. Paste it into a text or an email.'}
+    catch(_){note.textContent='Copy this link: '+url}}
+
+  /* the friend opens the link */
+  function receive(o){dress(o.p);const J=JARS[jar];
+    $('.pc-h').textContent=o.t?('A postcard for '+o.t):'A postcard for you';
+    $('.pc-sub').textContent=(o.f||'A friend')+' sent you this from Postmark Pantry. Tap the card to turn it over.';
+    ta.hidden=true;msg.hidden=false;msg.textContent=o.m||'';fr.value=o.f||'';to.value=o.t||'';fr.readOnly=to.readOnly=true;
+    card.classList.add('stamped');card.classList.remove('back');acts.innerHTML='';note.textContent='';
+    btn('Meet '+J.name,'',()=>{close();location.hash=jar});btn('Turn it over','ghost',()=>card.classList.toggle('back'));
+    open();if(!RM)setTimeout(()=>card.classList.add('back'),1400)}
+  function open(){lastFocus=document.activeElement;m.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>$('.pc-x').focus(),50)}
+
+  /* a link under the gift line on each jar's page */
+  Object.keys(JARS).forEach(k=>{const v=document.getElementById('view-'+k);if(!v)return;const g=v.querySelector('.buy .gift');if(!g)return;
+    const b=document.createElement('button');b.type='button';b.className='sendjar';
+    b.innerHTML='<svg viewBox="0 0 18 14" aria-hidden="true"><rect x=".8" y=".8" width="16.4" height="12.4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1 1.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Send a jar to a friend';
+    b.onclick=()=>compose(k);g.insertAdjacentElement('afterend',b)});
+
+  const q=new URLSearchParams(location.search).get('postcard');if(q){const o=dec(q);if(o&&JARS[o.p])setTimeout(()=>receive(o),900)}
+})();
+})();
+</script>
+<!-- ===== end Nov 19 keeps ===== -->
+
 </body>
 </html>
