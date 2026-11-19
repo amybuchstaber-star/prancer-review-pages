@@ -4427,7 +4427,7 @@ route();
 .btn .rbn{position:absolute;inset:-6px;pointer-events:none;overflow:visible}
 .btn .rbn svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .btn .rbn rect{fill:none;stroke:var(--red-ink,#6B262A);stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .6s cubic-bezier(.6,.1,.3,1)}
-.btn .rbn .bow{position:absolute;left:50%;top:-15px;width:46px;height:30px;margin-left:-23px;transform:scale(0) rotate(-20deg);transform-origin:50% 70%;transition:transform .45s var(--spring) .5s}
+.btn .rbn .bow{position:absolute;left:50%;top:-22px;width:62px;height:40px;margin-left:-31px;transform:scale(0) rotate(-20deg);transform-origin:50% 70%;transition:transform .45s var(--spring) .5s}
 .btn.tied .rbn rect{stroke-dashoffset:0}
 .btn.tied .rbn .bow{transform:scale(1) rotate(0)}
 .btn.untie .rbn{opacity:0;transition:opacity .4s}
@@ -4439,7 +4439,7 @@ route();
 .sendjar svg{width:18px;height:14px}
 .pc-modal{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(46,34,24,.55);backdrop-filter:blur(3px)}
 .pc-modal.open{display:flex}
-.pc-shell{width:min(760px,100%);max-height:100%;overflow:auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.pc-shell{width:min(760px,100%);max-height:100%;overflow-x:hidden;overflow-y:auto;padding:4px 0 10px;display:flex;flex-direction:column;gap:14px;align-items:center}
 .pc-shell h3{margin:0;font-family:var(--script);font-size:30px;color:var(--paper);font-weight:400;text-align:center}
 .pc-shell .pc-sub{margin:-6px 0 0;font-family:var(--body);color:var(--paper);opacity:.85;text-align:center;font-size:16px}
 .pc-card{width:100%;aspect-ratio:3/2;perspective:1600px;cursor:pointer}
@@ -4452,7 +4452,7 @@ route();
 .pc-back .note{padding:26px 22px;border-right:1px solid var(--ink-3,#9a8f80);display:flex;flex-direction:column;gap:10px}
 .pc-back .note textarea,.pc-back .note .msg{flex:1;width:100%;border:0;background:transparent;resize:none;font-family:var(--hand,Caveat,cursive);font-size:24px;line-height:1.35;color:var(--ink,#2E2C3D);outline:none;background-image:linear-gradient(transparent 31px,rgba(139,52,56,.18) 32px);background-size:100% 32.4px}
 .pc-back .note .msg{white-space:pre-wrap;overflow-wrap:anywhere}
-.pc-back .note label{font-family:var(--slab);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3,#9a8f80)}
+.pc-back label{font-family:var(--slab);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3,#9a8f80)}
 .pc-back input{width:100%;border:0;border-bottom:1px solid var(--ink-3,#9a8f80);background:transparent;font-family:var(--hand,Caveat,cursive);font-size:22px;color:var(--ink-2,#4a4458);padding:2px 0;outline:none}
 .pc-back .addr{position:relative;padding:22px 20px}
 .pc-back .addr .stamp{position:absolute;right:18px;top:16px;width:58px;transform:rotate(3deg);box-shadow:0 2px 4px rgba(0,0,0,.15)}
@@ -4460,7 +4460,7 @@ route();
 .pc-card.stamped .pc-back .addr .pmk{opacity:.82;transform:rotate(var(--pr,-10deg)) scale(1)}
 .pc-back .addr .to{position:absolute;left:20px;right:20px;bottom:26px;display:flex;flex-direction:column;gap:6px}
 .pc-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
-.pc-acts .btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper)}
+.pc-acts .btn.pc-ghost{background:transparent!important;color:var(--paper)!important;border:1.5px solid var(--paper)!important}.pc-acts .btn.pc-ghost:hover{background:rgba(255,255,255,.12)!important}
 .pc-note{min-height:20px;font-family:var(--slab);font-size:14px;color:var(--paper);text-align:center}
 .pc-x{position:absolute;top:14px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:transparent;color:var(--paper);font-size:22px;cursor:pointer}
 @media(max-width:600px){.pc-card{aspect-ratio:auto;height:auto}.pc-in{height:auto;display:grid}.pc-face{position:relative;grid-area:1/1}.pc-front{aspect-ratio:3/2}.pc-back{grid-template-columns:1fr}.pc-back .note{border-right:0;border-bottom:1px solid var(--ink-3,#9a8f80);min-height:230px}.pc-back .addr{min-height:190px}.pc-shell h3{font-size:26px}}
@@ -4505,6 +4505,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
       const lbl=b.querySelector('.lbl');b.classList.remove('untie');b.classList.add('tied');
       setTimeout(()=>{lbl.classList.add('swap');setTimeout(()=>{lbl.textContent='In your basket';lbl.classList.remove('swap')},200)},RM?0:450);
       b.setAttribute('aria-live','polite');
+      document.querySelectorAll('a.bag').forEach(g=>{const t=[...g.childNodes].find(n=>n.nodeType===3&&/Basket \(\d+\)/.test(n.textContent));if(t)t.textContent=t.textContent.replace(/\((\d+)\)/,(_,n)=>'('+(+n+1)+')')});
       setTimeout(()=>{
         if(go&&go!=='#'){location.hash=go}  /* the home cards still open the jar's page */
         b.classList.add('untie');setTimeout(()=>{b.classList.remove('tied','untie');lbl.textContent='Add to basket';busy=false},420)
@@ -4549,7 +4550,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
     $('.pc-sub').textContent='Write a line on the back. We postmark it and give you a link to send.';
     ta.hidden=false;msg.hidden=true;[ta,fr,to].forEach(x=>{x.readOnly=false});ta.placeholder='This made me think of you.';fr.placeholder='your name';to.placeholder='their name';
     acts.innerHTML='';note.textContent='';
-    btn('Turn it over','ghost',()=>{card.classList.toggle('back');if(card.classList.contains('back'))setTimeout(()=>ta.focus(),500)});
+    btn('Turn it over','pc-ghost',()=>{card.classList.toggle('back');if(card.classList.contains('back'))setTimeout(()=>ta.focus(),500)});
     btn('Postmark it','',send);
     card.classList.remove('back');open()}
   async function send(){
@@ -4568,7 +4569,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
     $('.pc-sub').textContent=(o.f||'A friend')+' sent you this from Postmark Pantry. Tap the card to turn it over.';
     ta.hidden=true;msg.hidden=false;msg.textContent=o.m||'';fr.value=o.f||'';to.value=o.t||'';fr.readOnly=to.readOnly=true;
     card.classList.add('stamped');card.classList.remove('back');acts.innerHTML='';note.textContent='';
-    btn('Meet '+J.name,'',()=>{close();location.hash=jar});btn('Turn it over','ghost',()=>card.classList.toggle('back'));
+    btn('Meet '+J.name,'',()=>{close();location.hash=jar});btn('Turn it over','pc-ghost',()=>card.classList.toggle('back'));
     open();if(!RM)setTimeout(()=>card.classList.add('back'),1400)}
   function open(){lastFocus=document.activeElement;m.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>$('.pc-x').focus(),50)}
 
