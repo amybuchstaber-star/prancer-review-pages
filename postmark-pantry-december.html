@@ -2305,7 +2305,8 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 .athome .athome-grid .founder.note p{font-family:var(--hand);font-size:22px;line-height:1.5;color:#3A332C}
 .athome .athome-grid .founder.note .ps{font-family:var(--hand);font-size:19px;line-height:1.45}
 /* calendar hello */
-.cal-hero p.calhello{font-family:var(--hand);font-size:25px;line-height:1.4;color:var(--ink);max-width:30ch;margin-bottom:6px}
+.cal-hero p.calhello{font-family:var(--hand);font-size:clamp(23px,2vw,28px);line-height:1.38;color:var(--ink);max-width:none;margin:0 0 4px}
+.cal-hero h1{margin-bottom:10px!important}
 .cal-hero .calsig{font-family:var(--script);font-size:20px;color:var(--red)}
 /* archive: the month that is coming */
 .shelf a.mo.soon{cursor:pointer}
@@ -2562,7 +2563,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 <section class="lore" id="lore" aria-labelledby="h-lore">
   <div class="wrap row">
     <div class="book rv" id="book">
-      <div class="bk-scroll"><div class="bk-stage"><canvas class="bk-cv" width="1500" height="1000" role="img" aria-label="An open scrapbook: The Lore, with photographs from the October issue"></canvas>
+      <div class="bk-scroll"><div class="bk-stage"><canvas class="bk-cv" width="1500" height="1000" role="img" aria-label="An open storybook: The Lore. Postmark Pantry began at Amy's kitchen counter, with a question: why does taking care of yourself feel like a second job?"></canvas>
         <button type="button" class="bk-hit prev" aria-label="Turn back a page"></button><button type="button" class="bk-hit next" aria-label="Turn the page"></button></div></div>
       <div class="bk-ctl"><button type="button" class="bk-btn pv" aria-label="Previous page" disabled>←</button><span class="bk-count" aria-live="polite">Page 1 of 3</span><span class="bk-swipe" aria-hidden="true">swipe to read across</span><button type="button" class="bk-btn nx">Turn the page →</button><a class="tlink bk-story" href="#story">Read our story</a></div>
     </div>
@@ -3599,13 +3600,13 @@ document.addEventListener('toggle',e=>{const d=e.target;if(!(d.tagName==='DETAIL
 /* the cover fills the screen below the header, never cut off */
 (function(){const set=()=>{const m=document.querySelector('header.mast');if(m)document.documentElement.style.setProperty('--mastH',m.offsetHeight+'px')};set();addEventListener('resize',set);addEventListener('load',set)})();
 /* ===== the Lore storybook: frames rendered in Blender (03-Blender/storybook.blend). BK is written by book/pack.py ===== */
-const BK=/*BKMETA*/{"files": {"s1": "pp/blender__book-spread1.webp", "s2": "pp/blender__book-spread2.webp", "s3": "pp/blender__book-spread3.webp", "t1": "pp/blender__book-turn1.webp", "t2": "pp/blender__book-turn2.webp", "t3": "pp/blender__book-turn3.webp"}, "n": {"1": 19, "2": 19, "3": 19}, "cols": 4, "w": 1500, "h": 1000, "tw": 1200, "th": 800, "right": [[0.5079, 0.0884], [0.9198, 0.918]], "left": [[0.0955, 0.0884], [0.4918, 0.918]]};
+const BK=/*BKMETA*/{"files": {"s1": "pp/blender__book2-spread1.webp", "s2": "pp/blender__book2-spread2.webp", "s3": "pp/blender__book2-spread3.webp", "t1": "pp/blender__book2-turn1.webp", "t2": "pp/blender__book2-turn2.webp", "t3": "pp/blender__book2-turn3.webp"}, "n": {"1": 19, "2": 19, "3": 19}, "cols": 4, "w": 3000, "h": 2000, "tw": 1200, "th": 800, "right": [[0.5079, 0.0884], [0.9198, 0.918]], "left": [[0.0955, 0.0884], [0.4918, 0.918]]};
 (function(){const root=document.getElementById('book');if(!root||!BK)return;
   const cv=root.querySelector('.bk-cv'),cx=cv.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
   const nx=root.querySelector('.bk-btn.nx'),pv=root.querySelector('.bk-btn.pv'),cnt=root.querySelector('.bk-count');
   const IM={};const load=k=>IM[k]||(IM[k]=new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=A(BK.files[k])}));
   let spread=1,busy=false;
-  const rib=()=>cx.clearRect(cv.width*.5,cv.height*.945,cv.width*.04,cv.height*.055);const draw=i=>{cx.clearRect(0,0,cv.width,cv.height);cx.drawImage(i,0,0,cv.width,cv.height);rib()};
+  const rib=()=>{};const BKMAX=matchMedia('(max-width:700px)').matches?2250:3000;const draw=i=>{const w=Math.min(BKMAX,i.naturalWidth||cv.width);if(w>cv.width){cv.width=w;cv.height=Math.round(w*(i.naturalHeight||2)/(i.naturalWidth||3))}cx.clearRect(0,0,cv.width,cv.height);cx.imageSmoothingQuality='high';cx.drawImage(i,0,0,cv.width,cv.height)};
   const show=async n=>{const i=await load('s'+n);if(i)draw(i)};
   const ui=()=>{cnt.textContent='Page '+spread+' of 3';pv.disabled=spread<=1||busy;nx.disabled=busy;nx.textContent=spread>=3?'Read our story →':'Turn the page →'};
   const FR={};const frames=n=>FR[n]||(FR[n]=load('t'+n).then(async sh=>{if(!sh)return null;const out=[];
