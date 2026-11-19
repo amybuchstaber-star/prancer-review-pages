@@ -1794,7 +1794,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 @media(prefers-reduced-motion:reduce){.faq details[open] p{animation:none}}
 
 /* the letter: folds at full size first, then shrinks into the envelope */
-.lettercard.bf>*:not(.sendstage):not(.bigfold):not(.sent-note){opacity:0!important;transition:none!important}
+.lettercard.bf>*:not(.sendstage):not(.bigfold):not(.bfclip):not(.sent-note){opacity:0!important;transition:none!important}
 .lettercard.bf{background-color:transparent!important;border-color:transparent!important;box-shadow:none!important;transition:none!important}
 .lettercard.bf::after{opacity:0!important;transition:none!important}
 .bigfold{position:absolute;left:0;top:0;width:100%;height:100%;z-index:6;perspective:2200px;transform-origin:50% 50%;transition:transform .95s var(--settle,ease),opacity .25s;pointer-events:none}
@@ -2312,6 +2312,94 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 .shelf a.mo.soon .mt{color:var(--red)}
 .calsub.nudge{animation:csnudge .9s var(--settle,ease)}
 @keyframes csnudge{0%{box-shadow:0 0 0 0 rgba(139,52,56,.55),0 22px 36px -28px rgba(60,30,10,.55)}100%{box-shadow:0 0 0 18px rgba(139,52,56,0),0 22px 36px -28px rgba(60,30,10,.55)}}
+
+/* the cover by the hour: a short dip while the light changes */
+.cover .living,.cover #coverimg{transition:opacity .6s}
+.cover.hour-turn .living,.cover.hour-turn #coverimg{opacity:.35!important}
+/* --- the letter and its envelope (Nov 19, second pass) --- */
+.lettercard .bfclip{position:absolute;inset:0;z-index:6;pointer-events:none}
+.bigfold.v2.in-env{transition:transform .75s cubic-bezier(.45,0,.25,1)!important}
+.env-flap .outer{position:absolute;inset:0;opacity:0;transition:opacity .01s linear .42s;display:flex;flex-direction:column;align-items:center;padding-top:10px;text-align:center;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M3.5 2.5 L50 94 L96.5 2.5' fill='none' stroke='%238B3438' stroke-opacity='.55' stroke-width='1.1' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M7.5 2.5 L50 86.5 L92.5 2.5' fill='none' stroke='%238B3438' stroke-opacity='.3' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.lettercard.s5 .env-flap .outer{opacity:1}
+.env-flap .outer img{width:26px;height:auto;opacity:.9}
+.env-flap .outer b{font-family:var(--slab);font-weight:600;font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--red);margin-top:5px}
+.env-flap .outer i{font-family:var(--hand);font-size:13px;color:var(--ink-2);line-height:1.1;margin-top:1px}
+.lettercard .env-front{box-shadow:inset 0 0 0 1px rgba(90,50,20,.14),inset 0 -26px 34px -26px rgba(90,50,20,.3)!important}
+.lettercard .env-front::before{background:linear-gradient(to top right,transparent 49.3%,rgba(90,50,20,.2) 50%,rgba(255,255,255,.35) 50.5%,transparent 51.2%) left/50% 100% no-repeat,linear-gradient(to top left,transparent 49.3%,rgba(90,50,20,.2) 50%,rgba(255,255,255,.35) 50.5%,transparent 51.2%) right/50% 100% no-repeat!important}
+.lettercard .env-flap{filter:drop-shadow(0 5px 5px rgba(60,30,10,.28))!important}
+.env-front .issue{position:absolute;left:0;right:0;bottom:9px;text-align:center;font-family:var(--hand);font-size:13px;color:var(--ink-3);opacity:0;transition:opacity .4s .5s}
+.lettercard.s5 .env-front .issue{opacity:.9}
+
+/* --- Inside the jar: tags, a recipe card and the mixing bowl (Nov 19, second pass) --- */
+.ingr.ingr2{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(320px,500px) minmax(0,1fr)!important;gap:clamp(14px,2.4vw,36px)!important;align-items:center}
+.ingr2 .tags{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.ingr2 .tags.r{align-items:flex-start}.ingr2 .tags.l{align-items:flex-end}
+.ingr2 .tags li{width:min(100%,270px)}
+.ingr2 .tag{position:relative;display:block;width:100%;text-align:left;font:inherit;cursor:pointer;background:var(--card);border:1px solid var(--card-edge);border-left:5px solid var(--tc,var(--red));padding:12px 16px 12px 40px;box-shadow:0 14px 22px -18px rgba(60,30,10,.55);transform:rotate(var(--r,0deg));transform-origin:14px 50%;transition:transform .45s var(--spring,ease),box-shadow .35s,background .3s;color:var(--ink)}
+.ingr2 .tag::before{content:"";position:absolute;left:12px;top:50%;width:11px;height:11px;margin-top:-6px;border-radius:50%;background:var(--paper);box-shadow:inset 0 1px 2px rgba(60,30,10,.5),0 0 0 2px rgba(139,52,56,.25)}
+.ingr2 .tags.l .tag::after,.ingr2 .tags.r .tag::after{content:"";position:absolute;top:50%;width:clamp(10px,2vw,30px);border-top:1.5px dashed rgba(139,52,56,.45)}
+.ingr2 .tags.l .tag::after{left:100%}.ingr2 .tags.r .tag::after{right:100%}
+.ingr2 .tag .n{display:block;font-family:var(--slab);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.ingr2 .tag b{display:block;font-family:var(--did);font-weight:400;font-size:23px;line-height:1.15}
+.ingr2 .tag .ck{position:absolute;left:40px;top:7px;font-family:var(--hand);font-size:16px;line-height:1;color:var(--red);opacity:0;transition:opacity .3s}
+.ingr2 .tag.seen .n{visibility:hidden}
+.ingr2 .tag.all .ck{display:none}
+.ingr2 .tag.seen .ck{opacity:1}
+.ingr2 .tag:hover,.ingr2 .tag:focus-visible{transform:rotate(0) translateY(-3px);box-shadow:0 22px 28px -20px rgba(60,30,10,.6);outline:none}
+.ingr2 .tag.on{background:#FFF7EA;transform:rotate(0) scale(1.04);box-shadow:0 0 0 1.5px var(--tc,var(--red)),0 22px 30px -20px rgba(60,30,10,.6)}
+.ingr2 .stage{position:relative;display:flex;flex-direction:column;align-items:center}
+.ingr2 .rc{position:relative;width:100%;aspect-ratio:3/2;background:url("pp/borders__02-red-ribbon-rectangle.webp") center/100% 100% no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:17% 17% 14%;z-index:2}
+.ingr2 .rc .k{font-family:var(--slab);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.ingr2 .rc h3{font-family:var(--did)!important;font-weight:400!important;font-size:clamp(26px,2.6vw,36px)!important;margin:4px 0 2px!important;line-height:1.05}
+.ingr2 .rc .role{font-family:var(--hand);font-size:21px;color:var(--red);line-height:1.1}
+.ingr2 .rc p{font-family:var(--body)!important;font-size:15.5px!important;line-height:1.45;color:var(--ink-2)!important;margin:6px 0 0!important;max-width:30ch}
+.ingr2 .rc .in{animation:rcin .5s var(--settle,ease) both}
+@keyframes rcin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ingr2 .bowlwrap{position:relative;width:min(74%,330px);margin-top:-7%;z-index:1}
+.ingr2 .bowl{display:block;width:100%;height:auto;transform-origin:50% 80%;filter:drop-shadow(0 18px 16px rgba(60,30,10,.22))}
+.ingr2 .bowlwrap.stir .bowl{animation:stir .8s var(--settle,ease)}
+@keyframes stir{0%{transform:rotate(0)}30%{transform:rotate(-2.4deg)}65%{transform:rotate(1.8deg)}100%{transform:rotate(0)}}
+.ingr2 .sp{position:absolute;left:50%;top:-34%;width:7px;height:7px;border-radius:50%;background:var(--tc,#C9A26B);opacity:0;pointer-events:none;animation:spfall .95s cubic-bezier(.4,0,.8,.6) var(--d,0s) both}
+@keyframes spfall{0%{opacity:0;transform:translate(var(--x0,0),0) scale(1)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translate(var(--x1,0),var(--y1,150px)) scale(.7)}}
+.ingr2 .count{font-family:var(--hand);font-size:20px;color:var(--ink-2);margin:6px 0 0;text-align:center}
+.ingr2 .count b{color:var(--red);font-weight:600}
+.ingr2 .tag.all{border-left-color:var(--red);background:var(--red);color:#FBF1E4;border-color:var(--red)}
+.ingr2 .tag.all .n{color:#F2C9B8}.ingr2 .tag.all::before{background:#FBF1E4;box-shadow:none}
+.ingr2 .tag.all.on{background:#6E2A2E}
+.ingr2 .rc .seal{position:absolute;right:9%;bottom:6%;width:17%;transform:rotate(-10deg);opacity:0}
+.ingr2.done .rc .seal{animation:press .7s var(--spring,ease) both}
+@media(prefers-reduced-motion:reduce){.ingr2 .sp{display:none}.ingr2 .bowlwrap.stir .bowl,.ingr2 .rc .in{animation:none}}
+@media(max-width:900px){.ingr.ingr2{grid-template-columns:1fr!important}.ingr2 .stage{order:2}.ingr2 .tags{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px}.ingr2 .tags.l{order:1}.ingr2 .tags.r{order:1;margin-top:-4px}.ingr2 .tags li{width:calc(50% - 6px)}.ingr2 .tag{transform:none!important;padding:10px 10px 10px 32px}.ingr2 .tag b{font-size:19px}.ingr2 .tag::after{display:none!important}.ingr2 .tag::before{left:9px}.ingr2 .rc{padding:17% 15% 14%}.ingr2 .rc p{font-size:14.5px!important}}
+/* --- How she compares: a ledger of swaps beside the breakfast table (Nov 19, second pass) --- */
+.compare.cmp2{display:grid!important;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(24px,4vw,64px)!important;align-items:center}
+.cmp2 .pic{position:relative;margin:0;background:#FBF7EE;padding:12px 12px 54px;box-shadow:0 30px 44px -30px rgba(60,30,10,.65);transform:rotate(-2.2deg);max-width:440px;justify-self:center}
+.cmp2 .pic img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.cmp2 .pic figcaption{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:var(--hand);font-size:22px;color:var(--ink-2)}
+.cmp2 .pic::before{content:"";position:absolute;left:50%;top:-9px;width:19px;height:19px;margin-left:-10px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#F0B9B1 0 10%,#BF4D51 28%,#8B3438 60%,#5A1D21 100%);box-shadow:0 4px 5px rgba(40,20,10,.45);z-index:2}
+.cmp2 .pm{position:absolute;right:-96px;bottom:-58px;width:210px;color:#8B2F33;opacity:0;transform:rotate(6deg);pointer-events:none}
+.cmp2.in .pm{animation:stampOn2 .5s 2.5s var(--spring,ease) both}
+.cmp2 .ledger{position:relative;background:var(--card);border:1px solid var(--card-edge);box-shadow:0 26px 40px -28px rgba(60,30,10,.55);padding:clamp(22px,3vw,40px) clamp(20px,3vw,44px) clamp(18px,2.4vw,30px);border-top:6px solid var(--red)}
+.cmp2 .ledger::before{content:"";position:absolute;left:clamp(14px,2vw,26px);top:0;bottom:0;border-left:1px solid rgba(139,52,56,.28);border-right:1px solid rgba(139,52,56,.28);width:3px}
+.cmp2 .lhead{display:flex;justify-content:space-between;font-family:var(--slab);font-weight:600;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);padding:0 0 10px clamp(14px,2vw,24px);border-bottom:3px double rgba(139,52,56,.4)}
+.cmp2 .lhead span:last-child{color:var(--red)}
+.cmp2 ol{list-style:none;margin:0;padding:0}
+.cmp2 li{display:block!important;padding:18px 0 18px clamp(14px,2vw,24px)!important;border-bottom:1px dashed var(--linen)!important;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.cmp2 li::before{display:none!important;content:none!important}
+.cmp2.in li{opacity:1;transform:none}
+.cmp2.in li:nth-child(1){transition-delay:.25s}.cmp2.in li:nth-child(2){transition-delay:.85s}.cmp2.in li:nth-child(3){transition-delay:1.45s}
+.cmp2 .was{position:relative;display:inline-block;font-family:var(--hand);font-size:22px;color:var(--ink-3);line-height:1.2}
+.cmp2 .was::after{content:"";position:absolute;left:-3%;right:-3%;top:54%;height:2px;background:var(--red);border-radius:2px;opacity:.75;transform:rotate(-1.2deg) scaleX(0);transform-origin:left;transition:transform .55s var(--settle,ease)}
+.cmp2.in li:nth-child(1) .was::after{transform:rotate(-1.2deg) scaleX(1);transition-delay:.7s}
+.cmp2.in li:nth-child(2) .was::after{transform:rotate(.8deg) scaleX(1);transition-delay:1.3s}
+.cmp2.in li:nth-child(3) .was::after{transform:rotate(-.6deg) scaleX(1);transition-delay:1.9s}
+.cmp2 .now{display:flex;gap:12px;align-items:baseline;font-family:var(--did);font-style:italic;font-size:clamp(23px,2.5vw,33px);line-height:1.15;color:var(--ink);margin-top:6px}
+.cmp2 .now::before{content:"";flex:0 0 auto;width:20px;height:12px;border-left:2.5px solid var(--red);border-bottom:2.5px solid var(--red);transform:rotate(-48deg) translateY(-5px)}
+.cmp2 li:hover .was::after{transform:rotate(-1.2deg) scaleX(.15)!important;transition-delay:0s!important}
+.cmp2 li:hover .was{color:var(--ink-2)}
+@media(hover:none){.cmp2 .foot{display:none}}
+.cmp2 .foot{font-family:var(--hand);font-size:20px;color:var(--ink-2);margin:14px 0 0;padding-left:clamp(14px,2vw,24px)}
+@media(prefers-reduced-motion:reduce){.cmp2 li{opacity:1;transform:none;transition:none}.cmp2 .was::after{transition:none;transform:rotate(-1deg) scaleX(1)!important}.cmp2 .pm{opacity:.9;animation:none!important}}
+@media(max-width:820px){.compare.cmp2{grid-template-columns:1fr}.cmp2 .pic{max-width:300px}.cmp2 .pm{right:-30px;width:160px}}
 </style>
 </head>
 <body>
@@ -2587,8 +2675,8 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
         <div class="side back">
           <div class="env-back"><div class="liner"></div><div class="fl-l"></div><div class="fl-r"></div><div class="fl-b"></div></div>
           <div class="fold"><div class="pnl n1"><div class="c"></div></div><div class="pnl n2"><div class="c"></div></div><div class="pnl n3"><div class="c"></div></div></div>
-          <div class="env-front"></div>
-          <div class="env-flap"><div class="liner"></div></div>
+          <div class="env-front"><span class="issue">sealed in the pantry · <span data-ed="month">November</span></span></div>
+          <div class="env-flap"><div class="liner"></div><div class="outer"><img src="pp/identity__crest.webp" alt=""><b>Postmark Pantry</b><i>the kitchen, by the window</i></div></div>
           <img class="env-seal" src="pp/identity__wax-seal-transparent.webp" alt="">
         </div>
         <div class="side face">
@@ -3273,12 +3361,22 @@ function showCalMonth(k){const ed=EDITIONS[k-1];calDay=0;buildBigCal(k,2026,1);
   const top=document.querySelector('.cal-hero');if(top)top.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function toggleWeek(){const mo=document.getElementById('month');mo.classList.toggle('full');document.getElementById('weektoggle').textContent=mo.classList.contains('full')?'Back to this week':'See the whole month'}
+/* the cover by the hour (Nov 19 2026): the same photograph in morning, midday, dusk and night light.
+   Stills PM-1119-01; review any hour with ?hour=7, ?hour=13, ?hour=17 or ?hour=22 (or ?hour=morning|midday|dusk|night). */
+const HOURSETS={11:{key:'nov-table',dusk:[16,18]},12:{key:'dec-cottage',dusk:[15.5,17.5]}};
+function hourSlot(m){const hs=HOURSETS[m];if(!hs)return null;let q=null;try{q=new URLSearchParams(location.search).get('hour')}catch(e){}
+  if(q&&/^(morning|midday|dusk|night)$/.test(q))return q;
+  const d=new Date();let h=d.getHours()+d.getMinutes()/60;if(q!==null&&q!==''&&!isNaN(+q))h=+q;
+  return h>=6&&h<10?'morning':h>=10&&h<hs.dusk[0]?'midday':h>=hs.dusk[0]&&h<hs.dusk[1]?'dusk':'night'}
+function coverForHour(m,ed){const s=hourSlot(m);if(!s||ed.film){delete document.documentElement.dataset.hour;return ed.cover}document.documentElement.dataset.hour=s;return 'hours/'+HOURSETS[m].key+'-'+s}
+setInterval(()=>{const m=+document.documentElement.dataset.edition,ed=EDITIONS[m-1],ci=document.getElementById('coverimg');if(!ed||!ci||!HOURSETS[m])return;const was=document.documentElement.dataset.hour,src=A('assets/photos/'+coverForHour(m,ed)+'.webp');
+  if(document.documentElement.dataset.hour!==was){const c=document.querySelector('.cover');c.classList.add('hour-turn');setTimeout(()=>{ci.src=src;setTimeout(()=>c.classList.remove('hour-turn'),700)},650)}},600000);
 function applyEdition(m){
   const ed=EDITIONS[m-1],h=document.documentElement;h.dataset.edition=m;h.dataset.season=ed.season;
   document.querySelectorAll('[data-ed="month"]').forEach(e=>e.textContent=ed.name);
   document.querySelectorAll('[data-ed="title"]').forEach(e=>e.textContent=ed.title);
   document.querySelectorAll('[data-ed="number"]').forEach(e=>e.textContent=String(m).padStart(2,'0'));
-  document.querySelector('[data-ed="cover"]').src=A('assets/photos/'+ed.cover+'.webp');
+  document.querySelector('[data-ed="cover"]').src=A('assets/photos/'+coverForHour(m,ed)+'.webp');
   const se=ed.season;['landscape','orchard','garden','kitchen'].forEach(k=>document.querySelectorAll('[data-ed="sc-'+k+'"]').forEach(e=>e.src=A('assets/photos/scene/'+se+'-'+k+'.webp')));document.querySelector('[data-ed="pjam"]').src=A('assets/photos/product/'+se+'-jam-pact.webp');document.querySelector('[data-ed="plyte"]').src=A('assets/photos/product/'+se+'-pitcher-perfect.webp');document.querySelector('[data-ed="ppair"]').src=A('assets/photos/product/'+se+'-pantry-pair.webp');
   document.querySelectorAll('[data-ed="fl"]').forEach(e=>e.src=A('assets/borders/'+ed.season+'/corner-flourish-640.webp'));
   document.querySelectorAll('[data-ed="div"]').forEach(e=>e.src=A('assets/borders/'+ed.season+'/botanical-divider-960.webp'));
@@ -3558,7 +3656,7 @@ document.addEventListener('click',e=>{const t=e.target.closest('.ftile');if(!t)r
   card.querySelectorAll('input').forEach(i=>i.setAttribute('value',i.value));
   const W=card.offsetWidth,H=card.offsetHeight;
   const face=card.cloneNode(true);face.classList.remove('rv','in','sending');['s1','s2','s3','s4','s5','s6','s7','bf','fold-show','fold-instant'].forEach(k=>face.classList.remove(k));
-  face.querySelectorAll('.sendstage,.sent-note,.bigfold').forEach(e=>e.remove());face.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+  face.querySelectorAll('.sendstage,.sent-note,.bigfold,.bfclip').forEach(e=>e.remove());face.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
   face.classList.add('faceclone');face.style.cssText=`position:absolute;left:0;top:0;width:${W}px;height:${H}px;margin:0;max-width:none;box-sizing:border-box`;
   const piece=(x,y)=>{const p=document.createElement('div');p.className='bp';const c=face.cloneNode(true);c.style.left=(-x)+'px';c.style.top=(-y)+'px';p.appendChild(c);const bk=document.createElement('div');bk.className='bb';const w=document.createElement('div');w.className='pc4';w.appendChild(p);w.appendChild(bk);return w};
   const bf=document.createElement('div');bf.className='bigfold v2';bf.setAttribute('aria-hidden','true');bf.style.cssText=`width:${W}px;height:${H}px`;
@@ -3566,7 +3664,7 @@ document.addEventListener('click',e=>{const t=e.target.closest('.ftile');if(!t)r
     const top=piece(x,0);top.classList.add('qt');top.style.cssText=`top:0;height:${H/2}px`;
     const bot=piece(x,H/2);bot.classList.add('qb');bot.style.cssText=`top:${H/2}px;height:${H/2}px`;
     col.appendChild(top);col.appendChild(bot);bf.appendChild(col)});
-  card.appendChild(bf);
+  const bfc=document.createElement('div');bfc.className='bfclip';bfc.setAttribute('aria-hidden','true');bfc.appendChild(bf);card.querySelectorAll(':scope>.bfclip').forEach(o=>o.remove());card.appendChild(bfc);
   const go=(k,t)=>setTimeout(k,RM?0:t);
   card.classList.add('sending','s1','bf');
   go(()=>bf.classList.add('f1'),300);
@@ -3574,12 +3672,13 @@ document.addEventListener('click',e=>{const t=e.target.closest('.ftile');if(!t)r
   go(()=>{card.classList.add('s2','s3','s4');
     const ef=card.querySelector('.stagebox .env-front').getBoundingClientRect(),cr=card.getBoundingClientRect();
     const sc=Math.min(ef.width*.84/(W/2),ef.height*.92/(H/2)),ph=(H/2)*sc,rise=60*ef.width/440;
-    const tx=(ef.left+ef.width/2)-(cr.left+W/4),ty=(ef.top-rise-ph*.62+ph/2)-(cr.top+H/4);
-    bf.style.setProperty('--tx',tx+'px');bf.style.setProperty('--ty',ty+'px');bf.style.setProperty('--sc',sc);bf.style.setProperty('--drop',(ph*.62+ef.height*.06)+'px');
+    const tx=(ef.left+ef.width/2)-(cr.left+W/4),ty=(ef.top-rise-ph/2-10)-(cr.top+H/4);
+    {const T=ef.top-rise-cr.top,Lx=ef.left-cr.left,Rx=ef.right-cr.left,Mx=(Lx+Rx)/2,Vy=T+ef.height*.58;bfc.style.clipPath=`polygon(-200% -200%,300% -200%,300% ${T}px,${Rx}px ${T}px,${Mx}px ${Vy}px,${Lx}px ${T}px,-200% ${T}px)`}
+    bf.style.setProperty('--tx',tx+'px');bf.style.setProperty('--ty',ty+'px');bf.style.setProperty('--sc',sc);bf.style.setProperty('--drop',(ph+10+ef.height*.13)+'px');
     bf.classList.add('to-env')},1950);
   go(()=>bf.classList.add('in-env'),2900);
   go(()=>card.classList.add('s5'),3550);
-  go(()=>bf.classList.add('gone'),4200);
+  go(()=>bf.classList.add('gone'),3930);
   go(()=>card.classList.add('s6'),4250);
   go(()=>card.classList.add('s7'),4900);
   go(()=>{card.querySelector('.sent-note').textContent='Sealed and sent. The first letter arrives at the start of '+(EDITIONS[(+document.documentElement.dataset.edition)%12].name)+'.'},5200);
@@ -4641,5 +4740,46 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 </script>
 <!-- ===== end Nov 19 keeps ===== -->
 
+
+<script id="r1119js">
+/* Nov 19 2026, second pass: "Inside the jar" and "How she compares" are rebuilt from their own markup, so the copy stays in the HTML */
+(function(){
+  var TC=['#B9A27A','#4E443C','#C8B27C','#C28F5A','#8A5A2B','#CDBE86','#9C7B5A','#8B3438'];
+  document.querySelectorAll('#view-jam-pact .ingr,#view-pitcher-perfect .ingr').forEach(function(box){
+    var arts=[].slice.call(box.querySelectorAll('article'));if(arts.length<3||box.classList.contains('ingr2'))return;
+    var items=arts.map(function(a){var h=a.querySelector('h3').textContent.trim(),t=a.querySelector('p').textContent.trim(),all=a.classList.contains('all');
+      var i=t.indexOf('. ');var role=(!all&&i>0)?t.slice(0,i):'';var body=(!all&&i>0)?t.slice(i+2):t;return {h:h,role:role,body:body,all:all}});
+    var plants=items.filter(function(x){return !x.all}),all=items.filter(function(x){return x.all})[0],N=plants.length;
+    var half=Math.ceil(N/2),rot=[-2.2,1.4,-1.2,2,1.6,-1.8,1.1,-1.4];
+    function tag(x,k){return '<li><button type="button" class="tag" data-k="'+k+'" style="--r:'+rot[k%rot.length]+'deg;--tc:'+TC[k%TC.length]+'"><span class="n">Nº '+(k+1)+' of '+N+'</span><b>'+x.h+'</b><span class="ck">in the bowl ✓</span></button></li>'}
+    var L=plants.slice(0,half).map(function(x,k){return tag(x,k)}).join(''),R=plants.slice(half).map(function(x,k){return tag(x,k+half)}).join('');
+    if(all)R+='<li><button type="button" class="tag all" data-k="all" style="--r:-1deg"><span class="n">All '+N+'</span><b>'+all.h+'</b></button></li>';
+    box.classList.add('ingr2');
+    box.innerHTML='<ul class="tags l">'+L+'</ul><div class="stage"><div class="rc" aria-live="polite"><div class="rcin"></div><img class="seal" src="pp/identity__wax-seal-transparent.webp" alt=""></div><div class="bowlwrap"><img class="bowl" src="pp/borders__mixing-bowl-and-spoon.webp" alt="A blue and white mixing bowl with a wooden spoon" loading="lazy"></div><p class="count"><b>0</b> of '+N+' in the bowl. Tap a tag to add one.</p></div><ul class="tags r">'+R+'</ul>';
+    var rc=box.querySelector('.rcin'),bw=box.querySelector('.bowlwrap'),cnt=box.querySelector('.count'),tags=[].slice.call(box.querySelectorAll('.tag')),seen={};
+    function show(k,quiet){var x=k==='all'?all:plants[k];
+      rc.innerHTML='<div class="in"><span class="k">'+(k==='all'?'The whole recipe':'Nº '+(k+1)+' of '+N)+'</span><h3>'+x.h+'</h3>'+(x.role?'<div class="role">'+x.role+'</div>':'')+'<p>'+x.body+'</p></div>';
+      tags.forEach(function(t){t.classList.toggle('on',t.dataset.k===String(k))});
+      if(k!=='all'){if(!seen[k]){seen[k]=1;var t=tags.filter(function(t){return t.dataset.k===String(k)})[0];t.classList.add('seen');
+          if(!quiet){for(var i=0;i<9;i++){var d=document.createElement('span');d.className='sp';d.style.setProperty('--tc',TC[k%TC.length]);d.style.setProperty('--x0',(Math.random()*70-35)+'px');d.style.setProperty('--x1',(Math.random()*90-45)+'px');d.style.setProperty('--y1',(bw.offsetHeight*.62+Math.random()*14)+'px');d.style.setProperty('--d',(i*.045)+'s');bw.appendChild(d);(function(d){setTimeout(function(){d.remove()},1500)})(d)}
+            bw.classList.remove('stir');void bw.offsetWidth;bw.classList.add('stir')}}}
+      var c=Object.keys(seen).length;cnt.innerHTML=c>=N?'<b>All '+N+'</b> are in. That is the whole recipe.':'<b>'+c+'</b> of '+N+' in the bowl. Tap a tag to add one.';
+      if(c>=N||k==='all'){if(k==='all'){plants.forEach(function(_,j){seen[j]=1});tags.forEach(function(t){if(t.dataset.k!=='all')t.classList.add('seen')});cnt.innerHTML='<b>All '+N+'</b> are in. That is the whole recipe.'}box.classList.add('done')}}
+    tags.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.k==='all'?'all':+t.dataset.k)})});
+    show(0,true);
+  });
+  var PIC={'view-jam-pact':['pp/photos__product__03-jam-pact-breakfast.webp','breakfast, the Postmark way'],'view-pitcher-perfect':['pp/photos__product__04-pitcher-perfect-afternoon.webp','the afternoon glass']};
+  document.querySelectorAll('.compare').forEach(function(box){
+    var cols=box.querySelectorAll('.col');if(cols.length!==2||box.classList.contains('cmp2'))return;
+    var was=[].slice.call(cols[0].querySelectorAll('li')).map(function(l){return l.textContent.trim()}),now=[].slice.call(cols[1].querySelectorAll('li')).map(function(l){return l.textContent.trim()});
+    var h0=cols[0].querySelector('h3').textContent.trim(),h1=cols[1].querySelector('h3').textContent.trim();
+    var v=box.closest('.view'),pic=PIC[v&&v.id]||PIC['view-jam-pact'];
+    var rows=now.map(function(n,i){return '<li><span class="was">'+(was[i]||'')+'</span><span class="now">'+n+'</span></li>'}).join('');
+    var mo=((document.querySelector('[data-ed="month"]')||{}).textContent||'November').slice(0,3).toUpperCase();
+    box.classList.add('cmp2');
+    box.innerHTML='<figure class="pic"><img src="'+pic[0]+'" alt="" loading="lazy"><figcaption>'+pic[1]+'</figcaption><span class="pm" aria-hidden="true">'+(typeof postmarkSVG==='function'?postmarkSVG(mo+' 2026','THE POSTMARK WAY','POSTMARK PANTRY',{rot:6}):'')+'</span></figure><div class="ledger"><div class="lhead"><span>'+h0+'</span><span>'+h1+'</span></div><ol>'+rows+'</ol><p class="foot">Hover a crossed-out line to read it again.</p></div>';
+  });
+})();
+</script>
 </body>
 </html>
