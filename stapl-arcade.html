@@ -44,7 +44,7 @@ a{color:inherit}
 .toast{position:absolute;left:50%;top:10px;transform:translateX(-50%);background:var(--sun);color:var(--ink);font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .7rem;border:2px solid var(--ink);white-space:nowrap;opacity:0;transition:opacity .2s;z-index:3;max-width:94%;overflow:hidden;text-overflow:ellipsis}
 .toast.on{opacity:1}
 .ov{position:absolute;inset:0;z-index:5;background:rgba(13,13,15,.93);color:var(--bone);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.2rem 1.3rem;gap:.7rem}
-.ov[hidden]{display:none}
+.ov[hidden],.ov [hidden]{display:none!important}
 .ov .k{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--aqua)}
 .ov h1,.ov h2{font-weight:900;font-variation-settings:'wdth' 120;text-transform:uppercase;line-height:.95;letter-spacing:-.01em;font-size:clamp(1.7rem,6.4vw,2.9rem)}
 .ov h1 em,.ov h2 em{font-style:normal;color:var(--sun)}
@@ -59,6 +59,22 @@ a{color:inherit}
 .btn.ghost{background:transparent;color:var(--bone);clip-path:none;border:2px solid var(--bone)}
 .btn.ghost:hover{background:var(--aqua);color:var(--ink);border-color:var(--aqua)}
 .row{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:.3rem}
+.ov .art{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;min-height:84px}
+.ov .art svg{display:block}
+.ov .mini{display:grid;grid-template-columns:repeat(14,14px);gap:3px}
+.ov .mini i{width:14px;height:14px;border:1.5px dashed var(--clay);background:repeating-linear-gradient(135deg,transparent 0 3px,rgba(255,107,55,.6) 3px 5px)}
+.ov .mini i.on{background:var(--aqua);border:1.5px solid var(--bone)}
+.ov .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;width:100%;max-width:440px}
+.ov .trio div{border:1.5px solid rgba(243,241,234,.35);padding:.7rem .5rem;font-size:.76rem;line-height:1.35;color:rgba(243,241,234,.8)}
+.ov .trio div b{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);margin:.45rem 0 .25rem}
+.ov .trio svg{width:30px;height:30px;margin:0 auto}
+.ov .chips{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;max-width:420px}
+.ov .chips span{font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .55rem;border:2px solid var(--bone);background:var(--sun);color:var(--ink)}
+.ov .chips span.z{background:var(--coral)}
+.ov .dots{display:flex;gap:6px}
+.ov .dots i{width:22px;height:5px;background:rgba(243,241,234,.25)}
+.ov .dots i.on{background:var(--sun)}
+.ov .skip{font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);background:none;border:0;border-bottom:2px solid rgba(243,241,234,.35);padding-bottom:.15rem;cursor:pointer}
 @keyframes blink{50%{opacity:.25}}
 .blink{animation:blink 1.1s steps(1) infinite}
 .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;width:100%;max-width:400px;text-align:left}
@@ -91,13 +107,11 @@ a{color:inherit}
   .cab{box-shadow:7px 7px 0 var(--espresso);padding:10px}
   .pad{display:grid}
   .bg .a{width:50%;height:16%}.bg .b{display:none}.bg .d{width:34%;height:12%}
-  .ov{gap:.4rem;padding:.7rem .8rem}
-  .ov h1{font-size:1.55rem}
-  .ov p{font-size:.76rem;line-height:1.4}
-  .ov .src{display:none}
-  .legend div{line-height:1.3}
-  .legend svg{width:16px;height:16px}
-  .btn{padding:.7rem 1.1rem;min-height:44px;font-size:.64rem}
+  .ov{position:fixed;inset:0;z-index:60;gap:1rem;padding:1.6rem 1.4rem;background:rgba(13,13,15,.97)}
+  .ov h1,.ov h2{font-size:clamp(2rem,9.5vw,2.8rem)}
+  .ov p{font-size:1.02rem;line-height:1.5;max-width:30ch}
+  .ov .trio div{font-size:.74rem;padding:.6rem .4rem}
+  .side .cards{display:none}
   .legend div{font-size:.46rem;padding:.4rem}
 }
 @media(prefers-reduced-motion:reduce){.blink{animation:none}}
@@ -123,24 +137,29 @@ a{color:inherit}
     <div class="clock" title="The day"><u id="clock"></u></div>
     <div class="screen" id="screen">
       <canvas id="cv" width="960" height="960" aria-label="Close the Gap game board"></canvas>
-      <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
       <div class="ov" id="ov-title">
         <span class="k">STÄPL Arcade presents</span>
         <h1>Close<br>the <em>Gap.</em></h1>
-        <p>The Daily Value for fiber is <b>28 grams</b>. Most people never get there. Collect all 28 before the day runs out, and don&rsquo;t let the gaps catch you.</p>
-        <div class="legend">
-          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#12A99B" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="6" fill="#27D4C4" stroke="#F3F1EA" stroke-width="2"/></svg><b>Psyllium</b>Holds water. Gaps slow down.</div>
-          <div><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" transform="rotate(45 12 12)" fill="#FFC72C" stroke="#F3F1EA" stroke-width="2"/></svg><b>Resistant starch</b>Passes through. Can&rsquo;t be caught.</div>
-          <div><svg viewBox="0 0 24 24"><polygon points="12,3 21,20 3,20" fill="#FF6B37" stroke="#F3F1EA" stroke-width="2" stroke-linejoin="round"/></svg><b>Acacia</b>Dissolves. Gaps scatter. Tag them.</div>
-        </div>
+        <p>A 28-gram chase through the fiber gap.</p>
         <button class="btn blink" id="start" type="button">Press start &#9656;</button>
-        <span class="src">Arrow keys or WASD &middot; swipe or use the pad on a phone</span>
+        <button class="skip" id="skip0" type="button">Skip the intro</button>
+      </div>
+
+      <div class="ov" id="ov-intro" hidden>
+        <span class="k" id="i-k"></span>
+        <div class="art" id="i-art"></div>
+        <h2 id="i-h"></h2>
+        <p id="i-p"></p>
+        <div class="dots" id="i-dots"></div>
+        <div class="row"><button class="btn ghost" id="i-back" type="button">Back</button><button class="btn" id="i-next" type="button">Next &#9656;</button></div>
+        <button class="skip" id="i-skip" type="button">Skip to the game</button>
       </div>
 
       <div class="ov" id="ov-card" hidden>
         <span class="k" id="c-k"></span>
         <h2 id="c-h"></h2>
+        <div class="art" id="c-art" hidden></div>
         <div class="big" id="c-big" hidden></div>
         <p id="c-p"></p>
         <div class="row" id="c-row"></div>
@@ -210,7 +229,7 @@ function pickGrams(){
 }
 var GRAMCELLS=pickGrams();
 
-var S={mode:'title',day:0,score:0,lives:3,grams:{},got:0,powers:[],p:null,gaps:[],time:0,fx:{slow:0,ghost:0,scat:0},food:null,foodT:6,pops:[],tip:0,paused:false,sound:true,t:0};
+var S={seen:{},ready:0,mode:'title',day:0,score:0,lives:3,grams:{},got:0,powers:[],p:null,gaps:[],time:0,fx:{slow:0,ghost:0,scat:0},food:null,foodT:6,pops:[],tip:0,paused:false,sound:true,t:0};
 window.__game=S;
 
 /* ---------- sound ---------- */
@@ -237,8 +256,35 @@ function hud(){
 }
 (function(){var w=$('waf');for(var i=0;i<28;i++)w.appendChild(document.createElement('i'))})();
 
-var toastT=0;
-function toast(t){var el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove('on')},2600)}
+var ICON={
+ psy:'<svg viewBox="0 0 24 24" width="64" height="64"><circle cx="12" cy="12" r="10" fill="none" stroke="#12A99B" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="6" fill="#27D4C4" stroke="#F3F1EA" stroke-width="2"/></svg>',
+ rs:'<svg viewBox="0 0 24 24" width="64" height="64"><rect x="6" y="6" width="12" height="12" transform="rotate(45 12 12)" fill="#FFC72C" stroke="#F3F1EA" stroke-width="2"/></svg>',
+ aca:'<svg viewBox="0 0 24 24" width="64" height="64"><polygon points="12,3 21,20 3,20" fill="#FF6B37" stroke="#F3F1EA" stroke-width="2" stroke-linejoin="round"/></svg>',
+ can:'<svg viewBox="0 0 48 52" width="72" height="78"><rect x="5" y="1" width="38" height="11" rx="3" fill="#F3F1EA"/><rect x="2" y="11" width="44" height="39" rx="6" fill="#27D4C4" stroke="#F3F1EA" stroke-width="3"/><polygon points="46,11 46,32 26,11" fill="#FFC72C"/><rect x="2" y="40" width="44" height="6" fill="#FF6B37"/><circle cx="16" cy="26" r="5" fill="#F3F1EA"/><circle cx="32" cy="26" r="5" fill="#F3F1EA"/><circle cx="17.5" cy="26" r="2.4" fill="#121214"/><circle cx="33.5" cy="26" r="2.4" fill="#121214"/></svg>',
+ gap:'<svg viewBox="0 0 48 48" width="72" height="72"><defs><pattern id="hx" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="3" height="8" fill="#FF6B37"/></pattern></defs><rect x="3" y="3" width="42" height="42" fill="#121214"/><rect x="3" y="3" width="42" height="42" fill="url(#hx)"/><rect x="3" y="3" width="42" height="42" fill="none" stroke="#FF6B37" stroke-width="3" stroke-dasharray="7 5"/><circle cx="16" cy="20" r="5" fill="#F3F1EA"/><circle cx="32" cy="20" r="5" fill="#F3F1EA"/><circle cx="17.5" cy="20" r="2.4" fill="#121214"/><circle cx="33.5" cy="20" r="2.4" fill="#121214"/></svg>',
+ gram:'<svg viewBox="0 0 24 24" width="40" height="40"><rect x="4" y="4" width="16" height="16" fill="#27D4C4" stroke="#F3F1EA" stroke-width="2.5"/></svg>'
+};
+function mini(n){var h='<div class="mini">';for(var i=0;i<28;i++)h+='<i'+(i<n?' class="on"':'')+'></i>';return h+'</div>'}
+var POWERCARD={
+ psy:{k:'Power-up &middot; psyllium',h:'Gel <em>mode.</em>',p:'Gel-forming fiber <b>holds water</b>. For a few seconds, every gap slows down.'},
+ rs:{k:'Power-up &middot; resistant starch',h:'Passing <em>through.</em>',p:'Resistant starch <b>reaches the colon intact</b>. For a few seconds, nothing can catch you.'},
+ aca:{k:'Power-up &middot; acacia',h:'Dis<em>solve.</em>',p:'Acacia <b>dissolves in water</b>. The gaps scatter. Run into them for bonus points.'}
+};
+var INTRO=[
+ {k:'1 of 4 &middot; The problem',art:mini(16),h:'Most days end <em class="c">short.</em>',p:'The Daily Value for fiber is <b>28 grams</b>. US adults average <b>16.3</b>. That leaves <b>11.7 grams</b> missing, every day.'},
+ {k:'2 of 4 &middot; The game',art:ICON.can+ICON.gram+ICON.gap,h:'Collect <em>28.</em>',p:'You are the canister. Grab all <b>28 gram blocks</b> before the day&rsquo;s clock runs out. The hatched blocks are the <b>missing grams</b>. Don&rsquo;t let them catch you.'},
+ {k:'3 of 4 &middot; Three fibers',art:'<div class="trio"><div>'+ICON.psy+'<b>Psyllium</b>Holds water. Gaps slow down.</div><div>'+ICON.rs+'<b>Resistant starch</b>Passes through. You can&rsquo;t be caught.</div><div>'+ICON.aca+'<b>Acacia</b>Dissolves. Gaps scatter.</div></div>',h:'Three <em>power-ups.</em>',p:'Different fibers do different jobs. Each one helps you a different way.'},
+ {k:'4 of 4 &middot; Food first',art:'<div class="chips"><span>Lentils 7.8 g</span><span>Beans 7.5 g</span><span>Broccoli 5.1 g</span><span>Apple 4.4 g</span><span>Oats 4.1 g</span><span class="z">Chicken 0 g</span><span class="z">Eggs 0 g</span></div>',h:'Grab the <em>food.</em>',p:'Fiber foods are bonus points. Chicken and eggs score zero. <b>Swipe, use the pad, or use the arrow keys.</b>'}
+];
+var iStep=0;
+function intro(n){
+  iStep=n;S.mode='intro';var o=INTRO[n];
+  $('i-k').innerHTML=o.k;$('i-art').innerHTML=o.art;$('i-h').innerHTML=o.h;$('i-p').innerHTML=o.p;
+  var d='';for(var i=0;i<INTRO.length;i++)d+='<i'+(i<=n?' class="on"':'')+'></i>';$('i-dots').innerHTML=d;
+  $('i-back').style.visibility=n?'visible':'hidden';$('i-next').innerHTML=(n===INTRO.length-1?'Start day 1':'Next')+' &#9656;';
+  $('ov-title').hidden=true;$('ov-intro').hidden=false;$('i-next').focus();
+}
+function resume(){play();S.ready=1.2}
 function pop(x,y,t,c){S.pops.push({x:x,y:y,t:t,c:c||C.sun,a:1.4})}
 
 /* ---------- movement ---------- */
@@ -276,12 +322,14 @@ function collect(){
     if(S.got===28){return dayDone()}}
   S.powers.forEach(function(p){
     if(p.on&&p.x===S.p.x&&p.y===S.p.y){p.on=false;S.score+=50;tune([523,659,784]);
-      if(p.t==='psy'){S.fx.slow=7;toast('Psyllium: holds water. Gaps slow down.')}
-      if(p.t==='rs'){S.fx.ghost=6;toast('Resistant starch: passes through intact.')}
-      if(p.t==='aca'){S.fx.scat=7;toast('Acacia: dissolves. Tag the gaps!');S.gaps.forEach(function(e){e.dx=-e.dx;e.dy=-e.dy;if(e.dx||e.dy){e.x+=-e.dx;e.y+=-e.dy;e.pr=1-e.pr}})}
-      hud()}
+      if(p.t==='psy'){S.fx.slow=7}
+      if(p.t==='rs'){S.fx.ghost=6}
+      if(p.t==='aca'){S.fx.scat=7;S.gaps.forEach(function(e){e.dx=-e.dx;e.dy=-e.dy;if(e.dx||e.dy){e.x+=-e.dx;e.y+=-e.dy;e.pr=1-e.pr}})}
+      hud();
+      if(!S.seen[p.t]){S.seen[p.t]=1;var pc=POWERCARD[p.t];card({k:pc.k,art:ICON[p.t],h:pc.h,p:pc.p,src:'General fiber science, simplified. A game power, not a claim about STÄPL.',btns:[{t:'Got it &#9656;',go:resume}]})}}
   });
-  if(S.food&&S.food.x===S.p.x&&S.food.y===S.p.y){var f=S.food.f;S.score+=f[2];pop(S.p.x,S.p.y,f[2]?'+'+f[2]:'+0',f[2]?C.sun:C.coral);toast(f[0]+': '+f[1]+(f[2]?'':'. All protein, no fiber.'));beep(f[2]?880:180,.14,f[2]?'square':'sawtooth');S.food=null;S.foodT=7;hud()}
+  if(S.food&&S.food.x===S.p.x&&S.food.y===S.p.y){var f=S.food.f;S.score+=f[2];pop(S.p.x,S.p.y,f[2]?'+'+f[2]:'+0',f[2]?C.sun:C.coral);beep(f[2]?880:180,.14,f[2]?'square':'sawtooth');S.food=null;S.foodT=7;hud();
+    if(S.mode==='play'&&!S.seen[f[0]]){S.seen[f[0]]=1;card({k:'Food bonus &middot; '+(f[2]?'+'+f[2]+' points':'0 points'),h:f[0].charAt(0)+f[0].slice(1).toLowerCase()+':<br><em'+(f[2]?'':' class="c"')+'>'+f[1].replace(/ (per|with|of) .*/,'')+'.</em>',p:f[2]?'<b>'+f[1]+'.</b> Fiber foods like this are how you close the gap first.':'<b>All protein, no fiber.</b> The protein plate is where the number goes missing.',src:'USDA FoodData Central.',btns:[{t:'Got it &#9656;',go:resume}]})}}
 }
 
 function update(dt){
@@ -312,11 +360,12 @@ function update(dt){
 function card(o){
   S.mode='card';$('c-k').innerHTML=o.k;$('c-h').innerHTML=o.h;$('c-p').innerHTML=o.p;$('c-src').textContent=o.src||'';
   var b=$('c-big');if(o.big){b.hidden=false;b.innerHTML=o.big}else b.hidden=true;
+  var ar=$('c-art');if(o.art){ar.hidden=false;ar.innerHTML=o.art}else ar.hidden=true;
   var r=$('c-row');r.innerHTML='';
   o.btns.forEach(function(x){var el;if(x.href){el=document.createElement('a');el.href=x.href}else{el=document.createElement('button');el.type='button';el.addEventListener('click',x.go)}el.className='btn'+(x.ghost?' ghost':'');el.innerHTML=x.t;r.appendChild(el)});
   $('ov-card').hidden=false;var f=r.querySelector('button');if(f)f.focus();
 }
-function play(){ $('ov-card').hidden=true;$('ov-title').hidden=true;S.mode='play';S.paused=false;last=0 }
+function play(){ $('ov-card').hidden=true;$('ov-title').hidden=true;$('ov-intro').hidden=true;S.mode='play';S.paused=false;S.ready=1.2;last=0 }
 function caught(){
   S.lives--;beep(140,.4,'sawtooth',.06);hud();
   if(S.lives<=0)return gameOver();
@@ -338,7 +387,7 @@ function dayDone(){
 function gameOver(){
   card({k:'Game over &middot; '+S.score+' points',h:'The gap <em class="c">won.</em>',p:'It wins most days: <b>more than 90% of women and 97% of men</b> miss the recommended amount of fiber. One scoop a day makes the real version easier.',src:'Dietary Guidelines for Americans, 2020-2025.',btns:[{t:'Try again &#9656;',go:restart},{t:'Meet Daily Performance Fiber',ghost:true,href:'staple-home.html#shop'}]});
 }
-function restart(){S.score=0;S.lives=3;S.tip=0;startDay(0);play()}
+function restart(){S.score=0;S.lives=3;S.tip=0;S.seen={};startDay(0);play()}
 
 /* ---------- drawing ---------- */
 function rr(x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
@@ -397,13 +446,14 @@ function draw(){
   // effect label
   var lab=S.fx.ghost>0?'PASSING THROUGH '+Math.ceil(S.fx.ghost):S.fx.scat>0?'DISSOLVE '+Math.ceil(S.fx.scat):S.fx.slow>0?'GEL MODE '+Math.ceil(S.fx.slow):'';
   if(lab){g.font="700 20px 'Space Mono',monospace";g.textAlign='center';g.fillStyle=C.ink;g.fillRect(480-150,930-22,300,34);g.fillStyle=C.sun;g.fillText(lab,480,932)}
+  if(S.mode==='play'&&S.ready>0&&!S.paused){g.fillStyle='rgba(13,13,15,.75)';g.fillRect(0,410,960,140);g.fillStyle=C.sun;g.font="900 70px 'Archivo Variable',sans-serif";g.textAlign='center';g.fillText('READY',480,505)}
   if(S.paused){g.fillStyle='rgba(13,13,15,.8)';g.fillRect(0,400,960,160);g.fillStyle=C.sun;g.font="900 70px 'Archivo Variable',sans-serif";g.fillText('PAUSED',480,505)}
 }
 
 var last=0;
 function frame(ts){
   var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
-  if(S.mode==='play'&&!S.paused)update(dt);else if(S.mode!=='play')S.t+=dt;
+  if(S.mode==='play'&&!S.paused){if(S.ready>0){S.ready-=dt;S.t+=dt}else update(dt)}else if(S.mode!=='play')S.t+=dt;
   draw();requestAnimationFrame(frame);
 }
 
@@ -414,7 +464,7 @@ function togglePause(){if(S.mode!=='play')return;S.paused=!S.paused;last=0;$('pa
 window.addEventListener('keydown',function(e){
   if(KEYS[e.key]){if(S.mode==='play'){want(KEYS[e.key][0],KEYS[e.key][1]);e.preventDefault()}}
   else if(e.key==='p'||e.key==='P')togglePause();
-  else if((e.key==='Enter'||e.key===' ')&&S.mode==='title'){e.preventDefault();begin()}
+  else if((e.key==='Enter'||e.key===' ')&&S.mode==='title'){e.preventDefault();intro(0)}
 });
 [].forEach.call(document.querySelectorAll('.pad button'),function(b){var d=b.dataset.d.split(',');function go(ev){ev.preventDefault();want(+d[0],+d[1])}b.addEventListener('touchstart',go,{passive:false});b.addEventListener('mousedown',go)});
 var sx=0,sy=0,scr=$('screen');
@@ -428,8 +478,11 @@ scr.addEventListener('touchmove',function(e){
 },{passive:false});
 $('pause').addEventListener('click',togglePause);
 $('mute').addEventListener('click',function(){S.sound=!S.sound;this.textContent=S.sound?'Sound on':'Sound off';this.setAttribute('aria-pressed',String(!S.sound))});
-function begin(){S.score=0;S.lives=3;startDay(0);play();tune([392,523,659])}
-$('start').addEventListener('click',begin);
+function begin(){S.score=0;S.lives=3;S.seen={};startDay(0);play();tune([392,523,659])}
+$('start').addEventListener('click',function(){intro(0)});
+$('skip0').addEventListener('click',begin);$('i-skip').addEventListener('click',begin);
+$('i-back').addEventListener('click',function(){if(iStep>0)intro(iStep-1)});
+$('i-next').addEventListener('click',function(){if(iStep<INTRO.length-1)intro(iStep+1);else begin()});
 document.addEventListener('visibilitychange',function(){if(document.hidden&&S.mode==='play'&&!S.paused)togglePause()});
 
 startDay(0);S.mode='title';
@@ -456,7 +509,7 @@ requestAnimationFrame(frame);
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'stapl-arcade-v1';
+  var PAGE_ID = 'stapl-arcade-v2';
 
   /* ---------------------------------------------- */
 
