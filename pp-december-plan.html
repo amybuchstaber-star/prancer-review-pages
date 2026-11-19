@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PaleoPro December Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1F3A28;--forest-2:#2E4A35;--gold:#C8952A;--gold-2:#E0AE45;--brick:#9D4C32;--cream:#EFE3C9;--cream-2:#F6EEDA;--parch:#E7D8B6;--ink:#221C14;--muted:#6a5a45;--line:#d9c9a8;--card:#FBF5E8}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream-2);color:var(--ink);font:16px/1.5 'DM Sans',system-ui,sans-serif;-webkit-text-size-adjust:100%}
+.top{position:sticky;top:0;z-index:5;background:var(--forest);color:var(--cream-2);padding:10px 16px 8px}
+.top .row{display:flex;justify-content:space-between;align-items:center;gap:8px;max-width:640px;margin:0 auto}
+.brand{font:700 15px 'Fraunces',serif;letter-spacing:.04em}
+.save{font-size:12px;opacity:.85}
+.bar{max-width:640px;margin:8px auto 0;height:5px;background:rgba(255,255,255,.18);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold-2);transition:width .3s}
+main{max-width:640px;margin:0 auto;padding:22px 16px 120px}
+.kick{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+h1{font:700 30px/1.15 'Fraunces',serif;color:var(--forest);margin:6px 0 12px}
+h2{font:700 24px/1.2 'Fraunces',serif;color:var(--forest);margin:6px 0 10px}
+p{margin:0 0 12px}
+.ctx{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 14px;font-size:15px}
+.ctx ul{margin:6px 0 0;padding-left:18px}.ctx li{margin:3px 0}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;margin:0 6px 6px 0;background:var(--parch);color:var(--forest)}
+.tag.ben{background:#F3D9C9;color:var(--brick)}
+.opts{display:flex;flex-direction:column;gap:10px;margin:6px 0 16px}
+.opt{text-align:left;width:100%;border:2px solid var(--line);background:#fff;border-radius:14px;padding:13px 14px;font:inherit;color:inherit;cursor:pointer;min-height:56px}
+.opt b{display:block;font-size:16px}
+.opt span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.opt .pick{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.opt.on{border-color:var(--forest);background:#EEF3EC;box-shadow:inset 0 0 0 1px var(--forest)}
+.email{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 14px}
+.email .subj{font:700 20px/1.25 'Fraunces',serif;color:var(--forest);margin:4px 0 8px}
+.email dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:14px}
+.email dt{font-weight:700;color:var(--muted)}.email dd{margin:0}
+label.nl{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:4px 0 6px}
+textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:inherit;background:#fff;resize:vertical}
+.nav{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(transparent,var(--cream-2) 30%);padding:18px 16px calc(14px + env(safe-area-inset-bottom))}
+.nav .row{max-width:640px;margin:0 auto;display:flex;gap:10px}
+.btn{flex:1;border:0;border-radius:14px;padding:15px;font:700 16px 'DM Sans',sans-serif;cursor:pointer}
+.btn.back{flex:0 0 96px;background:var(--parch);color:var(--forest)}
+.btn.next{background:var(--forest);color:var(--cream-2)}
+.btn.gold{background:var(--gold);color:#fff;display:block;width:100%;text-align:center;text-decoration:none;margin:10px 0}
+.sum{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 14px;margin:0 0 14px}
+.sum div{padding:10px 0;border-bottom:1px solid var(--cream)}.sum div:last-child{border:0}
+.sum small{display:block;color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.sum em{display:block;color:var(--muted);font-size:14px}
+.sum button{all:unset;cursor:pointer;display:block;width:100%}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 14px;border-radius:99px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+.rule{height:1px;background:var(--line);margin:18px 0}
+</style>
+</head>
+<body>
+<div class="top"><div class="row"><span class="brand">PALEO PRO · DECEMBER</span><span class="save" id="save">Not saved yet</span></div><div class="bar"><i id="bar"></i></div></div>
+<main id="main"></main>
+<div class="nav"><div class="row"><button class="btn back" id="back">Back</button><button class="btn next" id="next">Start</button></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const CC='https://claude.ai/artifact/JmYoPQ52uZNu49donpDRpv';
+const FORM_ID='pp-december-plan-v1';
+const FB='https://prancer-website-devs-default-rtdb.firebaseio.com/pages/'+FORM_ID;
+const BEN='<span class="tag ben">Ben signs off: has the offer</span>';
+const NOTE='Anything to change? (optional)';
+
+const S=[
+{t:'intro'},
+
+{id:'threshold',sec:'Free-bag offer',q:'What should a cart reach to get the free bag in December?',
+ctx:`<p>The free bag is one Protein+ Multi-Collagen bag ($39.99), in Ancient Cacao or Aztec Vanilla. Shopify checks the cart total before discounts.</p><ul><li><b>Two bags of Paleo Protein cost $91.99,</b> so they miss $99 by $7. Two Beef Protein Isolate bags ($99.98) clear it.</li><li><b>Margin stays ahead:</b> a second bag adds about $14 of margin and the free bag costs $10.10, so a 2-bag order with the gift still beats a 1-bag order.</li><li><b>Vanilla is the reason to be generous:</b> about 580 vanilla bags would expire unsold at today's pace.</li></ul>`,
+tags:BEN,
+opts:[
+{v:'99',label:'$99',hint:'Your idea. Clean number, but most 2-bag carts fall a few dollars short and need a third item.'},
+{v:'90',label:'$90',pick:true,hint:'Two bags of Paleo Protein or Beef Isolate qualify. Still asks for a second bag, and moves more vanilla.'},
+{v:'75',label:'$75',hint:'Almost any 2-bag cart qualifies, including 2 bags of Protein+. Uses the most bags.'},
+{v:'2bags',label:'Any 2 bags, no dollar line',hint:'The same rule as Black Friday, so the discount and cart are already built that way.'}]},
+
+{id:'choice',sec:'Free-bag offer',q:'How should shoppers pick chocolate or vanilla?',
+ctx:`<p>Shopify gives a free item on its own only when that item is already in the cart, so the theme has to add the bag. The cart drawer already has free-gift code from Black Friday that can be reused.</p><p>I couldn't see how many chocolate bags are on hand.</p>`,
+opts:[
+{v:'picker',label:'Two buttons in the cart',pick:true,hint:'Once the cart clears the line, the drawer shows "Pick your free bag: Chocolate or Vanilla" and adds the one they tap. Vanilla sits first.'},
+{v:'vanilla-swap',label:'Vanilla goes in on its own, with a "switch to chocolate" link',hint:'Moves the most vanilla. One extra tap for chocolate fans.'},
+{v:'vanilla-only',label:'Vanilla only',hint:'Simplest, and clears the expiring stock fastest. No choice for the shopper.'}]},
+
+{id:'start',sec:'Free-bag offer',q:'When should the December offer switch on?',
+ctx:`<p>Black Friday ends Dec 2 at 11:59 PM Pacific. The theme already hides the old $120 free-bag tier from Dec 3, and the cart drawer still mentions $120 in places, which gets cleaned up with this build.</p>`,
+opts:[
+{v:'dec3-0000',label:'Dec 3, 12:00 AM Pacific',pick:true,hint:'No gap after the sale, so the Dec 3 email can lead with it.'},
+{v:'dec4',label:'Dec 4, 12:00 AM Pacific',hint:'A one-day gap keeps Black Friday results separate.'}]},
+
+{id:'end',sec:'Free-bag offer',q:'When should the free bag end?',
+ctx:`<p>You asked for it live all of December. You also floated running the gift into January, since Black Friday should only use about 170 to 200 vanilla bags.</p>`,
+opts:[
+{v:'dec31',label:'Dec 31, 11:59 PM Pacific',hint:'The Dec 31 email becomes a last call.'},
+{v:'jan31',label:'Run it through January',pick:true,hint:'Keeps working on the vanilla stock. The Dec 31 email says it carries on.'},
+{v:'stock',label:'Until the vanilla runs out',hint:'Open-ended. Harder to write a deadline into emails.'}]},
+
+{id:'gc_how',sec:'$10 subscriber thank-you',q:'How should each active subscriber get their own $10 link?',
+ctx:`<p>Recharge already syncs active subscribers into Klaviyo, so the send itself is a Klaviyo segment. The question is what the link holds.</p><p>I couldn't see how many active subscribers there are, so I can't put a total cost on it yet.</p>`,
+tags:BEN,
+opts:[
+{v:'klaviyo-codes',label:'Unique $10 codes from Klaviyo',pick:true,hint:'Klaviyo makes one single-use Shopify code per person and builds a link that applies it in one tap. No app, nothing to buy.'},
+{v:'shopify-giftcards',label:'Real Shopify gift cards',hint:'A true gift card balance, but each one is issued in Shopify, so it needs Shopify Flow or a bulk gift-card app.'}]},
+
+{id:'gc_rules',sec:'$10 subscriber thank-you',q:'What rules should the $10 come with?',
+ctx:`<p>Whatever you pick here, I'd also let it stack with the free bag so a subscriber never feels the thank-you cost them the gift.</p>`,
+tags:BEN,
+opts:[
+{v:'none-jan31',label:'No minimum, use by Jan 31',hint:'Easiest to love. Some people will check out a $10 order.'},
+{v:'40-jan31',label:'On orders of $40 or more, use by Jan 31',hint:'Still covers one bag of almost anything.'},
+{v:'none-dec31',label:'No minimum, use by Dec 31',hint:'Pulls the order into December.'}]},
+
+{id:'gc_date',sec:'$10 subscriber thank-you',q:'When should the thank-you go out?',
+ctx:`<p>Subscribers come back at 86%, against 16% for one-time buyers, so this group is worth a quiet, personal note away from the sale noise.</p>`,
+opts:[
+{v:'dec8',label:'Tue Dec 8',pick:true,hint:'Early enough to spend on gifts that ship before Christmas.'},
+{v:'dec15',label:'Tue Dec 15',hint:'Closer to Christmas, a day before the order-by date.'},
+{v:'dec22',label:'Tue Dec 22',hint:'Pure thank-you. Most of it gets spent in January.'}]},
+
+{id:'shipby',sec:'Christmas shipping',q:'What order-by date should the emails promise for Christmas?',
+ctx:`<p>Christmas is a Friday. I couldn't see shipping times from Vista, so this assumes orders leave within one business day by ground. Please check with whoever packs orders before it goes in an email.</p>`,
+opts:[
+{v:'dec15',label:'Tue Dec 15',hint:'The safest promise.'},
+{v:'dec16',label:'Wed Dec 16',pick:true,hint:'Leaves about six business days for ground shipping.'},
+{v:'dec17',label:'Thu Dec 17',hint:'Tight if any order sits for a day.'}]},
+
+{t:'email',id:'e01',sec:'Week 1',date:'Thu Dec 3',to:'Everyone',subj:'The sale ended. The free bag didn’t.',angle:'Bridge from Black Friday. Announces the December offer: a free Protein+ Multi-Collagen bag, chocolate or vanilla, over the threshold, all month.',blog:'Protein powder with collagen',ben:true},
+{t:'email',id:'e02',sec:'Week 1',date:'Sun Dec 6',to:'Everyone',subj:'Nobody needs another air fryer',angle:'Buy Mom and Dad protein instead: a gift they use every morning, not one more gadget. The copy says Mom and Dad and never names an age.',blog:'Best protein drinks for seniors'},
+{t:'email',id:'e03',sec:'Week 2',date:'Tue Dec 8',to:'Everyone except active subscribers',subj:'Gifts that end up in a cabinet (and one that doesn’t)',angle:'A gift gets used when it fits a habit they already have. One scoop in the morning shake, every day.',blog:'When to drink a protein shake'},
+{t:'email',id:'e03s',sec:'Week 2',date:'Tue Dec 8',to:'Active subscribers only',subj:'A $10 thank-you, from all of us',angle:'Short, personal thank-you for being a Paleo Pro customer, with their own $10 link. Plain, letter-style design, not a sale email.',blog:'Egg white protein powder recipes (a nudge to try something new)',ben:true},
+{t:'email',id:'e04',sec:'Week 2',date:'Thu Dec 10',to:'Everyone',subj:'Protein is the best stocking stuffer',angle:'Stocking stuffer no. 1: Paleo Protein. Five ingredients and 26 g of protein, in a bag that fits the stocking.',blog:'Protein powder and heavy metals (what is and isn’t in the bag)'},
+{t:'email',id:'e05',sec:'Week 2',date:'Sun Dec 13',to:'Everyone',subj:'Stocking stuffer no. 2: nose to tail',angle:'Beef Organ Complex and Beef Liver for the person who has everything. Site claims only.',blog:'Best beef organ supplements for women'},
+{t:'email',id:'e06',sec:'Week 3',date:'Tue Dec 15',to:'Everyone',subj:'One gift for everyone on your list',angle:'Gift guide by person: the lifter (Beef Protein Isolate), the coffee drinker (Protein+ in chocolate), the carnivore (Carnivore Complete), the baker (Egg White). Order-by date in the header.',blog:'What you can eat on the carnivore diet'},
+{t:'email',id:'e07',sec:'Week 3',date:'Wed Dec 16',to:'Everyone',subj:'Last day to order for Christmas',angle:'Deadline email. Order today to have it under the tree, and the free bag is still on. Moves if you pick another order-by date.',blog:'None. One button to shop.',ben:true},
+{t:'email',id:'e08',sec:'Week 3',date:'Sun Dec 20',to:'Everyone',subj:'The one gift you forgot: you',angle:'Self-gift. Everyone else is sorted, so start your own January early, with the free bag as the reason to order now.',blog:'Best protein powder for women',ben:true},
+{t:'email',id:'e09',sec:'Week 4',date:'Tue Dec 22',to:'Everyone',subj:'Christmas morning, sorted',angle:'High-protein breakfast for the house full of guests. Recipes first, products second.',blog:'High-protein muffins'},
+{t:'email',id:'e10',sec:'Week 4',date:'Thu Dec 24',to:'Everyone',subj:'Merry Christmas from Paleo Pro',angle:'A short thank-you note with no sale in it. Keeps the list warm for the week after.',blog:'None'},
+{t:'email',id:'e11',sec:'Week 4',date:'Sun Dec 27',to:'Everyone',subj:'Got a gift card? Start with one scoop',angle:'For people spending Christmas money. Start with one bag, and the free bag still comes with a bigger cart.',blog:'Protein powder vs meal replacement',ben:true},
+{t:'email',id:'e12',sec:'Week 5',date:'Tue Dec 29',to:'Everyone',subj:'January starts in your kitchen',angle:'How much protein you need, made simple, with subscribe and save as the easy way to keep it going.',blog:'How much protein women need'},
+{t:'email',id:'e13',sec:'Week 5',date:'Thu Dec 31',to:'Everyone',subj:'Last call on the free bag',angle:'If the offer ends Dec 31, this is the last call. If it runs into January, it becomes "New year, same free bag".',blog:'Does collagen count as protein?',ben:true},
+
+{id:'tiff',sec:'Hand-off to Tiff',q:'When should Tiff have the email briefs?',
+ctx:`<p>Tiff builds the emails in Figma and you review them before they're scheduled. The Dec 3 email has to be built while she's still on Black Friday.</p>`,
+opts:[
+{v:'wk1-nov25',label:'Week 1 by Wed Nov 25, the rest by Wed Dec 2',hint:'Two drops, so Black Friday isn’t crowded.'},
+{v:'all-nov25',label:'All 14 by Wed Nov 25',hint:'One drop. She can batch the whole month.'},
+{v:'weekly',label:'Each week’s briefs a week ahead',hint:'Easiest to change as December goes.'}]},
+
+{t:'finish'}
+];
+
+const EMAIL_OPTS=[{v:'keep',label:'Keep it'},{v:'change',label:'Keep it, with changes in my note'},{v:'cut',label:'Cut it'}];
+const FINISH_OPTS=[{v:'go',label:'Go ahead with this plan',hint:'I write the email briefs for Tiff and the offer build for your review. Nothing goes live without your yes.'},{v:'look',label:'Show me a revised version first',hint:'I change what your notes ask for and send it back.'},{v:'hold',label:'Hold for now'}];
+
+const LS='pp-dec-plan-v1';
+let A={},pos=0,who='Amy';
+try{const l=JSON.parse(localStorage.getItem(LS)||'null');if(l){A=l.A||{};pos=l.pos||0;}}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function local(){try{localStorage.setItem(LS,JSON.stringify({A,pos}));}catch(e){}}
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),1800);}
+let pend={},timer=null;
+function setSave(s){$('save').textContent=s;}
+function queue(id){A[id].ts=Date.now();A[id].name=who;local();pend['answers/'+id]=Object.assign({},A[id],{name:who,ts:Date.now()});clearTimeout(timer);setSave('Saving…');timer=setTimeout(flush,700);}
+function flush(){if(!Object.keys(pend).length)return Promise.resolve();const body=Object.assign({},pend,{'meta/updated':Date.now()});pend={};
+ return fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw 0;setSave('Saved ✓');}).catch(()=>{Object.assign(pend,body);delete pend['meta/updated'];setSave('Offline: saved on this phone');});}
+function optsOf(s){return s.t==='email'?EMAIL_OPTS:s.t==='finish'?FINISH_OPTS:s.opts;}
+function steps(){return S.filter(s=>s.id||s.t==='finish');}
+function answered(){return S.filter(s=>s.id&&A[s.id]&&A[s.id].v).length;}
+function prog(){const tot=S.filter(s=>s.id).length;$('bar').style.width=Math.round(100*pos/(S.length-1))+'%';}
+function labelOf(s,v){const o=(optsOf(s)||[]).find(o=>o.v===v);return o?o.label:'';}
+
+function optHTML(s){const cur=(A[s.id]||{}).v;return '<div class="opts">'+optsOf(s).map(o=>`<button class="opt${cur===o.v?' on':''}" data-v="${esc(o.v)}"><b>${esc(o.label)}${o.pick?'<span class="pick">My pick</span>':''}</b>${o.hint?`<span>${esc(o.hint)}</span>`:''}</button>`).join('')+'</div>';}
+function noteHTML(s,label){return `<label class="nl" for="nt">${esc(label||NOTE)}</label><textarea id="nt" placeholder="Type or dictate a note">${esc((A[s.id]||{}).note||'')}</textarea>`;}
+function qNum(s){const qs=S.filter(x=>x.id&&x.t!=='finish'&&(s.t==='email'?x.t==='email':x.t!=='email'));return qs.indexOf(s)+1+' of '+qs.length;}
+
+function render(){
+ const s=S[pos],m=$('main');window.scrollTo(0,0);
+ $('back').style.visibility=pos===0?'hidden':'visible';
+ if(s.t==='intro'){
+  m.innerHTML=`<div class="kick">For Amy · about 6 minutes</div><h1>December at Paleo Pro</h1>
+  <p>One decision a screen. Tap the answer that fits, add a note if you want, and it saves as you go.</p>
+  <div class="ctx"><b>Already settled, from what you said:</b><ul><li>Three emails a week, Dec 3 to Dec 31.</li><li>A free bag on orders over a line, live all December, chocolate or vanilla.</li><li>A $10 thank-you to every active subscriber, each with their own link.</li><li>Air-fryer and stocking-stuffer emails that send people to the blog.</li></ul></div>
+  <div class="ctx"><b>What's in here:</b> 8 offer and timing questions, then the 14 emails one at a time (13 to everyone, 1 to subscribers), then the hand-off to Tiff. Where I have a view it's marked <span class="tag" style="background:var(--gold);color:#fff">My pick</span>. Anything with the offer in it is marked for Ben's sign-off.</div>
+  <p style="font-size:14px;color:var(--muted)">Nothing here changes the store, Klaviyo or Recharge. It's a plan for your yes.</p>`;
+  $('next').textContent=answered()?'Pick up where I left off':'Start';prog();return;}
+ if(s.t==='finish'){
+  const rows=S.filter(x=>x.id&&x.id!=='finish').map(x=>{const a=A[x.id]||{};const nm=x.t==='email'?`${x.date}: ${x.subj}`:x.q;
+   return `<div><button data-go="${S.indexOf(x)}"><small>${esc(x.sec)}</small>${esc(nm)}<em>${a.v?esc(labelOf(x,a.v)):'Not answered yet · tap to answer'}${a.note?' · '+esc(a.note):''}</em></button></div>`;}).join('');
+  m.innerHTML=`<div class="kick">All done</div><h2>How should I go from here?</h2>${optHTML(s)}${noteHTML(s,'Anything else for me or Ben? (optional)')}
+  <div class="rule"></div><div class="kick" style="margin-bottom:8px">Your answers</div><div class="sum">${rows}</div>
+  <a class="btn gold" href="${CC}" id="cc">Back to the Command Center</a>`;
+  bind(s);m.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{pos=+b.dataset.go;local();render();});
+  $('cc').onclick=()=>{flush();};
+  $('next').textContent='Back to the Command Center';prog();return;}
+ let body;
+ if(s.t==='email'){
+  body=`<div class="kick">${esc(s.sec)} · Email ${qNum(s)}</div><h2>Keep this email?</h2>
+  <div class="email"><span class="tag">${esc(s.date)}</span><span class="tag">${esc(s.to)}</span>${s.ben?BEN:''}
+  <div class="subj">${esc(s.subj)}</div><dl><dt>Angle</dt><dd>${esc(s.angle)}</dd><dt>Blog</dt><dd>${esc(s.blog)}</dd></dl></div>
+  ${optHTML(s)}${noteHTML(s,'New subject line, angle or post (optional)')}`;
+ } else {
+  body=`<div class="kick">${esc(s.sec)} · Question ${qNum(s)}</div><h2>${esc(s.q)}</h2>${s.tags||''}<div class="ctx">${s.ctx}</div>${optHTML(s)}${noteHTML(s)}`;
+ }
+ m.innerHTML=body;bind(s);$('next').textContent='Next';prog();
+}
+function bind(s){
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{A[s.id]=Object.assign({},A[s.id],{v:b.dataset.v,label:labelOf(s,b.dataset.v)});
+  document.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',x===b));local();queue(s.id);});
+ const nt=$('nt');if(nt)nt.oninput=()=>{A[s.id]=Object.assign({},A[s.id],{note:nt.value});local();queue(s.id);};
+}
+$('next').onclick=()=>{const s=S[pos];
+ if(s.t==='finish'){flush().finally(()=>{location.href=CC;});return;}
+ if(s.t==='intro'&&answered()){const i=S.findIndex(x=>x.id&&!(A[x.id]&&A[x.id].v));pos=i<0?S.length-1:i;}else pos=Math.min(S.length-1,pos+1);
+ local();render();};
+$('back').onclick=()=>{pos=Math.max(0,pos-1);local();render();};
+S.find(s=>s.t==='finish').id='finish';S.find(s=>s.t==='finish').sec='Finish';S.find(s=>s.t==='finish').q='How should I go from here?';
+fetch(FB+'.json').then(r=>r.json()).then(d=>{if(d&&d.answers){for(const k in d.answers){if(!A[k]||((d.answers[k].ts||0)>(A[k].ts||0)))A[k]=d.answers[k];}local();render();setSave('Saved ✓');}}).catch(()=>{});
+render();
+</script>
+
+<!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
+<script>
+/* ============================================================
+   CLAUDE COMMENTS — Figma-style comment layer for any HTML page
+   ------------------------------------------------------------
+   HOW TO USE:
+   1. Set FIREBASE_URL below to your Firebase Realtime Database
+      URL (looks like https://something-default-rtdb.firebaseio.com)
+      Leave it as-is to run in OFFLINE mode (comments only saved
+      in this browser — good for trying it out).
+   2. Optionally set PAGE_ID to a short name for this page.
+      If left blank, it's derived from the file name / title.
+   3. Paste this whole <script> block right before </body>.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ------------------- CONFIG ------------------- */
+  var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
+  var PAGE_ID = 'pp-december-plan-v1';
+
+  /* ---------------------------------------------- */
+
+  if (window.__claudeCommentsLoaded) return;
+  window.__claudeCommentsLoaded = true;
+
+  var ONLINE = /^https:\/\/.+firebase/.test(FIREBASE_URL);
+  if (ONLINE) FIREBASE_URL = FIREBASE_URL.replace(/\/+$/, '');
+
+  function slug(s) {
+    return String(s).toLowerCase().replace(/\.[a-z0-9]+$/, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'page';
+  }
+  if (!PAGE_ID) {
+    var fn = (location.pathname.split('/').pop() || '');
+    PAGE_ID = slug(fn && fn !== 'index.html' ? fn : (document.title || fn || 'page'));
+  }
+
+  var COLORS = ['#7C5CFF', '#FF5C8A', '#00A896', '#F4A100', '#2E86DE', '#B8578C'];
+  function colorFor(name) {
+    var h = 0; name = name || '?';
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return COLORS[h % COLORS.length];
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function timeAgo(ts) {
+    var d = Date.now() - ts;
+    if (d < 60e3) return 'just now';
+    if (d < 3600e3) return Math.floor(d / 60e3) + 'm ago';
+    if (d < 86400e3) return Math.floor(d / 3600e3) + 'h ago';
+    if (d < 7 * 86400e3) return Math.floor(d / 86400e3) + 'd ago';
+    var dt = new Date(ts);
+    return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + String(dt.getFullYear()).slice(2);
+  }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+  /* ------------------- STORAGE ------------------- */
+  // Data shape: { threadId: { anchor:{sel,xp,yp,dxp,dyp}, resolved, created,
+  //               comments: { commentId: { name, text, ts } } } }
+  var store;
+
+  function LocalStore() {
+    var KEY = 'claude-comments::' + PAGE_ID;
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+    }
+    function write(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+    return {
+      offline: true,
+      fetchAll: function () { return Promise.resolve(read()); },
+      createThread: function (t) {
+        var d = read(); var id = uid(); d[id] = t; write(d); return Promise.resolve(id);
+      },
+      addComment: function (tid, c) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        d[tid].comments = d[tid].comments || {};
+        d[tid].comments[uid()] = c; write(d); return Promise.resolve();
+      },
+      patchThread: function (tid, patch) {
+        var d = read(); if (!d[tid]) return Promise.resolve();
+        for (var k in patch) d[tid][k] = patch[k];
+        write(d); return Promise.resolve();
+      },
+      deleteThread: function (tid) {
+        var d = read(); delete d[tid]; write(d); return Promise.resolve();
+      }
+    };
+  }
+
+  function FirebaseStore() {
+    var base = FIREBASE_URL + '/pages/' + encodeURIComponent(PAGE_ID) + '/threads';
+    function req(method, path, body) {
+      return fetch(base + path + '.json', {
+        method: method,
+        body: body === undefined ? undefined : JSON.stringify(body)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Sync error ' + r.status);
+        return r.json();
+      });
+    }
+    return {
+      offline: false,
+      fetchAll: function () { return req('GET', '').then(function (d) { return d || {}; }); },
+      createThread: function (t) {
+        return req('POST', '', t).then(function (res) { return res.name; });
+      },
+      addComment: function (tid, c) { return req('POST', '/' + tid + '/comments', c); },
+      patchThread: function (tid, patch) { return req('PATCH', '/' + tid, patch); },
+      deleteThread: function (tid) { return req('DELETE', '/' + tid); }
+    };
+  }
+
+  store = ONLINE ? FirebaseStore() : LocalStore();
+
+  /* ------------------- ANCHORING ------------------- */
+  function cssPath(el) {
+    if (!(el instanceof Element)) return '';
+    var path = [];
+    while (el && el.nodeType === 1 && el !== document.body && path.length < 8) {
+      var seg = el.tagName.toLowerCase();
+      if (el.id && !/\d{4,}/.test(el.id)) { path.unshift('#' + CSS.escape(el.id)); break; }
+      var sibs = el.parentNode ? Array.prototype.filter.call(el.parentNode.children, function (s) {
+        return s.tagName === el.tagName;
+      }) : [];
+      if (sibs.length > 1) seg += ':nth-of-type(' + (sibs.indexOf(el) + 1) + ')';
+      path.unshift(seg);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+  function makeAnchor(clientX, clientY, target) {
+    var docX = clientX + window.scrollX, docY = clientY + window.scrollY;
+    var a = {
+      dxp: docX / Math.max(1, document.documentElement.scrollWidth),
+      dyp: docY / Math.max(1, document.documentElement.scrollHeight)
+    };
+    if (target && target !== document.body && target !== document.documentElement) {
+      var sel = cssPath(target);
+      try {
+        if (sel && document.querySelector(sel) === target) {
+          var r = target.getBoundingClientRect();
+          if (r.width > 4 && r.height > 4) {
+            a.sel = sel;
+            a.xp = (clientX - r.left) / r.width;
+            a.yp = (clientY - r.top) / r.height;
+          }
+        }
+      } catch (e) {}
+    }
+    return a;
+  }
+  // Returns pin coordinates, or null when the anchored element exists in the
+  // document but is currently hidden (e.g. a single-file site showing a
+  // different "page"/view) — in that case the pin should not be rendered.
+  function resolveAnchor(a) {
+    if (a.sel) {
+      try {
+        var el = document.querySelector(a.sel);
+        if (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width > 0 && r.height > 0) {
+            return { x: r.left + window.scrollX + a.xp * r.width, y: r.top + window.scrollY + a.yp * r.height };
+          }
+          return null; // element is on a hidden view right now
+        }
+      } catch (e) {}
+    }
+    return {
+      x: a.dxp * document.documentElement.scrollWidth,
+      y: a.dyp * document.documentElement.scrollHeight
+    };
+  }
+  function currentView() { return location.hash || ''; }
+  // Should this thread be shown on the current view?
+  function threadVisiblePos(t) {
+    var a = t.anchor || {};
+    if (a.sel) return resolveAnchor(a); // visibility of the anchor decides
+    // No element anchor: fall back to the view recorded at creation
+    if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) return null;
+    return resolveAnchor(a);
+  }
+  function viewLabel(v) { return (String(v || '').replace(/^#\/?/, '') || 'home'); }
+
+  /* ------------------- STATE ------------------- */
+  var threads = {};           // latest data
+  var lastJSON = '';
+  var commentMode = false;
+  var openThreadId = null;    // thread popup currently open
+  var draft = null;           // {anchor, x, y} while composing a new thread
+  var showResolved = false;
+  var panelOpen = false;
+  var myName = '';
+  try { myName = localStorage.getItem('claude-comments-name') || ''; } catch (e) {}
+
+  function sortedIds() {
+    return Object.keys(threads).sort(function (a, b) {
+      return (threads[a].created || 0) - (threads[b].created || 0);
+    });
+  }
+  function threadNumber(tid) { return sortedIds().indexOf(tid) + 1; }
+  function firstComment(t) {
+    var ids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    return ids.length ? t.comments[ids[0]] : null;
+  }
+  function openCount() {
+    return sortedIds().filter(function (id) { return !threads[id].resolved; }).length;
+  }
+
+  /* ------------------- UI SHELL ------------------- */
+  var host = document.createElement('div');
+  host.id = 'claude-comments-host';
+  var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host;
+
+  var css = ''
+    + ':host{all:initial}'
+    + '*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
+    + '.layer{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:2147483000}'
+    + '.pin{position:absolute;pointer-events:auto;width:32px;height:32px;margin:-32px 0 0 0;'
+    + 'border-radius:16px 16px 16px 3px;display:flex;align-items:center;justify-content:center;'
+    + 'color:#fff;font-size:13px;font-weight:700;cursor:pointer;border:2px solid #fff;'
+    + 'box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .12s;user-select:none}'
+    + '.pin:hover{transform:scale(1.15)}'
+    + '.pin.resolved{background:#9aa3ad !important;opacity:.75}'
+    + '.pin.draft{background:#111}'
+    + '.popup{position:fixed;pointer-events:auto;width:min(320px,calc(100vw - 20px));max-height:70vh;display:flex;flex-direction:column;'
+    + 'background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483001;overflow:hidden}'
+    + '.popup-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #eee}'
+    + '.popup-head .title{font-size:13px;font-weight:700;color:#333;flex:1}'
+    + '.iconbtn{border:none;background:none;cursor:pointer;font-size:13px;color:#666;padding:4px 8px;border-radius:6px}'
+    + '.iconbtn:hover{background:#f2f2f4;color:#111}'
+    + '.iconbtn.danger:hover{background:#ffe8ec;color:#c0264b}'
+    + '.comments{overflow-y:auto;padding:6px 0;flex:1}'
+    + '.comment{padding:8px 14px;display:flex;gap:9px}'
+    + '.avatar{width:26px;height:26px;border-radius:50%;color:#fff;display:flex;align-items:center;'
+    + 'justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}'
+    + '.cbody{flex:1;min-width:0}'
+    + '.cmeta{font-size:12px;color:#888;margin-bottom:2px}'
+    + '.cmeta b{color:#222;font-size:12.5px;margin-right:6px}'
+    + '.ctext{font-size:13.5px;color:#222;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}'
+    + '.composer{border-top:1px solid #eee;padding:10px 12px;background:#fafafa}'
+    + '.composer textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13.5px;'
+    + 'resize:none;min-height:38px;max-height:120px;background:#fff;color:#111;outline:none;line-height:1.4}'
+    + '.composer textarea:focus{border-color:#7C5CFF}'
+    + '.composer input{width:100%;border:1px solid #ddd;border-radius:8px;padding:7px 10px;font-size:13px;'
+    + 'margin-bottom:6px;background:#fff;color:#111;outline:none}'
+    + '.composer input:focus{border-color:#7C5CFF}'
+    + '.crow{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}'
+    + '.btn{border:none;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}'
+    + '.btn.primary{background:#7C5CFF;color:#fff}.btn.primary:hover{background:#6a4ae6}'
+    + '.btn.primary:disabled{background:#c9bdfa;cursor:default}'
+    + '.btn.ghost{background:none;color:#666}.btn.ghost:hover{background:#eee}'
+    + '.bar{position:fixed;right:20px;bottom:20px;display:flex;gap:8px;pointer-events:auto;z-index:2147483002}'
+    + '.fab{display:flex;align-items:center;gap:7px;background:#111;color:#fff;border:none;border-radius:24px;'
+    + 'padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.fab:hover{background:#2b2b2e}.fab.active{background:#7C5CFF}'
+    + '.fab .badge{background:#7C5CFF;border-radius:10px;font-size:11.5px;padding:1px 7px;font-weight:700}'
+    + '.fab.active .badge{background:rgba(255,255,255,.25)}'
+    + '.hint{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111;color:#fff;'
+    + 'padding:9px 16px;border-radius:10px;font-size:13px;z-index:2147483002;pointer-events:none;'
+    + 'box-shadow:0 4px 16px rgba(0,0,0,.3)}'
+    + '.panel{position:fixed;right:20px;bottom:76px;width:min(300px,calc(100vw - 40px));max-height:60vh;background:#fff;border-radius:12px;'
+    + 'box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:2147483002;pointer-events:auto;display:flex;flex-direction:column;overflow:hidden}'
+    + '.panel-head{padding:11px 14px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}'
+    + '.panel-head .t{font-size:13.5px;font-weight:700;color:#222}'
+    + '.panel-list{overflow-y:auto;flex:1}'
+    + '.pitem{padding:10px 14px;border-bottom:1px solid #f4f4f5;cursor:pointer;display:flex;gap:10px;align-items:flex-start}'
+    + '.pitem:hover{background:#f8f7ff}'
+    + '.pnum{width:22px;height:22px;border-radius:11px 11px 11px 2px;color:#fff;font-size:11px;font-weight:700;'
+    + 'display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}'
+    + '.pbody{flex:1;min-width:0}'
+    + '.pmeta{font-size:11.5px;color:#999;margin-bottom:1px}'
+    + '.ptext{font-size:12.5px;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;'
+    + '-webkit-line-clamp:2;-webkit-box-orient:vertical}'
+    + '.pitem.resolved .ptext,.pitem.resolved .pmeta{color:#aaa;text-decoration:line-through}'
+    + '.panel-foot{padding:9px 14px;border-top:1px solid #eee;font-size:12px;color:#777;display:flex;'
+    + 'align-items:center;justify-content:space-between}'
+    + '.empty{padding:26px 14px;text-align:center;color:#999;font-size:13px}'
+    + '.offline{background:#fff7e0;color:#8a6400;font-size:11.5px;padding:6px 14px;text-align:center}'
+    + 'label.tog{display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:#777}'
+    + '@media (max-width:600px){.composer textarea,.composer input{font-size:16px}'
+    + '.bar{right:12px;bottom:12px}.panel{right:12px;bottom:66px}}';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  root.appendChild(styleEl);
+
+  var layer = document.createElement('div');   // pins (document coords)
+  layer.className = 'layer';
+  var ui = document.createElement('div');      // fixed UI: bar, panel, popup, hint
+  root.appendChild(layer);
+  root.appendChild(ui);
+
+  var cursorStyle = document.createElement('style');
+  cursorStyle.textContent = 'html.claude-commenting, html.claude-commenting *{cursor:crosshair !important}';
+  document.head.appendChild(cursorStyle);
+
+  function mount() { document.body.appendChild(host); render(); }
+
+  /* ------------------- RENDER ------------------- */
+  function render() {
+    layer.style.height = document.documentElement.scrollHeight + 'px';
+    renderPins();
+    renderUI();
+  }
+
+  function renderPins() {
+    layer.innerHTML = '';
+    var ids = sortedIds();
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      if (t.resolved && !showResolved) return;
+      var p = threadVisiblePos(t);
+      if (!p) return; // comment belongs to a view that isn't on screen
+      var fc = firstComment(t);
+      var pin = document.createElement('div');
+      pin.className = 'pin' + (t.resolved ? ' resolved' : '');
+      pin.style.left = p.x + 'px';
+      pin.style.top = p.y + 'px';
+      pin.style.background = colorFor(fc ? fc.name : '?');
+      pin.textContent = threadNumber(tid);
+      pin.title = fc ? fc.name + ': ' + fc.text.slice(0, 80) : '';
+      pin.addEventListener('click', function (e) {
+        e.stopPropagation();
+        draft = null;
+        openThreadId = (openThreadId === tid) ? null : tid;
+        render();
+      });
+      layer.appendChild(pin);
+    });
+    if (draft) {
+      var dp = document.createElement('div');
+      dp.className = 'pin draft';
+      dp.style.left = draft.x + 'px';
+      dp.style.top = draft.y + 'px';
+      dp.textContent = '+';
+      layer.appendChild(dp);
+    }
+  }
+
+  function popupPos(docX, docY) {
+    var vx = docX - window.scrollX, vy = docY - window.scrollY;
+    var pw = Math.min(320, window.innerWidth - 20);
+    var left = Math.max(10, Math.min(vx + 18, window.innerWidth - pw - 10));
+    var top = Math.min(Math.max(10, vy - 20), Math.max(10, window.innerHeight - 260));
+    return { left: left, top: top };
+  }
+
+  function renderUI() {
+    ui.innerHTML = '';
+
+    // --- floating bar ---
+    var bar = document.createElement('div');
+    bar.className = 'bar';
+    var listBtn = document.createElement('button');
+    listBtn.className = 'fab' + (panelOpen ? ' active' : '');
+    listBtn.innerHTML = '&#9776; <span class="badge">' + openCount() + '</span>';
+    listBtn.title = 'All comments';
+    listBtn.addEventListener('click', function () { panelOpen = !panelOpen; renderUI(); });
+    var addBtn = document.createElement('button');
+    addBtn.className = 'fab' + (commentMode ? ' active' : '');
+    addBtn.innerHTML = commentMode ? '&#10005; Done' : '&#128172; Comment';
+    addBtn.addEventListener('click', toggleMode);
+    bar.appendChild(listBtn);
+    bar.appendChild(addBtn);
+    ui.appendChild(bar);
+
+    // --- hint while in comment mode ---
+    if (commentMode && !draft) {
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.textContent = 'Click anywhere on the page to leave a comment';
+      ui.appendChild(hint);
+    }
+
+    // --- panel (thread list) ---
+    if (panelOpen) ui.appendChild(buildPanel());
+
+    // --- popup: draft composer or open thread ---
+    if (draft) ui.appendChild(buildComposerPopup());
+    else if (openThreadId && threads[openThreadId]) ui.appendChild(buildThreadPopup(openThreadId));
+  }
+
+  function buildPanel() {
+    var panel = document.createElement('div');
+    panel.className = 'panel';
+    var head = document.createElement('div');
+    head.className = 'panel-head';
+    head.innerHTML = '<span class="t">Comments</span>';
+    var tog = document.createElement('label');
+    tog.className = 'tog';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = showResolved;
+    cb.addEventListener('change', function () { showResolved = cb.checked; render(); });
+    tog.appendChild(cb);
+    tog.appendChild(document.createTextNode('show resolved'));
+    head.appendChild(tog);
+    panel.appendChild(head);
+
+    if (store.offline) {
+      var off = document.createElement('div');
+      off.className = 'offline';
+      off.textContent = 'Offline mode — comments only saved in this browser';
+      panel.appendChild(off);
+    }
+
+    var list = document.createElement('div');
+    list.className = 'panel-list';
+    var ids = sortedIds().filter(function (id) { return showResolved || !threads[id].resolved; });
+    if (!ids.length) {
+      var em = document.createElement('div');
+      em.className = 'empty';
+      em.textContent = 'No comments yet. Hit “Comment”, then click anywhere on the page.';
+      list.appendChild(em);
+    }
+    ids.forEach(function (tid) {
+      var t = threads[tid];
+      var fc = firstComment(t);
+      var n = Object.keys(t.comments || {}).length;
+      var item = document.createElement('div');
+      item.className = 'pitem' + (t.resolved ? ' resolved' : '');
+      var num = document.createElement('div');
+      num.className = 'pnum';
+      num.style.background = t.resolved ? '#9aa3ad' : colorFor(fc ? fc.name : '?');
+      num.textContent = threadNumber(tid);
+      var body = document.createElement('div');
+      body.className = 'pbody';
+      var elsewhere = (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView()));
+      body.innerHTML = '<div class="pmeta">' + esc(fc ? fc.name : '') + ' · ' + timeAgo(fc ? fc.ts : t.created)
+        + (n > 1 ? ' · ' + n + ' replies' : '')
+        + (elsewhere ? ' · on <b>' + esc(viewLabel(t.view)) + '</b>' : '') + '</div>'
+        + '<div class="ptext">' + esc(fc ? fc.text : '') + '</div>';
+      item.appendChild(num);
+      item.appendChild(body);
+      item.addEventListener('click', function () {
+        var go = function () {
+          var p = threadVisiblePos(t) || resolveAnchor(t.anchor || {});
+          if (p) window.scrollTo({ top: Math.max(0, p.y - window.innerHeight / 2), behavior: 'smooth' });
+          openThreadId = tid; draft = null; panelOpen = false;
+          setTimeout(render, 350);
+        };
+        if (t.view !== undefined && viewLabel(t.view) !== viewLabel(currentView())) {
+          // Comment lives on another view of this site — switch to it first
+          location.hash = t.view || '#';
+          setTimeout(go, 450);
+        } else go();
+      });
+      list.appendChild(item);
+    });
+    panel.appendChild(list);
+
+    var foot = document.createElement('div');
+    foot.className = 'panel-foot';
+    foot.innerHTML = '<span>' + (myName ? 'Commenting as <b>' + esc(myName) + '</b>' : '') + '</span>';
+    if (myName) {
+      var chg = document.createElement('button');
+      chg.className = 'iconbtn';
+      chg.textContent = 'change name';
+      chg.addEventListener('click', function () {
+        myName = '';
+        try { localStorage.removeItem('claude-comments-name'); } catch (e) {}
+        renderUI();
+      });
+      foot.appendChild(chg);
+    }
+    panel.appendChild(foot);
+    return panel;
+  }
+
+  function nameField() {
+    var input = document.createElement('input');
+    input.placeholder = 'Your name';
+    input.maxLength = 40;
+    input.value = myName;
+    return input;
+  }
+
+  function buildComposerPopup() {
+    var pos = popupPos(draft.x, draft.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">New comment</span>';
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { draft = null; render(); });
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Write a comment…';
+    comp.appendChild(ta);
+    var row = document.createElement('div');
+    row.className = 'crow';
+    var cancel = document.createElement('button');
+    cancel.className = 'btn ghost'; cancel.textContent = 'Cancel';
+    cancel.addEventListener('click', function () { draft = null; render(); });
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Post';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      var t = {
+        anchor: draft.anchor, resolved: false, created: Date.now(),
+        view: currentView(), comments: {}
+      };
+      t.comments[uid()] = { name: name, text: text, ts: Date.now() };
+      store.createThread(t).then(function (tid) {
+        draft = null; commentMode = false; setMode(false);
+        if (tid) openThreadId = tid;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { draft = null; render(); }
+    });
+    row.appendChild(cancel);
+    row.appendChild(post);
+    comp.appendChild(row);
+    pop.appendChild(comp);
+    setTimeout(function () { (nameIn && !nameIn.value ? nameIn : ta).focus(); }, 30);
+    return pop;
+  }
+
+  function buildThreadPopup(tid) {
+    var t = threads[tid];
+    var p = threadVisiblePos(t)
+      || { x: window.scrollX + window.innerWidth / 2, y: window.scrollY + window.innerHeight / 2 };
+    var pos = popupPos(p.x, p.y);
+    var pop = document.createElement('div');
+    pop.className = 'popup';
+    pop.style.left = pos.left + 'px';
+    pop.style.top = pos.top + 'px';
+
+    var head = document.createElement('div');
+    head.className = 'popup-head';
+    head.innerHTML = '<span class="title">Comment #' + threadNumber(tid) + '</span>';
+    var resolveBtn = document.createElement('button');
+    resolveBtn.className = 'iconbtn';
+    resolveBtn.innerHTML = t.resolved ? '&#8634; Reopen' : '&#10003; Resolve';
+    resolveBtn.addEventListener('click', function () {
+      store.patchThread(tid, { resolved: !t.resolved }).then(function () {
+        if (!t.resolved === true && !showResolved) openThreadId = null;
+        return refresh(true);
+      }).catch(syncFail);
+    });
+    var del = document.createElement('button');
+    del.className = 'iconbtn danger';
+    del.innerHTML = '&#128465;';
+    del.title = 'Delete thread';
+    del.addEventListener('click', function () {
+      if (del.dataset.armed) {
+        store.deleteThread(tid).then(function () { openThreadId = null; return refresh(true); }).catch(syncFail);
+      } else {
+        del.dataset.armed = '1';
+        del.textContent = 'Delete?';
+        setTimeout(function () { delete del.dataset.armed; del.innerHTML = '&#128465;'; }, 2500);
+      }
+    });
+    var x = document.createElement('button');
+    x.className = 'iconbtn'; x.innerHTML = '&#10005;';
+    x.addEventListener('click', function () { openThreadId = null; render(); });
+    head.appendChild(resolveBtn);
+    head.appendChild(del);
+    head.appendChild(x);
+    pop.appendChild(head);
+
+    var box = document.createElement('div');
+    box.className = 'comments';
+    var cids = Object.keys(t.comments || {}).sort(function (a, b) {
+      return (t.comments[a].ts || 0) - (t.comments[b].ts || 0);
+    });
+    cids.forEach(function (cid) {
+      var c = t.comments[cid];
+      var row = document.createElement('div');
+      row.className = 'comment';
+      row.innerHTML = '<div class="avatar" style="background:' + colorFor(c.name) + '">'
+        + esc((c.name || '?').trim().charAt(0).toUpperCase()) + '</div>'
+        + '<div class="cbody"><div class="cmeta"><b>' + esc(c.name) + '</b>' + timeAgo(c.ts) + '</div>'
+        + '<div class="ctext">' + esc(c.text) + '</div></div>';
+      box.appendChild(row);
+    });
+    pop.appendChild(box);
+
+    var comp = document.createElement('div');
+    comp.className = 'composer';
+    var nameIn = null;
+    if (!myName) { nameIn = nameField(); comp.appendChild(nameIn); }
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Reply…';
+    comp.appendChild(ta);
+    var row2 = document.createElement('div');
+    row2.className = 'crow';
+    var post = document.createElement('button');
+    post.className = 'btn primary'; post.textContent = 'Reply';
+    post.addEventListener('click', function () {
+      var text = ta.value.trim();
+      var name = (nameIn ? nameIn.value.trim() : myName) || 'Anonymous';
+      if (!text) { ta.focus(); return; }
+      saveName(name);
+      post.disabled = true;
+      store.addComment(tid, { name: name, text: text, ts: Date.now() })
+        .then(function () { return refresh(true); }).catch(syncFail);
+    });
+    ta.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') post.click();
+      if (e.key === 'Escape') { openThreadId = null; render(); }
+    });
+    row2.appendChild(post);
+    comp.appendChild(row2);
+    pop.appendChild(comp);
+    setTimeout(function () { box.scrollTop = box.scrollHeight; }, 30);
+    return pop;
+  }
+
+  function saveName(name) {
+    if (name && name !== 'Anonymous') {
+      myName = name;
+      try { localStorage.setItem('claude-comments-name', name); } catch (e) {}
+    }
+  }
+  function syncFail(err) {
+    alertBar('Couldn’t save — check your internet connection and try again.');
+    render();
+  }
+  var alertTimer = null;
+  function alertBar(msg) {
+    var el = document.createElement('div');
+    el.className = 'hint';
+    el.style.background = '#c0264b';
+    el.textContent = msg;
+    ui.appendChild(el);
+    clearTimeout(alertTimer);
+    alertTimer = setTimeout(function () { el.remove(); }, 4000);
+  }
+
+  /* ------------------- COMMENT MODE ------------------- */
+  function setMode(on) {
+    commentMode = on;
+    document.documentElement.classList.toggle('claude-commenting', on);
+  }
+  function toggleMode() {
+    setMode(!commentMode);
+    if (!commentMode) draft = null;
+    openThreadId = null;
+    render();
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!commentMode) return;
+    if (e.composedPath && e.composedPath().indexOf(host) !== -1) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var target = null;
+    var els = document.elementsFromPoint(e.clientX, e.clientY) || [];
+    for (var i = 0; i < els.length; i++) {
+      if (els[i] !== host && !host.contains(els[i])) { target = els[i]; break; }
+    }
+    draft = {
+      anchor: makeAnchor(e.clientX, e.clientY, target),
+      x: e.clientX + window.scrollX,
+      y: e.clientY + window.scrollY
+    };
+    openThreadId = null;
+    render();
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && commentMode && !draft) { setMode(false); render(); }
+  });
+
+  /* ------------------- SYNC LOOP ------------------- */
+  function refresh(force) {
+    return store.fetchAll().then(function (d) {
+      d = d || {};
+      var j = JSON.stringify(d);
+      if (force || j !== lastJSON) {
+        lastJSON = j;
+        threads = d;
+        render();
+      }
+    }).catch(function () { /* transient network error: keep current view */ });
+  }
+
+  var pollMs = ONLINE ? 4000 : 2500;
+  setInterval(function () {
+    // Don't re-render out from under someone mid-typing
+    var typing = root.activeElement && /TEXTAREA|INPUT/.test(root.activeElement.tagName || '');
+    if (!typing) refresh(false);
+  }, pollMs);
+
+  window.addEventListener('resize', function () { render(); });
+  // Single-file sites that switch views via the URL hash: re-render so each
+  // view only shows its own pins, and close any popup from the previous view.
+  window.addEventListener('hashchange', function () {
+    openThreadId = null; draft = null;
+    render();
+  });
+
+  /* ------------------- BOOT ------------------- */
+  function boot() {
+    mount();
+    refresh(true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+</body>
+</html>
