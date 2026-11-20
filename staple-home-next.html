@@ -2640,6 +2640,53 @@ button.btn{border:0;cursor:pointer}
 button.cta-sub{cursor:pointer}
 @media(min-width:821px){button.cta-sub{background:none;border:0;border-bottom:3px solid var(--aqua)}}
 
+/* Nov 20, round 3 */
+.nx-mw .r b{font-size:.78rem;letter-spacing:.14em}
+.nx-mw small{font-size:.78rem;letter-spacing:.02em;color:var(--espresso);font-weight:700;margin-top:-.35rem}
+.nx-mw .r{grid-template-columns:78px 1fr;row-gap:.6rem}
+.nx-bar{height:20px}
+.nx-key{font-size:.72rem;color:var(--espresso)}
+.nx-key i{width:14px;height:14px}
+.nx-card .nx-tag{font-size:.7rem;color:var(--espresso)}
+.nx-src{font-size:.64rem;letter-spacing:.04em;text-transform:none;line-height:1.55;color:rgba(27,27,29,.72)}
+.nx-fib.nx-flip{background:none;border:0;box-shadow:none;perspective:1400px;cursor:pointer;display:block;outline:0}
+.nx-flip .fc{display:grid;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,.9,.3,1)}
+.nx-flip.flip .fc{transform:rotateY(180deg)}
+.nx-flip .face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;border:2px solid var(--espresso);box-shadow:8px 8px 0 var(--espresso);display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.nx-flip:hover .front,.nx-flip:focus-visible .front{box-shadow:8px 8px 0 var(--aqua)}
+.nx-flip:nth-child(2):hover .front,.nx-flip:nth-child(2):focus-visible .front{box-shadow:8px 8px 0 var(--sunshine)}
+.nx-flip:nth-child(3):hover .front,.nx-flip:nth-child(3):focus-visible .front{box-shadow:8px 8px 0 var(--clay)}
+.nx-flip .front .ico{border-bottom:2px solid var(--espresso)}
+.nx-flip .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap}
+.nx-flip .ft .job{margin:0}
+.nx-flip .turn{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--clay);padding-bottom:.15rem}
+.nx-flip .back{transform:rotateY(180deg);background:var(--espresso);color:var(--bone);padding:1.5rem 1.4rem 1.4rem;gap:.7rem}
+.nx-flip .back .nx-tag{color:var(--aqua)}
+.nx-flip .back h3{color:var(--bone)}
+.nx-flip:nth-child(1) .back{box-shadow:8px 8px 0 var(--aqua)}.nx-flip:nth-child(2) .back{box-shadow:8px 8px 0 var(--sunshine)}.nx-flip:nth-child(3) .back{box-shadow:8px 8px 0 var(--clay)}
+.nx-flip dl{display:grid;gap:.75rem;margin-top:.3rem}
+.nx-flip dt{font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sunshine)}
+.nx-flip dd{margin:.2rem 0 0;font-size:.9rem;line-height:1.45;color:rgba(243,241,234,.88)}
+.nx-flip .back .turn{margin-top:auto;align-self:flex-start;border-color:var(--aqua)}
+.nx-lab{list-style:none;display:grid;gap:.8rem;margin-top:1.8rem;max-width:520px}
+.nx-lab li{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:center;background:#fff;border:2px solid var(--espresso);padding:.85rem 1rem;box-shadow:5px 5px 0 var(--aqua);transition:transform .2s,box-shadow .2s}
+.nx-lab li:nth-child(4n+2){box-shadow:5px 5px 0 var(--sunshine)}.nx-lab li:nth-child(4n+4){box-shadow:5px 5px 0 var(--clay)}
+.nx-lab li:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--espresso)}
+.nx-lab i{font-style:normal;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 118;font-size:1.5rem;color:var(--clay);line-height:1}
+.nx-lab b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 112;text-transform:uppercase;font-size:.98rem;line-height:1.15}
+.nx-lab span{display:block;font-size:.88rem;line-height:1.4;color:var(--ink-dim);margin-top:.2rem}
+.nx-label .btn-row{margin-top:1.8rem}
+.nx-label-art{display:flex;justify-content:center}
+.nx-label-art .spec-card{width:100%;max-width:560px}
+@keyframes nxbob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.nx-label-art .spec-card .canister{animation:nxbob 5s ease-in-out infinite}
+.nx-strip.sun{background:var(--sunshine);color:var(--ink);border-top:3px solid var(--espresso);border-bottom:3px solid var(--espresso)}
+.nx-strip.sun .t h2{color:var(--ink)}.nx-strip.sun .t h2 em{color:var(--clay)}.nx-strip.sun .t a{color:var(--ink)}
+.nx-strip.sun .s{border-left-color:rgba(27,27,29,.3)}
+.nx-strip.sun .s b,.nx-strip.sun .s:nth-child(3) b{color:var(--ink)}.nx-strip.sun .s:nth-child(4) b{color:#D9431A}
+.nx-strip.sun .s span{color:rgba(27,27,29,.8)}
+@media(max-width:820px){.nx-flip .face{box-shadow:6px 6px 0 var(--espresso)}.nx-lab li{grid-template-columns:36px 1fr;padding:.75rem .8rem}}
+@media(prefers-reduced-motion:reduce){.nx-flip .fc{transition:none}.nx-label-art .spec-card .canister{animation:none}}
 /* Nov 20: education pieces on the inner pages */
 .ingr details.ing img.ing-ph{display:none;width:100%;aspect-ratio:16/6;object-fit:cover;object-position:68% 50%;border-top:2px solid var(--bone);border-bottom:2px solid var(--bone);margin-bottom:1rem}
 .ingr details.ing[open] img.ing-ph{display:block}
@@ -2774,12 +2821,24 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     <div class="sec-head rev"><span class="num">01</span><div class="line"></div><span class="mono-label">Inside the scoop</span></div>
     <h2 class="display rev">One scoop.<br><em>Three fibers.</em></h2>
     <p class="lead rev rev-d1">Most fiber powders pick one. Daily Performance Fiber carries three, each named on the label, with <b>no proprietary blends</b>.</p>
-    <div class="g">
-      <article class="nx-fib rev"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. A gel-forming fiber that holds water.</p><span class="job">Holds water</span></div></article>
-      <article class="nx-fib rev rev-d1"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the colon intact.</p><span class="job">Reaches the colon</span></div></article>
-      <article class="nx-fib rev rev-d2"><div class="ico"><img src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><p>Fiber from the sap of the acacia tree. It dissolves in water and helps the powder mix.</p><span class="job">Mixes clean</span></div></article>
-    </div>
-    <p class="nx-hint">Swipe the three fibers</p>
+    <div class="g"><article class="nx-fib nx-flip rev" tabindex="0" role="button" aria-pressed="false" aria-label="Psyllium husk. Flip the card for more.">
+  <div class="fc">
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. A gel-forming fiber that holds water.</p><div class="ft"><span class="job">Holds water</span><span class="turn">Flip for more &#8635;</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><dl><div><dt>Where it comes from</dt><dd>The seed husks of the plantago plant.</dd></div><div><dt>What kind of fiber</dt><dd>Soluble and gel-forming. Gut bacteria ferment very little of it.</dd></div><div><dt>What it does</dt><dd>It soaks up water and turns to a gel, which helps give stool its form.</dd></div><div><dt>Where it works</dt><dd>The whole route.</dd></div></dl><span class="turn">&#8635; Flip back</span></div>
+  </div>
+</article><article class="nx-fib nx-flip rev rev-d1" tabindex="0" role="button" aria-pressed="false" aria-label="Resistant potato starch. Flip the card for more.">
+  <div class="fc">
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the colon intact.</p><div class="ft"><span class="job">Reaches the colon</span><span class="turn">Flip for more &#8635;</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><dl><div><dt>Where it comes from</dt><dd>Potatoes. The starch is kept in its raw, resistant form.</dd></div><div><dt>What kind of fiber</dt><dd>A resistant starch. Your enzymes can&rsquo;t break it down, so it counts as fiber.</dd></div><div><dt>What it does</dt><dd>It arrives in the colon intact, where gut bacteria ferment it.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">&#8635; Flip back</span></div>
+  </div>
+</article><article class="nx-fib nx-flip rev rev-d2" tabindex="0" role="button" aria-pressed="false" aria-label="Acacia fiber. Flip the card for more.">
+  <div class="fc">
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><p>Fiber from the sap of the acacia tree. It dissolves in water and helps the powder mix.</p><div class="ft"><span class="job">Mixes clean</span><span class="turn">Flip for more &#8635;</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><dl><div><dt>Where it comes from</dt><dd>The dried sap of the acacia tree, also called gum arabic.</dd></div><div><dt>What kind of fiber</dt><dd>Soluble and fermentable. It dissolves without thickening.</dd></div><div><dt>What it does</dt><dd>Gut bacteria ferment it slowly, and it helps the scoop mix smooth.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">&#8635; Flip back</span></div>
+  </div>
+</article></div>
+    <p class="nx-hint">Swipe, then tap a card to flip it</p>
+    <p class="nx-fine" style="margin-top:1.2rem">Tap a card to flip it. General fiber science, simplified, and not a claim about STÄPL.</p>
     <a class="more-link" href="#the-fiber">Read the full breakdown &#9656;</a>
   </div>
 </section>
@@ -3249,33 +3308,71 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">Inside the scoop</span></div>
     <h2 class="display rev">One scoop.<br><em>Three fibers.</em></h2>
     <p class="lead rev rev-d1">Different fibers do different jobs, so Daily Performance Fiber is full-spectrum: three fibers in one scoop. <b>No proprietary blends</b>, so each one is named on the label.</p>
-    <div class="g">
-      <article class="nx-fib rev"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. A gel-forming fiber that holds water.</p><span class="job">Holds water</span></div></article>
-      <article class="nx-fib rev rev-d1"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the colon intact.</p><span class="job">Reaches the colon</span></div></article>
-      <article class="nx-fib rev rev-d2"><div class="ico"><img src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><p>Fiber from the sap of the acacia tree. It dissolves in water and helps the powder mix.</p><span class="job">Mixes clean</span></div></article>
-    </div>
-    <p class="nx-hint">Swipe the three fibers</p>
+    <div class="g"><article class="nx-fib nx-flip rev" tabindex="0" role="button" aria-pressed="false" aria-label="Psyllium husk. Flip the card for more.">
+  <div class="fc">
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. A gel-forming fiber that holds water.</p><div class="ft"><span class="job">Holds water</span><span class="turn">Flip for more &#8635;</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><dl><div><dt>Where it comes from</dt><dd>The seed husks of the plantago plant.</dd></div><div><dt>What kind of fiber</dt><dd>Soluble and gel-forming. Gut bacteria ferment very little of it.</dd></div><div><dt>What it does</dt><dd>It soaks up water and turns to a gel, which helps give stool its form.</dd></div><div><dt>Where it works</dt><dd>The whole route.</dd></div></dl><span class="turn">&#8635; Flip back</span></div>
+  </div>
+</article><article class="nx-fib nx-flip rev rev-d1" tabindex="0" role="button" aria-pressed="false" aria-label="Resistant potato starch. Flip the card for more.">
+  <div class="fc">
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the colon intact.</p><div class="ft"><span class="job">Reaches the colon</span><span class="turn">Flip for more &#8635;</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><dl><div><dt>Where it comes from</dt><dd>Potatoes. The starch is kept in its raw, resistant form.</dd></div><div><dt>What kind of fiber</dt><dd>A resistant starch. Your enzymes can&rsquo;t break it down, so it counts as fiber.</dd></div><div><dt>What it does</dt><dd>It arrives in the colon intact, where gut bacteria ferment it.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">&#8635; Flip back</span></div>
+  </div>
+</article><article class="nx-fib nx-flip rev rev-d2" tabindex="0" role="button" aria-pressed="false" aria-label="Acacia fiber. Flip the card for more.">
+  <div class="fc">
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><p>Fiber from the sap of the acacia tree. It dissolves in water and helps the powder mix.</p><div class="ft"><span class="job">Mixes clean</span><span class="turn">Flip for more &#8635;</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><dl><div><dt>Where it comes from</dt><dd>The dried sap of the acacia tree, also called gum arabic.</dd></div><div><dt>What kind of fiber</dt><dd>Soluble and fermentable. It dissolves without thickening.</dd></div><div><dt>What it does</dt><dd>Gut bacteria ferment it slowly, and it helps the scoop mix smooth.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">&#8635; Flip back</span></div>
+  </div>
+</article></div>
+    <p class="nx-hint">Swipe, then tap a card to flip it</p>
+    <p class="nx-fine" style="margin-top:1.2rem">Tap a card to flip it. General fiber science, simplified, and not a claim about STÄPL.</p>
     <a class="more-link" href="#shop">Meet Daily Performance Fiber &#9656;</a>
   </div>
 </section>
-<section class="pg-sec mint">
-    <div class="wrap">
-      <div class="split has-p2">
-        <div>
-          <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">What's in Daily</span></div>
-          <h2 class="display rev">One scoop.<br><em>Full label.</em></h2>
-          <p class="lead rev rev-d1">No proprietary blends. Everything in the canister is on the canister.</p>
-          <ul class="ticks rev rev-d2">
-            <li><b>Three fibers</b>: psyllium husk, resistant potato starch and acacia</li>
-            <li><b>Natural raspberry flavor</b></li>
-            <li class="p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><b>Sweetened with stevia leaf extract and monk fruit</b></li>
-            <li><b>No proprietary blends</b></li>
-            <li><b>30 servings</b> per canister, scoop included</li>
-            <li class="p2" data-p2="Lab results posted (after first-lot testing)"><b>Lab results posted here</b> from the first production lot</li>
-          </ul>
-          <div class="btn-row rev rev-d3"><a class="btn btn-sun" href="#shop">See the product &#9656;</a></div>
+<section class="pg-sec mint nx nx-label">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">What&rsquo;s in Daily</span></div>
+    <div class="nx-split">
+      <div>
+        <h2 class="display rev">One scoop.<br><em class="aq">Full label.</em></h2>
+        <p class="lead rev rev-d1">No proprietary blends. Everything in the canister is on the canister.</p>
+        <ul class="nx-lab">
+          <li class="rev"><i>01</i><div><b>Three fibers</b><span>Psyllium husk, resistant potato starch and acacia.</span></div></li>
+          <li class="rev rev-d1"><i>02</i><div><b>Natural raspberry flavor</b><span>Bright, tart, a little jammy.</span></div></li>
+          <li class="rev rev-d1 p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><i>+</i><div><b>Sweetened with stevia leaf extract and monk fruit</b></div></li>
+          <li class="rev rev-d2"><i>03</i><div><b>No proprietary blends</b><span>Every ingredient is named on the label.</span></div></li>
+          <li class="rev rev-d3"><i>04</i><div><b>30 servings per canister</b><span>Scoop included.</span></div></li>
+          <li class="rev rev-d3 p2" data-p2="Lab results posted (after first-lot testing)"><i>+</i><div><b>Lab results posted here</b><span>From the first production lot.</span></div></li>
+        </ul>
+        <div class="btn-row rev rev-d3"><a class="btn btn-sun" href="#shop">See the product &#9656;</a></div>
+      </div>
+      <div class="nx-label-art rev rev-d1"><div class="spec-card rev rev-d1">
+        <span class="spec-tag">Daily &#9656; Spec 001</span>
+        <div class="canister">
+          <div class="can-lid"></div>
+          <div class="can-body">
+            <div class="can-label">
+              <span class="can-stripes"></span>
+              <span class="can-dots"></span>
+              <div class="can-blob">
+                <img src="assets/staple-home/stapl-wordmark-dark.png" alt="STÄPL">
+                <div class="can-sub">Daily<br><span style="font-size:.5em;letter-spacing:.14em">Performance Fiber</span></div>
+                <div class="can-dose">3 FIBERS · 30 SERVINGS</div>
+              </div>
+              <div class="can-flav-wrap"><span class="can-flav">RASPBERRY</span></div>
+            </div>
+            <div class="can-foot">DIETARY SUPPLEMENT<small>30 SERVINGS</small></div>
+          </div>
         </div>
-        <div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;justify-content:center">
+        <div class="spec-notes">
+          <span class="spec-note sn1" style="--dot:var(--aqua)"><i></i>Full spectrum: three fibers in every scoop</span>
+          <span class="spec-note sn2" style="--dot:var(--clay)"><i></i>Natural raspberry flavor</span>
+          <span class="spec-note sn3" style="--dot:var(--sunshine)"><i></i>No proprietary blends</span>
+          <span class="spec-note sn4" style="--dot:var(--coral)"><i></i>30 servings · scoop inside</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;justify-content:center">
           <div class="facts">
             <h3>Supplement Facts</h3>
             <div class="row"><span>Serving size</span><b>1 scoop</b></div>
@@ -3288,18 +3385,16 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
             <small>Placeholder panel. The final Supplement Facts and ingredient list replace this when they arrive from the manufacturer.</small>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ritual">
+  </div>
+</section>
+<section class="ritual">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">How to take it</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
-        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
-        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
-        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>New to fiber? Start with half a scoop for the first week and drink plenty of water.</p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-mix.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>New to fiber? Start with half a scoop for the first week and drink plenty of water.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-done.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
       </div>
     </div>
   </section>
@@ -3596,8 +3691,8 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
           </div>
           <div class="pdp-thumbs three">
             <div class="frame"><img src="assets/staple-home/raspberry-bright.jpg" alt="Raspberry"></div>
-            <div class="frame"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"></div>
-            <div class="frame"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"></div>
+            <div class="frame"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"></div>
+            <div class="frame"><img src="assets/staple-home/ritual-mix.jpg" alt="Fiber mixing into water"></div>
           </div>
         </div>
         <div class="pdp-info">
@@ -3659,7 +3754,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     </div>
   </section>
 
-  <section class="nx nx-strip" id="nx-why">
+  <section class="nx nx-strip sun" id="nx-why">
   <div class="wrap">
     <div class="g">
       <div class="t rev"><h2 class="display">Why fiber?<br><em>Nobody counts it.</em></h2><a class="more-link" href="#the-fiber">See the why &#9656;</a></div>
@@ -3768,9 +3863,9 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
       <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">How to use</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
-        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
-        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/aa494ee14a.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
-        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>That's it. The foundation is handled. Go train, work, live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/747673fa6d.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
+        <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Into 8 to 12 oz of water. It mixes in seconds. Want to mix it up? Stir it into yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-mix.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Go</h3><p>That's it. The foundation is handled. Go train, work, live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-done.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
       </div>
     </div>
   </section>
@@ -3979,10 +4074,10 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
           <div class="ph"><div class="blank"><span class="label">Marcus · training action</span><span class="spec">4:5 photo · lifting, full effort</span></div></div>
           <div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Why most athletes under-eat fiber</h3><p>You track protein to the gram. Here is the nutrient your plan is probably missing, and what to do about it.</p><span class="meta">By Marcus Filly · 5 min read</span></div>
         </a>
-        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/aa494ee14a.jpg" alt=""></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Psyllium, resistant starch, acacia: a field guide</h3><p>Three fibers, three different jobs.</p><span class="meta">4 min read</span></div></a>
-        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/b93ac55391.jpg" alt=""></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The ten-second morning</h3><p>How to build a habit small enough that you never skip it.</p><span class="meta">3 min read</span></div></a>
+        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/ritual-mix.jpg" alt=""></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Psyllium, resistant starch, acacia: a field guide</h3><p>Three fibers, three different jobs.</p><span class="meta">4 min read</span></div></a>
+        <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/ritual-scoop.jpg" alt=""></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The ten-second morning</h3><p>How to build a habit small enough that you never skip it.</p><span class="meta">3 min read</span></div></a>
         <a class="post rev rev-d2" href="#journal-post"><div class="ph"><div class="blank"><span class="label">Marcus · between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div></div><div class="body"><span class="cat">From Marcus · Draft topic</span><h3>How I fuel a training week</h3><p>What stays the same every day, and what changes.</p><span class="meta">By Marcus Filly · 6 min read</span></div></a>
-        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/747673fa6d.jpg" alt=""></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>Why first thing in the morning works</h3><p>Stack the habit on something you already do.</p><span class="meta">3 min read</span></div></a>
+        <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/ritual-done.jpg" alt=""></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>Why first thing in the morning works</h3><p>Stack the habit on something you already do.</p><span class="meta">3 min read</span></div></a>
         <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/86ad8c5ea1.jpg" alt=""></div><div class="body"><span class="cat">Training · Draft topic</span><h3>The boring stuff builds you</h3><p>Why fundamentals outlast every trend in the gym.</p><span class="meta">5 min read</span></div></a>
         <a class="post rev rev-d2" href="#journal-post"><div class="ph"><img src="assets/staple-home/856820ae5f.jpg" alt=""></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>How to read a supplement label like a skeptic</h3><p>What "lab-tested" does and doesn't tell you.</p><span class="meta">4 min read</span></div></a>
       </div>
@@ -5057,6 +5152,9 @@ document.addEventListener('click',e=>{
     var a=e.target.closest('a[data-nx-go]');if(a)e.preventDefault();
   },true);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m&&!m.hidden)close()});
+  function flip(c){var on=c.classList.toggle('flip');c.setAttribute('aria-pressed',String(on))}
+  document.addEventListener('click',function(e){var c=e.target.closest('.nx-flip');if(c&&!e.target.closest('a'))flip(c)});
+  document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('nx-flip')){e.preventDefault();flip(e.target)}});
   window.addEventListener('message',function(e){var d=e.data;if(d&&d.stapl==='go'){close();if(d.hash)location.hash=d.hash}});
 })();
 </script>
