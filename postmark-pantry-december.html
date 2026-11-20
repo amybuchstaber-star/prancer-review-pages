@@ -2632,6 +2632,63 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 /* the shop's fiber section */
 .fshop .fcopy p{max-width:44ch}
 </style>
+<style id="r1120h">
+/* Nov 20 (5): six things to find in each issue */
+.tf-host{position:relative}
+.tf{position:absolute;z-index:4;width:var(--w,84px);padding:0;border:0;background:none;cursor:pointer;transform:rotate(var(--r,0deg));filter:drop-shadow(0 7px 6px rgba(60,30,10,.28));transition:transform .5s var(--spring,cubic-bezier(.3,1.5,.5,1)),filter .4s;-webkit-tap-highlight-color:transparent}
+.tf img{display:block;width:100%;height:auto;pointer-events:none}
+.tf:hover,.tf:focus-visible{transform:rotate(calc(var(--r,0deg) + 9deg)) translateY(-5px) scale(1.1);filter:drop-shadow(0 14px 10px rgba(60,30,10,.3));outline:none}
+.tf.rest{animation:tfrest 7s ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes tfrest{0%,86%,100%{transform:rotate(var(--r,0deg))}90%{transform:rotate(calc(var(--r,0deg) - 5deg))}94%{transform:rotate(calc(var(--r,0deg) + 4deg))}}
+.tf.gone{visibility:hidden}
+.tf-fly{position:fixed;z-index:60;pointer-events:none;filter:drop-shadow(0 16px 12px rgba(60,30,10,.35));transition:transform .85s cubic-bezier(.5,-.2,.3,1),opacity .3s .7s;transform-origin:center}
+.tf-fly img{display:block;width:100%;height:auto}
+/* the keepsake tray */
+.tft{position:fixed;left:16px;bottom:16px;z-index:50;font-family:var(--slab)}
+.tft-tab{display:flex;align-items:center;gap:9px;cursor:pointer;border:1px solid var(--card-edge,#DCCBA8);background:#FBF7EE;color:var(--ink);padding:7px 14px 7px 9px;box-shadow:0 14px 22px -14px rgba(60,30,10,.6);font:600 11px var(--slab);letter-spacing:.16em;text-transform:uppercase;transition:transform .4s var(--spring,ease)}
+.tft-tab:hover{transform:translateY(-3px)}
+.tft-tab .dots{display:flex;gap:4px}
+.tft-tab .dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--red);transition:background .4s}
+.tft-tab .dots i.on{background:var(--red)}
+.tft.bump .tft-tab{animation:tfbump .6s var(--spring,ease)}
+@keyframes tfbump{40%{transform:translateY(-8px) scale(1.06)}}
+.tft-box{position:absolute;left:0;bottom:calc(100% + 10px);width:min(340px,calc(100vw - 32px));background:#F6ECD6 url("pp/textures__letter-paper.webp") center/640px;background-blend-mode:multiply;padding:18px 18px 16px;box-shadow:0 30px 44px -26px rgba(60,30,10,.75);opacity:0;visibility:hidden;transform:translateY(10px) rotate(-1deg);transform-origin:bottom left;transition:opacity .35s,transform .45s var(--spring,ease),visibility 0s .35s}
+.tft-box::before{content:"";position:absolute;inset:6px;border:1px solid rgba(139,52,56,.25);pointer-events:none}
+.tft.open .tft-box{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .45s var(--spring,ease)}
+.tft-k{font:600 10.5px var(--slab);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.tft-h{font-family:var(--did);font-size:25px;line-height:1.1;margin:5px 0 12px;color:var(--ink)}
+.tft-h em{font-style:italic;color:var(--red)}
+.tft-row{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:10px}
+.tft-s{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px dashed rgba(107,38,42,.35);position:relative}
+.tft-s img{max-width:84%;max-height:84%;filter:brightness(0) opacity(.13);transition:filter .6s,transform .6s var(--spring,ease)}
+.tft-s.on{border-style:solid;border-color:rgba(107,38,42,.2);background:rgba(255,253,246,.6)}
+.tft-s.on img{filter:drop-shadow(0 3px 3px rgba(60,30,10,.25));transform:rotate(var(--r,0deg)) scale(1.08)}
+.tft-say{font-family:var(--hand,"Caveat",cursive);font-size:21px;line-height:1.15;color:var(--ink-2);margin:0;min-height:2.3em}
+.tft-say b{font-weight:600;color:var(--red)}
+.tft-done{display:none;margin-top:8px;padding-top:10px;border-top:1px dashed rgba(107,38,42,.35)}
+.tft.all .tft-done{display:block}.tft.all .tft-say{display:none}
+.tft-done p{font-family:var(--hand,"Caveat",cursive);font-size:22px;line-height:1.18;color:var(--ink);margin:0 0 4px}
+.tft-done .sig{color:var(--red);font-size:26px}
+.tft-pm{position:absolute;right:10px;top:8px;width:74px;color:var(--red);opacity:0;transform:rotate(-14deg) scale(1.5);pointer-events:none}
+.tft-pm svg{width:100%;height:auto;display:block}
+.tft.all .tft-pm{animation:fpress .7s var(--spring,ease) .3s both}
+.tft-x{position:absolute;right:8px;bottom:8px;border:0;background:none;font:600 10px var(--slab);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);cursor:pointer;padding:6px}
+@media(max-width:700px){.tft{left:10px;bottom:10px}.tft-tab{padding:6px 10px 6px 8px;font-size:10px}.tft-tab .lbl{display:none}}
+@media(prefers-reduced-motion:reduce){.tf.rest{animation:none}.tf-fly{transition:none}}
+</style>
+<style id="r1120i">
+/* Nov 20 (6) */
+.fjar{display:block;margin-left:auto;margin-right:auto}
+.fchap-s .fadd{justify-content:center;margin-top:30px}
+.fchap-s .fhint{justify-content:center;margin:12px 0 0!important}
+.fchap.touched .fhint{opacity:0;transition:opacity .5s}
+.nc-r label.ln{display:flex;align-items:baseline;gap:8px;cursor:text}
+.nc-r label.ln i{flex:none;margin-right:0}
+.nc-r label.ln input{flex:1;min-width:0;border:0;background:none;font-family:var(--hand,"Caveat",cursive);font-size:23px;line-height:1.1;color:var(--ink);padding:2px 0;outline:none}
+.nc-r label.ln input::placeholder{color:var(--ink-3);opacity:.75}
+.nc-r label.ln:focus-within{border-bottom-color:var(--red)}
+.pc-back .to #pc-email{display:block;width:100%;margin-top:10px;font-size:.82em}
+</style>
 </head>
 <body>
 
@@ -3134,7 +3191,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
     <p>So we started there. One nutrient, put back where it used to live: in food, on the table, in something you would eat anyway.</p>
     <a class="tlink" href="#home/fiber">see the whole sheet →</a>
   </div>
-  <div class="fchap-s"><div class="fsheet" data-fsheet="story" data-base="12" role="img" aria-label="A sheet of 28 stamps, one for each gram of fiber. Twelve come from the table; Jam Pact and Pitcher Perfect fill the rest."></div><p class="fcap">one stamp for every gram a day is meant to carry</p></div>
+  <div class="fchap-s"><div class="fsheet" data-fsheet="storytap" data-base="12" role="img" aria-label="A sheet of 28 stamps, one for each gram of fiber. Twelve come from the table; Jam Pact and Pitcher Perfect fill the rest."></div><p class="fcap">one stamp for every gram a day is meant to carry</p><div class="fadd"><button type="button" class="ftog jam" data-fadd="jam" aria-pressed="false"><img src="pp/stamps__fiber-jam-pact.webp" alt=""><span><b>Add Jam Pact</b><i>11 grams, on toast</i></span></button><button type="button" class="ftog pink" data-fadd="pink" aria-pressed="false"><img src="pp/stamps__fiber-pitcher-perfect.webp" alt=""><span><b>Add Pitcher Perfect</b><i>5 grams, in a glass</i></span></button></div><p class="fhint"><svg viewBox="0 0 46 22" aria-hidden="true"><path d="M44 16C32 21 14 19 4 7m0 0l1 9M4 7l9 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tap a jar and watch the sheet fill</p></div>
 </section>
 </div>
 <div class="wrap">
@@ -3155,7 +3212,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
   <figure class="ah p4" style="--r:2.1deg"><span class="tape" aria-hidden="true"></span><img src="pp/photos__amy__01-porch-morning.webp" alt="" loading="lazy"></figure>
 </div></section>
 <section class="chap"><div class="pic rv"><img src="pp/photos__ed__03-orchard-table.webp" alt=""><span class="cap">the table, set for company</span></div><div class="rv d1"><span class="dept">Chapter IV</span><h2>The Postmark <em>way.</em></h2><p>This is not about building a certain body. It is about supporting the one you live in. We keep things simple, seasonal, and thoughtfully made: without dairy, without gluten, without fillers, and without the idea that more (or less) is better. Just real nourishment, designed for real life.</p><div class="pull">Steady, faithful, kept.</div><div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><a class="btn" href="#shop">Meet the jars</a><a class="tlink" href="#contact">or write to us</a></div></div></section>
-<aside class="notecard rv"><div class="nc"><div class="nc-l"><span class="k">From our table to theirs</span><h3>Send a note <em>to a friend.</em></h3><p>Know someone who should hear this story? Write a line, we postmark it, and it is on its way.</p><button type="button" class="btn" data-sendnote="jam-pact">Write the postcard <svg class="arrow" viewBox="0 0 24 10"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div><span class="rule" aria-hidden="true"></span><div class="nc-r" aria-hidden="true"><span class="nc-pm" data-ncpm></span><img class="nc-st" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" loading="lazy"><span class="ln"><i>to</i>someone you love</span><span class="ln"><i>at</i>their kitchen table</span><span class="ln"><i>from</i>yours</span></div></div></aside>
+<aside class="notecard rv"><div class="nc"><div class="nc-l"><span class="k">From our table to theirs</span><h3>Send a note <em>to a friend.</em></h3><p>Know someone who should hear this story? Write a line, we postmark it, and it is on its way.</p><button type="button" class="btn" data-sendnote="jam-pact">Write the postcard <svg class="arrow" viewBox="0 0 24 10"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div><span class="rule" aria-hidden="true"></span><div class="nc-r"><span class="nc-pm" data-ncpm aria-hidden="true"></span><img class="nc-st" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" loading="lazy"><label class="ln"><i>to</i><input name="nc-to" maxlength="40" placeholder="their name" autocomplete="off"></label><label class="ln"><i>email</i><input name="nc-email" type="email" maxlength="80" placeholder="their email" autocomplete="off"></label><label class="ln"><i>from</i><input name="nc-from" maxlength="40" placeholder="your name" autocomplete="given-name"></label></div></div></aside>
 </div>
 </div>
 <div class="view" id="view-inner-garden">
@@ -3221,7 +3278,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
       <div class="bigcal rv d1"><div class="bc-head" id="bchead"></div><div class="bc-grid" id="bcgrid" role="grid" aria-label="Days of the month"></div></div>
       <aside class="daycard rv d2" id="daycard" aria-live="polite"></aside>
     </div>
-    <aside class="notecard rv"><div class="nc"><div class="nc-l"><span class="k">From this day to theirs</span><h3>Send a note <em>to a friend.</em></h3><p>Know someone who would keep this day with you? Write a line, we postmark it, and it is on its way.</p><button type="button" class="btn" data-sendnote="jam-pact">Write the postcard <svg class="arrow" viewBox="0 0 24 10"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div><span class="rule" aria-hidden="true"></span><div class="nc-r" aria-hidden="true"><span class="nc-pm" data-ncpm></span><img class="nc-st" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" loading="lazy"><span class="ln"><i>to</i>someone you love</span><span class="ln"><i>at</i>their kitchen table</span><span class="ln"><i>from</i>yours</span></div></div></aside>
+    <aside class="notecard rv"><div class="nc"><div class="nc-l"><span class="k">From this day to theirs</span><h3>Send a note <em>to a friend.</em></h3><p>Know someone who would keep this day with you? Write a line, we postmark it, and it is on its way.</p><button type="button" class="btn" data-sendnote="jam-pact">Write the postcard <svg class="arrow" viewBox="0 0 24 10"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div><span class="rule" aria-hidden="true"></span><div class="nc-r"><span class="nc-pm" data-ncpm aria-hidden="true"></span><img class="nc-st" src="pp/stamps__autumn__autumn-08-preserving-day.webp" alt="" loading="lazy"><label class="ln"><i>to</i><input name="nc-to" maxlength="40" placeholder="their name" autocomplete="off"></label><label class="ln"><i>email</i><input name="nc-email" type="email" maxlength="80" placeholder="their email" autocomplete="off"></label><label class="ln"><i>from</i><input name="nc-from" maxlength="40" placeholder="your name" autocomplete="given-name"></label></div></div></aside>
     <p class="sendnote-row cal">Know someone who would keep this day? <button type="button" class="sendjar sendnote" data-sendnote="jam-pact"><svg viewBox="0 0 18 14" aria-hidden="true"><rect x=".8" y=".8" width="16.4" height="12.4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1 1.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Send a note to a friend</button></p>
     <div class="calmore">
       <div class="archive rv"><div class="ah"><span class="dept">The archive</span><h2>Past <em>months.</em></h2><p>Each month is filed here once it is over. The next one is on its way.</p></div>
@@ -4292,11 +4349,11 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
    <div class="pc-card"><div class="pc-in">
      <div class="pc-face pc-front"><img alt=""><span class="cap"></span></div>
      <div class="pc-face pc-back"><div class="note"><label for="pc-msg">On the back</label><textarea id="pc-msg" maxlength="180"></textarea><div class="msg" hidden></div><label for="pc-from">From</label><input id="pc-from" maxlength="40" autocomplete="given-name"></div>
-       <div class="addr"><img class="stamp" alt=""><div class="pmw"></div><div class="to"><label for="pc-to">To</label><input id="pc-to" maxlength="40"></div></div></div>
+       <div class="addr"><img class="stamp" alt=""><div class="pmw"></div><div class="to"><label for="pc-to">To</label><input id="pc-to" maxlength="40"><input id="pc-email" type="email" maxlength="80" aria-label="Their email"></div></div></div>
    </div></div>
    <div class="pc-acts"></div><div class="pc-note" aria-live="polite"></div></div>`;
   document.body.appendChild(m);
-  const $=s=>m.querySelector(s),card=$('.pc-card'),ta=$('#pc-msg'),fr=$('#pc-from'),to=$('#pc-to'),msg=$('.msg'),acts=$('.pc-acts'),note=$('.pc-note');
+  const $=s=>m.querySelector(s),card=$('.pc-card'),ta=$('#pc-msg'),fr=$('#pc-from'),to=$('#pc-to'),em=$('#pc-email'),msg=$('.msg'),acts=$('.pc-acts'),note=$('.pc-note');
   let jar='jam-pact',lastFocus=null;
   card.addEventListener('click',e=>{if(e.target.closest('textarea,input,button'))return;card.classList.toggle('back')});
   function close(){m.classList.remove('open');document.body.style.overflow='';lastFocus&&lastFocus.focus&&lastFocus.focus()}
@@ -4309,9 +4366,9 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function btn(t,cls,fn){const b=document.createElement('button');b.type='button';b.className='btn'+(cls?' '+cls:'');b.textContent=t;b.onclick=fn;acts.appendChild(b);return b}
 
   /* the sender writes the card */
-  function compose(k){dress(k);$('.pc-h').textContent='Send a note to a friend';
+  function compose(k,pre){dress(k);$('.pc-h').textContent='Send a note to a friend';
     $('.pc-sub').textContent='Write a line on the back. We postmark it, then you can email it or copy a link to send.';
-    ta.hidden=false;msg.hidden=true;[ta,fr,to].forEach(x=>{x.readOnly=false});ta.placeholder='This made me think of you.';fr.placeholder='your name';to.placeholder='their name';
+    ta.hidden=false;msg.hidden=true;[ta,fr,to].forEach(x=>{x.readOnly=false});ta.placeholder='This made me think of you.';fr.placeholder='your name';to.placeholder='their name';em.placeholder='their email';em.hidden=false;if(pre){if(pre.to)to.value=pre.to;if(pre.from)fr.value=pre.from;if(pre.email)em.value=pre.email}
     acts.innerHTML='';note.textContent='';
     btn('Turn it over','pc-ghost',()=>{card.classList.toggle('back');if(card.classList.contains('back'))setTimeout(()=>ta.focus(),500)});
     btn('Postmark it','',()=>send());btn('Email it','pc-ghost',()=>send(true));
@@ -4322,7 +4379,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const url=location.origin+location.pathname+'?postcard='+enc(o)+'#'+jar;
     const text=(o.t?o.t+', ':'')+'a postcard from '+(o.f||'a friend')+' at Postmark Pantry.';
     await new Promise(r=>setTimeout(r,RM?0:1100));
-    if(mail){location.href='mailto:?subject='+encodeURIComponent('A postcard for you, from Postmark Pantry')+'&body='+encodeURIComponent(text+'\n\n'+url);note.textContent='Your email is open with the postcard link in it. Add their address and send.';return}
+    if(mail){location.href='mailto:'+encodeURIComponent(em.value.trim())+'?subject='+encodeURIComponent('A postcard for you, from Postmark Pantry')+'&body='+encodeURIComponent(text+'\n\n'+url);note.textContent=em.value.trim()?'Your email is open, addressed to them, with the postcard link in it.':'Your email is open with the postcard link in it. Add their address and send.';return}
     if(navigator.share){try{await navigator.share({title:'A postcard for you',text,url});note.textContent='Sent on its way.';return}catch(err){if(err&&err.name==='AbortError'){note.textContent='';return}}}
     try{await navigator.clipboard.writeText(url);note.textContent='Link copied. Paste it into a text or an email.'}
     catch(_){note.textContent='Copy this link: '+url}}
@@ -4331,7 +4388,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function receive(o){dress(o.p);const J=JARS[jar];
     $('.pc-h').textContent=o.t?('A postcard for '+o.t):'A postcard for you';
     $('.pc-sub').textContent=(o.f||'A friend')+' sent you this from Postmark Pantry. Tap the card to turn it over.';
-    ta.hidden=true;msg.hidden=false;msg.textContent=o.m||'';fr.value=o.f||'';to.value=o.t||'';fr.readOnly=to.readOnly=true;
+    ta.hidden=true;msg.hidden=false;msg.textContent=o.m||'';fr.value=o.f||'';to.value=o.t||'';fr.readOnly=to.readOnly=true;em.hidden=true;
     card.classList.add('stamped');card.classList.remove('back');acts.innerHTML='';note.textContent='';
     btn('Meet '+J.name,'',()=>{close();location.hash=jar});btn('Turn it over','pc-ghost',()=>card.classList.toggle('back'));
     open();if(!RM)setTimeout(()=>card.classList.add('back'),1400)}
@@ -4343,7 +4400,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
     b.innerHTML='<svg viewBox="0 0 18 14" aria-hidden="true"><rect x=".8" y=".8" width="16.4" height="12.4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1 1.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Send a note to a friend';
     b.onclick=()=>compose(k);g.insertAdjacentElement('afterend',b)});
   /* Nov 20: the same note from the calendar, the Journal and the fiber chapter */
-  document.querySelectorAll('[data-sendnote]').forEach(b=>{b.onclick=()=>compose(b.dataset.sendnote||'jam-pact')});
+  document.querySelectorAll('[data-sendnote]').forEach(b=>{b.onclick=()=>{const f=b.closest('.nc'),v=n=>{const i=f&&f.querySelector('[name='+n+']');return i?i.value.trim():''};compose(b.dataset.sendnote||'jam-pact',f?{to:v('nc-to'),email:v('nc-email'),from:v('nc-from')}:null)}});
   document.querySelectorAll('[data-ncpm]').forEach(e=>{if(typeof postmarkSVG==='function')e.innerHTML=postmarkSVG('NOV 2026','WITH LOVE','POSTMARK PANTRY',{rot:0})});
 
   const q=new URLSearchParams(location.search).get('postcard');if(q){const o=dec(q);if(o&&JARS[o.p])setTimeout(()=>receive(o),900)}
@@ -4477,19 +4534,84 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
     var arc=day.querySelector('.farc'),path=day.querySelector('.arc1'),sun=day.querySelector('.fsun'),items=[].slice.call(day.querySelectorAll('.fhours li')),L=path.getTotalLength(),tick=false;
     function hours(){var ed=document.documentElement.dataset.edition==='12'?'dec-cottage':'nov-table';day.querySelectorAll('[data-fhour]').forEach(function(im){var want='pp/photos__hours__'+ed+'-'+im.dataset.fhour+'.webp';if(im.getAttribute('src')!==want)im.src=want})}
     hours();new MutationObserver(hours).observe(document.documentElement,{attributes:true,attributeFilter:['data-edition']});
-    function place(){tick=false;var r=day.getBoundingClientRect(),vh=window.innerHeight;if(r.bottom<0||r.top>vh)return;
-      var p=RM?1:Math.max(0,Math.min(1,(vh*.82-r.top)/(r.height*.78)));
-      var pt=path.getPointAtLength(L*(.02+.96*p)),b=arc.getBoundingClientRect();
+    var cur=0,goal=0,last=0,run=false;
+    function draw(p){var pt=path.getPointAtLength(L*(.02+.96*p)),b=arc.getBoundingClientRect();
       sun.style.setProperty('--x',(pt.x/1200*b.width)+'px');sun.style.setProperty('--y',(pt.y/210*b.height)+'px');path.style.setProperty('--p',(.02+.96*p).toFixed(3));
       var part=Math.min(3,Math.floor(p*4));day.dataset.part=part;
       items.forEach(function(li,i){li.classList.toggle('on',i===part);li.classList.toggle('past',i<part)})}
+    function step(ts){var dt=Math.min(.05,(ts-(last||ts))/1000);last=ts;var d=goal-cur,max=dt/6.5;   /* the whole crossing takes at least 6.5 seconds */
+      if(Math.abs(d)<=max){cur=goal;run=false}else cur+=d>0?max:-max*2.5;
+      draw(cur);if(run)requestAnimationFrame(step);else last=0}
+    function place(){tick=false;var r=day.getBoundingClientRect(),a=arc.getBoundingClientRect(),vh=window.innerHeight;if(r.bottom<0||r.top>vh)return;
+      goal=RM?1:Math.max(0,Math.min(1,(vh*.42-a.top)/Math.max(r.height*.5,vh*.45)));
+      if(RM){cur=goal;draw(cur);return}
+      if(!run){run=true;requestAnimationFrame(step)}}
     function req(){if(!tick){tick=true;requestAnimationFrame(place)}}
     window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);window.addEventListener('hashchange',function(){setTimeout(place,400)});place();
-    items.forEach(function(li,i){li.addEventListener('mouseenter',function(){items.forEach(function(x,j){x.classList.toggle('on',j===i)})});li.addEventListener('mouseleave',place)});
+    items.forEach(function(li,i){li.addEventListener('mouseenter',function(){items.forEach(function(x,j){x.classList.toggle('on',j===i)})});li.addEventListener('mouseleave',function(){draw(cur)})});
   });
   document.querySelectorAll('.fstrike li').forEach(function(li,i){li.style.setProperty('--n',i%4)});
 })();
 
+</script>
+<script id="r1120hjs">
+/* Nov 20 2026 (5): six things to find in each issue. Real objects, tucked one to a place; found ones are kept in the tray (and remembered on this device). */
+(function(){
+  var SETS={11:{next:'December',items:[
+      ['oak-leaf','a pressed oak leaf','by the pantry shelf'],['acorn','an acorn','near the crowded cabinet'],['brass-key','the pantry key','where the last questions are'],
+      ['rosemary','a sprig of rosemary','on the Jam Pact page'],['feather','a feather','in our story'],['place-card','a place card','on the calendar']]},
+    12:{next:'January',items:[
+      ['holly','a sprig of holly','by the pantry shelf'],['pinecone','a pinecone','near the crowded cabinet'],['bell','a brass bell','where the last questions are'],
+      ['cinnamon','cinnamon sticks','on the Jam Pact page'],['snowflake','a paper snowflake','in our story'],['ornament','a glass ornament','on the calendar']]}};
+  /* where each one sits: [host selector, css position, width, tilt] in the same order as the items */
+  var SPOTS=[
+    ['#pantry .sec-head','right:3%;top:-18px',88,-14,'right:0;top:-50px'],
+    ['#fiber .fshelf','left:-30px;bottom:-34px',78,18,'left:-6px;bottom:-30px'],
+    ['#home-faq .wrap','right:1%;bottom:-6px',104,-8,'right:2%;bottom:-30px'],
+    ['#view-jam-pact .fpdp .sec-head','right:2%;top:-6px',96,12,'right:0;top:-52px'],
+    ['#view-story .fchap-s','left:-52px;bottom:-6px',88,-20,'right:-2px;top:-34px'],
+    ['#view-calendar .cal-layout','right:-8px;top:-44px',92,7,'right:0;top:-30px']];
+  var MQ=window.matchMedia?matchMedia('(max-width:700px)'):{matches:false};
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches,tray,ed,found=[];
+  function key(){return 'pp-found-'+ed}
+  function load(){try{found=JSON.parse(localStorage.getItem(key())||'[]')}catch(e){found=[]}}
+  function save(){try{localStorage.setItem(key(),JSON.stringify(found))}catch(e){}}
+  function src(n){return 'pp/find__'+n+'.webp'}
+  function build(){
+    document.querySelectorAll('.tf,.tft').forEach(function(e){e.remove()});tray=null;
+    ed=+document.documentElement.dataset.edition;var S=SETS[ed];if(!S)return;load();
+    S.items.forEach(function(it,i){var sp=SPOTS[i],host=document.querySelector(sp[0]);if(!host)return;host.classList.add('tf-host');
+      var b=document.createElement('button');b.type='button';b.className='tf rest'+(found.indexOf(it[0])>-1?' gone':'');b.setAttribute('aria-label','You found '+it[1]+'. Tap to keep it.');
+      b.style.cssText=(MQ.matches?sp[4]:sp[1])+';--w:'+Math.round(sp[2]*(MQ.matches?.62:1))+'px;--r:'+sp[3]+'deg;--dl:'+(i*1.1)+'s';b.dataset.tf=it[0];b.innerHTML='<img src="'+src(it[0])+'" alt="" loading="lazy">';
+      b.addEventListener('click',function(){take(b,it,i)});host.appendChild(b)});
+    var t=document.createElement('aside');t.className='tft';t.setAttribute('aria-label','Things to find in this issue');
+    t.innerHTML='<div class="tft-box" role="dialog" aria-label="What you have found"><span class="tft-pm" aria-hidden="true">'+(typeof postmarkSVG==='function'?postmarkSVG('ALL SIX','WELL SPOTTED','POSTMARK PANTRY',{rot:0}):'')+'</span><span class="tft-k">Tucked into this issue</span><div class="tft-h">Six things <em>to find.</em></div><div class="tft-row">'
+      +S.items.map(function(it,i){return '<span class="tft-s" data-s="'+it[0]+'" style="--r:'+(i%2?6:-7)+'deg" title="'+it[2]+'"><img src="'+src(it[0])+'" alt=""></span>'}).join('')
+      +'</div><p class="tft-say" aria-live="polite"></p><div class="tft-done"><p>All six. You look closely, and this issue was made for that. I have tucked six more into '+S.next+'.</p><p class="sig">Warmly, Amy</p></div><button type="button" class="tft-x">close</button></div>'
+      +'<button type="button" class="tft-tab" aria-expanded="false"><span class="dots">'+S.items.map(function(){return '<i></i>'}).join('')+'</span><span class="lbl"></span></button>';
+    document.body.appendChild(t);tray=t;
+    t.querySelector('.tft-tab').addEventListener('click',function(){toggle()});t.querySelector('.tft-x').addEventListener('click',function(){toggle(false)});
+    paint()}
+  function toggle(v){var o=v===undefined?!tray.classList.contains('open'):v;tray.classList.toggle('open',o);tray.querySelector('.tft-tab').setAttribute('aria-expanded',String(o))}
+  function paint(last){var S=SETS[ed],n=found.length;
+    tray.querySelectorAll('.tft-s').forEach(function(s){s.classList.toggle('on',found.indexOf(s.dataset.s)>-1)});
+    tray.querySelectorAll('.dots i').forEach(function(d,i){d.classList.toggle('on',i<n)});
+    tray.querySelector('.lbl').textContent=n?n+' of 6 found':'Six things to find';
+    tray.classList.toggle('all',n>=6);
+    var left=S.items.filter(function(it){return found.indexOf(it[0])<0}),say=tray.querySelector('.tft-say');
+    say.innerHTML=(last?'<b>'+last[1].charAt(0).toUpperCase()+last[1].slice(1)+'.</b> ':'')+(left.length?(n?'The next one is ':'Real things, tucked around the site. One is ')+left[0][2]+'.':'')}
+  function take(b,it,i){if(found.indexOf(it[0])>-1)return;found.push(it[0]);save();
+    var r=b.getBoundingClientRect(),slot=tray.querySelector('.tft-tab').getBoundingClientRect();
+    b.classList.add('gone');
+    function done(){paint(it);tray.classList.remove('bump');void tray.offsetWidth;tray.classList.add('bump');toggle(true);clearTimeout(take.t);if(found.length<6)take.t=setTimeout(function(){toggle(false)},4200)}
+    if(RM){done();return}
+    var f=document.createElement('div');f.className='tf-fly';f.style.cssText='left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px';f.innerHTML='<img src="'+src(it[0])+'" alt="">';document.body.appendChild(f);
+    requestAnimationFrame(function(){requestAnimationFrame(function(){f.style.transform='translate('+(slot.left+20-r.left-r.width/2+10)+'px,'+(slot.top-r.top-r.height/2+10)+'px) rotate(200deg) scale(.25)';f.style.opacity='0'})});
+    setTimeout(function(){f.remove();done()},900)}
+  build();
+  if(MQ.addEventListener)MQ.addEventListener('change',build);
+  new MutationObserver(build).observe(document.documentElement,{attributes:true,attributeFilter:['data-edition']});
+})();
 </script>
 
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
