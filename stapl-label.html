@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>STÄPL — Label brand story</title>
+<link rel="stylesheet" href="assets/staple-home/stapl-fonts.css">
+<style>
+:root{--espresso:#1B1B1D;--ink:#121214;--bone:#F3F1EA;--aqua:#27D4C4;--sunshine:#FFC72C;--clay:#FF6B37;--coral:#FFBA6A;--ink-dim:rgba(27,27,29,.66);
+  --mono:'Space Mono',monospace;--arch:'Archivo Variable','Archivo',sans-serif;--accent:#FFC72C;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--espresso);font-family:var(--arch);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;}
+button{font-family:inherit;cursor:pointer;border:none;color:inherit;}
+a{color:inherit;}
+.display{font-weight:900;font-variation-settings:'wdth' 118;text-transform:uppercase;line-height:.9;letter-spacing:-.015em;}
+.mono{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;}
+.bar{position:sticky;top:0;z-index:20;background:var(--espresso);color:var(--bone);display:flex;align-items:center;gap:1.2rem;padding:.8rem 1.4rem;}
+.bar img{height:20px;}
+.bar .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
+.prog{flex:1;height:12px;border:2px solid var(--bone);position:relative;overflow:hidden;min-width:60px;}
+.prog i{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .4s cubic-bezier(.2,.7,.2,1);background-image:repeating-linear-gradient(-55deg,transparent 0 10px,rgba(27,27,29,.16) 10px 14px);}
+.bar .ct{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;white-space:nowrap;}
+.bar .save{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,241,234,.6);white-space:nowrap;}
+.bar .save.ok{color:var(--aqua);} .bar .save.err{color:var(--coral);}
+.stage{position:relative;max-width:920px;margin:0 auto;padding:3.2rem 1.4rem 8rem;}
+.shape{position:fixed;pointer-events:none;z-index:0;}
+.shape.a{top:-6%;right:-8%;width:30vw;height:56vh;background:var(--accent);clip-path:polygon(26% 0,100% 0,100% 100%,0 78%);opacity:.9;}
+.shape.b{top:20%;right:16vw;width:5vw;height:26vh;border:4px solid var(--espresso);transform:skewX(-14deg);}
+.shape.c{bottom:-10%;left:-8%;width:22vw;height:40vh;background:var(--sunshine);clip-path:polygon(0 8%,100% 24%,78% 100%,0 100%);opacity:.5;}
+.card{position:relative;z-index:2;background:#fff;border:3px solid var(--espresso);box-shadow:12px 12px 0 var(--espresso);padding:2.4rem 2.4rem 2rem;}
+.kick{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.kick .n{color:var(--clay);} .kick .ln{flex:0 0 40px;height:2px;background:var(--clay);}
+.kick .sec{color:var(--ink-dim);}
+.tagid{font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.1em;background:var(--accent);border:1.5px solid var(--ink);padding:.15rem .4rem;text-decoration:none;white-space:nowrap;}
+.tagid:hover{background:var(--sunshine);}
+h1.display{font-size:clamp(2.6rem,8vw,5.4rem);} h1 em,h2 em{font-style:normal;color:var(--clay);}
+h2.q{font-weight:900;font-variation-settings:'wdth' 112;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.08;text-transform:uppercase;}
+.hint{margin-top:.8rem;color:var(--ink-dim);font-size:1rem;line-height:1.6;max-width:640px;}
+.copy{margin-top:1.4rem;background:var(--bone);border-left:8px solid var(--accent);padding:1.2rem 1.3rem;font-size:1.08rem;line-height:1.65;white-space:pre-line;}
+.copy small{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:.6rem;font-weight:700;}
+.opts{display:grid;gap:.8rem;margin-top:1.6rem;}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
+.opt{display:flex;align-items:center;gap:.9rem;text-align:left;background:#fff;border:2px solid var(--espresso);padding:1rem 1.1rem;font-size:1rem;font-weight:700;line-height:1.3;box-shadow:4px 4px 0 rgba(27,27,29,.16);transition:transform .15s,box-shadow .15s,background .15s;}
+.opt:hover{transform:translate(-1px,-2px);box-shadow:6px 6px 0 var(--accent);}
+.opt .k{flex:0 0 28px;height:28px;border:2px solid var(--espresso);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;background:var(--bone);}
+.opt.on{background:var(--espresso);color:var(--bone);box-shadow:6px 6px 0 var(--accent);}
+.opt.on .k{background:var(--accent);color:var(--ink);border-color:var(--accent);}
+.opt.on .k::after{content:'✓';} .opt.on .k span{display:none;}
+textarea,input[type=text]{display:block;width:100%;margin-top:1.2rem;background:var(--bone);border:2px solid var(--espresso);font-family:var(--arch);font-size:1.02rem;line-height:1.55;color:var(--espresso);padding:.95rem 1rem;outline:none;border-radius:0;}
+textarea{min-height:130px;resize:vertical;} textarea.tall{min-height:220px;}
+textarea:focus,input:focus{border-color:var(--accent);background:#fff;box-shadow:4px 4px 0 var(--accent);}
+label.lab{display:block;margin-top:1.4rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);}
+label.lab+textarea,label.lab+input{margin-top:.5rem;}
+.hide{display:none!important;}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2.2rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:1.05rem 1.6rem;background:var(--sunshine);color:var(--ink);text-decoration:none;
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:transform .15s,background .2s;}
+.btn:hover{transform:translateY(-2px);background:var(--clay);color:var(--bone);}
+.btn.dark{background:var(--espresso);color:var(--bone);} .btn.dark:hover{background:var(--accent);color:var(--ink);}
+.btn.ghost{background:none;clip-path:none;padding:.6rem 0;border-bottom:3px solid var(--accent);}
+.btn.ghost:hover{background:none;color:var(--clay);transform:none;}
+.skip{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);background:none;border-bottom:1px solid currentColor;}
+.chips{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem;}
+.chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:.55rem .9rem;border:2px solid var(--espresso);box-shadow:3px 3px 0 var(--espresso);background:var(--sunshine);}
+.chips .chip:nth-child(3n+2){background:var(--aqua);} .chips .chip:nth-child(3n){background:var(--coral);}
+.secs{display:grid;gap:.6rem;margin-top:1.8rem;}
+.secs div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(27,27,29,.15);padding:.55rem 0;font-weight:700;}
+.secs span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:var(--ink-dim);white-space:nowrap;}
+.rev{margin-top:1.6rem;display:grid;gap:.7rem;}
+.rev .r{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;border:2px solid var(--espresso);padding:.8rem 1rem;background:#fff;text-align:left;width:100%;}
+.rev .r b{font-size:.92rem;line-height:1.3;} .rev .r span{font-size:.9rem;color:var(--ink-dim);grid-column:1/-1;line-height:1.45;white-space:pre-line;}
+.rev .r i{font-style:normal;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:.15rem .4rem;background:var(--aqua);align-self:start;}
+.rev .r.miss i{background:var(--coral);} .rev .r.miss{border-style:dashed;}
+.rev h3{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-top:1rem;}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);z-index:50;background:var(--espresso);color:var(--bone);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.1rem;border:2px solid var(--sunshine);opacity:0;pointer-events:none;transition:all .3s;max-width:90vw;text-align:center;}
+.toast.on{opacity:1;transform:translate(-50%,0);}
+.foot{position:relative;z-index:2;text-align:center;margin-top:2rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);line-height:1.8;}
+@media(max-width:700px){
+  .stage{padding:1.6rem .9rem 6rem;} .card{padding:1.5rem 1.2rem 1.4rem;box-shadow:7px 7px 0 var(--espresso);}
+  .shape.b,.shape.c{display:none;} .shape.a{width:44vw;height:30vh;opacity:.5;}
+  .bar{gap:.7rem;padding:.7rem .9rem;} .bar .who,.bar .save{display:none;} .bar img{height:16px;}
+  .nav .btn{padding:.95rem 1.1rem;font-size:.66rem;letter-spacing:.14em;}
+}
+
+.lbl{display:block;color:var(--ink-dim);margin-bottom:.7rem;font-size:.6rem;}
+.lbl .diff,.rev .r i.df{background:var(--clay);color:#fff;padding:.12rem .4rem;margin-left:.5rem;}
+.team{margin-top:1.6rem;border:2px solid var(--espresso);background:#EAF6F3;padding:1rem 1.1rem .4rem;}
+.resp,.cm{background:#fff;border:2px solid var(--espresso);padding:.7rem .9rem;margin-bottom:.7rem;}
+.by{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;}
+.by b{font-size:.92rem;} .by i{font-style:normal;font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);white-space:nowrap;}
+.resp p,.cm p{margin-top:.3rem;font-size:.95rem;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere;}
+.thread{margin-top:2rem;border-top:2px dashed rgba(27,27,29,.35);padding-top:1.3rem;}
+.cm{box-shadow:4px 4px 0 var(--sunshine);} .cm.me{box-shadow:4px 4px 0 var(--accent);}
+.thread .none{font-size:.9rem;color:var(--ink-dim);margin-bottom:.8rem;}
+.addc{display:flex;gap:.6rem;align-items:stretch;} .addc input{margin-top:0;flex:1;} .addc .btn{padding:.8rem 1.2rem;clip-path:none;}
+.rev .r span u{text-decoration:none;font-weight:800;color:var(--espresso);} .rev .r span em{font-style:normal;color:var(--clay);}
+.bar .who{max-width:200px;overflow:hidden;text-overflow:ellipsis;}
+
+</style>
+</head>
+<body>
+<div class="shape a"></div><div class="shape b"></div><div class="shape c"></div>
+<div class="bar">
+  <img src="assets/staple-home/stapl-wordmark-bone.png" alt="STÄPL">
+  <span class="who" id="whoami">Label story</span>
+  <div class="prog"><i id="progFill"></i></div>
+  <span class="ct" id="progCt"></span>
+  <span class="save" id="saveState">Not saved yet</span>
+</div>
+<div class="stage"><div id="app"></div>
+  <p class="foot">STÄPL label review · answers save automatically as you go<br>You can close this page and come back on the same link</p>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const FORM={"id": "stapl-form-label", "title": "STÄPL — Label brand story", "who": "Label story", "kicker": "For Ben + Marcus's team", "h1": "The label<br><em>story.<\/em>", "intro": "A three-line brand story goes on the side of the Daily Performance Fiber label, written as a short letter from Marcus. There are four options here. Tell us which to keep, change or cut, pick the one that goes on the label, then answer three quick questions about the order of the text on the front.", "minutes": 5, "questions": [{"id": "o1", "sec": "The four options", "type": "choice", "q": "Option 1: The fundamentals, lighter touch", "show": "Friend, the flashy stuff fades. The simple stuff builds you.\nThis is the nutrient almost everyone skips, made easy enough to never miss.\nOne scoop a day. That's the whole plan.\n\n[Marcus's inked signature]", "showLabel": "Option 1 · the three lines", "opts": ["Keep it in the running", "Change it", "Cut it"], "textLabel": "What would you change? (optional)", "hint": "Simple and direct. The greeting can be \"Friend,\" or \"Hey friend,\" (you pick later)."}, {"id": "o2", "sec": "The four options", "type": "choice", "q": "Option 2: The fundamentals, warmer", "show": "Friend, you don't need a perfect routine. You need one good habit.\nThis is the nutrient almost everyone skips, made easy enough to never miss.\nOne scoop a day. Start there.\n\n[Marcus's inked signature]", "showLabel": "Option 2 · the three lines", "opts": ["Keep it in the running", "Change it", "Cut it"], "textLabel": "What would you change? (optional)", "hint": "Written for someone who has never set foot in a gym. The greeting can be \"Friend,\" or \"Hey friend,\" (you pick later)."}, {"id": "o3", "sec": "The four options", "type": "choice", "q": "Option 3: Chalk up, show up", "show": "Friend, two decades in the gym taught me one thing: mastery is the fundamentals, repeated.\nSo I built one product with one job. Fiber, done right.\nChalk up. Show up.\n\n[Marcus's inked signature]", "showLabel": "Option 3 · the three lines", "opts": ["Keep it in the running", "Change it", "Cut it"], "textLabel": "What would you change? (optional)", "hint": "Tells why Marcus made it, in the first person. The first line is the longest, so it needs the most room on the panel."}, {"id": "o4", "sec": "The four options", "type": "choice", "q": "Option 4: Nutrition isn't extra", "show": "Nutrition isn't extra. It's STÄPL.\nThree fibers, one scoop, ten seconds. Then go train, work, live.\nMaster the foundation first.\n\n[Marcus's inked signature]", "showLabel": "Option 4 · the three lines", "opts": ["Keep it in the running", "Change it", "Cut it"], "textLabel": "What would you change? (optional)", "hint": "Opens on the site's headline instead of a greeting, so it reads more like a motto than a letter."}, {"id": "pick", "sec": "The final pick", "type": "choice", "q": "Which option goes on the label?", "opts": ["Option 1: The fundamentals, lighter touch", "Option 2: The fundamentals, warmer", "Option 3: Chalk up, show up", "Option 4: Nutrition isn't extra", "A blend, or our own lines"], "textLabel": "If a blend or your own lines, write them here", "hint": "One story goes on every Daily Performance Fiber label."}, {"id": "greet", "sec": "The final pick", "type": "choice", "q": "For options 1 and 2, which greeting opens the letter?", "opts": ["Friend,", "Hey friend,", "Something else"], "textLabel": "If something else, what?", "hint": "We moved away from \"Athlete,\" so the label welcomes people who aren't into gym culture."}, {"id": "sig", "sec": "The final pick", "type": "choice", "q": "Can Marcus's team send his inked signature as artwork?", "opts": ["Yes, we'll send it", "Need to check with Marcus", "Use his typed name instead"], "textLabel": "Anything to add? (optional)", "hint": "Every option is signed with Marcus's handwritten signature. Black ink on white paper is ideal: a vector file (AI, SVG or EPS) or a large PNG. Send it to Amy."}, {"id": "h1", "sec": "Label text order", "type": "choice", "q": "On the front of the label, what should read first?", "opts": ["The STÄPL name", "The product name (Daily Performance Fiber)", "The main claim line"], "textLabel": "Anything to add? (optional)", "hint": "\"First\" means the biggest, boldest text, the thing someone sees from across the room. The labels can't go to print until this order is agreed."}, {"id": "h2", "sec": "Label text order", "type": "choice", "q": "And what should read second?", "opts": ["The STÄPL name", "The product name (Daily Performance Fiber)", "The main claim line"], "textLabel": "Anything to add? (optional)", "hint": "Whichever one is left reads third."}, {"id": "h3", "sec": "Label text order", "type": "long", "q": "Anything else about the label text we should know?", "optional": true, "ph": "A claim that must be on the front, wording to avoid, anything that has to be bigger or smaller…"}]};
+const FB='https://prancer-website-devs-default-rtdb.firebaseio.com/pages/'+FORM.id;
+const SITE='staple-home.html',LS='stapl-form2-'+FORM.id;
+const Q=FORM.questions,app=document.getElementById('app');
+/* me = this person on this device.  R = the shared form everyone sees. */
+let me={name:'',key:'',pos:-1},R={answers:{},comments:{},meta:{}},mine={};
+try{const l=JSON.parse(localStorage.getItem(LS)||'null');if(l){me=Object.assign(me,l.me||{});mine=l.mine||{};}}catch(e){}
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const slug=n=>n.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'someone';
+const when=t=>t?new Date(t).toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'';
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2600);}
+function setSave(c,m){const e=document.getElementById('saveState');e.className='save '+c;e.textContent=m;}
+function saveLocal(){try{localStorage.setItem(LS,JSON.stringify({me,mine}));}catch(e){}}
+/* ---------- shared data helpers ---------- */
+const has=a=>!!a&&(!!a.choice||(a.multi&&a.multi.length)||(a.text&&a.text.trim()));
+function responses(q){const o=Object.assign({},(R.answers||{})[q.id]||{});if(mine[q.id])o[me.key]=mine[q.id];
+  return Object.entries(o).filter(([k,a])=>has(a)).map(([k,a])=>Object.assign({key:k},a)).sort((x,y)=>(x.ts||0)-(y.ts||0));}
+function comments(q){return Object.values(((R.comments||{})[q.id])||{}).sort((x,y)=>(x.ts||0)-(y.ts||0));}
+const isAns=q=>responses(q).length>0;
+const answered=()=>Q.filter(isAns).length;
+function ansLine(q,a){return [a.choice,(a.multi||[]).join(', '),a.text&&a.text!==q.show?a.text:(a.choice==='Approved with my edit'?a.text:''),a.note?('Note: '+a.note):''].filter(Boolean).join('\n');}
+function differ(q){const r=responses(q).map(a=>a.choice||(a.multi||[]).join(',')).filter(Boolean);return new Set(r).size>1;}
+function progress(){const n=answered();document.getElementById('progFill').style.width=(n/Q.length*100)+'%';document.getElementById('progCt').textContent=n+' / '+Q.length;
+  document.getElementById('whoami').textContent=me.name?('You: '+me.name):FORM.who;}
+/* ---------- saving + syncing ---------- */
+let pending={},timer;
+function queue(path,val){pending[path]=val;setSave('','Saving…');clearTimeout(timer);timer=setTimeout(flush,650);}
+function flush(){
+  if(!Object.keys(pending).length)return Promise.resolve();
+  const body=Object.assign({},pending);body['meta/people/'+me.key]={name:me.name,last:Date.now()};body['meta/updated']=Date.now();pending={};
+  return fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw 0;setSave('ok','Saved ✓');})
+    .catch(()=>{Object.assign(pending,body);setSave('err','Not saved online yet — will retry');});
+}
+function setMine(q,patch){mine[q.id]=Object.assign({},mine[q.id]||((R.answers||{})[q.id]||{})[me.key]||{},patch,{name:me.name,ts:Date.now()});saveLocal();queue('answers/'+q.id+'/'+me.key,mine[q.id]);progress();}
+let lastSig='';
+function pull(first){
+  return fetch(FB+'.json').then(r=>r.json()).then(d=>{
+    R=Object.assign({answers:{},comments:{},meta:{}},d||{});
+    Object.keys(mine).forEach(id=>{const r=((R.answers||{})[id]||{})[me.key];if(r&&(r.ts||0)>=(mine[id].ts||0))delete mine[id];});   // online copy caught up
+    setSave(Object.keys(pending).length?'':'ok',Object.keys(pending).length?'Saving…':'In sync ✓');progress();
+    const sig=JSON.stringify([R.answers,R.comments]);
+    if(sig!==lastSig){lastSig=sig;if(!first)refreshShared();}
+  }).catch(()=>setSave('err','Offline — will sync when back'));
+}
+setInterval(()=>{if(!document.hidden){flush();pull();}},6000);
+addEventListener('focus',()=>pull());
+/* ---------- screens ---------- */
+function tagLinks(q){return (q.tags||[]).map(t=>`<a class="tagid" target="stapl-site" href="${SITE}?tag=${t}" title="See this on the site">${t} ↗</a>`).join('');}
+function intro(){
+  const secs=[...new Set(Q.map(q=>q.sec))];
+  const people=Object.values((R.meta||{}).people||{}).map(p=>p.name).filter(Boolean);
+  app.innerHTML=`<div class="card">
+    <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">${esc(FORM.kicker)}</span></div>
+    <h1 class="display">${FORM.h1}</h1>
+    <p class="hint">${FORM.intro}</p>
+    <p class="hint"><b>This is one shared form.</b> Anyone on your team can open this link. Everyone's answers and comments stay on each question with their name, so you can see what's been said and add to it.</p>
+    <div class="chips"><span class="chip">${Q.length} questions</span><span class="chip">About ${FORM.minutes} minutes</span><span class="chip">Shared + saves as you go</span></div>
+    ${people.length?`<p class="hint mono" style="font-size:.62rem">Already here: ${people.map(esc).join(' · ')}</p>`:''}
+    <div class="secs">${secs.map((s,i)=>`<div>${String(i+1).padStart(2,'0')} · ${esc(s)}<span>${Q.filter(q=>q.sec===s&&isAns(q)).length} / ${Q.filter(q=>q.sec===s).length} answered</span></div>`).join('')}</div>
+    <label class="lab" for="nm">Your name (shown next to your answers and comments)</label><input type="text" id="nm" placeholder="First and last name" value="${esc(me.name)}">
+    <div class="nav"><button class="btn ghost" id="toReview">See all answers so far</button><button class="btn" id="start">${answered()?'Continue':'Start'} ▸</button></div></div>`;
+  const need=()=>{const n=document.getElementById('nm').value.trim();if(!n){toast('Add your name first');document.getElementById('nm').focus();return false;}
+    if(n!==me.name){me.name=n;me.key=slug(n);mine={};}saveLocal();queue('meta/people/'+me.key,{name:me.name,last:Date.now()});progress();return true;};
+  document.getElementById('start').onclick=()=>{if(!need())return;pull(true).then(()=>{const first=Q.findIndex(q=>!isAns(q));go(first<0?Q.length:first);});};
+  document.getElementById('toReview').onclick=()=>{if(need())go(Q.length);};
+}
+function go(i){me.pos=i;saveLocal();if(i<0)intro();else if(i>=Q.length)review();else question(i);window.scrollTo({top:0,behavior:'instant'});if(i>=0)pull();}
+const KEYS='ABCDEFGH';
+function othersHTML(q){
+  const rs=responses(q).filter(a=>a.key!==me.key);
+  if(!rs.length)return '';
+  return `<div class="team"><span class="mono lbl">Already answered by your team${differ(q)?' <b class="diff">answers differ</b>':''}</span>${rs.map(a=>`<div class="resp"><div class="by"><b>${esc(a.name||a.key)}</b><i>${when(a.ts)}</i></div><p>${esc(ansLine(q,a))}</p></div>`).join('')}</div>`;
+}
+function threadHTML(q){
+  const cs=comments(q);
+  return `<span class="mono lbl">Comments${cs.length?' · '+cs.length:''}</span>${cs.map(c=>`<div class="cm ${slug(c.name||'')===me.key?'me':''}"><div class="by"><b>${esc(c.name)}</b><i>${when(c.ts)}</i></div><p>${esc(c.text)}</p></div>`).join('')||'<p class="none">No comments yet.</p>'}`;
+}
+function refreshShared(){
+  if(me.pos>=0&&me.pos<Q.length){const q=Q[me.pos],o=document.getElementById('others'),t=document.getElementById('threadList');if(o)o.innerHTML=othersHTML(q);if(t)t.innerHTML=threadHTML(q);}
+  else if(me.pos>=Q.length){const y=scrollY;review();window.scrollTo({top:y,behavior:'instant'});}
+  else if(me.pos<0&&document.activeElement.id!=='nm'){intro();}
+}
+function question(i){
+  const q=Q[i],a=mine[q.id]||((R.answers||{})[q.id]||{})[me.key]||{};
+  const secIdx=[...new Set(Q.map(x=>x.sec))].indexOf(q.sec)+1;
+  let body='';
+  const opts=q.type==='approve'?['Approved as written','Approved with my edit','Do not use this']
+    :q.type==='fact'?['Correct','Not quite — here is the fix','Remove it']:(q.opts||[]);
+  if(q.show)body+=`<div class="copy"><small>${esc(q.showLabel||'On the site now')}</small>${esc(q.show)}</div>`;
+  body+=`<div id="others">${othersHTML(q)}</div><span class="mono lbl" style="margin-top:1.6rem">Your answer · ${esc(me.name)}</span>`;
+  if(opts.length)body+=`<div class="opts ${opts.length<=4&&opts.every(o=>o.length<26)&&q.type!=='approve'&&q.type!=='fact'?'row':''}">${opts.map((o,n)=>{
+      const on=q.type==='multi'?(a.multi||[]).includes(o):a.choice===o;
+      return `<button class="opt ${on?'on':''}" data-o="${esc(o)}"><span class="k"><span>${KEYS[n]||''}</span></span>${esc(o)}</button>`;}).join('')}</div>`;
+  const needsText=q.type==='text'||q.type==='long';
+  const textLabel=q.type==='approve'?'Your edit (change the text below)':q.type==='fact'?'The correct version':(q.textLabel||(needsText?'':'Anything to add? (optional)'));
+  const showText=needsText||q.note!==false;
+  if(showText)body+=`<div id="tx" class="${(q.type==='approve'&&a.choice!=='Approved with my edit')||(q.type==='fact'&&a.choice!=='Not quite — here is the fix')?'hide':''}">${textLabel?`<label class="lab">${esc(textLabel)}</label>`:''}
+      ${q.type==='text'?`<input type="text" id="t" placeholder="${esc(q.ph||'')}" value="${esc(a.text||'')}">`:`<textarea id="t" class="${q.type==='long'||q.type==='approve'?'tall':''}" placeholder="${esc(q.ph||'')}">${esc(a.text||(q.type==='approve'&&a.choice==='Approved with my edit'?q.show:''))}</textarea>`}</div>`;
+  body+=`<div class="thread"><div id="threadList">${threadHTML(q)}</div>
+      <div class="addc"><input type="text" id="cmt" placeholder="Add a comment for the team…"><button class="btn dark" id="cmtAdd">Post</button></div></div>`;
+  app.innerHTML=`<div class="card">
+    <div class="kick mono"><span class="n">${String(i+1).padStart(2,'0')} / ${Q.length}</span><span class="ln"></span><span class="sec">${String(secIdx).padStart(2,'0')} · ${esc(q.sec)}</span>${tagLinks(q)}</div>
+    <h2 class="q">${esc(q.q)}</h2>${q.hint?`<p class="hint">${esc(q.hint)}</p>`:''}
+    ${body}
+    <div class="nav"><button class="btn ghost" id="back">◂ Back</button><span style="display:flex;gap:1.2rem;align-items:center"><button class="skip" id="skip">${q.optional?'Skip (optional)':'Skip for now'}</button><button class="btn" id="next">${i===Q.length-1?'Review all answers':'Next'} ▸</button></span></div></div>`;
+  const t=document.getElementById('t'),tx=document.getElementById('tx');
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const o=b.dataset.o;
+    if(q.type==='multi'){const m=new Set((mine[q.id]||a).multi||[]);m.has(o)?m.delete(o):m.add(o);setMine(q,{multi:[...m]});b.classList.toggle('on');return;}
+    setMine(q,{choice:o});app.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',x===b));
+    if(q.type==='approve'){const ed=o==='Approved with my edit';tx.classList.toggle('hide',!ed);if(ed&&!t.value){t.value=q.show;}if(ed)t.focus();}
+    else if(q.type==='fact'){const fx=o==='Not quite — here is the fix';tx.classList.toggle('hide',!fx);if(fx)t.focus();}
+  });
+  if(t)t.oninput=()=>setMine(q,{text:t.value});
+  const cmt=document.getElementById('cmt');
+  const post=()=>{const v=cmt.value.trim();if(!v)return;const c={name:me.name,text:v,ts:Date.now()};const id='c'+c.ts+Math.random().toString(36).slice(2,6);
+    R.comments=R.comments||{};(R.comments[q.id]=R.comments[q.id]||{})[id]=c;queue('comments/'+q.id+'/'+id,c);cmt.value='';document.getElementById('threadList').innerHTML=threadHTML(q);flush();};
+  document.getElementById('cmtAdd').onclick=post;cmt.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();post();}};
+  document.getElementById('back').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>{flush();go(i+1);};
+  document.getElementById('skip').onclick=()=>go(i+1);
+}
+function summary(){
+  let out=`${FORM.title}\n${new Date().toLocaleString()}\n`;let sec='';
+  Q.forEach((q,i)=>{if(q.sec!==sec){sec=q.sec;out+=`\n== ${sec} ==\n`;}
+    out+=`\n${i+1}. ${q.q}${q.tags&&q.tags.length?' ['+q.tags.join(', ')+']':''}\n`;
+    const rs=responses(q);out+=rs.length?rs.map(a=>`- ${a.name||a.key}: ${ansLine(q,a).replace(/\n/g,' / ')}`).join('\n')+'\n':'(not answered)\n';
+    comments(q).forEach(c=>out+=`  comment — ${c.name}: ${c.text}\n`);});
+  return out;
+}
+function review(){
+  const miss=Q.filter(q=>!isAns(q)),diffs=Q.filter(differ);
+  let sec='',rows='';
+  Q.forEach((q,i)=>{if(q.sec!==sec){sec=q.sec;rows+=`<h3>${esc(sec)}</h3>`;}
+    const rs=responses(q),cs=comments(q);
+    rows+=`<button class="r ${rs.length?'':'miss'}" data-i="${i}"><b>${i+1}. ${esc(q.q)}</b><i class="${differ(q)?'df':''}">${!rs.length?'Open':differ(q)?'Answers differ':'Answered'}</i>
+      <span>${rs.length?rs.map(a=>`<u>${esc(a.name||a.key)}</u> ${esc(ansLine(q,a))}`).join('\n'):'Tap to answer'}${cs.length?`\n<em>${cs.length} comment${cs.length>1?'s':''}: ${esc(cs[cs.length-1].name)} — ${esc(cs[cs.length-1].text)}</em>`:''}</span></button>`;});
+  const done=((R.meta||{}).submitted||{})[me.key];
+  app.innerHTML=`<div class="card">
+    <div class="kick mono"><span class="n">▸</span><span class="ln"></span><span class="sec">Everyone's answers</span></div>
+    <h1 class="display" style="font-size:clamp(2.2rem,6vw,4rem)">${miss.length?`${miss.length} still <em>open.</em>`:'All <em>answered.</em>'}</h1>
+    <p class="hint">${diffs.length?`<b>${diffs.length} question${diffs.length>1?'s have':' has'} answers that differ</b> between teammates. `:''}Tap any row to answer it, change your answer or add a comment. Mark yourself done when you've said everything you need to.</p>
+    <div class="nav"><button class="btn ghost" id="back">◂ Back to questions</button><button class="btn" id="submit">${done?'You\'re marked done ✓':'Mark me as done'} ▸</button></div>
+    <div class="nav" style="margin-top:1rem;justify-content:flex-start"><button class="btn dark" id="copy">Copy all answers</button><button class="btn dark" id="mail">Email all answers</button></div>
+    <div class="rev">${rows}</div></div>`;
+  app.querySelectorAll('.r').forEach(r=>r.onclick=()=>go(+r.dataset.i));
+  document.getElementById('back').onclick=()=>go(Math.max(0,Q.findIndex(q=>!isAns(q))));
+  const copy=()=>navigator.clipboard.writeText(summary());
+  document.getElementById('copy').onclick=()=>copy().then(()=>toast('Answers copied'),()=>toast('Copy failed — select the list below'));
+  document.getElementById('mail').onclick=()=>{copy().catch(()=>{});
+    location.href='mailto:?subject='+encodeURIComponent(FORM.title+' — answers')+'&body='+encodeURIComponent('The answers are copied to the clipboard. Paste them below this line and send to Amy.\n\n');};
+  document.getElementById('submit').onclick=()=>{R.meta=R.meta||{};(R.meta.submitted=R.meta.submitted||{})[me.key]=Date.now();queue('meta/submitted/'+me.key,Date.now());flush().then(()=>{toast('Marked done — thank you');review();});};
+}
+/* ---------- start ---------- */
+document.getElementById('whoami').style.cursor='pointer';document.getElementById('whoami').title='Change name';document.getElementById('whoami').onclick=()=>go(-1);
+progress();intro();
+pull(true).then(()=>{lastSig=JSON.stringify([R.answers,R.comments]);if(me.pos<0)intro();});
+
+</script>
+</body>
+</html>
