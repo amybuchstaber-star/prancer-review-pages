@@ -2640,6 +2640,13 @@ button.btn{border:0;cursor:pointer}
 button.cta-sub{cursor:pointer}
 @media(min-width:821px){button.cta-sub{background:none;border:0;border-bottom:3px solid var(--aqua)}}
 
+/* Nov 20: education pieces on the inner pages */
+.ingr details.ing img.ing-ph{display:none;width:100%;aspect-ratio:16/6;object-fit:cover;object-position:68% 50%;border-top:2px solid var(--bone);border-bottom:2px solid var(--bone);margin-bottom:1rem}
+.ingr details.ing[open] img.ing-ph{display:block}
+.nx-blind-art{display:flex;justify-content:center}
+.nx-blind-art .nx-track{transform:rotate(2deg);width:min(100%,420px)}
+.nx-blind h2.display{font-size:clamp(2.1rem,4.3vw,3.9rem)}
+.nx-blind .lead+.lead{margin-top:1rem}
 /* Nov 20 review round */
 .nx-rmap.v2{padding:0 1rem 1.3rem;background:#fff linear-gradient(rgba(27,27,29,.05) 1px,transparent 1px) 0 0/100% 22px;box-shadow:10px 10px 0 var(--espresso)}
 .nx-rmap.v2::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,27,29,.05) 1px,transparent 1px) 0 0/22px 100%;pointer-events:none}
@@ -3147,22 +3154,61 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     </div>
   </header>
 
-  <section class="pg-sec gridbg">
-    <div class="wrap">
-      <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The gap</span><button type="button" class="nx-coin" data-game="gap" aria-label="Play the hidden game: Close the Gap"><i aria-hidden="true"></i><span><b>Play the hidden game</b><small>Insert coin &#9656; Close the Gap</small></span></button></div>
-      <h2 class="display rev">Most people get<br>about <em>half.</em></h2>
-      <p class="lead rev rev-d1">The fiber gap is one of the most consistent findings in nutrition research. It is not a niche problem, and training hard does not fix it.</p>
-      <div class="bigstats rev rev-d1">
-        <div><div class="v">9 in 10</div><div class="k">American adults fall short of the recommended fiber intake.</div><span class="src">Dietary Guidelines for Americans, 2020–2025</span></div>
-        <div><div class="v">25–38g</div><div class="k">The daily target for most adults: about 25g for women and 38g for men.</div><span class="src">National Academies, Dietary Reference Intakes</span></div>
-        <div><div class="v">~16g</div><div class="k">What the average adult actually eats in a day.</div><span class="src">USDA, What We Eat in America</span></div>
+  <section class="pg-sec nx nx-white nx-gap nx-io" id="nx-gap-f">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The missing number</span><button type="button" class="nx-coin" data-game="gap" aria-label="Play the hidden game: Close the Gap"><i aria-hidden="true"></i><span><b>Play the hidden game</b><small>Insert coin &#9656; Close the Gap</small></span></button></div>
+    <div class="nx-split">
+      <div>
+        <h2 class="display rev">Most people get<br>about <em>half.</em></h2>
+        <p class="lead rev rev-d1"><b>US adults average 16.3 grams of fiber a day.</b> The Daily Value is 28. That leaves most people 11.7 grams short, every day, without ever seeing the number.</p>
+        <div class="nx-stats rev rev-d2">
+          <div class="eat"><b>16.3<small>g</small></b><span>Eaten</span></div>
+          <div class="miss"><b>11.7<small>g</small></b><span>Missing</span></div>
+          <div><b>28<small>g</small></b><span>Daily Value</span></div>
+        </div>
+        
+      </div>
+      <div class="nx-card rev rev-d1">
+        <span class="nx-tag">One block is one gram</span>
+        <div class="nx-waffle" role="img" aria-label="28 blocks. 16.3 are filled for the fiber eaten, 11.7 are hatched for the fiber missing."><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i><i style="--i:15"></i><i style="--i:16" class=p></i><i style="--i:17" class=m></i><i style="--i:18" class=m></i><i style="--i:19" class=m></i><i style="--i:20" class=m></i><i style="--i:21" class=m></i><i style="--i:22" class=m></i><i style="--i:23" class=m></i><i style="--i:24" class=m></i><i style="--i:25" class=m></i><i style="--i:26" class=m></i><i style="--i:27" class=m></i></div>
+        <div class="nx-key"><span><i></i>Eaten</span><span><i class="m"></i>Missing</span></div>
+        <div class="nx-mw">
+          <div class="r"><b>Men</b><div class="nx-bar"><u style="--w:63.2%"></u></div><small>17.7 g eaten &middot; 10.3 g short</small></div>
+          <div class="r"><b>Women</b><div class="nx-bar"><u style="--w:53.6%"></u></div><small>15.0 g eaten &middot; 13.0 g short</small></div>
+        </div>
+        <p class="nx-src">USDA, What We Eat in America, Aug 2021 to Aug 2023, adults 20 and older. Daily Value: 21 CFR 101.9.</p>
       </div>
     </div>
-  </section>
-
-  <section class="pg-sec">
+  </div>
+</section>
+<section class="pg-sec nx nx-dark nx-num" id="nx-number-f">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Your number</span></div>
+    <div class="nx-split">
+      <div>
+        <h2 class="display rev">Give fiber<br>a <em class="sun">number.</em></h2>
+        <p class="lead rev rev-d1">The federal benchmark is <b>14 grams of fiber for every 1,000 calories</b>. Pick the calories you eat on a normal day.</p>
+        <div class="nx-cal rev rev-d2" role="group" aria-label="Calories on a normal day">
+          <button type="button" data-kcal="2000" aria-pressed="true">2,000<small>kcal</small></button>
+          <button type="button" data-kcal="2500" aria-pressed="false">2,500<small>kcal</small></button>
+          <button type="button" data-kcal="3000" aria-pressed="false">3,000<small>kcal</small></button>
+          <button type="button" data-kcal="3500" aria-pressed="false">3,500<small>kcal</small></button>
+        </div>
+        <p class="nx-fine rev rev-d3">An estimate for healthy adults, not medical advice. Add fiber gradually and drink plenty of water.</p>
+      </div>
+      <div class="nx-big rev rev-d1" aria-live="polite">
+        <span class="k">Your fiber number</span>
+        <div class="v"><span data-nx-n>28</span><small>g a day</small></div>
+        <div class="nx-meter"><u data-nx-m></u></div>
+        <div class="ln"><span>Average adult eats <b>16.3 g</b></span><span>Left to find <b class="c"><span data-nx-left>11.7</span> g</b></span></div>
+        <a class="btn btn-sun" href="#shop" style="margin-top:1.6rem">Meet Daily Performance Fiber &#9656;</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pg-sec">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">What fiber does</span></div>
+      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">What fiber does</span></div>
       <h2 class="display rev">Boring.<br><em class="aq">Foundational.</em></h2>
       <p class="lead rev rev-d1">Fiber is the part of plants your body does not break down. That is the point: it does its work on the way through.</p>
       <div class="pcards">
@@ -3173,24 +3219,50 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     </div>
   </section>
 
-  <section class="pg-sec white">
-    <div class="wrap">
-      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Three fibers, one scoop</span></div>
-      <h2 class="display rev">Full spectrum.<br><em>Three fibers.</em></h2>
-      <p class="lead rev rev-d1">Different fibers do different jobs, so Daily Performance Fiber is full-spectrum: three fibers in one scoop. No proprietary blends, so each one is named on the label.</p>
-      <div class="pcards">
-        <div class="pcard rev"><span class="n">01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. It holds water and adds bulk.</p></div>
-        <div class="pcard rev rev-d1"><span class="n">02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the gut intact, where it is fermented.</p></div>
-        <div class="pcard rev rev-d2"><span class="n">03</span><h3>Acacia</h3><p>Fiber from the sap of the acacia tree, also called gum arabic.</p></div>
+  <section class="pg-sec nx nx-mint nx-route" id="nx-route-f">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">How fiber works</span></div>
+    <div class="nx-split">
+      <div class="rev"><div class="nx-rmap v2"><div class="rm-hd"><span>Fig. 01 &#9656; The route, simplified</span></div><svg class="rt" data-nx-route viewBox="-8 -6 352 482" role="img" aria-labelledby="rtt-r2 rtd-r2" id="rt-r2"><title id="rtt-r2">A simplified route through the gut</title><desc id="rtd-r2">A tube runs from the stomach through a winding small intestine into a wider colon. Round gel-forming fiber particles sit along the route with a ring of water around each. Diamond and triangle fermentable fiber particles sit in the colon beside small rod-shaped bacteria.</desc><g transform="translate(6 7)" opacity=".55"><path d="M172 44 Q200 66 180 96" stroke="#27D4C4" stroke-width="62" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M180 104 Q180 126 156 126 L98 126 Q72 126 72 152 Q72 178 98 178 L262 178 Q288 178 288 204 Q288 230 262 230 L98 230 Q72 230 72 256 Q72 282 98 282 L246 282" stroke="#27D4C4" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M240 282 L252 282 Q300 282 300 330 L300 392 Q300 438 254 438 L106 438 Q60 438 60 392 L60 356" stroke="#27D4C4" stroke-width="54" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><path d="M240 282 L252 282 Q300 282 300 330 L300 392 Q300 438 254 438 L106 438 Q60 438 60 392 L60 356" stroke="#1B1B1D" stroke-width="54" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M180 104 Q180 126 156 126 L98 126 Q72 126 72 152 Q72 178 98 178 L262 178 Q288 178 288 204 Q288 230 262 230 L98 230 Q72 230 72 256 Q72 282 98 282 L246 282" stroke="#1B1B1D" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M172 44 Q200 66 180 96" stroke="#1B1B1D" stroke-width="62" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M176 12 L174 40" stroke="#1B1B1D" stroke-width="22" stroke-linecap="round"/><path d="M240 282 L252 282 Q300 282 300 330 L300 392 Q300 438 254 438 L106 438 Q60 438 60 392 L60 356" stroke="#F3F1EA" stroke-width="45" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M176 12 L174 40" stroke="#F3F1EA" stroke-width="13" stroke-linecap="round"/><path d="M172 44 Q200 66 180 96" stroke="#F3F1EA" stroke-width="53" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M180 104 Q180 126 156 126 L98 126 Q72 126 72 152 Q72 178 98 178 L262 178 Q288 178 288 204 Q288 230 262 230 L98 230 Q72 230 72 256 Q72 282 98 282 L246 282" stroke="#F3F1EA" stroke-width="21" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M240 282 L252 282 Q300 282 300 330 L300 392 Q300 438 254 438 L106 438 Q60 438 60 392 L60 356" stroke="#FF6B37" stroke-width="45" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".07"/><path d="M172 44 Q200 66 180 96" stroke="#FFC72C" stroke-width="53" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".16"/><path d="M158 52 Q168 60 166 74" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".8"/><path d="M278 318L286 318" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M314 344L322 344" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M278 370L286 370" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M314 396L322 396" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M262 416L262 424" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M226 452L226 460" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M190 416L190 424" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M154 452L154 460" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M118 416L118 424" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M74 406L82 406" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path d="M38 380L46 380" stroke="#1B1B1D" stroke-width="2" stroke-linecap="round" opacity=".28"/><path class="flow" d="M176 20 L174 44 Q200 66 180 96 L180 104 Q180 126 156 126 L98 126 Q72 126 72 152 Q72 178 98 178 L262 178 Q288 178 288 204 Q288 230 262 230 L98 230 Q72 230 72 256 Q72 282 98 282 L252 282 Q300 282 300 330 L300 392 Q300 438 254 438 L106 438 Q60 438 60 392 L60 356" stroke="#1B1B1D" stroke-width="1.7" stroke-dasharray="2 9" stroke-linecap="round" fill="none" opacity=".55" id="rtp-r2"/><rect x="263" y="297" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(40 270 300)"/><rect x="303" y="353" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(80 310 356)"/><rect x="279" y="377" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(-60 286 380)"/><rect x="233" y="445" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(10 240 448)"/><rect x="197" y="425" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(-20 204 428)"/><rect x="163" y="443" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(15 170 446)"/><rect x="121" y="427" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(-30 128 430)"/><rect x="77" y="423" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(50 84 426)"/><rect x="39" y="369" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(80 46 372)"/><rect x="63" y="357" width="14" height="6" rx="3" fill="#1B1B1D" transform="rotate(-70 70 360)"/><rect x="293" y="411" width="14" height="6" rx="3" fill="#12A99B" transform="rotate(30 300 414)"/><rect x="139" y="445" width="14" height="6" rx="3" fill="#12A99B" transform="rotate(-10 146 448)"/><rect x="47" y="397" width="14" height="6" rx="3" fill="#12A99B" transform="rotate(20 54 400)"/><g transform="translate(96 62)"><rect x="-37.0" y="-9" width="74" height="18" rx="2" fill="#1B1B1D"/><text class="mono" y="3.6" text-anchor="middle" font-size="8.6" letter-spacing="1.6" style="fill:#F3F1EA">STOMACH</text></g><g transform="translate(180 204)"><rect x="-61.0" y="-9" width="122" height="18" rx="2" fill="#1B1B1D"/><text class="mono" y="3.6" text-anchor="middle" font-size="8.6" letter-spacing="1.6" style="fill:#F3F1EA">SMALL INTESTINE</text></g><text x="180" y="364" text-anchor="middle" font-size="25" letter-spacing=".5" fill="#1B1B1D">COLON</text><text class="mono" x="180" y="382" text-anchor="middle" font-size="7.6" letter-spacing="1.8" fill="#1B1B1D" opacity=".6">WHERE THE BACTERIA ARE</text><g transform="translate(238 58)"><circle r="12" fill="#1B1B1D" transform="translate(2.5 2.5)"/><circle r="12" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2.4"/><text y="5" text-anchor="middle" font-size="14" fill="#1B1B1D">1</text></g><g transform="translate(318 204)"><circle r="12" fill="#1B1B1D" transform="translate(2.5 2.5)"/><circle r="12" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2.4"/><text y="5" text-anchor="middle" font-size="14" fill="#1B1B1D">2</text></g><g transform="translate(180 326)"><circle r="12" fill="#1B1B1D" transform="translate(2.5 2.5)"/><circle r="12" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2.4"/><text y="5" text-anchor="middle" font-size="14" fill="#1B1B1D">3</text></g><path d="M176 -2 L176 6 M170 1 L176 8 L182 1" stroke="#1B1B1D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(0 2)"/><g class="pt" data-x="132" data-y="178" transform="translate(132 178)"><circle r="15" fill="#27D4C4" opacity=".22"/><circle r="14" fill="none" stroke="#12A99B" stroke-width="1.8" stroke-dasharray="3 3"/><circle r="8" fill="#27D4C4" stroke="#1B1B1D" stroke-width="2.4"/><circle cx="-2.4" cy="-2.4" r="2.2" fill="#fff" opacity=".8"/></g><g class="pt" data-x="214" data-y="230" transform="translate(214 230)"><circle r="15" fill="#27D4C4" opacity=".22"/><circle r="14" fill="none" stroke="#12A99B" stroke-width="1.8" stroke-dasharray="3 3"/><circle r="8" fill="#27D4C4" stroke="#1B1B1D" stroke-width="2.4"/><circle cx="-2.4" cy="-2.4" r="2.2" fill="#fff" opacity=".8"/></g><g class="pt" data-x="152" data-y="282" transform="translate(152 282)"><circle r="15" fill="#27D4C4" opacity=".22"/><circle r="14" fill="none" stroke="#12A99B" stroke-width="1.8" stroke-dasharray="3 3"/><circle r="8" fill="#27D4C4" stroke="#1B1B1D" stroke-width="2.4"/><circle cx="-2.4" cy="-2.4" r="2.2" fill="#fff" opacity=".8"/></g><g class="pt" data-x="300" data-y="352" transform="translate(300 352)"><circle r="17" fill="#27D4C4" opacity=".22"/><circle r="16" fill="none" stroke="#12A99B" stroke-width="1.8" stroke-dasharray="3 3"/><circle r="10" fill="#27D4C4" stroke="#1B1B1D" stroke-width="2.4"/><circle cx="-3.0" cy="-3.0" r="2.8" fill="#fff" opacity=".8"/></g><g class="pt" data-x="232" data-y="438" transform="translate(232 438)"><rect x="-7" y="-7" width="14" height="14" rx="1.5" transform="rotate(45)" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2.4"/></g><g class="pt" data-x="144" data-y="438" transform="translate(144 438)"><rect x="-7" y="-7" width="14" height="14" rx="1.5" transform="rotate(45)" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2.4"/></g><g class="pt" data-x="60" data-y="396" transform="translate(60 396)"><rect x="-7" y="-7" width="14" height="14" rx="1.5" transform="rotate(45)" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2.4"/></g><g class="pt" data-x="270" data-y="430" transform="translate(270 430)"><polygon points="0,-9 9,7 -9,7" fill="#FF6B37" stroke="#1B1B1D" stroke-width="2.4" stroke-linejoin="round"/></g><g class="pt" data-x="188" data-y="438" transform="translate(188 438)"><polygon points="0,-9 9,7 -9,7" fill="#FF6B37" stroke="#1B1B1D" stroke-width="2.4" stroke-linejoin="round"/></g><g class="pt" data-x="100" data-y="436" transform="translate(100 436)"><polygon points="0,-9 9,7 -9,7" fill="#FF6B37" stroke="#1B1B1D" stroke-width="2.4" stroke-linejoin="round"/></g></svg><ul class="nx-rkey">
+  <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5" fill="#27D4C4" stroke="#1B1B1D" stroke-width="2"/></svg>Gel-forming (psyllium)</li>
+  <li><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" transform="rotate(45 8 8)" fill="#FFC72C" stroke="#1B1B1D" stroke-width="2"/></svg>Resistant starch</li>
+  <li><svg viewBox="0 0 16 16"><polygon points="8,2 14,13 2,13" fill="#FF6B37" stroke="#1B1B1D" stroke-width="2" stroke-linejoin="round"/></svg>Acacia</li>
+  <li><svg viewBox="0 0 16 16"><rect x="2" y="5.5" width="12" height="5" rx="2.5" fill="#1B1B1D"/></svg>Gut bacteria</li>
+</ul><button type="button" class="nx-play" data-nx-play="rt-r2">&#9656; Play the route</button></div></div>
+      <div>
+        <h2 class="display rev">Different fibers.<br>Different <em class="aq">stops.</em></h2>
+        <p class="lead rev rev-d1">Your enzymes can&rsquo;t break fiber down, so it keeps going. Where it does its work depends on the kind. <b>One scoop carries three.</b></p>
+        <ol class="nx-steps sw">
+  <li><span class="n">1</span><div><h4>It passes through intact.</h4><p>Fiber is the part of plant food your own enzymes can&rsquo;t break down. Most of it clears the stomach and small intestine untouched.</p></div></li>
+  <li><span class="n">2</span><div><h4>Gel-forming fiber holds water.</h4><p>Psyllium is the classic example. That water helps give stool its form.</p></div></li>
+  <li><span class="n">3</span><div><h4>Fermentable fiber feeds gut bacteria.</h4><p>Resistant starch and acacia reach the colon, where the bacteria are.</p></div></li>
+</ol>
+        <p class="nx-hint">Swipe the three stops</p>
+        <p class="nx-note">General fiber science, simplified. Not anatomy to scale, and not a claim about STÄPL.</p>
+        
       </div>
     </div>
-  </section>
-
-  <section class="pg-sec mint">
+  </div>
+</section>
+<section class="pg-sec nx nx-white nx-three" id="nx-three-f">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">Inside the scoop</span></div>
+    <h2 class="display rev">One scoop.<br><em>Three fibers.</em></h2>
+    <p class="lead rev rev-d1">Different fibers do different jobs, so Daily Performance Fiber is full-spectrum: three fibers in one scoop. <b>No proprietary blends</b>, so each one is named on the label.</p>
+    <div class="g">
+      <article class="nx-fib rev"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The husk of the psyllium seed. A gel-forming fiber that holds water.</p><span class="job">Holds water</span></div></article>
+      <article class="nx-fib rev rev-d1"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A starch that resists digestion and reaches the colon intact.</p><span class="job">Reaches the colon</span></div></article>
+      <article class="nx-fib rev rev-d2"><div class="ico"><img src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 03</span><h3>Acacia fiber</h3><p>Fiber from the sap of the acacia tree. It dissolves in water and helps the powder mix.</p><span class="job">Mixes clean</span></div></article>
+    </div>
+    <p class="nx-hint">Swipe the three fibers</p>
+    <a class="more-link" href="#shop">Meet Daily Performance Fiber &#9656;</a>
+  </div>
+</section>
+<section class="pg-sec mint">
     <div class="wrap">
       <div class="split has-p2">
         <div>
-          <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">What's in Daily</span></div>
+          <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">What's in Daily</span></div>
           <h2 class="display rev">One scoop.<br><em>Full label.</em></h2>
           <p class="lead rev rev-d1">No proprietary blends. Everything in the canister is on the canister.</p>
           <ul class="ticks rev rev-d2">
@@ -3222,7 +3294,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
 
   <section class="ritual">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">How to take it</span></div>
+      <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">How to take it</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
         <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
@@ -3326,9 +3398,29 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     </div>
   </section>
 
-  <section class="pg-sec mint">
+  <section class="pg-sec nx nx-white nx-blind" id="nx-blind">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">The blind spot</span></div>
+    <div class="nx-split">
+      <div>
+        <h2 class="display rev">They tracked everything.<br><em>Except fiber.</em></h2>
+        <p class="lead rev rev-d1">Marcus coaches athletes who log protein to the gram. Fiber rarely made the list. They are not alone: <b>US adults average 16.3 grams a day against a Daily Value of 28.</b></p>
+        <p class="lead rev rev-d2">So before another powder goes in the cabinet, he starts with the nutrient most people are already short on.</p>
+        <a class="more-link rev rev-d3" href="#the-fiber">See the missing number &#9656;</a>
+      </div>
+      <div class="nx-blind-art rev rev-d1"><div class="nx-track" role="img" aria-label="A tracker with targets for protein, carbs and fat, and a blank row for fiber">
+  <div class="hd"><span>Tracker</span><span>Example day</span></div>
+  <div class="tr"><p>Protein <span><b>182</b> / 180 g</span></p><div class="m"><u style="--w:100%"></u></div></div>
+  <div class="tr"><p>Carbs <span><b>236</b> / 250 g</span></p><div class="m"><u style="--w:94%"></u></div></div>
+  <div class="tr"><p>Fat <span><b>71</b> / 75 g</span></p><div class="m"><u style="--w:95%"></u></div></div>
+  <div class="tr f" data-nx-fiber><p>Fiber <span><b>__</b> / <em style="font-style:normal" data-nx-target>__</em> g</span></p><div class="m"><u></u></div></div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="pg-sec mint">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">In his words</span></div>
+      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">In his words</span></div>
       <h2 class="display rev">Why fiber.<br><em class="aq">Why now.</em></h2>
       <div class="qa">
         <div class="rev"><div class="q">Why start with fiber?</div><div class="a">"Fiber is the glue that holds digestion together. Without adequate and diverse fiber, you will not achieve the same results or return on the investment you are making in the gym. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</div></div>
@@ -3343,7 +3435,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
 
   <section class="athlete" style="padding:5rem 0">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">Watch</span></div>
+      <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">Watch</span></div>
       <div class="media-grid">
         <div class="media-slot t1 rev"><div class="bg bg-chalk"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Gym · Chalk Macro</span><span class="spec">1:1 Loop · Hands + Bar</span></div></div>
         <div class="media-slot t2 rev rev-d1"><div class="bg bg-herochalk"></div><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="center"><span class="label">Marcus · Story Film</span><span class="spec">16:9 · Why Marcus Built Daily · 60–90s</span></div></div>
@@ -3567,7 +3659,17 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     </div>
   </section>
 
-  <section class="pg-sec gridbg">
+  <section class="nx nx-strip" id="nx-why">
+  <div class="wrap">
+    <div class="g">
+      <div class="t rev"><h2 class="display">Why fiber?<br><em>Nobody counts it.</em></h2><a class="more-link" href="#the-fiber">See the why &#9656;</a></div>
+      <div class="s rev"><b>28<small>g</small></b><span>The Daily Value for fiber.</span></div>
+      <div class="s rev rev-d1"><b>16.3<small>g</small></b><span>What US adults average a day.</span></div>
+      <div class="s rev rev-d2"><b>11.7<small>g</small></b><span>Missing, every single day.</span></div>
+    </div>
+  </div>
+</section>
+<section class="pg-sec gridbg">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Why Daily Performance Fiber</span></div>
       <h2 class="display rev">One product.<br><em>One job.</em></h2>
@@ -3587,9 +3689,9 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
           <h2 class="display rev">Nothing<br><em class="aq">hidden.</em></h2>
           <p class="lead rev rev-d1">Full-spectrum fiber, no proprietary blends. Every ingredient is named, with the job it does.</p>
           <div class="ingr rev rev-d2">
-            <details class="ing" open><summary><i>01</i><b>Psyllium husk</b><span class="pm">+</span></summary><p>The husk of the psyllium seed. It holds water and adds bulk.</p></details>
-            <details class="ing"><summary><i>02</i><b>Resistant potato starch</b><span class="pm">+</span></summary><p>A starch that resists digestion and reaches the gut intact, where it is fermented.</p></details>
-            <details class="ing"><summary><i>03</i><b>Acacia</b><span class="pm">+</span></summary><p>Fiber from the sap of the acacia tree, also called gum arabic.</p></details>
+            <details class="ing" open><summary><i>01</i><b>Psyllium husk</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"><p>The husk of the psyllium seed. It holds water and adds bulk.</p></details>
+            <details class="ing"><summary><i>02</i><b>Resistant potato starch</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"><p>A starch that resists digestion and reaches the gut intact, where it is fermented.</p></details>
+            <details class="ing"><summary><i>03</i><b>Acacia</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"><p>Fiber from the sap of the acacia tree, also called gum arabic.</p></details>
             <details class="ing"><summary><i>04</i><b>Natural flavors</b><span class="pm">+</span></summary><p>Where the raspberry comes from.</p></details>
             <details class="ing p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><summary><i>05</i><b>Stevia leaf + monk fruit</b><span class="pm">+</span></summary><p>The sweeteners. No sugar alcohols or sucralose.</p></details>
             <details class="ing p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><summary><i>06</i><b>Citric acid</b><span class="pm">+</span></summary><p>For tartness.</p></details>
@@ -3612,9 +3714,24 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     </div>
   </section>
 
-  <section class="pg-sec">
+  <section class="pg-sec nx nx-test" id="nx-test-s">
+  <div class="wrap">
+    <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">The test</span></div>
+    <h2 class="display rev">Before you fill<br>the <em>cabinet.</em></h2>
+    <p class="lead rev rev-d1">Hold every supplement to four questions before it earns a spot. Here is how fiber answers them.</p>
+    <div class="g">
+      <article class="nx-q q1 rev"><span class="ix">1 / 4</span><h3>Is there a daily target?</h3><div class="big">28<small>g</small></div><p>A federal Daily Value, plus a benchmark of 14 g for every 1,000 calories you eat.</p></article>
+      <article class="nx-q q2 rev rev-d1"><span class="ix">2 / 4</span><h3>Are people falling short?</h3><div class="big">16.3<small>g</small></div><p>The average US adult&rsquo;s daily intake. More than 90% of women and 97% of men miss the recommended amount.</p></article>
+      <article class="nx-q q3 rev rev-d2"><span class="ix">3 / 4</span><h3>Has it been studied?</h3><div class="big">3,730</div><p>Trials and reviews on PubMed. Well ahead of collagen at 672 and ashwagandha at 117.</p></article>
+      <article class="nx-q q4 rev rev-d3"><span class="ix">4 / 4</span><h3>Can you check the label?</h3><div class="big">Every ingredient named.</div><p>No proprietary blends. Read the label against the research yourself.</p></article>
+    </div>
+    <p class="nx-hint">Swipe the four questions</p>
+    <p class="nx-fine">Research volume shows how closely scientists have looked at a topic. It doesn&rsquo;t show that any product works, ours included. PubMed count taken Nov 18, 2026.</p>
+  </div>
+</section>
+<section class="pg-sec">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">How it compares</span></div>
+      <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">How it compares</span></div>
       <h2 class="display rev">The usual way.<br><em>The STÄPL way.</em></h2>
       <div class="cmp rev rev-d1">
         <div class="col">
@@ -3638,7 +3755,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
       <div class="split">
         <a class="frame cl tilt-l rev flav-one" href="#shop" data-flavor="Raspberry" style="aspect-ratio:4/3;display:block"><img src="assets/staple-home/raspberry-bright.jpg" alt="Raspberry"><span class="cap">Raspberry · launch flavor</span></a>
         <div>
-          <div class="sec-head rev"><span class="num">D</span><div class="line"></div><span class="mono-label">The flavor</span></div>
+          <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">The flavor</span></div>
           <h2 class="display rev">Raspberry.<br><em class="aq">First.</em></h2>
           <p class="lead rev rev-d1"><b>Bright, tart, a little jammy.</b> One flavor at launch, on purpose. Founders vote on flavor two after launch.</p>
         </div>
@@ -3648,7 +3765,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
 
   <section class="ritual">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">How to use</span></div>
+      <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">How to use</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every day.</em></h2>
       <div class="steps">
         <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. The serving is decided for you.</p><div class="real-shot ratio-169"><img src="assets/staple-home/b93ac55391.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
@@ -3662,7 +3779,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     <div class="wrap">
       <div class="split">
         <div>
-          <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">Lab-tested</span></div>
+          <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">Lab-tested</span></div>
           <h2 class="display rev">Tested.<br><em>Then posted.</em></h2>
           <p class="lead rev rev-d1">The first production lot goes to the lab, and the results get posted right here. We start with the essentials and expand testing as we grow.</p>
         </div>
@@ -3684,7 +3801,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
       <div class="split wide-r">
         <div class="frame aq tilt-l rev" style="aspect-ratio:4/3"><div class="blank"><span class="label">Marcus · between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div></div>
         <div>
-          <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">From the founder</span></div>
+          <div class="sec-head rev"><span class="num">H</span><div class="line"></div><span class="mono-label">From the founder</span></div>
           <div class="prose"><blockquote class="rev" style="font-size:clamp(1.3rem,2.3vw,1.9rem)">"STÄPL is a highlight in my day. It's delicious, and I wake up excited every morning to get my fiber and morning hydration in a single glass."</blockquote></div>
           <p class="lead rev rev-d1"><b>Marcus Filly</b> is the founder of Functional Bodybuilding, where he coaches busy dads and athletes to look good and move well. He is the founder and formulator of STÄPL, built for the part of nutrition most athletes skip.</p>
           <div class="btn-row rev rev-d2"><a class="btn btn-ghost" href="#the-athlete">Read Marcus's story &#9656;</a></div>
@@ -3695,7 +3812,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
 
   <section class="pg-sec mint">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">H</span><div class="line"></div><span class="mono-label">Do the math</span></div>
+      <div class="sec-head rev"><span class="num">I</span><div class="line"></div><span class="mono-label">Do the math</span></div>
       <h2 class="display rev">Two dollars<br><em>a day.</em></h2>
       <div class="pcards">
         <div class="pcard rev"><span class="n">Founders presale</span><h3 class="math">$1.50 <small>per day</small></h3><p>$44.99 for your first canister: 25% off for the waitlist, from December 1. Then $59.99 every 30 days.</p></div>
@@ -3709,7 +3826,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
     <div class="wrap">
       <div class="grid">
         <div>
-          <div class="sec-head rev"><span class="num">I</span><div class="line"></div><span class="mono-label">Quick answers</span></div>
+          <div class="sec-head rev"><span class="num">J</span><div class="line"></div><span class="mono-label">Quick answers</span></div>
           <h2 class="display rev">Before<br>you <em>buy.</em></h2>
           <a class="more-link rev" href="#faq">See all questions &#9656;</a>
         </div>
@@ -3725,7 +3842,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
 
   <section class="pg-sec p2" data-p2="Reviews section (needs real customer reviews)">
     <div class="wrap">
-      <div class="sec-head rev"><span class="num">J</span><div class="line"></div><span class="mono-label">Reviews</span></div>
+      <div class="sec-head rev"><span class="num">K</span><div class="line"></div><span class="mono-label">Reviews</span></div>
       <h2 class="display rev">Earned,<br><em>not invented.</em></h2>
       <div class="rgrid">
         <div class="rcard rev"><span class="stars">★★★★★</span><p>One or two sentences from a real early tester about taste.</p><span class="who">First name L. · Early tester</span></div>
@@ -4963,7 +5080,7 @@ document.addEventListener('click',e=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-next-v1';
+  var PAGE_ID = 'staple-home-next-v2';
 
   /* ---------------------------------------------- */
 
