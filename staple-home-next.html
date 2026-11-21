@@ -2640,6 +2640,13 @@ button.btn{border:0;cursor:pointer}
 button.cta-sub{cursor:pointer}
 @media(min-width:821px){button.cta-sub{background:none;border:0;border-bottom:3px solid var(--aqua)}}
 
+/* Nov 20: subscriber pricing */
+.opt label .pr s{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;opacity:.6;text-align:right;margin-bottom:.15rem}
+.nx-freq{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin:.2rem 0 .9rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase}
+.nx-freq span{opacity:.7;margin-right:.2rem}
+.nx-freq button{font:inherit;font-weight:700;letter-spacing:.1em;padding:.5rem .7rem;min-height:36px;border:2px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.nx-freq button.on{background:var(--sunshine);border-color:var(--sunshine);color:var(--ink)}
+.nx-freq[hidden]{display:none}
 /* Nov 20, round 3 */
 .nx-mw .r b{font-size:.78rem;letter-spacing:.14em}
 .nx-mw small{font-size:.78rem;letter-spacing:.02em;color:var(--espresso);font-weight:700;margin-top:-.35rem}
@@ -3083,9 +3090,10 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
         <div class="opt">
           <label class="active" id="optSub">
             <input type="radio" name="purch" checked>
-            <span class="t"><b>Subscribe<span class="save-flag">Ships free</span></b><span>Delivered every 30 days · skip or cancel anytime</span></span>
-            <span class="pr"><b>$59.99</b></span>
-          </label>
+            <span class="t"><b>Subscribe<span class="save-flag">Save 15%</span></b><span>Ships free · skip or cancel anytime</span></span>
+          <span class="pr"><s>$59.99</s><b>$50.99</b></span>
+        </label>
+        <div class="nx-freq" role="group" aria-label="Delivery frequency"><span>Deliver every</span><button type="button" class="on" data-days="30" aria-pressed="true">30 days</button><button type="button" data-days="60" aria-pressed="false">60 days</button><button type="button" data-days="90" aria-pressed="false">90 days</button></div>
           <label id="optOne">
             <input type="radio" name="purch">
             <span class="t"><b>One-Time Purchase</b><span>Free shipping on two or more</span></span>
@@ -3094,7 +3102,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
         </div>
         <button class="add-cart">Add To Cart &#9656;</button>
         <div class="buy-meta">
-          <span><b>&#9656;</b> Subscriptions ship free</span>
+          <span><b>&#9656;</b> Subscribers save 15% + ship free</span>
           <span><b>&#9656;</b> Skip or cancel anytime</span>
           <span><b>&#9656;</b> 30-day first-canister guarantee</span>
         </div>
@@ -3140,7 +3148,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
         </details>
         <details>
           <summary>How does the subscription work? <span class="pm">+</span></summary>
-          <p>A fresh canister ships free every 30 days for $59.99. Skip or cancel anytime. Subscriptions start at public launch, the week of January 11, 2027.</p>
+          <p>Subscribers save 15%: $50.99 a canister instead of $59.99, shipped free. Choose delivery every 30, 60 or 90 days. Skip or cancel anytime. Subscriptions start at public launch, the week of January 11, 2027.</p>
         </details>
       </div>
     </div>
@@ -3619,7 +3627,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
         <div><span class="mono-label">Group 03</span><h2>Presale + launch</h2></div>
         <div>
           <details><summary>When can I buy it? <span class="pm">+</span></summary><p>The Founders presale opens Tuesday, December 1 for the waitlist. The public presale opens Tuesday, December 8. Join the waitlist to get in first.</p></details>
-          <details><summary>What do Founders get? <span class="pm">+</span></summary><p>25% off your first canister: $44.99 instead of $59.99. After that it's $59.99 every 30 days, and you can skip or cancel anytime. Founders also vote on flavor two.</p></details>
+          <details><summary>What do Founders get? <span class="pm">+</span></summary><p>25% off your first canister: $44.99 instead of $59.99. After that, Founders who subscribe keep subscriber pricing: 15% off, $50.99 a canister, delivered every 30, 60 or 90 days. Skip or cancel anytime. Founders also vote on flavor two.</p></details>
           <details><summary>When do presale orders ship? <span class="pm">+</span></summary><p>The week of Monday, January 11, 2027. Presale orders are charged when you order. If the ship date slips, we'll tell you and offer a full refund.</p></details>
         </div>
       </div>
@@ -3637,7 +3645,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
       <div class="faq-group" id="fq-subs">
         <div><span class="mono-label">Group 05</span><h2>Subscriptions</h2></div>
         <div>
-          <details><summary>How does the subscription work? <span class="pm">+</span></summary><p>A fresh canister ships free every 30 days for $59.99. We email you 3 days before each renewal. Subscriptions start at public launch, the week of January 11, 2027.</p></details>
+          <details><summary>How does the subscription work? <span class="pm">+</span></summary><p>Subscribers save 15%: $50.99 a canister instead of $59.99, shipped free. Choose delivery every 30, 60 or 90 days. We email you 3 days before each renewal. Subscriptions start at public launch, the week of January 11, 2027.</p></details>
           <details><summary>Can I pause, skip or cancel? <span class="pm">+</span></summary><p>Yes, anytime, from your account or by emailing us. No fees and no minimum. Changes need to be made before your next order processes. Details in the <a class="more-link" style="margin:0" href="#subscription-policy">subscription policy</a>.</p></details>
         </div>
       </div>
@@ -3716,9 +3724,10 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
         <div class="opt">
           <label class="active">
             <input type="radio" name="purch-pdp" checked>
-            <span class="t"><b>Subscribe<span class="save-flag">Ships free</span></b><span>Delivered every 30 days · skip or cancel anytime</span></span>
-            <span class="pr"><b>$59.99</b></span>
-          </label>
+            <span class="t"><b>Subscribe<span class="save-flag">Save 15%</span></b><span>Ships free · skip or cancel anytime</span></span>
+          <span class="pr"><s>$59.99</s><b>$50.99</b></span>
+        </label>
+        <div class="nx-freq" role="group" aria-label="Delivery frequency"><span>Deliver every</span><button type="button" class="on" data-days="30" aria-pressed="true">30 days</button><button type="button" data-days="60" aria-pressed="false">60 days</button><button type="button" data-days="90" aria-pressed="false">90 days</button></div>
           <label>
             <input type="radio" name="purch-pdp">
             <span class="t"><b>One-Time Purchase</b><span>Free shipping on two or more</span></span>
@@ -3728,7 +3737,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
         <div class="bb-qty"><span>Quantity</span><span class="qty"><button type="button" data-bq="-1" aria-label="Decrease quantity">−</button><span data-bqv>1</span><button type="button" data-bq="1" aria-label="Increase quantity">+</button></span></div>
         <button class="add-cart">Add To Cart &#9656;</button>
         <div class="buy-meta">
-          <span><b>&#9656;</b> Subscriptions ship free</span>
+          <span><b>&#9656;</b> Subscribers save 15% + ship free</span>
           <span><b>&#9656;</b> Skip or cancel anytime</span>
           <span><b>&#9656;</b> 30-day first-canister guarantee</span>
         </div>
@@ -3737,7 +3746,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
             <details open><summary>What's inside <span class="pm">+</span></summary><p>Full-spectrum fiber: psyllium husk, resistant potato starch and acacia. Natural flavors<span class="p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)">, stevia leaf extract, monk fruit extract and citric acid</span>. 30 servings per canister, scoop included.</p></details>
             <details><summary>How to use <span class="pm">+</span></summary><p>One level scoop in 8 to 12 oz of water, once a day. Want to mix it up? Stir it into yogurt. New to fiber? Start with half a scoop for the first week and drink plenty of water.</p></details>
             <details><summary>Shipping + guarantee <span class="pm">+</span></summary><p>Subscriptions ship free. One-time orders of $80 or more ship free; otherwise $5.95. Try your first canister: if it isn't for you, tell us within 30 days and we'll refund it. Keep the canister. See the <a class="more-link" style="margin:0" href="#shipping">shipping</a> and <a class="more-link" style="margin:0" href="#refund-policy">refund</a> policies.</p></details>
-            <details><summary>Subscription details <span class="pm">+</span></summary><p>$59.99 every 30 days with free shipping. It renews automatically until you cancel. We email you 3 days before each renewal, and you can skip or cancel anytime before your next order processes. See the <a class="more-link" style="margin:0" href="#subscription-policy">subscription policy</a>.</p></details>
+            <details><summary>Subscription details <span class="pm">+</span></summary><p>$50.99 a canister, 15% off the $59.99 one-time price, with free shipping. Choose delivery every 30, 60 or 90 days. It renews automatically until you cancel. We email you 3 days before each renewal, and you can skip or cancel anytime before your next order processes. See the <a class="more-link" style="margin:0" href="#subscription-policy">subscription policy</a>.</p></details>
           </div>
         </div>
       </div>
@@ -3908,10 +3917,10 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
   <section class="pg-sec mint">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">I</span><div class="line"></div><span class="mono-label">Do the math</span></div>
-      <h2 class="display rev">Two dollars<br><em>a day.</em></h2>
+      <h2 class="display rev">Under two dollars<br><em>a day.</em></h2>
       <div class="pcards">
-        <div class="pcard rev"><span class="n">Founders presale</span><h3 class="math">$1.50 <small>per day</small></h3><p>$44.99 for your first canister: 25% off for the waitlist, from December 1. Then $59.99 every 30 days.</p></div>
-        <div class="pcard rev rev-d1"><span class="n">Subscribe</span><h3 class="math">$2.00 <small>per day</small></h3><p>$59.99 every 30 days, shipped free. Skip or cancel anytime.</p></div>
+        <div class="pcard rev"><span class="n">Founders presale</span><h3 class="math">$1.50 <small>per day</small></h3><p>$44.99 for your first canister: 25% off for the waitlist, from December 1. Then $50.99 a canister when you subscribe.</p></div>
+        <div class="pcard rev rev-d1"><span class="n">Subscribe &middot; save 15%</span><h3 class="math">$1.70 <small>per day</small></h3><p>$50.99 a canister, shipped free, every 30, 60 or 90 days. Skip or cancel anytime.</p></div>
         <div class="pcard rev rev-d2"><span class="n">One-time</span><h3 class="math">$2.00 <small>per day</small></h3><p>$59.99 per canister, 30 servings. Two or more ship free.</p></div>
       </div>
     </div>
@@ -4195,7 +4204,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
           <div class="r"><span>Tax</span><span>Calculated at checkout</span></div>
           <div class="r t"><span>Estimated total</span><span data-total>$0.00</span></div>
           <button class="btn btn-sun" data-checkout>Checkout &#9656;</button>
-          <p class="fine" data-sub-fine>Subscription items renew automatically every 30 days at $59.99 per canister, with free shipping, until you cancel. We email you 3 days before each renewal. Skip or cancel anytime before your next order processes. See the <a href="#subscription-policy">Subscription Policy</a>.</p>
+          <p class="fine" data-sub-fine>Subscription items renew automatically on the schedule you choose (every 30, 60 or 90 days) at $50.99 per canister, 15% off, with free shipping, until you cancel. We email you 3 days before each renewal. Skip or cancel anytime before your next order processes. See the <a href="#subscription-policy">Subscription Policy</a>.</p>
           <p class="fine">By checking out you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>. <a href="#shipping">Shipping</a> · <a href="#refund-policy">Returns</a></p>
         </aside>
       </div>
@@ -4230,7 +4239,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
       <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Founders get</span></div>
       <h2 class="display rev">First in.<br><em>First say.</em></h2>
       <div class="pcards">
-        <div class="pcard rev"><span class="n">01</span><h3>25% off your first canister</h3><p>$44.99 instead of $59.99. Then $59.99 every 30 days, shipped free. Skip or cancel anytime.</p></div>
+        <div class="pcard rev"><span class="n">01</span><h3>25% off your first canister</h3><p>$44.99 instead of $59.99. Then $50.99 a canister when you subscribe (15% off), shipped free. Skip or cancel anytime.</p></div>
         <div class="pcard rev rev-d1"><span class="n">02</span><h3>First to ship</h3><p>Presale opens December 1 for this list, a week before the public. Orders ship the week of January 11, 2027.</p></div>
         <div class="pcard rev rev-d2"><span class="n">03</span><h3>A vote on flavor two</h3><p>We launch with raspberry. Founders pick what comes next.</p></div>
       </div>
@@ -4382,13 +4391,13 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
       <div class="legal">
         <aside class="legal-nav"><span>Policies</span><a href="#shipping">Shipping Policy</a><a href="#refund-policy">Refund + Return Policy</a><a href="#subscription-policy" class="is-current">Subscription Policy</a><a href="#privacy">Privacy Policy</a><a href="#privacy-choices">Your Privacy Choices</a><a href="#terms">Terms of Service</a><a href="#disclaimer">Health + FDA Disclaimer</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a></aside>
         <div class="prose">
-<p class="updated">Last updated: November 17, 2026</p>
+<p class="updated">Last updated: November 20, 2026</p>
 <h2>How it works</h2>
-<p>When you choose Subscribe, you are enrolling in an automatically renewing subscription. We ship Daily Performance Fiber every 30 days and charge your payment method for each shipment until you cancel. Subscriptions begin at public launch, the week of January 11, 2027.</p>
+<p>When you choose Subscribe, you are enrolling in an automatically renewing subscription. We ship Daily Performance Fiber every 30, 60 or 90 days, on the schedule you choose, and charge your payment method for each shipment until you cancel. Subscriptions begin at public launch, the week of January 11, 2027.</p>
 <h2>What you pay</h2>
 <ul>
-<li>$59.99 per canister every 30 days, plus applicable tax. Shipping is free on every subscription order.</li>
-<li>Founders presale: your first canister is 25% off ($44.99). After that, $59.99 every 30 days.</li>
+<li>$50.99 per canister, which is 15% off the $59.99 one-time price, plus applicable tax. Shipping is free on every subscription order.</li>
+<li>Founders presale: your first canister is 25% off ($44.99). After that, $50.99 per canister on the schedule you choose.</li>
 <li>Your payment method is charged on each renewal date, when the order processes.</li>
 <li>If the price changes, we will email you at least 30 days before the new price applies.</li>
 </ul>
@@ -4695,7 +4704,7 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
   <div class="cd-body" id="cdBody"></div>
   <div class="cd-foot">
     <div class="cd-sub"><span>Subtotal</span><span data-subtotal>$0.00</span></div>
-    <p class="cd-note">Shipping and tax calculated at checkout. <span data-sub-fine>Subscription items renew every 30 days until you cancel. <a href="#subscription-policy">Details</a></span></p>
+    <p class="cd-note">Shipping and tax calculated at checkout. <span data-sub-fine>Subscription items renew every 30, 60 or 90 days until you cancel. <a href="#subscription-policy">Details</a></span></p>
     <button class="btn btn-sun" data-checkout>Checkout &#9656;</button>
     <a class="btn btn-line" href="#cart" data-close-cart>View cart</a>
   </div>
@@ -4838,7 +4847,7 @@ render();
    ============================================================ */
 const FREE_SHIP=80;                       // one-time orders of $80+ ship free; subscriptions always ship free
 const FLAV_IMG={'Raspberry':'raspberry-bright.jpg'};
-const PRICE={sub:59.99,once:59.99};       // $59.99 either way; no standing subscription discount
+const PRICE={sub:50.99,once:59.99}; // subscribers save 15% (Amy, Nov 20)
 const money=n=>'$'+n.toFixed(2);
 let cart=[];
 try{cart=JSON.parse(localStorage.getItem('stapl-cart-preview')||'[]')||[];}catch(e){cart=[];}
@@ -4856,7 +4865,7 @@ function lineHTML(i){
   return `<div class="c-line" data-key="${i.key}">
     <div class="th"><img src="assets/staple-home/${FLAV_IMG[i.flavor]||FLAV_IMG.Raspberry}" alt="${i.flavor}"></div>
     <div><div class="nm">Daily Performance Fiber — ${i.flavor}</div>
-      <span class="vr">30 servings · ${i.plan==='sub'?'<em>Subscription</em> · ships free every 30 days':'One-time purchase'}</span>
+      <span class="vr">30 servings · ${i.plan==='sub'?'<em>Subscription</em> · 15% off · ships free every '+(window.nxFreq||30)+' days':'One-time purchase'}</span>
       <div><span class="qty"><button data-q="-1" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button data-q="1" aria-label="Increase quantity">+</button></span><button class="rm" data-rm>Remove</button></div>
     </div>
     <div class="pr">${money(p*i.qty)}</div>
@@ -5152,6 +5161,10 @@ document.addEventListener('click',e=>{
     var a=e.target.closest('a[data-nx-go]');if(a)e.preventDefault();
   },true);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m&&!m.hidden)close()});
+  window.nxFreq=30;
+  document.addEventListener('click',function(e){var b=e.target.closest('.nx-freq button');if(!b)return;window.nxFreq=+b.dataset.days;
+    document.querySelectorAll('.nx-freq button').forEach(function(x){var on=x.dataset.days===b.dataset.days;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on))})});
+  document.addEventListener('click',function(e){var o=e.target.closest&&e.target.closest('.opt');if(!o||e.target.closest('.nx-freq'))return;setTimeout(function(){var f=o.querySelector('.nx-freq'),l=o.querySelector('label'),i=l&&l.querySelector('input');if(f&&l)f.hidden=!(l.classList.contains('active')||(i&&i.checked))},30)});
   function flip(c){var on=c.classList.toggle('flip');c.setAttribute('aria-pressed',String(on))}
   document.addEventListener('click',function(e){var c=e.target.closest('.nx-flip');if(c&&!e.target.closest('a'))flip(c)});
   document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('nx-flip')){e.preventDefault();flip(e.target)}});
