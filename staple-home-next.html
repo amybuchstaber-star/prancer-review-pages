@@ -2805,6 +2805,52 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
  .intro h2{font-size:clamp(2rem,9vw,2.8rem)}
  .buy h2{font-size:clamp(2rem,10vw,3rem)}
 }
+</style><style id="nx-r3-css">
+.nx-add .mk h2{line-height:1.04!important}
+.intro h2 em.or{color:var(--clay)}
+br.nx-mo{display:none}
+.btn-or{background:var(--clay);color:var(--ink);font-size:.86rem;padding:1.35rem 2.3rem}
+.btn-or:hover{background:var(--sunshine);color:var(--ink)}
+.nx-strip.lt{background:#FDFBF7;color:var(--ink);border-top:2px solid var(--espresso);border-bottom:2px solid var(--espresso)}
+.nx-strip.lt .t h2{color:var(--ink)}.nx-strip.lt .t h2 em{color:var(--clay)}.nx-strip.lt .t a{color:var(--ink)}
+.nx-strip.lt .s{border-left-color:rgba(27,27,29,.2)}
+.nx-strip.lt .s b,.nx-strip.lt .s:nth-child(3) b{color:var(--ink)}
+.nx-strip.lt .s:nth-child(2) b{color:#12a596}.nx-strip.lt .s:nth-child(4) b{color:var(--clay)}
+.nx-strip.lt .s span{color:var(--ink-dim);font-size:.95rem}
+.nx-coin-row{display:flex;justify-content:flex-end;margin-top:1.8rem}
+.nx-coin-row .nx-coin{margin:0}
+.nx-form{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:1.8rem;align-items:stretch;margin-top:2.4rem}
+.nx-form .ph{aspect-ratio:auto;min-height:0;height:460px;margin:0}
+.nx-form .ph.l{transform:rotate(-1.2deg)}.nx-form .ph.r{transform:rotate(1.2deg)}
+.nx-form .ph img{transition:opacity .16s}
+.nx-form .fcard{background:#fff;border:2px solid var(--espresso);box-shadow:8px 8px 0 var(--espresso);display:flex;flex-direction:column;height:460px;min-width:0}
+.nx-form .fhd{display:flex;justify-content:space-between;background:var(--espresso);color:var(--bone);font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.8rem 1.1rem;flex:none}
+.nx-form .fhd span:last-child{color:var(--sunshine)}
+.nx-form .flist{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1;scrollbar-width:thin;scrollbar-color:var(--espresso) transparent;overscroll-behavior:contain}
+.nx-form .flist li{display:grid;grid-template-columns:44px 1fr;gap:.9rem;padding:1.1rem 1.2rem;border-bottom:2px solid rgba(27,27,29,.12);cursor:pointer;transition:background .15s}
+.nx-form .flist li>i{font-style:normal;font-family:var(--arch);font-weight:900;font-size:1.5rem;line-height:1;color:var(--clay)}
+.nx-form .flist li b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 114;text-transform:uppercase;font-size:1.08rem;line-height:1.15;margin-top:.25rem}
+.nx-form .flist li p{font-size:.94rem;line-height:1.55;color:var(--ink-dim);margin-top:.4rem}
+.nx-form .flist li.on{background:#E6F6F3;box-shadow:inset 5px 0 0 var(--aqua)}
+.nx-form .ingr-note{margin:0;padding:.8rem 1.2rem;border-top:2px solid var(--espresso)}
+.nx-formfacts{margin-top:2rem}
+@media(min-width:901px){
+ #nx-test h2 em{white-space:nowrap}
+ .nx-label-art .spec-note{max-width:118px;font-size:.56rem}
+ .nx-label-art .spec-note::after{width:30px}
+ .nx-label-art .spec-note.sn1::after,.nx-label-art .spec-note.sn3::after{right:-36px}
+ .nx-label-art .spec-note.sn2::after,.nx-label-art .spec-note.sn4::after{left:-36px}
+ .nx-label-art .spec-card .canister{width:205px}
+}
+@media(max-width:900px){
+ br.nx-mo{display:inline}
+ .btn-or{font-size:.8rem;padding:1.2rem 1.6rem}
+ .nx-coin-row{justify-content:flex-start}
+ .nx-form{grid-template-columns:1fr 1fr;gap:1rem}
+ .nx-form .ph{height:150px;transform:none!important;box-shadow:5px 5px 0 var(--aqua)}
+ .nx-form .ph.r{box-shadow:5px 5px 0 var(--clay)}
+ .nx-form .fcard{grid-column:1/-1;order:3;height:400px;box-shadow:6px 6px 0 var(--espresso)}
+}
 </style></head>
 <body>
 
@@ -2947,7 +2993,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     </div>
     <div class="grid">
       <div>
-        <h2 class="display rev">Not your grandpa’s<br class="nx-m"> orange <em>sludge.</em></h2>
+        <h2 class="display rev">Not your grandpa’s<br class="nx-m"> <em class="or">orange sludge.</em></h2>
         <p class="lead rev rev-d1"><b>Nearly everyone gets half the fiber they need</b>, mostly because legacy fiber powders feel like drinking wet drywall. Daily Performance Fiber delivers a clean, three-fiber blend that mixes smooth in seconds and tastes like bright, tart raspberry.</p>
         <div class="chip-row rev rev-d2">
           <span class="chip hot">Full-spectrum 3-fiber blend</span>
@@ -3232,7 +3278,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 
   <section class="pg-sec nx nx-white nx-gap nx-io" id="nx-gap-f">
   <div class="wrap">
-    <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The missing number</span><button type="button" class="nx-coin" data-game="gap" aria-label="Play the hidden game: Close the Gap"><i aria-hidden="true"></i><span><b>Play the hidden game</b><small>Insert coin ▸ Close the Gap</small></span></button></div>
+    <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The missing number</span></div>
     <div class="nx-split">
       <div>
         <h2 class="display rev">Most of us are running<br>on <em>half a tank.</em></h2>
@@ -3244,7 +3290,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         </div>
         
       </div>
-      <div class="nx-card rev rev-d1">
+      <div class="nx-colr"><div class="nx-card rev rev-d1">
         <span class="nx-tag">Each block = 1 gram</span>
         <div class="nx-waffle" role="img" aria-label="28 blocks. 16.3 are filled for the fiber eaten, 11.7 are hatched for the fiber missing."><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i><i style="--i:15"></i><i style="--i:16" class="p"></i><i style="--i:17" class="m"></i><i style="--i:18" class="m"></i><i style="--i:19" class="m"></i><i style="--i:20" class="m"></i><i style="--i:21" class="m"></i><i style="--i:22" class="m"></i><i style="--i:23" class="m"></i><i style="--i:24" class="m"></i><i style="--i:25" class="m"></i><i style="--i:26" class="m"></i><i style="--i:27" class="m"></i></div>
         <div class="nx-key"><span><i></i>Eaten</span><span><i class="m"></i>Missing</span></div>
@@ -3253,7 +3299,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
           <div class="r"><b>Women</b><div class="nx-bar"><u style="--w:53.6%"></u></div><small>15.0 g eaten · 13.0 g short</small></div>
         </div>
         <p class="nx-src">Source: USDA, What We Eat in America (NHANES), adults 20+. Daily Value per 21 CFR 101.9.</p>
-      </div>
+      </div><div class="nx-coin-row rev rev-d2"><button type="button" class="nx-coin" data-game="gap" aria-label="Play the hidden game: Close the Gap"><i aria-hidden="true"></i><span><b>Play the hidden game</b><small>Insert coin ▸ Close the Gap</small></span></button></div></div>
     </div>
   </div>
 </section>
@@ -3518,7 +3564,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <section class="pg-sec mint">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">In his words</span></div>
-      <h2 class="display rev">Why fiber.<br><em class="aq">Why now.</em></h2>
+      <h2 class="display rev">Why fiber.<br class="nx-mo"> <em class="aq">Why now.</em></h2>
       <div class="qa">
         <div class="rev"><div class="q">Why start with fiber?</div><div class="a">"Fiber is the glue that holds digestion together. Without adequate and diverse fiber, you will not achieve the same results or return on the investment you are making in the gym. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</div></div>
         <div class="rev"><div class="q">What is your own history with digestion and nutrition?</div><div class="a">"I've been focused on macros and nutrition for decades. Only recently I discovered and really internalized the importance, the foundational importance, of fiber. I've seen it in my personal journey and in the journey of countless people that I coach to elite levels of fitness and performance. Fiber is often overlooked and always underestimated. When people get their digestion dialed in, the performance, the results in the gym, it all starts to compound."</div></div>
@@ -3742,16 +3788,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     </div>
   </section>
 
-  <section class="nx nx-strip sun" id="nx-why">
-  <div class="wrap">
-    <div class="g">
-      <div class="t rev"><h2 class="nx-fit display" style="--fit:23px">You count macros.<br><em>Nobody counts fiber.</em></h2><a class="more-link" href="#the-fiber">See the science ▸</a></div>
-      <div class="s rev"><b>28<small>g</small></b><span>Baseline FDA Daily Value.</span></div>
-      <div class="s rev rev-d1"><b>16.3<small>g</small></b><span>What US adults actually eat.</span></div>
-      <div class="s rev rev-d2"><b>11.7<small>g</small></b><span>Left on the table every day.</span></div>
-    </div>
-  </div>
-</section>
+  
 <section class="pg-sec gridbg">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Why Daily Performance Fiber</span></div>
@@ -3766,22 +3803,21 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 
   <section class="pg-sec mint">
     <div class="wrap">
-      <div class="split top has-p2">
-        <div>
+      <div class="nx-formhead">
           <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Inside every scoop</span></div>
           <h2 class="display rev">All killer.<br><em class="aq">Zero mystery blends.</em></h2>
           <p class="lead rev rev-d1">Three complementary fibers chosen for how they perform and how gently they treat your stomach. Every ingredient clearly named.</p>
-          <div class="ingr rev rev-d2">
-            <details class="ing" open=""><summary><i>01</i><b>Psyllium husk</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"><p>Soluble, gel-forming seed husk fiber that holds water and keeps daily digestion right on schedule.</p></details>
-            <details class="ing"><summary><i>02</i><b>Resistant potato starch</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"><p>Raw prebiotic starch that clears the stomach intact to nourish beneficial bacteria in the colon.</p></details>
-            <details class="ing"><summary><i>03</i><b>Acacia</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-acacia.jpg" alt="Acacia gum beside an acacia twig" loading="lazy"><p>Slow-fermenting prebiotic tree sap fiber that supports gut comfort and helps every scoop mix smooth.</p></details>
-            <details class="ing"><summary><i>04</i><b>Natural flavors</b><span class="pm">+</span></summary><p>Gives Daily its crisp, tart raspberry profile without synthetic dye or syrupy junk.</p></details>
-            <details class="ing p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><summary><i>05</i><b>Stevia leaf + monk fruit</b><span class="pm">+</span></summary><p>The sweeteners. No sugar alcohols or sucralose.</p></details>
-            <details class="ing p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><summary><i>06</i><b>Citric acid</b><span class="pm">+</span></summary><p>For tartness.</p></details>
-          </div>
-          <p class="ingr-note p2" data-p2="Full ingredient list (after the formula is final)">Full ingredient list: posted here once the formula is final.</p>
         </div>
-        <div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem">
+        <div class="nx-form rev rev-d2">
+          <div class="frame aq ph l"><img data-ing-img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div>
+          <div class="fcard">
+            <div class="fhd"><span>The formula</span><span>Scroll for all</span></div>
+            <ol class="flist" tabindex="0" aria-label="Ingredients"><li class="on" tabindex="0" data-img="assets/staple-home/fiber-psyllium.jpg" data-alt="Psyllium husk with a drop of water"><i>01</i><div><span class="nx-tag">Fiber 01</span><b>Psyllium husk</b><p>Soluble, gel-forming seed husk fiber that holds water and keeps daily digestion right on schedule.</p></div></li><li class="" tabindex="0" data-img="assets/staple-home/fiber-starch.jpg" data-alt="A potato beside a mound of potato starch"><i>02</i><div><span class="nx-tag">Fiber 02 · Solnul®</span><b>Resistant potato starch</b><p>Raw prebiotic starch that clears the stomach intact to nourish beneficial bacteria in the colon.</p></div></li><li class="" tabindex="0" data-img="assets/staple-home/fiber-acacia.jpg" data-alt="Acacia gum beside an acacia twig"><i>03</i><div><span class="nx-tag">Fiber 03</span><b>Acacia</b><p>Slow-fermenting prebiotic tree sap fiber that supports gut comfort and helps every scoop mix smooth.</p></div></li><li class="" tabindex="0" data-img="assets/staple-home/raspberry-bright.jpg" data-alt="Fresh raspberries"><i>04</i><div><span class="nx-tag">Flavor</span><b>Natural flavors</b><p>Gives Daily its crisp, tart raspberry profile without synthetic dye or syrupy junk.</p></div></li><li class=" p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)" tabindex="0" data-img="assets/staple-home/raspberry-bright.jpg" data-alt="Fresh raspberries"><i>05</i><div><span class="nx-tag">Sweetener</span><b>Stevia leaf + monk fruit</b><p>The sweeteners. No sugar alcohols or sucralose.</p></div></li><li class=" p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)" tabindex="0" data-img="assets/staple-home/raspberry-bright.jpg" data-alt="Fresh raspberries"><i>06</i><div><span class="nx-tag">Tartness</span><b>Citric acid</b><p>For tartness.</p></div></li></ol>
+            <p class="ingr-note p2" data-p2="Full ingredient list (after the formula is final)">Full ingredient list: posted here once the formula is final.</p>
+          </div>
+          <div class="frame cl ph r"><img src="assets/staple-home/stapl-kitchen.jpg" alt="STÄPL Daily Performance Fiber on a kitchen counter with a glass of water and raspberries" loading="lazy"></div>
+        </div>
+        <div class="nx-formfacts"><div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem">
           <div class="facts">
             <h3>Supplement Facts</h3>
             <div class="row"><span>Serving size</span><b>1 scoop</b></div>
@@ -3792,12 +3828,21 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
             <div class="row thick"><span>&nbsp;&nbsp;Total sugars</span><b></b></div>
             <small>Placeholder panel. The final Supplement Facts, ingredients and allergen statement replace this when they arrive from the manufacturer.</small>
           </div>
-        </div>
-      </div>
+        </div></div>
     </div>
   </section>
 
-  <section class="pg-sec nx nx-test" id="nx-test-s">
+  <section class="nx nx-strip lt" id="nx-why">
+  <div class="wrap">
+    <div class="g">
+      <div class="t rev"><h2 class="nx-fit display" style="--fit:23px">You count macros.<br><em>Nobody counts fiber.</em></h2><a class="more-link" href="#the-fiber">See the science ▸</a></div>
+      <div class="s rev"><b>28<small>g</small></b><span>Baseline FDA Daily Value.</span></div>
+      <div class="s rev rev-d1"><b>16.3<small>g</small></b><span>What US adults actually eat.</span></div>
+      <div class="s rev rev-d2"><b>11.7<small>g</small></b><span>Left on the table every day.</span></div>
+    </div>
+  </div>
+</section>
+<section class="pg-sec nx nx-test" id="nx-test-s">
   <div class="wrap">
     <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">The test</span></div>
     <h2 class="display rev">Put your supplement<br>shelf <em>on trial.</em></h2>
@@ -3939,7 +3984,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   <section class="cta-band">
     <div class="wrap">
       <h2 class="display">Try Canister #1 risk-free. <em>Not a fan? It's on us.</em></h2>
-      <a class="btn btn-sun" href="#shop">Start your STÄPL ▸</a>
+      <a class="btn btn-or" href="#shop">Start your STÄPL ▸</a>
     </div>
   </section>
 
@@ -5153,7 +5198,9 @@ document.addEventListener('click',e=>{
 
 
 
-
+<script>(function(){var l=document.querySelector('.flist');if(!l)return;var im=document.querySelector('[data-ing-img]');
+function pick(li){if(!li||li.classList.contains('on'))return;l.querySelectorAll('li').forEach(function(x){x.classList.remove('on')});li.classList.add('on');if(im&&li.dataset.img){im.style.opacity=0;setTimeout(function(){im.src=li.dataset.img;im.alt=li.dataset.alt||'';im.style.opacity=1},160)}}
+['click','mouseover','focusin'].forEach(function(ev){l.addEventListener(ev,function(e){pick(e.target.closest('li'))})});})();</script>
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
 <script>
 /* ============================================================
@@ -5173,7 +5220,7 @@ document.addEventListener('click',e=>{
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-next-v3';
+  var PAGE_ID = 'staple-home-next-v4';
 
   /* ---------------------------------------------- */
 
