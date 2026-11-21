@@ -2747,6 +2747,30 @@ body.lp .burger,body.lp .mnav a:not(.mcta){display:none}
 @media(max-width:860px){.nx-life{order:3;margin-top:1.6rem}}
 h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 @media(max-width:480px){.nx-fit{font-size:var(--fit)!important}}
+</style><style id="nx-ben-css">
+.nx-creed{margin-top:2.6rem;clip-path:polygon(0 22px,100% 0,100% 100%,0 100%);padding-top:22px}
+.nx-creed .wrap{display:block!important;padding-top:2.4rem!important;padding-bottom:2.4rem!important}
+.nx-creed .creed{display:flex;flex-wrap:wrap;gap:.2em 1.1em;margin:0;max-width:none;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 118;text-transform:uppercase;line-height:1;font-size:clamp(1.7rem,4.3vw,3.6rem);color:var(--bone);letter-spacing:-.01em}
+.nx-creed .creed span{display:block;color:var(--bone)}
+.nx-creed .creed .a{color:var(--aqua)}.nx-creed .creed .s{color:var(--sunshine)}
+.nx-creed .who{margin:1.3rem 0 0;max-width:760px;font-size:1rem;line-height:1.55;color:rgba(243,241,234,.78);border-left:3px solid var(--clay);padding-left:1rem}
+.nx-creed .who b{color:var(--bone)}
+@media(max-width:700px){.nx-creed{clip-path:polygon(0 12px,100% 0,100% 100%,0 100%);padding-top:12px}.nx-creed .creed{flex-direction:column;font-size:clamp(1.9rem,9.4vw,2.6rem);gap:.12em}.nx-creed .wrap{padding-top:1.7rem!important;padding-bottom:1.8rem!important}}
+.nx-punch .pt{font-family:var(--mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 1.3rem;color:var(--ink)}
+.nx-punch .pt b{color:var(--clay)}
+.nx-punch .pr{display:grid;grid-template-columns:1fr auto;align-items:end;gap:.5rem 1rem;padding:1.15rem 0;border-top:2px solid var(--espresso)}
+.nx-punch .pl b{display:block;font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.05}
+.nx-punch .pl span{display:block;font-size:.9rem;margin-top:.3rem;opacity:.75}
+.nx-punch .pn{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 118;font-size:clamp(2.6rem,5.4vw,4.2rem);line-height:.9}
+.nx-punch .pn i{font-style:normal;font-size:.42em;margin-left:.12em}
+.nx-punch .z .pn{color:var(--clay)}.nx-punch .w .pn{color:#12a596}
+.nx-punch .pb{grid-column:1/-1;height:22px;border:2px solid var(--espresso);background:repeating-linear-gradient(135deg,rgba(255,91,46,.2) 0 6px,transparent 6px 12px);position:relative}
+.nx-punch .pb u{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--aqua);transition:width 1.1s cubic-bezier(.2,.8,.2,1) .35s}
+.nx-punch.on .pb u{width:var(--w)}
+.nx-punch .pv{grid-column:1/-1;margin:0;font-size:1rem;font-weight:700}
+.nx-punch .pm2{margin:.2rem 0 .8rem;padding-top:1rem;border-top:2px solid var(--espresso);font-size:.95rem}
+.nx-punch .nx-src{font-size:.78rem;line-height:1.5}
+@media(prefers-reduced-motion:reduce){.nx-punch .pb u{transition:none}}
 </style></head>
 <body>
 
@@ -2791,7 +2815,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   <a class="mcta" href="#shop"><em>▸</em>Shop Daily</a>
 </div>
 
-<main class="view is-on" data-view="home" data-title="STÄPL — Daily Performance Fiber">
+<main class="view is-on" data-view="home" data-title="STÄPL · Daily Performance Fiber">
 <header class="hero" id="home-top">
   <div class="hero-shapes"><span class="hs1"></span><span class="hs2"></span><span class="hs3"></span><span class="hs4"></span></div>
   <div class="hero-inner">
@@ -2806,19 +2830,14 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     </div>
     
   </div>
-  <div class="hero-band">
-    <div class="wrap">
-      <p>Created by <b>Marcus Filly</b>, founder of <b>Functional Bodybuilding</b> and coach to 100k+ everyday athletes. <b>Look good. Move well. Digest like a champ.</b> Daily Performance Fiber is the nutritional backbone of a resilient body.</p>
-      <span class="callout">One Scoop A Day ▸ Non‑Negotiable</span>
-    </div>
-  </div>
+  <div class="hero-band nx-creed"><div class="wrap"><p class="creed"><span class="rev">Look good.</span><span class="rev rev-d1 a">Move well.</span><span class="rev rev-d2 s">Digest like a champ.</span></p><p class="who rev rev-d2">Created by <b>Marcus Filly</b>, founder of Functional Bodybuilding and coach to 100k+ everyday athletes. Daily Performance Fiber is the nutritional backbone of a resilient body.</p></div></div>
 
 </header>
 <section class="pg-sec nx nx-white nx-three" id="nx-three">
   <div class="wrap">
     <div class="sec-head rev"><span class="num">01</span><div class="line"></div><span class="mono-label">Inside the scoop</span></div>
     <h2 class="display rev">Three fibers.<br><em>Zero mystery.</em></h2>
-    <p class="lead rev rev-d1">Most fiber tubs scoop cheap, single-source grit and call it a day. Daily Performance Fiber pairs three distinct, clinically studied fibers—every single one named right on the label, with <b>zero proprietary blends</b>.</p>
+    <p class="lead rev rev-d1">Most fiber products use cheap, low quality fibers from corn or tapioca. Daily Performance Fiber pairs three distinct, clinically studied fibers that have proven impacts on human performance.</p>
     <div class="g"><article class="nx-fib nx-flip rev" tabindex="0" role="button" aria-pressed="false" aria-label="Psyllium husk. Flip the card for more.">
   <div class="fc">
     <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The gold-standard soluble fiber that holds onto water and keeps things moving on schedule.</p><div class="ft"><span class="job">Holds water</span><span class="turn">Flip for more ↻</span></div></div></div>
@@ -2826,8 +2845,8 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   </div>
 </article><article class="nx-fib nx-flip rev rev-d1" tabindex="0" role="button" aria-pressed="false" aria-label="Resistant potato starch. Flip the card for more.">
   <div class="fc">
-    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A prebiotic powerhouse that bypasses upper digestion to feed the good microbes down below.</p><div class="ft"><span class="job">Feeds the gut</span><span class="turn">Flip for more ↻</span></div></div></div>
-    <div class="face back"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><dl><div><dt>Where it comes from</dt><dd>Whole potatoes, gently processed to keep the starch in its raw, prebiotic state.</dd></div><div><dt>What kind of fiber</dt><dd>Type 2 resistant starch. Your digestive enzymes leave it alone, so it functions as pure prebiotic fiber.</dd></div><div><dt>What it does</dt><dd>Travels intact to the colon, where beneficial gut bacteria ferment it into helpful short-chain fatty acids like butyrate.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">↻ Flip back</span></div>
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02 · Solnul®</span><h3>Resistant potato starch</h3><p>A prebiotic powerhouse that bypasses upper digestion to feed the good microbes down below.</p><div class="ft"><span class="job">Feeds the gut</span><span class="turn">Flip for more ↻</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 02 · Solnul®</span><h3>Resistant potato starch</h3><dl><div><dt>Where it comes from</dt><dd>Solnul®, a branded resistant potato starch with published clinical research behind it. Made from whole potatoes, gently processed to keep the starch in its raw, prebiotic state.</dd></div><div><dt>What kind of fiber</dt><dd>Type 2 resistant starch. Your digestive enzymes leave it alone, so it functions as pure prebiotic fiber.</dd></div><div><dt>What it does</dt><dd>Travels intact to the colon, where beneficial gut bacteria ferment it into helpful short-chain fatty acids like butyrate.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">↻ Flip back</span></div>
   </div>
 </article><article class="nx-fib nx-flip rev rev-d2" tabindex="0" role="button" aria-pressed="false" aria-label="Acacia fiber. Flip the card for more.">
   <div class="fc">
@@ -2836,7 +2855,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   </div>
 </article></div>
     <p class="nx-hint">Swipe, then tap a card to flip it</p>
-    <p class="nx-fine" style="margin-top:1.2rem">Tap any card to nerd out. Simplified fiber science for inquiring minds—not a medical claim about STÄPL.</p>
+    <p class="nx-fine" style="margin-top:1.2rem">Tap any card to nerd out. Simplified fiber science for inquiring minds, not a medical claim about STÄPL.</p>
     <a class="more-link" href="#the-fiber">Read the full breakdown ▸</a>
   </div>
 </section>
@@ -2852,11 +2871,11 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 </ul><button type="button" class="nx-play" data-nx-play="rt-r1">▸ Play the route</button></div></div>
       <div>
         <h2 class="display rev">Different fibers.<br>Different <em class="aq">jobs.</em></h2>
-        <p class="lead rev rev-d1">Unlike protein or carbs, human enzymes don’t break fiber down—and that’s the magic. It travels through your system doing vital maintenance work along the way. <b>One scoop covers the whole route.</b></p>
+        <p class="lead rev rev-d1">Unlike protein or carbs, human enzymes don’t break fiber down. That’s the magic. It travels through your system doing vital maintenance work along the way. <b>One scoop covers the whole route.</b></p>
         <ol class="nx-steps sw">
   <li><span class="n">1</span><div><h4>Clears the upper tract intact.</h4><p>Because your stomach enzymes don’t absorb fiber, it cruises past the stomach and small intestine ready to clock in where you actually need it.</p></div></li>
   <li><span class="n">2</span><div><h4>Gels up to keep things moving.</h4><p>Gel-forming soluble fiber (hello, psyllium) soaks up water along the route, giving your digestion reliable rhythm and form.</p></div></li>
-  <li><span class="n">3</span><div><h4>Fuels your gut microbiome.</h4><p>Prebiotic fibers (resistant starch and acacia) arrive intact in the colon, feeding the beneficial bacteria that support gut resilience and recovery.</p></div></li>
+  <li><span class="n">3</span><div><h4>Fuels your gut microbiome.</h4><p>Prebiotic fibers (resistant starch and acacia) arrive intact in the colon, feeding the beneficial bacteria that support gut resilience, recovery, and nutrient absorption.</p></div></li>
 </ol>
         <p class="nx-hint">Swipe the three stops</p>
         <p class="nx-note">General fiber physiology, minus the textbook jargon. Not drawn to scale, and not an FDA claim about STÄPL.</p>
@@ -2871,13 +2890,13 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <h2 class="display rev">Four questions before<br>anything earns <em>counter space.</em></h2>
     <p class="lead rev rev-d1">Tired of overhyped mystery powders? Us too. Put fiber through the exact same filter you’d use on anything else in your pantry.</p>
     <div class="g">
-      <article class="nx-q q1 rev"><span class="ix">1 / 4</span><h3>Is there an actual target?</h3><div class="big">28<small>g</small></div><p>Backed by the FDA Daily Value—or the gold-standard nutrition benchmark of 14g per 1,000 calories consumed.</p></article>
+      <article class="nx-q q1 rev"><span class="ix">1 / 4</span><h3>Is there a clinically validated target?</h3><div class="big">28<small>g</small></div><p>Backed by the FDA Daily Value, or the gold-standard nutrition benchmark of 14g per 1,000 calories consumed.</p></article>
       <article class="nx-q q2 rev rev-d1"><span class="ix">2 / 4</span><h3>Are we actually falling short?</h3><div class="big">16.3<small>g</small></div><p>The average US adult’s daily intake. Over 90% of women and 97% of men miss the mark every single day.</p></article>
       <article class="nx-q q3 rev rev-d2"><span class="ix">3 / 4</span><h3>Does the science hold up?</h3><div class="big">3,730</div><p>Human clinical trials and reviews on PubMed. For perspective: collagen clocks in around 672, and ashwagandha sits at 117.</p></article>
       <article class="nx-q q4 rev rev-d3"><span class="ix">4 / 4</span><h3>Can you verify the label?</h3><div class="big">100% transparent.</div><p>Zero proprietary blends. Every ingredient named clearly so you can check our homework yourself.</p></article>
     </div>
     <p class="nx-hint">Swipe the four questions</p>
-    <p class="nx-fine">Note: PubMed volume reflects how thoroughly scientists have studied dietary fiber as a category—not clinical trials on STÄPL specifically. Count pulled Nov 18, 2026.</p>
+    <p class="nx-fine">Note: PubMed volume reflects how thoroughly scientists have studied dietary fiber as a category, not clinical trials on STÄPL specifically. Count pulled Nov 18, 2026.</p>
   </div>
 </section>
 <section class="nx nx-dark nx-add" id="nx-add">
@@ -2916,26 +2935,15 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <div class="nx-split">
       <div>
         <h2 class="display rev">Why the gym crowd<br>misses <em class="aq">the mark.</em></h2>
-        <p class="lead rev rev-d1">Here’s how everyday staples stack up against the <b>11.7-gram daily fiber gap</b>. <b>Whole food always comes first—STÄPL is built for the days when chicken and rice dominate the menu.</b></p>
-        <div class="nx-eq rev rev-d2">
-          <div><b>Lentils + an apple = 12.2 g</b><span>Boom, gap closed. Whole foods for the win.</span></div>
-          <div class="y"><b>Chicken + eggs = 0 g</b><span>Great for biceps. A goose egg for your gut.</span></div>
-        </div>
+        <p class="lead rev rev-d1">Here’s how everyday staples stack up against the <b>11.7-gram daily fiber gap</b>. <b>Whole food always comes first. STÄPL is built for the days when chicken and rice dominate the menu.</b></p>
+        
       </div>
-      <div class="nx-card cl rev rev-d1">
-        <div class="rows">
-          <p class="grp">The protein plate</p>
-          <div class="r z"><b>Chicken breast<small>3 oz, roasted</small></b><div class="t"><u style="--w:0.0%;--i:0"></u></div><span>0 g</span></div>
-          <div class="r z"><b>Eggs<small>2 large</small></b><div class="t"><u style="--w:0.0%;--i:1"></u></div><span>0 g</span></div>
-          <p class="grp">The fiber foods</p>
-          <div class="r"><b>Lentils<small>1/2 cup, cooked</small></b><div class="t"><u style="--w:66.7%;--i:2"></u></div><span>7.8 g</span></div>
-          <div class="r"><b>Black beans<small>1/2 cup, cooked</small></b><div class="t"><u style="--w:64.1%;--i:3"></u></div><span>7.5 g</span></div>
-          <div class="r"><b>Broccoli<small>1 cup, cooked</small></b><div class="t"><u style="--w:43.6%;--i:4"></u></div><span>5.1 g</span></div>
-          <div class="r"><b>Apple<small>1 medium, with skin</small></b><div class="t"><u style="--w:37.6%;--i:5"></u></div><span>4.4 g</span></div>
-          <div class="r"><b>Oats<small>1/2 cup, dry</small></b><div class="t"><u style="--w:35.0%;--i:6"></u></div><span>4.1 g</span></div>
-        </div>
-        <div class="ax"><div><span>0</span><span>4 g</span><span>8 g</span><b>11.7 g gap</b></div></div>
-        <p class="nx-src">Source: USDA FoodData Central, SR Legacy. The 11.7 g gap = 28 g Daily Value minus the 16.3 g US adult daily average.</p>
+      <div class="nx-card cl nx-punch rev rev-d1">
+        <p class="pt">Two plates vs. the <b>11.7 g</b> daily gap</p>
+        <div class="pr z"><div class="pl"><b>Chicken + eggs</b><span>3 oz chicken breast, 2 large eggs</span></div><div class="pn">0<i>g</i></div><div class="pb"><u style="--w:0%"></u></div><p class="pv">Great for biceps. Nothing for the gap.</p></div>
+        <div class="pr w"><div class="pl"><b>Lentils + an apple</b><span>1/2 cup cooked lentils, 1 medium apple</span></div><div class="pn">12.2<i>g</i></div><div class="pb"><u style="--w:100%"></u></div><p class="pv">Gap closed. Whole foods for the win.</p></div>
+        <p class="pm2">More easy wins: black beans 7.5 g · broccoli 5.1 g · oats 4.1 g</p>
+        <p class="nx-src">Source: USDA FoodData Central, SR Legacy. Per 1/2 cup cooked beans, 1 cup cooked broccoli, 1/2 cup dry oats. The 11.7 g gap = 28 g Daily Value minus the 16.3 g US adult daily average.</p>
       </div>
     </div>
   </div>
@@ -3036,7 +3044,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
           <span class="num">07</span><div class="line"></div><span class="mono-label">Shop · launch product</span>
         </div>
         <h2 class="display rev">Lock in your<br><em>daily staple.</em></h2>
-        <p class="lead rev rev-d1">We’re launching with one product on purpose. Nail the fundamentals before chasing the shiny stuff—in the gym, and in your kitchen.</p>
+        <p class="lead rev rev-d1">We’re launching with one product on purpose. Nail the fundamentals before chasing the shiny stuff, in the gym and in your kitchen.</p>
         <div class="benefit-list rev rev-d2">
           <div class="benefit"><span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#27D4C4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="22" width="36" height="56" rx="8"></rect><path d="M 38,22 L 38,14 L 58,14 L 58,22"></path><path d="M 38,50 C 44,44 52,56 58,50"></path></g></svg></span><div><b>Bright raspberry, zero grit</b><span>Crisp, refreshing, and mixes in ten seconds flat. No chalky sludge at the bottom of your glass.</span></div></div>
           <div class="benefit"><span class="ic"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#FFC72C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="68" height="68" rx="18"></rect><path d="M 34,36 L 56,36 A 7,7 0 0 1 56,50 L 40,50 A 7,7 0 0 0 40,64 L 60,64"></path><path d="M 55,58 L 61,64 L 55,70"></path></g></svg></span><div><b>Digestion + recovery backup</b><span>You only get out of your nutrition what your gut can process. Close the #1 nutrient gap in modern diets.</span></div></div>
@@ -3091,11 +3099,11 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div class="rev rev-d1">
         <details open="">
           <summary>What kind of fiber is in here? <span class="pm">+</span></summary>
-          <p>A balanced trio in every scoop: psyllium husk, resistant potato starch, and acacia fiber. That gives you both gel-forming soluble fiber and gentle prebiotics—with every ingredient clearly named and zero proprietary blends.</p>
+          <p>A balanced trio in every scoop: psyllium husk, resistant potato starch, and acacia fiber. That gives you both gel-forming soluble fiber and gentle prebiotics, with every ingredient clearly named and zero proprietary blends.</p>
         </details>
         <details>
           <summary>What does it actually taste like? <span class="pm">+</span></summary>
-          <p>Real raspberry—bright, tart, and a little jammy. Think refreshing morning drink, not chalky pharmacy orange. We’re launching with our flagship Raspberry, and early Founders get to vote on Flavor #2.</p>
+          <p>Real raspberry: bright, tart, and a little jammy. Think refreshing morning drink, not chalky pharmacy orange. We’re launching with our flagship Raspberry, and early Founders get to vote on Flavor #2.</p>
         </details>
         <details>
           <summary>When can I get a canister? <span class="pm">+</span></summary>
@@ -3107,7 +3115,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         </details>
         <details>
           <summary>When is the best time to take it? <span class="pm">+</span></summary>
-          <p>Whenever you’ll actually remember to take it! Marcus knocks his back first thing in the morning with cold water—ten seconds and your base is covered. Feeling fancy? Stir a scoop into plain Greek yogurt.</p>
+          <p>Whenever you’ll actually remember to take it! Marcus knocks his back first thing in the morning with cold water. Ten seconds and your base is covered. Feeling fancy? Stir a scoop into plain Greek yogurt.</p>
         </details>
         <details>
           <summary>Why launch with just one product? <span class="pm">+</span></summary>
@@ -3115,7 +3123,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         </details>
         <details>
           <summary>How does the subscription work? <span class="pm">+</span></summary>
-          <p>Set it on autopilot and save 15% ($50.99 instead of $59.99) plus free shipping on every drop. Pick delivery every 30, 60, or 90 days. We’ll shoot you a heads-up email 3 days before renewal so you can skip, swap dates, or cancel anytime—zero hoops. Subscriptions kick off at launch the week of January 11, 2027.</p>
+          <p>Set it on autopilot and save 15% ($50.99 instead of $59.99) plus free shipping on every drop. Pick delivery every 30, 60, or 90 days. We’ll shoot you a heads-up email 3 days before renewal so you can skip, swap dates, or cancel anytime. Zero hoops. Subscriptions kick off at launch the week of January 11, 2027.</p>
         </details>
       </div>
     </div>
@@ -3130,7 +3138,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
     </svg>
     <h2 class="display rev">Get on <em>the Founders list.</em></h2>
-    <p class="rev rev-d1">Unlock early access to the December 1 Presale (and 25% off your first tub), plus practical nutrition notes and training wisdom from Marcus. Zero spam—we have kids and deadlifts to get to.</p>
+    <p class="rev rev-d1">Unlock early access to the December 1 Presale (and 25% off your first tub), plus practical nutrition notes and training wisdom from Marcus. Zero spam. We have kids and deadlifts to get to.</p>
     <form class="sig-form rev rev-d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='YOU\'RE IN ✓';">
       <input type="email" placeholder="EMAIL ADDRESS" required="">
       <button type="submit">Join ▸</button>
@@ -3151,7 +3159,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <span class="fbb-tag">Look Good. <em>Move Well.</em></span>
       </div>
       <div class="fbb-right">
-        <p>STÄPL comes from the exact same playbook as <b>Functional Bodybuilding</b>—Marcus’s training method built for people who want strength, aesthetics, and longevity without wrecking their joints (or living in the gym). After years of elite competition taught him what burnout costs, Marcus created FBB so busy humans can <b>get built, not burnt</b>. Check out Persist, his flagship training app, along with free guides and workouts.</p>
+        <p>STÄPL comes from the exact same playbook as <b>Functional Bodybuilding</b>, Marcus’s training method built for people who want strength, aesthetics, and longevity without wrecking their joints (or living in the gym). After years of elite competition taught him what burnout costs, Marcus created FBB so busy humans can <b>get built, not burnt</b>. Check out Persist, his flagship training app, along with free guides and workouts.</p>
         <a class="btn btn-ghost" href="https://functional-bodybuilding.com/" target="_blank" rel="noopener">Visit Functional-Bodybuilding.com ▸</a>
       </div>
     </div>
@@ -3174,7 +3182,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <!-- ============================================================
      VIEW: THE FIBER (why fiber + benefits)
      ============================================================ -->
-<main class="view" data-view="the-fiber" data-title="The Fiber — Why Fiber | STÄPL">
+<main class="view" data-view="the-fiber" data-title="The Fiber · Why Fiber | STÄPL">
   <header class="pg-hero">
     <div class="pg-shapes"><span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span></div>
     <div class="wrap">
@@ -3265,11 +3273,11 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 </ul><button type="button" class="nx-play" data-nx-play="rt-r2">▸ Play the route</button></div></div>
       <div>
         <h2 class="display rev">Different fibers.<br>Different <em class="aq">jobs.</em></h2>
-        <p class="lead rev rev-d1">Unlike protein or carbs, human enzymes don’t break fiber down—and that’s the magic. It travels through your system doing vital maintenance work along the way. <b>One scoop covers the whole route.</b></p>
+        <p class="lead rev rev-d1">Unlike protein or carbs, human enzymes don’t break fiber down. That’s the magic. It travels through your system doing vital maintenance work along the way. <b>One scoop covers the whole route.</b></p>
         <ol class="nx-steps sw">
   <li><span class="n">1</span><div><h4>Clears the upper tract intact.</h4><p>Because your stomach enzymes don’t absorb fiber, it cruises past the stomach and small intestine ready to clock in where you actually need it.</p></div></li>
   <li><span class="n">2</span><div><h4>Gels up to keep things moving.</h4><p>Gel-forming soluble fiber (hello, psyllium) soaks up water along the route, giving your digestion reliable rhythm and form.</p></div></li>
-  <li><span class="n">3</span><div><h4>Fuels your gut microbiome.</h4><p>Prebiotic fibers (resistant starch and acacia) arrive intact in the colon, feeding the beneficial bacteria that support gut resilience and recovery.</p></div></li>
+  <li><span class="n">3</span><div><h4>Fuels your gut microbiome.</h4><p>Prebiotic fibers (resistant starch and acacia) arrive intact in the colon, feeding the beneficial bacteria that support gut resilience, recovery, and nutrient absorption.</p></div></li>
 </ol>
         <p class="nx-hint">Swipe the three stops</p>
         <p class="nx-note">General fiber physiology, minus the textbook jargon. Not drawn to scale, and not an FDA claim about STÄPL.</p>
@@ -3282,7 +3290,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   <div class="wrap">
     <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">Inside the scoop</span></div>
     <h2 class="display rev">Three fibers.<br><em>Zero mystery.</em></h2>
-    <p class="lead rev rev-d1">Single-ingredient fiber tubs only do one third of the job. Daily Performance Fiber combines three complementary fibers for full-spectrum gut support—with <b>zero proprietary blends</b> and nothing hidden behind tiny asterisks.</p>
+    <p class="lead rev rev-d1">Single-ingredient fiber tubs only do one third of the job. Daily Performance Fiber combines three complementary fibers for full-spectrum gut support, with <b>zero proprietary blends</b> and nothing hidden behind tiny asterisks.</p>
     <div class="g"><article class="nx-fib nx-flip rev" tabindex="0" role="button" aria-pressed="false" aria-label="Psyllium husk. Flip the card for more.">
   <div class="fc">
     <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>The gold-standard soluble fiber that holds onto water and keeps things moving on schedule.</p><div class="ft"><span class="job">Holds water</span><span class="turn">Flip for more ↻</span></div></div></div>
@@ -3290,8 +3298,8 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   </div>
 </article><article class="nx-fib nx-flip rev rev-d1" tabindex="0" role="button" aria-pressed="false" aria-label="Resistant potato starch. Flip the card for more.">
   <div class="fc">
-    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><p>A prebiotic powerhouse that bypasses upper digestion to feed the good microbes down below.</p><div class="ft"><span class="job">Feeds the gut</span><span class="turn">Flip for more ↻</span></div></div></div>
-    <div class="face back"><span class="nx-tag">Fiber 02</span><h3>Resistant potato starch</h3><dl><div><dt>Where it comes from</dt><dd>Whole potatoes, gently processed to keep the starch in its raw, prebiotic state.</dd></div><div><dt>What kind of fiber</dt><dd>Type 2 resistant starch. Your digestive enzymes leave it alone, so it functions as pure prebiotic fiber.</dd></div><div><dt>What it does</dt><dd>Travels intact to the colon, where beneficial gut bacteria ferment it into helpful short-chain fatty acids like butyrate.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">↻ Flip back</span></div>
+    <div class="face front"><div class="ico"><img src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"></div><div class="b"><span class="nx-tag">Fiber 02 · Solnul®</span><h3>Resistant potato starch</h3><p>A prebiotic powerhouse that bypasses upper digestion to feed the good microbes down below.</p><div class="ft"><span class="job">Feeds the gut</span><span class="turn">Flip for more ↻</span></div></div></div>
+    <div class="face back"><span class="nx-tag">Fiber 02 · Solnul®</span><h3>Resistant potato starch</h3><dl><div><dt>Where it comes from</dt><dd>Solnul®, a branded resistant potato starch with published clinical research behind it. Made from whole potatoes, gently processed to keep the starch in its raw, prebiotic state.</dd></div><div><dt>What kind of fiber</dt><dd>Type 2 resistant starch. Your digestive enzymes leave it alone, so it functions as pure prebiotic fiber.</dd></div><div><dt>What it does</dt><dd>Travels intact to the colon, where beneficial gut bacteria ferment it into helpful short-chain fatty acids like butyrate.</dd></div><div><dt>Where it works</dt><dd>The colon.</dd></div></dl><span class="turn">↻ Flip back</span></div>
   </div>
 </article><article class="nx-fib nx-flip rev rev-d2" tabindex="0" role="button" aria-pressed="false" aria-label="Acacia fiber. Flip the card for more.">
   <div class="fc">
@@ -3300,7 +3308,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
   </div>
 </article></div>
     <p class="nx-hint">Swipe, then tap a card to flip it</p>
-    <p class="nx-fine" style="margin-top:1.2rem">Tap any card to nerd out. Simplified fiber science for inquiring minds—not a medical claim about STÄPL.</p>
+    <p class="nx-fine" style="margin-top:1.2rem">Tap any card to nerd out. Simplified fiber science for inquiring minds, not a medical claim about STÄPL.</p>
     <a class="more-link" href="#shop">Meet Daily Performance Fiber ▸</a>
   </div>
 </section>
@@ -3313,7 +3321,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <p class="lead rev rev-d1">No fairy-dusting, no mystery "matrix" blends. If it's in the tub, it's clearly printed on the back.</p>
         <ul class="nx-lab">
           <li class="rev"><i>01</i><div><b>Three distinct fibers</b><span>Psyllium husk, resistant potato starch, and acacia fiber working in tandem.</span></div></li>
-          <li class="rev rev-d1"><i>02</i><div><b>Real-deal raspberry flavor</b><span>Crisp, tart, and refreshing—never syrupy or fake.</span></div></li>
+          <li class="rev rev-d1"><i>02</i><div><b>Real-deal raspberry flavor</b><span>Crisp, tart, and refreshing, never syrupy or fake.</span></div></li>
           <li class="rev rev-d1 p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><i>+</i><div><b>Sweetened with stevia leaf extract and monk fruit</b></div></li>
           <li class="rev rev-d2"><i>03</i><div><b>Zero proprietary blends</b><span>Full transparency so you know exactly what you're taking.</span></div></li>
           <li class="rev rev-d3"><i>04</i><div><b>30 daily scoops</b><span>A full month of steady habits in every canister.</span></div></li>
@@ -3370,7 +3378,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <!-- ============================================================
      VIEW: THE ATHLETE (Marcus Filly)
      ============================================================ -->
-<main class="view" data-view="the-athlete" data-title="The Athlete — Marcus Filly | STÄPL">
+<main class="view" data-view="the-athlete" data-title="The Athlete · Marcus Filly | STÄPL">
   <header class="pg-hero aqua">
     <div class="pg-shapes"><span class="d"></span></div>
     <div class="wrap">
@@ -3399,12 +3407,12 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div class="prose">
           <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">The story</span></div>
           <h2 class="rev" style="font-size:clamp(2rem,4.4vw,3.6rem);line-height:.92">Ditch the food fear.<br>Build the foundation.</h2>
-          <p class="rev">Spend twenty years in competitive fitness and you see every nutrition fad come and go. People obsess over micro-optimizations, cut out entire food groups in a panic, and stress over every bite—all while ignoring the simple daily habits that actually build a resilient human body.</p>
-          <p class="rev">Marcus learned that truth the hard way. After six trips to the CrossFit Games left his joints beat up, his adrenals fried, and his digestion in shambles—right as he was about to become a dad for the first time—he knew the "all-or-nothing" playbook had to go.</p>
+          <p class="rev">Spend twenty years in competitive fitness and you see every nutrition fad come and go. People obsess over micro-optimizations, cut out entire food groups in a panic, and stress over every bite, all while ignoring the simple daily habits that actually build a resilient human body.</p>
+          <p class="rev">Marcus learned that truth the hard way. After six trips to the CrossFit Games left his joints beat up, his adrenals fried, and his digestion in shambles, right as he was about to become a dad for the first time, he knew the "all-or-nothing" playbook had to go.</p>
           <p class="rev">So he built Functional Bodybuilding: smart training designed to help everyday people look good, move well, and stay in the game for decades. Today, that methodology powers tens of thousands of lifters worldwide through his Persist training program.</p>
-          <blockquote class="rev">STÄPL is the nutritional twin to that mission. Not a cabinet full of neon pre-workouts or restrictive diet rules—just the single most overlooked, science-backed nutrient in an active person's diet, made delicious enough that you actually look forward to taking it.</blockquote>
-          <p class="rev">"You don't need a stricter diet. You need a stronger foundation—and ten seconds every morning to back it up."</p>
-          <p class="rev">Before coaching, Marcus walked away from medical school once he realized he didn't want to wait until people were sick to help them—he wanted to help them build durability through daily training and real-world nutrition. From early soccer fields to Northern California CrossFit affiliates to coaching busy parents worldwide, the takeaway hasn't changed: consistency beats intensity every single time.</p>
+          <blockquote class="rev">STÄPL is the nutritional twin to that mission. Not a cabinet full of neon pre-workouts or restrictive diet rules. Just the single most overlooked, science-backed nutrient in an active person's diet, made delicious enough that you actually look forward to taking it.</blockquote>
+          <p class="rev">"You don't need a stricter diet. You need a stronger foundation, and ten seconds every morning to back it up."</p>
+          <p class="rev">Before coaching, Marcus walked away from medical school once he realized he didn't want to wait until people were sick to help them. He wanted to help them build durability through daily training and real-world nutrition. From early soccer fields to Northern California CrossFit affiliates to coaching busy parents worldwide, the takeaway hasn't changed: consistency beats intensity every single time.</p>
           <p class="rev"><a href="https://www.instagram.com/marcusfilly/" target="_blank" rel="noopener">Follow Marcus on Instagram ▸</a></p>
         </div>
         <div class="rev rev-d1">
@@ -3439,15 +3447,15 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div>
           <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">The path</span></div>
           <h2 class="display rev">Built,<br><em>not burnt.</em></h2>
-          <p class="lead rev rev-d1">How a burned-out Games competitor traded extremes for longevity—and why fiber became his #1 nutrition staple.</p>
+          <p class="lead rev rev-d1">How a burned-out Games competitor traded extremes for longevity, and why fiber became his #1 nutrition staple.</p>
         </div>
         <div class="tl rev rev-d1">
           <div><span class="yr">2006 to 2008</span><b>Discovers CrossFit</b><p>Cuts his teeth in Northern California right where the movement started, learning early mechanics under first coach Kelly Starrett.</p></div>
           <div><span class="yr">The pivot</span><b>Leaves medical school</b><p>Trades hospital rotations for coaching, betting everything on preventative health through smart training and daily habits.</p></div>
-          <div><span class="yr">2012 to 2016</span><b>Six trips to the CrossFit Games</b><p>Competes at the highest level of the sport—and experiences firsthand what chronic stress, overtraining, and gut neglect cost the body.</p></div>
+          <div><span class="yr">2012 to 2016</span><b>Six trips to the CrossFit Games</b><p>Competes at the highest level of the sport and experiences firsthand what chronic stress, overtraining, and gut neglect cost the body.</p></div>
           <div><span class="yr">2017</span><b>Launches Functional Bodybuilding</b><p>Rebuilding his health as a new dad, Marcus pioneers a smarter way to train for aesthetics, capability, and longevity.</p></div>
           <div><span class="yr">2021</span><b>Scales Persist worldwide</b><p>His flagship daily training program becomes the go-to home for busy lifters who want real results without wrecking themselves.</p></div>
-          <div><span class="yr">Now</span><b>Launches STÄPL</b><p>Brings practical, resilience-first nutrition to the counter—starting with Daily Performance Fiber.</p></div>
+          <div><span class="yr">Now</span><b>Launches STÄPL</b><p>Brings practical, resilience-first nutrition to the counter, starting with Daily Performance Fiber.</p></div>
         </div>
       </div>
     </div>
@@ -3460,7 +3468,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div>
         <h2 class="display rev">Hitting 180g of protein.<br><em>Running on fumes for fiber.</em></h2>
         <p class="lead rev rev-d1">For years, Marcus watched dedicated lifters weigh their chicken breast to the tenth of an ounce while their digestion, energy, and recovery lagged behind. The culprit was hiding right at the bottom of their tracking app: <b>US adults average just 16.3g of fiber a day out of the recommended 28g+.</b></p>
-        <p class="lead rev rev-d2">Before you buy another tub of exotic mushrooms or mystery greens, lock in the foundational macro-adjacent nutrient your gut is actually starving for.</p>
+        <p class="lead rev rev-d2">Before you buy another tub of exotic mushrooms or mystery greens, lock in the foundational macro-adjacent nutrient your gut is starving for.</p>
         <a class="more-link rev rev-d3" href="#the-fiber">See the missing number ▸</a>
       </div>
       <div class="nx-blind-art rev rev-d1"><div class="nx-track" role="img" aria-label="A tracker with targets for protein, carbs and fat, and a blank row for fiber">
@@ -3481,7 +3489,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div class="rev"><div class="q">Why start with fiber?</div><div class="a">"Fiber is the glue that holds digestion together. Without adequate and diverse fiber, you will not achieve the same results or return on the investment you are making in the gym. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</div></div>
         <div class="rev"><div class="q">What is your own history with digestion and nutrition?</div><div class="a">"I've been focused on macros and nutrition for decades. Only recently I discovered and really internalized the importance, the foundational importance, of fiber. I've seen it in my personal journey and in the journey of countless people that I coach to elite levels of fitness and performance. Fiber is often overlooked and always underestimated. When people get their digestion dialed in, the performance, the results in the gym, it all starts to compound."</div></div>
         <div class="rev"><div class="q">How do you take it?</div><div class="a">"I take it first thing when I wake up in the morning. Sometimes in a glass of water, sometimes mixed in non-fat Greek yogurt. It is something I look forward to, as I know that it helps me cover my bases and makes the decisions I make around food in the rest of the day easier to navigate."</div></div>
-        <div class="rev"><div class="q">What does "staple" mean to you?</div><div class="a">"Non-negotiable. Fundamental to success and progress. The basics that get lost in the world of IG and short-form video."</div></div>
+        <div class="rev"><div class="q">What does "Stäpl" mean to you?</div><div class="a">"Non-negotiable. Fundamental to success and progress. The basics that get lost in the world of IG and short-form video."</div></div>
         <div class="rev"><div class="q">What does it taste like?</div><div class="a">"STÄPL is a highlight in my day. It's delicious, and I wake up excited every morning to get my fiber and morning hydration in a single glass."</div></div>
         <div class="rev"><div class="q">Why does a daily habit matter?</div><div class="a">"We are what we repeatedly do. STÄPL makes performance digestion easy, and is a delicious daily affirmation and commitment to quality and performance."</div></div>
       </div>
@@ -3512,7 +3520,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <span class="fbb-tag">Look Good. <em>Move Well.</em></span>
       </div>
       <div class="fbb-right">
-        <p>STÄPL comes from the exact same playbook as <b>Functional Bodybuilding</b>—Marcus’s training method built for people who want strength, aesthetics, and longevity without wrecking their joints (or living in the gym). After years of elite competition taught him what burnout costs, Marcus created FBB so busy humans can <b>get built, not burnt</b>. Check out Persist, his flagship training app, along with free guides and workouts.</p>
+        <p>STÄPL comes from the exact same playbook as <b>Functional Bodybuilding</b>, Marcus’s training method built for people who want strength, aesthetics, and longevity without wrecking their joints (or living in the gym). After years of elite competition taught him what burnout costs, Marcus created FBB so busy humans can <b>get built, not burnt</b>. Check out Persist, his flagship training app, along with free guides and workouts.</p>
         <a class="btn btn-ghost" href="https://functional-bodybuilding.com/" target="_blank" rel="noopener">Visit Functional-Bodybuilding.com ▸</a>
       </div>
     </div>
@@ -3553,13 +3561,13 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div><span class="mono-label">Group 01</span><h2>The product</h2></div>
         <div>
           <details open=""><summary>What exactly is Daily Performance Fiber? <span class="pm">+</span></summary><p>It’s our flagship daily fiber supplement: three complementary fibers in a single scoop with a crisp natural raspberry flavor. Mix it in water once a day to back up your digestion, microbiome, and daily nutrition.</p></details>
-          <details><summary>Which fibers do you use—and why three? <span class="pm">+</span></summary><p>Every scoop combines <b>psyllium husk</b>, <b>resistant potato starch</b>, and <b>acacia fiber</b>. Single-fiber powders only do one job; pairing gel-forming soluble fiber with two gentle prebiotics supports both smooth regularity and beneficial gut bacteria. Plus, zero proprietary blends—every ingredient is spelled out on the canister.</p></details>
+          <details><summary>Which fibers do you use, and why three? <span class="pm">+</span></summary><p>Every scoop combines <b>psyllium husk</b>, <b>resistant potato starch</b>, and <b>acacia fiber</b>. Single-fiber powders only do one job; pairing gel-forming soluble fiber with two gentle prebiotics supports both smooth regularity and beneficial gut bacteria. Plus, zero proprietary blends: every ingredient is spelled out on the canister.</p></details>
 <details class="p2" data-p2="FAQ: how much fiber is in a scoop (after lab assay)"><summary>How much fiber is in a scoop? <span class="pm">+</span></summary><p>The exact number goes on the label and on this page once the first production lot has been tested.</p></details>
-          <details><summary>How does it taste? <span class="pm">+</span></summary><p>Think bright, tart, real raspberry—lightly jammy and super refreshing in cold water. Zero chalky grit, zero weird chemical aftertaste. We’re kicking things off with Raspberry, and our Founders will vote on Flavor #2 right after launch.</p></details>
+          <details><summary>How does it taste? <span class="pm">+</span></summary><p>Think bright, tart, real raspberry, lightly jammy and super refreshing in cold water. Zero chalky grit, zero weird chemical aftertaste. We’re kicking things off with Raspberry, and our Founders will vote on Flavor #2 right after launch.</p></details>
           <details><summary>What is it flavored with? <span class="pm">+</span></summary><p>Real, natural flavors give it that bright raspberry kick. You'll always see the complete ingredient breakdown clearly listed on the tub.</p></details>
           <details class="p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)"><summary>What is it flavored and sweetened with? <span class="pm">+</span></summary><p>Natural flavors, sweetened with stevia leaf extract and monk fruit extract. No sugar alcohols or sucralose.</p></details>
 <details class="p2" data-p2="FAQ: is it lab-tested (after first-lot testing)"><summary>Is it lab-tested? <span class="pm">+</span></summary><p>The first production lot is being lab-tested, and the results will be posted on the product page.</p></details>
-          <details><summary>Is it vegan, gluten-free, and dairy-free? <span class="pm">+</span></summary><p>We’re publishing our final verified allergen and dietary certifications alongside the production Supplement Facts panel right before shipping—stay tuned!</p></details>
+          <details><summary>Is it vegan, gluten-free, and dairy-free? <span class="pm">+</span></summary><p>We’re publishing our final verified allergen and dietary certifications alongside the production Supplement Facts panel right before shipping. Stay tuned!</p></details>
           <details><summary>Why are you only selling one product? <span class="pm">+</span></summary><p>Because we’re called STÄPL! The supplement aisle is overflowing with brands selling 50 overlapping powders you don't actually need. We started with the #1 nutritional gap in active diets and refused to launch anything else until this one earned permanent real estate on your counter.</p></details>
         </div>
       </div>
@@ -3567,11 +3575,11 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div class="faq-group" id="fq-use">
         <div><span class="mono-label">Group 02</span><h2>Using it</h2></div>
         <div>
-          <details><summary>How do I mix it? <span class="pm">+</span></summary><p>Drop one level scoop into 8–12 oz of cold water, give it a quick shake or brisk stir, and drink up! Want to switch up the texture? Stir a scoop into plain Greek yogurt—it turns it into a tart raspberry bowl.</p></details>
+          <details><summary>How do I mix it? <span class="pm">+</span></summary><p>Drop one level scoop into 8–12 oz of cold water, give it a quick shake or brisk stir, and drink up! Want to switch up the texture? Stir a scoop into plain Greek yogurt. It turns it into a tart raspberry bowl.</p></details>
           <details><summary>When is the best time of day to take it? <span class="pm">+</span></summary><p>Whenever you can put it on autopilot. Most folks (Marcus included) take it first thing in the morning to knock out hydration and fiber in one 10-second habit.</p></details>
           <details><summary>Will this make me bloated or gassy? <span class="pm">+</span></summary><p>We specifically chose gentle, slow-fermenting prebiotics (acacia and resistant potato starch) paired with psyllium to avoid the digestive drama of cheap chicory/inulin bombs. Still, if your diet has been low in fiber, ease in with <b>half a scoop for the first 5–7 days</b> and drink plenty of water so your gut microbes can ramp up smoothly.</p></details>
-          <details><summary>Can I put it in smoothies, oats, or yogurt? <span class="pm">+</span></summary><p>Cold water is the fastest move, and stirring it into Greek yogurt is a team favorite (Marcus does this multiple mornings a week). You can also blend it into a smoothie—just drink it fairly soon after mixing since psyllium naturally gels over time!</p></details>
-          <details><summary>Is it safe if I'm pregnant, nursing, or taking medication? <span class="pm">+</span></summary><p>Always check in with your doctor or pharmacist before adding any new supplement—especially if you're pregnant, nursing, or taking daily medications (since fiber can affect how fast certain meds absorb; spacing them out by an hour or two is standard advice, so ask your doc!). Check our full <a class="more-link" style="margin:0" href="#disclaimer">Health Disclaimer</a> for details.</p></details>
+          <details><summary>Can I put it in smoothies, oats, or yogurt? <span class="pm">+</span></summary><p>Cold water is the fastest move, and stirring it into Greek yogurt is a team favorite (Marcus does this multiple mornings a week). You can also blend it into a smoothie. Just drink it fairly soon after mixing since psyllium naturally gels over time!</p></details>
+          <details><summary>Is it safe if I'm pregnant, nursing, or taking medication? <span class="pm">+</span></summary><p>Always check in with your doctor or pharmacist before adding any new supplement, especially if you're pregnant, nursing, or taking daily medications (since fiber can affect how fast certain meds absorb; spacing them out by an hour or two is standard advice, so ask your doc!). Check our full <a class="more-link" style="margin:0" href="#disclaimer">Health Disclaimer</a> for details.</p></details>
         </div>
       </div>
 
@@ -3587,7 +3595,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div class="faq-group" id="fq-orders">
         <div><span class="mono-label">Group 04</span><h2>Orders + shipping</h2></div>
         <div>
-          <details><summary>Where do you ship? <span class="pm">+</span></summary><p>Everywhere in the 50 US states—including Alaska, Hawaii, PO Boxes, and military APO/FPO addresses. (International shipping isn't live just yet, though we're working on it!)</p></details>
+          <details><summary>Where do you ship? <span class="pm">+</span></summary><p>Everywhere in the 50 US states, including Alaska, Hawaii, PO Boxes, and military APO/FPO addresses. (International shipping isn't live just yet, though we're working on it!)</p></details>
           <details><summary>What does shipping cost? <span class="pm">+</span></summary><p><b>Free</b> on every single subscription order, and <b>free</b> on one-time orders of $80+ (so grabbing two canisters always ships free). Single one-time canisters ship for a flat $5.95. Check our <a class="more-link" style="margin:0" href="#shipping">Shipping Policy</a> for the full breakdown.</p></details>
           <details><summary>How fast will my order arrive? <span class="pm">+</span></summary><p>Once we're past presale launch, orders pack and ship within 1–2 business days and land on your doorstep in 3–7 business days.</p></details>
           <details><summary>How do I track my package? <span class="pm">+</span></summary><p>The second your shipping label prints at our warehouse, a tracking link hits your inbox automatically.</p></details>
@@ -3598,14 +3606,14 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div><span class="mono-label">Group 05</span><h2>Subscriptions</h2></div>
         <div>
           <details><summary>How does the STÄPL subscription work? <span class="pm">+</span></summary><p>Zero stress, 15% savings ($50.99/canister vs. $59.99), and free shipping every time. Pick delivery every 30, 60, or 90 days. Nobody likes surprise charges, so we email you a reminder <b>3 days before every renewal</b>. Subscriptions kick off with our public launch the week of January 11, 2027.</p></details>
-          <details><summary>Is it actually easy to pause, skip, or cancel? <span class="pm">+</span></summary><p>100%. Manage everything in two clicks inside your account portal, or just reply to your reminder email and our team will handle it for you. No cancellation fees, no minimum order traps—just make any edits before your next box processes.</p></details>
+          <details><summary>Is it actually easy to pause, skip, or cancel? <span class="pm">+</span></summary><p>100%. Manage everything in two clicks inside your account portal, or just reply to your reminder email and our team will handle it for you. No cancellation fees, no minimum order traps. Just make any edits before your next box processes.</p></details>
         </div>
       </div>
 
       <div class="faq-group" id="fq-returns">
         <div><span class="mono-label">Group 06</span><h2>Guarantee</h2></div>
         <div>
-          <details><summary>How does the First-Canister Guarantee work? <span class="pm">+</span></summary><p>Scoop it for a month. If you don't love how it tastes, mixes, and feels, shoot us a note within 30 days of delivery and we'll refund your first canister in full. You don't even have to mail the tub back—pass it to a gym buddy or toss it.</p></details>
+          <details><summary>How does the First-Canister Guarantee work? <span class="pm">+</span></summary><p>Scoop it for a month. If you don't love how it tastes, mixes, and feels, shoot us a note within 30 days of delivery and we'll refund your first canister in full. You don't even have to mail the tub back. Pass it to a gym buddy or toss it.</p></details>
           <details><summary>How do I request a refund? <span class="pm">+</span></summary><p>Just email <b>hello@stapl.co</b> with your order number. A real human will reply within 1 business day, and refunds hit your original payment method in 5–10 business days. Full details live on our <a class="more-link" style="margin:0" href="#refund-policy">Refund Policy</a> page.</p></details>
           <details><summary>My canister showed up banged up or damaged. Help? <span class="pm">+</span></summary><p>Snap a quick photo, email it with your order number to <b>hello@stapl.co</b> within 30 days, and we'll get a fresh replacement headed your way on the house.</p></details>
         </div>
@@ -3644,7 +3652,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
           <span class="kicker">STÄPL ▸ The First Staple</span>
           <h1 class="display" style="font-size:clamp(2.3rem,4.6vw,3.9rem)">Daily<br>Performance Fiber</h1>
           <div class="sub">Three fibers · One daily scoop · Bright raspberry</div>
-          <p class="desc">A crisp, refreshing three-fiber blend that mixes in seconds and tastes like tart raspberry—not gritty orange drywall. Formulated by Functional Bodybuilding founder Marcus Filly to close the #1 nutrient gap in active diets.</p>
+          <p class="desc">A crisp, refreshing three-fiber blend that mixes in seconds and tastes like tart raspberry, not gritty orange drywall. Formulated by Functional Bodybuilding founder Marcus Filly to close the #1 nutrient gap in active diets.</p>
           <span class="rating p2" data-p2="Star rating + review count (needs real reviews)"><b>★★★★★</b>&nbsp; Rating + review count</span>
           <div class="presale"><b>Founders Presale opens Dec 1</b><span>Waitlist unlocks 25% off Canister #1 ($44.99). Ships week of Jan 11, 2027.</span></div>
           <div class="buy-box">
@@ -3681,8 +3689,8 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       </div>
           <div class="acc">
             <details open=""><summary>What's inside <span class="pm">+</span></summary><p>A full-spectrum trio of psyllium husk, resistant potato starch, and acacia fiber, brightened up with natural raspberry flavor<span class="p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)">, stevia leaf extract, monk fruit extract and citric acid</span>. Zero proprietary blends. 30 servings per tub, custom scoop included.</p></details>
-            <details><summary>How to use <span class="pm">+</span></summary><p>Shake or stir one level scoop into 8–12 oz of cold water once a day—or mix it into thick Greek yogurt for a tart snack. New to daily fiber? Cruise at half a scoop for week one and drink plenty of water while your gut adjusts.</p></details>
-            <details><summary>Shipping + guarantee <span class="pm">+</span></summary><p>Subscriptions and one-time orders of $80+ always ship free (otherwise $5.95 flat). Covered by our <b>30-Day First-Canister Guarantee</b>: if it’s not earning its keep in your routine, let us know within 30 days for a full product refund—no returns hassle required. See <a class="more-link" style="margin:0" href="#shipping">Shipping</a> and <a class="more-link" style="margin:0" href="#refund-policy">Refund</a> policies.</p></details>
+            <details><summary>How to use <span class="pm">+</span></summary><p>Shake or stir one level scoop into 8–12 oz of cold water once a day, or mix it into thick Greek yogurt for a tart snack. New to daily fiber? Cruise at half a scoop for week one and drink plenty of water while your gut adjusts.</p></details>
+            <details><summary>Shipping + guarantee <span class="pm">+</span></summary><p>Subscriptions and one-time orders of $80+ always ship free (otherwise $5.95 flat). Covered by our <b>30-Day First-Canister Guarantee</b>: if it’s not earning its keep in your routine, let us know within 30 days for a full product refund, no returns hassle required. See <a class="more-link" style="margin:0" href="#shipping">Shipping</a> and <a class="more-link" style="margin:0" href="#refund-policy">Refund</a> policies.</p></details>
             <details><summary>Subscription details <span class="pm">+</span></summary><p>Lock in $50.99/canister (15% off the $59.99 single tub price) + free US shipping every 30, 60, or 90 days. Renews automatically, with a friendly heads-up email sent 3 days prior so you can skip, reschedule, or cancel anytime before processing. Full scoop in our <a class="more-link" style="margin:0" href="#subscription-policy">Subscription Policy</a>.</p></details>
           </div>
         </div>
@@ -3728,7 +3736,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div>
           <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Inside every scoop</span></div>
           <h2 class="display rev">All killer.<br><em class="aq">Zero mystery blends.</em></h2>
-          <p class="lead rev rev-d1">Three complementary fibers chosen for how they perform—and how gently they treat your stomach. Every ingredient clearly named.</p>
+          <p class="lead rev rev-d1">Three complementary fibers chosen for how they perform and how gently they treat your stomach. Every ingredient clearly named.</p>
           <div class="ingr rev rev-d2">
             <details class="ing" open=""><summary><i>01</i><b>Psyllium husk</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"><p>Soluble, gel-forming seed husk fiber that holds water and keeps daily digestion right on schedule.</p></details>
             <details class="ing"><summary><i>02</i><b>Resistant potato starch</b><span class="pm">+</span></summary><img class="ing-ph" src="assets/staple-home/fiber-starch.jpg" alt="A potato beside a mound of potato starch" loading="lazy"><p>Raw prebiotic starch that clears the stomach intact to nourish beneficial bacteria in the colon.</p></details>
@@ -3761,13 +3769,13 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <h2 class="display rev">Put your supplement<br>shelf <em>on trial.</em></h2>
     <p class="lead rev rev-d1">Before another trendy tub takes your money, run it through these four questions. Here’s how fiber stacks up.</p>
     <div class="g">
-      <article class="nx-q q1 rev"><span class="ix">1 / 4</span><h3>Is there an actual target?</h3><div class="big">28<small>g</small></div><p>Backed by the FDA Daily Value—or the gold-standard nutrition benchmark of 14g per 1,000 calories consumed.</p></article>
+      <article class="nx-q q1 rev"><span class="ix">1 / 4</span><h3>Is there a clinically validated target?</h3><div class="big">28<small>g</small></div><p>Backed by the FDA Daily Value, or the gold-standard nutrition benchmark of 14g per 1,000 calories consumed.</p></article>
       <article class="nx-q q2 rev rev-d1"><span class="ix">2 / 4</span><h3>Are we actually falling short?</h3><div class="big">16.3<small>g</small></div><p>The average US adult’s daily intake. Over 90% of women and 97% of men miss the mark every single day.</p></article>
       <article class="nx-q q3 rev rev-d2"><span class="ix">3 / 4</span><h3>Does the science hold up?</h3><div class="big">3,730</div><p>Human clinical trials and reviews on PubMed. For perspective: collagen clocks in around 672, and ashwagandha sits at 117.</p></article>
       <article class="nx-q q4 rev rev-d3"><span class="ix">4 / 4</span><h3>Can you verify the label?</h3><div class="big">100% transparent.</div><p>Zero proprietary blends. Every ingredient named clearly so you can check our homework yourself.</p></article>
     </div>
     <p class="nx-hint">Swipe the four questions</p>
-    <p class="nx-fine">Note: PubMed volume reflects how thoroughly scientists have studied dietary fiber as a category—not clinical trials on STÄPL specifically. Count pulled Nov 18, 2026.</p>
+    <p class="nx-fine">Note: PubMed volume reflects how thoroughly scientists have studied dietary fiber as a category, not clinical trials on STÄPL specifically. Count pulled Nov 18, 2026.</p>
   </div>
 </section>
 <section class="pg-sec">
@@ -3778,7 +3786,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div class="col">
           <span class="cmp-tag">Them</span>
           <h3>Old-school fiber tubs</h3>
-          <ul><li>Gritty, beige, and races you to turn into cement</li><li>Tastes like chalky fake orange—or damp cardboard</li><li>Single cheap fiber (or bloated up with harsh inulin)</li><li>Banished to the back of the pantry by Day 4</li></ul>
+          <ul><li>Gritty, beige, and races you to turn into cement</li><li>Tastes like chalky fake orange, or damp cardboard</li><li>Single cheap fiber (or bloated up with harsh inulin)</li><li>Banished to the back of the pantry by Day 4</li></ul>
         </div>
         <div class="cmp-vs" aria-hidden="true"><span>vs</span></div>
         <div class="col ours">
@@ -3798,7 +3806,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div>
           <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">The flavor</span></div>
           <h2 class="display rev">Raspberry.<br><em class="aq">Done right.</em></h2>
-          <p class="lead rev rev-d1"><b>Crisp, tart, and a little jammy.</b> One dialed-in flavor at launch—and our Founders get the mic to vote on Flavor #2 next.</p>
+          <p class="lead rev rev-d1"><b>Crisp, tart, and a little jammy.</b> One dialed-in flavor at launch, and our Founders get the mic to vote on Flavor #2 next.</p>
         </div>
       </div>
     </div>
@@ -3809,9 +3817,9 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div class="sec-head rev"><span class="num">F</span><div class="line"></div><span class="mono-label">How to use</span></div>
       <h2 class="display rev">Ten seconds.<br><em>Every morning.</em></h2>
       <div class="steps">
-        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop—no food scale needed.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
+        <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. No food scale needed.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
         <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Mix into 8–12 oz of cold water (or swirl into Greek yogurt when you want a change of pace).</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-mix.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
-        <div class="step rev rev-d2"><div class="n">03</div><h3>Roll</h3><p>Down the hatch. Your gut’s happy—now go lift, parent, work, and live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-done.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
+        <div class="step rev rev-d2"><div class="n">03</div><h3>Roll</h3><p>Down the hatch. Your gut’s happy. Now go lift, parent, work, and live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-done.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
       </div>
     </div>
   </section>
@@ -3873,9 +3881,9 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         </div>
         <div class="rev rev-d1">
           <details open=""><summary>When does Run 001 ship? <span class="pm">+</span></summary><p>All presale orders ship the week of January 11, 2027. Join the waitlist for early Founders Presale access starting December 1.</p></details>
-          <details><summary>Is it gentle on sensitive stomachs? <span class="pm">+</span></summary><p>Yes—we paired psyllium with slow-fermenting acacia and resistant potato starch specifically for comfort. If you’re brand new to fiber, start with half a scoop for week one and drink plenty of water.</p></details>
-          <details><summary>Am I locked into a subscription? <span class="pm">+</span></summary><p>Never. Skip a shipment, swap your cadence, or cancel in two clicks before your next box processes—zero fees, zero guilt trips.</p></details>
-          <details><summary>What if Raspberry isn't my jam? <span class="pm">+</span></summary><p>Our 30-Day First-Canister Guarantee has your back. Let us know within 30 days of delivery and we’ll refund your first canister—you don't even have to ship it back.</p></details>
+          <details><summary>Is it gentle on sensitive stomachs? <span class="pm">+</span></summary><p>Yes. We paired psyllium with slow-fermenting acacia and resistant potato starch specifically for comfort. If you’re brand new to fiber, start with half a scoop for week one and drink plenty of water.</p></details>
+          <details><summary>Am I locked into a subscription? <span class="pm">+</span></summary><p>Never. Skip a shipment, swap your cadence, or cancel in two clicks before your next box processes. Zero fees, zero guilt trips.</p></details>
+          <details><summary>What if Raspberry isn't my jam? <span class="pm">+</span></summary><p>Our 30-Day First-Canister Guarantee has your back. Let us know within 30 days of delivery and we’ll refund your first canister. You don't even have to ship it back.</p></details>
         </div>
       </div>
     </div>
@@ -3911,7 +3919,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
     </svg>
     <h2 class="display rev">Get on <em>the Founders list.</em></h2>
-    <p class="rev rev-d1">Unlock early access to the December 1 Presale (and 25% off your first tub), plus practical nutrition notes and training wisdom from Marcus. Zero spam—we have kids and deadlifts to get to.</p>
+    <p class="rev rev-d1">Unlock early access to the December 1 Presale (and 25% off your first tub), plus practical nutrition notes and training wisdom from Marcus. Zero spam. We have kids and deadlifts to get to.</p>
     <form class="sig-form rev rev-d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='YOU\'RE IN ✓';">
       <input type="email" placeholder="EMAIL ADDRESS" required="">
       <button type="submit">Join ▸</button>
@@ -3929,7 +3937,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">04</span><div class="line"></div><span class="mono-label">Partners</span></div>
       <h1 class="nx-fit display rev" style="--fit:29px">Team up<br>on the<br><em>fundamentals.</em></h1>
-      <p class="lead rev rev-d1">For gyms, coaches, independent grocers, and like-minded brands who know resilient bodies start with the basics. <b>Your people already buy protein—help them fix their fiber.</b></p>
+      <p class="lead rev rev-d1">For gyms, coaches, independent grocers, and like-minded brands who know resilient bodies start with the basics. <b>Your people already buy protein. Help them fix their fiber.</b></p>
       <div class="btn-row rev rev-d2">
         <a class="btn btn-sun" href="#partners" data-jump="partner-apply">Apply to be a partner ▸</a>
       </div>
@@ -3960,7 +3968,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <h2 class="display rev">Four ways <em>to team up.</em></h2>
       <div class="pcards c4">
         <div class="pcard tier rev"><span class="n">01</span><h3>Gyms + training studios</h3><p>Stock canisters right at the front desk where your members grab post-workout drinks.</p><ul><li>Wholesale margins built for gym owners</li><li>Countertop display + single-serve sample support</li><li>Featured directory listing on stapl.co</li></ul></div>
-        <div class="pcard tier rev rev-d1"><span class="n">02</span><h3>Coaches + creators</h3><p>Share a daily staple you genuinely believe in—without pushing sketchy pre-workouts on your clients.</p><ul><li>25% commission on every referred customer's first order</li><li>Custom partner code + tracking link</li><li>First taste of upcoming flavors and future staples</li></ul></div>
+        <div class="pcard tier rev rev-d1"><span class="n">02</span><h3>Coaches + creators</h3><p>Share a daily staple you genuinely believe in, without pushing sketchy pre-workouts on your clients.</p><ul><li>25% commission on every referred customer's first order</li><li>Custom partner code + tracking link</li><li>First taste of upcoming flavors and future staples</li></ul></div>
         <div class="pcard tier rev rev-d2"><span class="n">03</span><h3>Retail + specialty grocers</h3><p>Independent markets, health shops, and regional distributors.</p><ul><li>Straightforward case pricing &amp; low MOQs</li><li>Clean sell sheets + nutrition education cards</li><li>Dedicated launch support from our team</li></ul></div>
         <div class="pcard tier rev rev-d3"><span class="n">04</span><h3>Events, throwdowns + collabs</h3><p>Local competitions, wellness retreats, and aligned brands sharing our "built, not burnt" ethos.</p><ul><li>Live sampling bars &amp; athlete goodie bags</li><li>Co-created training &amp; nutrition content</li><li>Community giveaways + bundle drops</li></ul></div>
       </div>
@@ -3973,7 +3981,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div>
           <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">Apply</span></div>
           <h2 class="display rev">Let’s talk <em>shop.</em></h2>
-          <p class="lead rev rev-d1">Drop your info below—a real person on our partnerships team replies within 3 business days.</p>
+          <p class="lead rev rev-d1">Drop your info below. A real person on our partnerships team replies within 3 business days.</p>
           <ul class="ticks rev rev-d2">
             <li><b>Step 1:</b> Fill out the quick intro below</li>
             <li><b>Step 2:</b> We hop on a brief email or call to match the right tier</li>
@@ -4018,7 +4026,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div class="post-grid">
         <a class="post feature rev" href="#journal-post">
           <div class="ph"><div class="blank"><span class="label">Marcus · training action</span><span class="spec">4:5 photo · lifting, full effort</span></div></div>
-          <div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Why lifters hit 200g of protein and still miss their fiber</h3><p>You weigh your chicken and track every rep—here’s why your gut might still be bottlenecking your recovery.</p><span class="meta">By Marcus Filly · 5 min read</span></div>
+          <div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Why lifters hit 200g of protein and still miss their fiber</h3><p>You weigh your chicken and track every rep. Here’s why your gut might still be bottlenecking your recovery.</p><span class="meta">By Marcus Filly · 5 min read</span></div>
         </a>
         <a class="post rev" href="#journal-post"><div class="ph"><img src="assets/staple-home/ritual-mix.jpg" alt=""></div><div class="body"><span class="cat">Fiber 101 · Draft topic</span><h3>Psyllium, resistant starch, and acacia: the field guide</h3><p>Not all fiber works the same way. Meet the three heavy hitters inside our scoop and where each one clocks in.</p><span class="meta">4 min read</span></div></a>
         <a class="post rev rev-d1" href="#journal-post"><div class="ph"><img src="assets/staple-home/ritual-scoop.jpg" alt=""></div><div class="body"><span class="cat">Routine · Draft topic</span><h3>The 10-second morning anchor</h3><p>How to stack habits so simple they survive school drop-offs, early travel, and Mondays.</p><span class="meta">3 min read</span></div></a>
@@ -4038,7 +4046,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
     </svg>
     <h2 class="display rev">Get on <em>the Founders list.</em></h2>
-    <p class="rev rev-d1">Unlock early access to the December 1 Presale (and 25% off your first tub), plus practical nutrition notes and training wisdom from Marcus. Zero spam—we have kids and deadlifts to get to.</p>
+    <p class="rev rev-d1">Unlock early access to the December 1 Presale (and 25% off your first tub), plus practical nutrition notes and training wisdom from Marcus. Zero spam. We have kids and deadlifts to get to.</p>
     <form class="sig-form rev rev-d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='YOU\'RE IN ✓';">
       <input type="email" placeholder="EMAIL ADDRESS" required="">
       <button type="submit">Join ▸</button>
@@ -4050,7 +4058,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <!-- ============================================================
      VIEW: JOURNAL POST (article template)
      ============================================================ -->
-<main class="view" data-view="journal-post" data-title="Chalk Talk — Article Template | STÄPL">
+<main class="view" data-view="journal-post" data-title="Chalk Talk · Article Template | STÄPL">
   <section class="pdp" style="padding-bottom:4rem">
     <div class="wrap">
       <div class="crumbs"><a href="#journal">Chalk Talk</a> &nbsp;/&nbsp; Fiber 101</div>
@@ -4060,7 +4068,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       </div>
       <div class="frame aq article-hero"><div class="blank"><span class="label">Marcus · training action</span><span class="spec">4:5 photo · lifting, full effort</span></div></div>
       <div class="prose">
-        <p><b>Intro paragraph.</b> Hook the reader with a grounded, relatable scenario from the gym or kitchen—setting up the practical science without any fear-mongering.</p>
+        <p><b>Intro paragraph.</b> Hook the reader with a grounded, relatable scenario from the gym or kitchen, setting up the practical science without any fear-mongering.</p>
         <h2>A clear, punchy section heading</h2>
         <p>Body copy stays conversational, factual, and easy to skim in a single column. Short paragraphs keep the momentum moving. Inline links look just <a href="#the-fiber">like this</a>.</p>
         <ul><li>Bullet points break down physiological takeaways cleanly</li><li>Concrete, actionable advice you can actually use at dinner tonight</li></ul>
@@ -4089,7 +4097,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">06</span><div class="line"></div><span class="mono-label">Contact</span></div>
       <h1 class="display rev">Give us <em class="aq">a shout.</em></h1>
-      <p class="lead rev rev-d1">No chatbots running you in circles—just real humans on our team who reply within 1 business day.</p>
+      <p class="lead rev rev-d1">No chatbots running you in circles, just real humans on our team who reply within 1 business day.</p>
     </div>
   </header>
   <section class="pg-sec white" style="padding-top:3rem">
@@ -4163,7 +4171,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">▸</span><div class="line"></div><span class="mono-label">Exclusively for the FBB Crew</span></div>
       <h1 class="display rev">You already<br>train smart.<br><em>Now back up your gut.</em></h1>
-      <p class="lead rev rev-d1">If you follow Functional Bodybuilding, you already know our rule: master the unflashy fundamentals and let the results compound. STÄPL brings that exact mindset to your kitchen counter—<b>and the FBB crew gets the keys first</b>, unlocking our December 1 Founders Presale and 25% off Canister #1.</p>
+      <p class="lead rev rev-d1">If you follow Functional Bodybuilding, you already know our rule: master the unflashy fundamentals and let the results compound. STÄPL brings that exact mindset to your kitchen counter, <b>and the FBB crew gets the keys first</b>, unlocking our December 1 Founders Presale and 25% off Canister #1.</p>
       <div class="btn-row rev rev-d2">
         <a class="btn btn-sun" href="#fbb" data-jump="fbb-list">Claim FBB early access ▸</a>
         <a class="more-link" href="#shop">Explore Daily Performance Fiber ▸</a>
@@ -4176,8 +4184,8 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <div class="sec-head rev"><span class="num">A</span><div class="line"></div><span class="mono-label">Founders get</span></div>
       <h2 class="display rev">First in line.<br><em>First on the mic.</em></h2>
       <div class="pcards">
-        <div class="pcard rev"><span class="n">01</span><h3>25% off your first canister</h3><p>Grab Canister #1 for $44.99 (reg. $59.99). Subscribe and lock in 15% off ($50.99) + free shipping on every refill after that—skip or cancel anytime.</p></div>
-        <div class="pcard rev rev-d1"><span class="n">02</span><h3>First batch out the door</h3><p>Your window opens December 1—a full week ahead of the general public—with Run 001 shipping the week of January 11, 2027.</p></div>
+        <div class="pcard rev"><span class="n">01</span><h3>25% off your first canister</h3><p>Grab Canister #1 for $44.99 (reg. $59.99). Subscribe and lock in 15% off ($50.99) + free shipping on every refill after that. Skip or cancel anytime.</p></div>
+        <div class="pcard rev rev-d1"><span class="n">02</span><h3>First batch out the door</h3><p>Your window opens December 1, a full week ahead of the general public, with Run 001 shipping the week of January 11, 2027.</p></div>
         <div class="pcard rev rev-d2"><span class="n">03</span><h3>Official vote on Flavor #2</h3><p>We’re kicking off with bright, tart Raspberry. Every Founder gets a ballot to decide what hits the lab next.</p></div>
       </div>
     </div>
@@ -4209,7 +4217,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
       <text x="670" y="49" font-family="Space Mono, monospace" font-weight="700" font-size="25" letter-spacing="2" fill="#1B1B1D" text-anchor="middle">NUTRITION ISN'T EXTRA. <tspan fill="#FF6B37">IT'S STÄPL.</tspan></text>
     </svg>
     <h2 class="display rev">Lock in your <em>FBB Founders spot.</em></h2>
-    <p class="rev rev-d1">Get the private link on December 1 for 25% off Canister #1, plus nutrition and training notes straight from Marcus. Zero spam—ever.</p>
+    <p class="rev rev-d1">Get the private link on December 1 for 25% off Canister #1, plus nutrition and training notes straight from Marcus. Zero spam, ever.</p>
     <form class="sig-form rev rev-d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='YOU\'RE IN ✓';">
       <input type="email" placeholder="EMAIL ADDRESS" required="">
       <button type="submit">Join ▸</button>
@@ -4256,7 +4264,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <h2>Tracking</h2>
 <p>As soon as your order ships, you’ll receive an email with a live tracking link.</p>
 <h2>Lost, delayed or damaged orders</h2>
-<p>If your canister arrives damaged—or tracking marks it delivered and it’s nowhere to be found—email <a href="mailto:hello@stapl.co">hello@stapl.co</a> within 30 days with your order number (and a quick photo if damaged). We’ll promptly send a replacement or issue a full refund.</p>
+<p>If your canister arrives damaged, or tracking marks it delivered and it’s nowhere to be found, email <a href="mailto:hello@stapl.co">hello@stapl.co</a> within 30 days with your order number (and a quick photo if damaged). We’ll promptly send a replacement or issue a full refund.</p>
 <h2>Wrong address</h2>
 <p>Typo in your street address? Email hello@stapl.co right away. We can update shipping details anytime before your order leaves the warehouse. Orders returned to us as undeliverable are refunded for the product price (original shipping charges are non-refundable).</p>
 <h2>Contact</h2>
@@ -4282,7 +4290,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div class="prose">
 <p class="updated">Last updated: November 17, 2026</p>
 <h2>First-canister guarantee</h2>
-<p>Give your first canister of STÄPL an honest shot. If it isn't for you—for any reason—let us know within 30 days of delivery and we'll refund the product price in full. Keep the canister (share it with a friend or toss it; no return label needed). This guarantee covers your very first canister, opened or unopened.</p>
+<p>Give your first canister of STÄPL an honest shot. If it isn't for you, for any reason, let us know within 30 days of delivery and we'll refund the product price in full. Keep the canister (share it with a friend or toss it; no return label needed). This guarantee covers your very first canister, opened or unopened.</p>
 <h2>What we refund</h2>
 <ul>
 <li>We refund the full purchase price paid for the covered canister (plus applicable tax where required).</li>
@@ -4304,7 +4312,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <h2>Damaged or incorrect items</h2>
 <p>Email hello@stapl.co within 30 days of delivery with your order number and a quick photo. We’ll ship a replacement or issue a full refund right away at zero cost to you.</p>
 <h2>Presale orders</h2>
-<p>You may cancel any presale order for a full refund anytime before it ships—especially if a scheduled presale shipping window ever shifts.</p>
+<p>You may cancel any presale order for a full refund anytime before it ships, especially if a scheduled presale shipping window ever shifts.</p>
 <h2>Subscriptions</h2>
 <p>Subscriptions can be skipped, paused, or canceled anytime before your next renewal order processes. See our <a href="#subscription-policy">Subscription Policy</a> for full details.</p>
 <h2>Contact</h2>
@@ -4320,7 +4328,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
     <div class="wrap">
       <div class="sec-head"><span class="num">▸</span><div class="line"></div><span class="mono-label">Policies</span></div>
       <h1 class="display">Subscription <em class="aq">Policy</em></h1>
-      <p class="lead">How auto-delivery works—and how easy it is to skip, swap, or cancel.</p>
+      <p class="lead">How auto-delivery works, and how easy it is to skip, swap, or cancel.</p>
     </div>
   </header>
   <section class="pg-sec white" style="padding-top:3rem">
@@ -4330,7 +4338,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
         <div class="prose">
 <p class="updated">Last updated: November 20, 2026</p>
 <h2>How it works</h2>
-<p>Choosing <b>Subscribe</b> enrolls you in convenient recurring shipments of Daily Performance Fiber every 30, 60, or 90 days—whichever schedule fits your household. Your saved payment method is charged automatically as each scheduled order processes, until you choose to cancel. Recurring subscription shipments begin at public launch the week of January 11, 2027.</p>
+<p>Choosing <b>Subscribe</b> enrolls you in convenient recurring shipments of Daily Performance Fiber every 30, 60, or 90 days, whichever schedule fits your household. Your saved payment method is charged automatically as each scheduled order processes, until you choose to cancel. Recurring subscription shipments begin at public launch the week of January 11, 2027.</p>
 <h2>What you pay</h2>
 <ul>
 <li><b>Member rate:</b> $50.99 per canister (15% off the $59.99 one-time price), plus applicable local tax. Standard US shipping is always free on subscriptions.</li>
@@ -4341,7 +4349,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <h2>Renewal reminders</h2>
 <p>Nobody likes surprise boxes. We send a heads-up email <b>3 days before every renewal</b> so you have plenty of time to skip, adjust your delivery date, or cancel.</p>
 <h2>Skip or cancel</h2>
-<p>You're in full control—skip a delivery, change your frequency, or cancel anytime:</p>
+<p>You're in full control: skip a delivery, change your frequency, or cancel anytime:</p>
 <ul>
 <li>Anytime 24/7 inside your customer account under <b>Manage Subscription</b>; or</li>
 <li>By emailing <b><a href="mailto:hello@stapl.co">hello@stapl.co</a></b> and letting us handle it for you.</li>
@@ -4398,7 +4406,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <li>A successor entity in the event of a business merger, acquisition, or asset sale</li>
 </ul>
 <h2>Your rights and choices</h2>
-<p>Depending on your state of residence, you may have the legal right to request access to, correction of, deletion of, or a portable copy of your personal data—as well as the right to opt out of targeted advertising or data "sales/sharing." Submit requests anytime by emailing <a href="mailto:hello@stapl.co">hello@stapl.co</a> or visiting <a href="#privacy-choices">Your Privacy Choices</a>. We never discriminate against customers for exercising privacy rights, and you may appeal any decision simply by replying to our response.</p>
+<p>Depending on your state of residence, you may have the legal right to request access to, correction of, deletion of, or a portable copy of your personal data, as well as the right to opt out of targeted advertising or data "sales/sharing." Submit requests anytime by emailing <a href="mailto:hello@stapl.co">hello@stapl.co</a> or visiting <a href="#privacy-choices">Your Privacy Choices</a>. We never discriminate against customers for exercising privacy rights, and you may appeal any decision simply by replying to our response.</p>
 <p>You can unsubscribe from marketing emails in one click via the footer link in any email, and opt out of SMS messages anytime by replying STOP.</p>
 <h2>Cookies</h2>
 <p>Adjust cookie preferences anytime through our site banner or your browser settings. Our site automatically honors Global Privacy Control (GPC) browser signals where applicable by law.</p>
@@ -4436,7 +4444,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <p>Like most online brands, we use analytics and advertising cookies that may qualify as a "sale" or "sharing" of personal information under state privacy laws like the California Consumer Privacy Act (CCPA). You can opt out right away using any of these options:</p>
 <ul>
 <li>Click the button below to disable advertising and targeting cookies on this browser.</li>
-<li>Enable <b>Global Privacy Control (GPC)</b> in your browser settings—our site detects and honors that signal automatically.</li>
+<li>Enable <b>Global Privacy Control (GPC)</b> in your browser settings. Our site detects and honors that signal automatically.</li>
 <li>Email <b><a href="mailto:hello@stapl.co">hello@stapl.co</a></b> with the subject line "Privacy Request".</li>
 </ul>
 <p><a class="btn btn-ghost" href="#privacy-choices" onclick="event.preventDefault();this.textContent='OPTED OUT ✓ [PREVIEW]'">Opt out on this browser ▸</a></p>
@@ -4468,7 +4476,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <p class="updated">Last updated: November 17, 2026</p>
 <p>These Terms of Service form a binding agreement between you and Staple Performance Nutrition, LLC ("STÄPL", "we", "us"). By visiting stapl.co or placing an order, you agree to these terms.</p>
 <h2>Who can order</h2>
-<p>You must be at least 18 years old and legally able to form a contract. All purchases are for personal household use—not commercial resale—unless you hold an active, signed wholesale partner agreement with STÄPL.</p>
+<p>You must be at least 18 years old and legally able to form a contract. All purchases are for personal household use, not commercial resale, unless you hold an active, signed wholesale partner agreement with STÄPL.</p>
 <h2>Orders, pricing and payment</h2>
 <ul>
 <li>All prices are listed in US dollars and are subject to change. Applicable taxes and shipping fees are calculated clearly at checkout.</li>
@@ -4482,7 +4490,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <h2>Shipping and returns</h2>
 <p>All purchases are governed by our <a href="#shipping">Shipping Policy</a> and <a href="#refund-policy">Refund + Return Policy</a>, which form part of these Terms.</p>
 <h2>Product information and health</h2>
-<p>While we work hard to keep all site details accurate, labels and formulations may occasionally update—always check the physical canister label in your hand before use. Nothing on stapl.co constitutes medical advice; please review our <a href="#disclaimer">Health + FDA Disclaimer</a>.</p>
+<p>While we work hard to keep all site details accurate, labels and formulations may occasionally update. Always check the physical canister label in your hand before use. Nothing on stapl.co constitutes medical advice; please review our <a href="#disclaimer">Health + FDA Disclaimer</a>.</p>
 <h2>Promotions and discount codes</h2>
 <p>Promo codes cannot be stacked unless explicitly stated, carry no cash value, and may be modified or ended at any time.</p>
 <h2>Reviews and content you submit</h2>
@@ -4524,7 +4532,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <h2>Not medical advice</h2>
 <p>All articles, charts, calculators, emails, and social content created by STÄPL are for general educational and informational purposes only. None of it is medical advice, nor is it a substitute for personalized guidance from your physician or registered dietitian.</p>
 <h2>Talk to your doctor first</h2>
-<p>Always check with a qualified healthcare professional before adding this or any dietary supplement to your routine—especially if you are pregnant, nursing, under 18, managing a gastrointestinal or medical condition, or taking prescription medications.</p>
+<p>Always check with a qualified healthcare professional before adding this or any dietary supplement to your routine, especially if you are pregnant, nursing, under 18, managing a gastrointestinal or medical condition, or taking prescription medications.</p>
 <h2>Using fiber supplements</h2>
 <ul>
 <li>Always mix and take fiber powder with a full glass (8–12 oz) of liquid. Taking dry or under-hydrated bulk-forming fiber can cause choking or discomfort.</li>
@@ -4571,7 +4579,7 @@ h1.nx-fit[style*="29px"]{font-size:clamp(1.8rem,6.1vw,5.5rem)}
 <li>Interactive animations and mini-games that respect OS-level reduced-motion preferences</li>
 </ul>
 <h2>Tell us if something is not working</h2>
-<p>Spot a screen-reader snag, contrast issue, or broken button? Please let us know at <b><a href="mailto:hello@stapl.co">hello@stapl.co</a></b> with the page URL and what happened. A human on our team will help you get what you need right away and pass the fix straight to engineering—typically within 1 business day.</p>
+<p>Spot a screen-reader snag, contrast issue, or broken button? Please let us know at <b><a href="mailto:hello@stapl.co">hello@stapl.co</a></b> with the page URL and what happened. A human on our team will help you get what you need right away and pass the fix straight to engineering, typically within 1 business day.</p>
 <h2>Contact</h2>
 <p>Staple Performance Nutrition, LLC<br>14 Lake Estates Dr, Montgomery, TX 77356<br>Email: <a href="mailto:hello@stapl.co">hello@stapl.co</a><br>Monday to Friday, 9am to 5pm CT</p></div>
       </div>
@@ -4801,7 +4809,7 @@ function lineHTML(i){
   const p=PRICE[i.plan];
   return `<div class="c-line" data-key="${i.key}">
     <div class="th"><img src="assets/staple-home/${FLAV_IMG[i.flavor]||FLAV_IMG.Raspberry}" alt="${i.flavor}"></div>
-    <div><div class="nm">Daily Performance Fiber — ${i.flavor}</div>
+    <div><div class="nm">Daily Performance Fiber · ${i.flavor}</div>
       <span class="vr">30 servings · ${i.plan==='sub'?'<em>Subscription</em> · 15% off · ships free every '+(window.nxFreq||30)+' days':'One-time purchase'}</span>
       <div><span class="qty"><button data-q="-1" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button data-q="1" aria-label="Increase quantity">+</button></span><button class="rm" data-rm>Remove</button></div>
     </div>
@@ -4873,7 +4881,7 @@ document.addEventListener('click',e=>{
   }
   const af=e.target.closest('[data-add-flavor]');
   if(af){const plan=cart.some(i=>i.plan==='sub')?'sub':'once';addToCart(af.dataset.addFlavor,plan,1);}
-  if(e.target.closest('[data-checkout]')){toast('Checkout is a preview — connects to Shopify checkout at build');}
+  if(e.target.closest('[data-checkout]')){toast('Checkout is a preview: connects to Shopify checkout at build');}
 });
 addEventListener('keydown',e=>{if(e.key==='Escape')closeCart();});
 addEventListener('hashchange',closeCart);
