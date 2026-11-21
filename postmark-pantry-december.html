@@ -2693,6 +2693,27 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
 @media(min-width:901px){.need li:last-child{padding-right:56px!important}}
 @media(max-width:900px){.need{padding-bottom:46px!important}}
 </style>
+<style id="r1120k">/* Nov 20 2026 evening: v5 comments, round two */
+@media(min-width:901px){
+ #fiber .fgap{grid-template-columns:minmax(0,5fr) minmax(0,6fr);grid-template-areas:"copy sheet" "copy ctl";align-items:start;row-gap:6px}
+ #fiber .fgap>.fcopy{grid-area:copy;align-self:start;padding-top:18px}
+ #fiber .fgap>.fsheet{grid-area:sheet}
+ #fiber .fgap>.fctl{grid-area:ctl;max-width:640px;width:100%;margin:0 auto}
+ #fiber .fctl .fcount{border-top:0;padding-top:0;margin:18px 0 14px;justify-content:center}
+ #fiber .fctl .fadd{justify-content:center}
+ #fiber .fctl .fhint{justify-content:center;margin:12px 0 0!important}
+}
+@media(max-width:900px){#fiber .fgap>.fctl{order:1}}
+.fibersec.touched .fctl .fhint{opacity:0;transition:opacity .5s}
+/* the crowded cabinet list: ticked off, never struck through */
+.fstrike li{font-style:normal;font-size:clamp(20px,1.9vw,26px);color:var(--ink);display:flex;align-items:center;gap:16px;padding:12px 0}
+.fstrike li::before{content:"";flex:none;width:22px;height:22px;border:1.5px solid var(--ink-3);border-radius:3px;background:rgba(251,247,238,.7)}
+.fstrike li span{display:block;position:relative;color:var(--ink)!important}
+.fstrike li span::after{content:"\2715";left:-38px;right:auto;top:50%;height:auto;width:22px;background:none;border-radius:0;font-family:var(--hand,"Caveat",cursive);font-style:normal;font-size:34px;line-height:0;text-align:center;color:var(--red);transform:scale(0) rotate(-20deg);transform-origin:center;transition:transform .45s cubic-bezier(.3,1.5,.5,1) calc(var(--n) * .28s + .4s)}
+.fshelf.in .fstrike li span{color:var(--ink)!important}
+.fshelf.in .fstrike li span::after{transform:scale(1) rotate(-6deg)}
+.farc .arc1{stroke-dasharray:0 9999;stroke-dashoffset:0}
+</style>
 </head>
 <body>
 
@@ -2810,6 +2831,9 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
         <p class="fdrop">Let's be honest: modern wellness has gotten exhausting. Almost every woman I know has a cabinet overflowing with expensive powders, gummies, and capsules she half-remembers to take—and still feels bloated, sluggish, hormonally off, and irregular.</p>
         <p>When your digestion is backed up and your gut barrier is struggling, throwing more supplements at the problem doesn't work. You can't absorb the good stuff if your foundation isn't working.</p>
         <p>Fiber is that foundation. It repairs and feeds your gut lining, helps clear excess hormones, keeps blood sugar from rollercoastering, and—yes—helps you actually go to the bathroom every day. And you don't need another pill to get it. You just need food you genuinely look forward to eating.</p>
+      </div>
+      <div class="fsheet rv d1" data-fsheet="home" role="img" aria-label="A sheet of 28 stamps, one for each gram of fiber a day is meant to carry. Sixteen are filled."></div>
+      <div class="fctl rv d1">
         <div class="fcount" aria-live="polite"><span class="fnum"><b data-fnum>16</b><i>of 28 grams</i></span><span class="fsay" data-fsay>where most days stall out, twelve stamps short</span></div>
         <div class="fadd">
           <button type="button" class="ftog jam" data-fadd="jam" aria-pressed="false"><img src="pp/stamps__fiber-jam-pact.webp" alt=""><span><b>Add Jam Pact</b><i>11 grams, on toast</i></span></button>
@@ -2817,7 +2841,6 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
         </div>
         <p class="fhint"><svg viewBox="0 0 46 22" aria-hidden="true"><path d="M44 16C32 21 14 19 4 7m0 0l1 9M4 7l9 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tap a jar and watch the sheet fill</p>
       </div>
-      <div class="fsheet rv d1" data-fsheet="home" role="img" aria-label="A sheet of 28 stamps, one for each gram of fiber a day is meant to carry. Sixteen are filled."></div>
     </div>
 
     <div class="fday rv" data-fday>
@@ -3275,7 +3298,7 @@ footer>.stamps{margin-top:26px;border-top:1px solid var(--card-edge);padding-top
     <div class="crumb"><a href="#home">Home</a> · This month at the pantry</div>
     <div class="cal-hero rv">
       <img class="art" src="pp/illustration__months__10-hero-cut.webp" alt="">
-      <div class="t"><span class="dept">From Amy's kitchen</span><h1>Amy's <em data-ed="month">October</em></h1><p class="calhello">Hi friend! Every month I put together a little day-by-day kitchen calendar filled with cozy recipes, stress-free hosting prep, and tiny daily joys so the season doesn't blur right past us. Click around any date you like—I tucked a little something inside every single one.</p><span class="calsig">Warmly, Amy</span>
+      <div class="t"><span class="dept">From Amy's kitchen</span><h1>Amy's <em data-ed="month">October</em></h1><p class="calhello" data-calhello>Hi friend! Every month I put together a little day-by-day kitchen calendar filled with cozy recipes, stress-free hosting prep, and tiny daily joys so the season doesn't blur right past us. Click around any date you like—I tucked a little something inside every single one.</p><span class="calsig">Warmly, Amy</span>
 </div>
     </div>
     <div class="cal-layout">
@@ -3465,9 +3488,9 @@ const EDITIONS=[
 /* What changes month by month beyond the basics: cover, lines, art, the season spread, which photographs come alive. */
 const EDX={
  10:{film:true,once:"Once upon an October,",tip:"sweet friend, welcome in",eggLabel:"Something is tucked by the gate. Read our story.",detail:"october-detail",heroAlt:"The pantry door in October",coverAlt:"A garden gate in October"},
- 11:{cover:"scene/autumn-dining-table",news:"ed/18-harvest-supper",egg:[52,60],once:"Once upon a November,",tip:"there is always room for one more",eggLabel:"A place is set at the table. Read our story.",detail:"november-detail",heroAlt:"A table set for company in November",coverAlt:"A candlelit table set for company",
+ 11:{cover:"scene/autumn-dining-table",news:"ed/18-harvest-supper",egg:[52,60],once:"Once upon a November,",tip:"there is always room for one more",hello:"Hi friend! November is the month the house fills up, so I named this issue Room for Company. It's for the extra chair pulled up to the table, the pie made two days early, and the guest room that finally gets fresh sheets. Every date below has one small thing tucked inside, a recipe, a list, or a tip, so hosting feels doable and you get to enjoy your own party.",eggLabel:"A place is set at the table. Read our story.",detail:"november-detail",heroAlt:"A table set for company in November",coverAlt:"A candlelit table set for company",
    spread:[["amy/16-front-door-homecoming","Amy at the front door with the dogs at dusk","The porch light stays on all November. Somebody is always about to arrive.","Amy, from the November letter"],["amy/19-autumn-table-host","Amy setting the table by candlelight","I set the table the night before. The candles go in a little crooked and I leave them that way.","Amy, on company"],["amy/14-heathland-walk","Amy walking the dogs across the heath","Before the guests come, a long walk, so the dogs are tired and polite.","Amy, at home"]]},
- 12:{cover:"scene/winter-landscape",news:"scene/winter-dining-table",egg:[75,64],once:"Once upon a December,",tip:"come warm up inside",eggLabel:"The kitchen lights are on. Read our story.",detail:"december-detail",heroAlt:"A candlelit kitchen in December",coverAlt:"A cottage in the snow at dusk, its windows lit",sc:{landscape:"oct/december",desk:"ed/w-06-wreath-making"},
+ 12:{cover:"scene/winter-landscape",news:"scene/winter-dining-table",egg:[75,64],once:"Once upon a December,",tip:"come warm up inside",hello:"Hi friend! It's dark by 4:30 now, so I named this issue By Candlelight. December asks a lot of us, and I wanted a month that felt lit from the inside: easy bakes, gifts you can make at the counter, and full permission to stay in. Open any date for a recipe, a list, or a little something to keep the season from rushing past.",eggLabel:"The kitchen lights are on. Read our story.",detail:"december-detail",heroAlt:"A candlelit kitchen in December",coverAlt:"A cottage in the snow at dusk, its windows lit",sc:{landscape:"oct/december",desk:"ed/w-06-wreath-making"},
    spread:[["amy-winter/08-fireside-reading","Amy reading by the fire with the two dogs","It's pitch dark by 4:30 PM now, which I've decided is just permission to put pajamas on early.","Amy, from the December letter"],["amy-winter/04-winter-letter-writing","Amy writing cards at the kitchen table, the dogs asleep beside her","Every December I address holiday cards at the kitchen island with cocoa on deck and the dogs snoring under my feet.","Amy, at home"],["amy-winter/02-snowy-porch-welcome","Amy on the snowy porch with the dogs","Nobody loves the first December snowfall quite as dramatically as our dogs.","Amy, kitchen notes"]]}
 };
 EDITIONS.forEach(e=>Object.assign(e,EDX[e.m]||{}));
@@ -3778,7 +3801,7 @@ function applyEdition(m){
   document.querySelector('[data-ed="newsbg"]').src=A('assets/photos/'+ed.news+'.webp');
   document.querySelectorAll('[data-ed="hero"]').forEach(e=>e.src=A('assets/illustration/months/'+String(m).padStart(2,'0')+'-hero.webp'));
   const egg=document.querySelector('[data-ed="egg"]');egg.style.setProperty('--x',ed.egg[0]+'%');egg.style.setProperty('--y',ed.egg[1]+'%');
-  document.title='Postmark Pantry · '+ed.name+' · '+ed.title;
+  document.title='Postmark Pantry · '+ed.name+' · '+ed.title;{const ch=document.querySelector('[data-calhello]');if(ch){if(!ch.dataset.d)ch.dataset.d=ch.textContent;ch.textContent=(EDX[m]&&EDX[m].hello)||ch.dataset.d}}
   buildMonth(m,2026);document.getElementById('edsel').value=m;startLeaves(ed.season);
   {const L=STAMPS[ed.season];document.querySelectorAll('img[data-stamp]').forEach(i=>i.src=A(L[(+i.dataset.stamp)%L.length]));let h='';for(let r=0;r<2;r++)L.forEach((u,i)=>h+=`<img src="${A(u)}" width="100" height="150" alt="" loading="lazy" style="--r:${(i%3-1)*2.5}deg">`);document.getElementById('stamps').innerHTML=h;document.querySelectorAll('.card-l .addr .stamp').forEach((im,i)=>im.src=A(L[(i*3+1)%L.length]))}
   /* chapter openers: the season's scene unless the month chooses its own */
@@ -4538,18 +4561,23 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
     var arc=day.querySelector('.farc'),path=day.querySelector('.arc1'),sun=day.querySelector('.fsun'),items=[].slice.call(day.querySelectorAll('.fhours li')),L=path.getTotalLength(),tick=false;
     function hours(){var ed=document.documentElement.dataset.edition==='12'?'dec-cottage':'nov-table';day.querySelectorAll('[data-fhour]').forEach(function(im){var want='pp/photos__hours__'+ed+'-'+im.dataset.fhour+'.webp';if(im.getAttribute('src')!==want)im.src=want})}
     hours();new MutationObserver(hours).observe(document.documentElement,{attributes:true,attributeFilter:['data-edition']});
-    var cur=0,goal=0,last=0,run=false;
-    function draw(p){var pt=path.getPointAtLength(L*(.02+.96*p)),b=arc.getBoundingClientRect();
-      sun.style.setProperty('--x',(pt.x/1200*b.width)+'px');sun.style.setProperty('--y',(pt.y/210*b.height)+'px');path.style.setProperty('--p',(.02+.96*p).toFixed(3));
+    var cur=0,goal=0,run=false,pts=[],S=0,hrs=day.querySelector('.fhours');
+    path.removeAttribute('pathLength');
+    function measure(){var b=arc.getBoundingClientRect(),kx=b.width/1200,ky=b.height/210,prev=null;pts=[];S=0;
+      for(var i=0;i<=120;i++){var q=path.getPointAtLength(L*i/120),x=q.x*kx,y=q.y*ky;if(prev)S+=Math.hypot(x-prev[0],y-prev[1]);pts.push([x,y,S]);prev=[x,y]}}
+    function draw(p){if(!pts.length)measure();var f=(.02+.96*p)*120,i=Math.min(119,Math.floor(f)),t=f-i,A=pts[i],B=pts[i+1],x=A[0]+(B[0]-A[0])*t,y=A[1]+(B[1]-A[1])*t,len=A[2]+(B[2]-A[2])*t;
+      sun.style.setProperty('--x',x+'px');sun.style.setProperty('--y',y+'px');path.style.strokeDasharray=len.toFixed(1)+' '+(S+20).toFixed(1);path.style.strokeDashoffset='0';
       var part=Math.min(3,Math.floor(p*4));day.dataset.part=part;
       items.forEach(function(li,i){li.classList.toggle('on',i===part);li.classList.toggle('past',i<part)})}
-    function step(ts){var dt=Math.min(.05,(ts-(last||ts))/1000);last=ts;var d=goal-cur,max=dt/6.5;   /* the whole crossing takes at least 6.5 seconds */
-      if(Math.abs(d)<=max){cur=goal;run=false}else cur+=d>0?max:-max*2.5;
-      draw(cur);if(run)requestAnimationFrame(step);else last=0}
-    function place(){tick=false;var r=day.getBoundingClientRect(),a=arc.getBoundingClientRect(),vh=window.innerHeight;if(r.bottom<0||r.top>vh)return;
-      goal=RM?1:Math.max(0,Math.min(1,(vh*.42-a.top)/Math.max(r.height*.5,vh*.45)));
+    function step(){var d=goal-cur;if(Math.abs(d)<.002){cur=goal;run=false}else cur+=d*.22;   /* follows the scroll, lightly smoothed */
+      draw(cur);if(run)requestAnimationFrame(step)}
+    function place(){tick=false;var r=day.getBoundingClientRect(),a=arc.getBoundingClientRect(),h=hrs.getBoundingClientRect(),vh=window.innerHeight;if(r.bottom<-200||r.top>vh+200)return;
+      /* starts as the arc comes into view, ends when the four cards sit at the middle of the screen */
+      var d=(h.top+h.height/2)-a.top,start=vh*.88,end=vh*.5-d;
+      goal=RM?1:Math.max(0,Math.min(1,(start-a.top)/Math.max(120,start-end)));
       if(RM){cur=goal;draw(cur);return}
       if(!run){run=true;requestAnimationFrame(step)}}
+    window.addEventListener('resize',function(){pts=[];draw(cur)});
     function req(){if(!tick){tick=true;requestAnimationFrame(place)}}
     window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);window.addEventListener('hashchange',function(){setTimeout(place,400)});place();
     items.forEach(function(li,i){li.addEventListener('mouseenter',function(){items.forEach(function(x,j){x.classList.toggle('on',j===i)})});li.addEventListener('mouseleave',function(){draw(cur)})});
