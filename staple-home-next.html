@@ -2851,6 +2851,107 @@ br.nx-mo{display:none}
  .nx-form .ph.r{box-shadow:5px 5px 0 var(--clay)}
  .nx-form .fcard{grid-column:1/-1;order:3;height:400px;box-shadow:6px 6px 0 var(--espresso)}
 }
+</style><style id="nx-r4-css">
+.display{word-spacing:.14em}
+.hero h1 .nx-doubt{word-spacing:normal}
+br.nx-dk{display:inline}
+.display em.or{color:var(--clay)!important}
+.nx-coin-mob{display:none}
+/* canister stages: the canister is the centre, colour blocks are accents */
+.hero-can-stage::before,.pdp-stage::before{inset:auto 9% 5% 9%!important;height:27%;clip-path:polygon(0 30%,100% 0,96% 100%,3% 92%)!important;transform:none!important;background:var(--clay)}
+.hero-can-stage::after{top:6%!important;left:3%!important;width:9%!important;height:17%!important}
+.pdp-stage::after{top:auto!important;left:auto!important;right:6%;bottom:36%;width:7%!important;height:15%!important;background:var(--sunshine)!important}
+.pdp-stage{background:radial-gradient(circle at 50% 44%,#fff 0 30%,#EEF8F6 72%)!important}
+.pdp-stage .canister{width:300px;transform:rotate(2deg);filter:drop-shadow(0 30px 34px rgba(27,27,29,.42)) drop-shadow(0 6px 10px rgba(27,27,29,.25))}
+.hero-can-stage .canister.real{filter:drop-shadow(0 30px 34px rgba(27,27,29,.42)) drop-shadow(0 6px 10px rgba(27,27,29,.25))!important}
+.nx-stage.plus .canister.mini{width:300px}
+.pdp-stage .spec-tag{background:#fff;border:1.5px solid var(--espresso);color:var(--espresso);padding:.32rem .55rem;letter-spacing:.18em}
+/* product title */
+.pdp-info h1.nx-pt{font-size:clamp(2.2rem,4.1vw,4rem);line-height:.94}
+.nx-keys{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem .6rem;margin:1.1rem 0 0;padding:0}
+.nx-keys li{font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--espresso);padding:.42rem .7rem;background:#fff;box-shadow:3px 3px 0 var(--aqua)}
+.nx-keys li:nth-child(2){box-shadow:3px 3px 0 var(--sunshine)}.nx-keys li:nth-child(3){box-shadow:3px 3px 0 var(--clay)}
+.pdp-info .desc{border-left:3px solid var(--clay);padding-left:1rem}
+.save-flag{background:var(--sunshine)!important;color:var(--ink)!important;font-size:.68rem!important;font-weight:700;letter-spacing:.1em!important;padding:.3rem .55rem!important}
+/* formula stepper */
+.nx-step{grid-template-columns:1fr 1.15fr 1fr}
+.nx-step .ph{height:440px;cursor:pointer}
+.nx-step .fcard{height:440px}
+.nx-step .fbody{all:unset;box-sizing:border-box;flex:1;display:flex;flex-direction:column;justify-content:center;padding:1.6rem 1.7rem;cursor:pointer;min-height:0}
+.nx-step .fbody:focus-visible{outline:3px solid var(--aqua);outline-offset:-3px}
+.nx-step .fs{display:none}
+.nx-step .fs.on{display:block;animation:ingIn .3s ease both}
+.nx-step .fs h3{font-family:var(--arch);font-weight:900;font-variation-settings:'wdth' 116;text-transform:uppercase;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.05;margin:.6rem 0 .8rem;color:var(--espresso)}
+.nx-step .fs p{font-size:1.02rem;line-height:1.6;color:var(--ink-dim)}
+.nx-step .fs .nx-tag{color:var(--clay);font-size:.66rem}
+.nx-step .fnav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.1rem;border-top:2px solid var(--espresso);flex:none}
+.nx-step .fnav button{width:42px;height:42px;border:2px solid var(--espresso);background:var(--sunshine);font-size:1rem;cursor:pointer;color:var(--espresso);box-shadow:3px 3px 0 var(--espresso)}
+.nx-step .fnav button:hover{background:var(--aqua)}
+.nx-step .fdots{display:flex;gap:.45rem}
+.nx-step .fdots i{width:9px;height:9px;border:2px solid var(--espresso);background:#fff}
+.nx-step .fdots i.on{background:var(--clay)}
+.nx-step .ftap{display:none}
+.nx-step .fhd span:last-child{color:var(--sunshine)}
+@media(min-width:821px){.nx-coin-mob{display:none!important}}
+@media(max-width:900px){
+ br.nx-dk{display:none}
+ .nx-step{grid-template-columns:1fr 1fr}
+ .nx-step .ph{height:150px}
+ .nx-step .fcard{height:auto;min-height:0}
+ .nx-step .fbody{padding:1.3rem 1.2rem;min-height:190px;justify-content:flex-start}
+ .nx-step .ftap{display:block;margin:0;padding:0 1.2rem .9rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim)}
+}
+@media(max-width:820px){
+ header.hero,#home-top{padding-top:5.6rem!important}
+ .hero-can-stage{min-height:330px!important}
+ .nx-stage.plus .canister.mini{width:215px}
+ .pdp{padding-top:6rem!important}
+ .pdp-stage{min-height:380px}
+ .pdp-stage .canister{width:235px}
+ /* rails: sideways only, first card off the screen edge */
+ .nx-three .g,.nx-test .g,.nx-steps.sw,.steps,.media-grid,.flav-grid,.nx-rail{overflow-y:hidden!important;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scroll-padding-left:1.25rem;scroll-padding-right:1.25rem;padding-top:6px;padding-bottom:16px;align-items:stretch}
+ .nx-three .g>*,.nx-test .g>*,.nx-steps.sw>li,.steps>.step{scroll-snap-align:start}
+ .nx-rail{display:flex!important;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;margin:2rem -1.25rem 0;padding-left:1.25rem;padding-right:1.25rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .nx-rail::-webkit-scrollbar{display:none}
+ .nx-rail>.frame{flex:0 0 78%;scroll-snap-align:start;grid-column:auto!important}
+ .media-hint.nx-sh{display:flex}
+ /* route */
+ .nx-rmap>.nx-coin{display:none!important}
+ .nx-coin-mob{display:block;margin-top:1.6rem}
+ .nx-coin-mob .nx-coin{position:static;margin:0;rotate:0deg}
+ .nx-rmap.v2 svg.rt{max-height:44vh;width:auto;max-width:100%}
+ #nx-route h2.display,#nx-route-f h2.display{font-size:clamp(1.25rem,6.9vw,2rem)}
+ #nx-three .lead{margin-top:.7rem}
+ #nx-three .g{margin-top:1.3rem}
+ #nx-test h2.display{font-size:clamp(1.4rem,7vw,2.1rem)}
+ .intro h2{font-size:clamp(1.7rem,8vw,2.6rem)!important}
+ .intro h2 em{white-space:nowrap}
+ .buy h2{line-height:1.1!important}
+ .fbb-right .btn,a.btn[href*="functional-bodybuilding.com"]{white-space:nowrap;font-size:.6rem;letter-spacing:.08em;padding:1rem .9rem;max-width:100%}
+ nav .logo img{height:26px!important}
+ nav.scrolled .logo img{height:23px!important}
+ nav ul a.nav-cta{padding:.72rem 1rem!important;font-size:.68rem!important}
+ /* athlete hero: title cards under the photo */
+ [data-view="the-athlete"] .pg-hero .split>div:first-child{display:contents}
+ [data-view="the-athlete"] .pg-hero .split{display:flex;flex-direction:column;gap:0;align-items:flex-start}
+ [data-view="the-athlete"] .pg-hero .sec-head{order:1}
+ [data-view="the-athlete"] .pg-hero h1{order:2}
+ [data-view="the-athlete"] .pg-hero .lead{order:3}
+ [data-view="the-athlete"] .pg-hero .split>.frame{order:4;margin-top:1.6rem;width:100%}
+ [data-view="the-athlete"] .pg-hero .roles{order:5;margin-top:1.6rem!important;gap:.7rem!important}
+ /* shop */
+ [data-view="shop"] section.faq{padding:2.6rem 0!important}
+ .faq .grid{gap:1.2rem}
+ [data-view="shop"] .split:has(>a.frame[data-flavor]){display:flex;flex-direction:column}
+ [data-view="shop"] .split>a.frame[data-flavor]{order:2;width:100%}
+ .pcards.pm3{grid-template-columns:repeat(3,1fr)!important;gap:.5rem;margin-top:1.6rem}
+ .pcards.pm3 .pcard{padding:.8rem .55rem .9rem;box-shadow:4px 4px 0 var(--aqua)}
+ .pcards.pm3 .pcard:nth-child(2){box-shadow:4px 4px 0 var(--sunshine)}.pcards.pm3 .pcard:nth-child(3){box-shadow:4px 4px 0 var(--clay)}
+ .pcards.pm3 .pcard .n{font-size:.5rem;letter-spacing:.06em;display:block;min-height:2.6em;line-height:1.3}
+ .pcards.pm3 .pcard h3.math{font-size:1.5rem;margin:.3rem 0 .4rem}
+ .pcards.pm3 .pcard h3.math small{display:block;font-size:.5rem;margin-top:.2rem}
+ .pcards.pm3 .pcard p{font-size:.68rem;line-height:1.45}
+}
 </style></head>
 <body>
 
@@ -2950,7 +3051,7 @@ br.nx-mo{display:none}
   <li><svg viewBox="0 0 16 16"><rect x="2" y="5.5" width="12" height="5" rx="2.5" fill="#1B1B1D"></rect></svg>Gut bacteria</li>
 </ul><button type="button" class="nx-play" data-nx-play="rt-r1">▸ Play the route</button></div></div>
       <div>
-        <h2 class="display rev">Different fibers. Different <em class="aq">jobs.</em></h2>
+        <h2 class="display rev">Different fibers.<br class="nx-mo"> Different <em class="aq">jobs.</em></h2>
         <p class="lead rev rev-d1">Unlike protein or carbs, human enzymes don’t break fiber down. That’s the magic. It travels through your system doing vital maintenance work along the way. <b>One scoop covers the whole route.</b></p>
         <ol class="nx-steps sw">
   <li><span class="n">1</span><div><h4>Clears the upper tract intact.</h4><p>Because your stomach enzymes don’t absorb fiber, it cruises past the stomach and small intestine ready to clock in where you actually need it.</p></div></li>
@@ -2959,15 +3060,14 @@ br.nx-mo{display:none}
 </ol>
         <p class="nx-hint">Swipe the three stops</p>
         <p class="nx-note">General fiber physiology, minus the textbook jargon. Not drawn to scale, and not an FDA claim about STÄPL.</p>
-        <a class="more-link" href="#the-fiber">See all three fibers ▸</a>
       </div>
-    </div>
+    <div class="nx-coin-mob"><button type="button" class="nx-coin" data-game="route" aria-label="Play the hidden game: The Route"><i aria-hidden="true"></i><span><b>Play the hidden game</b><small>Insert coin ▸ The Route</small></span></button></div></div>
   </div>
 </section>
 <section class="pg-sec nx nx-test" id="nx-test">
   <div class="wrap">
     <div class="sec-head rev"><span class="num">03</span><div class="line"></div><span class="mono-label">The test</span></div>
-    <h2 class="display rev">Four questions before<br>anything earns <em>counter space.</em></h2>
+    <h2 class="display rev">Four questions<br class="nx-mo"> before<br class="nx-dk"> anything<br class="nx-mo"> earns <em>counter<br class="nx-mo"> space.</em></h2>
     <p class="lead rev rev-d1">Tired of overhyped mystery powders? Us too. Put fiber through the exact same filter you’d use on anything else in your pantry.</p>
     <div class="g">
       <article class="nx-q q1 rev"><span class="ix">1 / 4</span><h3 class="two">Is there a clinically<br>validated target?</h3><div class="big">28<small>g</small></div><p>Backed by the FDA Daily Value, or the gold-standard nutrition benchmark of 14g per 1,000 calories consumed.</p></article>
@@ -2982,7 +3082,7 @@ br.nx-mo{display:none}
 <section class="nx nx-dark nx-add" id="nx-add">
   <span class="nx-shard s1"></span><span class="nx-shard s2"></span>
   <div class="wrap" style="position:relative;z-index:2">
-    <div class="mk rev"><h2 class="nx-fit display" style="--fit:40px">Build resilience.<br><em>Stop Walking on Eggshells.</em></h2></div>
+    <div class="mk rev"><h2 class="nx-fit display" style="--fit:33px">Build<br class="nx-mo"> resilience.<br><em>Stop Walking<br class="nx-mo"> on Eggshells.</em></h2></div>
     <div class="say"><p class="rev rev-d1">Most modern diet advice is an exhausting list of foods you aren't allowed to eat anymore. <b>We take the opposite approach.</b> Instead of shrinking your plate out of fear, give your gut what it actually needs to handle real life. Close the fiber gap first, build a more resilient system, and go enjoy dinner with your family.</p><p class="rev rev-d2 big">Eat like an adult. <span>We’ve got the fiber covered.</span></p></div>
   </div>
 </section>
@@ -3174,7 +3274,6 @@ br.nx-mo{display:none}
           <span class="num">08</span><div class="line"></div><span class="mono-label">Questions</span>
         </div>
         <h2 class="display rev">Straight<br><em>answers.</em></h2>
-        <a class="more-link rev" href="#faq">See all questions ▸</a>
       </div>
       <div class="rev rev-d1">
         <details open="">
@@ -3352,7 +3451,7 @@ br.nx-mo{display:none}
   <li><svg viewBox="0 0 16 16"><rect x="2" y="5.5" width="12" height="5" rx="2.5" fill="#1B1B1D"></rect></svg>Gut bacteria</li>
 </ul><button type="button" class="nx-play" data-nx-play="rt-r2">▸ Play the route</button></div></div>
       <div>
-        <h2 class="display rev">Different fibers. Different <em class="aq">jobs.</em></h2>
+        <h2 class="display rev">Different fibers.<br class="nx-mo"> Different <em class="aq">jobs.</em></h2>
         <p class="lead rev rev-d1">Unlike protein or carbs, human enzymes don’t break fiber down. That’s the magic. It travels through your system doing vital maintenance work along the way. <b>One scoop covers the whole route.</b></p>
         <ol class="nx-steps sw">
   <li><span class="n">1</span><div><h4>Clears the upper tract intact.</h4><p>Because your stomach enzymes don’t absorb fiber, it cruises past the stomach and small intestine ready to clock in where you actually need it.</p></div></li>
@@ -3443,7 +3542,7 @@ br.nx-mo{display:none}
         <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>Grab one level scoop. No kitchen scale required.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
         <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Drop into 8–12 oz of cold water and shake or briskly stir. Craving a snack? Mix it straight into thick Greek yogurt.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-mix.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
         <div class="step rev rev-d2"><div class="n">03</div><h3>Roll</h3><p>Drink it down before it thickens up, and go crush your day. (New to fiber? Start with a half scoop for week one and hydrate well.)</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-done.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
-      </div>
+      </div><p class="media-hint nx-sh"><i></i>Swipe to see more</p>
     </div>
   </section>
 
@@ -3513,11 +3612,11 @@ br.nx-mo{display:none}
         <div class="stat"><div class="v" data-count="20" data-suffix="+">0</div><div class="k">Years Under The Bar</div></div>
         <div class="stat"><div class="v" data-count="1">0</div><div class="k">Daily Morning Non-Negotiable</div></div>
       </div>
-      <div class="photo-row">
+      <div class="photo-row nx-rail">
         <div class="frame rev"><div class="blank"><span class="label">Marcus · between sets</span><span class="spec">4:3 photo · candid, relaxed</span></div></div>
         <div class="frame rev rev-d1"><div class="blank"><span class="label">Marcus · warm-up</span><span class="spec">4:3 photo · mobility or warm-up detail</span></div></div>
         <div class="frame rev rev-d2"><img src="assets/staple-home/86ad8c5ea1.jpg" alt="Chalked hands on a barbell"><span class="cap">Placeholder · chalk macro</span></div>
-      </div>
+      </div><p class="media-hint nx-sh"><i></i>Swipe to see more</p>
     </div>
   </section>
 
@@ -3527,7 +3626,7 @@ br.nx-mo{display:none}
         <div>
           <div class="sec-head rev"><span class="num">C</span><div class="line"></div><span class="mono-label">The path</span></div>
           <h2 class="display rev">Built,<br><em>not burnt.</em></h2>
-          <p class="lead rev rev-d1">How a burned-out Games competitor traded extremes for longevity, and why fiber became his #1 nutrition staple.</p>
+          <p class="lead rev rev-d1">How a burned-out Games competitor traded extremes for longevity, and why fiber became his #1 nutrition STÄPL.</p>
         </div>
         <div class="tl rev rev-d1">
           <div><span class="yr">2006 to 2008</span><b>Discovers CrossFit</b><p>Cuts his teeth in Northern California right where the movement started, learning early mechanics under first coach Kelly Starrett.</p></div>
@@ -3549,7 +3648,6 @@ br.nx-mo{display:none}
         <h2 class="display rev">Hitting 180g of protein.<br><em>Running on fumes for fiber.</em></h2>
         <p class="lead rev rev-d1">For years, Marcus watched dedicated lifters weigh their chicken breast to the tenth of an ounce while their digestion, energy, and recovery lagged behind. The culprit was hiding right at the bottom of their tracking app: <b>US adults average just 16.3g of fiber a day out of the recommended 28g+.</b></p>
         <p class="lead rev rev-d2">Before you buy another tub of exotic mushrooms or mystery greens, lock in the foundational macro-adjacent nutrient your gut is starving for.</p>
-        <a class="more-link rev rev-d3" href="#the-fiber">See the missing number ▸</a>
       </div>
       <div class="nx-blind-art rev rev-d1"><div class="nx-track" role="img" aria-label="A tracker with targets for protein, carbs and fat, and a blank row for fiber">
   <div class="hd"><span>Macro Log</span><span>Typical Lifter's Day</span></div>
@@ -3564,7 +3662,7 @@ br.nx-mo{display:none}
 <section class="pg-sec mint">
     <div class="wrap">
       <div class="sec-head rev"><span class="num">E</span><div class="line"></div><span class="mono-label">In his words</span></div>
-      <h2 class="display rev">Why fiber.<br class="nx-mo"> <em class="aq">Why now.</em></h2>
+      <h2 class="display rev">Why fiber.<br class="nx-mo"> <em class="aq">Why now.</em><br><em class="or">Q&amp;A with Marcus.</em></h2>
       <div class="qa">
         <div class="rev"><div class="q">Why start with fiber?</div><div class="a">"Fiber is the glue that holds digestion together. Without adequate and diverse fiber, you will not achieve the same results or return on the investment you are making in the gym. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</div></div>
         <div class="rev"><div class="q">What is your own history with digestion and nutrition?</div><div class="a">"I've been focused on macros and nutrition for decades. Only recently I discovered and really internalized the importance, the foundational importance, of fiber. I've seen it in my personal journey and in the journey of countless people that I coach to elite levels of fitness and performance. Fiber is often overlooked and always underestimated. When people get their digestion dialed in, the performance, the results in the gym, it all starts to compound."</div></div>
@@ -3715,7 +3813,7 @@ br.nx-mo{display:none}
 <main class="view" data-view="shop" data-title="Daily Performance Fiber | STÄPL">
   <section class="pdp" id="pdp-top">
     <div class="wrap">
-      <div class="crumbs"><a href="#home">Home</a> &nbsp;/&nbsp; Shop &nbsp;/&nbsp; Daily Performance Fiber</div>
+      
       <div class="pdp-grid">
         <div>
           <div class="pdp-stage rev">
@@ -3730,8 +3828,8 @@ br.nx-mo{display:none}
         </div>
         <div class="pdp-info">
           <span class="kicker">STÄPL ▸ The First STÄPL</span>
-          <h1 class="display" style="font-size:clamp(2.3rem,4.6vw,3.9rem)">Daily<br>Performance Fiber</h1>
-          <div class="sub">Three fibers · One daily scoop · Bright raspberry</div>
+          <h1 class="display nx-pt">Daily<br>Performance<br>Fiber</h1>
+          <ul class="nx-keys"><li>Three fibers</li><li>One daily scoop</li><li>Bright raspberry</li></ul>
           <p class="desc">A crisp, refreshing three-fiber blend that mixes in seconds and tastes like tart raspberry, not gritty orange drywall. Formulated by Functional Bodybuilding founder Marcus Filly to close the #1 nutrient gap in active diets.</p>
           <span class="rating p2" data-p2="Star rating + review count (needs real reviews)"><b>★★★★★</b>&nbsp; Rating + review count</span>
           <div class="presale"><b>Founders Presale opens Dec 1</b><span>Waitlist unlocks 25% off Canister #1 ($44.99). Ships week of Jan 11, 2027.</span></div>
@@ -3808,14 +3906,16 @@ br.nx-mo{display:none}
           <h2 class="display rev">All killer.<br><em class="aq">Zero mystery blends.</em></h2>
           <p class="lead rev rev-d1">Three complementary fibers chosen for how they perform and how gently they treat your stomach. Every ingredient clearly named.</p>
         </div>
-        <div class="nx-form rev rev-d2">
-          <div class="frame aq ph l"><img data-ing-img src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div>
-          <div class="fcard">
-            <div class="fhd"><span>The formula</span><span>Scroll for all</span></div>
-            <ol class="flist" tabindex="0" aria-label="Ingredients"><li class="on" tabindex="0" data-img="assets/staple-home/fiber-psyllium.jpg" data-alt="Psyllium husk with a drop of water"><i>01</i><div><span class="nx-tag">Fiber 01</span><b>Psyllium husk</b><p>Soluble, gel-forming seed husk fiber that holds water and keeps daily digestion right on schedule.</p></div></li><li class="" tabindex="0" data-img="assets/staple-home/fiber-starch.jpg" data-alt="A potato beside a mound of potato starch"><i>02</i><div><span class="nx-tag">Fiber 02 · Solnul®</span><b>Resistant potato starch</b><p>Raw prebiotic starch that clears the stomach intact to nourish beneficial bacteria in the colon.</p></div></li><li class="" tabindex="0" data-img="assets/staple-home/fiber-acacia.jpg" data-alt="Acacia gum beside an acacia twig"><i>03</i><div><span class="nx-tag">Fiber 03</span><b>Acacia</b><p>Slow-fermenting prebiotic tree sap fiber that supports gut comfort and helps every scoop mix smooth.</p></div></li><li class="" tabindex="0" data-img="assets/staple-home/raspberry-bright.jpg" data-alt="Fresh raspberries"><i>04</i><div><span class="nx-tag">Flavor</span><b>Natural flavors</b><p>Gives Daily its crisp, tart raspberry profile without synthetic dye or syrupy junk.</p></div></li><li class=" p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)" tabindex="0" data-img="assets/staple-home/raspberry-bright.jpg" data-alt="Fresh raspberries"><i>05</i><div><span class="nx-tag">Sweetener</span><b>Stevia leaf + monk fruit</b><p>The sweeteners. No sugar alcohols or sucralose.</p></div></li><li class=" p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)" tabindex="0" data-img="assets/staple-home/raspberry-bright.jpg" data-alt="Fresh raspberries"><i>06</i><div><span class="nx-tag">Tartness</span><b>Citric acid</b><p>For tartness.</p></div></li></ol>
+        <div class="nx-form nx-step rev rev-d2">
+          <div class="frame aq ph l"><img data-fl src="assets/staple-home/fiber-psyllium.jpg" alt="Psyllium husk with a drop of water" loading="lazy"></div>
+          <div class="fcard" role="group" aria-label="Ingredients, one at a time">
+            <div class="fhd"><span>The formula</span><span data-fc>01 / 04</span></div>
+            <button type="button" class="fbody" data-fn aria-label="Next ingredient"><div class="fs" data-l="assets/staple-home/fiber-psyllium.jpg" data-la="Psyllium husk with a drop of water" data-r="assets/staple-home/stapl-kitchen.jpg" data-ra="STÄPL on a kitchen counter with a glass of water and raspberries"><span class="nx-tag">Fiber 01</span><h3>Psyllium husk</h3><p>Soluble, gel-forming seed husk fiber that holds water and keeps daily digestion right on schedule.</p></div><div class="fs" data-l="assets/staple-home/fiber-starch.jpg" data-la="A potato beside a mound of potato starch" data-r="assets/staple-home/ritual-scoop.jpg" data-ra="A scoop of fiber powder"><span class="nx-tag">Fiber 02 · Solnul®</span><h3>Resistant potato starch</h3><p>Raw prebiotic starch that clears the stomach intact to nourish beneficial bacteria in the colon.</p></div><div class="fs" data-l="assets/staple-home/fiber-acacia.jpg" data-la="Acacia gum beside an acacia twig" data-r="assets/staple-home/stapl-gym.jpg" data-ra="STÄPL on a gym bench beside a towel"><span class="nx-tag">Fiber 03</span><h3>Acacia</h3><p>Slow-fermenting prebiotic tree sap fiber that supports gut comfort and helps every scoop mix smooth.</p></div><div class="fs" data-l="assets/staple-home/raspberry-bright.jpg" data-la="Fresh raspberries" data-r="assets/staple-home/ritual-done.jpg" data-ra="A finished glass of raspberry fiber drink"><span class="nx-tag">Flavor</span><h3>Natural flavors</h3><p>Gives Daily its crisp, tart raspberry profile without synthetic dye or syrupy junk.</p></div><div class="fs p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)" data-l="assets/staple-home/raspberry-bright.jpg" data-la="Fresh raspberries" data-r="assets/staple-home/ritual-mix.jpg" data-ra="Fiber mixing into water"><span class="nx-tag">Sweetener</span><h3>Stevia leaf + monk fruit</h3><p>The sweeteners. No sugar alcohols or sucralose.</p></div><div class="fs p2" data-p2="Sweeteners + citric acid (final Supplement Facts panel)" data-l="assets/staple-home/raspberry-bright.jpg" data-la="Fresh raspberries" data-r="assets/staple-home/stapl-kitchen.jpg" data-ra="STÄPL on a kitchen counter"><span class="nx-tag">Tartness</span><h3>Citric acid</h3><p>For tartness.</p></div></button>
+            <div class="fnav"><button type="button" data-fp aria-label="Previous ingredient">◂</button><span data-fd class="fdots"></span><button type="button" data-fn aria-label="Next ingredient">▸</button></div>
+            <p class="ftap">Tap the card to see the next ingredient</p>
             <p class="ingr-note p2" data-p2="Full ingredient list (after the formula is final)">Full ingredient list: posted here once the formula is final.</p>
           </div>
-          <div class="frame cl ph r"><img src="assets/staple-home/stapl-kitchen.jpg" alt="STÄPL Daily Performance Fiber on a kitchen counter with a glass of water and raspberries" loading="lazy"></div>
+          <div class="frame cl ph r"><img data-fr src="assets/staple-home/stapl-kitchen.jpg" alt="STÄPL on a kitchen counter with a glass of water and raspberries" loading="lazy"></div>
         </div>
         <div class="nx-formfacts"><div class="rev rev-d1 p2" data-p2="Supplement Facts panel + fiber grams (after lab assay + final panel)" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem">
           <div class="facts">
@@ -3835,7 +3935,7 @@ br.nx-mo{display:none}
   <section class="nx nx-strip lt" id="nx-why">
   <div class="wrap">
     <div class="g">
-      <div class="t rev"><h2 class="nx-fit display" style="--fit:23px">You count macros.<br><em>Nobody counts fiber.</em></h2><a class="more-link" href="#the-fiber">See the science ▸</a></div>
+      <div class="t rev"><h2 class="nx-fit display" style="--fit:23px">You count macros.<br><em>Nobody counts fiber.</em></h2></div>
       <div class="s rev"><b>28<small>g</small></b><span>Baseline FDA Daily Value.</span></div>
       <div class="s rev rev-d1"><b>16.3<small>g</small></b><span>What US adults actually eat.</span></div>
       <div class="s rev rev-d2"><b>11.7<small>g</small></b><span>Left on the table every day.</span></div>
@@ -3899,7 +3999,7 @@ br.nx-mo{display:none}
         <div class="step rev"><div class="n">01</div><h3>Scoop</h3><p>One level scoop. No food scale needed.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-scoop.jpg" alt="Scoop of fiber powder"><span class="cap">The scoop</span></div></div>
         <div class="step rev rev-d1"><div class="n">02</div><h3>Shake</h3><p>Mix into 8–12 oz of cold water (or swirl into Greek yogurt when you want a change of pace).</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-mix.jpg" alt="Fiber mixing into water"><span class="cap">The mix</span></div></div>
         <div class="step rev rev-d2"><div class="n">03</div><h3>Roll</h3><p>Down the hatch. Your gut’s happy. Now go lift, parent, work, and live.</p><div class="real-shot ratio-169"><img src="assets/staple-home/ritual-done.jpg" alt="Finished drink"><span class="cap">Done</span></div></div>
-      </div>
+      </div><p class="media-hint nx-sh"><i></i>Swipe to see more</p>
     </div>
   </section>
 
@@ -3942,7 +4042,7 @@ br.nx-mo{display:none}
     <div class="wrap">
       <div class="sec-head rev"><span class="num">I</span><div class="line"></div><span class="mono-label">Do the math</span></div>
       <h2 class="display rev">Less than a<br><em>gas-station coffee.</em></h2>
-      <div class="pcards">
+      <div class="pcards pm3">
         <div class="pcard rev"><span class="n">Founders presale</span><h3 class="math">$1.50 <small>/ scoop</small></h3><p>$44.99 for Canister #1 (25% off exclusively for the Dec 1 waitlist). Renews at $50.99 when you subscribe.</p></div>
         <div class="pcard rev rev-d1"><span class="n">Subscribe · save 15%</span><h3 class="math">$1.70 <small>/ scoop</small></h3><p>$50.99 per canister + free shipping every 30, 60, or 90 days. Skip or cancel anytime.</p></div>
         <div class="pcard rev rev-d2"><span class="n">One-time</span><h3 class="math">$2.00 <small>/ scoop</small></h3><p>$59.99 for 30 daily servings. Grab two or more and shipping’s on us.</p></div>
@@ -3956,7 +4056,6 @@ br.nx-mo{display:none}
         <div>
           <div class="sec-head rev"><span class="num">J</span><div class="line"></div><span class="mono-label">Quick answers</span></div>
           <h2 class="display rev">Quick hits before<br>you <em>order.</em></h2>
-          <a class="more-link rev" href="#faq">See all questions ▸</a>
         </div>
         <div class="rev rev-d1">
           <details open=""><summary>When does Run 001 ship? <span class="pm">+</span></summary><p>All presale orders ship the week of January 11, 2027. Join the waitlist for early Founders Presale access starting December 1.</p></details>
@@ -4140,7 +4239,7 @@ br.nx-mo{display:none}
 <main class="view" data-view="journal-post" data-title="Chalk Talk · Article Template | STÄPL">
   <section class="pdp" style="padding-bottom:4rem">
     <div class="wrap">
-      <div class="crumbs"><a href="#journal">Chalk Talk</a> &nbsp;/&nbsp; Fiber 101</div>
+      
       <div class="article-head">
         <h1 class="display">Why lifters hit 200g of protein and still miss their fiber</h1>
         <div class="meta">By Marcus Filly &nbsp;·&nbsp; [Publish date] &nbsp;·&nbsp; 5 min read</div>
@@ -5198,9 +5297,15 @@ document.addEventListener('click',e=>{
 
 
 
-<script>(function(){var l=document.querySelector('.flist');if(!l)return;var im=document.querySelector('[data-ing-img]');
-function pick(li){if(!li||li.classList.contains('on'))return;l.querySelectorAll('li').forEach(function(x){x.classList.remove('on')});li.classList.add('on');if(im&&li.dataset.img){im.style.opacity=0;setTimeout(function(){im.src=li.dataset.img;im.alt=li.dataset.alt||'';im.style.opacity=1},160)}}
-['click','mouseover','focusin'].forEach(function(ev){l.addEventListener(ev,function(e){pick(e.target.closest('li'))})});})();</script>
+<script>(function(){var w=document.querySelector('.nx-step');if(!w)return;var L=w.querySelector('[data-fl]'),R=w.querySelector('[data-fr]'),C=w.querySelector('[data-fc]'),D=w.querySelector('[data-fd]'),i=0;
+function live(){var p2=document.body.classList.contains('show-p2');return [].filter.call(w.querySelectorAll('.fs'),function(s){return p2||!s.classList.contains('p2')})}
+function pad(n){return (n<10?'0':'')+n}
+function swap(img,src,alt){if(!img||img.getAttribute('src')===src)return;img.style.opacity=0;setTimeout(function(){img.src=src;img.alt=alt||'';img.style.opacity=1},170)}
+function show(n){var s=live();i=(n+s.length)%s.length;w.querySelectorAll('.fs').forEach(function(x){x.classList.remove('on')});var c=s[i];c.classList.add('on');C.textContent=pad(i+1)+' / '+pad(s.length);D.innerHTML=s.map(function(_,k){return '<i'+(k===i?' class="on"':'')+'></i>'}).join('');swap(L,c.dataset.l,c.dataset.la);swap(R,c.dataset.r,c.dataset.ra)}
+w.querySelectorAll('[data-fn]').forEach(function(b){b.addEventListener('click',function(){show(i+1)})});
+w.querySelector('[data-fp]').addEventListener('click',function(){show(i-1)});
+[L,R].forEach(function(im){im&&im.parentElement.addEventListener('click',function(){show(i+1)})});
+show(0);new MutationObserver(function(){show(Math.min(i,live().length-1))}).observe(document.body,{attributes:true,attributeFilter:['class']});})();</script>
 <!-- ==== CLAUDE COMMENTS WIDGET (connected to prancer-website-devs) ==== -->
 <script>
 /* ============================================================
@@ -5220,7 +5325,7 @@ function pick(li){if(!li||li.classList.contains('on'))return;l.querySelectorAll(
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'staple-home-next-v4';
+  var PAGE_ID = 'staple-home-next-v5';
 
   /* ---------------------------------------------- */
 
