@@ -43,6 +43,7 @@ h2{font-size:clamp(1.5rem,4.2vw,2.1rem);margin-top:1.2rem}
 .hint{margin-top:.9rem;color:var(--dim);font-size:1.04rem;line-height:1.6}
 .facts{margin-top:1.2rem;background:var(--bg);border-left:6px solid var(--acc2);padding:1rem 1.2rem;font-size:1rem;line-height:1.6;border-radius:0 var(--rad) var(--rad) 0}
 .facts li{margin-left:1.1rem;margin-top:.25rem}
+.facts.plain li{list-style:none;margin-left:0;margin-top:.4rem;font-style:italic}
 .go{display:inline-block;margin-top:1.2rem;font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:.15rem}
 .opts{display:grid;gap:.7rem;margin-top:1.5rem}
 .opt{display:flex;align-items:center;gap:.9rem;text-align:left;width:100%;background:var(--card);border:1.5px solid var(--fg);border-radius:var(--rad);padding:.95rem 1.1rem;font-size:1.02rem;font-weight:500;line-height:1.35;min-height:54px;transition:background .15s,transform .15s}
@@ -103,6 +104,7 @@ const Q=[
 {id:'p-xmas',b:'pp',t:'Christmas order-by date',d:'The emails tell customers to order by Wednesday, Dec 16 to have it by Christmas. Is that right for the warehouse?',opts:['Dec 16 is right','Use a different date (below)','I\'ll confirm with the warehouse'],ph:'The date to use'},
 {id:'p-kirsten',b:'pp',t:'Kirsten\'s July subscription price',d:'Amy still owes Kirsten an answer on her subscription price. What did you and Carl decide to offer her?',opts:['Decided (details below)','Still deciding (date below)'],ph:'What we\'re offering her'},
 /* ---------- Postmark Pantry ---------- */
+{id:'m-story',b:'pm',t:'Approve the label brand story',d:'This short letter goes on the left panel of both jars, Pitcher Perfect and Jam Pact.',facts:['Sweet friend, this jar is a letter from my kitchen to yours.','Wellness is not something you purchase, It is a returning you practice.','One scoop, one small daily ritual. Postmarked with love from our pantry. - Amy'],opts:['Approved as written','Changes (below)'],ph:'What would you change?'},
 {id:'m-panel',b:'pm',t:'Label details for Pitcher Perfect and Jam Pact',d:'Both labels are designed and waiting on the right panel before print: nutrition facts, calories, ingredients, warnings, produced-by line and address. This was requested from Carl by email. Where does it stand?',opts:['Sending it this week','Still with Carl (date below)','I need something from Amy first'],ph:'Date you expect it, or what you need'},
 {id:'m-upc',b:'pm',t:'UPC codes for both products',d:'We need a UPC for Pitcher Perfect and one for Jam Pact so the barcodes can be designed into the labels.',opts:['I have them (below)','Not assigned yet (date below)'],ph:'The UPC numbers, or when they\'ll be assigned'}
 ];
@@ -125,7 +127,7 @@ function tag(b){const x=BR[b];return '<span class="brand">'+(x.img?'<img src="'+
 function go(n){flush();step=n;render();scrollTo({top:0,behavior:'smooth'});}
 function render(){const c=$('card');
   if(step===0){document.body.dataset.b='prancer';const cnt=b=>Q.filter(q=>q.b===b).length;
-    c.innerHTML='<span class="brand">For Ben · week of Nov 23</span><h1>Fourteen things<br>waiting on <em>you.</em></h1>'+
+    c.innerHTML='<span class="brand">For Ben · week of Nov 23</span><h1>Fifteen things<br>waiting on <em>you.</em></h1>'+
     '<p class="hint">Hi Ben. Instead of a string of texts, here is everything Amy needs from you this week in one place, sorted by brand. One question at a time: tap an answer, add a note if you need to. It saves as you go, and Amy sees your answers right away. About ten minutes.</p>'+
     '<div class="secs"><div class="s-stapl">STÄPL<span>'+cnt('stapl')+' items · label, site, socials</span></div><div class="s-pp">PaleoPro<span>'+cnt('pp')+' items · December promos</span></div><div class="s-pm">Postmark Pantry<span>'+cnt('pm')+' items · labels</span></div></div>'+
     '<div class="nav"><span></span><button class="btn" id="nx">'+(Q.some(q=>get(q.id).status)?'Pick up where you left off':'Start')+' →</button></div>';
@@ -137,7 +139,7 @@ function render(){const c=$('card');
     c.querySelectorAll('.r').forEach(r=>r.onclick=()=>go(+r.dataset.i));$('bk').onclick=()=>go(0);return;}
   const q=Q[step-1],a=get(q.id);document.body.dataset.b=q.b;const inB=Q.filter(x=>x.b===q.b),pos=inB.indexOf(q)+1;
   c.innerHTML=tag(q.b)+'<span class="count">'+pos+' of '+inB.length+' · question '+step+' of '+Q.length+'</span><h2>'+esc(q.t)+'</h2><p class="hint">'+esc(q.d)+'</p>'+
-   (q.facts?'<ul class="facts">'+q.facts.map(f=>'<li>'+esc(f)+'</li>').join('')+'</ul>':'')+
+   (q.facts?'<ul class="facts'+(q.id==='m-story'?' plain':'')+'">'+q.facts.map(f=>'<li>'+esc(f)+'</li>').join('')+'</ul>':'')+
    (q.link?'<a class="go" href="'+q.link+'" target="_blank" rel="noopener">'+esc(q.lt)+' ↗</a>':'')+
    '<div class="opts">'+q.opts.map((o,n)=>'<button class="opt'+(a.status===o?' on':'')+'" data-o="'+esc(o)+'"><span class="k"><span>'+'ABC'[n]+'</span></span>'+esc(o)+'</button>').join('')+'</div>'+
    '<label class="lab" for="note">Notes for Amy</label><textarea id="note" placeholder="'+esc(q.ph)+'">'+esc(a.note||'')+'</textarea>'+
