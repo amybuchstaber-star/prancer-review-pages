@@ -101,8 +101,6 @@ const Q=[
 {id:'p-gift',b:'pp',t:'$10 subscriber thank-you',d:'A gift for active subscribers, sent by email.',facts:['$10 off, one unique code per subscriber','No minimum order','Use by Jan 31','Email goes out Tue, Dec 22, signed by Doug and the PaleoPro team'],opts:['Approved as written','Change it (below)'],ph:'What should change?'},
 {id:'p-stack',b:'pp',t:'Can the $10 code be used with the free bag?',d:'If a subscriber uses the $10 code on a cart of $90 or more, do they also get the free bag?',opts:['Yes, both apply','No, one or the other'],ph:'Any conditions?'},
 {id:'p-xmas',b:'pp',t:'Christmas order-by date',d:'The emails tell customers to order by Wednesday, Dec 16 to have it by Christmas. Is that right for the warehouse?',opts:['Dec 16 is right','Use a different date (below)','I\'ll confirm with the warehouse'],ph:'The date to use'},
-{id:'p-subs',b:'pp',t:'How many active subscribers?',d:'We need the count to create the right number of unique $10 codes in Klaviyo.',opts:['Number is below','I\'ll get it to Amy'],ph:'Active subscriber count'},
-{id:'p-emails',b:'pp',t:'Sign off on the six offer emails',d:'December has 14 emails. Eight are content and don\'t need you. Six carry the offer and need your sign-off before Tiff builds them. Amy will share the "PaleoPro December Emails" spreadsheet with you.',opts:['Send it, I\'ll review this week','No need, Amy can approve them'],ph:'Anything you want those emails to say or avoid'},
 {id:'p-kirsten',b:'pp',t:'Kirsten\'s July subscription price',d:'Amy still owes Kirsten an answer on her subscription price. What did you and Carl decide to offer her?',opts:['Decided (details below)','Still deciding (date below)'],ph:'What we\'re offering her'},
 /* ---------- Postmark Pantry ---------- */
 {id:'m-panel',b:'pm',t:'Label details for Pitcher Perfect and Jam Pact',d:'Both labels are designed and waiting on the right panel before print: nutrition facts, calories, ingredients, warnings, produced-by line and address. This was requested from Carl by email. Where does it stand?',opts:['Sending it this week','Still with Carl (date below)','I need something from Amy first'],ph:'Date you expect it, or what you need'},
@@ -127,7 +125,7 @@ function tag(b){const x=BR[b];return '<span class="brand">'+(x.img?'<img src="'+
 function go(n){flush();step=n;render();scrollTo({top:0,behavior:'smooth'});}
 function render(){const c=$('card');
   if(step===0){document.body.dataset.b='prancer';const cnt=b=>Q.filter(q=>q.b===b).length;
-    c.innerHTML='<span class="brand">For Ben · week of Nov 23</span><h1>Sixteen things<br>waiting on <em>you.</em></h1>'+
+    c.innerHTML='<span class="brand">For Ben · week of Nov 23</span><h1>Fourteen things<br>waiting on <em>you.</em></h1>'+
     '<p class="hint">Hi Ben. Instead of a string of texts, here is everything Amy needs from you this week in one place, sorted by brand. One question at a time: tap an answer, add a note if you need to. It saves as you go, and Amy sees your answers right away. About ten minutes.</p>'+
     '<div class="secs"><div class="s-stapl">STÄPL<span>'+cnt('stapl')+' items · label, site, socials</span></div><div class="s-pp">PaleoPro<span>'+cnt('pp')+' items · December promos</span></div><div class="s-pm">Postmark Pantry<span>'+cnt('pm')+' items · labels</span></div></div>'+
     '<div class="nav"><span></span><button class="btn" id="nx">'+(Q.some(q=>get(q.id).status)?'Pick up where you left off':'Start')+' →</button></div>';
