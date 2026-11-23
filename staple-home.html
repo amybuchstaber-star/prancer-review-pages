@@ -886,16 +886,21 @@ section{position:relative;}
   color:var(--ink-dim);
 }
 .sig-cap b{color:var(--clay);font-weight:700;}
-/* r7 · Marcus's signature (full = first + last name, first = tight spots) */
-.sig-img{display:block;height:auto;max-width:100%;width:clamp(190px,21vw,250px);margin-left:-4px;}
-.sig-img.first{width:clamp(120px,13vw,160px);}
-.sig .sig-img + .sig-cap{margin-top:.9rem;}
-.sig.sig-inline{margin-top:1.6rem;margin-bottom:1.8rem;}
+/* r8 · Marcus's signature: signed off on the right of the text column, slight tilt */
+.sig{display:flex;flex-direction:column;align-items:flex-end;text-align:right;max-width:760px;margin-top:1.2rem;}
+.sig-img{display:block;height:auto;max-width:100%;width:clamp(180px,19vw,235px);transform:rotate(-5deg);transform-origin:100% 50%;margin-right:.6rem;}
+.sig-img.first{width:clamp(120px,12vw,150px);}
+.sig .sig-img + .sig-cap{margin-top:1rem;}
+.sig.sig-inline{margin-top:-.2rem;margin-bottom:1.8rem;}
+.prose + .sig.sig-inline{margin-top:-.9rem;}
 .sig.sig-dark .sig-cap{color:rgba(243,241,234,.7);}
-.byline img.sig-img{margin-left:auto;flex:0 0 auto;width:112px;height:auto;border:0;object-fit:contain;}
-.athlete-left .sig{margin-top:1.8rem;}
-@media(max-width:900px){.athlete-top .sig{order:4;margin-top:.6rem;}}
-@media(max-width:640px){.sig-img{width:200px;}.sig-img.first{width:120px;}.byline img.sig-img{width:84px;}}
+.story .sig{max-width:34rem;margin-top:.6rem;}
+.byline img.sig-img{margin-left:auto;margin-right:.4rem;flex:0 0 auto;width:112px;height:auto;border:0;object-fit:contain;transform:rotate(-6deg);}
+/* home athlete block: autograph on the photo */
+.marcus-pow .sig.sig-auto{position:absolute;right:2%;bottom:3%;z-index:3;margin:0;max-width:none;display:block;}
+.marcus-pow .sig.sig-auto .sig-img{position:static;height:auto;width:clamp(170px,16vw,225px);margin:0;filter:none;transform:rotate(-9deg);transform-origin:50% 50%;}
+@media(max-width:900px){.marcus-pow .sig.sig-auto{right:4%;bottom:2%;}.marcus-pow .sig.sig-auto .sig-img{width:150px;height:auto;}}
+@media(max-width:640px){.sig-img{width:180px;}.sig-img.first{width:118px;}.byline img.sig-img{width:84px;}.sig.sig-inline{margin-top:0;}.prose + .sig.sig-inline{margin-top:-.5rem;}}
 
 .tape{
   position:absolute;width:120px;height:34px;
@@ -3431,7 +3436,7 @@ body.show-p2 span.p2{display:inline!important;}
         <div>
           <div class="sec-head rev"><span class="num">G</span><div class="line"></div><span class="mono-label">From the founder</span></div>
           <div class="prose"><blockquote class="rev" style="font-size:clamp(1.3rem,2.3vw,1.9rem)">"STÄPL is a highlight in my day. It's delicious, and I wake up excited every morning to get my fiber and morning hydration in a single glass."</blockquote></div>
-          <div class="sig sig-inline rev" style="margin-top:.4rem"><img data-sig="r7" class="sig-img first" src="assets/staple-home/marcus-signature-first-black.png" alt="Marcus's signature" width="1400" height="803" loading="lazy"></div>
+          <div class="sig sig-inline rev"><img data-sig="r7" class="sig-img first" src="assets/staple-home/marcus-signature-first-black.png" alt="Marcus's signature" width="1400" height="803" loading="lazy"></div>
           <p class="lead rev rev-d1"><b>Marcus Filly</b> is the founder of Functional Bodybuilding, where he coaches busy dads and athletes to look good and move well. He is the founder and formulator of STÄPL, built for the part of nutrition most athletes skip.</p>
           <div class="btn-row rev rev-d2"><a class="btn btn-ghost" href="#the-athlete">Read Marcus's story &#9656;</a></div>
         </div>
@@ -3777,7 +3782,7 @@ body.show-p2 span.p2{display:inline!important;}
         <div>
           <div class="sec-head rev"><span class="num">B</span><div class="line"></div><span class="mono-label">Why fiber, from Marcus</span></div>
           <div class="prose"><blockquote class="rev" style="color:var(--bone);font-size:clamp(1.3rem,2.4vw,2rem)">"Fiber is the glue that holds digestion together. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</blockquote></div>
-          <div class="sig sig-inline sig-dark rev" style="margin-top:.4rem"><img data-sig="r7" class="sig-img full" src="assets/staple-home/marcus-signature-full-white.png" alt="Marcus Filly's signature" width="1400" height="890" loading="lazy"><span class="sig-cap">Marcus Filly, Founder + Formulator</span></div>
+          <div class="sig sig-inline sig-dark rev"><img data-sig="r7" class="sig-img full" src="assets/staple-home/marcus-signature-full-white.png" alt="Marcus Filly's signature" width="1400" height="890" loading="lazy"><span class="sig-cap">Marcus Filly, Founder + Formulator</span></div>
           <div class="btn-row rev rev-d1"><a class="btn btn-sun" href="#the-athlete">Read Marcus's story &#9656;</a><a class="more-link" style="color:var(--bone)" href="#the-fiber">Why fiber &#9656;</a></div>
         </div>
         <ul class="ticks rev rev-d1">
