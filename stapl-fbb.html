@@ -884,6 +884,17 @@ section{position:relative;}
   color:var(--ink-dim);
 }
 .sig-cap b{color:var(--clay);font-weight:700;}
+/* r7 · Marcus's signature (full = first + last name, first = tight spots) */
+.sig-img{display:block;height:auto;max-width:100%;width:clamp(190px,21vw,250px);margin-left:-4px;}
+.sig-img.first{width:clamp(120px,13vw,160px);}
+.sig .sig-img + .sig-cap{margin-top:.9rem;}
+.sig.sig-inline{margin-top:1.6rem;margin-bottom:1.8rem;}
+.sig.sig-dark .sig-cap{color:rgba(243,241,234,.7);}
+.byline img.sig-img{margin-left:auto;flex:0 0 auto;width:112px;height:auto;border:0;object-fit:contain;}
+.athlete-left .sig{margin-top:1.8rem;}
+@media(max-width:900px){.athlete-top .sig{order:4;margin-top:.6rem;}}
+@media(max-width:640px){.sig-img{width:200px;}.sig-img.first{width:120px;}.byline img.sig-img{width:84px;}}
+
 .tape{
   position:absolute;width:120px;height:34px;
   background:rgba(243,241,234,.8);
@@ -3141,10 +3152,7 @@ body:not(.show-p2) .nx-formfacts{display:none}
         <p class="rev rev-d1">Marcus Filly has spent more than two decades in the gym learning one truth the hard way: <b>the flashy stuff breaks you, the boring stuff builds you.</b> A career reinventing how athletes train. And the same lesson every time: mastery is just the fundamentals, repeated.</p>
       <p class="rev rev-d2">STÄPL is that philosophy in a canister. No proprietary blends. No neon powders promising the moon. <b>Just the nutrient almost every athlete under-eats,</b> made effortless enough to never skip.</p>
         <div class="sig rev rev-d3">
-          <svg class="sig-scribble" viewBox="0 0 300 84" xmlns="http://www.w3.org/2000/svg" aria-label="Signature placeholder">
-            <path d="M 14 58 C 28 14, 44 66, 62 30 S 88 60, 108 34 C 122 18, 128 56, 148 46 S 186 24, 202 44 C 216 58, 238 28, 262 38" fill="none" stroke="#1B1B1D" stroke-width="3.5" stroke-linecap="round"></path>
-            <path d="M 18 68 C 90 62, 200 62, 282 66" fill="none" stroke="#FF6B37" stroke-width="3" stroke-linecap="round"></path>
-          </svg>
+          <img data-sig="r7" class="sig-img full" src="assets/staple-home/marcus-signature-full-ink.png" alt="Marcus Filly's signature" width="1400" height="889" loading="lazy">
           <span class="sig-cap">Marcus Filly, Founder + Formulator</span>
         </div>
       </div>
@@ -3185,6 +3193,7 @@ body:not(.show-p2) .nx-formfacts{display:none}
         <div>
           <div class="sec-head rev"><span class="num">06</span><div class="line"></div><span class="mono-label">Why fiber, from Marcus</span></div>
           <div class="prose"><blockquote class="rev" style="color:var(--bone);font-size:clamp(1.3rem,2.4vw,2rem)">"Fiber is the glue that holds digestion together. Our capacity to recover and build is limited by our ability to digest. Performance fiber is the answer so many of my athletes have been missing."</blockquote></div>
+          <div class="sig sig-inline sig-dark rev" style="margin-top:.4rem"><img data-sig="r7" class="sig-img full" src="assets/staple-home/marcus-signature-full-bone.png" alt="Marcus Filly's signature" width="1400" height="889" loading="lazy"><span class="sig-cap">Marcus Filly, Founder + Formulator</span></div>
           <div class="btn-row rev rev-d1"><a class="btn btn-sun" href="#the-athlete">Read Marcus's story ▸</a><a class="more-link" style="color:var(--bone)" href="#the-fiber">Why fiber ▸</a></div>
         </div>
         <ul class="ticks rev rev-d1">
@@ -3466,6 +3475,7 @@ body:not(.show-p2) .nx-formfacts{display:none}
           <p class="rev">So he built Functional Bodybuilding: smart training designed to help everyday people look good, move well, and stay in the game for decades. Today, that methodology powers tens of thousands of lifters worldwide through his Persist training program.</p>
           <blockquote class="rev">STÄPL is the nutritional twin to that mission. Not a cabinet full of neon pre-workouts or restrictive diet rules. Just the single most overlooked, science-backed nutrient in an active person's diet, made delicious enough that you actually look forward to taking it.</blockquote>
           <p class="rev">"You don't need a stricter diet. You need a stronger foundation, and ten seconds every morning to back it up."</p>
+          <div class="sig sig-inline rev"><img data-sig="r7" class="sig-img full" src="assets/staple-home/marcus-signature-full-ink.png" alt="Marcus Filly's signature" width="1400" height="889" loading="lazy"><span class="sig-cap">Marcus Filly, Founder + Formulator</span></div>
           <p class="rev">Before coaching, Marcus walked away from medical school once he realized he didn't want to wait until people were sick to help them. He wanted to help them build durability through daily training and real-world nutrition. From early soccer fields to Northern California CrossFit affiliates to coaching busy parents worldwide, the takeaway hasn't changed: consistency beats intensity every single time.</p>
           <p class="rev"><a href="https://www.instagram.com/marcusfilly/" target="_blank" rel="noopener">Follow Marcus on Instagram ▸</a></p>
         </div>
@@ -3906,6 +3916,7 @@ body:not(.show-p2) .nx-formfacts{display:none}
         <div>
           <div class="sec-head rev"><span class="num">H</span><div class="line"></div><span class="mono-label">From the founder</span></div>
           <div class="prose"><blockquote class="rev" style="font-size:clamp(1.3rem,2.3vw,1.9rem)">"STÄPL is a highlight in my day. It's delicious, and I wake up excited every morning to get my fiber and morning hydration in a single glass."</blockquote></div>
+          <div class="sig sig-inline rev" style="margin-top:.4rem"><img data-sig="r7" class="sig-img first" src="assets/staple-home/marcus-signature-first-ink.png" alt="Marcus's signature" width="1400" height="800" loading="lazy"></div>
           <p class="lead rev rev-d1"><b>Marcus Filly</b> is the founder of Functional Bodybuilding, where he coaches over 100,000 busy parents and everyday athletes to look good, move well, and ditch fitness burnout. He formulated STÄPL to fix the #1 nutrition blind spot he saw holding lifters back.</p>
           <div class="btn-row rev rev-d2"><a class="btn btn-ghost" href="#the-athlete">Read Marcus's story ▸</a></div>
         </div>
@@ -4134,7 +4145,7 @@ body:not(.show-p2) .nx-formfacts{display:none}
       </div>
       <div class="byline">
         <div class="blank mini"><span class="label">Headshot</span></div>
-        <div><b>Marcus Filly</b><span>Founder of Functional Bodybuilding. Founder and formulator of STÄPL.</span></div>
+        <div><b>Marcus Filly</b><span>Founder of Functional Bodybuilding. Founder and formulator of STÄPL.</span></div><img data-sig="r7" class="sig-img first" src="assets/staple-home/marcus-signature-first-ink.png" alt="Marcus's signature" width="1400" height="800" loading="lazy">
       </div>
       <div class="btn-row"><a class="more-link" href="#journal">◀ Back to Chalk Talk</a><a class="btn btn-sun" href="#shop">Shop Daily ▸</a></div>
     </div>
@@ -5200,7 +5211,7 @@ show(0);new MutationObserver(function(){show(Math.min(i,live().length-1))}).obse
 
   /* ------------------- CONFIG ------------------- */
   var FIREBASE_URL = 'https://prancer-website-devs-default-rtdb.firebaseio.com';
-  var PAGE_ID = 'stapl-fbb-v7';
+  var PAGE_ID = 'stapl-fbb-v8';
 
   /* ---------------------------------------------- */
 
