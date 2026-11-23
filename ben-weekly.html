@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Weekly check-in for Ben · Week of Nov 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Archivo:wght@400;500;600;800;900&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IM+Fell+English:ital@0;1&family=Zilla+Slab:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/staple-home/stapl-fonts.css">
+<style>
+:root{--ink:#203D62;--porcelain:#6685A4;--chalk:#F7F4EB;--chalk2:#F1EDE2;--chalk3:#E9E4D6;--saddle:#A66B48;--butter:#EEDC9A;
+  /* theme slots, swapped per brand */
+  --bg:#F7F4EB;--card:#fff;--fg:#203D62;--dim:rgba(32,61,98,.68);--acc:#A66B48;--acc2:#EEDC9A;--line:#E9E4D6;--on:#203D62;--onfg:#F7F4EB;
+  --head:'EB Garamond',Georgia,serif;--body:'Archivo',system-ui,sans-serif;--rad:14px;--hw:500;--htx:none;--hls:0;}
+body[data-b="stapl"]{--bg:#F3F1EA;--card:#fff;--fg:#1B1B1D;--dim:rgba(27,27,29,.68);--acc:#FF6B37;--acc2:#FFC72C;--line:#1B1B1D;--on:#1B1B1D;--onfg:#F3F1EA;
+  --head:'Archivo Variable','Archivo',sans-serif;--body:'Archivo Variable','Archivo',sans-serif;--rad:0px;--hw:900;--htx:uppercase;--hls:-.01em;}
+body[data-b="pp"]{--bg:#EFE3C9;--card:#FBF5E8;--fg:#221C14;--dim:#6a5a45;--acc:#9D4C32;--acc2:#C8952A;--line:#d9c9a8;--on:#1F3A28;--onfg:#F6EEDA;
+  --head:'Fraunces',Georgia,serif;--body:'DM Sans',system-ui,sans-serif;--rad:10px;--hw:700;}
+body[data-b="pm"]{--bg:#FAF3E6;--card:#FFFCF6;--fg:#2B2723;--dim:#574F47;--acc:#8B3438;--acc2:#C99A52;--line:#E2D6C0;--on:#3F5648;--onfg:#FAF3E6;
+  --head:'IM Fell English',Georgia,serif;--body:'Zilla Slab',Georgia,serif;--rad:4px;--hw:400;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;transition:background .35s,color .35s}
+button{font-family:inherit;cursor:pointer;border:none;color:inherit;background:none}
+a{color:inherit}
+.bar{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--chalk);display:flex;align-items:center;gap:1rem;padding:.75rem 1.2rem;font-family:'Archivo',sans-serif}
+.bar .mark{font-family:'EB Garamond',serif;font-size:1.15rem;letter-spacing:.02em;white-space:nowrap}
+.bar .mark i{color:var(--butter)}
+.prog{flex:1;height:8px;border-radius:8px;background:rgba(247,244,235,.22);overflow:hidden;min-width:50px}
+.prog b{display:block;height:100%;width:0;background:var(--butter);transition:width .4s}
+.bar .ct,.bar .save{font-size:.72rem;letter-spacing:.06em;white-space:nowrap}
+.bar .save{color:rgba(247,244,235,.65)} .bar .save.ok{color:var(--butter)} .bar .save.err{color:#ffb39a}
+.stage{max-width:760px;margin:0 auto;padding:2.2rem 1.2rem 6rem}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--rad);padding:2.2rem 2.2rem 1.8rem;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+body[data-b="stapl"] .card{border:3px solid var(--line);box-shadow:10px 10px 0 var(--line)}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--on);color:var(--onfg);padding:.45rem .8rem;border-radius:calc(var(--rad) / 2);font-family:'Archivo',sans-serif}
+.brand img{height:13px;display:block}
+.count{margin-left:.8rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-family:'Archivo',sans-serif}
+h1,h2{font-family:var(--head);font-weight:var(--hw);text-transform:var(--htx);letter-spacing:var(--hls);line-height:1.1}
+h1{font-size:clamp(2.2rem,6.5vw,3.4rem);margin-top:1.2rem}
+h1 em{font-style:italic;color:var(--acc)}
+h2{font-size:clamp(1.5rem,4.2vw,2.1rem);margin-top:1.2rem}
+.hint{margin-top:.9rem;color:var(--dim);font-size:1.04rem;line-height:1.6}
+.facts{margin-top:1.2rem;background:var(--bg);border-left:6px solid var(--acc2);padding:1rem 1.2rem;font-size:1rem;line-height:1.6;border-radius:0 var(--rad) var(--rad) 0}
+.facts li{margin-left:1.1rem;margin-top:.25rem}
+.go{display:inline-block;margin-top:1.2rem;font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:.15rem}
+.opts{display:grid;gap:.7rem;margin-top:1.5rem}
+.opt{display:flex;align-items:center;gap:.9rem;text-align:left;width:100%;background:var(--card);border:1.5px solid var(--fg);border-radius:var(--rad);padding:.95rem 1.1rem;font-size:1.02rem;font-weight:500;line-height:1.35;min-height:54px;transition:background .15s,transform .15s}
+.opt:hover{transform:translateY(-1px)}
+.opt .k{flex:0 0 26px;height:26px;border:1.5px solid var(--fg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;font-family:'Archivo',sans-serif}
+body[data-b="stapl"] .opt .k{border-radius:0}
+.opt.on{background:var(--on);color:var(--onfg);border-color:var(--on)}
+.opt.on .k{background:var(--acc2);border-color:var(--acc2);color:#1b1b1d}
+.opt.on .k span{display:none} .opt.on .k::after{content:'✓'}
+label.lab{display:block;margin-top:1.4rem;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-family:'Archivo',sans-serif}
+textarea{display:block;width:100%;margin-top:.5rem;min-height:96px;resize:vertical;background:var(--bg);border:1.5px solid var(--line);border-radius:var(--rad);font-family:var(--body);font-size:1.02rem;line-height:1.5;color:var(--fg);padding:.85rem 1rem;outline:none}
+body[data-b="stapl"] textarea{border:2px solid var(--line)}
+textarea:focus{border-color:var(--acc);background:var(--card)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--on);color:var(--onfg);font-family:'Archivo',sans-serif;font-weight:600;font-size:.86rem;letter-spacing:.12em;text-transform:uppercase;padding:1rem 1.5rem;border-radius:var(--rad);min-height:50px;text-decoration:none}
+.btn:hover{background:var(--acc)}
+.back{font-family:'Archivo',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid currentColor;padding:.4rem 0}
+.secs{margin-top:1.6rem;display:grid;gap:.6rem}
+.secs div{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1rem;border-radius:10px;font-weight:600;font-family:'Archivo',sans-serif}
+.secs span{font-weight:400;font-size:.88rem;opacity:.85;white-space:nowrap}
+.s-stapl{background:#1B1B1D;color:#F3F1EA;border-left:8px solid #FFC72C} .s-pp{background:#1F3A28;color:#F6EEDA;border-left:8px solid #C8952A} .s-pm{background:#FAF3E6;color:#2B2723;border:1.5px solid #E2D6C0;border-left:8px solid #8B3438}
+.rev{margin-top:1.4rem;display:grid;gap:.6rem}
+.rev h3{font-family:'Archivo',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-top:1rem;padding:.4rem .7rem;border-radius:6px;display:inline-block;justify-self:start}
+.r{display:grid;grid-template-columns:1fr auto;gap:.25rem 1rem;text-align:left;width:100%;border:1.5px solid var(--line);border-radius:10px;padding:.8rem 1rem;background:#fff;font-family:'Archivo',sans-serif}
+.r b{font-size:.95rem;line-height:1.3;font-weight:600} .r i{font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .5rem;border-radius:20px;background:var(--butter);align-self:start;white-space:nowrap}
+.r span{grid-column:1/-1;font-size:.92rem;color:var(--dim);line-height:1.45;white-space:pre-line;overflow-wrap:anywhere}
+.r.miss{border-style:dashed} .r.miss i{background:#f6c9b8}
+.foot{text-align:center;margin-top:1.6rem;font-size:.8rem;color:var(--dim);line-height:1.7;font-family:'Archivo',sans-serif}
+@media(max-width:640px){.stage{padding:1.2rem .8rem 5rem}.card{padding:1.4rem 1.15rem 1.3rem}body[data-b="stapl"] .card{box-shadow:6px 6px 0 var(--line)}
+  .bar{gap:.6rem;padding:.65rem .8rem}.bar .save{display:none}.bar .mark{font-size:1rem}.count{display:block;margin:.7rem 0 0}.btn{padding:.95rem 1.1rem;font-size:.8rem}}
+</style>
+</head>
+<body data-b="prancer">
+<div class="bar">
+  <span class="mark">Prancer <i>Consulting</i></span>
+  <div class="prog"><b id="pf"></b></div>
+  <span class="ct" id="pc"></span>
+  <span class="save" id="ss">Loading…</span>
+</div>
+<div class="stage"><div class="card" id="card"></div>
+<p class="foot">Weekly check-in · week of Nov 23, 2026 · saves automatically<br>You can close this page and come back on the same link.</p></div>
+<script>
+const WEEK='2026-11-23';
+const BR={stapl:{n:'STÄPL',img:'assets/staple-home/stapl-wordmark-bone.png'},pp:{n:'PaleoPro'},pm:{n:'Postmark Pantry'}};
+const Q=[
+/* ---------- STÄPL ---------- */
+{id:'s-story',b:'stapl',t:'Pick the label brand story',d:'The label copy can\'t go to print until this is picked. Ten questions, about five minutes: four options for the three-line story, the greeting, the signature, and the order of the text on the front of the label.',link:'stapl-label.html',lt:'Take the label quiz',opts:['Done, I took the quiz','I need more time (date below)'],ph:'Anything to add, or the date you\'ll have it done'},
+{id:'s-preview',b:'stapl',t:'Approve the label preview',d:'Amy texted you the Illustrator preview of the Daily Performance Fiber label on Nov 20. Check the overall look and what sits on each panel. The right panel is still waiting on the final formula.',opts:['Approved','Changes needed (below)','I need it sent again'],ph:'What needs to change on the label?'},
+{id:'s-mark',b:'stapl',t:'Solnul: is it ® or ™?',d:'The site now calls the potato starch by name. Amy used Solnul® because the supplier\'s recent listings do, but their older material shows ™. Please confirm the correct mark with the supplier, plus any rules for how we use the name (wording, a credit line, logo use), and whether the co-branding approval is in.',opts:['® is correct','™ is correct','Checking with the supplier'],ph:'Usage rules from the supplier, and where the co-branding approval stands'},
+{id:'s-panel',b:'stapl',t:'Right-panel label details and UPC',d:'For print we need everything on the right panel: Supplement Facts, calories, the ingredient list, warnings, produced-by line and address, plus the UPC code. When can you send it?',opts:['Sending it this week','Formula isn\'t final yet (date below)','Someone else has it (name below)'],ph:'Date you expect it, or who to ask'},
+{id:'s-home',b:'stapl',t:'Sign off on the homepage',d:'The current working homepage, with your and Amy\'s review notes from Nov 21 applied. Is the layout and content order approved to move to the next stage?',link:'staple-home-next.html',lt:'Open the homepage',opts:['Approved for the next stage','Changes needed (below)'],ph:'What should move, go or be added?'},
+{id:'s-fbb',b:'stapl',t:'Sign off on the FBB landing page',d:'The landing page for the Functional Bodybuilding community. Check the offer, the claims, and anything that reads wrong for Marcus\'s audience.',link:'stapl-fbb.html',lt:'Open the FBB page',opts:['Looks good','Changes needed (below)'],ph:'What needs to change?'},
+{id:'s-social',b:'stapl',t:'STÄPL social handles',d:'The site still has placeholders for Instagram, TikTok and YouTube. Have the handles been claimed?',opts:['Claimed (handles below)','Not yet (date below)'],ph:'The exact handles, or when they\'ll be claimed'},
+/* ---------- PaleoPro ---------- */
+{id:'p-bag',b:'pp',t:'December free-bag promo',d:'This replaces the Black Friday free bag once that sale ends Dec 2.',facts:['Free bag of Protein + Multi-Collagen, shopper picks chocolate or vanilla','On carts of $90 or more','Starts Dec 3, 12:00 AM Pacific','Runs through Jan 31, 11:59 PM Pacific, or while supplies last'],opts:['Approved as written','Change it (below)'],ph:'What should change: threshold, flavors, dates?'},
+{id:'p-gift',b:'pp',t:'$10 subscriber thank-you',d:'A gift for active subscribers, sent by email.',facts:['$10 off, one unique code per subscriber','No minimum order','Use by Jan 31','Email goes out Tue, Dec 22, signed by Doug and the PaleoPro team'],opts:['Approved as written','Change it (below)'],ph:'What should change?'},
+{id:'p-stack',b:'pp',t:'Can the $10 code be used with the free bag?',d:'If a subscriber uses the $10 code on a cart of $90 or more, do they also get the free bag?',opts:['Yes, both apply','No, one or the other'],ph:'Any conditions?'},
+{id:'p-xmas',b:'pp',t:'Christmas order-by date',d:'The emails tell customers to order by Wednesday, Dec 16 to have it by Christmas. Is that right for the warehouse?',opts:['Dec 16 is right','Use a different date (below)','I\'ll confirm with the warehouse'],ph:'The date to use'},
+{id:'p-subs',b:'pp',t:'How many active subscribers?',d:'We need the count to create the right number of unique $10 codes in Klaviyo.',opts:['Number is below','I\'ll get it to Amy'],ph:'Active subscriber count'},
+{id:'p-emails',b:'pp',t:'Sign off on the six offer emails',d:'December has 14 emails. Eight are content and don\'t need you. Six carry the offer and need your sign-off before Tiff builds them. Amy will share the "PaleoPro December Emails" spreadsheet with you.',opts:['Send it, I\'ll review this week','No need, Amy can approve them'],ph:'Anything you want those emails to say or avoid'},
+{id:'p-kirsten',b:'pp',t:'Kirsten\'s July subscription price',d:'Amy still owes Kirsten an answer on her subscription price. What did you and Carl decide to offer her?',opts:['Decided (details below)','Still deciding (date below)'],ph:'What we\'re offering her'},
+/* ---------- Postmark Pantry ---------- */
+{id:'m-panel',b:'pm',t:'Label details for Pitcher Perfect and Jam Pact',d:'Both labels are designed and waiting on the right panel before print: nutrition facts, calories, ingredients, warnings, produced-by line and address. This was requested from Carl by email. Where does it stand?',opts:['Sending it this week','Still with Carl (date below)','I need something from Amy first'],ph:'Date you expect it, or what you need'},
+{id:'m-upc',b:'pm',t:'UPC codes for both products',d:'We need a UPC for Pitcher Perfect and one for Jam Pact so the barcodes can be designed into the labels.',opts:['I have them (below)','Not assigned yet (date below)'],ph:'The UPC numbers, or when they\'ll be assigned'}
+];
+const FB='https://prancer-website-devs-default-rtdb.firebaseio.com/pages/ben-weekly-'+WEEK,LS='ben-weekly-'+WEEK;
+let R={},local={},step=0;try{local=JSON.parse(localStorage.getItem(LS)||'{}')}catch(e){}
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const get=id=>{const a=R[id]||{},b=local[id]||{};return (b.ts||0)>(a.ts||0)?b:a;};
+const $=id=>document.getElementById(id);
+function setSave(c,m){$('ss').className='save '+c;$('ss').textContent=m;}
+let pending={},timer;
+function put(id,patch){local[id]=Object.assign({},get(id),patch,{ts:Date.now()});try{localStorage.setItem(LS,JSON.stringify(local))}catch(e){}
+  pending['items/'+id]=local[id];setSave('','Saving…');clearTimeout(timer);timer=setTimeout(flush,600);prog();}
+function flush(){if(!Object.keys(pending).length)return;const body=Object.assign({},pending,{updated:Date.now()});pending={};
+  fetch(FB+'.json',{method:'PATCH',body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw 0;setSave('ok','Saved ✓');})
+   .catch(()=>{Object.assign(pending,body);setSave('err','Not saved online yet, will retry');});}
+function pull(){return fetch(FB+'/items.json').then(r=>r.json()).then(d=>{R=d||{};if(!Object.keys(pending).length)setSave('ok','In sync ✓');prog();
+  if(step===Q.length+1)render();else if(step>0&&step<=Q.length&&document.activeElement.tagName!=='TEXTAREA')render();}).catch(()=>setSave('err','Offline, will sync when back'));}
+function prog(){const n=Q.filter(q=>get(q.id).status).length;$('pf').style.width=(n/Q.length*100)+'%';$('pc').textContent=n+' / '+Q.length;}
+function tag(b){const x=BR[b];return '<span class="brand">'+(x.img?'<img src="'+x.img+'" alt="'+x.n+'">':esc(x.n))+'</span>';}
+function go(n){flush();step=n;render();scrollTo({top:0,behavior:'smooth'});}
+function render(){const c=$('card');
+  if(step===0){document.body.dataset.b='prancer';const cnt=b=>Q.filter(q=>q.b===b).length;
+    c.innerHTML='<span class="brand">For Ben · week of Nov 23</span><h1>Sixteen things<br>waiting on <em>you.</em></h1>'+
+    '<p class="hint">Hi Ben. Instead of a string of texts, here is everything Amy needs from you this week in one place, sorted by brand. One question at a time: tap an answer, add a note if you need to. It saves as you go, and Amy sees your answers right away. About ten minutes.</p>'+
+    '<div class="secs"><div class="s-stapl">STÄPL<span>'+cnt('stapl')+' items · label, site, socials</span></div><div class="s-pp">PaleoPro<span>'+cnt('pp')+' items · December promos</span></div><div class="s-pm">Postmark Pantry<span>'+cnt('pm')+' items · labels</span></div></div>'+
+    '<div class="nav"><span></span><button class="btn" id="nx">'+(Q.some(q=>get(q.id).status)?'Pick up where you left off':'Start')+' →</button></div>';
+    $('nx').onclick=()=>{const f=Q.findIndex(q=>!get(q.id).status);go(f<0?Q.length+1:f+1);};return;}
+  if(step===Q.length+1){document.body.dataset.b='prancer';const miss=Q.filter(q=>!get(q.id).status).length;let h='<span class="brand">Review</span><h1>'+(miss?miss+' still <em>open.</em>':'All <em>answered.</em>')+'</h1><p class="hint">'+(miss?'Tap any open item to answer it. ':'Thank you, Ben. Amy has everything. ')+'Tap any answer to change it. Nothing else to submit: it is already saved.</p><div class="rev">';
+    ['stapl','pp','pm'].forEach(b=>{h+='<h3 class="s-'+b+'">'+BR[b].n+'</h3>';Q.forEach((q,i)=>{if(q.b!==b)return;const a=get(q.id);
+      h+='<button class="r'+(a.status?'':' miss')+'" data-i="'+(i+1)+'"><b>'+esc(q.t)+'</b><i>'+(a.status?'Answered':'Open')+'</i><span>'+esc(a.status||'No answer yet')+(a.note?'\n'+esc(a.note):'')+'</span></button>';});});
+    c.innerHTML=h+'</div><div class="nav"><button class="back" id="bk">← Back to the start</button><span></span></div>';
+    c.querySelectorAll('.r').forEach(r=>r.onclick=()=>go(+r.dataset.i));$('bk').onclick=()=>go(0);return;}
+  const q=Q[step-1],a=get(q.id);document.body.dataset.b=q.b;const inB=Q.filter(x=>x.b===q.b),pos=inB.indexOf(q)+1;
+  c.innerHTML=tag(q.b)+'<span class="count">'+pos+' of '+inB.length+' · question '+step+' of '+Q.length+'</span><h2>'+esc(q.t)+'</h2><p class="hint">'+esc(q.d)+'</p>'+
+   (q.facts?'<ul class="facts">'+q.facts.map(f=>'<li>'+esc(f)+'</li>').join('')+'</ul>':'')+
+   (q.link?'<a class="go" href="'+q.link+'" target="_blank" rel="noopener">'+esc(q.lt)+' ↗</a>':'')+
+   '<div class="opts">'+q.opts.map((o,n)=>'<button class="opt'+(a.status===o?' on':'')+'" data-o="'+esc(o)+'"><span class="k"><span>'+'ABC'[n]+'</span></span>'+esc(o)+'</button>').join('')+'</div>'+
+   '<label class="lab" for="note">Notes for Amy</label><textarea id="note" placeholder="'+esc(q.ph)+'">'+esc(a.note||'')+'</textarea>'+
+   '<div class="nav"><button class="back" id="bk">← Back</button><button class="btn" id="nx">'+(step===Q.length?'Review answers':'Next')+' →</button></div>';
+  c.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const on=get(q.id).status===b.dataset.o;put(q.id,{status:on?'':b.dataset.o});c.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',!on&&x===b));});
+  $('note').oninput=e=>put(q.id,{note:e.target.value});$('bk').onclick=()=>go(step-1);$('nx').onclick=()=>go(step+1);}
+render();prog();pull();setInterval(()=>{if(!document.hidden){flush();if(document.activeElement.tagName!=='TEXTAREA')pull();}},8000);addEventListener('beforeunload',flush);
+</script>
+</body>
+</html>
